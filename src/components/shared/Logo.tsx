@@ -21,7 +21,7 @@ export function Logo({ className, imgClassName, to = "/" }: LogoProps) {
       aria-label="CodesPanda"
     >
       <img
-        src={`${import.meta.env.BASE_URL}logo.png`}
+        src="/logo.png"
         alt="CodesPanda"
         width={481}
         height={480}
