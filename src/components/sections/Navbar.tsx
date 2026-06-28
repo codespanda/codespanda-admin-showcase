@@ -63,15 +63,27 @@ export function Navbar() {
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              to={`/${link.href}`}
-              className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.external ? (
+              <a
+                key={link.href}
+                href={link.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                to={`/${link.href}`}
+                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </div>
 
         {/* Desktop actions */}
@@ -110,16 +122,29 @@ export function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 px-4">
-                {NAV_LINKS.map((link) => (
-                  <SheetClose asChild key={link.href}>
-                    <Link
-                      to={`/${link.href}`}
-                      className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
-                    >
-                      {link.label}
-                    </Link>
-                  </SheetClose>
-                ))}
+                {NAV_LINKS.map((link) =>
+                  link.external ? (
+                    <SheetClose asChild key={link.href}>
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+                      >
+                        {link.label}
+                      </a>
+                    </SheetClose>
+                  ) : (
+                    <SheetClose asChild key={link.href}>
+                      <Link
+                        to={`/${link.href}`}
+                        className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
+                      >
+                        {link.label}
+                      </Link>
+                    </SheetClose>
+                  )
+                )}
               </div>
               <div className="mt-4 px-4">
                 <Button variant="gradient" className="w-full" asChild>

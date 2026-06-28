@@ -10,6 +10,7 @@ export const SITE = {
 export interface NavLink {
   label: string;
   href: string;
+  external?: boolean;
 }
 
 export const NAV_LINKS: NavLink[] = [
@@ -18,6 +19,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Modules", href: "#modules" },
   { label: "Analytics", href: "#analytics" },
   { label: "FAQ", href: "#faq" },
+  { label: "Documentation", href: `${SITE.templateUrl}/docs`, external: true },
 ];
 
 export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
