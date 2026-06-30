@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://codespanda.com/sitemap.xml
