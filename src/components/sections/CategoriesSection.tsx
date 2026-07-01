@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
 import {
-  Monitor, Clock,
+  ExternalLink, Monitor, Clock,
   LayoutDashboard, Users, DollarSign, Handshake,
   Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { TEMPLATES } from "@/lib/data";
@@ -52,6 +53,14 @@ function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
             <Monitor className="h-10 w-10 text-muted-foreground/20" />
           </div>
         )}
+        {/* Hover overlay */}
+        <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/50 group-hover:opacity-100">
+          <Button size="sm" variant="gradient" asChild>
+            <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
+              <ExternalLink className="h-3.5 w-3.5" /> Live Preview
+            </a>
+          </Button>
+        </div>
       </div>
 
       {/* Body */}
