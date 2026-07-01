@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 import {
-  ExternalLink, Monitor, Clock,
+  Monitor, Clock,
   LayoutDashboard, Users, DollarSign, Handshake,
   Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { TEMPLATES } from "@/lib/data";
