@@ -43,14 +43,12 @@ export function LandingPage() {
       <main>
         <Hero />
 
-        <Suspense fallback={<SectionFallback />}>
-          <FeaturedTemplates />
-          <CategoriesSection />
-          <WhyUs />
-          <TechStackSection />
-          <ComingSoon />
-          <CTABanner />
-        </Suspense>
+        <Suspense fallback={<SectionFallback />}><FeaturedTemplates /></Suspense>
+        <Suspense fallback={<SectionFallback />}><CategoriesSection /></Suspense>
+        <Suspense fallback={<SectionFallback />}><WhyUs /></Suspense>
+        <Suspense fallback={<SectionFallback />}><TechStackSection /></Suspense>
+        <Suspense fallback={<SectionFallback />}><ComingSoon /></Suspense>
+        <Suspense fallback={<SectionFallback />}><CTABanner /></Suspense>
       </main>
 
       <Suspense fallback={<SectionFallback />}>
