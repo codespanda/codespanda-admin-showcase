@@ -65,7 +65,7 @@ const TECHS = [
   {
     name: "TypeScript",
     color: "from-blue-400/20 to-blue-500/10",
-    comingSoon: true,
+    comingSoon: false,
     logo: (
       <svg viewBox="0 0 32 32" className="h-10 w-10">
         <rect width="32" height="32" rx="4" fill="#3178C6" />
@@ -74,20 +74,14 @@ const TECHS = [
     ),
   },
   {
-    name: "Next.js",
-    color: "from-slate-400/20 to-slate-500/10",
-    comingSoon: true,
+    name: "shadcn/ui",
+    color: "from-zinc-400/20 to-zinc-500/10",
+    comingSoon: false,
     logo: (
-      <svg viewBox="0 0 32 32" className="h-10 w-10">
-        <rect width="32" height="32" rx="16" fill="#000" />
-        <path d="M20.9 21.6L11 9.5H9v13h2.1v-12l9.2 12h1.7V9.5H20v12.1h.9z" fill="#fff" />
-        <path d="M20.4 9.5v.1l-5.8 7.6 1.4 1.7 5.6-7.3h1.4V9.5h-2.6z" fill="url(#nxt)" />
-        <defs>
-          <linearGradient id="nxt" x1="16" y1="9" x2="23" y2="19" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#fff" />
-            <stop offset="1" stopColor="#fff" stopOpacity="0" />
-          </linearGradient>
-        </defs>
+      <svg viewBox="0 0 24 24" className="h-10 w-10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 17l10 5 10-5" />
+        <path d="M2 12l10 5 10-5" />
       </svg>
     ),
   },
