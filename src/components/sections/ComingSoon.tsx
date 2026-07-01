@@ -41,10 +41,10 @@ export function ComingSoon() {
 
                 {/* Lock overlay */}
                 <div className="relative z-10 flex flex-col items-center gap-1.5">
-                  <div className="grid h-8 w-8 place-items-center rounded-xl bg-white/20 backdrop-blur-sm">
-                    <Lock className="h-4 w-4 text-white/80" />
+                  <div className="grid h-8 w-8 place-items-center rounded-xl bg-white/20 backdrop-blur-sm dark:bg-white/20">
+                    <Lock className="h-4 w-4 text-gray-800 dark:text-white/80" />
                   </div>
-                  <span className="rounded-full bg-white/20 px-2.5 py-0.5 text-[10px] font-semibold text-white/90 backdrop-blur-sm">
+                  <span className="rounded-full bg-white/60 px-2.5 py-0.5 text-[10px] font-semibold text-gray-800 backdrop-blur-sm dark:bg-white/20 dark:text-white/90">
                     Coming Soon
                   </span>
                 </div>
