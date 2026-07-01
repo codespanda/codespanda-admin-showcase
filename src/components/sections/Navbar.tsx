@@ -98,9 +98,6 @@ export function Navbar() {
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
           <Button variant="gradient" size="sm" asChild>
-            <a href="/#templates">Browse Templates</a>
-          </Button>
-          <Button variant="outline" size="sm" asChild>
             <a href="https://www.linkedin.com/in/deepak-kumar-2b076b109/" target="_blank" rel="noreferrer noopener">
               Hire Me
             </a>
