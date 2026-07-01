@@ -53,14 +53,6 @@ function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
             <Monitor className="h-10 w-10 text-muted-foreground/20" />
           </div>
         )}
-        {/* Hover overlay */}
-        <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
-          <Button size="sm" variant="gradient" asChild>
-            <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
-              <ExternalLink className="h-3.5 w-3.5" /> Live Preview
-            </a>
-          </Button>
-        </div>
       </div>
 
       {/* Body */}
@@ -71,11 +63,6 @@ function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
             <span key={t} className="rounded-md bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">{t}</span>
           ))}
         </div>
-        <Button variant="gradient" size="sm" className="w-full" asChild>
-          <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
-            <ExternalLink className="h-3.5 w-3.5" /> Live Preview
-          </a>
-        </Button>
       </div>
     </motion.div>
   );
