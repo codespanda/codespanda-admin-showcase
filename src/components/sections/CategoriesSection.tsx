@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  ExternalLink, Monitor, Moon, Smartphone, Clock,
+  ExternalLink, Monitor, Clock,
   LayoutDashboard, Users, DollarSign, Handshake,
   Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
 } from "lucide-react";
@@ -33,10 +33,6 @@ const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
 };
 
 function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
-  const badgeColor =
-    template.badge === "Popular" ? "from-emerald-500 to-teal-500" :
-    template.badge === "Hot"     ? "from-rose-500 to-orange-500"  :
-                                   "from-indigo-500 to-purple-600";
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -45,35 +41,20 @@ function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
       className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
     >
       {/* Screenshot */}
-      <div className="relative overflow-hidden bg-secondary/30" style={{ height: 220 }}>
-        <div className="absolute inset-x-0 top-0 z-10 flex items-center gap-2 border-b border-border/40 bg-secondary/80 px-3 py-1.5 backdrop-blur-sm">
-          <div className="flex gap-1">
-            <span className="h-2 w-2 rounded-full bg-rose-400" />
-            <span className="h-2 w-2 rounded-full bg-amber-400" />
-            <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          </div>
-          <span className="truncate text-[9px] text-muted-foreground">
-            {template.liveUrl.replace("https://", "")}
-          </span>
-        </div>
-        <div className="absolute left-3 top-8 z-20">
-          <span className={`inline-flex rounded-full bg-gradient-to-r ${badgeColor} px-2.5 py-0.5 text-[10px] font-semibold text-white shadow`}>
-            {template.badge}
-          </span>
-        </div>
+      <div className="relative overflow-hidden bg-secondary/30" style={{ height: 200 }}>
         {template.screenshotUrl ? (
           <img
             src={template.screenshotUrl}
             alt={template.name}
-            className="absolute inset-0 top-7 h-full w-full object-cover object-top"
+            className="h-full w-full object-cover object-top"
           />
         ) : (
-          <div className="absolute inset-0 top-7 flex items-center justify-center bg-gradient-to-br from-secondary via-card to-secondary">
+          <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary via-card to-secondary">
             <Monitor className="h-10 w-10 text-muted-foreground/20" />
           </div>
         )}
         {/* Hover overlay */}
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/40 group-hover:opacity-100">
           <Button size="sm" variant="gradient" asChild>
             <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
               <ExternalLink className="h-3.5 w-3.5" /> Live Preview
@@ -83,42 +64,18 @@ function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
       </div>
 
       {/* Body */}
-      <div className="flex flex-1 flex-col gap-3 p-5">
-        <div>
-          <h3 className="font-bold">{template.name}</h3>
-          <p className="mt-1 text-xs leading-relaxed text-muted-foreground line-clamp-2">
-            {template.description}
-          </p>
-        </div>
-
+      <div className="flex flex-col gap-3 p-4">
+        <h3 className="font-bold">{template.name}</h3>
         <div className="flex flex-wrap gap-1.5">
           {template.techStack.map((t) => (
             <span key={t} className="rounded-md bg-primary/10 px-2 py-0.5 text-[10px] font-semibold text-primary">{t}</span>
           ))}
-          {template.responsive && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[10px] font-medium text-sky-600 dark:text-sky-400">
-              <Smartphone className="h-2.5 w-2.5" /> Responsive
-            </span>
-          )}
-          {template.darkMode && (
-            <span className="inline-flex items-center gap-1 rounded-full border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 text-[10px] font-medium text-violet-600 dark:text-violet-400">
-              <Moon className="h-2.5 w-2.5" /> Dark Mode
-            </span>
-          )}
         </div>
-
-        <div className="mt-auto flex gap-2 pt-1">
-          <Button variant="gradient" size="sm" className="flex-1" asChild>
-            <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
-              <ExternalLink className="h-3.5 w-3.5" /> Live Preview
-            </a>
-          </Button>
-          <Button variant="outline" size="sm" className="flex-1" asChild>
-            <a href={template.docsUrl} target="_blank" rel="noreferrer noopener">
-              <Monitor className="h-3.5 w-3.5" /> View Details
-            </a>
-          </Button>
-        </div>
+        <Button variant="gradient" size="sm" className="w-full" asChild>
+          <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
+            <ExternalLink className="h-3.5 w-3.5" /> Live Preview
+          </a>
+        </Button>
       </div>
     </motion.div>
   );
@@ -152,8 +109,8 @@ export function CategoriesSection() {
 
         <div className="mt-14">
           <Tabs defaultValue="admin-dashboard">
-            {/* Tab list — scrollable on mobile */}
-            <div className="overflow-x-auto pb-1">
+            {/* Tab list — scrollable on mobile, scrollbar hidden */}
+            <div className="overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <TabsList className="flex w-max gap-1 rounded-2xl p-1.5">
                 {CATEGORY_DEFS.map((cat) => {
                   const Icon = cat.icon;
