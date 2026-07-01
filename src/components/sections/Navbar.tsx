@@ -12,8 +12,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Logo } from "@/components/shared/Logo";
-import { NAV_LINKS, SITE } from "@/lib/constants";
-import { templateRoute } from "@/components/shared/EmbeddedDashboard";
+import { NAV_LINKS } from "@/lib/constants";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
 
@@ -30,6 +29,34 @@ function ThemeToggle() {
       <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
       <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
     </Button>
+  );
+}
+
+function NavItem({ link }: { link: { label: string; href: string; external?: boolean } }) {
+  const cls =
+    "rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
+
+  if (link.external) {
+    return (
+      <a href={link.href} target="_blank" rel="noreferrer noopener" className={cls}>
+        {link.label}
+      </a>
+    );
+  }
+
+  // Hash links scroll within the same page
+  if (link.href.startsWith("#")) {
+    return (
+      <a href={link.href} className={cls}>
+        {link.label}
+      </a>
+    );
+  }
+
+  return (
+    <Link to={`/${link.href}`} className={cls}>
+      {link.label}
+    </Link>
   );
 }
 
@@ -58,45 +85,21 @@ export function Navbar() {
             : "border border-transparent"
         )}
       >
-        {/* Enlarged mark that overflows into the nav padding so the bar height stays fixed */}
         <Logo imgClassName="h-[84px] w-auto my-[-14px]" />
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map((link) =>
-            link.external ? (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ) : (
-              <Link
-                key={link.href}
-                to={`/${link.href}`}
-                className="rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {NAV_LINKS.map((link) => (
+            <NavItem key={link.href} link={link} />
+          ))}
         </div>
 
         {/* Desktop actions */}
         <div className="hidden items-center gap-2 lg:flex">
           <ThemeToggle />
           <Button variant="gradient" size="sm" asChild>
-            <a
-              href={templateRoute("dashboard")}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
-              Live Demo
-              <ExternalLink />
+            <a href="/#templates">
+              Browse Templates
             </a>
           </Button>
         </div>
@@ -106,12 +109,7 @@ export function Navbar() {
           <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="Open menu"
-                className="rounded-xl"
-              >
+              <Button variant="outline" size="icon" aria-label="Open menu" className="rounded-xl">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -122,43 +120,42 @@ export function Navbar() {
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-1 px-4">
-                {NAV_LINKS.map((link) =>
-                  link.external ? (
-                    <SheetClose asChild key={link.href}>
+                {NAV_LINKS.map((link) => (
+                  <SheetClose asChild key={link.href}>
+                    {link.external ? (
                       <a
                         href={link.href}
                         target="_blank"
                         rel="noreferrer noopener"
+                        className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary flex items-center gap-2"
+                      >
+                        {link.label}
+                        <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
+                      </a>
+                    ) : link.href.startsWith("#") ? (
+                      <a
+                        href={link.href}
                         className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
                       >
                         {link.label}
                       </a>
-                    </SheetClose>
-                  ) : (
-                    <SheetClose asChild key={link.href}>
+                    ) : (
                       <Link
                         to={`/${link.href}`}
                         className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
                       >
                         {link.label}
                       </Link>
-                    </SheetClose>
-                  )
-                )}
+                    )}
+                  </SheetClose>
+                ))}
               </div>
               <div className="mt-4 px-4">
                 <Button variant="gradient" className="w-full" asChild>
-                  <a
-                    href={templateRoute("dashboard")}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    Live Demo
-                    <ExternalLink />
-                  </a>
+                  <a href="/#templates">Browse Templates</a>
                 </Button>
                 <p className="mt-3 text-center text-xs text-muted-foreground">
-                  {SITE.name} · Admin Dashboard Template
+                  Premium React Template Marketplace
                 </p>
               </div>
             </SheetContent>

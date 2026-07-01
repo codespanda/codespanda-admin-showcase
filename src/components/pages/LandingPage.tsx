@@ -1,42 +1,24 @@
 import { lazy, Suspense } from "react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { TrustedBy } from "@/components/sections/TrustedBy";
 
-/* Below-the-fold sections are lazy-loaded to keep the initial bundle small. */
-const Features = lazy(() =>
-  import("@/components/sections/Features").then((m) => ({ default: m.Features }))
+const FeaturedTemplates = lazy(() =>
+  import("@/components/sections/FeaturedTemplates").then((m) => ({ default: m.FeaturedTemplates }))
 );
-const DashboardPreview = lazy(() =>
-  import("@/components/sections/DashboardPreview").then((m) => ({
-    default: m.DashboardPreview,
-  }))
+const CategoriesSection = lazy(() =>
+  import("@/components/sections/CategoriesSection").then((m) => ({ default: m.CategoriesSection }))
 );
-const Modules = lazy(() =>
-  import("@/components/sections/Modules").then((m) => ({ default: m.Modules }))
+const WhyUs = lazy(() =>
+  import("@/components/sections/WhyUs").then((m) => ({ default: m.WhyUs }))
 );
-const Analytics = lazy(() =>
-  import("@/components/sections/Analytics").then((m) => ({
-    default: m.Analytics,
-  }))
+const TechStackSection = lazy(() =>
+  import("@/components/sections/TechStackSection").then((m) => ({ default: m.TechStackSection }))
 );
-const AIAutomation = lazy(() =>
-  import("@/components/sections/AIAutomation").then((m) => ({
-    default: m.AIAutomation,
-  }))
+const ComingSoon = lazy(() =>
+  import("@/components/sections/ComingSoon").then((m) => ({ default: m.ComingSoon }))
 );
-const Testimonials = lazy(() =>
-  import("@/components/sections/Testimonials").then((m) => ({
-    default: m.Testimonials,
-  }))
-);
-const FAQ = lazy(() =>
-  import("@/components/sections/FAQ").then((m) => ({ default: m.FAQ }))
-);
-const CallToAction = lazy(() =>
-  import("@/components/sections/CallToAction").then((m) => ({
-    default: m.CallToAction,
-  }))
+const CTABanner = lazy(() =>
+  import("@/components/sections/CTABanner").then((m) => ({ default: m.CTABanner }))
 );
 const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
@@ -50,7 +32,7 @@ export function LandingPage() {
   return (
     <>
       <a
-        href="#features"
+        href="#templates"
         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
       >
         Skip to content
@@ -60,16 +42,14 @@ export function LandingPage() {
 
       <main>
         <Hero />
-        <TrustedBy />
+
         <Suspense fallback={<SectionFallback />}>
-          <Features />
-          <DashboardPreview />
-          <Modules />
-          <Analytics />
-          <AIAutomation />
-          <Testimonials />
-          <FAQ />
-          <CallToAction />
+          <FeaturedTemplates />
+          <CategoriesSection />
+          <WhyUs />
+          <TechStackSection />
+          <ComingSoon />
+          <CTABanner />
         </Suspense>
       </main>
 

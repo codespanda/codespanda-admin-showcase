@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/shared/Reveal";
-import { TECH_STACK } from "@/lib/data";
+import { TECH_STACK_LEGACY as TECH_STACK } from "@/lib/data";
 
 export function TrustedBy() {
   return (

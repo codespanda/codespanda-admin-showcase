@@ -1,10 +1,9 @@
 /** Centralised site config — brand, nav, social links. */
 export const SITE = {
-  name: "CodesPanda",
-  tagline: "Manage Your Entire Business from One Intelligent Dashboard",
+  name: "CodeSpanda",
+  tagline: "Premium React Templates for Modern Developers",
   email: "hello@codespanda.com",
-  /** Live admin dashboard template that this page showcases. */
-  templateUrl: "https://codespanda.github.io/Alpine-Admin-React",
+  githubOrg: "https://github.com/codespanda",
 } as const;
 
 export interface NavLink {
@@ -14,29 +13,26 @@ export interface NavLink {
 }
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "Features", href: "#features" },
-  { label: "Dashboard", href: "#dashboard" },
-  { label: "Modules", href: "#modules" },
-  { label: "Analytics", href: "#analytics" },
-  { label: "FAQ", href: "#faq" },
-  { label: "Documentation", href: `${SITE.templateUrl}/docs`, external: true },
+  { label: "Templates", href: "#templates" },
+  { label: "Categories", href: "#categories" },
+  { label: "Coming Soon", href: "#coming-soon" },
+  { label: "About", href: "#why-us" },
 ];
 
 export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
   {
-    title: "Product",
+    title: "Templates",
     links: [
-      { label: "Features", href: "/#features" },
-      { label: "Dashboard", href: "/#dashboard" },
-      { label: "Modules", href: "/#modules" },
-      { label: "Analytics", href: "/#analytics" },
+      { label: "Alpine Admin React", href: "https://codespanda.github.io/Alpine-Admin-React/dashboard", external: true },
+      { label: "Brisk Admin", href: "https://codespanda.github.io/brisk-admin/#/dashboard", external: true },
+      { label: "Coming Soon", href: "#coming-soon" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: `${SITE.templateUrl}/docs` },
-      { label: "API Reference", href: `${SITE.templateUrl}/components` },
+      { label: "Documentation", href: "https://codespanda.github.io/Alpine-Admin-React/docs", external: true },
+      { label: "Contact", href: "mailto:hello@codespanda.com", external: true },
     ],
   },
   {
@@ -45,7 +41,6 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
       { label: "Privacy", href: "/legal/privacy" },
       { label: "Terms", href: "/legal/terms" },
       { label: "Security", href: "/legal/security" },
-      { label: "GDPR", href: "/legal/gdpr" },
     ],
   },
 ];

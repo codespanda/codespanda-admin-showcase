@@ -1,0 +1,169 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f1a"/>
+      <stop offset="100%" style="stop-color:#1a1030"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#12101f;stop-opacity:1"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="40" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Ambient glow blobs -->
+  <ellipse cx="200" cy="150" rx="250" ry="200" fill="#6366f1" opacity="0.08" filter="url(#softglow)"/>
+  <ellipse cx="1050" cy="500" rx="220" ry="180" fill="#a855f7" opacity="0.08" filter="url(#softglow)"/>
+
+  <!-- Grid lines -->
+  <g stroke="#ffffff" stroke-width="0.5" opacity="0.04">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Top accent bar -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#accent)"/>
+
+  <!-- Left content area -->
+  <!-- Logo mark -->
+  <rect x="72" y="80" width="48" height="48" rx="12" fill="url(#accent)"/>
+  <text x="96" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="26" font-weight="800" fill="white" text-anchor="middle">C</text>
+
+  <!-- Brand name -->
+  <text x="134" y="112" font-family="system-ui, -apple-system, sans-serif" font-size="22" font-weight="700" fill="white">CodesPanda</text>
+
+  <!-- Main headline -->
+  <text x="72" y="210" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="white">AI-Powered</text>
+  <text x="72" y="275" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="url(#accent)">Admin Dashboard</text>
+  <text x="72" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="800" fill="white">Template</text>
+
+  <!-- Subtext -->
+  <text x="72" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#94a3b8">Finance · HR · CRM · Inventory · Payroll · Analytics</text>
+
+  <!-- Tags -->
+  <rect x="72" y="440" width="80" height="30" rx="15" fill="#6366f1" opacity="0.2"/>
+  <text x="112" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">React</text>
+
+  <rect x="164" y="440" width="110" height="30" rx="15" fill="#6366f1" opacity="0.2"/>
+  <text x="219" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">TypeScript</text>
+
+  <rect x="286" y="440" width="100" height="30" rx="15" fill="#6366f1" opacity="0.2"/>
+  <text x="336" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">Tailwind CSS</text>
+
+  <rect x="398" y="440" width="60" height="30" rx="15" fill="#6366f1" opacity="0.2"/>
+  <text x="428" y="460" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#a5b4fc" text-anchor="middle">Vite</text>
+
+  <!-- URL -->
+  <text x="72" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6366f1">codespanda.com</text>
+
+  <!-- Right dashboard mockup -->
+  <!-- Main card -->
+  <rect x="680" y="60" width="460" height="510" rx="16" fill="url(#card1)" stroke="#6366f1" stroke-width="1" stroke-opacity="0.3"/>
+
+  <!-- Card header bar -->
+  <rect x="680" y="60" width="460" height="44" rx="16" fill="#1e1b4b"/>
+  <rect x="680" y="88" width="460" height="16" fill="#1e1b4b"/>
+  <circle cx="706" cy="82" r="6" fill="#ef4444" opacity="0.7"/>
+  <circle cx="726" cy="82" r="6" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="746" cy="82" r="6" fill="#22c55e" opacity="0.7"/>
+  <text x="850" y="87" font-family="system-ui, sans-serif" font-size="12" fill="#6366f1" text-anchor="middle">Dashboard Overview</text>
+
+  <!-- Stat cards row -->
+  <rect x="700" y="120" width="100" height="64" rx="8" fill="#16123a"/>
+  <text x="750" y="142" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Revenue</text>
+  <text x="750" y="164" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">$84.2K</text>
+  <text x="750" y="178" font-family="system-ui, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">▲ 12.4%</text>
+
+  <rect x="812" y="120" width="100" height="64" rx="8" fill="#16123a"/>
+  <text x="862" y="142" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Users</text>
+  <text x="862" y="164" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">12,480</text>
+  <text x="862" y="178" font-family="system-ui, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">▲ 8.1%</text>
+
+  <rect x="924" y="120" width="100" height="64" rx="8" fill="#16123a"/>
+  <text x="974" y="142" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Orders</text>
+  <text x="974" y="164" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">3,291</text>
+  <text x="974" y="178" font-family="system-ui, sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">▼ 2.3%</text>
+
+  <rect x="1036" y="120" width="84" height="64" rx="8" fill="#16123a"/>
+  <text x="1078" y="142" font-family="system-ui, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">Tasks</text>
+  <text x="1078" y="164" font-family="system-ui, sans-serif" font-size="16" font-weight="700" fill="white" text-anchor="middle">94%</text>
+  <text x="1078" y="178" font-family="system-ui, sans-serif" font-size="9" fill="#22c55e" text-anchor="middle">▲ 3.0%</text>
+
+  <!-- Chart area -->
+  <rect x="700" y="198" width="420" height="150" rx="8" fill="#16123a"/>
+  <text x="714" y="216" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Revenue Overview</text>
+  <!-- Chart bars -->
+  <rect x="718" y="290" width="22" height="40" rx="3" fill="#6366f1" opacity="0.5"/>
+  <rect x="750" y="270" width="22" height="60" rx="3" fill="#6366f1" opacity="0.6"/>
+  <rect x="782" y="255" width="22" height="75" rx="3" fill="#6366f1" opacity="0.7"/>
+  <rect x="814" y="275" width="22" height="55" rx="3" fill="#6366f1" opacity="0.6"/>
+  <rect x="846" y="245" width="22" height="85" rx="3" fill="#6366f1" opacity="0.8"/>
+  <rect x="878" y="260" width="22" height="70" rx="3" fill="#6366f1" opacity="0.7"/>
+  <rect x="910" y="235" width="22" height="95" rx="3" fill="url(#accent)"/>
+  <rect x="942" y="250" width="22" height="80" rx="3" fill="#6366f1" opacity="0.7"/>
+  <rect x="974" y="265" width="22" height="65" rx="3" fill="#6366f1" opacity="0.6"/>
+  <rect x="1006" y="240" width="22" height="90" rx="3" fill="#6366f1" opacity="0.75"/>
+  <rect x="1038" y="255" width="22" height="75" rx="3" fill="#6366f1" opacity="0.7"/>
+  <rect x="1070" y="230" width="22" height="100" rx="3" fill="url(#accent)" filter="url(#glow)"/>
+
+  <!-- Activity list -->
+  <rect x="700" y="362" width="200" height="180" rx="8" fill="#16123a"/>
+  <text x="714" y="380" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">Recent Activity</text>
+  <line x1="700" y1="388" x2="900" y2="388" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+
+  <circle cx="718" cy="406" r="5" fill="#22c55e"/>
+  <text x="730" y="410" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0">Invoice #4821 paid</text>
+  <text x="730" y="422" font-family="system-ui, sans-serif" font-size="9" fill="#475569">2 min ago</text>
+
+  <circle cx="718" cy="438" r="5" fill="#6366f1"/>
+  <text x="730" y="442" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0">New user registered</text>
+  <text x="730" y="454" font-family="system-ui, sans-serif" font-size="9" fill="#475569">14 min ago</text>
+
+  <circle cx="718" cy="470" r="5" fill="#f59e0b"/>
+  <text x="730" y="474" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0">Inventory low: SKU-92</text>
+  <text x="730" y="486" font-family="system-ui, sans-serif" font-size="9" fill="#475569">1 hr ago</text>
+
+  <circle cx="718" cy="502" r="5" fill="#a855f7"/>
+  <text x="730" y="506" font-family="system-ui, sans-serif" font-size="10" fill="#e2e8f0">Payroll processed</text>
+  <text x="730" y="518" font-family="system-ui, sans-serif" font-size="9" fill="#475569">3 hr ago</text>
+
+  <!-- AI insights card -->
+  <rect x="912" y="362" width="208" height="180" rx="8" fill="#16123a"/>
+  <text x="926" y="380" font-family="system-ui, sans-serif" font-size="11" fill="#94a3b8">AI Insights</text>
+  <line x1="912" y1="388" x2="1120" y2="388" stroke="#ffffff" stroke-width="0.5" opacity="0.08"/>
+  <!-- Donut chart placeholder -->
+  <circle cx="988" cy="455" r="44" fill="none" stroke="#1e1b4b" stroke-width="16"/>
+  <circle cx="988" cy="455" r="44" fill="none" stroke="#6366f1" stroke-width="16" stroke-dasharray="138 138" stroke-dashoffset="34" stroke-linecap="round" transform="rotate(-90 988 455)"/>
+  <circle cx="988" cy="455" r="44" fill="none" stroke="#a855f7" stroke-width="16" stroke-dasharray="55 221" stroke-dashoffset="-104" stroke-linecap="round" transform="rotate(-90 988 455)"/>
+  <text x="988" y="451" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="white" text-anchor="middle">76%</text>
+  <text x="988" y="464" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">efficiency</text>
+  <!-- Legend -->
+  <circle cx="926" cy="518" r="4" fill="#6366f1"/>
+  <text x="935" y="521" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Sales</text>
+  <circle cx="960" cy="518" r="4" fill="#a855f7"/>
+  <text x="969" y="521" font-family="system-ui, sans-serif" font-size="9" fill="#94a3b8">Ops</text>
+</svg>
