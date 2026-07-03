@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ExternalLink, Eye, ShieldCheck, Monitor, Moon, Smartphone } from "lucide-react";
+import { ExternalLink, Monitor, Moon, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TEMPLATES, type Template } from "@/lib/data";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -55,61 +55,31 @@ function TemplateCard({ template, index }: { template: Template; index: number }
       transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
     >
       <TiltCard className="group relative rounded-3xl border border-border bg-card shadow-xl shadow-black/5 transition-shadow duration-300 hover:shadow-2xl hover:shadow-primary/10 dark:shadow-black/20 overflow-hidden h-full flex flex-col">
-        {/* Preview area */}
-        <div className="relative overflow-hidden bg-secondary/30" style={{ height: 300 }}>
+        {/* Preview image */}
+        <div className="relative overflow-hidden bg-secondary/30" style={{ height: 260 }}>
           {/* Badge */}
-          <div className="absolute left-4 top-4 z-20">
-            <span
-              className={`inline-flex items-center rounded-full bg-gradient-to-r ${badgeVariant} px-3 py-1 text-xs font-semibold text-white shadow-lg`}
-            >
+          <div className="absolute left-4 top-4 z-10">
+            <span className={`inline-flex items-center rounded-full bg-gradient-to-r ${badgeVariant} px-3 py-1 text-xs font-semibold text-white shadow-lg`}>
               {template.badge}
             </span>
           </div>
-
           {/* Category */}
-          <div className="absolute right-4 top-4 z-20">
+          <div className="absolute right-4 top-4 z-10">
             <span className="rounded-full border border-border bg-background/80 px-2.5 py-1 text-[10px] font-medium text-muted-foreground backdrop-blur-sm">
               {template.category}
             </span>
           </div>
-
-          {/* Chrome bar */}
-          <div className="absolute inset-x-0 top-0 z-10 flex items-center gap-2 border-b border-border/40 bg-secondary/80 px-3 py-2 backdrop-blur-sm">
-            <div className="flex gap-1">
-              <span className="h-2 w-2 rounded-full bg-rose-400" />
-              <span className="h-2 w-2 rounded-full bg-amber-400" />
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
+          {template.screenshotUrl ? (
+            <img
+              src={template.screenshotUrl}
+              alt={`${template.name} preview`}
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary via-card to-secondary">
+              <Monitor className="h-12 w-12 text-muted-foreground/30" />
             </div>
-            <div className="flex flex-1 items-center gap-1 truncate rounded bg-background/50 px-2 py-0.5 text-[9px] text-muted-foreground">
-              <ShieldCheck className="h-2 w-2 shrink-0 text-emerald-500" />
-              <span className="truncate">{template.liveUrl.replace("https://", "")}</span>
-            </div>
-          </div>
-
-          {/* Screenshot or gradient placeholder */}
-          <div className="absolute inset-0 top-7 overflow-hidden">
-            {template.screenshotUrl ? (
-              <img
-                src={template.screenshotUrl}
-                alt={`${template.name} preview`}
-                className="h-full w-full object-cover object-top"
-              />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-secondary via-card to-secondary">
-                <Monitor className="h-12 w-12 text-muted-foreground/30" />
-              </div>
-            )}
-          </div>
-
-          {/* Hover overlay */}
-          <div className="absolute inset-0 z-10 flex items-center justify-center gap-3 bg-black/0 opacity-0 transition-all duration-300 group-hover:bg-black/50 group-hover:opacity-100">
-            <Button size="sm" variant="gradient" asChild>
-              <a href={template.liveUrl} target="_blank" rel="noreferrer noopener">
-                <Eye className="h-3.5 w-3.5" />
-                Live Preview
-              </a>
-            </Button>
-          </div>
+          )}
         </div>
 
         {/* Card body */}
