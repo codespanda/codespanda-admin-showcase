@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  ExternalLink, Monitor, Clock,
+  ExternalLink, Monitor, Clock, LayoutGrid,
   LayoutDashboard, Users, DollarSign, Handshake,
   Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
 } from "lucide-react";
@@ -17,6 +17,7 @@ interface CategoryDef {
 }
 
 const CATEGORY_DEFS: CategoryDef[] = [
+  { id: "all",                  label: "All",                  icon: LayoutGrid,      color: "text-primary" },
   { id: "admin-dashboard",      label: "Admin Dashboard",      icon: LayoutDashboard, color: "text-indigo-500" },
   { id: "hr-management",        label: "HR Management",        icon: Users,           color: "text-violet-500" },
   { id: "finance-accounting",   label: "Finance & Accounting", icon: DollarSign,      color: "text-emerald-500" },
@@ -103,7 +104,7 @@ export function CategoriesSection() {
         />
 
         <div className="mt-14">
-          <Tabs defaultValue="admin-dashboard">
+          <Tabs defaultValue="all">
             {/* Tab list — scrollable on mobile, scrollbar hidden */}
             <div className="overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <TabsList className="flex w-max gap-1 rounded-2xl p-1.5">
@@ -125,9 +126,9 @@ export function CategoriesSection() {
 
             {/* Tab content */}
             {CATEGORY_DEFS.map((cat) => {
-              const categoryTemplates = TEMPLATES.filter(
-                (t) => TEMPLATE_CATEGORY_MAP[t.id]?.includes(cat.id)
-              );
+              const categoryTemplates = cat.id === "all"
+                ? TEMPLATES
+                : TEMPLATES.filter((t) => TEMPLATE_CATEGORY_MAP[t.id]?.includes(cat.id));
               return (
                 <TabsContent key={cat.id} value={cat.id}>
                   <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
