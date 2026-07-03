@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  ExternalLink, Monitor, Clock, LayoutGrid,
+  ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake,
   Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
 } from "lucide-react";
@@ -26,11 +26,13 @@ const CATEGORY_DEFS: CategoryDef[] = [
   { id: "healthcare",           label: "Healthcare",           icon: HeartPulse,      color: "text-rose-500" },
   { id: "education",            label: "Education",            icon: GraduationCap,   color: "text-sky-500" },
   { id: "ai-saas",              label: "AI / SaaS",            icon: Bot,             color: "text-fuchsia-500" },
+  { id: "portfolio",            label: "Portfolio",            icon: Briefcase,       color: "text-rose-500" },
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
   "alpine-admin-react": ["admin-dashboard", "hr-management"],
-  "brisk-admin":        ["admin-dashboard"],
+  "brisk-admin":        ["admin-dashboard", "crm"],
+  "portfolio":          ["portfolio"],
 };
 
 function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {

@@ -62,6 +62,22 @@ export const TEMPLATES: Template[] = [
     darkMode: false,
     responsive: true,
   },
+  {
+    id: "portfolio",
+    name: "Portfolio Template",
+    description:
+      "A clean, modern portfolio template to showcase your work, skills, and experience. Perfect for developers, designers, and freelancers who want a professional online presence.",
+    category: "Portfolio",
+    badge: "New",
+    badgeColor: "from-rose-500 to-pink-600",
+    liveUrl: "https://codespanda.github.io/portfolio/",
+    docsUrl: "https://codespanda.github.io/portfolio/",
+    screenshotUrl: "https://raw.githubusercontent.com/codespanda/portfolio/main/public/portfolio.jpg",
+    techStack: ["React", "Vite", "Tailwind CSS"],
+    features: ["Modern Design", "Responsive", "Fast Load", "Customizable"],
+    darkMode: false,
+    responsive: true,
+  },
 ];
 
 /* ------------------------------------------------------------------ */

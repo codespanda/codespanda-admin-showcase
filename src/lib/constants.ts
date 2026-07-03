@@ -16,7 +16,6 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Templates", href: "#templates" },
   { label: "Categories", href: "#categories" },
   { label: "About", href: "#why-us" },
-  { label: "Portfolio", href: "https://codespanda.github.io/portfolio/", external: true },
 ];
 
 export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
@@ -25,13 +24,12 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
     links: [
       { label: "Alpine Admin React", href: "https://codespanda.github.io/Alpine-Admin-React/dashboard", external: true },
       { label: "Brisk Admin", href: "https://codespanda.github.io/brisk-admin/#/dashboard", external: true },
-      { label: "Coming Soon", href: "#coming-soon" },
+      { label: "Portfolio Template", href: "https://codespanda.github.io/portfolio/", external: true },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Portfolio", href: "https://codespanda.github.io/portfolio/", external: true },
       { label: "Documentation", href: "https://codespanda.github.io/Alpine-Admin-React/docs", external: true },
       { label: "Contact", href: "mailto:hello@codespanda.com", external: true },
     ],

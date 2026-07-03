@@ -14,9 +14,6 @@ const WhyUs = lazy(() =>
 const TechStackSection = lazy(() =>
   import("@/components/sections/TechStackSection").then((m) => ({ default: m.TechStackSection }))
 );
-const CreatorSection = lazy(() =>
-  import("@/components/sections/CreatorSection").then((m) => ({ default: m.CreatorSection }))
-);
 const CTABanner = lazy(() =>
   import("@/components/sections/CTABanner").then((m) => ({ default: m.CTABanner }))
 );
@@ -47,8 +44,7 @@ export function LandingPage() {
         <Suspense fallback={<SectionFallback />}><CategoriesSection /></Suspense>
         <Suspense fallback={<SectionFallback />}><WhyUs /></Suspense>
         <Suspense fallback={<SectionFallback />}><TechStackSection /></Suspense>
-        <Suspense fallback={<SectionFallback />}><CreatorSection /></Suspense>
-        <Suspense fallback={<SectionFallback />}><CTABanner /></Suspense>
+<Suspense fallback={<SectionFallback />}><CTABanner /></Suspense>
       </main>
 
       <Suspense fallback={<SectionFallback />}>
