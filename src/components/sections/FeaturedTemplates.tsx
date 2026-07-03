@@ -185,10 +185,10 @@ export function FeaturedTemplates() {
         <SectionHeading
           eyebrow="Featured Templates"
           title="Our Flagship Products"
-          description="Two premium admin templates crafted to be the foundation of your next project. Each template is production-ready and actively maintained."
+          description="Three premium templates crafted to be the foundation of your next project. Each template is production-ready and actively maintained."
         />
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {TEMPLATES.map((template, i) => (
             <TemplateCard key={template.id} template={template} index={i} />
           ))}

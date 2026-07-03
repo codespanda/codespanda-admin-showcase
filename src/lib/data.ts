@@ -219,10 +219,10 @@ export interface Stat {
 }
 
 export const HERO_STATS: Stat[] = [
-  { label: "Templates available", value: 2 },
+  { label: "Templates available", value: 3 },
   { label: "Pages included", value: 30, suffix: "+" },
-  { label: "Coming soon", value: 10, suffix: "+" },
-  { label: "Technologies", value: 4, suffix: "+" },
+  { label: "Categories", value: 9, suffix: "+" },
+  { label: "Technologies", value: 5, suffix: "+" },
 ];
 
 /* ------------------------------------------------------------------ */
