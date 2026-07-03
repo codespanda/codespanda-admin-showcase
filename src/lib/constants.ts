@@ -15,8 +15,8 @@ export interface NavLink {
 export const NAV_LINKS: NavLink[] = [
   { label: "Templates", href: "#templates" },
   { label: "Categories", href: "#categories" },
-  { label: "Coming Soon", href: "#coming-soon" },
   { label: "About", href: "#why-us" },
+  { label: "Portfolio", href: "https://codespanda.github.io/portfolio/", external: true },
 ];
 
 export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
@@ -31,6 +31,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
   {
     title: "Resources",
     links: [
+      { label: "Portfolio", href: "https://codespanda.github.io/portfolio/", external: true },
       { label: "Documentation", href: "https://codespanda.github.io/Alpine-Admin-React/docs", external: true },
       { label: "Contact", href: "mailto:hello@codespanda.com", external: true },
     ],
