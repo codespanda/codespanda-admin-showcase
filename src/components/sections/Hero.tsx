@@ -124,7 +124,7 @@ export function Hero() {
           <div className="absolute -right-4 top-6 w-[85%] opacity-80">
             <MiniFrame
               imgSrc="https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png"
-              urlLabel="codespanda.github.io/brisk-admin"
+              urlLabel="brisk.codespanda.com"
               delay={0.3}
             />
           </div>

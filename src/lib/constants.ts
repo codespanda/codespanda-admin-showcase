@@ -23,7 +23,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
     title: "Templates",
     links: [
       { label: "Alpine Admin React", href: "https://codespanda.github.io/Alpine-Admin-React/dashboard", external: true },
-      { label: "Brisk Admin", href: "https://codespanda.github.io/brisk-admin/#/dashboard", external: true },
+      { label: "Brisk Admin", href: "https://brisk.codespanda.com/dashboard", external: true },
       { label: "Portfolio Template", href: "https://codespanda.github.io/portfolio/", external: true },
     ],
   },

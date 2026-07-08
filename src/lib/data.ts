@@ -54,7 +54,7 @@ export const TEMPLATES: Template[] = [
     category: "Admin Dashboard",
     badge: "Popular",
     badgeColor: "from-emerald-500 to-teal-600",
-    liveUrl: "https://codespanda.github.io/brisk-admin/#/dashboard",
+    liveUrl: "https://brisk.codespanda.com/dashboard",
     docsUrl: "https://codespanda.github.io/brisk-admin/",
     screenshotUrl: "https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png",
     techStack: ["React", "Dashboard", "Responsive", "Modern UI"],
@@ -195,7 +195,7 @@ export const COMPARISON = {
     name: "Brisk Admin",
     badge: "Popular",
     badgeColor: "bg-emerald-500",
-    url: "https://codespanda.github.io/brisk-admin/#/dashboard",
+    url: "https://brisk.codespanda.com/dashboard",
     rows: [
       "Enterprise UI",
       "React",
