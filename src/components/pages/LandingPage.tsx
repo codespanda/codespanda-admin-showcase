@@ -18,9 +18,6 @@ const TechStackSection = lazy(() =>
 const HomepageFAQ = lazy(() =>
   import("@/components/sections/HomepageFAQ").then((m) => ({ default: m.HomepageFAQ }))
 );
-const ContactSection = lazy(() =>
-  import("@/components/sections/ContactSection").then((m) => ({ default: m.ContactSection }))
-);
 const CTABanner = lazy(() =>
   import("@/components/sections/CTABanner").then((m) => ({ default: m.CTABanner }))
 );
@@ -123,7 +120,6 @@ export function LandingPage() {
         <Suspense fallback={<SectionFallback />}><WhyUs /></Suspense>
         <Suspense fallback={<SectionFallback />}><TechStackSection /></Suspense>
         <Suspense fallback={<SectionFallback />}><HomepageFAQ /></Suspense>
-        <Suspense fallback={<SectionFallback />}><ContactSection /></Suspense>
         <Suspense fallback={<SectionFallback />}><CTABanner /></Suspense>
       </main>
 
