@@ -195,7 +195,11 @@ export const COMPARISON = {
     name: "Brisk Admin",
     badge: "Popular",
     badgeColor: "bg-emerald-500",
+<<<<<<< HEAD
     url: "https://brisk.codespanda.com/dashboard",
+=======
+    url: "https://codespanda.github.io/brisk-admin/dashboard",
+>>>>>>> 1febf9c (Add Alpine Admin React template detail page at /templates/Alpine-Admin-React)
     rows: [
       "Enterprise UI",
       "React",

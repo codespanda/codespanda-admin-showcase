@@ -4,6 +4,7 @@ import { GradientBlobs } from "@/components/shared/GradientBlobs";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { LandingPage } from "@/components/pages/LandingPage";
 import { LegalPage } from "@/components/pages/LegalPage";
+import { AlpineAdminPage } from "@/components/pages/AlpineAdminPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/templates/Alpine-Admin-React" element={<AlpineAdminPage />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Unknown routes fall back to the legal not-found view */}
         <Route path="*" element={<LegalPage />} />
