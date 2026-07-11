@@ -75,6 +75,7 @@ export const TEMPLATES: Template[] = [
     badgeColor: "from-rose-500 to-pink-600",
     liveUrl: "https://codespanda.github.io/portfolio/",
     docsUrl: "https://codespanda.github.io/portfolio/",
+    detailsUrl: "/templates/portfolio",
     screenshotUrl: "https://raw.githubusercontent.com/codespanda/portfolio/main/public/portfolio.jpg",
     techStack: ["React", "Vite", "Tailwind CSS"],
     features: ["Modern Design", "Responsive", "Fast Load", "Customizable"],

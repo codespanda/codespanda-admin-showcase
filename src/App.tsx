@@ -6,6 +6,7 @@ import { LandingPage } from "@/components/pages/LandingPage";
 import { LegalPage } from "@/components/pages/LegalPage";
 import { AlpineAdminPage } from "@/components/pages/AlpineAdminPage";
 import { BriskAdminPage } from "@/components/pages/BriskAdminPage";
+import { PortfolioTemplatePage } from "@/components/pages/PortfolioTemplatePage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/templates/Alpine-Admin-React" element={<AlpineAdminPage />} />
         <Route path="/templates/Brisk-Admin" element={<BriskAdminPage />} />
+        <Route path="/templates/portfolio" element={<PortfolioTemplatePage />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Unknown routes fall back to the legal not-found view */}
         <Route path="*" element={<LegalPage />} />

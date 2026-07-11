@@ -1,0 +1,449 @@
+import { lazy, Suspense } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import {
+  ExternalLink, ArrowLeft, Star, Github, BookOpen, Monitor,
+  CheckCircle2, Tag, Clock,
+  User, Briefcase, Mail, Code2,
+  Zap, Palette, Smartphone, Layers, Globe, MousePointer2,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Navbar } from "@/components/sections/Navbar";
+
+const Footer = lazy(() =>
+  import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
+);
+
+const RAW  = "https://raw.githubusercontent.com/codespanda/portfolio/main/public";
+const LIVE = "https://codespanda.github.io/portfolio";
+
+const GALLERY = [
+  { src: `${RAW}/portfolio.jpg`,  label: "Hero Section" },
+  { src: `${RAW}/about.jpg`,      label: "About Me" },
+  { src: `${RAW}/projects.jpg`,   label: "Projects Showcase" },
+  { src: `${RAW}/skills.jpg`,     label: "Skills & Tech Stack" },
+  { src: `${RAW}/contact.jpg`,    label: "Contact Form" },
+  { src: `${RAW}/footer.jpg`,     label: "Footer" },
+];
+
+const SECTIONS = [
+  { icon: User,         label: "Hero",          desc: "Animated greeting, tagline, and call-to-action buttons with a profile image.",       status: "Live" },
+  { icon: Briefcase,    label: "About",         desc: "Personal bio, experience timeline, and a downloadable resume link.",                  status: "Live" },
+  { icon: Code2,        label: "Projects",      desc: "Project cards with tech tags, live demo, and GitHub links.",                         status: "Live" },
+  { icon: Layers,       label: "Skills",        desc: "Tech stack grid showcasing languages, frameworks, and tools.",                        status: "Live" },
+  { icon: Mail,         label: "Contact",       desc: "Functional contact form with validation and social media links.",                     status: "Live" },
+  { icon: Globe,        label: "Footer",        desc: "Clean footer with social links and copyright info.",                                  status: "Live" },
+];
+
+const FEATURES = [
+  { icon: Palette,      title: "Modern Design",        desc: "Clean, minimal aesthetic with smooth gradients and generous whitespace — designed to impress recruiters and clients." },
+  { icon: Smartphone,   title: "Fully Responsive",     desc: "Looks flawless on every screen size — from mobile to widescreen monitors." },
+  { icon: Zap,          title: "Fast Performance",     desc: "Vite-powered build with lazy loading. Scores high on Lighthouse out of the box." },
+  { icon: MousePointer2,title: "Smooth Animations",    desc: "Framer Motion scroll-triggered animations and hover effects give the portfolio a premium feel." },
+  { icon: Code2,        title: "Easy to Customise",    desc: "All content is in one data file. Change your name, projects, and skills without touching any component code." },
+  { icon: Globe,        title: "Deploy Anywhere",      desc: "Works on GitHub Pages, Vercel, Netlify, or any static host. One command to build and deploy." },
+];
+
+const TECH = [
+  { name: "React 18",      color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"   },
+  { name: "Vite",          color: "bg-violet-500/10  text-violet-600  dark:text-violet-400" },
+  { name: "Tailwind CSS",  color: "bg-sky-500/10     text-sky-600     dark:text-sky-400"    },
+  { name: "Framer Motion", color: "bg-pink-500/10    text-pink-600    dark:text-pink-400"   },
+  { name: "React Router",  color: "bg-red-500/10     text-red-600     dark:text-red-400"    },
+  { name: "Lucide Icons",  color: "bg-rose-500/10    text-rose-600    dark:text-rose-400"   },
+];
+
+const STEPS = [
+  { step: "01", title: "Download or Clone", code: "git clone https://github.com/codespanda/portfolio.git" },
+  { step: "02", title: "Install dependencies", code: "npm install" },
+  { step: "03", title: "Start the dev server", code: "npm run dev" },
+  { step: "04", title: "Customise your content", code: "# Edit src/data/portfolio.js with your info" },
+];
+
+const STATUS_STYLES: Record<string, string> = {
+  Live: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20",
+  New:  "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20",
+  Soon: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
+};
+
+function GalleryImage({ src, label }: { src: string; label: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-md hover:shadow-xl hover:shadow-rose-500/10 transition-all duration-300"
+    >
+      <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
+        <img
+          src={src}
+          alt={label}
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = `${RAW}/portfolio.jpg`;
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <span className="absolute bottom-3 left-3 text-sm font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          {label}
+        </span>
+      </div>
+      <p className="px-4 py-3 text-sm font-medium text-muted-foreground">{label}</p>
+    </motion.div>
+  );
+}
+
+export function PortfolioTemplatePage() {
+  return (
+    <>
+      <Navbar />
+
+      <main className="pt-24">
+        {/* ── Breadcrumb ── */}
+        <div className="mx-auto max-w-6xl px-4 pb-2">
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <ArrowLeft className="h-3.5 w-3.5" />
+            Back to templates
+          </Link>
+        </div>
+
+        {/* ── Hero ── */}
+        <section className="mx-auto max-w-6xl px-4 py-10">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
+            {/* Copy */}
+            <div className="flex-1">
+              <div className="mb-4 flex flex-wrap items-center gap-2">
+                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 px-3 py-1 text-xs font-semibold text-white shadow">
+                  New
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                  Portfolio
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+                  <CheckCircle2 className="h-3 w-3" /> Free
+                </span>
+              </div>
+
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+                Portfolio{" "}
+                <span className="bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text text-transparent">
+                  Template
+                </span>
+              </h1>
+
+              <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
+                A clean, modern portfolio template to <strong className="font-semibold text-foreground">showcase your work, skills, and experience</strong>. Perfect for developers, designers, and freelancers who want a professional online presence.
+              </p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-3">
+                <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  <Star className="h-4 w-4 fill-amber-400 text-amber-400" />
+                  <span className="ml-1 font-medium">5.0</span>
+                </div>
+                <span className="text-muted-foreground">·</span>
+                <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <Tag className="h-3.5 w-3.5" /> MIT License
+                </span>
+                <span className="text-muted-foreground">·</span>
+                <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                  <Clock className="h-3.5 w-3.5" /> Updated July 2025
+                </span>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-rose-500 to-pink-600 text-white hover:from-rose-600 hover:to-pink-700 shadow-lg shadow-rose-500/20"
+                  asChild
+                >
+                  <a href={LIVE} target="_blank" rel="noreferrer noopener">
+                    <ExternalLink className="h-4 w-4" /> Live Preview
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="https://github.com/codespanda/portfolio" target="_blank" rel="noreferrer noopener">
+                    <Github className="h-4 w-4" /> View on GitHub
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <a href={LIVE} target="_blank" rel="noreferrer noopener">
+                    <BookOpen className="h-4 w-4" /> Documentation
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            {/* Hero image */}
+            <div className="relative flex-1 lg:max-w-xl">
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-rose-500/20 to-pink-600/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-rose-500/10">
+                <img
+                  src={`${RAW}/portfolio.jpg`}
+                  alt="Portfolio Template preview"
+                  loading="eager"
+                  decoding="async"
+                  className="w-full object-cover object-top"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Overview ── */}
+        <section className="border-y border-border bg-secondary/20 px-4 py-16">
+          <div className="mx-auto max-w-6xl">
+            <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
+              <div>
+                <h2 className="text-2xl font-bold">What is the Portfolio Template?</h2>
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  The Portfolio Template is a free, open-source personal website starter built for developers, designers, and creatives who want to make a strong first impression online. It covers everything you need — a hero introduction, project showcase, skills section, and contact form — in a <strong className="font-medium text-foreground">single, polished package</strong>.
+                </p>
+                <p className="mt-4 leading-relaxed text-muted-foreground">
+                  All your content lives in a single data file. Update your name, bio, projects, and social links in minutes — no deep knowledge of the codebase required. Just clone, edit, and deploy.
+                </p>
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold">Who is it for?</h2>
+                <ul className="mt-4 space-y-3">
+                  {[
+                    "Frontend developers looking for a professional personal site",
+                    "Designers wanting to showcase their portfolio online",
+                    "Freelancers who need a clean client-facing website",
+                    "Students building their first portfolio for job applications",
+                    "Anyone who wants a fast, modern site without building from scratch",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-muted-foreground">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Gallery ── */}
+        <section className="px-4 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-10 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-rose-500">Gallery</p>
+              <h2 className="text-3xl font-bold">See it in action</h2>
+              <p className="mt-3 text-muted-foreground">
+                A tour of every section — fully responsive and ready to make an impression.
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {GALLERY.map((img) => (
+                <GalleryImage key={img.src} src={img.src} label={img.label} />
+              ))}
+            </div>
+
+            <div className="mt-8 text-center">
+              <Button variant="outline" asChild>
+                <a href={LIVE} target="_blank" rel="noreferrer noopener">
+                  <Monitor className="h-4 w-4" /> View live site
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Features ── */}
+        <section className="border-y border-border bg-secondary/20 px-4 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-12 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-rose-500">Why this template</p>
+              <h2 className="text-3xl font-bold">Everything you need, nothing you don't</h2>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {FEATURES.map((f, i) => (
+                <motion.div
+                  key={f.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-rose-500/10">
+                    <f.icon className="h-5 w-5 text-rose-500" />
+                  </div>
+                  <h3 className="font-semibold">{f.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Sections ── */}
+        <section className="px-4 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-12 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-rose-500">What's included</p>
+              <h2 className="text-3xl font-bold">6 polished sections</h2>
+              <p className="mt-3 text-muted-foreground">
+                Every section is animated, responsive, and ready to personalise with your own content.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {SECTIONS.map((s) => (
+                <div
+                  key={s.label}
+                  className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
+                >
+                  <div className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-secondary">
+                    <s.icon className="text-foreground" style={{ height: 18, width: 18 }} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-2">
+                      <span className="font-semibold text-sm">{s.label}</span>
+                      <span className={`rounded-full border px-2 py-0.5 text-[10px] font-semibold ${STATUS_STYLES[s.status]}`}>
+                        {s.status}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Tech stack ── */}
+        <section className="border-y border-border bg-secondary/20 px-4 py-20">
+          <div className="mx-auto max-w-6xl">
+            <div className="mb-10 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-rose-500">Tech Stack</p>
+              <h2 className="text-3xl font-bold">Built with modern tools</h2>
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {TECH.map((t) => (
+                <span key={t.name} className={`rounded-xl border border-border px-4 py-2 text-sm font-semibold ${t.color}`}>
+                  {t.name}
+                </span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Getting Started ── */}
+        <section className="px-4 py-20">
+          <div className="mx-auto max-w-4xl">
+            <div className="mb-12 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-rose-500">Documentation</p>
+              <h2 className="text-3xl font-bold">Up and running in minutes</h2>
+              <p className="mt-3 text-muted-foreground">
+                Node.js 18+ required. No paid tools, no accounts needed.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {STEPS.map((s) => (
+                <motion.div
+                  key={s.step}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="flex items-start gap-5 rounded-2xl border border-border bg-card p-5 shadow-sm"
+                >
+                  <span className="shrink-0 text-3xl font-black text-rose-500/20 leading-none">{s.step}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="mb-2 font-semibold">{s.title}</p>
+                    <code className="block overflow-x-auto rounded-lg bg-secondary px-4 py-2.5 font-mono text-sm text-foreground">
+                      {s.code}
+                    </code>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-10 rounded-2xl border border-rose-500/20 bg-rose-500/5 p-6">
+              <h3 className="mb-3 font-bold">Project structure</h3>
+              <pre className="overflow-x-auto font-mono text-sm leading-relaxed text-muted-foreground">{`src/
+├── components/
+│   ├── Hero.jsx         # Animated intro section
+│   ├── About.jsx        # Bio and timeline
+│   ├── Projects.jsx     # Project cards grid
+│   ├── Skills.jsx       # Tech stack grid
+│   ├── Contact.jsx      # Contact form
+│   └── Footer.jsx       # Footer with social links
+├── data/
+│   └── portfolio.js     # ← Edit this file with your info
+└── App.jsx              # Root component & routing`}</pre>
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-border bg-card p-6">
+              <h3 className="mb-3 font-bold">Customise your content</h3>
+              <p className="mb-4 text-sm text-muted-foreground">All personal data is centralised in <code className="rounded bg-secondary px-1.5 py-0.5 text-xs font-mono">src/data/portfolio.js</code>. Edit just this one file:</p>
+              <pre className="overflow-x-auto font-mono text-sm leading-relaxed text-muted-foreground">{`export const portfolio = {
+  name: "Your Name",
+  title: "Frontend Developer",
+  bio: "I build things for the web.",
+  projects: [
+    { name: "My App", tech: ["React", "Node"], url: "..." }
+  ],
+  skills: ["React", "TypeScript", "Tailwind CSS"],
+  social: {
+    github: "https://github.com/yourname",
+    linkedin: "https://linkedin.com/in/yourname",
+  },
+};`}</pre>
+            </div>
+
+            <div className="mt-8 text-center">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-rose-500 to-pink-600 text-white hover:from-rose-600 hover:to-pink-700"
+                asChild
+              >
+                <a href={LIVE} target="_blank" rel="noreferrer noopener">
+                  <BookOpen className="h-4 w-4" /> View live demo
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section className="px-4 pb-24">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-rose-500 to-pink-700 p-12 text-center text-white shadow-2xl shadow-rose-500/30">
+            <h2 className="text-3xl font-extrabold">Make it yours.</h2>
+            <p className="mt-3 text-rose-100">
+              Free, open-source, and ready to deploy. Clone it today and have your portfolio live in under an hour.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
+              <Button size="lg" className="bg-white text-rose-600 hover:bg-rose-50" asChild>
+                <a href={LIVE} target="_blank" rel="noreferrer noopener">
+                  <ExternalLink className="h-4 w-4" /> Live Preview
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" className="border-white/30 text-white hover:bg-white/10" asChild>
+                <a href="https://github.com/codespanda/portfolio" target="_blank" rel="noreferrer noopener">
+                  <Github className="h-4 w-4" /> Star on GitHub
+                </a>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Suspense fallback={<div className="h-72 animate-pulse bg-secondary/30" />}>
+        <Footer />
+      </Suspense>
+    </>
+  );
+}
