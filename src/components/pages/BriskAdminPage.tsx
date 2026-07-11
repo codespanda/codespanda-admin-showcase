@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -103,6 +104,18 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
 export function BriskAdminPage() {
   return (
     <>
+      <Helmet>
+        <title>Brisk Admin — Free React Admin Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Free, open-source enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems. Built with React and Vite." />
+        <link rel="canonical" href="https://codespanda.com/templates/Brisk-Admin" />
+        <meta property="og:title" content="Brisk Admin — Free React Admin Dashboard Template | CodeSpanda" />
+        <meta property="og:description" content="Free enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems." />
+        <meta property="og:url" content="https://codespanda.com/templates/Brisk-Admin" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Brisk Admin — Free React Admin Dashboard Template | CodeSpanda" />
+        <meta name="twitter:description" content="Free enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems." />
+      </Helmet>
+
       <Navbar />
 
       <main className="pt-24">

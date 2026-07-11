@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -108,6 +109,18 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
 export function AlpineAdminPage() {
   return (
     <>
+      <Helmet>
+        <title>Alpine Admin React — Free HR Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Free, open-source React admin dashboard with 30+ pages covering HR, payroll, attendance, leave management and performance. Built with Vite, Tailwind CSS and TypeScript." />
+        <link rel="canonical" href="https://codespanda.com/templates/Alpine-Admin-React" />
+        <meta property="og:title" content="Alpine Admin React — Free HR Dashboard Template | CodeSpanda" />
+        <meta property="og:description" content="Free React admin dashboard with 30+ pages. HR, payroll, attendance, leave management and performance — built with Vite, Tailwind CSS and TypeScript." />
+        <meta property="og:url" content="https://codespanda.com/templates/Alpine-Admin-React" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Alpine Admin React — Free HR Dashboard Template | CodeSpanda" />
+        <meta name="twitter:description" content="Free React admin dashboard with 30+ pages. HR, payroll, attendance, leave management and performance — built with Vite, Tailwind CSS and TypeScript." />
+      </Helmet>
+
       <Navbar />
 
       <main className="pt-24">

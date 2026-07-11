@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -99,6 +100,18 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
 export function PortfolioTemplatePage() {
   return (
     <>
+      <Helmet>
+        <title>Portfolio Template — Free React Portfolio for Developers | CodeSpanda</title>
+        <meta name="description" content="Free, open-source React portfolio template for developers and designers. Animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
+        <link rel="canonical" href="https://codespanda.com/templates/portfolio" />
+        <meta property="og:title" content="Portfolio Template — Free React Portfolio for Developers | CodeSpanda" />
+        <meta property="og:description" content="Free React portfolio template with animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
+        <meta property="og:url" content="https://codespanda.com/templates/portfolio" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:title" content="Portfolio Template — Free React Portfolio for Developers | CodeSpanda" />
+        <meta name="twitter:description" content="Free React portfolio template with animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
+      </Helmet>
+
       <Navbar />
 
       <main className="pt-24">
