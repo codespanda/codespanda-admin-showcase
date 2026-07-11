@@ -5,6 +5,7 @@ import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { LandingPage } from "@/components/pages/LandingPage";
 import { LegalPage } from "@/components/pages/LegalPage";
 import { AlpineAdminPage } from "@/components/pages/AlpineAdminPage";
+import { BriskAdminPage } from "@/components/pages/BriskAdminPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/templates/Alpine-Admin-React" element={<AlpineAdminPage />} />
+        <Route path="/templates/brisk-admin" element={<BriskAdminPage />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Unknown routes fall back to the legal not-found view */}
         <Route path="*" element={<LegalPage />} />
