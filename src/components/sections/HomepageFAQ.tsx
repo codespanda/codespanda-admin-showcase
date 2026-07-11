@@ -33,7 +33,7 @@ export function HomepageFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 px-4" aria-labelledby="faq-heading">
+    <section id="faq" className="py-20 px-4" aria-labelledby="faq-heading">
       <div className="mx-auto max-w-3xl">
         <div className="mb-12 text-center">
           <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">

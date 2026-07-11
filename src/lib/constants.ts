@@ -16,6 +16,8 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Templates", href: "/#templates" },
   { label: "Categories", href: "/#categories" },
   { label: "About", href: "/#why-us" },
+  { label: "FAQ", href: "/#faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
