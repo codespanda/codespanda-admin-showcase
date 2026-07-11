@@ -22,6 +22,7 @@ export interface Template {
   badgeColor: string;
   liveUrl: string;
   docsUrl: string;
+  detailsUrl?: string;
   screenshotUrl?: string;
   techStack: string[];
   features: string[];
@@ -40,6 +41,7 @@ export const TEMPLATES: Template[] = [
     badgeColor: "from-indigo-500 to-purple-600",
     liveUrl: "https://codespanda.github.io/Alpine-Admin-React/dashboard",
     docsUrl: "https://codespanda.github.io/Alpine-Admin-React/docs",
+    detailsUrl: "/templates/Alpine-Admin-React",
     screenshotUrl: "https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public/dashboard.png",
     techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     features: ["Modern Design", "30+ Pages", "Dark Mode", "Recharts"],

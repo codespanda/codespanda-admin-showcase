@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink, Monitor, Moon, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -136,10 +137,17 @@ function TemplateCard({ template, index }: { template: Template; index: number }
               </a>
             </Button>
             <Button variant="outline" className="flex-1" asChild>
-              <a href={template.docsUrl} target="_blank" rel="noreferrer noopener">
-                <Monitor className="h-4 w-4" />
-                View Details
-              </a>
+              {template.detailsUrl ? (
+                <Link to={template.detailsUrl}>
+                  <Monitor className="h-4 w-4" />
+                  View Details
+                </Link>
+              ) : (
+                <a href={template.docsUrl} target="_blank" rel="noreferrer noopener">
+                  <Monitor className="h-4 w-4" />
+                  View Details
+                </a>
+              )}
             </Button>
           </div>
         </div>
