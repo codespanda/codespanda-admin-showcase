@@ -1,6 +1,17 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <!-- GitHub Pages SPA: restore path encoded by 404.html -->
+    <script>
+      (function () {
+        var p = new URLSearchParams(window.location.search).get('p');
+        if (p) {
+          var h = new URLSearchParams(window.location.search).get('h') || '';
+          window.history.replaceState(null, '', decodeURIComponent(p) + decodeURIComponent(h));
+        }
+      })();
+    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8S1SQRNF5Y"></script>
     <script>
