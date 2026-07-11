@@ -69,6 +69,25 @@ const TECH = [
   { name: "React Hook Form","color": "bg-pink-500/10  text-pink-600     dark:text-pink-400"    },
 ];
 
+const ALPINE_FAQ = [
+  {
+    q: "Can I use Alpine Admin in commercial projects?",
+    a: "Yes. Alpine Admin React is released under the MIT License. You can use it in commercial products, client work, and white-labeled HRMS systems with no attribution required.",
+  },
+  {
+    q: "Does it support dark mode?",
+    a: "Yes. Light and dark themes ship out of the box, toggled via Tailwind's dark class strategy. Every component — including charts and data tables — adapts automatically.",
+  },
+  {
+    q: "Is TypeScript required?",
+    a: "The template is TypeScript-first. You can rename files to .jsx/.js and strip type annotations if you prefer plain JavaScript, but you'll give up autocomplete, inline type errors, and the refactoring safety net.",
+  },
+  {
+    q: "Can I remove Recharts if I'm using a different chart library?",
+    a: "Recharts is only used in the Charts module and Dashboard KPI widgets. Remove those pages and the npm package — every other module (Employees, Payroll, Attendance, etc.) is completely independent.",
+  },
+];
+
 const STEPS = [
   { step: "01", title: "Download or Clone", code: "git clone https://github.com/codespanda/Alpine-Admin-React.git" },
   { step: "02", title: "Install dependencies", code: "npm install" },
@@ -110,20 +129,21 @@ export function AlpineAdminPage() {
   return (
     <>
       <Helmet>
-        <title>Alpine Admin React — Free HR Dashboard Template | CodeSpanda</title>
-        <meta name="description" content="Free, open-source React admin dashboard with 30+ pages covering HR, payroll, attendance, leave management and performance. Built with Vite, Tailwind CSS and TypeScript." />
+        <title>Alpine Admin React — Free React HR Management Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
+        <meta name="keywords" content="react hr management dashboard template, free react admin template, hr dashboard react, react admin dashboard, tailwind hr template, vite react dashboard" />
         <link rel="canonical" href="https://codespanda.com/templates/Alpine-Admin-React" />
-        <meta property="og:title" content="Alpine Admin React — Free HR Dashboard Template | CodeSpanda" />
-        <meta property="og:description" content="Free React admin dashboard with 30+ pages. HR, payroll, attendance, leave management and performance — built with Vite, Tailwind CSS and TypeScript." />
+        <meta property="og:title" content="Alpine Admin React — Free React HR Management Dashboard Template | CodeSpanda" />
+        <meta property="og:description" content="Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/Alpine-Admin-React" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Alpine Admin React — Free HR Dashboard Template | CodeSpanda" />
-        <meta name="twitter:description" content="Free React admin dashboard with 30+ pages. HR, payroll, attendance, leave management and performance — built with Vite, Tailwind CSS and TypeScript." />
+        <meta name="twitter:title" content="Alpine Admin React — Free React HR Management Dashboard Template | CodeSpanda" />
+        <meta name="twitter:description" content="Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Alpine Admin React",
-          "description": "Free, open-source HR admin dashboard template with 30+ pages covering employees, payroll, attendance, leave management and performance. Built with React, Vite, Tailwind CSS and TypeScript.",
+          "description": "Alpine Admin React is a free HR dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/Alpine-Admin-React",
           "image": "https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public/dashboard.png",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
@@ -142,6 +162,15 @@ export function AlpineAdminPage() {
             "bestRating": "5",
             "worstRating": "1"
           }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": ALPINE_FAQ.map((item) => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": { "@type": "Answer", "text": item.a },
+          })),
         })}</script>
       </Helmet>
 
@@ -184,7 +213,7 @@ export function AlpineAdminPage() {
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
-                A comprehensive HR admin dashboard with <strong className="font-semibold text-foreground">30+ production-ready pages</strong> — employees, payroll, attendance, leave, performance, and reporting — all built with the modern React ecosystem.
+                A complete HR dashboard template covering <strong className="font-semibold text-foreground">employees, payroll, attendance, and leave management</strong> across 30+ production-ready pages — built with React, Vite, Tailwind CSS, and TypeScript.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -248,21 +277,21 @@ export function AlpineAdminPage() {
               <div>
                 <h2 className="text-2xl font-bold">What is Alpine Admin React?</h2>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Alpine Admin React is a free, open-source HR management dashboard template designed for developers who need a <strong className="font-medium text-foreground">solid, real-world starting point</strong> for their next admin project. Instead of boilerplate UI components, you get a fully wired application with real navigation, working page layouts, and realistic mock data — everything you'd expect in a production-grade internal tool.
+                  Alpine Admin React is a free, open-source <strong className="font-medium text-foreground">React HR management dashboard template</strong> built for developers who need a solid, real-world starting point. Instead of boilerplate UI components, you get a fully wired HR management application — real navigation, working page layouts, and realistic mock data across every module.
                 </p>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Whether you're building a custom HR portal, an employee management system, or using it as a reference implementation for your own dashboard, Alpine Admin gives you a clean foundation to build on without starting from zero.
+                  Whether you're building a custom HR portal, an employee management system, or a white-label HRMS product, Alpine Admin gives you a production-ready foundation without starting from zero.
                 </p>
               </div>
               <div>
                 <h2 className="text-2xl font-bold">Who is it for?</h2>
                 <ul className="mt-4 space-y-3">
                   {[
-                    "Frontend developers building internal admin tools",
-                    "Startups launching their first HR or operations portal",
-                    "Freelancers looking for a premium-quality free template",
-                    "Teams prototyping before committing to a design system",
-                    "Developers learning modern React patterns in a real app",
+                    "Agencies building white-label HRMS products for clients",
+                    "Teams replacing spreadsheets with a custom internal HR portal",
+                    "Developers studying enterprise-grade React layout patterns",
+                    "Startups that need a polished HR system without months of design work",
+                    "Freelancers looking for a production-quality free template base",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-muted-foreground">
                       <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-500" />
@@ -335,7 +364,7 @@ export function AlpineAdminPage() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">What's included</p>
-              <h2 className="text-3xl font-bold">12 fully built modules</h2>
+              <h2 className="text-3xl font-bold">12 fully built HR management modules</h2>
               <p className="mt-3 text-muted-foreground">
                 Every module ships with working layouts, realistic sample data, and full responsiveness.
               </p>
@@ -436,6 +465,24 @@ export function AlpineAdminPage() {
                   <BookOpen className="h-4 w-4" /> Read the full docs
                 </a>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="border-y border-border bg-secondary/20 px-4 py-20">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-12 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
+              <h2 className="text-3xl font-bold">Common questions</h2>
+            </div>
+            <div className="divide-y divide-border">
+              {ALPINE_FAQ.map((item) => (
+                <div key={item.q} className="py-6">
+                  <h3 className="font-semibold text-foreground">{item.q}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{item.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

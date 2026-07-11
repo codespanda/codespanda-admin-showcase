@@ -54,6 +54,25 @@ const TECH = [
   { name: "Lucide Icons",  color: "bg-rose-500/10    text-rose-600    dark:text-rose-400"   },
 ];
 
+const PORTFOLIO_FAQ = [
+  {
+    q: "Can I use this template for client work or commercial sites?",
+    a: "Yes. The MIT License covers commercial use. Build your own portfolio, a client's personal site, or a freelancer's landing page — no restrictions.",
+  },
+  {
+    q: "Do I need to know React to customise it?",
+    a: "Basic React familiarity helps for structural changes, but all personalizable content — your name, projects, skills, and social links — lives in a single file: src/data/portfolio.js. If you can edit a JavaScript object, you can make it your own.",
+  },
+  {
+    q: "How do I deploy it?",
+    a: "Run `npm run build` to produce a static dist/ folder, then upload it to GitHub Pages, Vercel, or Netlify. A GitHub Actions workflow for automated Pages deployment is included in the repo.",
+  },
+  {
+    q: "Can I add more sections?",
+    a: "Yes. Each section is a standalone React component in src/components/. Add a new component, import it in App.jsx, and add your content to portfolio.js. The scroll-reveal animations will pick it up automatically.",
+  },
+];
+
 const STEPS = [
   { step: "01", title: "Download or Clone", code: "git clone https://github.com/codespanda/portfolio.git" },
   { step: "02", title: "Install dependencies", code: "npm install" },
@@ -101,21 +120,22 @@ export function PortfolioTemplatePage() {
   return (
     <>
       <Helmet>
-        <title>Portfolio Template — Free React Portfolio for Developers | CodeSpanda</title>
-        <meta name="description" content="Free, open-source React portfolio template for developers and designers. Animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
-        <link rel="canonical" href="https://codespanda.com/templates/portfolio" />
-        <meta property="og:title" content="Portfolio Template — Free React Portfolio for Developers | CodeSpanda" />
-        <meta property="og:description" content="Free React portfolio template with animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
-        <meta property="og:url" content="https://codespanda.com/templates/portfolio" />
+        <title>Free React Portfolio Template for Developers &amp; Designers | CodeSpanda</title>
+        <meta name="description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
+        <meta name="keywords" content="free react portfolio template, react portfolio website, vite portfolio template, tailwind css portfolio, react developer portfolio, free portfolio template" />
+        <link rel="canonical" href="https://codespanda.com/templates/portfolio-template" />
+        <meta property="og:title" content="Free React Portfolio Template for Developers &amp; Designers | CodeSpanda" />
+        <meta property="og:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
+        <meta property="og:url" content="https://codespanda.com/templates/portfolio-template" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Portfolio Template — Free React Portfolio for Developers | CodeSpanda" />
-        <meta name="twitter:description" content="Free React portfolio template with animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
+        <meta name="twitter:title" content="Free React Portfolio Template for Developers &amp; Designers | CodeSpanda" />
+        <meta name="twitter:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Portfolio Template",
-          "description": "Free, open-source React portfolio template for developers and designers. Animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS.",
-          "url": "https://codespanda.com/templates/portfolio",
+          "description": "A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize.",
+          "url": "https://codespanda.com/templates/portfolio-template",
           "image": "https://raw.githubusercontent.com/codespanda/portfolio/main/public/portfolio.jpg",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Portfolio",
@@ -133,6 +153,15 @@ export function PortfolioTemplatePage() {
             "bestRating": "5",
             "worstRating": "1"
           }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": PORTFOLIO_FAQ.map((item) => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": { "@type": "Answer", "text": item.a },
+          })),
         })}</script>
       </Helmet>
 
@@ -175,7 +204,7 @@ export function PortfolioTemplatePage() {
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
-                A clean, modern portfolio template to <strong className="font-semibold text-foreground">showcase your work, skills, and experience</strong>. Perfect for developers, designers, and freelancers who want a professional online presence.
+                A <strong className="font-semibold text-foreground">fast-loading React portfolio template</strong> for developers and designers — showcase your work and experience in minutes. Built with Vite and Tailwind CSS, free to download and customize.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -451,6 +480,49 @@ export function PortfolioTemplatePage() {
                   <BookOpen className="h-4 w-4" /> View live demo
                 </a>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── From a freelance developer ── */}
+        <section className="px-4 py-20">
+          <div className="mx-auto max-w-3xl">
+            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-8">
+              <p className="text-sm font-semibold uppercase tracking-widest text-rose-500 mb-4">Built by a freelance developer, for freelance developers</p>
+              <p className="leading-relaxed text-muted-foreground">
+                This template was built by <strong className="font-semibold text-foreground">Deepak Kumar</strong> while working as a freelance developer — the Contact section isn't just a form, it's a lead funnel. The "Hire Me" call-to-action is intentionally prominent because that's what a freelance portfolio needs to do: turn visitors into project inquiries.
+              </p>
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Every section was designed with a real hiring manager or client in mind. The Projects grid puts your best work front and center. The Skills section speaks the language recruiters filter for. The About section gives you room to tell your story without sounding like a résumé.
+              </p>
+              <div className="mt-6">
+                <a
+                  href="https://codespanda.com"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="text-sm font-semibold text-rose-500 hover:underline underline-offset-2"
+                >
+                  See CodeSpanda's own portfolio templates →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="border-y border-border bg-secondary/20 px-4 py-20">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-12 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-rose-500">FAQ</p>
+              <h2 className="text-3xl font-bold">Common questions</h2>
+            </div>
+            <div className="divide-y divide-border">
+              {PORTFOLIO_FAQ.map((item) => (
+                <div key={item.q} className="py-6">
+                  <h3 className="font-semibold text-foreground">{item.q}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{item.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

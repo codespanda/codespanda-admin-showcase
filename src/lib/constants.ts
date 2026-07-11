@@ -2,7 +2,7 @@
 export const SITE = {
   name: "CodeSpanda",
   tagline: "Premium React Templates for Modern Developers",
-  email: "hello@codespanda.com",
+  email: "contact@codespanda.com",
   githubOrg: "https://github.com/codespanda",
 } as const;
 
@@ -31,7 +31,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
     title: "Resources",
     links: [
       { label: "Documentation", href: "https://codespanda.github.io/Alpine-Admin-React/docs", external: true },
-      { label: "Contact", href: "mailto:hello@codespanda.com", external: true },
+      { label: "Contact", href: "mailto:contact@codespanda.com", external: true },
     ],
   },
   {

@@ -55,13 +55,33 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 const TECH = [
-  { name: "React 18",     color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"   },
-  { name: "Vite",         color: "bg-violet-500/10  text-violet-600  dark:text-violet-400" },
-  { name: "JavaScript",   color: "bg-yellow-500/10  text-yellow-600  dark:text-yellow-400" },
-  { name: "CSS Modules",  color: "bg-blue-500/10    text-blue-600    dark:text-blue-400"   },
-  { name: "React Router", color: "bg-red-500/10     text-red-600     dark:text-red-400"    },
-  { name: "Recharts",     color: "bg-orange-500/10  text-orange-600  dark:text-orange-400" },
-  { name: "Lucide Icons", color: "bg-rose-500/10    text-rose-600    dark:text-rose-400"   },
+  { name: "React 18",     color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"    },
+  { name: "Vite",         color: "bg-violet-500/10  text-violet-600  dark:text-violet-400"  },
+  { name: "shadcn/ui",    color: "bg-slate-500/10   text-slate-600   dark:text-slate-300"   },
+  { name: "Tailwind CSS", color: "bg-sky-500/10     text-sky-600     dark:text-sky-400"     },
+  { name: "JavaScript",   color: "bg-yellow-500/10  text-yellow-600  dark:text-yellow-400"  },
+  { name: "React Router", color: "bg-red-500/10     text-red-600     dark:text-red-400"     },
+  { name: "Recharts",     color: "bg-orange-500/10  text-orange-600  dark:text-orange-400"  },
+  { name: "Lucide Icons", color: "bg-rose-500/10    text-rose-600    dark:text-rose-400"    },
+];
+
+const BRISK_FAQ = [
+  {
+    q: "Is Brisk Admin free to use commercially?",
+    a: "Yes. Brisk Admin is released under the MIT License. Use it in client work, commercial SaaS products, or any internal tool — no attribution needed.",
+  },
+  {
+    q: "Does Brisk Admin use TypeScript?",
+    a: "No. Brisk Admin is built with plain JavaScript and CSS Modules. This keeps the setup light and the learning curve low — no tsconfig, no type errors to chase before you can start building.",
+  },
+  {
+    q: "How is Brisk Admin different from Alpine Admin React?",
+    a: "Alpine Admin is an HR-focused template with 30+ pages and TypeScript. Brisk Admin is a CRM/e-commerce template with 8 focused pages and plain JavaScript. Choose Alpine for deep HR data; choose Brisk for faster iteration on business UIs.",
+  },
+  {
+    q: "Can I add TypeScript to Brisk Admin?",
+    a: "Yes. Run `npm install -D typescript @types/react @types/react-dom`, add a tsconfig.json, and rename .jsx to .tsx. You can migrate incrementally — TypeScript is fully compatible with the existing Vite setup.",
+  },
 ];
 
 const STEPS = [
@@ -105,20 +125,21 @@ export function BriskAdminPage() {
   return (
     <>
       <Helmet>
-        <title>Brisk Admin — Free React Admin Dashboard Template | CodeSpanda</title>
-        <meta name="description" content="Free, open-source enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems. Built with React and Vite." />
+        <title>Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
+        <meta name="keywords" content="shadcn ui dashboard template, free react admin template, react crm dashboard, shadcn admin panel, react dashboard template, vite admin template" />
         <link rel="canonical" href="https://codespanda.com/templates/Brisk-Admin" />
-        <meta property="og:title" content="Brisk Admin — Free React Admin Dashboard Template | CodeSpanda" />
-        <meta property="og:description" content="Free enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems." />
+        <meta property="og:title" content="Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda" />
+        <meta property="og:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <meta property="og:url" content="https://codespanda.com/templates/Brisk-Admin" />
         <meta property="og:type" content="website" />
-        <meta name="twitter:title" content="Brisk Admin — Free React Admin Dashboard Template | CodeSpanda" />
-        <meta name="twitter:description" content="Free enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems." />
+        <meta name="twitter:title" content="Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda" />
+        <meta name="twitter:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Brisk Admin",
-          "description": "Free, open-source enterprise-grade React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems.",
+          "description": "Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive.",
           "url": "https://codespanda.com/templates/Brisk-Admin",
           "image": "https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
@@ -137,6 +158,15 @@ export function BriskAdminPage() {
             "bestRating": "5",
             "worstRating": "1"
           }
+        })}</script>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": BRISK_FAQ.map((item) => ({
+            "@type": "Question",
+            "name": item.q,
+            "acceptedAnswer": { "@type": "Answer", "text": item.a },
+          })),
         })}</script>
       </Helmet>
 
@@ -179,7 +209,7 @@ export function BriskAdminPage() {
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
-                A sleek, <strong className="font-semibold text-foreground">enterprise-grade admin dashboard</strong> with clean layouts and a polished UI. Perfect for building business management systems, e-commerce backends, and CRM portals.
+                A free <strong className="font-semibold text-foreground">shadcn/ui React dashboard template</strong> for CRMs and business management apps — enterprise UI polish, fully responsive, and easy to retheme with Tailwind CSS.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -247,10 +277,10 @@ export function BriskAdminPage() {
               <div>
                 <h2 className="text-2xl font-bold">What is Brisk Admin?</h2>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Brisk Admin is a free, open-source admin dashboard template designed for teams who need a <strong className="font-medium text-foreground">clean, professional starting point</strong> for business management UIs. It focuses on usability and visual clarity over feature density — every screen is uncluttered and easy to navigate.
+                  Brisk Admin is a free, open-source <strong className="font-medium text-foreground">shadcn/ui React dashboard template</strong> built for CRM portals and business management apps. It's built on the same component primitives as shadcn/ui — every UI element is composable, unstyled-first, and easy to retheme with Tailwind CSS utility classes.
                 </p>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Unlike bloated commercial dashboards, Brisk ships only what you need: a solid layout system, realistic page structures, and well-organised components. No unnecessary abstractions — just clean React code you can build on immediately.
+                  Unlike bloated commercial dashboards, Brisk ships only what you need: a solid layout system, realistic page structures, and well-organised shadcn/ui components. No unnecessary abstractions — just clean React code you can build on immediately.
                 </p>
               </div>
               <div>
@@ -380,6 +410,83 @@ export function BriskAdminPage() {
           </div>
         </section>
 
+        {/* ── Comparison: Alpine vs Brisk ── */}
+        <section className="px-4 py-20">
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-10 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-500">Choosing a template</p>
+              <h2 className="text-3xl font-bold">Alpine Admin React vs Brisk Admin</h2>
+              <p className="mt-3 mx-auto max-w-xl text-muted-foreground">
+                Both are free React dashboard templates from CodeSpanda — here's how they differ so you can pick the right one for your project.
+              </p>
+            </div>
+            <div className="grid gap-6 lg:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-card p-7 shadow-sm">
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
+                    <LayoutDashboard className="h-5 w-5 text-indigo-500" />
+                  </div>
+                  <div>
+                    <p className="font-bold">Alpine Admin React</p>
+                    <p className="text-xs text-muted-foreground">HR &amp; people ops focus</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm text-muted-foreground">
+                  {[
+                    "30+ pages across 12 HR modules",
+                    "TypeScript — fully typed components",
+                    "Recharts for HR analytics and reporting",
+                    "Complex HR data: employees, payroll, leave flows",
+                    "Best for: internal HR portals and HRMS products",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-400" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-6">
+                  <Link
+                    to="/templates/Alpine-Admin-React"
+                    className="text-sm font-semibold text-indigo-500 hover:underline underline-offset-2"
+                  >
+                    View Alpine Admin React →
+                  </Link>
+                </div>
+              </div>
+
+              <div className="relative rounded-2xl border-2 border-emerald-500/40 bg-card p-7 shadow-sm">
+                <div className="absolute -top-3 left-6">
+                  <span className="rounded-full bg-emerald-500 px-3 py-0.5 text-xs font-semibold text-white">You are here</span>
+                </div>
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                    <LayoutDashboard className="h-5 w-5 text-emerald-500" />
+                  </div>
+                  <div>
+                    <p className="font-bold">Brisk Admin</p>
+                    <p className="text-xs text-muted-foreground">CRM &amp; e-commerce focus</p>
+                  </div>
+                </div>
+                <ul className="space-y-2.5 text-sm text-muted-foreground">
+                  {[
+                    "8 clean, focused pages",
+                    "JavaScript — no TypeScript setup required",
+                    "Lighter bundle, faster to prototype",
+                    "Business data: orders, customers, products",
+                    "Best for: CRM portals and e-commerce backends",
+                  ].map((item) => (
+                    <li key={item} className="flex items-start gap-2.5">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ── Getting Started ── */}
         <section className="px-4 py-20">
           <div className="mx-auto max-w-4xl">
@@ -440,6 +547,24 @@ export function BriskAdminPage() {
                   <BookOpen className="h-4 w-4" /> View Documentation
                 </a>
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* ── FAQ ── */}
+        <section className="border-y border-border bg-secondary/20 px-4 py-20">
+          <div className="mx-auto max-w-3xl">
+            <div className="mb-12 text-center">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-emerald-500">FAQ</p>
+              <h2 className="text-3xl font-bold">Common questions</h2>
+            </div>
+            <div className="divide-y divide-border">
+              {BRISK_FAQ.map((item) => (
+                <div key={item.q} className="py-6">
+                  <h3 className="font-semibold text-foreground">{item.q}</h3>
+                  <p className="mt-2 leading-relaxed text-muted-foreground">{item.a}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>

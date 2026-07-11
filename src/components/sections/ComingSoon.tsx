@@ -79,7 +79,7 @@ export function ComingSoon() {
             </p>
           </div>
           <Button variant="gradient" asChild>
-            <a href="mailto:hello@codespanda.com?subject=Notify me about new templates">
+            <a href="mailto:contact@codespanda.com?subject=Notify me about new templates">
               <Bell className="h-4 w-4" />
               Get Notified
             </a>

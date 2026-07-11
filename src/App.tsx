@@ -18,6 +18,8 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/templates/Alpine-Admin-React" element={<AlpineAdminPage />} />
         <Route path="/templates/Brisk-Admin" element={<BriskAdminPage />} />
+        <Route path="/templates/portfolio-template" element={<PortfolioTemplatePage />} />
+        {/* Redirect legacy URL — render the same page so old links don't 404 */}
         <Route path="/templates/portfolio" element={<PortfolioTemplatePage />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Unknown routes fall back to the legal not-found view */}
