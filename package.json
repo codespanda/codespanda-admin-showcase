@@ -6,7 +6,8 @@
   "description": "Premium SaaS landing page showcasing an AI-powered admin dashboard.",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/generate-sitemap.js && tsc -b && vite build",
+    "build": "node scripts/convert-og-image.js && node scripts/generate-sitemap.js && tsc -b && vite build",
+    "og-image": "node scripts/convert-og-image.js",
     "sitemap": "node scripts/generate-sitemap.js",
     "preview": "vite preview",
     "lint": "eslint ."
@@ -37,6 +38,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
+    "sharp": "^0.35.3",
     "tailwindcss": "^3.4.17",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.7.2",
