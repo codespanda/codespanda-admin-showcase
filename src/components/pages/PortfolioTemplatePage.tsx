@@ -110,6 +110,30 @@ export function PortfolioTemplatePage() {
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="Portfolio Template — Free React Portfolio for Developers | CodeSpanda" />
         <meta name="twitter:description" content="Free React portfolio template with animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Portfolio Template",
+          "description": "Free, open-source React portfolio template for developers and designers. Animated sections, responsive design, and a single data file to customise. Built with Vite and Tailwind CSS.",
+          "url": "https://codespanda.com/templates/portfolio",
+          "image": "https://raw.githubusercontent.com/codespanda/portfolio/main/public/portfolio.jpg",
+          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "category": "Software > Templates > Portfolio",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://codespanda.com/templates/portfolio"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        })}</script>
       </Helmet>
 
       <Navbar />

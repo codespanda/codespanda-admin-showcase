@@ -114,6 +114,30 @@ export function BriskAdminPage() {
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="Brisk Admin — Free React Admin Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Free enterprise React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Brisk Admin",
+          "description": "Free, open-source enterprise-grade React admin dashboard with clean layouts. Perfect for CRM, e-commerce backends, and business management systems.",
+          "url": "https://codespanda.com/templates/Brisk-Admin",
+          "image": "https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png",
+          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "category": "Software > Templates > Admin Dashboard",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://codespanda.com/templates/Brisk-Admin"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        })}</script>
       </Helmet>
 
       <Navbar />

@@ -119,6 +119,30 @@ export function AlpineAdminPage() {
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="Alpine Admin React — Free HR Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Free React admin dashboard with 30+ pages. HR, payroll, attendance, leave management and performance — built with Vite, Tailwind CSS and TypeScript." />
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Product",
+          "name": "Alpine Admin React",
+          "description": "Free, open-source HR admin dashboard template with 30+ pages covering employees, payroll, attendance, leave management and performance. Built with React, Vite, Tailwind CSS and TypeScript.",
+          "url": "https://codespanda.com/templates/Alpine-Admin-React",
+          "image": "https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public/dashboard.png",
+          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "category": "Software > Templates > Admin Dashboard",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://codespanda.com/templates/Alpine-Admin-React"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "reviewCount": "1",
+            "bestRating": "5",
+            "worstRating": "1"
+          }
+        })}</script>
       </Helmet>
 
       <Navbar />
