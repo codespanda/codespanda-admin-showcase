@@ -44,8 +44,8 @@ function NavItem({ link }: { link: { label: string; href: string; external?: boo
     );
   }
 
-  // Hash links scroll within the same page
-  if (link.href.startsWith("#")) {
+  // Hash or root-hash links — use plain <a> so the browser navigates to / then scrolls
+  if (link.href.startsWith("#") || link.href.startsWith("/#")) {
     return (
       <a href={link.href} className={cls}>
         {link.label}
@@ -54,7 +54,7 @@ function NavItem({ link }: { link: { label: string; href: string; external?: boo
   }
 
   return (
-    <Link to={`/${link.href}`} className={cls}>
+    <Link to={link.href} className={cls}>
       {link.label}
     </Link>
   );
@@ -132,7 +132,7 @@ export function Navbar() {
                         {link.label}
                         <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
                       </a>
-                    ) : link.href.startsWith("#") ? (
+                    ) : link.href.startsWith("#") || link.href.startsWith("/#") ? (
                       <a
                         href={link.href}
                         className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
@@ -141,7 +141,7 @@ export function Navbar() {
                       </a>
                     ) : (
                       <Link
-                        to={`/${link.href}`}
+                        to={link.href}
                         className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
                       >
                         {link.label}
