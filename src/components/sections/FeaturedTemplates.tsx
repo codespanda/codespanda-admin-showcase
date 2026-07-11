@@ -74,6 +74,8 @@ function TemplateCard({ template, index }: { template: Template; index: number }
             <img
               src={template.screenshotUrl}
               alt={`${template.name} preview`}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
             />
           ) : (

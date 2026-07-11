@@ -88,6 +88,8 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
         <img
           src={src}
           alt={label}
+          loading="lazy"
+          decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = `${RAW}/dashboard.png`;
@@ -193,6 +195,8 @@ export function AlpineAdminPage() {
                 <img
                   src={`${RAW}/dashboard.png`}
                   alt="Alpine Admin React dashboard preview"
+                  loading="eager"
+                  decoding="async"
                   className="w-full object-cover object-top"
                 />
               </div>
