@@ -58,7 +58,7 @@ export const TEMPLATES: Template[] = [
     badgeColor: "from-emerald-500 to-teal-600",
     liveUrl: "https://brisk.codespanda.com/dashboard",
     docsUrl: "https://codespanda.github.io/brisk-admin/",
-    detailsUrl: "/templates/brisk-admin",
+    detailsUrl: "/templates/Brisk-Admin",
     screenshotUrl: "https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png",
     techStack: ["React", "Dashboard", "Responsive", "Modern UI"],
     features: ["Enterprise UI", "Clean Layout", "Responsive", "Customizable"],
