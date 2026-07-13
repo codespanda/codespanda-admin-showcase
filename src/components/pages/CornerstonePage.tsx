@@ -17,7 +17,7 @@ const Footer = lazy(() =>
 );
 
 const GITHUB_URL = "https://github.com/codespanda/cornerstone";
-const PREVIEW_URL = "https://cornerstone.codespanda.com/dashboard";
+const PREVIEW_URL = "https://cornerstone.codespanda.com/";
 const RAW = "https://raw.githubusercontent.com/codespanda/cornerstone/main/public";
 
 const GALLERY = [
