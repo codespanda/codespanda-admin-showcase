@@ -17,6 +17,7 @@ const Footer = lazy(() =>
 );
 
 const GITHUB_URL = "https://github.com/codespanda/cornerstone";
+const DOCS_URL = "https://cornerstone.codespanda.com/docs/";
 const PREVIEW_URL = "https://cornerstone.codespanda.com/";
 const RAW = "https://raw.githubusercontent.com/codespanda/cornerstone/main/public";
 
@@ -246,7 +247,7 @@ export function CornerstonePage() {
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href={`${GITHUB_URL}#readme`} target="_blank" rel="noreferrer noopener">
+                  <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">
                     <BookOpen className="h-4 w-4" /> Documentation
                   </a>
                 </Button>
@@ -460,7 +461,7 @@ export function CornerstonePage() {
 
             <div className="mt-8 text-center">
               <Button variant="gradient" size="lg" asChild>
-                <a href={`${GITHUB_URL}#readme`} target="_blank" rel="noreferrer noopener">
+                <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">
                   <BookOpen className="h-4 w-4" /> Read the full docs
                 </a>
               </Button>
