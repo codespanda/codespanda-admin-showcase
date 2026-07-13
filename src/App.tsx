@@ -7,6 +7,7 @@ import { LegalPage } from "@/components/pages/LegalPage";
 import { AlpineAdminPage } from "@/components/pages/AlpineAdminPage";
 import { BriskAdminPage } from "@/components/pages/BriskAdminPage";
 import { PortfolioTemplatePage } from "@/components/pages/PortfolioTemplatePage";
+import { CornerstonePage } from "@/components/pages/CornerstonePage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/templates/portfolio-template" element={<PortfolioTemplatePage />} />
         {/* Redirect legacy URL — render the same page so old links don't 404 */}
         <Route path="/templates/portfolio" element={<PortfolioTemplatePage />} />
+        <Route path="/templates/cornerstone" element={<CornerstonePage />} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         {/* Unknown routes fall back to the legal not-found view */}
         <Route path="*" element={<LegalPage />} />
