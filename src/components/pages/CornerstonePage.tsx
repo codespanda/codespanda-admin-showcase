@@ -19,30 +19,31 @@ const Footer = lazy(() =>
 const GITHUB_URL = "https://github.com/codespanda/cornerstone";
 const DOCS_URL = "https://cornerstone.codespanda.com/docs/";
 const PREVIEW_URL = "https://cornerstone.codespanda.com/";
-const RAW = "https://raw.githubusercontent.com/codespanda/cornerstone/main/public";
 
 const GALLERY = [
-  { src: "/images/cornerstone-dashboard-2.png", label: "Main Dashboard" },
-  { src: "/images/cornerstone-dashboard.png",   label: "Dashboard Overview" },
-  { src: `${RAW}/properties.png`,               label: "Properties" },
-  { src: `${RAW}/tenants.png`,                  label: "Tenants" },
-  { src: `${RAW}/payments.png`,                 label: "Payments" },
-  { src: `${RAW}/maintenance.png`,              label: "Maintenance" },
+  { src: "/images/cornerstone-dashboard-2.png",   label: "Main Dashboard"  },
+  { src: "/images/cornerstone-properties.png",    label: "Properties"      },
+  { src: "/images/cornerstone-tenants.png",       label: "Tenants"         },
+  { src: "/images/cornerstone-payments.png",      label: "Payments"        },
+  { src: "/images/cornerstone-maintenance.png",   label: "Maintenance"     },
+  { src: "/images/cornerstone-analytics.png",     label: "Analytics"       },
+  { src: "/images/cornerstone-leases.png",        label: "Leases"          },
+  { src: "/images/cornerstone-dashboard.png",     label: "Dashboard (alt)" },
 ];
 
 const MODULES = [
-  { icon: LayoutDashboard, label: "Dashboard",      desc: "Revenue, MRR, churn, and growth KPIs at a glance.",       status: "Live" },
-  { icon: Users,           label: "Customers",      desc: "Full customer directory with profiles and activity.",      status: "Live" },
-  { icon: ShoppingCart,    label: "Orders",         desc: "Order lifecycle from placement to fulfilment.",            status: "Live" },
-  { icon: Package,         label: "Products",       desc: "Product catalogue, variants, and inventory levels.",       status: "Live" },
-  { icon: BarChart3,       label: "Analytics",      desc: "Traffic, conversion, and revenue charts powered by Recharts.", status: "Live" },
-  { icon: CreditCard,      label: "Billing",        desc: "Subscription plans, invoices, and payment history.",       status: "Live" },
-  { icon: TrendingUp,      label: "Reports",        desc: "Exportable summaries and scheduled report views.",         status: "Live" },
-  { icon: MessageSquare,   label: "Support",        desc: "Ticket queue, status tracking, and reply workflow.",       status: "New"  },
-  { icon: Bell,            label: "Notifications",  desc: "In-app notification centre with read/unread state.",       status: "Live" },
-  { icon: Shield,          label: "Roles & Perms",  desc: "Role-based access control with granular permissions.",     status: "Live" },
-  { icon: FileText,        label: "Content",        desc: "CMS-style pages, blog posts, and media library.",          status: "Soon" },
-  { icon: Settings,        label: "Settings",       desc: "Profile, workspace, integrations, and API keys.",          status: "Live" },
+  { icon: LayoutDashboard, label: "Dashboard",      desc: "Revenue, occupancy, payments and maintenance at a glance.", status: "Live" },
+  { icon: Package,         label: "Properties",     desc: "Full property directory with units, occupancy and value.",  status: "Live" },
+  { icon: Users,           label: "Tenants",        desc: "Tenant profiles, lease status and contact details.",        status: "Live" },
+  { icon: FileText,        label: "Leases",         desc: "Lease agreements, renewals and expiry tracking.",           status: "Live" },
+  { icon: CreditCard,      label: "Payments",       desc: "Rent collection, receipts, overdue and refund tracking.",   status: "Live" },
+  { icon: Shield,          label: "Maintenance",    desc: "Maintenance requests, priority queue and status workflow.",  status: "Live" },
+  { icon: ShoppingCart,    label: "Invoices",       desc: "Invoice generation, due dates and payment reconciliation.", status: "Live" },
+  { icon: BarChart3,       label: "Analytics",      desc: "Revenue trends, occupancy charts and property insights.",   status: "Live" },
+  { icon: TrendingUp,      label: "Reports",        desc: "Exportable income, occupancy and maintenance reports.",     status: "Live" },
+  { icon: MessageSquare,   label: "Messages",       desc: "In-app messaging between landlord and tenants.",            status: "Live" },
+  { icon: Bell,            label: "Announcements",  desc: "Broadcast notices to all or selected tenants.",             status: "Live" },
+  { icon: Settings,        label: "Settings",       desc: "Company profile, user roles and app preferences.",          status: "Live" },
 ];
 
 const FEATURES = [
