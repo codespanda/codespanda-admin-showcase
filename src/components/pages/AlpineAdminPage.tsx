@@ -16,16 +16,13 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
-/* ── image base URL ── */
-const RAW = "https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public";
-
 const GALLERY = [
-  { src: `${RAW}/dashboard.png`,    label: "Main Dashboard" },
-  { src: `${RAW}/employees.png`,    label: "Employee Directory" },
-  { src: `${RAW}/attendance.png`,   label: "Attendance Tracker" },
-  { src: `${RAW}/leave.png`,        label: "Leave Management" },
-  { src: `${RAW}/payroll.png`,      label: "Payroll Module" },
-  { src: `${RAW}/performance.png`,  label: "Performance Reviews" },
+  { src: "/images/alpine/dashboard.png",    label: "Main Dashboard" },
+  { src: "/images/alpine/employees.png",    label: "Employee Directory" },
+  { src: "/images/alpine/attendance.png",   label: "Attendance Tracker" },
+  { src: "/images/alpine/leave.png",        label: "Leave Management" },
+  { src: "/images/alpine/payroll.png",      label: "Payroll Module" },
+  { src: "/images/alpine/performance.png",  label: "Performance Reviews" },
 ];
 
 const MODULES = [
@@ -112,7 +109,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = `${RAW}/dashboard.png`;
+            (e.currentTarget as HTMLImageElement).src = "/images/alpine/dashboard.png";
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -145,7 +142,7 @@ export function AlpineAdminPage() {
           "name": "Alpine Admin React",
           "description": "Alpine Admin React is a free HR dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/Alpine-Admin-React",
-          "image": "https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public/dashboard.png",
+          "image": "https://codespanda.com/images/alpine/dashboard.png",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
@@ -259,9 +256,12 @@ export function AlpineAdminPage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-indigo-500/20 to-purple-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-indigo-500/10">
                 <img
-                  src={`${RAW}/dashboard.png`}
+                  src="/images/alpine/dashboard.webp"
                   alt="Alpine Admin React dashboard preview"
+                  width={1600}
+                  height={812}
                   loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full object-cover object-top"
                 />
