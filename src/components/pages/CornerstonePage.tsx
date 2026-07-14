@@ -22,12 +22,12 @@ const PREVIEW_URL = "https://cornerstone.codespanda.com/";
 const RAW = "https://raw.githubusercontent.com/codespanda/cornerstone/main/public";
 
 const GALLERY = [
-  { src: `${RAW}/dashboard.png`,   label: "Main Dashboard" },
-  { src: `${RAW}/analytics.png`,   label: "Analytics" },
-  { src: `${RAW}/customers.png`,   label: "Customers" },
-  { src: `${RAW}/orders.png`,      label: "Orders" },
-  { src: `${RAW}/products.png`,    label: "Products" },
-  { src: `${RAW}/settings.png`,    label: "Settings" },
+  { src: "/images/cornerstone-dashboard-2.png", label: "Main Dashboard" },
+  { src: "/images/cornerstone-dashboard.png",   label: "Dashboard Overview" },
+  { src: `${RAW}/properties.png`,               label: "Properties" },
+  { src: `${RAW}/tenants.png`,                  label: "Tenants" },
+  { src: `${RAW}/payments.png`,                 label: "Payments" },
+  { src: `${RAW}/maintenance.png`,              label: "Maintenance" },
 ];
 
 const MODULES = [

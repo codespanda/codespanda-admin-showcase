@@ -76,7 +76,7 @@ export const TEMPLATES: Template[] = [
     liveUrl: "https://cornerstone.codespanda.com/",
     docsUrl: "https://cornerstone.codespanda.com/docs/",
     detailsUrl: "/templates/cornerstone",
-    screenshotUrl: "https://raw.githubusercontent.com/codespanda/cornerstone/main/public/dashboard.png",
+    screenshotUrl: "/images/cornerstone-dashboard-2.png",
     techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     features: ["Modern Design", "30+ Pages", "Dark Mode", "Charts"],
     darkMode: true,
