@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake,
-  Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
+  Factory, HeartPulse, GraduationCap, Bot, ChevronDown, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -95,6 +96,42 @@ function ComingSoonPlaceholder() {
   );
 }
 
+const PAGE_SIZE = 3;
+
+function TabTemplates({ templates }: { templates: typeof TEMPLATES }) {
+  const [showAll, setShowAll] = useState(false);
+  const visible = showAll ? templates : templates.slice(0, PAGE_SIZE);
+  const hasMore = templates.length > PAGE_SIZE;
+
+  if (templates.length === 0) return <ComingSoonPlaceholder />;
+
+  return (
+    <div className="flex flex-col gap-6">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {visible.map((t) => (
+          <TemplateCard key={t.id} template={t} />
+        ))}
+      </div>
+
+      {hasMore && !showAll && (
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex justify-center"
+        >
+          <button
+            onClick={() => setShowAll(true)}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/20"
+          >
+            <ChevronDown className="h-4 w-4" />
+            Show More
+          </button>
+        </motion.div>
+      )}
+    </div>
+  );
+}
+
 export function CategoriesSection() {
   return (
     <section id="categories" className="px-4 py-24">
@@ -133,15 +170,7 @@ export function CategoriesSection() {
                 : TEMPLATES.filter((t) => TEMPLATE_CATEGORY_MAP[t.id]?.includes(cat.id));
               return (
                 <TabsContent key={cat.id} value={cat.id}>
-                  <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                    {categoryTemplates.length > 0 ? (
-                      categoryTemplates.map((t) => (
-                        <TemplateCard key={t.id} template={t} />
-                      ))
-                    ) : (
-                      <ComingSoonPlaceholder />
-                    )}
-                  </div>
+                  <TabTemplates templates={categoryTemplates} />
                 </TabsContent>
               );
             })}

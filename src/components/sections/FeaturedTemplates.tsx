@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ExternalLink, Monitor, Moon, Smartphone, LayoutGrid } from "lucide-react";
+import { ExternalLink, Monitor, Moon, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TEMPLATES, type Template } from "@/lib/data";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -174,21 +174,6 @@ export function FeaturedTemplates() {
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-12 flex justify-center"
-        >
-          <Link
-            to="/templates"
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-8 py-3.5 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/20"
-          >
-            <LayoutGrid className="h-4 w-4" />
-            Explore All Templates
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
