@@ -152,7 +152,7 @@ export function Navbar() {
               </div>
               <div className="mt-4 px-4">
                 <Button variant="gradient" className="w-full" asChild>
-                  <a href="/#templates">Browse Templates</a>
+                  <Link to="/templates">Browse Templates</Link>
                 </Button>
                 <p className="mt-3 text-center text-xs text-muted-foreground">
                   Premium React Template Marketplace

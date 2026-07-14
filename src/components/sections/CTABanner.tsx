@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -42,10 +43,10 @@ export function CTABanner() {
                 className="border border-white/20 bg-white text-indigo-700 hover:bg-white/90"
                 asChild
               >
-                <a href="/#templates">
+                <Link to="/templates">
                   Browse Templates
                   <ArrowRight className="ml-1 h-4 w-4" />
-                </a>
+                </Link>
               </Button>
             </div>
           </div>

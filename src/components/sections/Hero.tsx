@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -92,10 +93,10 @@ export function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Button variant="gradient" size="lg" className="group" asChild>
-              <a href="/#templates">
+              <Link to="/templates">
                 Browse Templates
                 <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
-              </a>
+              </Link>
             </Button>
           </div>
 
