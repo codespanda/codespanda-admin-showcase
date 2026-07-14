@@ -338,7 +338,7 @@ export function CornerstonePage() {
             <div className="mt-8 text-center">
               <Button variant="outline" asChild>
                 <a href={PREVIEW_URL} target="_blank" rel="noreferrer noopener">
-                  <Monitor className="h-4 w-4" /> Explore all 30+ pages
+                  <Monitor className="h-4 w-4" /> Explore all
                 </a>
               </Button>
             </div>
