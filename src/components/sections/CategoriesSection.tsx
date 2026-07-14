@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake,
-  Factory, HeartPulse, GraduationCap, Bot, ChevronDown, type LucideIcon,
+  Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -99,8 +99,7 @@ function ComingSoonPlaceholder() {
 const PAGE_SIZE = 3;
 
 function TabTemplates({ templates }: { templates: typeof TEMPLATES }) {
-  const [showAll, setShowAll] = useState(false);
-  const visible = showAll ? templates : templates.slice(0, PAGE_SIZE);
+  const visible = templates.slice(0, PAGE_SIZE);
   const hasMore = templates.length > PAGE_SIZE;
 
   if (templates.length === 0) return <ComingSoonPlaceholder />;
@@ -113,19 +112,19 @@ function TabTemplates({ templates }: { templates: typeof TEMPLATES }) {
         ))}
       </div>
 
-      {hasMore && !showAll && (
+      {hasMore && (
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex justify-center"
         >
-          <button
-            onClick={() => setShowAll(true)}
+          <Link
+            to="/templates"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/20"
           >
-            <ChevronDown className="h-4 w-4" />
+            <LayoutGrid className="h-4 w-4" />
             Show More
-          </button>
+          </Link>
         </motion.div>
       )}
     </div>
