@@ -1,14 +1,16 @@
+import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { GradientBlobs } from "@/components/shared/GradientBlobs";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { LandingPage } from "@/components/pages/LandingPage";
 import { LegalPage } from "@/components/pages/LegalPage";
-import { AlpineAdminPage } from "@/components/pages/AlpineAdminPage";
-import { BriskAdminPage } from "@/components/pages/BriskAdminPage";
-import { PortfolioTemplatePage } from "@/components/pages/PortfolioTemplatePage";
-import { CornerstonePage } from "@/components/pages/CornerstonePage";
-import { TemplatesPage } from "@/components/pages/TemplatesPage";
+
+const AlpineAdminPage     = lazy(() => import("@/components/pages/AlpineAdminPage").then(m => ({ default: m.AlpineAdminPage })));
+const BriskAdminPage      = lazy(() => import("@/components/pages/BriskAdminPage").then(m => ({ default: m.BriskAdminPage })));
+const PortfolioTemplatePage = lazy(() => import("@/components/pages/PortfolioTemplatePage").then(m => ({ default: m.PortfolioTemplatePage })));
+const CornerstonePage     = lazy(() => import("@/components/pages/CornerstonePage").then(m => ({ default: m.CornerstonePage })));
+const TemplatesPage       = lazy(() => import("@/components/pages/TemplatesPage").then(m => ({ default: m.TemplatesPage })));
 
 function App() {
   return (
@@ -18,15 +20,13 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/templates" element={<TemplatesPage />} />
-        <Route path="/templates/Alpine-Admin-React" element={<AlpineAdminPage />} />
-        <Route path="/templates/Brisk-Admin" element={<BriskAdminPage />} />
-        <Route path="/templates/portfolio-template" element={<PortfolioTemplatePage />} />
-        {/* Redirect legacy URL — render the same page so old links don't 404 */}
-        <Route path="/templates/portfolio" element={<PortfolioTemplatePage />} />
-        <Route path="/templates/cornerstone" element={<CornerstonePage />} />
+        <Route path="/templates" element={<Suspense><TemplatesPage /></Suspense>} />
+        <Route path="/templates/Alpine-Admin-React" element={<Suspense><AlpineAdminPage /></Suspense>} />
+        <Route path="/templates/Brisk-Admin" element={<Suspense><BriskAdminPage /></Suspense>} />
+        <Route path="/templates/portfolio-template" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
+        <Route path="/templates/portfolio" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
+        <Route path="/templates/cornerstone" element={<Suspense><CornerstonePage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />
-        {/* Unknown routes fall back to the legal not-found view */}
         <Route path="*" element={<LegalPage />} />
       </Routes>
     </TooltipProvider>

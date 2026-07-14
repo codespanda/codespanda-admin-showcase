@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
 
 interface CounterProps {
   value: number;
@@ -10,7 +9,6 @@ interface CounterProps {
   className?: string;
 }
 
-/** Animated number that counts up from 0 when scrolled into view. */
 export function Counter({
   value,
   duration = 1600,
@@ -20,25 +18,34 @@ export function Counter({
   className,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.5 });
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
-    if (!inView) return;
-    let frame = 0;
-    const start = performance.now();
+    const el = ref.current;
+    if (!el) return;
 
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1);
-      // easeOutExpo for a snappy finish
-      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      setDisplay(eased * value);
-      if (progress < 1) frame = requestAnimationFrame(tick);
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
 
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [inView, value, duration]);
+        let frame = 0;
+        const start = performance.now();
+        const tick = (now: number) => {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          setDisplay(eased * value);
+          if (progress < 1) frame = requestAnimationFrame(tick);
+        };
+        frame = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(frame);
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [value, duration]);
 
   return (
     <span ref={ref} className={className}>

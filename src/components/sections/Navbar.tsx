@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { Menu, Moon, Sun, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -71,12 +70,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50 px-4 pt-3"
-    >
+    <header className="fixed inset-x-0 top-0 z-50 animate-slide-down px-4 pt-3">
       <nav
         className={cn(
           "mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 sm:px-5",
@@ -162,6 +156,6 @@ export function Navbar() {
           </Sheet>
         </div>
       </nav>
-    </motion.header>
+    </header>
   );
 }
