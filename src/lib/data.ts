@@ -66,6 +66,23 @@ export const TEMPLATES: Template[] = [
     responsive: true,
   },
   {
+    id: "cornerstone",
+    name: "Cornerstone",
+    description:
+      "A complete SaaS dashboard template with 30+ pages covering customers, orders, billing, analytics, and support. Built for modern SaaS products with a polished UI and production-ready code.",
+    category: "SaaS Dashboard",
+    badge: "New",
+    badgeColor: "from-emerald-500 to-teal-600",
+    liveUrl: "https://cornerstone.codespanda.com/",
+    docsUrl: "https://cornerstone.codespanda.com/docs/",
+    detailsUrl: "/templates/cornerstone",
+    screenshotUrl: "https://raw.githubusercontent.com/codespanda/cornerstone/main/public/dashboard.png",
+    techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    features: ["Modern Design", "30+ Pages", "Dark Mode", "Charts"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "portfolio",
     name: "Portfolio Template",
     description:
@@ -223,7 +240,7 @@ export interface Stat {
 }
 
 export const HERO_STATS: Stat[] = [
-  { label: "Templates available", value: 3 },
+  { label: "Templates available", value: 4 },
   { label: "Pages included", value: 30, suffix: "+" },
   { label: "Categories", value: 9, suffix: "+" },
   { label: "Technologies", value: 5, suffix: "+" },
