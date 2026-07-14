@@ -255,21 +255,34 @@ export function CornerstonePage() {
             </div>
 
             {/* Hero image */}
-            <div className="relative flex-1 lg:max-w-xl">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="relative flex-1 lg:max-w-xl"
+            >
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-teal-600/10 blur-2xl" />
-              <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-emerald-500/10">
+              <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-emerald-500/10 ring-1 ring-emerald-500/10">
                 <img
-                  src={`${RAW}/dashboard.png`}
-                  alt="Cornerstone dashboard preview"
+                  src="/images/cornerstone-dashboard-2.png"
+                  alt="Cornerstone — Property Management dashboard preview"
+                  width={1313}
+                  height={908}
                   loading="eager"
                   decoding="async"
                   className="w-full object-cover object-top"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).style.opacity = "0.3";
-                  }}
                 />
+                {/* Browser chrome strip */}
+                <div className="absolute top-0 left-0 right-0 flex items-center gap-1.5 bg-black/40 px-3 py-2 backdrop-blur-sm">
+                  <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                  <span className="ml-3 flex-1 rounded bg-white/10 px-2 py-0.5 text-[10px] text-white/60">
+                    cornerstone.codespanda.com
+                  </span>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
