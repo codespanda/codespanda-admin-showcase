@@ -8,6 +8,7 @@ import { AlpineAdminPage } from "@/components/pages/AlpineAdminPage";
 import { BriskAdminPage } from "@/components/pages/BriskAdminPage";
 import { PortfolioTemplatePage } from "@/components/pages/PortfolioTemplatePage";
 import { CornerstonePage } from "@/components/pages/CornerstonePage";
+import { TemplatesPage } from "@/components/pages/TemplatesPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/templates" element={<TemplatesPage />} />
         <Route path="/templates/Alpine-Admin-React" element={<AlpineAdminPage />} />
         <Route path="/templates/Brisk-Admin" element={<BriskAdminPage />} />
         <Route path="/templates/portfolio-template" element={<PortfolioTemplatePage />} />

@@ -10,6 +10,7 @@ const TODAY = new Date().toISOString().split("T")[0];
 
 const ROUTES = [
   { path: "/",                               changefreq: "weekly",  priority: "1.0" },
+  { path: "/templates",                         changefreq: "weekly",  priority: "0.9" },
   { path: "/templates/Alpine-Admin-React",   changefreq: "monthly", priority: "0.9" },
   { path: "/templates/Brisk-Admin",          changefreq: "monthly", priority: "0.9" },
   { path: "/templates/portfolio-template",   changefreq: "monthly", priority: "0.9" },
