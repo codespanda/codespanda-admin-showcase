@@ -21,14 +21,12 @@ const DOCS_URL = "https://cornerstone.codespanda.com/docs/";
 const PREVIEW_URL = "https://cornerstone.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/cornerstone-dashboard-2.png",   label: "Main Dashboard"  },
-  { src: "/images/cornerstone-properties.png",    label: "Properties"      },
-  { src: "/images/cornerstone-tenants.png",       label: "Tenants"         },
-  { src: "/images/cornerstone-payments.png",      label: "Payments"        },
-  { src: "/images/cornerstone-maintenance.png",   label: "Maintenance"     },
-  { src: "/images/cornerstone-analytics.png",     label: "Analytics"       },
-  { src: "/images/cornerstone-leases.png",        label: "Leases"          },
-  { src: "/images/cornerstone-dashboard.png",     label: "Dashboard (alt)" },
+  { src: "/images/cornerstone-dashboard-2.png",   label: "Main Dashboard" },
+  { src: "/images/cornerstone-properties.png",    label: "Properties"     },
+  { src: "/images/cornerstone-tenants.png",       label: "Tenants"        },
+  { src: "/images/cornerstone-payments.png",      label: "Payments"       },
+  { src: "/images/cornerstone-maintenance.png",   label: "Maintenance"    },
+  { src: "/images/cornerstone-analytics.png",     label: "Analytics"      },
 ];
 
 const MODULES = [
