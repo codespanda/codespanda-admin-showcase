@@ -1,9 +1,10 @@
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake,
-  Factory, HeartPulse, GraduationCap, Bot, type LucideIcon,
+  Factory, HeartPulse, GraduationCap, Bot, ChevronLeft, ChevronRight, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -131,6 +132,75 @@ function TabTemplates({ templates }: { templates: typeof TEMPLATES }) {
   );
 }
 
+function TabsScrollable() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canLeft, setCanLeft] = useState(false);
+  const [canRight, setCanRight] = useState(false);
+
+  const update = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanLeft(el.scrollLeft > 4);
+    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4);
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    // rAF ensures first measurement runs after browser layout
+    const raf = requestAnimationFrame(update);
+    el.addEventListener("scroll", update, { passive: true });
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => { cancelAnimationFrame(raf); el.removeEventListener("scroll", update); ro.disconnect(); };
+  }, [update]);
+
+  const scroll = (dir: "left" | "right") => {
+    scrollRef.current?.scrollBy({ left: dir === "left" ? -200 : 200, behavior: "smooth" });
+  };
+
+  return (
+    <div className="relative flex w-full items-center gap-1">
+      <button
+        onClick={() => scroll("left")}
+        aria-label="Scroll categories left"
+        className={`shrink-0 rounded-xl border border-border bg-card p-1.5 text-muted-foreground shadow-sm transition-all hover:text-foreground ${canLeft ? "opacity-100" : "pointer-events-none opacity-0"}`}
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </button>
+
+      <div
+        ref={scrollRef}
+        className="flex-1 min-w-0 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
+        <TabsList className="flex w-max gap-1 rounded-2xl p-1.5">
+          {CATEGORY_DEFS.map((cat) => {
+            const Icon = cat.icon;
+            return (
+              <TabsTrigger
+                key={cat.id}
+                value={cat.id}
+                className="flex items-center gap-1.5 px-4 py-2 text-sm"
+              >
+                <Icon className={`h-4 w-4 ${cat.color}`} />
+                {cat.label}
+              </TabsTrigger>
+            );
+          })}
+        </TabsList>
+      </div>
+
+      <button
+        onClick={() => scroll("right")}
+        aria-label="Scroll categories right"
+        className={`shrink-0 rounded-xl border border-border bg-card p-1.5 text-muted-foreground shadow-sm transition-all hover:text-foreground ${canRight ? "opacity-100" : "pointer-events-none opacity-0"}`}
+      >
+        <ChevronRight className="h-4 w-4" />
+      </button>
+    </div>
+  );
+}
+
 export function CategoriesSection() {
   return (
     <section id="categories" className="px-4 py-24">
@@ -143,24 +213,8 @@ export function CategoriesSection() {
 
         <div className="mt-14">
           <Tabs defaultValue="all">
-            {/* Tab list — scrollable on mobile, scrollbar hidden */}
-            <div className="overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-              <TabsList className="flex w-max gap-1 rounded-2xl p-1.5">
-                {CATEGORY_DEFS.map((cat) => {
-                  const Icon = cat.icon;
-                  return (
-                    <TabsTrigger
-                      key={cat.id}
-                      value={cat.id}
-                      className="flex items-center gap-1.5 px-4 py-2 text-sm"
-                    >
-                      <Icon className={`h-4 w-4 ${cat.color}`} />
-                      {cat.label}
-                    </TabsTrigger>
-                  );
-                })}
-              </TabsList>
-            </div>
+            {/* Tab list — scrollable with arrow buttons */}
+            <TabsScrollable />
 
             {/* Tab content */}
             {CATEGORY_DEFS.map((cat) => {

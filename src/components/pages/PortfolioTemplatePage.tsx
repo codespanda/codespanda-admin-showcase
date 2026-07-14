@@ -15,16 +15,15 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
-const RAW  = "https://raw.githubusercontent.com/codespanda/portfolio/main/public";
 const LIVE = "https://codespanda.github.io/portfolio";
 
 const GALLERY = [
-  { src: `${RAW}/portfolio.jpg`,  label: "Hero Section" },
-  { src: `${RAW}/about.jpg`,      label: "About Me" },
-  { src: `${RAW}/projects.jpg`,   label: "Projects Showcase" },
-  { src: `${RAW}/skills.jpg`,     label: "Skills & Tech Stack" },
-  { src: `${RAW}/contact.jpg`,    label: "Contact Form" },
-  { src: `${RAW}/footer.jpg`,     label: "Footer" },
+  { src: "/images/portfolio/portfolio.jpg",  label: "Hero Section" },
+  { src: "/images/portfolio/about.jpg",      label: "About Me" },
+  { src: "/images/portfolio/projects.jpg",   label: "Projects Showcase" },
+  { src: "/images/portfolio/skills.jpg",     label: "Skills & Tech Stack" },
+  { src: "/images/portfolio/contact.jpg",    label: "Contact Form" },
+  { src: "/images/portfolio/footer.jpg",     label: "Footer" },
 ];
 
 const SECTIONS = [
@@ -103,7 +102,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = `${RAW}/portfolio.jpg`;
+            (e.currentTarget as HTMLImageElement).src = "/images/portfolio/portfolio.jpg";
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -136,7 +135,7 @@ export function PortfolioTemplatePage() {
           "name": "Portfolio Template",
           "description": "A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize.",
           "url": "https://codespanda.com/templates/portfolio-template",
-          "image": "https://raw.githubusercontent.com/codespanda/portfolio/main/public/portfolio.jpg",
+          "image": "https://codespanda.com/images/portfolio/portfolio.jpg",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Portfolio",
           "offers": {
@@ -254,9 +253,10 @@ export function PortfolioTemplatePage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-rose-500/20 to-pink-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-rose-500/10">
                 <img
-                  src={`${RAW}/portfolio.jpg`}
+                  src="/images/portfolio/portfolio.jpg"
                   alt="Portfolio Template preview"
                   loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full object-cover object-top"
                 />

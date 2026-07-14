@@ -16,16 +16,15 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
-const RAW = "https://raw.githubusercontent.com/codespanda/brisk-admin/master/public";
 const LIVE = "https://brisk.codespanda.com";
 
 const GALLERY = [
-  { src: `${RAW}/dashboard.png`,   label: "Dashboard Overview" },
-  { src: `${RAW}/products.png`,    label: "Products" },
-  { src: `${RAW}/orders.png`,      label: "Orders" },
-  { src: `${RAW}/customers.png`,   label: "Customers" },
-  { src: `${RAW}/analytics.png`,   label: "Analytics" },
-  { src: `${RAW}/settings.png`,    label: "Settings" },
+  { src: "/images/brisk/dashboard.png",   label: "Dashboard Overview" },
+  { src: "/images/brisk/products.png",    label: "Products" },
+  { src: "/images/brisk/orders.png",      label: "Orders" },
+  { src: "/images/brisk/customers.png",   label: "Customers" },
+  { src: "/images/brisk/analytics.png",   label: "Analytics" },
+  { src: "/images/brisk/settings.png",    label: "Settings" },
 ];
 
 const MODULES = [
@@ -108,7 +107,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = `${RAW}/dashboard.png`;
+            (e.currentTarget as HTMLImageElement).src = "/images/brisk/dashboard.png";
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -141,7 +140,7 @@ export function BriskAdminPage() {
           "name": "Brisk Admin",
           "description": "Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive.",
           "url": "https://codespanda.com/templates/Brisk-Admin",
-          "image": "https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png",
+          "image": "https://codespanda.com/images/brisk/dashboard.png",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
@@ -259,9 +258,10 @@ export function BriskAdminPage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-teal-500/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-emerald-500/10">
                 <img
-                  src={`${RAW}/dashboard.png`}
+                  src="/images/brisk/dashboard.png"
                   alt="Brisk Admin dashboard preview"
                   loading="eager"
+                  fetchPriority="high"
                   decoding="async"
                   className="w-full object-cover object-top"
                 />

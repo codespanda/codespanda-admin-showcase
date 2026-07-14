@@ -9,11 +9,13 @@ function MiniFrame({
   imgSrc,
   urlLabel,
   delay,
+  priority,
   className,
 }: {
   imgSrc?: string;
   urlLabel: string;
   delay: number;
+  priority?: boolean;
   className?: string;
 }) {
   return (
@@ -39,6 +41,8 @@ function MiniFrame({
               src={imgSrc}
               alt={urlLabel}
               className="h-full w-full object-cover object-top"
+              loading={priority ? "eager" : "lazy"}
+              fetchPriority={priority ? "high" : "auto"}
             />
           ) : (
             <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-secondary via-card to-secondary" />
@@ -112,7 +116,7 @@ export function Hero() {
         <div className="relative hidden lg:block">
           <div className="absolute -right-4 top-6 w-[85%] opacity-80">
             <MiniFrame
-              imgSrc="https://raw.githubusercontent.com/codespanda/brisk-admin/master/public/dashboard.png"
+              imgSrc="/images/brisk-dashboard.png"
               urlLabel="brisk.codespanda.com"
               delay={0.3}
             />
@@ -120,9 +124,10 @@ export function Hero() {
 
           <div className="relative left-0 top-0 w-[88%] animate-float-slow">
             <MiniFrame
-              imgSrc="https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public/dashboard.png"
+              imgSrc="/images/alpine-dashboard.png"
               urlLabel="codespanda.github.io/Alpine-Admin-React"
               delay={0.15}
+              priority
             />
           </div>
 
@@ -155,7 +160,7 @@ export function Hero() {
         {/* Mobile: single frame */}
         <div className="lg:hidden">
           <MiniFrame
-            imgSrc="https://raw.githubusercontent.com/codespanda/Alpine-Admin-React/main/public/dashboard.png"
+            imgSrc="/images/alpine-dashboard.png"
             urlLabel="codespanda.github.io/Alpine-Admin-React"
             delay={0.2}
           />

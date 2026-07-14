@@ -23,7 +23,7 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/logo.png" />
-    <!-- Route-specific hero-image preload is injected per page by scripts/copy-spa-routes.js -->
+    <link rel="preload" as="image" href="/images/alpine-dashboard.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Global meta — page-specific title/description/canonical/og/twitter are injected per-route by react-helmet-async -->
@@ -105,13 +105,21 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link rel="dns-prefetch" href="https://codespanda.github.io" />
+    <!-- Non-render-blocking font load -->
     <link
+      rel="preload"
+      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
   </head>
   <body>
     <div id="root"></div>
