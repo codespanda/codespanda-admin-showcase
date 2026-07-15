@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "flowers-pos",
+    name: "Flowers POS",
+    description:
+      "A beautiful point-of-sale system for flower shops and retail boutiques. Covers product catalogue, orders, customers, inventory, and sales reports — all in a clean, intuitive interface.",
+    category: "Retail / POS",
+    badge: "New",
+    badgeColor: "from-pink-500 to-rose-600",
+    liveUrl: "https://flowers.codespanda.com/",
+    docsUrl: "https://flowers.codespanda.com/",
+    detailsUrl: "/templates/flowers-pos",
+    screenshotUrl: "/images/flowers/dashboard.png",
+    techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    features: ["Modern Design", "POS Ready", "Dark Mode", "Responsive"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "alpine-admin-react",
     name: "Alpine Admin React",
     description:
@@ -240,7 +257,7 @@ export interface Stat {
 }
 
 export const HERO_STATS: Stat[] = [
-  { label: "Templates available", value: 4 },
+  { label: "Templates available", value: 5 },
   { label: "Pages included", value: 30, suffix: "+" },
   { label: "Categories", value: 9, suffix: "+" },
   { label: "Technologies", value: 5, suffix: "+" },

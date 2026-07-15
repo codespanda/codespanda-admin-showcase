@@ -26,6 +26,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
       { label: "Alpine Admin React", href: "https://codespanda.github.io/Alpine-Admin-React/dashboard", external: true },
       { label: "Brisk Admin", href: "https://brisk.codespanda.com/dashboard", external: true },
       { label: "Portfolio Template", href: "https://codespanda.github.io/portfolio/", external: true },
+      { label: "Flowers POS", href: "https://flowers.codespanda.com/", external: true },
       { label: "Cornerstone", href: "https://cornerstone.codespanda.com/", external: true },
     ],
   },

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
-  LayoutDashboard, Users, DollarSign, Handshake,
+  LayoutDashboard, Users, DollarSign, Handshake, ShoppingCart,
   Factory, HeartPulse, GraduationCap, Bot, ChevronLeft, ChevronRight, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,7 @@ interface CategoryDef {
 
 const CATEGORY_DEFS: CategoryDef[] = [
   { id: "all",                  label: "All",                  icon: LayoutGrid,      color: "text-primary" },
+  { id: "retail-pos",           label: "Retail / POS",         icon: ShoppingCart,    color: "text-pink-500" },
   { id: "admin-dashboard",      label: "Admin Dashboard",      icon: LayoutDashboard, color: "text-indigo-500" },
   { id: "hr-management",        label: "HR Management",        icon: Users,           color: "text-violet-500" },
   { id: "finance-accounting",   label: "Finance & Accounting", icon: DollarSign,      color: "text-emerald-500" },
@@ -32,6 +33,7 @@ const CATEGORY_DEFS: CategoryDef[] = [
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
+  "flowers-pos":        ["retail-pos"],
   "alpine-admin-react": ["admin-dashboard", "hr-management"],
   "brisk-admin":        ["admin-dashboard", "crm"],
   "portfolio":          ["portfolio"],

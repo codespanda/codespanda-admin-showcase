@@ -11,6 +11,7 @@ const BriskAdminPage      = lazy(() => import("@/components/pages/BriskAdminPage
 const PortfolioTemplatePage = lazy(() => import("@/components/pages/PortfolioTemplatePage").then(m => ({ default: m.PortfolioTemplatePage })));
 const CornerstonePage     = lazy(() => import("@/components/pages/CornerstonePage").then(m => ({ default: m.CornerstonePage })));
 const TemplatesPage       = lazy(() => import("@/components/pages/TemplatesPage").then(m => ({ default: m.TemplatesPage })));
+const FlowersPosPage      = lazy(() => import("@/components/pages/FlowersPosPage").then(m => ({ default: m.FlowersPosPage })));
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/templates/portfolio-template" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
         <Route path="/templates/portfolio" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
         <Route path="/templates/cornerstone" element={<Suspense><CornerstonePage /></Suspense>} />
+        <Route path="/templates/flowers-pos" element={<Suspense><FlowersPosPage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         <Route path="*" element={<LegalPage />} />
       </Routes>
