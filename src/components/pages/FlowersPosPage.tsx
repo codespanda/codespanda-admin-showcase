@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ExternalLink, ArrowLeft, Star, Github, BookOpen, Monitor,
-  CheckCircle2, LayoutDashboard, ShoppingCart, Users, Package,
-  BarChart3, Settings, FileText, CreditCard, Tag, Clock,
-  Layers, Zap, Code2, Palette, Smartphone, Receipt,
+  CheckCircle2, LayoutGrid, ShoppingCart, Users, Tag,
+  BarChart3, Settings, Bell, KeyRound, Clock,
+  Layers, Zap, Code2, Palette, Smartphone,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Navbar } from "@/components/sections/Navbar";
@@ -16,40 +16,36 @@ const Footer = lazy(() =>
 );
 
 const GITHUB_URL = "https://github.com/codespanda/flowers-pos";
-const DOCS_URL   = "https://flowers.codespanda.com/";
+const DOCS_URL   = "https://flowers.codespanda.com/docs";
 const PREVIEW_URL = "https://flowers.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/flowers/dashboard.png",  label: "Main Dashboard"   },
-  { src: "/images/flowers/products.png",   label: "Products"         },
-  { src: "/images/flowers/orders.png",     label: "Orders"           },
-  { src: "/images/flowers/customers.png",  label: "Customers"        },
-  { src: "/images/flowers/inventory.png",  label: "Inventory"        },
-  { src: "/images/flowers/reports.png",    label: "Sales Reports"    },
+  { src: "/images/flowers/pos-counter.png",   label: "POS Counter" },
+  { src: "/images/flowers/orders-live.png",   label: "Orders"      },
+  { src: "/images/flowers/customers-live.png",label: "Customers"   },
+  { src: "/images/flowers/coupons-live.png",  label: "Coupons"     },
+  { src: "/images/flowers/reports-live.png",  label: "Reports"     },
+  { src: "/images/flowers/settings-live.png", label: "Settings"    },
 ];
 
 const MODULES = [
-  { icon: LayoutDashboard, label: "Dashboard",     desc: "Daily sales, revenue, top products and low-stock alerts at a glance.", status: "Live" },
-  { icon: ShoppingCart,    label: "POS Terminal",  desc: "Fast checkout with barcode scan, cart, discounts and receipt print.",   status: "Live" },
-  { icon: Package,         label: "Products",      desc: "Full catalogue with categories, variants, pricing and images.",         status: "Live" },
-  { icon: Receipt,         label: "Orders",        desc: "Order history, status tracking, refunds and fulfilment workflow.",      status: "Live" },
-  { icon: Users,           label: "Customers",     desc: "Customer profiles, purchase history and loyalty points.",              status: "Live" },
-  { icon: FileText,        label: "Inventory",     desc: "Stock levels, reorder alerts, supplier management and adjustments.",   status: "Live" },
-  { icon: CreditCard,      label: "Payments",      desc: "Cash, card and split-tender support with end-of-day reconciliation.",  status: "Live" },
-  { icon: BarChart3,       label: "Reports",       desc: "Sales by period, category, product and staff — exportable.",          status: "Live" },
-  { icon: FileText,        label: "Invoices",      desc: "Auto-generated invoices with PDF export and email delivery.",          status: "Live" },
-  { icon: Tag,             label: "Discounts",     desc: "Percentage, fixed, and coupon-based promotions with validity rules.",  status: "Live" },
-  { icon: Settings,        label: "Settings",      desc: "Store profile, tax rates, receipt layout and user permissions.",       status: "Live" },
-  { icon: BarChart3,       label: "Analytics",     desc: "Revenue trends, best-sellers and customer retention charts.",          status: "Soon" },
+  { icon: LayoutGrid,   label: "POS Counter",   desc: "Product grid, cart, coupons and multi-tender checkout.",          status: "Live" },
+  { icon: ShoppingCart, label: "Orders",        desc: "Order history with status and payment filters.",                  status: "Live" },
+  { icon: Users,        label: "Customers",     desc: "Customer directory with spend and order history.",                status: "Live" },
+  { icon: Tag,          label: "Coupons",       desc: "Discount codes with usage caps and expiry tracking.",             status: "Live" },
+  { icon: BarChart3,    label: "Reports",       desc: "Revenue trend, top products and category breakdowns.",            status: "Live" },
+  { icon: Settings,     label: "Settings",      desc: "Store profile, tax rate, payment methods and team.",              status: "Live" },
+  { icon: Bell,         label: "Notifications", desc: "Order, inventory and system alerts in one feed.",                 status: "Live" },
+  { icon: KeyRound,     label: "Auth screens",  desc: "Sign in, sign up and forgot-password, fully designed.",           status: "Live" },
 ];
 
 const FEATURES = [
   { icon: Code2,      title: "TypeScript-First",       desc: "Every component and hook is fully typed. Clean, predictable code that scales with your team." },
   { icon: Palette,    title: "Pixel-Perfect UI",        desc: "Tailwind CSS with a custom design system — light and dark themes ship out of the box." },
-  { icon: Smartphone, title: "Fully Responsive",        desc: "Works on desktop POS terminals, tablets at the counter, and mobile for on-the-go orders." },
-  { icon: Zap,        title: "Vite-Powered Builds",     desc: "Sub-second HMR during development and an optimised production bundle under 450 KB." },
-  { icon: BarChart3,  title: "Recharts Integration",    desc: "Sales trend, inventory, and revenue charts — all wired to realistic mock data." },
-  { icon: Layers,     title: "Modular Architecture",    desc: "Feature-folder structure. Add, remove, or rearrange modules without touching unrelated code." },
+  { icon: Smartphone, title: "Fully Responsive",        desc: "Works on desktop counters, tablets, and mobile — no separate mobile build." },
+  { icon: Zap,        title: "Vite-Powered Builds",     desc: "Sub-second HMR during development and a production bundle under 200 KB gzipped." },
+  { icon: BarChart3,  title: "Zero-Dependency Charts",  desc: "Revenue and category breakdowns rendered with plain CSS — no chart library weight." },
+  { icon: Layers,     title: "Feature-Folder Structure",desc: "Each domain — orders, coupons, customers — is self-contained. Add or remove freely." },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
@@ -59,14 +55,14 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 const TECH = [
-  { name: "React 18",     color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"   },
+  { name: "React 19",     color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"   },
   { name: "Vite",         color: "bg-violet-500/10  text-violet-600  dark:text-violet-400" },
   { name: "TypeScript",   color: "bg-blue-500/10    text-blue-600    dark:text-blue-400"   },
   { name: "Tailwind CSS", color: "bg-sky-500/10     text-sky-600     dark:text-sky-400"    },
-  { name: "Recharts",     color: "bg-orange-500/10  text-orange-600  dark:text-orange-400" },
+  { name: "shadcn/ui",    color: "bg-slate-500/10   text-slate-600   dark:text-slate-300"  },
+  { name: "radix-ui",     color: "bg-orange-500/10  text-orange-600  dark:text-orange-400" },
   { name: "React Router", color: "bg-red-500/10     text-red-600     dark:text-red-400"    },
   { name: "Lucide Icons", color: "bg-rose-500/10    text-rose-600    dark:text-rose-400"   },
-  { name: "shadcn/ui",    color: "bg-slate-500/10   text-slate-600   dark:text-slate-300"  },
 ];
 
 const FAQ = [
@@ -76,15 +72,15 @@ const FAQ = [
   },
   {
     q: "Is it suitable for shops other than flower shops?",
-    a: "Absolutely. While designed around a flower shop's workflow, the modules (products, orders, customers, inventory, payments) apply to any retail or boutique business. Rename labels and swap categories to fit your domain.",
+    a: "Absolutely. While designed around a flower shop's workflow, the modules (POS counter, orders, customers, coupons, reports) apply to any retail or boutique business. Rename labels and swap categories to fit your domain.",
   },
   {
     q: "Does it include a real payment gateway?",
-    a: "The template ships with a fully designed payment UI supporting cash, card, and split-tender flows. Wiring up a real gateway (Stripe, Razorpay, Square) requires connecting the checkout form to your preferred provider's SDK.",
+    a: "No — it's a UI-only demo. Cart totals, coupon discounts, and tax are calculated client-side against mock data, with card, cash, and gift-card tender options at checkout. Wiring Stripe or another processor into the checkout flow is on you.",
   },
   {
     q: "How is Flowers POS different from the other templates?",
-    a: "Flowers POS is the only retail-focused template in the CodeSpanda library. It includes a POS terminal checkout flow, inventory reorder alerts, and sales-by-product reporting — features specific to brick-and-mortar or omnichannel retail.",
+    a: "Flowers POS is the only retail-focused template in the CodeSpanda library. It includes a counter checkout flow with coupon codes and multi-tender payment, plus order and customer history — features specific to a brick-and-mortar retail counter rather than a back-office admin panel.",
   },
 ];
 
@@ -128,22 +124,22 @@ export function FlowersPosPage() {
     <>
       <Helmet>
         <title>Flowers POS — Free React Retail POS Template | CodeSpanda</title>
-        <meta name="description" content="Flowers POS is a free React point-of-sale template for retail shops. Covers products, orders, customers, inventory, payments and reports. Built with Vite, Tailwind CSS and TypeScript." />
+        <meta name="description" content="Flowers POS is a free React point-of-sale template for a florist counter. Covers product grid, cart, coupons, orders, customers, and reports. Built with Vite, Tailwind CSS and TypeScript." />
         <meta name="keywords" content="react pos template, free react retail template, point of sale dashboard, tailwind pos template, react shop admin, vite react pos" />
-        <link rel="canonical" href="https://codespanda.com/templates/flowers-pos" />
+        <link rel="canonical" href="https://codespanda.com/templates/flowers" />
         <meta property="og:title" content="Flowers POS — Free React Retail POS Template | CodeSpanda" />
-        <meta property="og:description" content="Flowers POS is a free React point-of-sale template for retail shops covering products, orders, customers, inventory and sales reports." />
-        <meta property="og:url" content="https://codespanda.com/templates/flowers-pos" />
+        <meta property="og:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
+        <meta property="og:url" content="https://codespanda.com/templates/flowers" />
         <meta property="og:type" content="website" />
         <meta name="twitter:title" content="Flowers POS — Free React Retail POS Template | CodeSpanda" />
-        <meta name="twitter:description" content="Flowers POS is a free React point-of-sale template for retail shops covering products, orders, customers, inventory and sales reports." />
+        <meta name="twitter:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Flowers POS",
-          "description": "A free React point-of-sale template for retail shops with products, orders, customers, inventory, payments and sales reports. Built with React, Vite, Tailwind CSS and TypeScript.",
-          "url": "https://codespanda.com/templates/flowers-pos",
-          "image": "https://codespanda.com/images/flowers/dashboard.png",
+          "description": "A free React point-of-sale template for a florist counter with product grid, cart, coupons, orders, customers, and reports. Built with React, Vite, Tailwind CSS and TypeScript.",
+          "url": "https://codespanda.com/templates/flowers",
+          "image": "https://codespanda.com/images/flowers/pos-counter.png",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > POS System",
           "offers": {
@@ -151,7 +147,7 @@ export function FlowersPosPage() {
             "price": "0",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "url": "https://codespanda.com/templates/flowers-pos"
+            "url": "https://codespanda.com/templates/flowers"
           },
           "aggregateRating": {
             "@type": "AggregateRating",
@@ -210,7 +206,7 @@ export function FlowersPosPage() {
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
-                A beautiful point-of-sale system for retail boutiques. Covers <strong className="font-semibold text-foreground">products, orders, customers, inventory, and sales reports</strong> across production-ready pages — built with React, Vite, Tailwind CSS, and TypeScript.
+                A beautiful point-of-sale system for flower shops and retail boutiques. Covers <strong className="font-semibold text-foreground">product grid, cart, coupons, orders, customers, and reports</strong> across production-ready pages — built with React, Vite, Tailwind CSS, and TypeScript.
               </p>
 
               <div className="mt-6 flex flex-wrap items-center gap-3">
@@ -226,7 +222,7 @@ export function FlowersPosPage() {
                 </span>
                 <span className="text-muted-foreground">·</span>
                 <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-                  <Clock className="h-3.5 w-3.5" /> Updated July 2025
+                  <Clock className="h-3.5 w-3.5" /> Updated July 2026
                 </span>
               </div>
 
@@ -259,8 +255,8 @@ export function FlowersPosPage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-pink-500/20 to-rose-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-pink-500/10 ring-1 ring-pink-500/10">
                 <img
-                  src="/images/flowers/dashboard.png"
-                  alt="Flowers POS dashboard preview"
+                  src="/images/flowers/pos-counter.png"
+                  alt="Flowers POS counter preview"
                   loading="eager"
                   fetchPriority="high"
                   decoding="async"
@@ -286,7 +282,7 @@ export function FlowersPosPage() {
               <div>
                 <h2 className="text-2xl font-bold">What is Flowers POS?</h2>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
-                  Flowers POS is a free, open-source <strong className="font-medium text-foreground">React point-of-sale template</strong> built for retail shops and boutiques. You get a fully wired business application — real navigation, working page layouts, and realistic mock data across every module from day one.
+                  Flowers POS is a free, open-source <strong className="font-medium text-foreground">React point-of-sale template</strong> built for a florist counter — but the patterns underneath (product grid, cart, coupon codes, multi-tender checkout, order history) apply to any small retail counter. You get a fully wired application — real navigation, working page layouts, and realistic mock data across every module from day one.
                 </p>
                 <p className="mt-4 leading-relaxed text-muted-foreground">
                   Built with Tailwind CSS and a clean design system you can retheme in minutes. Whether you're building a custom POS for a client, launching a SaaS retail tool, or prototyping a shop management app, Flowers POS gives you a production-ready foundation instantly.
@@ -371,7 +367,7 @@ export function FlowersPosPage() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">What's included</p>
-              <h2 className="text-3xl font-bold">12 fully built POS modules</h2>
+              <h2 className="text-3xl font-bold">8 fully built modules</h2>
               <p className="mt-3 text-muted-foreground">
                 Every module ships with working layouts, realistic sample data, and full responsiveness.
               </p>

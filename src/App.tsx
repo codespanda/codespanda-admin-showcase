@@ -27,7 +27,7 @@ function App() {
         <Route path="/templates/portfolio-template" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
         <Route path="/templates/portfolio" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
         <Route path="/templates/cornerstone" element={<Suspense><CornerstonePage /></Suspense>} />
-        <Route path="/templates/flowers-pos" element={<Suspense><FlowersPosPage /></Suspense>} />
+        <Route path="/templates/flowers" element={<Suspense><FlowersPosPage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         <Route path="*" element={<LegalPage />} />
       </Routes>

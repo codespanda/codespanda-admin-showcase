@@ -19,6 +19,7 @@ const ROUTES = [
   "/templates/Brisk-Admin",
   "/templates/portfolio-template",
   "/templates/cornerstone",
+  "/templates/flowers",
   "/legal/privacy",
   "/legal/terms",
   "/legal/security",
@@ -33,6 +34,7 @@ const HERO_IMAGE = {
   "/templates/Brisk-Admin": "/images/brisk/dashboard.png",
   "/templates/portfolio-template": "/images/portfolio/portfolio.jpg",
   "/templates/cornerstone": "/images/cornerstone-dashboard-2.png",
+  "/templates/flowers": "/images/flowers/pos-counter.png",
 };
 
 function withHeroPreload(html, route) {

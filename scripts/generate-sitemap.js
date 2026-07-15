@@ -14,7 +14,7 @@ const ROUTES = [
   { path: "/templates/Alpine-Admin-React",   changefreq: "monthly", priority: "0.9" },
   { path: "/templates/Brisk-Admin",          changefreq: "monthly", priority: "0.9" },
   { path: "/templates/portfolio-template",   changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/flowers-pos",          changefreq: "monthly", priority: "0.9" },
+  { path: "/templates/flowers",              changefreq: "monthly", priority: "0.9" },
   { path: "/templates/cornerstone",          changefreq: "monthly", priority: "0.9" },
   { path: "/legal/privacy",                  changefreq: "yearly",  priority: "0.3" },
   { path: "/legal/terms",                    changefreq: "yearly",  priority: "0.3" },
