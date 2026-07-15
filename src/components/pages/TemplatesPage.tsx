@@ -1,11 +1,15 @@
-import { useRef } from "react";
+import { lazy, Suspense, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { ExternalLink, Monitor, Moon, Smartphone, ArrowLeft } from "lucide-react";
+import { ExternalLink, Monitor, Moon, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TEMPLATES, type Template } from "@/lib/data";
-import { Logo } from "@/components/shared/Logo";
+import { Navbar } from "@/components/sections/Navbar";
+
+const Footer = lazy(() =>
+  import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
+);
 
 function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -154,21 +158,9 @@ export function TemplatesPage() {
         <meta property="og:url" content="https://codespanda.com/templates" />
       </Helmet>
 
-      {/* Navbar */}
-      <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
-        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-          <Logo imgClassName="h-10" />
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
-          </Link>
-        </div>
-      </header>
+      <Navbar />
 
-      <main className="min-h-screen px-4 py-16">
+      <main className="min-h-screen px-4 pt-28 pb-16">
         <div className="mx-auto max-w-6xl">
           {/* Heading */}
           <motion.div
@@ -196,6 +188,10 @@ export function TemplatesPage() {
           </div>
         </div>
       </main>
+
+      <Suspense fallback={<div className="h-72 animate-pulse bg-secondary/30" />}>
+        <Footer />
+      </Suspense>
     </>
   );
 }
