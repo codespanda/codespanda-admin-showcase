@@ -1,6 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Helmet } from "react-helmet-async";
-import { ExternalLink, MapPin, Briefcase, Palette, Layout } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 
@@ -216,20 +216,6 @@ const SHOTS: Shot[] = [
   },
 ];
 
-const SKILLS = [
-  { label: "UI Design", icon: Palette },
-  { label: "Dashboard Design", icon: Layout },
-  { label: "Mobile App UI", icon: Briefcase },
-  { label: "Web Design", icon: ExternalLink },
-];
-
-const STATS = [
-  { value: "24+", label: "Design shots" },
-  { value: "5+", label: "React templates" },
-  { value: "3+", label: "Years experience" },
-  { value: "10+", label: "Categories" },
-];
-
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
 
 /* ------------------------------------------------------------------ */
@@ -329,20 +315,19 @@ export function DeepakPortfolioPage() {
 
       <main className="min-h-screen pt-24 pb-20">
         {/* Hero */}
-        <section className="mx-auto max-w-5xl px-4 pt-12 pb-16 text-center">
+        <section className="mx-auto max-w-4xl px-4 pt-12 pb-16 text-center">
           <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
             Portfolio
           </span>
-          <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-            Deepak Kumar
+          <h1 className="mt-4 text-5xl font-extrabold tracking-tight sm:text-6xl">
+            CodesPanda
           </h1>
-          <p className="mt-3 text-lg font-medium text-muted-foreground">
-            UI / UX Designer &amp; React Developer
+          <p className="mt-4 text-xl font-semibold text-primary sm:text-2xl">
+            Design. Build. Impress.
           </p>
-          <div className="mt-2 flex items-center justify-center gap-1.5 text-sm text-muted-foreground">
-            <MapPin className="h-4 w-4" />
-            Mohali, India &nbsp;·&nbsp; Web Design, UI / Visual Design, Brand / Graphic Design
-          </div>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
+            High-quality UI Kits, Templates, Dashboards &amp; SaaS Experiences.
+          </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <Button variant="gradient" asChild>
@@ -356,31 +341,6 @@ export function DeepakPortfolioPage() {
                 LinkedIn
               </a>
             </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {STATS.map((s) => (
-              <div key={s.label} className="rounded-2xl border border-border bg-card p-5">
-                <div className="text-3xl font-black text-primary">{s.value}</div>
-                <div className="mt-1 text-xs font-medium text-muted-foreground">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Skills */}
-        <section className="mx-auto max-w-5xl px-4 pb-12">
-          <div className="flex flex-wrap justify-center gap-3">
-            {SKILLS.map((s) => (
-              <span
-                key={s.label}
-                className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-2 text-sm font-medium"
-              >
-                <s.icon className="h-4 w-4 text-primary" />
-                {s.label}
-              </span>
-            ))}
           </div>
         </section>
 

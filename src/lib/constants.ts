@@ -15,9 +15,9 @@ export interface NavLink {
 export const NAV_LINKS: NavLink[] = [
   { label: "Templates", href: "/#templates" },
   { label: "Categories", href: "/#categories" },
+  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/#why-us" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Portfolio", href: "/portfolio" },
 ];
 
 export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
