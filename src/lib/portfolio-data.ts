@@ -140,6 +140,34 @@ If you enjoyed this design, don't forget to appreciate it and share your feedbac
     gallery: [
       "https://cdn.dribbble.com/userupload/48428875/file/47406e4511c34164a1c0a2752a3bdc8e.png?resize=1600x&vertical=center",
     ],
+    description: `Presenting Medicare Clinic, a modern healthcare app designed to simplify the patient journey—from booking appointments to managing prescriptions and accessing medical records—all in one intuitive experience.
+
+Built with a clean, accessible, and user-friendly interface that helps patients connect with healthcare providers anytime, anywhere.
+
+✨ Features
+
+• Doctor Appointment Booking
+• Find Doctors by Specialty
+• Video & In-Person Consultations
+• Electronic Health Records (EHR)
+• Digital Prescriptions
+• Lab Test Booking & Reports
+• Medicine Reminders
+• Health Dashboard & Vital Tracking
+• Secure Payments & Insurance Support
+• Notifications & Follow-ups
+• Patient Profile Management
+• Light & Dark Mode
+
+Designed with a calming color palette, modern UI components, clear information hierarchy, and accessibility-focused interactions for a seamless healthcare experience.
+
+Looking to build a healthcare platform, patient portal, or telemedicine solution?
+
+CodesPanda designs premium UI/UX for healthcare, SaaS, fintech, AI products, dashboards, and mobile applications.
+
+🌐 https://codespanda.com
+
+Appreciate this design if you like it, and share your feedback!`,
   },
   {
     id: "carwash",
