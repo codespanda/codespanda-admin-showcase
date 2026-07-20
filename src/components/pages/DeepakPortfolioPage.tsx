@@ -248,6 +248,8 @@ function ShotCard({ shot, index }: { shot: Shot; index: number }) {
         <img
           src={shot.imgUrl}
           alt={shot.title}
+          width={400}
+          height={300}
           loading={index < 8 ? "eager" : "lazy"}
           decoding="async"
           className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -300,6 +302,11 @@ export function DeepakPortfolioPage() {
           content="Portfolio of Deepak Kumar — UI/UX designer and React developer. 24+ Dribbble shots across mobile app UI, dashboards, SaaS, and POS design."
         />
         <meta property="og:url" content="https://codespanda.com/portfolio" />
+        <meta property="og:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Deepak Kumar — UI/UX Designer & React Developer" />
+        <meta name="twitter:description" content="Portfolio of Deepak Kumar — UI/UX designer and React developer. 24+ Dribbble shots across mobile app UI, dashboards, SaaS, and POS design." />
+        <meta name="twitter:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "ProfilePage",
