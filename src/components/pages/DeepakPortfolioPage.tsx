@@ -23,15 +23,19 @@ function ShotCard({ shot, index }: { shot: Shot; index: number }) {
       className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
     >
       {/* Thumbnail */}
-      <div className="relative h-48 overflow-hidden bg-secondary/30">
+      <div className="relative h-48 overflow-hidden bg-secondary/40">
+        {/* skeleton shimmer shown until image loads */}
+        <div className="absolute inset-0 animate-pulse bg-secondary/60" />
         <img
           src={shot.imgUrl}
           alt={shot.title}
           width={400}
           height={300}
-          loading={index < 8 ? "eager" : "lazy"}
+          loading={index < 4 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
           decoding="async"
-          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="relative h-full w-full object-cover object-top opacity-0 transition-[transform,opacity] duration-500 group-hover:scale-105"
+          onLoad={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "1"; }}
         />
       </div>
 
