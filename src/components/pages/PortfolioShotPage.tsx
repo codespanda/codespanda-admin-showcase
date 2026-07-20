@@ -51,10 +51,9 @@ export function PortfolioShotPage() {
             <img
               src={shot.fullImgUrl}
               alt={shot.title}
-              width={1600}
               loading="eager"
               decoding="async"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto"
             />
           </div>
         </div>
@@ -62,6 +61,7 @@ export function PortfolioShotPage() {
         {/* Details */}
         <div className="mx-auto max-w-5xl px-4 pt-10">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+            {/* Left: title + tags */}
             <div className="flex-1">
               <span className="text-xs font-semibold uppercase tracking-widest text-primary">
                 {shot.category}
@@ -81,6 +81,7 @@ export function PortfolioShotPage() {
               </div>
             </div>
 
+            {/* Right: actions */}
             <div className="flex shrink-0 flex-col gap-2 sm:items-end">
               <Button variant="gradient" asChild>
                 <a href={shot.dribbbleUrl} target="_blank" rel="noreferrer noopener">
@@ -94,23 +95,33 @@ export function PortfolioShotPage() {
             </div>
           </div>
 
-          {/* Designer credit */}
-          <div className="mt-8 flex items-center gap-3 rounded-2xl border border-border bg-card p-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary/30 to-primary/10 text-sm font-bold text-primary">
-              DK
+          {/* Designed by CodesPanda */}
+          <div className="mt-8 flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/60">
+              <span className="text-sm font-black text-primary-foreground">CP</span>
             </div>
             <div>
-              <p className="text-sm font-semibold">Deepak Kumar</p>
-              <p className="text-xs text-muted-foreground">UI / UX Designer &amp; React Developer · Mohali, India</p>
+              <p className="text-sm font-bold">Designed by CodesPanda</p>
+              <p className="text-xs text-muted-foreground">
+                High-quality UI Kits, Templates, Dashboards &amp; SaaS Experiences
+              </p>
             </div>
-            <div className="ml-auto hidden sm:block">
+            <div className="ml-auto hidden sm:flex items-center gap-3">
               <a
                 href="https://dribbble.com/deepak1605"
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-xs font-medium text-primary hover:underline"
+                className="text-xs font-medium text-muted-foreground hover:text-primary transition-colors"
               >
-                dribbble.com/deepak1605
+                Dribbble
+              </a>
+              <a
+                href="https://www.linkedin.com/company/codespanda"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-xs font-medium text-muted-foreground hover:text-primary transition-colors"
+              >
+                LinkedIn
               </a>
             </div>
           </div>
@@ -131,6 +142,7 @@ export function PortfolioShotPage() {
                       alt={prev.title}
                       width={64}
                       height={48}
+                      loading="lazy"
                       className="h-12 w-16 shrink-0 rounded-lg object-cover"
                     />
                     <div className="min-w-0">
@@ -150,6 +162,7 @@ export function PortfolioShotPage() {
                       alt={next.title}
                       width={64}
                       height={48}
+                      loading="lazy"
                       className="h-12 w-16 shrink-0 rounded-lg object-cover"
                     />
                     <div className="min-w-0 sm:text-right">

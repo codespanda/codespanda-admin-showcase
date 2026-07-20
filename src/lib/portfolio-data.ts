@@ -5,7 +5,7 @@ export interface Shot {
   tags: string[];
   dribbbleUrl: string;
   imgUrl: string;       // thumbnail (400×300)
-  fullImgUrl: string;   // larger display image (1600×)
+  fullImgUrl: string;   // full-quality shot image from Dribbble
 }
 
 export const SHOTS: Shot[] = [
@@ -16,7 +16,7 @@ export const SHOTS: Shot[] = [
     tags: ["Real Estate", "Mobile", "iOS", "Property"],
     dribbbleUrl: "https://dribbble.com/shots/27570937-HomeFinder-Real-Estate-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428946/file/9c1a253f9271ca2eef40f13fcd738c2f.png?resize=1600x&vertical=center",
   },
   {
     id: "taxi",
@@ -25,7 +25,7 @@ export const SHOTS: Shot[] = [
     tags: ["Transport", "Mobile", "Maps", "Booking"],
     dribbbleUrl: "https://dribbble.com/shots/27570927-Taxi-Booking-App-Modern-Ride-Hailing-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48428915/file/562e4d15b7907764481ed5a363bd31f5.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428915/file/562e4d15b7907764481ed5a363bd31f5.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428916/file/d5d9c0a771f354fa844f94e03777624b.png?resize=1600x&vertical=center",
   },
   {
     id: "music",
@@ -34,7 +34,7 @@ export const SHOTS: Shot[] = [
     tags: ["Music", "Streaming", "Mobile", "Audio"],
     dribbbleUrl: "https://dribbble.com/shots/27570919-Music-Streaming-App-Premium-Mobile-UI-Design",
     imgUrl: "https://cdn.dribbble.com/userupload/48428887/file/32c7e194726aa5f05a714a769d63e5b7.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428887/file/32c7e194726aa5f05a714a769d63e5b7.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428888/file/2208c59023903cfdbd8a770858bf85c2.png?resize=1600x&vertical=center",
   },
   {
     id: "medicare",
@@ -43,7 +43,7 @@ export const SHOTS: Shot[] = [
     tags: ["Healthcare", "Mobile", "Clinic", "Medical"],
     dribbbleUrl: "https://dribbble.com/shots/27570916-Medicare-Clinic-App-Healthcare-Mobile-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48428873/file/08dc80fd09d37bab9005fa432f0b4cbf.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428873/file/08dc80fd09d37bab9005fa432f0b4cbf.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428874/file/305c7cc46a2dd7c01b4505a827cba30a.png?resize=1600x&vertical=center",
   },
   {
     id: "carwash",
@@ -52,7 +52,7 @@ export const SHOTS: Shot[] = [
     tags: ["Automotive", "Mobile", "Services", "Booking"],
     dribbbleUrl: "https://dribbble.com/shots/27570910-Car-Wash-App-Premium-Mobile-UI-Design",
     imgUrl: "https://cdn.dribbble.com/userupload/48428855/file/38417a4205c335711f45b5d6dadc0906.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428855/file/38417a4205c335711f45b5d6dadc0906.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428856/file/b1692d2eac5b2d971efef9d70050516c.png?resize=1600x&vertical=center",
   },
   {
     id: "kids-learning",
@@ -61,7 +61,7 @@ export const SHOTS: Shot[] = [
     tags: ["Education", "Kids", "Mobile", "Interactive"],
     dribbbleUrl: "https://dribbble.com/shots/27570908-Kids-Learning-App-Fun-Interactive-Education-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48428848/file/ad536a86275f4a7c8e06d9a264795070.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428848/file/ad536a86275f4a7c8e06d9a264795070.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428849/file/b15590f053e36906e3c326e8b0037929.png?resize=1600x&vertical=center",
   },
   {
     id: "nexora-crm",
@@ -70,7 +70,7 @@ export const SHOTS: Shot[] = [
     tags: ["CRM", "Dashboard", "SaaS", "Business"],
     dribbbleUrl: "https://dribbble.com/shots/27570895-Nexora-CRM-Modern-Customer-Relationship-Management-Dashboard",
     imgUrl: "https://cdn.dribbble.com/userupload/48428809/file/dd59ecd16de5b38a04913ae3e3a41d84.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428809/file/dd59ecd16de5b38a04913ae3e3a41d84.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428810/file/8a000ead5780d0f70b22404e0bf705a4.png?resize=1600x&vertical=center",
   },
   {
     id: "nexora-admin",
@@ -79,7 +79,7 @@ export const SHOTS: Shot[] = [
     tags: ["Admin", "Dashboard", "Web", "Analytics"],
     dribbbleUrl: "https://dribbble.com/shots/27570880-Nexora-Modern-Admin-Dashboard-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48428771/file/b8a48af6185f892a43f98727c988c171.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48428771/file/b8a48af6185f892a43f98727c988c171.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48428772/file/5dfff752d4ba735ab12e7fb1596b4bfb.png?resize=1600x&vertical=center",
   },
   {
     id: "interior",
@@ -88,7 +88,7 @@ export const SHOTS: Shot[] = [
     tags: ["Interior", "Lifestyle", "Mobile", "Design"],
     dribbbleUrl: "https://dribbble.com/shots/27561784-Interior-Decoration-Mobile-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48395766/file/ddcadd8b0251dcc24a0c806af4add348.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48395766/file/ddcadd8b0251dcc24a0c806af4add348.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48395767/file/50dd5768db3499015f2c47129e095b95.png?resize=1600x&vertical=center",
   },
   {
     id: "ebooks",
@@ -97,7 +97,7 @@ export const SHOTS: Shot[] = [
     tags: ["Books", "Reading", "Mobile", "Library"],
     dribbbleUrl: "https://dribbble.com/shots/27561762-eBooks-App-UI-Design",
     imgUrl: "https://cdn.dribbble.com/userupload/48395665/file/2280d34aae0d94ad41842ea56195dff6.png?crop=0x0-1448x1086&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48395665/file/2280d34aae0d94ad41842ea56195dff6.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48395666/file/38090b0578dc2c0a8c116eba6f574b42.png?resize=1600x&vertical=center",
   },
   {
     id: "school",
@@ -106,7 +106,7 @@ export const SHOTS: Shot[] = [
     tags: ["Education", "ERP", "Dashboard", "Management"],
     dribbbleUrl: "https://dribbble.com/shots/27561743-Modern-School-Management-System-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48395620/file/086413a064eeecc3df96c0de6dce7aeb.png?crop=1x0-1366x1024&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48395620/file/086413a064eeecc3df96c0de6dce7aeb.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48395621/file/ed5385bc1b9d14a920740e2ab1e639de.png?resize=1600x&vertical=center",
   },
   {
     id: "hairaura",
@@ -115,7 +115,7 @@ export const SHOTS: Shot[] = [
     tags: ["Beauty", "Salon", "Booking", "Mobile"],
     dribbbleUrl: "https://dribbble.com/shots/27558538-HairAura-Hair-Salon-Mobile-App-UI-Design",
     imgUrl: "https://cdn.dribbble.com/userupload/48384064/file/3ea40e0302256ac0e76ddbd4b75ef161.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48384064/file/3ea40e0302256ac0e76ddbd4b75ef161.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48384065/file/14bb3f1a7cfa72ed3ece60059d18efa3.png?resize=1600x&vertical=center",
   },
   {
     id: "harmony",
@@ -124,7 +124,7 @@ export const SHOTS: Shot[] = [
     tags: ["Music", "Streaming", "Dark UI", "Mobile"],
     dribbbleUrl: "https://dribbble.com/shots/27558401-Harmony-Music-Streaming-Mobile-App-UI-Design",
     imgUrl: "https://cdn.dribbble.com/userupload/48383665/file/0905ac32058bb8c3b8720d030b0e8793.png?crop=76x25-1364x990&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48383665/file/0905ac32058bb8c3b8720d030b0e8793.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48383666/file/658944124789cb45ea88f101d40e90dd.png?resize=1600x&vertical=center",
   },
   {
     id: "foodiego",
@@ -133,7 +133,7 @@ export const SHOTS: Shot[] = [
     tags: ["Food", "Delivery", "Mobile", "eCommerce"],
     dribbbleUrl: "https://dribbble.com/shots/27558165-FoodieGo-Food-Delivery-Mobile-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48382845/file/5d0fa90b32817e57c87ba0e296221ef7.png?crop=5x0-1371x1024&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48382845/file/5d0fa90b32817e57c87ba0e296221ef7.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48382846/file/64573c11b8b0a1be7152f6aca031e266.png?resize=1600x&vertical=center",
   },
   {
     id: "beauty",
@@ -142,7 +142,7 @@ export const SHOTS: Shot[] = [
     tags: ["Beauty", "eCommerce", "Mobile", "Skincare"],
     dribbbleUrl: "https://dribbble.com/shots/27558126-Beauty-Skincare-Cosmetics-Mobile-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48382647/file/df8f648a9b58daf5bec3672d81da93ca.png?crop=1x55-1219x969&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48382647/file/df8f648a9b58daf5bec3672d81da93ca.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48382648/file/0a5d636721be2f19f249d8e619b25e1d.png?resize=1600x&vertical=center",
   },
   {
     id: "waygo",
@@ -151,7 +151,7 @@ export const SHOTS: Shot[] = [
     tags: ["Travel", "Maps", "Mobile", "Navigation"],
     dribbbleUrl: "https://dribbble.com/shots/27558077-WayGo-Smart-Car-Travel-Road-Trip-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48382527/file/24e2135e2ef0b106f03dcce61b92e4bb.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48382527/file/24e2135e2ef0b106f03dcce61b92e4bb.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48382528/file/aa6a0e741643075677007509e84962f7.png?resize=1600x&vertical=center",
   },
   {
     id: "lumiere",
@@ -160,7 +160,7 @@ export const SHOTS: Shot[] = [
     tags: ["Luxury", "eCommerce", "Mobile", "Jewellery"],
     dribbbleUrl: "https://dribbble.com/shots/27558047-Lumi-re-Luxury-Jewellery-Shopping-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48382450/file/d2d97e5fd0fccbfa83a13006ef8bdadb.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48382450/file/d2d97e5fd0fccbfa83a13006ef8bdadb.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48382451/file/29030de9676a10220bc00fd11425a8c0.png?resize=1600x&vertical=center",
   },
   {
     id: "nutrifit",
@@ -169,7 +169,7 @@ export const SHOTS: Shot[] = [
     tags: ["Health", "Marketplace", "Mobile", "Nutrition"],
     dribbbleUrl: "https://dribbble.com/shots/27558023-NutriFit-Healthy-Products-Marketplace-Nutrition-App",
     imgUrl: "https://cdn.dribbble.com/userupload/48382383/file/95f4d46958f18967169881d0c35b8f7f.png?crop=0x0-1448x1086&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48382383/file/95f4d46958f18967169881d0c35b8f7f.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48382384/file/ca37eb18d8162ee6e60fa86ff1765587.png?resize=1600x&vertical=center",
   },
   {
     id: "cornerstone-concept",
@@ -178,7 +178,7 @@ export const SHOTS: Shot[] = [
     tags: ["SaaS", "Landing Page", "Web", "Marketing"],
     dribbbleUrl: "https://dribbble.com/shots/27555844-Cornerstone-Modern-SaaS-Landing-Page-Concept",
     imgUrl: "https://cdn.dribbble.com/userupload/48374252/file/ab74d5a0b6603db80b317f093d387282.png?crop=4x3-2660x1995&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48374252/file/ab74d5a0b6603db80b317f093d387282.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48374253/file/02b3fb23eca26da995334122e0312616.png?resize=1600x&vertical=center",
   },
   {
     id: "jewellery-pos",
@@ -187,7 +187,7 @@ export const SHOTS: Shot[] = [
     tags: ["POS", "Retail", "Luxury", "Dashboard"],
     dribbbleUrl: "https://dribbble.com/shots/27549892-Luxury-Jewellery-POS-System-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48352741/file/d793edb97b0e4e9f9cdff79e7af38b2d.png?crop=215x48-1280x847&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48352741/file/d793edb97b0e4e9f9cdff79e7af38b2d.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48352742/file/eabdff5b900405caebff8966aab75c11.png?resize=1600x&vertical=center",
   },
   {
     id: "cafe-pos",
@@ -196,7 +196,7 @@ export const SHOTS: Shot[] = [
     tags: ["POS", "Cafe", "Dashboard", "Restaurant"],
     dribbbleUrl: "https://dribbble.com/shots/27549817-Modern-Cafe-POS-Dashboard-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48352510/file/80981154068851e0919cf9d4c043c787.png?crop=228x144-1198x872&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48352510/file/80981154068851e0919cf9d4c043c787.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48352511/file/dc1d653eb8fca924ae59ed3b9a9e50de.png?resize=1600x&vertical=center",
   },
   {
     id: "posymart",
@@ -205,7 +205,7 @@ export const SHOTS: Shot[] = [
     tags: ["POS", "Retail", "Dashboard", "Cafe"],
     dribbbleUrl: "https://dribbble.com/shots/27548893-PosyMart-Modern-Cafe-POS-Dashboard-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48348854/file/1ca69ebd22c0a91c3feca98e7dd5dccf.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48348854/file/1ca69ebd22c0a91c3feca98e7dd5dccf.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48348855/file/d2cbadf714e1d580584e9cf4c18ca64b.png?resize=1600x&vertical=center",
   },
   {
     id: "ecommerce-admin",
@@ -214,7 +214,7 @@ export const SHOTS: Shot[] = [
     tags: ["eCommerce", "Admin", "Dashboard", "Retail"],
     dribbbleUrl: "https://dribbble.com/shots/27547992-Modern-E-commerce-Admin-Dashboard-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48345043/file/6cd58e618bd997f5ddd81ee1ed9a1505.png?crop=1x4-1611x1212&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48345043/file/6cd58e618bd997f5ddd81ee1ed9a1505.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48345044/file/8c846958df5b8380504e514909da26fc.png?resize=1600x&vertical=center",
   },
   {
     id: "greenerp",
@@ -223,7 +223,7 @@ export const SHOTS: Shot[] = [
     tags: ["ERP", "Finance", "Dashboard", "Business"],
     dribbbleUrl: "https://dribbble.com/shots/27547980-GreenERP-Modern-ERP-Dashboard-Finance-Business-Management",
     imgUrl: "https://cdn.dribbble.com/userupload/48345009/file/2549f699604211aa243470251f05faa1.png?crop=2x2-1833x1375&format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48345009/file/2549f699604211aa243470251f05faa1.png?format=webp&resize=1600x&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48345010/file/5926d17423734369f3b1b96fcd14ba00.png?resize=1600x&vertical=center",
   },
 ];
 
