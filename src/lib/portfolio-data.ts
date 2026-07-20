@@ -1011,6 +1011,7 @@ The concept includes everything businesses need to manage sales efficiently — 
     tags: ["Dashboard", "Analytics", "SaaS", "Admin"],
     dribbbleUrl: "https://dribbble.com/shots/27539544-Dashboard-App",
     imgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?resize=1600x&vertical=center",
     description: `A modern analytics dashboard UI featuring clean data visualizations, KPI cards, activity feeds, and responsive layouts. Designed for SaaS applications requiring at-a-glance business intelligence and real-time metrics.
 
 ✨ Highlights
