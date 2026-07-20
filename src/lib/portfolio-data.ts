@@ -909,10 +909,9 @@ CodesPanda creates premium UI/UX for enterprise dashboards, SaaS platforms, fina
     category: "Web Dashboard",
     tags: ["POS", "Retail", "Inventory", "Dashboard"],
     dribbbleUrl: "https://dribbble.com/shots/27545827-Modern-POS-System-Dashboard-UI-Retail-Inventory-Management",
-    imgUrl: "https://cdn.dribbble.com/userupload/46194840/file/a6755c6ab94f7f659293822796544019.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/46194840/file/a6755c6ab94f7f659293822796544019.png?resize=1600x&vertical=center",
+    imgUrl: "https://cdn.dribbble.com/userupload/48337334/file/3516d78ded90812a9dfc4f0bb352bec9.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48337334/file/3516d78ded90812a9dfc4f0bb352bec9.png?resize=1600x&vertical=center",
     gallery: [
-      "https://cdn.dribbble.com/userupload/48337334/file/3516d78ded90812a9dfc4f0bb352bec9.png?resize=1600x&vertical=center",
       "https://cdn.dribbble.com/userupload/48337335/file/37edbf6e085e7ccfd248ee0053caad12.png?resize=1600x&vertical=center",
     ],
     description: `A modern Point of Sale (POS) system UI designed to simplify retail operations with an intuitive and scalable user experience.
@@ -992,9 +991,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     dribbbleUrl: "https://dribbble.com/shots/27545328-Fitness-App-Sprout",
     imgUrl: "https://cdn.dribbble.com/userupload/48335728/file/9c4b869034b496df839f8d1afbedea5b.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48335728/file/9c4b869034b496df839f8d1afbedea5b.png?resize=1600x&vertical=center",
-    gallery: [
-      "https://cdn.dribbble.com/userupload/48335754/file/68c70f89c8cf59d3a22469979458a9ce.png?resize=1600x&vertical=center",
-    ],
     description: `Sprout is a fitness and nutrition mobile app focused on healthy habit building, meal tracking, and workout planning. The interface combines fresh green tones with clean data visualizations for a motivating and encouraging fitness experience.
 
 ✨ Highlights
