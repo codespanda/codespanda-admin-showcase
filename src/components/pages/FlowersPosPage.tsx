@@ -237,7 +237,7 @@ export function FlowersPosPage() {
                     <Github className="h-4 w-4" /> View on GitHub
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" asChild>
+                <Button size="lg" className="border border-pink-500/40 bg-pink-500/10 text-pink-600 hover:bg-pink-500/20 dark:text-pink-400" asChild>
                   <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">
                     <BookOpen className="h-4 w-4" /> Documentation
                   </a>
@@ -313,7 +313,7 @@ export function FlowersPosPage() {
         <section className="px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Gallery</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">Gallery</p>
               <h2 className="text-3xl font-bold">See it in action</h2>
               <p className="mt-3 text-muted-foreground">
                 A tour of the key modules — every page is production-ready and fully responsive.
@@ -325,7 +325,7 @@ export function FlowersPosPage() {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <Button variant="outline" asChild>
+              <Button className="border border-pink-500/40 bg-pink-500/10 text-pink-600 hover:bg-pink-500/20 dark:text-pink-400" asChild>
                 <a href={PREVIEW_URL} target="_blank" rel="noreferrer noopener">
                   <Monitor className="h-4 w-4" /> Explore all
                 </a>
@@ -338,7 +338,7 @@ export function FlowersPosPage() {
         <section className="border-y border-border bg-secondary/20 px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Why Flowers POS</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">Why Flowers POS</p>
               <h2 className="text-3xl font-bold">Built for real retail projects</h2>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -366,7 +366,7 @@ export function FlowersPosPage() {
         <section className="px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">What's included</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">What's included</p>
               <h2 className="text-3xl font-bold">8 fully built modules</h2>
               <p className="mt-3 text-muted-foreground">
                 Every module ships with working layouts, realistic sample data, and full responsiveness.
@@ -400,7 +400,7 @@ export function FlowersPosPage() {
         <section className="border-y border-border bg-secondary/20 px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Tech Stack</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">Tech Stack</p>
               <h2 className="text-3xl font-bold">Built with modern tools</h2>
             </div>
             <div className="flex flex-wrap justify-center gap-3">
@@ -417,7 +417,7 @@ export function FlowersPosPage() {
         <section className="px-4 py-20">
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">Documentation</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">Documentation</p>
               <h2 className="text-3xl font-bold">Get running in 2 minutes</h2>
               <p className="mt-3 text-muted-foreground">Node.js 18+ required. No paid tools, no account sign-ups.</p>
             </div>
@@ -444,7 +444,7 @@ export function FlowersPosPage() {
             </div>
 
             <div className="mt-8 text-center">
-              <Button variant="gradient" size="lg" asChild>
+              <Button size="lg" className="bg-gradient-to-r from-pink-500 to-rose-600 text-white hover:from-pink-600 hover:to-rose-700 shadow-md shadow-pink-500/20" asChild>
                 <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">
                   <BookOpen className="h-4 w-4" /> View Documentation
                 </a>
@@ -457,7 +457,7 @@ export function FlowersPosPage() {
         <section className="border-y border-border bg-secondary/20 px-4 py-20">
           <div className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-primary">FAQ</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">FAQ</p>
               <h2 className="text-3xl font-bold">Common questions</h2>
             </div>
             <div className="divide-y divide-border">
