@@ -76,8 +76,8 @@ Designed in Figma with a focus on accessibility, visual hierarchy, and an engagi
     category: "Mobile App",
     tags: ["Skincare", "eCommerce", "Mobile", "Shopping"],
     dribbbleUrl: "https://dribbble.com/shots/27572084-GlowSkin-Premium-Skincare-E-commerce-UI-UX-Design",
-    imgUrl: "https://cdn.dribbble.com/userupload/48433047/file/f927d13c79712b7976d036194b7f9c0e.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48433047/file/f927d13c79712b7976d036194b7f9c0e.png?resize=1600x&vertical=center",
+    imgUrl: "/images/glowskin/glowskin-app.png",
+    fullImgUrl: "/images/glowskin/glowskin-app.png",
     description: `A modern skincare shopping experience designed with a clean, minimal, and premium aesthetic. The interface focuses on effortless product discovery, seamless shopping, and an elegant checkout flow across both mobile and desktop.
 
 ✨ Highlights
