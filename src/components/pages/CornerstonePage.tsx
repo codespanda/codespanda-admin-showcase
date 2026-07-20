@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -127,6 +127,10 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
 }
 
 export function CornerstonePage() {
+  useEffect(() => {
+    document.documentElement.dataset.template = "cornerstone";
+    return () => { delete document.documentElement.dataset.template; };
+  }, []);
   return (
     <>
       <Helmet>

@@ -81,6 +81,31 @@
   }
 }
 
+/* Per-template primary colour overrides */
+[data-template="flowers"],
+[data-template="flowers"].dark {
+  --primary: 330 81% 60%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 330 81% 60%;
+  --ring: 330 81% 60%;
+}
+[data-template="brisk"],
+[data-template="brisk"].dark,
+[data-template="cornerstone"],
+[data-template="cornerstone"].dark {
+  --primary: 152 60% 38%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 152 60% 38%;
+  --ring: 152 60% 38%;
+}
+[data-template="portfolio-template"],
+[data-template="portfolio-template"].dark {
+  --primary: 347 77% 52%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 347 77% 52%;
+  --ring: 347 77% 52%;
+}
+
 @layer utilities {
   .text-gradient {
     @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent;
