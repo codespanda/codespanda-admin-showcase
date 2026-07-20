@@ -108,11 +108,17 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent;
+    background: linear-gradient(to right, #0095DD, #005FA3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .dark .text-gradient {
-    @apply from-indigo-400 via-purple-400 to-cyan-300;
+    background: linear-gradient(to right, #29ADEA, #0080CC);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .glass {
