@@ -46,7 +46,7 @@ function TemplateCard({ template, index }: { template: Template; index: number }
   const badgeVariant =
     template.badge === "Popular" ? "from-emerald-500 to-teal-500" :
     template.badge === "Hot" ? "from-rose-500 to-orange-500" :
-    "from-indigo-500 to-purple-600";
+    "from-[#0095DD] to-[#005FA3]";
 
   return (
     <motion.div
