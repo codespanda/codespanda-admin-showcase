@@ -863,6 +863,28 @@ Available for freelance projects, startups, and long-term product partnerships.`
     dribbbleUrl: "https://dribbble.com/shots/27547992-Modern-E-commerce-Admin-Dashboard-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48345043/file/6cd58e618bd997f5ddd81ee1ed9a1505.png?crop=1x4-1611x1212&format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48345044/file/8c846958df5b8380504e514909da26fc.png?resize=1600x&vertical=center",
+    description: `A modern e-commerce admin dashboard UI designed for managing online stores with clarity and efficiency. The interface covers sales analytics, product management, order tracking, customer data, and inventory — all in a clean, scalable layout built for high-volume retail operations.
+
+✨ Highlights
+
+• Sales & Revenue Dashboard
+• Product Catalog Management
+• Order & Shipment Tracking
+• Customer Management
+• Inventory & Stock Alerts
+• Discount & Coupon Management
+• Analytics Charts & KPIs
+• Role-Based Access Control
+• Dark & Light Theme Ready
+• Responsive Grid Layout
+
+Designed with a focus on usability, visual hierarchy, and enterprise-grade UX for modern e-commerce teams.
+
+Looking to build a custom e-commerce platform, admin panel, or SaaS dashboard?
+
+CodesPanda creates premium UI/UX for retail, SaaS, fintech, and enterprise web applications.
+
+🌐 https://codespanda.com`,
   },
   {
     id: "greenerp",
