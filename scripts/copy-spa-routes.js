@@ -20,6 +20,7 @@ const ROUTES = [
   "/templates/portfolio-template",
   "/templates/cornerstone",
   "/templates/flowers",
+  "/portfolio",
   "/legal/privacy",
   "/legal/terms",
   "/legal/security",
