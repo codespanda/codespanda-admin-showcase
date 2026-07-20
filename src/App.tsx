@@ -13,6 +13,7 @@ const CornerstonePage     = lazy(() => import("@/components/pages/CornerstonePag
 const TemplatesPage       = lazy(() => import("@/components/pages/TemplatesPage").then(m => ({ default: m.TemplatesPage })));
 const FlowersPosPage      = lazy(() => import("@/components/pages/FlowersPosPage").then(m => ({ default: m.FlowersPosPage })));
 const DeepakPortfolioPage = lazy(() => import("@/components/pages/DeepakPortfolioPage").then(m => ({ default: m.DeepakPortfolioPage })));
+const PortfolioShotPage   = lazy(() => import("@/components/pages/PortfolioShotPage").then(m => ({ default: m.PortfolioShotPage })));
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/templates/cornerstone" element={<Suspense><CornerstonePage /></Suspense>} />
         <Route path="/templates/flowers" element={<Suspense><FlowersPosPage /></Suspense>} />
         <Route path="/portfolio" element={<Suspense><DeepakPortfolioPage /></Suspense>} />
+        <Route path="/portfolio/:shotId" element={<Suspense><PortfolioShotPage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         <Route path="*" element={<LegalPage />} />
       </Routes>
