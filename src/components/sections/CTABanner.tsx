@@ -12,7 +12,8 @@ export function CTABanner() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-violet-700 p-12 text-center text-white shadow-2xl shadow-indigo-500/30 md:p-16"
+          className="relative overflow-hidden rounded-3xl p-12 text-center text-white shadow-2xl md:p-16"
+          style={{ background: "linear-gradient(135deg, #0095DD, #005FA3)" }}
         >
           {/* Decorative blobs */}
           <div
@@ -40,7 +41,7 @@ export function CTABanner() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Button
                 size="lg"
-                className="border border-white/20 bg-white text-indigo-700 hover:bg-white/90"
+                className="border border-white/20 bg-white text-[#005FA3] hover:bg-white/90"
                 asChild
               >
                 <Link to="/templates">
