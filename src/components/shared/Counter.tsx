@@ -18,7 +18,8 @@ export function Counter({
   className,
 }: CounterProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const [display, setDisplay] = useState(0);
+  // Start at final value so the number is always visible even before JS runs
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
     const el = ref.current;
@@ -37,6 +38,8 @@ export function Counter({
           setDisplay(eased * value);
           if (progress < 1) frame = requestAnimationFrame(tick);
         };
+        // Reset to 0 then animate up
+        setDisplay(0);
         frame = requestAnimationFrame(tick);
         return () => cancelAnimationFrame(frame);
       },
