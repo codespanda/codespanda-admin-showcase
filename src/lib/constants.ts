@@ -34,7 +34,11 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
   {
     title: "Resources",
     links: [
-      { label: "Documentation", href: "https://codespanda.github.io/Alpine-Admin-React/docs", external: true },
+      { label: "Alpine Admin Docs", href: "https://codespanda.github.io/Alpine-Admin-React/docs", external: true },
+      { label: "Brisk Admin Docs", href: "https://codespanda.github.io/brisk-admin/", external: true },
+      { label: "Portfolio Docs", href: "https://codespanda.github.io/portfolio/", external: true },
+      { label: "Flowers POS Docs", href: "https://flowers.codespanda.com/docs", external: true },
+      { label: "Cornerstone Docs", href: "https://cornerstone.codespanda.com/docs/", external: true },
       { label: "Contact", href: "mailto:contact@codespanda.com", external: true },
     ],
   },
