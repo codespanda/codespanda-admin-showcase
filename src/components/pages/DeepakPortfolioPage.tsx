@@ -18,7 +18,7 @@ interface Shot {
   category: string;
   tags: string[];
   dribbbleUrl: string;
-  color: string;
+  imgUrl: string;
 }
 
 const SHOTS: Shot[] = [
@@ -27,192 +27,192 @@ const SHOTS: Shot[] = [
     title: "HomeFinder – Real Estate App UI",
     category: "Mobile App",
     tags: ["Real Estate", "Mobile", "iOS"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-blue-500/20 to-indigo-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570937-HomeFinder-Real-Estate-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "taxi",
     title: "Taxi Booking App – Modern Ride-Hailing UI",
     category: "Mobile App",
     tags: ["Transport", "Mobile", "Maps"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-amber-500/20 to-yellow-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570927-Taxi-Booking-App-Modern-Ride-Hailing-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428915/file/562e4d15b7907764481ed5a363bd31f5.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "music",
     title: "Music Streaming App – Premium Mobile UI",
     category: "Mobile App",
     tags: ["Music", "Streaming", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-purple-500/20 to-violet-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570919-Music-Streaming-App-Premium-Mobile-UI-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428887/file/32c7e194726aa5f05a714a769d63e5b7.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "medicare",
     title: "Medicare Clinic App – Healthcare Mobile UI",
     category: "Mobile App",
     tags: ["Healthcare", "Mobile", "Clinic"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-emerald-500/20 to-teal-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570916-Medicare-Clinic-App-Healthcare-Mobile-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428873/file/08dc80fd09d37bab9005fa432f0b4cbf.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "carwash",
     title: "Car Wash App – Premium Mobile UI Design",
     category: "Mobile App",
     tags: ["Automotive", "Mobile", "Services"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-cyan-500/20 to-sky-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570910-Car-Wash-App-Premium-Mobile-UI-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428855/file/38417a4205c335711f45b5d6dadc0906.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "kids-learning",
     title: "Kids Learning App – Fun & Interactive Education UI",
     category: "Mobile App",
     tags: ["Education", "Kids", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-orange-500/20 to-rose-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570908-Kids-Learning-App-Fun-Interactive-Education-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428848/file/ad536a86275f4a7c8e06d9a264795070.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "nexora-crm",
     title: "Nexora CRM – Customer Relationship Management Dashboard",
     category: "Web Dashboard",
     tags: ["CRM", "Dashboard", "SaaS"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-indigo-500/20 to-purple-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570895-Nexora-CRM-Modern-Customer-Relationship-Management-Dashboard",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428809/file/dd59ecd16de5b38a04913ae3e3a41d84.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "nexora-admin",
     title: "Nexora – Modern Admin Dashboard UI",
     category: "Web Dashboard",
     tags: ["Admin", "Dashboard", "Web"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-violet-500/20 to-indigo-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27570880-Nexora-Modern-Admin-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48428771/file/b8a48af6185f892a43f98727c988c171.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "interior",
     title: "Interior Decoration Mobile App UI",
     category: "Mobile App",
     tags: ["Interior", "Lifestyle", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-stone-500/20 to-amber-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27561784-Interior-Decoration-Mobile-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48395766/file/ddcadd8b0251dcc24a0c806af4add348.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "ebooks",
     title: "eBooks App UI Design",
     category: "Mobile App",
     tags: ["Books", "Reading", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-rose-500/20 to-pink-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27561762-eBooks-App-UI-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48395665/file/2280d34aae0d94ad41842ea56195dff6.png?crop=0x0-1448x1086&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "school",
     title: "Modern School Management System UI",
     category: "Web Dashboard",
     tags: ["Education", "ERP", "Dashboard"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-blue-500/20 to-sky-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27561743-Modern-School-Management-System-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48395620/file/086413a064eeecc3df96c0de6dce7aeb.png?crop=1x0-1366x1024&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "hairaura",
     title: "HairAura — Hair Salon Mobile App UI",
     category: "Mobile App",
     tags: ["Beauty", "Salon", "Booking"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-pink-500/20 to-rose-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558538-HairAura-Hair-Salon-Mobile-App-UI-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48384064/file/3ea40e0302256ac0e76ddbd4b75ef161.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "harmony",
     title: "Harmony — Music Streaming Mobile App UI",
     category: "Mobile App",
     tags: ["Music", "Streaming", "Dark UI"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-fuchsia-500/20 to-purple-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558401-Harmony-Music-Streaming-Mobile-App-UI-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48383665/file/0905ac32058bb8c3b8720d030b0e8793.png?crop=76x25-1364x990&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "foodiego",
     title: "FoodieGo – Food Delivery Mobile App UI",
     category: "Mobile App",
     tags: ["Food", "Delivery", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-orange-500/20 to-amber-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558165-FoodieGo-Food-Delivery-Mobile-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48382845/file/5d0fa90b32817e57c87ba0e296221ef7.png?crop=5x0-1371x1024&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "beauty",
     title: "Beauty – Skincare & Cosmetics Mobile App UI",
     category: "Mobile App",
     tags: ["Beauty", "eCommerce", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-rose-500/20 to-red-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558126-Beauty-Skincare-Cosmetics-Mobile-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48382647/file/df8f648a9b58daf5bec3672d81da93ca.png?crop=1x55-1219x969&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "waygo",
     title: "WayGo – Smart Car Travel & Road Trip App UI",
     category: "Mobile App",
     tags: ["Travel", "Maps", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-teal-500/20 to-emerald-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558077-WayGo-Smart-Car-Travel-Road-Trip-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48382527/file/24e2135e2ef0b106f03dcce61b92e4bb.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "lumiere",
     title: "Lumière – Luxury Jewellery Shopping App UI",
     category: "Mobile App",
     tags: ["Luxury", "eCommerce", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-yellow-500/20 to-amber-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558047-Lumi-re-Luxury-Jewellery-Shopping-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48382450/file/d2d97e5fd0fccbfa83a13006ef8bdadb.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "nutrifit",
     title: "NutriFit – Healthy Products Marketplace & Nutrition App",
     category: "Mobile App",
     tags: ["Health", "Marketplace", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-lime-500/20 to-green-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27558023-NutriFit-Healthy-Products-Marketplace-Nutrition-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48382383/file/95f4d46958f18967169881d0c35b8f7f.png?crop=0x0-1448x1086&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "cornerstone-concept",
     title: "Cornerstone — Modern SaaS Landing Page Concept",
     category: "Web Design",
     tags: ["SaaS", "Landing Page", "Web"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-emerald-500/20 to-teal-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27555844-Cornerstone-Modern-SaaS-Landing-Page-Concept",
+    imgUrl: "https://cdn.dribbble.com/userupload/48374252/file/ab74d5a0b6603db80b317f093d387282.png?crop=4x3-2660x1995&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "jewellery-pos",
     title: "Luxury Jewellery POS System UI",
     category: "Web Dashboard",
     tags: ["POS", "Retail", "Luxury"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-amber-500/20 to-yellow-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27549892-Luxury-Jewellery-POS-System-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48352741/file/d793edb97b0e4e9f9cdff79e7af38b2d.png?crop=215x48-1280x847&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "cafe-pos",
     title: "Modern Cafe POS Dashboard UI",
     category: "Web Dashboard",
     tags: ["POS", "Cafe", "Dashboard"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-brown-500/20 to-orange-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27549817-Modern-Cafe-POS-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48352510/file/80981154068851e0919cf9d4c043c787.png?crop=228x144-1198x872&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "posymart",
     title: "PosyMart – Modern Cafe POS Dashboard UI",
     category: "Web Dashboard",
     tags: ["POS", "Retail", "Dashboard"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-orange-500/20 to-red-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27548893-PosyMart-Modern-Cafe-POS-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48348854/file/1ca69ebd22c0a91c3feca98e7dd5dccf.png?format=webp&resize=400x300&vertical=center",
   },
   {
     id: "ecommerce-admin",
     title: "Modern E-commerce Admin Dashboard UI",
     category: "Web Dashboard",
     tags: ["eCommerce", "Admin", "Dashboard"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-sky-500/20 to-blue-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27547992-Modern-E-commerce-Admin-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48345043/file/6cd58e618bd997f5ddd81ee1ed9a1505.png?crop=1x4-1611x1212&format=webp&resize=400x300&vertical=center",
   },
   {
     id: "greenerp",
     title: "GreenERP – Modern ERP Dashboard | Finance & Business Management",
     category: "Web Dashboard",
     tags: ["ERP", "Finance", "Dashboard"],
-    dribbbleUrl: "https://dribbble.com/deepak1605",
-    color: "from-green-500/20 to-emerald-500/10",
+    dribbbleUrl: "https://dribbble.com/shots/27547980-GreenERP-Modern-ERP-Dashboard-Finance-Business-Management",
+    imgUrl: "https://cdn.dribbble.com/userupload/48345009/file/2549f699604211aa243470251f05faa1.png?crop=2x2-1833x1375&format=webp&resize=400x300&vertical=center",
   },
 ];
 
@@ -230,31 +230,29 @@ const STATS = [
   { value: "10+", label: "Categories" },
 ];
 
+const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
+
 /* ------------------------------------------------------------------ */
-/* Initials avatar for each shot (no external images)                  */
+/* Shot card with real Dribbble thumbnail                              */
 /* ------------------------------------------------------------------ */
 function ShotCard({ shot, index }: { shot: Shot; index: number }) {
-  const initials = shot.title
-    .split(/[\s–—]+/)
-    .slice(0, 2)
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase();
-
   return (
     <a
       href={shot.dribbbleUrl}
       target="_blank"
       rel="noreferrer noopener"
       className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
-      style={{ animationDelay: `${index * 30}ms` }}
     >
-      {/* Thumbnail placeholder */}
-      <div
-        className={`relative flex items-center justify-center bg-gradient-to-br ${shot.color} h-48 overflow-hidden`}
-      >
-        <span className="text-5xl font-black text-foreground/10 select-none">{initials}</span>
-        <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gradient-to-t from-black/40 to-transparent">
+      {/* Thumbnail */}
+      <div className="relative h-48 overflow-hidden bg-secondary/30">
+        <img
+          src={shot.imgUrl}
+          alt={shot.title}
+          loading={index < 8 ? "eager" : "lazy"}
+          decoding="async"
+          className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 flex items-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-gradient-to-t from-black/50 to-transparent">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold text-black">
             <ExternalLink className="h-3 w-3" />
             View on Dribbble
@@ -314,7 +312,7 @@ export function DeepakPortfolioPage() {
             "address": { "@type": "PostalAddress", "addressLocality": "Mohali", "addressCountry": "IN" },
             "sameAs": [
               "https://dribbble.com/deepak1605",
-              "https://www.linkedin.com/in/deepak-kumar-2b076b109/",
+              LINKEDIN_URL,
             ],
           },
         })}</script>
@@ -347,7 +345,7 @@ export function DeepakPortfolioPage() {
               </a>
             </Button>
             <Button variant="outline" asChild>
-              <a href="https://www.linkedin.com/in/deepak-kumar-2b076b109/" target="_blank" rel="noreferrer noopener">
+              <a href={LINKEDIN_URL} target="_blank" rel="noreferrer noopener">
                 LinkedIn
               </a>
             </Button>
