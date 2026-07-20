@@ -369,7 +369,7 @@ export function DeepakPortfolioPage() {
         {/* CodeSpanda templates CTA */}
         <section className="mx-auto mt-20 max-w-3xl px-4 text-center">
           <div className="rounded-3xl border border-border bg-card p-10 shadow-sm">
-            <h2 className="text-2xl font-bold">React Templates by Deepak</h2>
+            <h2 className="text-2xl font-bold">React Templates by CodesPanda</h2>
             <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
               Designs brought to life as free, production-ready React templates. Browse all CodeSpanda templates built from these UI concepts.
             </p>
