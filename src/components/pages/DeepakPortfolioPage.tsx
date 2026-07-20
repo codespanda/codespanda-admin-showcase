@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ExternalLink } from "lucide-react";
@@ -59,7 +59,13 @@ function ShotCard({ shot, index }: { shot: Shot; index: number }) {
 /* ------------------------------------------------------------------ */
 /* Page                                                                 */
 /* ------------------------------------------------------------------ */
+const PAGE_SIZE = 12;
+
 export function DeepakPortfolioPage() {
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  const visibleShots = SHOTS.slice(0, visible);
+  const hasMore = visible < SHOTS.length;
+
   return (
     <>
       <Helmet>
@@ -147,10 +153,23 @@ export function DeepakPortfolioPage() {
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {SHOTS.map((shot, i) => (
+            {visibleShots.map((shot, i) => (
               <ShotCard key={shot.id} shot={shot} index={i} />
             ))}
           </div>
+
+          {hasMore && (
+            <div className="mt-10 flex justify-center">
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => setVisible(v => v + PAGE_SIZE)}
+                className="min-w-[160px]"
+              >
+                Load More
+              </Button>
+            </div>
+          )}
         </section>
 
         {/* CodesPanda templates CTA */}
