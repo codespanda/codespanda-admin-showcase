@@ -17,8 +17,9 @@ export function Logo({ className, imgClassName, to = "/" }: LogoProps) {
   return (
     <Link
       to={to}
-      className={cn("inline-flex items-center", className)}
+      className={cn("inline-flex items-center outline-none focus-visible:ring-0", className)}
       aria-label="CodesPanda"
+      tabIndex={-1}
     >
       <img
         src="/logo.png"

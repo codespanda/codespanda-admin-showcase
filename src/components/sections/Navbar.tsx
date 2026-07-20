@@ -73,7 +73,7 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 animate-slide-down px-4 pt-3">
       <nav
         className={cn(
-          "mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 sm:px-5",
+          "mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 sm:px-5 select-none",
           scrolled
             ? "glass-strong shadow-lg shadow-black/5"
             : "border border-transparent"
