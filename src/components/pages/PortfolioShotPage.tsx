@@ -60,29 +60,24 @@ export function PortfolioShotPage() {
 
         {/* Details */}
         <div className="mx-auto max-w-5xl px-4 pt-10">
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
-            {/* Left: title + tags */}
-            <div className="flex-1">
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                {shot.category}
-              </span>
-              <h1 className="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
-                {shot.title}
-              </h1>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {shot.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
+          <div className="flex flex-col gap-5">
+            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+              {shot.category}
+            </span>
+            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+              {shot.title}
+            </h1>
+            <div className="flex flex-wrap gap-2">
+              {shot.tags.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground"
+                >
+                  {t}
+                </span>
+              ))}
             </div>
-
-            {/* Right: actions */}
-            <div className="flex shrink-0 flex-col gap-2 sm:items-end">
+            <div className="flex flex-wrap gap-3">
               <Button variant="gradient" asChild>
                 <a href={shot.dribbbleUrl} target="_blank" rel="noreferrer noopener">
                   <ExternalLink className="h-4 w-4" />
