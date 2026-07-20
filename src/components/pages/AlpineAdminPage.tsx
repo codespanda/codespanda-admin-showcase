@@ -195,7 +195,7 @@ export function AlpineAdminPage() {
             {/* Copy */}
             <div className="flex-1">
               <div className="mb-4 flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 px-3 py-1 text-xs font-semibold text-white shadow">
+                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-[#0095DD] to-[#005FA3] px-3 py-1 text-xs font-semibold text-white shadow">
                   New
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -208,7 +208,7 @@ export function AlpineAdminPage() {
 
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Alpine Admin{" "}
-                <span className="bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-clip-text text-transparent" style={{backgroundImage:"linear-gradient(to right,#0095DD,#005FA3)"}}>
                   React
                 </span>
               </h1>
@@ -493,9 +493,9 @@ export function AlpineAdminPage() {
 
         {/* ── CTA ── */}
         <section className="px-4 pb-24">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-600 to-purple-700 p-12 text-center text-white shadow-2xl shadow-indigo-500/30">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl p-12 text-center text-white shadow-2xl shadow-[#0095DD]/30" style={{background:"linear-gradient(135deg,#0095DD,#005FA3)"}}>
             <h2 className="text-3xl font-extrabold">Ready to build?</h2>
-            <p className="mt-3 text-indigo-100">
+            <p className="mt-3 text-white/80">
               Alpine Admin React is completely free and open-source. Clone it, customize it, and ship it.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
