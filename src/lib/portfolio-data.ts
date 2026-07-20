@@ -80,7 +80,6 @@ Designed in Figma with a focus on accessibility, visual hierarchy, and an engagi
     fullImgUrl: "https://cdn.dribbble.com/userupload/46091577/file/79918e64f741559cfa384073bf7d1f67.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/46151987/file/e87e1e325f2fbe6d62250368b3f2242d.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
       "https://cdn.dribbble.com/userupload/48433047/file/f927d13c79712b7976d036194b7f9c0e.png?resize=1600x&vertical=center",
       "https://cdn.dribbble.com/userupload/48433048/file/f5cacdf17689e52740c7a5fd52143f02.png?resize=1600x&vertical=center",
     ],
@@ -944,7 +943,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     fullImgUrl: "https://cdn.dribbble.com/userupload/48336808/file/77dd9bc508039e6f9dec8aeff69025e1.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48336809/file/2c0a12743090127b2a2d7807bcfc69b9.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
     ],
     description: `Lumia is a sleek photo editor and camera app UI designed for mobile photographers. The dark-themed interface offers intuitive controls for filters, color grading, adjustments, and creative tools — all in a minimal, premium layout that keeps the focus on your photos.
 
@@ -970,9 +968,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     dribbbleUrl: "https://dribbble.com/shots/27545541-HireAI-AI-Recruitment-Platform-Landing-Page-HR-Tech-SaaS-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48336424/file/9ca36d05aa64805a2064e64500de0955.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48336424/file/9ca36d05aa64805a2064e64500de0955.png?resize=1600x&vertical=center",
-    gallery: [
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
-    ],
     description: `HireAI is an AI-powered recruitment platform landing page concept. The design showcases modern HR tech with clean sections for job discovery, AI candidate matching, automated screening, and seamless onboarding workflows.
 
 ✨ Highlights
@@ -999,7 +994,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     fullImgUrl: "https://cdn.dribbble.com/userupload/48335728/file/9c4b869034b496df839f8d1afbedea5b.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48335754/file/68c70f89c8cf59d3a22469979458a9ce.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
     ],
     description: `Sprout is a fitness and nutrition mobile app focused on healthy habit building, meal tracking, and workout planning. The interface combines fresh green tones with clean data visualizations for a motivating and encouraging fitness experience.
 
@@ -1025,9 +1019,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     dribbbleUrl: "https://dribbble.com/shots/27539544-Dashboard-App",
     imgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?resize=1600x&vertical=center",
-    gallery: [
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
-    ],
     description: `A modern analytics dashboard UI featuring clean data visualizations, KPI cards, activity feeds, and responsive layouts. Designed for SaaS applications requiring at-a-glance business intelligence and real-time metrics.
 
 ✨ Highlights
@@ -1137,7 +1128,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     fullImgUrl: "https://cdn.dribbble.com/userupload/48141694/file/3b51d9f8552b85887dfcc705901742e4.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48141695/file/a2372e687226a969a229f5e82ae156f2.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
     ],
     description: `A modern dating mobile app UI with a card-based swipe interface, match discovery, real-time messaging, and profile management. Designed with warm tones and clean layouts for an engaging and trustworthy social experience.
 
@@ -1165,7 +1155,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     fullImgUrl: "https://cdn.dribbble.com/userupload/48141845/file/944f45928663280a0275f5e2f5c8d5f6.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48141846/file/6cb65da72be3445067fdd5c1035f2bb3.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
     ],
     description: `A calories calculator mobile app with meal logging, macro breakdowns, daily calorie targets, and progress tracking. Clean and intuitive UI built to make healthy eating habits effortless and enjoyable.
 
@@ -1193,7 +1182,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     fullImgUrl: "https://cdn.dribbble.com/userupload/48141928/file/57da89a9ebb6a94671a36c0d061d0935.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48141929/file/f3f0a9d57dd414988a5c9fe89854132d.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
     ],
     description: `A clean e-commerce mobile app design featuring product discovery, category browsing, cart management, and a smooth checkout flow. Built with a modern card-based layout and conversion-focused UX for a delightful shopping experience.
 
@@ -1222,7 +1210,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     gallery: [
       "https://cdn.dribbble.com/userupload/48142768/file/a63ac7ed17cd0f5b04abd3a62a04e777.png?resize=1600x&vertical=center",
       "https://cdn.dribbble.com/userupload/48142769/file/96f0e8e5906b6cd58ddec8d643e8cde6.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
     ],
     description: `A car design and showcase app with immersive vehicle imagery, specification cards, color selection, and booking flows. Premium dark UI built for automotive brands, car configurator experiences, and vehicle dealership platforms.
 
