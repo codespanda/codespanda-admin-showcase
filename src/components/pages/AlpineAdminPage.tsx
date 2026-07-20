@@ -195,7 +195,7 @@ export function AlpineAdminPage() {
             {/* Copy */}
             <div className="flex-1">
               <div className="mb-4 flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-[#0095DD] to-[#005FA3] px-3 py-1 text-xs font-semibold text-white shadow">
+                <span className="inline-flex items-center gap-1 rounded-full px-3 py-1 text-xs font-semibold text-white shadow [background:linear-gradient(to_right,hsl(var(--primary)),hsl(var(--primary-end,var(--primary)/0.72)))]">
                   New
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -208,7 +208,7 @@ export function AlpineAdminPage() {
 
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Alpine Admin{" "}
-                <span className="bg-clip-text text-transparent" style={{backgroundImage:"linear-gradient(to right,#0095DD,#005FA3)"}}>
+                <span className="bg-clip-text text-transparent" style={{backgroundImage:"linear-gradient(to right,hsl(var(--primary)),hsl(var(--primary-end,var(--primary)/0.72))"}}>
                   React
                 </span>
               </h1>
@@ -493,13 +493,13 @@ export function AlpineAdminPage() {
 
         {/* ── CTA ── */}
         <section className="px-4 pb-24">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl p-12 text-center text-white shadow-2xl shadow-[#0095DD]/30" style={{background:"linear-gradient(135deg,#0095DD,#005FA3)"}}>
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl p-12 text-center text-white shadow-2xl shadow-primary/30 [background:linear-gradient(135deg,hsl(var(--primary)),hsl(var(--primary-end,var(--primary)/0.72)))]">
             <h2 className="text-3xl font-extrabold">Ready to build?</h2>
             <p className="mt-3 text-white/80">
               Alpine Admin React is completely free and open-source. Clone it, customize it, and ship it.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-white text-indigo-700 hover:bg-indigo-50" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-primary/10" asChild>
                 <a href="https://codespanda.github.io/Alpine-Admin-React/dashboard" target="_blank" rel="noreferrer noopener">
                   <ExternalLink className="h-4 w-4" /> Live Preview
                 </a>
