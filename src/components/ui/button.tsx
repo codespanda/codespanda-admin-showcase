@@ -11,7 +11,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5",
         gradient:
-          "bg-gradient-to-r from-[#0095DD] to-[#005FA3] text-white shadow-lg shadow-[#0095DD]/30 hover:from-[#00A8F0] hover:to-[#006FBB] hover:shadow-xl hover:shadow-[#0095DD]/40 hover:-translate-y-0.5",
+          "[background:linear-gradient(to_right,hsl(var(--primary)),hsl(var(--primary-end,var(--primary)/0.72)))] text-primary-foreground shadow-lg shadow-primary/25 hover:opacity-90 hover:shadow-xl hover:shadow-primary/35 hover:-translate-y-0.5",
         outline:
           "border border-border bg-background/60 backdrop-blur hover:bg-secondary hover:-translate-y-0.5",
         secondary:

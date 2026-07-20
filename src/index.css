@@ -11,6 +11,7 @@
     --card-foreground: 222 47% 11%;
 
     --primary: 203 100% 43%;
+    --primary-end: 207 100% 32%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 203 20% 96%;
@@ -85,6 +86,7 @@
 [data-template="flowers"],
 [data-template="flowers"].dark {
   --primary: 330 81% 60%;
+  --primary-end: 330 81% 44%;
   --primary-foreground: 0 0% 100%;
   --accent: 330 81% 60%;
   --ring: 330 81% 60%;
@@ -94,6 +96,7 @@
 [data-template="cornerstone"],
 [data-template="cornerstone"].dark {
   --primary: 152 60% 38%;
+  --primary-end: 152 60% 26%;
   --primary-foreground: 0 0% 100%;
   --accent: 152 60% 38%;
   --ring: 152 60% 38%;
@@ -101,9 +104,18 @@
 [data-template="portfolio-template"],
 [data-template="portfolio-template"].dark {
   --primary: 347 77% 52%;
+  --primary-end: 347 77% 38%;
   --primary-foreground: 0 0% 100%;
   --accent: 347 77% 52%;
   --ring: 347 77% 52%;
+}
+[data-template="alpine"],
+[data-template="alpine"].dark {
+  --primary: 243 75% 59%;
+  --primary-end: 243 75% 44%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 243 75% 59%;
+  --ring: 243 75% 59%;
 }
 
 @layer utilities {
