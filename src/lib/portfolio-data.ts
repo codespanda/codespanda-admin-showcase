@@ -47,7 +47,7 @@ Looking to build a real estate platform or property management solution?
 
 CodesPanda creates premium UI/UX for real estate, SaaS, fintech, AI products, dashboards, and mobile applications.
 
-🌐 For more visit https://codespanda.com
+🌐 https://codespanda.com
 
 Appreciate this design if you like it, and share your feedback!`,
   },
