@@ -1,10 +1,12 @@
+import { lazy, Suspense } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, FileText } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Navbar } from "@/components/sections/Navbar";
-import { Footer } from "@/components/sections/Footer";
 import { Reveal } from "@/components/shared/Reveal";
+
+const Footer = lazy(() => import("@/components/sections/Footer").then((m) => ({ default: m.Footer })));
 import { LEGAL_DOCS, LEGAL_SLUGS } from "@/lib/legal";
 
 /** Renders a single legal/policy document based on the :slug route param. */
@@ -28,7 +30,7 @@ export function LegalPage() {
             <ArrowLeft className="h-4 w-4" /> Back to home
           </Link>
         </main>
-        <Footer />
+        <Suspense><Footer /></Suspense>
       </>
     );
   }
