@@ -93,17 +93,19 @@ export function PortfolioShotPage() {
         </div>
 
         {/* Full-size image */}
-        <div className="mx-auto max-w-5xl px-4">
-          <div className="overflow-hidden rounded-2xl border border-border bg-secondary/20 shadow-xl shadow-black/10">
-            <img
-              src={shot.fullImgUrl}
-              alt={shot.title}
-              loading="eager"
-              decoding="async"
-              className="w-full h-auto"
-            />
+        {shot.fullImgUrl && (
+          <div className="mx-auto max-w-5xl px-4">
+            <div className="overflow-hidden rounded-2xl border border-border bg-secondary/20 shadow-xl shadow-black/10">
+              <img
+                src={shot.fullImgUrl}
+                alt={shot.title}
+                loading="eager"
+                decoding="async"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Details */}
         <div className="mx-auto max-w-5xl px-4 pt-10">

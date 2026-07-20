@@ -5,7 +5,7 @@ export interface Shot {
   tags: string[];
   dribbbleUrl: string;
   imgUrl: string;         // thumbnail (400×300)
-  fullImgUrl: string;     // full-quality shot image from Dribbble
+  fullImgUrl?: string;    // full-quality shot image from Dribbble
   gallery?: string[];     // additional full-res images for multi-image shots
   description?: string;   // shot description / case study text
 }
@@ -940,9 +940,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     dribbbleUrl: "https://dribbble.com/shots/27545676-Lumia-Photo-Editor-Camera-Mobile-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48336808/file/77dd9bc508039e6f9dec8aeff69025e1.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48336808/file/77dd9bc508039e6f9dec8aeff69025e1.png?resize=1600x&vertical=center",
-    gallery: [
-      "https://cdn.dribbble.com/userupload/48336809/file/2c0a12743090127b2a2d7807bcfc69b9.png?resize=1600x&vertical=center",
-    ],
     description: `Lumia is a sleek photo editor and camera app UI designed for mobile photographers. The dark-themed interface offers intuitive controls for filters, color grading, adjustments, and creative tools — all in a minimal, premium layout that keeps the focus on your photos.
 
 ✨ Highlights
@@ -1014,7 +1011,6 @@ The concept includes everything businesses need to manage sales efficiently — 
     tags: ["Dashboard", "Analytics", "SaaS", "Admin"],
     dribbbleUrl: "https://dribbble.com/shots/27539544-Dashboard-App",
     imgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?resize=1600x&vertical=center",
     description: `A modern analytics dashboard UI featuring clean data visualizations, KPI cards, activity feeds, and responsive layouts. Designed for SaaS applications requiring at-a-glance business intelligence and real-time metrics.
 
 ✨ Highlights
