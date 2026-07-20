@@ -1,11 +1,11 @@
-import { lazy, Suspense, useRef } from "react";
+import { lazy, Suspense, useRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink, Monitor, Moon, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TEMPLATES, type Template } from "@/lib/data";
 import { Navbar } from "@/components/sections/Navbar";
+import { Reveal } from "@/components/shared/Reveal";
 
 const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
@@ -13,35 +13,31 @@ const Footer = lazy(() =>
 
 function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 200, damping: 20 });
-  const springY = useSpring(y, { stiffness: 200, damping: 20 });
-  const rotateX = useTransform(springY, [-0.5, 0.5], [4, -4]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], [-4, 4]);
 
   function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const nx = (e.clientX - rect.left) / rect.width - 0.5;
+    const ny = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(800px) rotateX(${-ny * 8}deg) rotateY(${nx * 8}deg)`;
   }
 
   function onMouseLeave() {
-    x.set(0);
-    y.set(0);
+    const el = ref.current;
+    if (el) el.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg)";
   }
 
   return (
-    <motion.div
+    <div
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={className}
+      style={{ transformStyle: "preserve-3d", transition: "transform 0.25s cubic-bezier(0.22,1,0.36,1)" } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -52,12 +48,7 @@ function TemplateCard({ template, index }: { template: Template; index: number }
     "from-[#0095DD] to-[#005FA3]";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <Reveal delay={index * 0.08}>
       <TiltCard className="group relative rounded-3xl border border-border bg-card shadow-xl shadow-black/5 transition-shadow duration-300 hover:shadow-2xl hover:shadow-primary/10 dark:shadow-black/20 overflow-hidden h-full flex flex-col">
         <div className="relative overflow-hidden bg-secondary/30" style={{ height: 260 }}>
           <div className="absolute left-4 top-4 z-10">
@@ -142,7 +133,7 @@ function TemplateCard({ template, index }: { template: Template; index: number }
           </div>
         </div>
       </TiltCard>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -162,13 +153,7 @@ export function TemplatesPage() {
 
       <main className="min-h-screen px-4 pt-28 pb-16">
         <div className="mx-auto max-w-6xl">
-          {/* Heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-16 text-center"
-          >
+          <div className="mb-16 text-center">
             <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
               All Templates
             </span>
@@ -178,9 +163,8 @@ export function TemplatesPage() {
             <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
               {TEMPLATES.length} free, production-ready templates built with React, Vite, Tailwind CSS and TypeScript.
             </p>
-          </motion.div>
+          </div>
 
-          {/* Grid */}
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {TEMPLATES.map((template, i) => (
               <TemplateCard key={template.id} template={template} index={i} />

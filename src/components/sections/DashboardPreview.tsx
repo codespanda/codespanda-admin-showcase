@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -47,13 +46,7 @@ export function DashboardPreview() {
               </div>
             </div>
 
-            <motion.div
-              key={active}
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="group relative mx-auto mt-6 max-w-5xl"
-            >
+            <div className="group relative mx-auto mt-6 max-w-5xl animate-fade-in">
               {/* Glow */}
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-cyan-500/20 opacity-60 blur-2xl" />
               <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-2xl shadow-indigo-500/10">
@@ -75,7 +68,7 @@ export function DashboardPreview() {
                   className="h-[480px] sm:h-[560px]"
                 />
               </div>
-            </motion.div>
+            </div>
           </Tabs>
         </Reveal>
 

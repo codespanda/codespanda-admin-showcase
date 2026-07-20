@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Stagger, staggerItem } from "@/components/shared/Reveal";
+import { Stagger, StaggerItem } from "@/components/shared/Reveal";
 import { MODULES, type ModuleStatus } from "@/lib/data";
 
 const STATUS_VARIANT: Record<ModuleStatus, "success" | "default" | "warning"> = {
@@ -25,7 +24,7 @@ export function Modules() {
           {MODULES.map((module) => {
             const Icon = module.icon;
             return (
-              <motion.div key={module.title} variants={staggerItem}>
+              <StaggerItem key={module.title}>
                 <Card className="group flex h-full items-start gap-4 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
                   <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-indigo-500/10 to-cyan-500/10 text-primary transition-all duration-300 group-hover:scale-110">
                     <Icon className="h-5 w-5" />
@@ -42,7 +41,7 @@ export function Modules() {
                     </p>
                   </div>
                 </Card>
-              </motion.div>
+              </StaggerItem>
             );
           })}
         </Stagger>

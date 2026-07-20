@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
 import { Lock } from "lucide-react";
 import { COMING_SOON } from "@/lib/data";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Stagger, StaggerItem } from "@/components/shared/Reveal";
 
 export function ComingSoon() {
   return (
@@ -13,14 +13,10 @@ export function ComingSoon() {
           description="We're building a comprehensive library of premium templates for every industry. Subscribe to get notified when they drop."
         />
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
-          {COMING_SOON.map((item, i) => (
-            <motion.div
+        <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+          {COMING_SOON.map((item) => (
+            <StaggerItem
               key={item.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.05 }}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-black/5"
             >
               {/* Blurred placeholder preview */}
@@ -57,9 +53,9 @@ export function ComingSoon() {
                 </span>
                 <h3 className="mt-1 text-sm font-semibold leading-tight">{item.name}</h3>
               </div>
-            </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
 
         {/* Notify CTA — hidden for now */}
         {/* <motion.div

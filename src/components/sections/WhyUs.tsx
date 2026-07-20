@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
 import { FEATURES } from "@/lib/data";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Stagger, StaggerItem } from "@/components/shared/Reveal";
 
 export function WhyUs() {
   return (
@@ -12,16 +12,12 @@ export function WhyUs() {
           description="Every template ships with the quality, structure, and flexibility that professional developers demand."
         />
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {FEATURES.map((feature, i) => {
+        <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {FEATURES.map((feature) => {
             const Icon = feature.icon;
             return (
-              <motion.div
+              <StaggerItem
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-lg hover:shadow-primary/5"
               >
                 {/* Gradient glow */}
@@ -38,10 +34,10 @@ export function WhyUs() {
                     {feature.description}
                   </p>
                 </div>
-              </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

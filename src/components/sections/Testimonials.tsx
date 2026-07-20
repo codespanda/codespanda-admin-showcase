@@ -1,9 +1,8 @@
-import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Stagger, staggerItem } from "@/components/shared/Reveal";
+import { Stagger, StaggerItem } from "@/components/shared/Reveal";
 import { TESTIMONIALS } from "@/lib/data";
 
 export function Testimonials() {
@@ -18,7 +17,7 @@ export function Testimonials() {
 
         <Stagger className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
           {TESTIMONIALS.map((t) => (
-            <motion.div key={t.name} variants={staggerItem}>
+            <StaggerItem key={t.name}>
               <Card className="relative flex h-full flex-col p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
                 <Quote className="absolute right-6 top-6 h-8 w-8 text-primary/10" />
                 <div className="flex gap-0.5">
@@ -44,7 +43,7 @@ export function Testimonials() {
                   </div>
                 </div>
               </Card>
-            </motion.div>
+            </StaggerItem>
           ))}
         </Stagger>
       </div>

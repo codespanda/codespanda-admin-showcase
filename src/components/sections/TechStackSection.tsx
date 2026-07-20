@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Stagger, StaggerItem } from "@/components/shared/Reveal";
 
 const TECHS = [
   {
@@ -97,14 +97,10 @@ export function TechStackSection() {
           description="All templates are built with the most in-demand frontend technologies so you can ship faster."
         />
 
-        <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {TECHS.map((tech, i) => (
-            <motion.div
+        <Stagger className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+          {TECHS.map((tech) => (
+            <StaggerItem
               key={tech.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
               className={`relative flex flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${tech.color} p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg ${
                 tech.comingSoon ? "opacity-60" : ""
               }`}
@@ -116,9 +112,9 @@ export function TechStackSection() {
                   Coming Soon
                 </span>
               )}
-            </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </Stagger>
       </div>
     </section>
   );

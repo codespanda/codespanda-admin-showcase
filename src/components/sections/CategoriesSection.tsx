@@ -1,6 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake, ShoppingCart,
@@ -41,12 +40,7 @@ const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
 
 function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10"
-    >
+    <div className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/10">
       {/* Screenshot */}
       <div className="relative overflow-hidden bg-secondary/30" style={{ height: 200 }}>
         {template.screenshotUrl ? (
@@ -79,7 +73,7 @@ function TemplateCard({ template }: { template: typeof TEMPLATES[0] }) {
           ))}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -116,11 +110,7 @@ function TabTemplates({ templates }: { templates: typeof TEMPLATES }) {
       </div>
 
       {hasMore && (
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex justify-center"
-        >
+        <div className="flex justify-center">
           <Link
             to="/templates"
             className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-7 py-3 text-sm font-semibold text-foreground shadow-sm transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:shadow-primary/20"
@@ -128,7 +118,7 @@ function TabTemplates({ templates }: { templates: typeof TEMPLATES }) {
             <LayoutGrid className="h-4 w-4" />
             Show More
           </Link>
-        </motion.div>
+        </div>
       )}
     </div>
   );

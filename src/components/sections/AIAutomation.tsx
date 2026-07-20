@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import {
   Check,
   ArrowRight,
@@ -45,13 +44,9 @@ function WorkflowIllustration() {
 
       {/* center hub */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <motion.div
-          animate={{ scale: [1, 1.06, 1] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-          className="grid h-24 w-24 place-items-center rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-cyan-500 shadow-2xl shadow-primary/30"
-        >
+        <div className="grid h-24 w-24 place-items-center rounded-3xl bg-gradient-to-br from-indigo-600 via-purple-600 to-cyan-500 shadow-2xl shadow-primary/30 animate-float">
           <Workflow className="h-10 w-10 text-white" />
-        </motion.div>
+        </div>
         <div className="absolute inset-0 -z-10 animate-ping rounded-3xl bg-primary/20" />
       </div>
 
@@ -59,18 +54,14 @@ function WorkflowIllustration() {
       {nodes.map((node) => {
         const Icon = node.icon;
         return (
-          <motion.div
+          <div
             key={node.label}
-            initial={{ opacity: 0, scale: 0.6 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: node.delay, duration: 0.5 }}
             style={{ left: node.x, top: node.y }}
             className="absolute flex animate-float items-center gap-2 rounded-2xl glass-strong px-3 py-2 shadow-lg"
           >
             <Icon className="h-4 w-4 text-primary" />
             <span className="text-xs font-semibold">{node.label}</span>
-          </motion.div>
+          </div>
         );
       })}
     </div>

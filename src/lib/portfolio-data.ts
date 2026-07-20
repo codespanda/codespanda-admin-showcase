@@ -80,8 +80,6 @@ Designed in Figma with a focus on accessibility, visual hierarchy, and an engagi
     fullImgUrl: "https://cdn.dribbble.com/userupload/46091577/file/79918e64f741559cfa384073bf7d1f67.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/46151987/file/e87e1e325f2fbe6d62250368b3f2242d.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48433047/file/f927d13c79712b7976d036194b7f9c0e.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48433048/file/f5cacdf17689e52740c7a5fd52143f02.png?resize=1600x&vertical=center",
     ],
     description: `A modern skincare shopping experience designed with a clean, minimal, and premium aesthetic. The interface focuses on effortless product discovery, seamless shopping, and an elegant checkout flow across both mobile and desktop.
 

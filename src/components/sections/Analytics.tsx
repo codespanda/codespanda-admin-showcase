@@ -1,8 +1,7 @@
-import { motion } from "framer-motion";
 import { TrendingUp, TrendingDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/shared/SectionHeading";
-import { Stagger, staggerItem } from "@/components/shared/Reveal";
+import { Stagger, StaggerItem, Reveal } from "@/components/shared/Reveal";
 import { Counter } from "@/components/shared/Counter";
 import { Sparkline, BarChart } from "@/components/shared/Charts";
 import { ANALYTICS_CARDS, EMPLOYEE_GROWTH, GROWTH_MONTHS } from "@/lib/data";
@@ -22,7 +21,7 @@ export function Analytics() {
           {ANALYTICS_CARDS.map((card) => {
             const positive = card.change >= 0;
             return (
-              <motion.div key={card.label} variants={staggerItem}>
+              <StaggerItem key={card.label}>
                 <Card className="group h-full overflow-hidden p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/5">
                   <div className="flex items-start justify-between">
                     <div>
@@ -59,18 +58,13 @@ export function Analytics() {
                     <Sparkline data={card.series} />
                   </div>
                 </Card>
-              </motion.div>
+              </StaggerItem>
             );
           })}
         </Stagger>
 
         {/* Wide analytics panel */}
-        <motion.div
-          variants={staggerItem}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
+        <Reveal delay={0.1}>
           <Card className="mt-4 overflow-hidden p-6 lg:p-8">
             <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr]">
               <div>
@@ -114,7 +108,7 @@ export function Analytics() {
               </div>
             </div>
           </Card>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

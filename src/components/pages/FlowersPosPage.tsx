@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Reveal, StaggerItem, Stagger } from "@/components/shared/Reveal";
 import {
   ExternalLink, ArrowLeft, Star, Github, BookOpen, Monitor,
   CheckCircle2, LayoutGrid, ShoppingCart, Users, Tag,
@@ -93,13 +93,7 @@ const STEPS = [
 
 function GalleryImage({ src, label }: { src: string; label: string }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-md hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300"
-    >
+    <Reveal className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-md hover:shadow-xl hover:shadow-pink-500/10 transition-all duration-300">
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
@@ -115,7 +109,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
         </span>
       </div>
       <p className="px-4 py-3 text-sm font-medium text-muted-foreground">{label}</p>
-    </motion.div>
+    </Reveal>
   );
 }
 
@@ -251,12 +245,7 @@ export function FlowersPosPage() {
             </div>
 
             {/* Hero image */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="relative flex-1 lg:max-w-xl"
-            >
+            <Reveal className="relative flex-1 lg:max-w-xl">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-pink-500/20 to-rose-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-pink-500/10 ring-1 ring-pink-500/10">
                 <img
@@ -276,7 +265,7 @@ export function FlowersPosPage() {
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </Reveal>
           </div>
         </section>
 
@@ -346,14 +335,10 @@ export function FlowersPosPage() {
               <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-pink-500">Why Flowers POS</p>
               <h2 className="text-3xl font-bold">Built for real retail projects</h2>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {FEATURES.map((f, i) => (
-                <motion.div
+            <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {FEATURES.map((f) => (
+                <StaggerItem
                   key={f.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                   className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-pink-500/10">
@@ -361,9 +346,9 @@ export function FlowersPosPage() {
                   </div>
                   <h3 className="font-semibold">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
-                </motion.div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
 
@@ -427,14 +412,10 @@ export function FlowersPosPage() {
               <p className="mt-3 text-muted-foreground">Node.js 18+ required. No paid tools, no account sign-ups.</p>
             </div>
 
-            <div className="space-y-4">
+            <Stagger className="space-y-4">
               {STEPS.map((s) => (
-                <motion.div
+                <StaggerItem
                   key={s.step}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                   className="flex items-start gap-5 rounded-2xl border border-border bg-card p-5 shadow-sm"
                 >
                   <span className="shrink-0 text-3xl font-black text-primary/20 leading-none">{s.step}</span>
@@ -444,9 +425,9 @@ export function FlowersPosPage() {
                       {s.code}
                     </code>
                   </div>
-                </motion.div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
 
             <div className="mt-8 text-center">
               <Button size="lg" className="bg-gradient-to-r from-pink-500 to-rose-600 text-white hover:from-pink-600 hover:to-rose-700 shadow-md shadow-pink-500/20" asChild>

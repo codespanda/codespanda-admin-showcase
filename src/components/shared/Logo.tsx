@@ -26,6 +26,9 @@ export function Logo({ className, imgClassName, to = "/" }: LogoProps) {
         alt="CodesPanda"
         width={481}
         height={480}
+        loading="eager"
+        fetchPriority="high"
+        decoding="sync"
         className={cn("h-12 w-auto object-contain", imgClassName)}
       />
     </Link>

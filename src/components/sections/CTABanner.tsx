@@ -1,20 +1,17 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/button";
 
 export function CTABanner() {
   return (
     <section className="px-4 py-24">
       <div className="mx-auto max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        <Reveal>
+          <div
           className="relative overflow-hidden rounded-3xl p-12 text-center text-white shadow-2xl md:p-16"
           style={{ background: "linear-gradient(135deg, #0095DD, #005FA3)" }}
-        >
+          >
           {/* Decorative blobs */}
           <div
             aria-hidden
@@ -51,7 +48,8 @@ export function CTABanner() {
               </Button>
             </div>
           </div>
-        </motion.div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

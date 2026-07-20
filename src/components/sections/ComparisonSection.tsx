@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
 import { CheckCircle2, ExternalLink } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/button";
 import { COMPARISON } from "@/lib/data";
 import { SectionHeading } from "@/components/shared/SectionHeading";
@@ -22,13 +22,7 @@ export function ComparisonSection() {
           description="Both templates are built for production. Choose based on your use case or tech preference."
         />
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14 overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-black/5"
-        >
+        <Reveal className="mt-14 overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-black/5">
           {/* Header row */}
           <div className="grid grid-cols-[1fr_1fr_1fr] border-b border-border">
             <div className="p-6 text-sm font-semibold text-muted-foreground" />
@@ -46,12 +40,8 @@ export function ComparisonSection() {
 
           {/* Comparison rows */}
           {rows.map(([label, alpine, brisk], i) => (
-            <motion.div
+            <div
               key={label}
-              initial={{ opacity: 0, x: -10 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
               className={`grid grid-cols-[1fr_1fr_1fr] border-b border-border last:border-0 ${
                 i % 2 === 0 ? "bg-secondary/20" : ""
               }`}
@@ -74,7 +64,7 @@ export function ComparisonSection() {
                   )}
                 </div>
               ))}
-            </motion.div>
+            </div>
           ))}
 
           {/* Footer row — CTAs */}
@@ -92,7 +82,7 @@ export function ComparisonSection() {
               </div>
             ))}
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );

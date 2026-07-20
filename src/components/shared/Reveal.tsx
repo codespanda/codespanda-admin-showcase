@@ -1,86 +1,93 @@
-import { motion, type Variants } from "framer-motion";
-import type { ReactNode } from "react";
+import { useEffect, useRef, type ReactNode, type CSSProperties } from "react";
 
-type Direction = "up" | "down" | "left" | "right" | "scale";
-
+/* ── Reveal: fade + slide in on scroll ── */
 interface RevealProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: Direction;
-  /** Run the animation once on first scroll-in (default true). */
+  direction?: "up" | "down" | "left" | "right" | "scale";
   once?: boolean;
 }
 
-const offsets: Record<Direction, { x?: number; y?: number; scale?: number }> = {
-  up: { y: 28 },
-  down: { y: -28 },
-  left: { x: 40 },
-  right: { x: -40 },
-  scale: { scale: 0.94 },
-};
+export function Reveal({ children, className, delay = 0, direction = "up", once = true }: RevealProps) {
+  const ref = useRef<HTMLDivElement>(null);
 
-/** Fade + slide/scale a block into view as it enters the viewport. */
-export function Reveal({
-  children,
-  className,
-  delay = 0,
-  direction = "up",
-  once = true,
-}: RevealProps) {
-  const variants: Variants = {
-    hidden: { opacity: 0, ...offsets[direction] },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] },
-    },
-  };
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.dataset.visible = "";
+          if (once) obs.disconnect();
+        } else if (!once) {
+          delete el.dataset.visible;
+        }
+      },
+      { threshold: 0.25 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [once]);
 
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      variants={variants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once, amount: 0.25 }}
+      data-reveal={direction}
+      style={delay ? ({ "--reveal-delay": `${delay}s` } as CSSProperties) : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
+/* ── Stagger: cascade children in on scroll ── */
 interface StaggerProps {
   children: ReactNode;
   className?: string;
   stagger?: number;
 }
 
-/** Wrap a grid/list so children with the `staggerItem` variant cascade in. */
 export function Stagger({ children, className, stagger = 0.08 }: StaggerProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.dataset.visible = "";
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <motion.div
+    <div
+      ref={ref}
       className={className}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
-      variants={{
-        hidden: {},
-        visible: { transition: { staggerChildren: stagger } },
-      }}
+      data-stagger
+      style={{ "--stagger-ms": `${Math.round(stagger * 1000)}ms` } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
-export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
-  },
-};
+/* ── StaggerItem: child of Stagger ── */
+export function StaggerItem({ children, className }: { children: ReactNode; className?: string }) {
+  return (
+    <div className={className} data-stagger-item>
+      {children}
+    </div>
+  );
+}
+
+/** @deprecated use StaggerItem component instead */
+export const staggerItem = {};

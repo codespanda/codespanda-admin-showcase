@@ -1,43 +1,39 @@
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ExternalLink, Monitor, Moon, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TEMPLATES, type Template } from "@/lib/data";
 import { SectionHeading } from "@/components/shared/SectionHeading";
+import { Reveal } from "@/components/shared/Reveal";
 
-/* ── Tilt card wrapper ── */
+/* ── CSS-based tilt card ── */
 function TiltCard({ children, className }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 200, damping: 20 });
-  const springY = useSpring(y, { stiffness: 200, damping: 20 });
-  const rotateX = useTransform(springY, [-0.5, 0.5], [4, -4]);
-  const rotateY = useTransform(springX, [-0.5, 0.5], [-4, 4]);
 
   function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    const rect = ref.current?.getBoundingClientRect();
-    if (!rect) return;
-    x.set((e.clientX - rect.left) / rect.width - 0.5);
-    y.set((e.clientY - rect.top) / rect.height - 0.5);
+    const el = ref.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const nx = (e.clientX - rect.left) / rect.width - 0.5;
+    const ny = (e.clientY - rect.top) / rect.height - 0.5;
+    el.style.transform = `perspective(800px) rotateX(${-ny * 8}deg) rotateY(${nx * 8}deg)`;
   }
 
   function onMouseLeave() {
-    x.set(0);
-    y.set(0);
+    const el = ref.current;
+    if (el) el.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg)";
   }
 
   return (
-    <motion.div
+    <div
       ref={ref}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
       className={className}
+      style={{ transformStyle: "preserve-3d", transition: "transform 0.25s cubic-bezier(0.22,1,0.36,1)" } as CSSProperties}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 
@@ -49,12 +45,7 @@ function TemplateCard({ template, index }: { template: Template; index: number }
     "from-[#0095DD] to-[#005FA3]";
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
-    >
+    <Reveal delay={index * 0.12}>
       <TiltCard className="group relative rounded-3xl border border-border bg-card shadow-xl shadow-black/5 transition-shadow duration-300 hover:shadow-2xl hover:shadow-primary/10 dark:shadow-black/20 overflow-hidden h-full flex flex-col">
         {/* Preview image */}
         <div className="relative overflow-hidden bg-secondary/30" style={{ height: 260 }}>
@@ -154,7 +145,7 @@ function TemplateCard({ template, index }: { template: Template; index: number }
           </div>
         </div>
       </TiltCard>
-    </motion.div>
+    </Reveal>
   );
 }
 

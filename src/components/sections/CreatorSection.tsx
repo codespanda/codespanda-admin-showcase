@@ -1,18 +1,12 @@
-import { motion } from "framer-motion";
 import { ExternalLink, Linkedin, Dribbble } from "lucide-react";
+import { Reveal } from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/button";
 
 export function CreatorSection() {
   return (
     <section id="about" className="px-4 py-24">
       <div className="mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-black/5"
-        >
+        <Reveal className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-black/5">
           <div className="grid lg:grid-cols-2">
             {/* Left — info */}
             <div className="flex flex-col justify-center gap-6 p-10 lg:p-14">
@@ -82,7 +76,7 @@ export function CreatorSection() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </Reveal>
       </div>
     </section>
   );
