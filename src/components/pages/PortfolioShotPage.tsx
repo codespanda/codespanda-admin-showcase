@@ -10,6 +10,53 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
+/** Renders the plain-text Dribbble description with basic formatting */
+function ShotDescription({ text }: { text: string }) {
+  const blocks = text.split(/\n{2,}/);
+  return (
+    <div className="prose prose-sm dark:prose-invert max-w-none space-y-4 text-sm leading-relaxed text-foreground">
+      {blocks.map((block, bi) => {
+        const lines = block.split("\n").map(l => l.trim()).filter(Boolean);
+        const isList = lines.every(l => l.startsWith("•"));
+        if (isList) {
+          return (
+            <ul key={bi} className="space-y-1.5 pl-1">
+              {lines.map((l, li) => (
+                <li key={li} className="flex items-start gap-2 text-muted-foreground">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                  {l.replace(/^•\s*/, "")}
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        return (
+          <p key={bi} className={lines[0].startsWith("✨") || lines[0].startsWith("🌐") ? "font-semibold text-foreground" : "text-muted-foreground"}>
+            {lines.map((l, li) => {
+              // Make URLs clickable
+              const urlMatch = l.match(/(https?:\/\/\S+)/);
+              if (urlMatch) {
+                const [before, url, after] = l.split(/(https?:\/\/\S+)/);
+                return (
+                  <span key={li}>
+                    {before}
+                    <a href={url} target="_blank" rel="noreferrer noopener" className="text-primary underline underline-offset-2 hover:opacity-80">
+                      {url}
+                    </a>
+                    {after}
+                    {li < lines.length - 1 && <br />}
+                  </span>
+                );
+              }
+              return <span key={li}>{l}{li < lines.length - 1 && <br />}</span>;
+            })}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
 export function PortfolioShotPage() {
   const { shotId } = useParams<{ shotId: string }>();
   const shot = getShotById(shotId ?? "");
@@ -89,6 +136,33 @@ export function PortfolioShotPage() {
               </Button>
             </div>
           </div>
+
+          {/* Additional gallery images */}
+          {shot.gallery && shot.gallery.length > 0 && (
+            <div className="mt-10 flex flex-col gap-6">
+              {shot.gallery.map((url, i) => (
+                <div
+                  key={i}
+                  className="overflow-hidden rounded-2xl border border-border bg-secondary/20 shadow-lg shadow-black/10"
+                >
+                  <img
+                    src={url}
+                    alt={`${shot.title} — view ${i + 2}`}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-auto"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Description */}
+          {shot.description && (
+            <div className="mt-10 rounded-2xl border border-border bg-card px-6 py-7">
+              <ShotDescription text={shot.description} />
+            </div>
+          )}
 
           {/* Designed by CodesPanda */}
           <div className="mt-8 flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">

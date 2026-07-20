@@ -4,8 +4,10 @@ export interface Shot {
   category: string;
   tags: string[];
   dribbbleUrl: string;
-  imgUrl: string;       // thumbnail (400×300)
-  fullImgUrl: string;   // full-quality shot image from Dribbble
+  imgUrl: string;         // thumbnail (400×300)
+  fullImgUrl: string;     // full-quality shot image from Dribbble
+  gallery?: string[];     // additional full-res images for multi-image shots
+  description?: string;   // shot description / case study text
 }
 
 export const SHOTS: Shot[] = [
@@ -17,6 +19,37 @@ export const SHOTS: Shot[] = [
     dribbbleUrl: "https://dribbble.com/shots/27570937-HomeFinder-Real-Estate-App-UI",
     imgUrl: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48428946/file/9c1a253f9271ca2eef40f13fcd738c2f.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48428947/file/78ffd09add910bce0ae55755c8a607b4.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48428948/file/c1fc65d1c302d4915984cf98d8e05472.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48428949/file/5c216d8476685ca51d573f70fa57ff72.png?resize=1600x&vertical=center",
+    ],
+    description: `Introducing HomeFinder, a modern real estate app designed to help users discover, compare, and book property visits with ease. The UI combines elegant visuals, intuitive navigation, and a premium user experience for buying, renting, or selling homes.
+
+✨ Features
+
+• Advanced Property Search
+• Interactive Map View
+• Buy, Rent & Sell Listings
+• Property Details with Photo Gallery
+• Virtual 3D Home Tours
+• AI Property Recommendations
+• Mortgage & EMI Calculator
+• Save Favorites & Compare Properties
+• Schedule Property Visits
+• Chat with Agents
+• Secure Document Management
+• Light & Dark Mode
+
+Designed with a clean layout, premium cards, immersive imagery, and responsive interactions to make property hunting simple and enjoyable.
+
+Looking to build a real estate platform or property management solution?
+
+CodesPanda creates premium UI/UX for real estate, SaaS, fintech, AI products, dashboards, and mobile applications.
+
+🌐 For more visit https://codespanda.com
+
+Appreciate this design if you like it, and share your feedback!`,
   },
   {
     id: "taxi",
