@@ -12,6 +12,95 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "stayease",
+    title: "StayEase – Premium Hotel & Stay Booking App UI/UX",
+    category: "Mobile App",
+    tags: ["Hotel", "Travel", "Booking", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27572253-StayEase-Premium-Hotel-Stay-Booking-App-UI-UX",
+    imgUrl: "https://cdn.dribbble.com/userupload/48433589/file/2d85cad03c44980fd3711a71602404fe.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48433590/file/9bd80b3352265065b4e8fd55c2c1718b.png?resize=1600x&vertical=center",
+    description: `Designed a modern accommodation booking experience that makes discovering, comparing, and reserving stays effortless. The interface focuses on premium visuals, intuitive navigation, seamless booking, and a delightful user experience across mobile and tablet devices.
+
+The design blends elegant typography, immersive imagery, clean layouts, and smooth interactions to create a trustworthy travel platform.
+
+✨ Highlights
+
+• Beautiful Home Screen
+• Smart Destination Search
+• Hotel & Apartment Listings
+• Interactive Maps
+• Wishlist & Saved Stays
+• Booking & Payment Flow
+• Trip Management
+• Premium Minimal UI
+• Responsive Design System
+
+Designed in Figma with a focus on usability, accessibility, and conversion-driven booking experiences.
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "fittrack",
+    title: "FitTrack – Fitness Dashboard UI/UX Design",
+    category: "Web Dashboard",
+    tags: ["Fitness", "Health", "Dashboard", "Analytics"],
+    dribbbleUrl: "https://dribbble.com/shots/27572134-FitTrack-Fitness-Dashboard-UI-UX-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48433193/file/b46c2fcb9c8d1ca9d549aa498c424904.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48433194/file/54dafd1d122b2959c85cdb50a456714d.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48433195/file/3d3bc599970d4ababf8991f719b8eea9.png?resize=1600x&vertical=center",
+    ],
+    description: `Designed a clean, modern fitness tracking dashboard that helps users stay motivated with real-time activity insights, step tracking, calorie monitoring, distance analytics, and goal progress — all in one intuitive interface.
+
+The design emphasizes clarity, motivation, and usability through bold visualizations, minimal layouts, and a vibrant orange color palette that reflects energy and movement.
+
+✨ Highlights
+
+• Fitness Dashboard
+• Goal Progress Tracking
+• Step Counter
+• Calories Burned Analytics
+• Distance & Active Time Monitoring
+• Activity Charts & Insights
+• Tablet-Optimized Interface
+• Minimal & Modern UI
+• Responsive Design System
+
+Designed in Figma with a focus on accessibility, visual hierarchy, and an engaging fitness experience.
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "glowskin",
+    title: "GlowSkin – Premium Skincare E-commerce UI/UX Design",
+    category: "Mobile App",
+    tags: ["Skincare", "eCommerce", "Mobile", "Shopping"],
+    dribbbleUrl: "https://dribbble.com/shots/27572084-GlowSkin-Premium-Skincare-E-commerce-UI-UX-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/46072598/file/8eee915fe3e6aeed25eac1c0f399f8a5.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/46091577/file/79918e64f741559cfa384073bf7d1f67.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/46151987/file/e87e1e325f2fbe6d62250368b3f2242d.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48433047/file/f927d13c79712b7976d036194b7f9c0e.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48433048/file/f5cacdf17689e52740c7a5fd52143f02.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern skincare shopping experience designed with a clean, minimal, and premium aesthetic. The interface focuses on effortless product discovery, seamless shopping, and an elegant checkout flow across both mobile and desktop.
+
+✨ Highlights
+
+• Responsive Mobile & Desktop Experience
+• Soft Lavender Luxury Color Palette
+• Modern Product Discovery
+• Clean Shopping Cart & Checkout
+• Premium Card-Based Layout
+• Consistent 8px Design System
+• Minimal, Elegant & User-Friendly UI
+
+Designed with attention to spacing, typography, accessibility, and conversion-focused UX to create a delightful skincare shopping experience.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "homefinder",
     title: "HomeFinder – Real Estate App UI",
     category: "Mobile App",
@@ -792,6 +881,430 @@ Looking to build a custom ERP, CRM, or business management platform?
 CodesPanda creates premium UI/UX for enterprise dashboards, SaaS platforms, finance tools, and web applications.
 
 🌐 https://codespanda.com`,
+  },
+  {
+    id: "pos-system",
+    title: "Modern POS System Dashboard UI | Retail & Inventory Management",
+    category: "Web Dashboard",
+    tags: ["POS", "Retail", "Inventory", "Dashboard"],
+    dribbbleUrl: "https://dribbble.com/shots/27545827-Modern-POS-System-Dashboard-UI-Retail-Inventory-Management",
+    imgUrl: "https://cdn.dribbble.com/userupload/46194840/file/a6755c6ab94f7f659293822796544019.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/46194840/file/a6755c6ab94f7f659293822796544019.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48337334/file/3516d78ded90812a9dfc4f0bb352bec9.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337335/file/37edbf6e085e7ccfd248ee0053caad12.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern Point of Sale (POS) system UI designed to simplify retail operations with an intuitive and scalable user experience.
+
+The concept includes everything businesses need to manage sales efficiently — from billing and payments to inventory, customer management, and real-time analytics. Built with a clean layout, reusable components, and a modern design system suitable for retail stores, restaurants, supermarkets, pharmacies, and cafés.
+
+✨ Highlights
+
+• Sales Dashboard & KPIs
+• Fast Billing & Checkout
+• Inventory Management
+• Customer Management
+• Product Catalog
+• Real-time Analytics
+• Receipt & Invoice Generation
+• Multi-category Support
+• Modern Scalable UI
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "lumia",
+    title: "Lumia — Photo Editor & Camera Mobile App UI",
+    category: "Mobile App",
+    tags: ["Photography", "Mobile", "Editor", "Camera"],
+    dribbbleUrl: "https://dribbble.com/shots/27545676-Lumia-Photo-Editor-Camera-Mobile-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48336808/file/77dd9bc508039e6f9dec8aeff69025e1.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48336808/file/77dd9bc508039e6f9dec8aeff69025e1.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48336809/file/2c0a12743090127b2a2d7807bcfc69b9.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `Lumia is a sleek photo editor and camera app UI designed for mobile photographers. The dark-themed interface offers intuitive controls for filters, color grading, adjustments, and creative tools — all in a minimal, premium layout that keeps the focus on your photos.
+
+✨ Highlights
+
+• Camera Capture Interface
+• One-Tap Filter Gallery
+• Advanced Color Grading
+• Crop, Rotate & Transform
+• Exposure & Contrast Controls
+• Layer & Blend Modes
+• Export & Share Workflows
+• Dark Premium UI
+• Smooth Micro-interactions
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "hireai",
+    title: "HireAI – AI Recruitment Platform Landing Page | HR Tech SaaS UI",
+    category: "Web App",
+    tags: ["AI", "HR", "SaaS", "Recruitment"],
+    dribbbleUrl: "https://dribbble.com/shots/27545541-HireAI-AI-Recruitment-Platform-Landing-Page-HR-Tech-SaaS-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48336424/file/9ca36d05aa64805a2064e64500de0955.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48336424/file/9ca36d05aa64805a2064e64500de0955.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `HireAI is an AI-powered recruitment platform landing page concept. The design showcases modern HR tech with clean sections for job discovery, AI candidate matching, automated screening, and seamless onboarding workflows.
+
+✨ Highlights
+
+• AI Candidate Matching
+• Job Listing & Search
+• Automated Resume Screening
+• Hiring Pipeline Management
+• Team Collaboration Tools
+• Analytics & Reporting
+• Onboarding Workflows
+• Modern SaaS Landing Page
+• Conversion-Focused Layout
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "sprout",
+    title: "Fitness App – Sprout",
+    category: "Mobile App",
+    tags: ["Fitness", "Health", "Nutrition", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27545328-Fitness-App-Sprout",
+    imgUrl: "https://cdn.dribbble.com/userupload/48335728/file/9c4b869034b496df839f8d1afbedea5b.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48335728/file/9c4b869034b496df839f8d1afbedea5b.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48335754/file/68c70f89c8cf59d3a22469979458a9ce.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `Sprout is a fitness and nutrition mobile app focused on healthy habit building, meal tracking, and workout planning. The interface combines fresh green tones with clean data visualizations for a motivating and encouraging fitness experience.
+
+✨ Highlights
+
+• Daily Activity Tracker
+• Meal & Nutrition Logging
+• Workout Planner
+• Calorie & Macro Breakdown
+• Hydration Reminders
+• Progress Charts
+• Goal Setting & Streaks
+• Clean Green-Accented UI
+• Mobile-First Design
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "dashboard-app",
+    title: "Dashboard App",
+    category: "Web Dashboard",
+    tags: ["Dashboard", "Analytics", "SaaS", "Admin"],
+    dribbbleUrl: "https://dribbble.com/shots/27539544-Dashboard-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48314457/file/2452e5212803865172c1a5b0ba1d4ad7.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern analytics dashboard UI featuring clean data visualizations, KPI cards, activity feeds, and responsive layouts. Designed for SaaS applications requiring at-a-glance business intelligence and real-time metrics.
+
+✨ Highlights
+
+• KPI Summary Cards
+• Revenue & Growth Charts
+• User Activity Feeds
+• Data Tables & Filters
+• Sidebar Navigation
+• Responsive Grid Layout
+• Dark & Light Themes
+• Modern Component System
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "kanban",
+    title: "Kanban System",
+    category: "Web App",
+    tags: ["Kanban", "Project Management", "Productivity", "SaaS"],
+    dribbbleUrl: "https://dribbble.com/shots/27535365-Kanban-System",
+    imgUrl: "https://cdn.dribbble.com/userupload/48299474/file/d7c979f1dd88c3802a076cd42d14d360.jpg?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48299475/file/280fb3a7d107ab4e28c715e2cd0a56bd.jpg?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48299476/file/6ece33256b0a986337ca86d841072b26.jpg?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48299477/file/ded1237777753f3e886f52b3a5ceed77.jpg?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48299478/file/f199b1f0a74985660cc402ac98fd3e1a.jpg?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48299479/file/089c31e671b7b7acb7d1b7bf767d065a.jpg?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48299632/file/a3db6d4caac273fc767fbde184144c23.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean Kanban board UI for project and task management. The interface features drag-and-drop columns, card-based tasks, priority labels, due dates, and team assignment workflows designed for agile teams and project managers.
+
+✨ Highlights
+
+• Drag-and-Drop Board
+• Task Cards with Priority Labels
+• Due Date & Assignee Management
+• Column Customization
+• Quick Add Task
+• Filter & Search
+• Progress Tracking
+• Team Collaboration View
+• Clean Minimal UI
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "portfolio-web",
+    title: "Portfolio Website",
+    category: "Web App",
+    tags: ["Portfolio", "Personal", "Design", "Website"],
+    dribbbleUrl: "https://dribbble.com/shots/27525767-Portfolio-Website",
+    imgUrl: "https://cdn.dribbble.com/userupload/48263819/file/9ffebd98b41c2474852ea03998a984c2.jpg?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48263820/file/96e3e8b728e63303ae21058a57539e78.jpg?resize=1600x&vertical=center",
+    description: `A minimal portfolio website design showcasing creative work with a clean grid layout, project thumbnails, smooth navigation, and an elegant personal brand aesthetic. Built for designers and developers looking to present their work with clarity and style.
+
+✨ Highlights
+
+• Clean Hero Section
+• Project Grid Gallery
+• About & Skills Section
+• Contact Form
+• Minimal Typography
+• Smooth Scroll Animations
+• Mobile-Responsive Layout
+• Personal Branding Focus
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "design-system",
+    title: "Design System",
+    category: "UI Design",
+    tags: ["Design System", "Components", "UI Kit", "Figma"],
+    dribbbleUrl: "https://dribbble.com/shots/27501192-Design-System",
+    imgUrl: "https://cdn.dribbble.com/userupload/48171734/file/38287293392a1b8809ad6bc2433b11d1.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48171736/file/5e36dc51773c761ecec3de901459e8c9.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48171737/file/d8a97b3ea0c3986b83e1ceca1f8b1ddf.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48171738/file/609eb08e055c63e62a7d592bca19544f.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48171740/file/cdc7d3a3456e3208d70cae554a3c2a2b.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48178098/file/698d241ca4c5f769021e7c1792a538be.png?resize=1600x&vertical=center",
+    ],
+    description: `A comprehensive UI design system featuring design tokens, reusable components, typography scales, color palettes, spacing systems, and interaction patterns. Built to ensure visual consistency and development velocity across large-scale digital products.
+
+✨ Highlights
+
+• Color Token System
+• Typography Scale
+• Button & Form Components
+• Icon Library
+• Card & Layout Patterns
+• Spacing & Grid System
+• Dark & Light Themes
+• Figma-Ready Components
+• Developer Handoff Specs
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "dating-app",
+    title: "Dating Mobile App",
+    category: "Mobile App",
+    tags: ["Dating", "Social", "Mobile", "Matching"],
+    dribbbleUrl: "https://dribbble.com/shots/26930031-Dating-Mobile-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48141694/file/3b51d9f8552b85887dfcc705901742e4.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48141694/file/3b51d9f8552b85887dfcc705901742e4.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48141695/file/a2372e687226a969a229f5e82ae156f2.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern dating mobile app UI with a card-based swipe interface, match discovery, real-time messaging, and profile management. Designed with warm tones and clean layouts for an engaging and trustworthy social experience.
+
+✨ Highlights
+
+• Swipe-to-Match Interface
+• Profile Discovery Cards
+• Match Notifications
+• Real-time Chat
+• Interest Tags & Filters
+• Photo Gallery Profiles
+• Safety & Privacy Controls
+• Warm, Inviting Color Palette
+• Smooth Animations
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "calories-app",
+    title: "Calories Calculator App",
+    category: "Mobile App",
+    tags: ["Health", "Nutrition", "Calories", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/26925953-Calories-Calculator-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48141845/file/944f45928663280a0275f5e2f5c8d5f6.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48141845/file/944f45928663280a0275f5e2f5c8d5f6.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48141846/file/6cb65da72be3445067fdd5c1035f2bb3.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `A calories calculator mobile app with meal logging, macro breakdowns, daily calorie targets, and progress tracking. Clean and intuitive UI built to make healthy eating habits effortless and enjoyable.
+
+✨ Highlights
+
+• Daily Calorie Target Tracker
+• Meal & Food Logging
+• Macro Breakdown (Protein / Carbs / Fat)
+• Search & Add Foods
+• Progress Bar & Ring Charts
+• Weekly History View
+• Water Intake Tracking
+• Clean Minimalist UI
+• Health-Focused Color Palette
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "ecommerce-app",
+    title: "Ecommerce App Design",
+    category: "Mobile App",
+    tags: ["eCommerce", "Shopping", "Mobile", "Retail"],
+    dribbbleUrl: "https://dribbble.com/shots/26918933-Ecommerce-App-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48141928/file/57da89a9ebb6a94671a36c0d061d0935.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48141928/file/57da89a9ebb6a94671a36c0d061d0935.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48141929/file/f3f0a9d57dd414988a5c9fe89854132d.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean e-commerce mobile app design featuring product discovery, category browsing, cart management, and a smooth checkout flow. Built with a modern card-based layout and conversion-focused UX for a delightful shopping experience.
+
+✨ Highlights
+
+• Product Discovery Feed
+• Category Browsing
+• Search & Filters
+• Product Detail Pages
+• Add to Cart & Wishlist
+• Smooth Checkout Flow
+• Order Tracking
+• Clean Card-Based Layout
+• Mobile-First UX
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "car-app",
+    title: "Car Design App",
+    category: "Mobile App",
+    tags: ["Automotive", "Car", "Mobile", "Configurator"],
+    dribbbleUrl: "https://dribbble.com/shots/26912669-Car-Design-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48142602/file/13424fd8b2ca9dbaf5c0671c109a39d3.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48142602/file/13424fd8b2ca9dbaf5c0671c109a39d3.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48142768/file/a63ac7ed17cd0f5b04abd3a62a04e777.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48142769/file/96f0e8e5906b6cd58ddec8d643e8cde6.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48337333/file/3a5a73388156fcc7d15df5de2ff76601.png?resize=1600x&vertical=center",
+    ],
+    description: `A car design and showcase app with immersive vehicle imagery, specification cards, color selection, and booking flows. Premium dark UI built for automotive brands, car configurator experiences, and vehicle dealership platforms.
+
+✨ Highlights
+
+• Immersive Car Showcase
+• 360° Vehicle Preview
+• Color & Trim Selector
+• Spec Comparison Cards
+• Performance Stats
+• Test Drive Booking
+• Finance Calculator
+• Premium Dark Theme
+• Cinematic Imagery Layout
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "cricket-app",
+    title: "Cricket Scoring App",
+    category: "Mobile App",
+    tags: ["Cricket", "Sports", "Scoring", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/26912589-Cricket-Scoring-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48143098/file/1ecbcd78318fc3e35528a689b4382c78.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48143099/file/7d89fe1b9846995b7b6b86b248a3c13f.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48143100/file/8a3ae272cf8efc86229a980c3639fdcb.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48143101/file/9cf539f7dcdd5e09930eb3a6b710f49e.png?resize=1600x&vertical=center",
+    ],
+    description: `A cricket scoring app UI for tracking live match scores, player statistics, innings breakdowns, and detailed scorecards. Clean and data-rich interface designed for cricket fans, amateur leagues, and professional scorekeepers.
+
+✨ Highlights
+
+• Live Score Ticker
+• Ball-by-Ball Commentary Feed
+• Innings & Over Summary
+• Batting & Bowling Scorecards
+• Player Performance Stats
+• Match Timeline
+• Team Management
+• Tournament Bracket View
+• Cricket-Themed UI
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "crypto-app",
+    title: "Crypto App",
+    category: "Mobile App",
+    tags: ["Crypto", "Finance", "Trading", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/26893519-Crypto-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48143469/file/4be7333553aa5cb2779ef8ebdecdc674.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48143470/file/fe2f35a8a38c63be8c1dced0e466e791.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48143471/file/0bf20e32d83b0a3e21f91ed3bfa1373e.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48143472/file/df40f8e21a1223e363bc92894916a724.png?resize=1600x&vertical=center",
+    ],
+    description: `A cryptocurrency tracking app with portfolio overview, live price charts, market cap data, and watchlist management. Dark-themed UI with vibrant accent colors for a modern fintech experience that makes managing digital assets intuitive.
+
+✨ Highlights
+
+• Portfolio Overview Dashboard
+• Live Price Charts (Candlestick & Line)
+• Market Cap Rankings
+• Watchlist Management
+• Coin Detail Pages
+• Buy & Sell Flows
+• Transaction History
+• Price Alerts
+• Dark Premium UI
+
+🌐 codespanda.com`,
+  },
+  {
+    id: "employee-mgmt",
+    title: "Employee Management Dashboard",
+    category: "Web Dashboard",
+    tags: ["HR", "Employee", "Dashboard", "Management"],
+    dribbbleUrl: "https://dribbble.com/shots/26887384-Employee-Management-Dashboard",
+    imgUrl: "https://cdn.dribbble.com/userupload/48146937/file/072bd0c4872b3a1755f7e9274ab26a1f.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48146939/file/e8382ebfa6660d6f821ee0ab290602fe.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48146940/file/bb045f0f3679dd8727104e871091061d.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48146941/file/f1eb02c11a3ee4fe2bdbe54cc2be6905.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48146943/file/b30ceff1716383c197e4cc038a800530.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48146944/file/6839167b05717ef44348e7b132fc82e8.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48146945/file/19c31a7aeb126f492fd845e0a4de09f2.png?resize=1600x&vertical=center",
+    ],
+    description: `An employee management dashboard with comprehensive HR workflows covering attendance tracking, payroll management, leave requests, department analytics, and performance reviews. Clean enterprise UI built for modern HR teams managing growing organizations.
+
+✨ Highlights
+
+• Employee Directory & Profiles
+• Attendance & Time Tracking
+• Leave Request Management
+• Payroll Overview
+• Department Analytics
+• Performance Reviews
+• Recruitment Pipeline
+• Org Chart View
+• HR Reports & Exports
+• Role-Based Access Control
+
+🌐 codespanda.com`,
   },
 ];
 
