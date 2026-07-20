@@ -66,8 +66,8 @@ const PAGE_META = {
     ogImage: `${BASE}/images/flowers/pos-counter.png`,
   },
   "/portfolio": {
-    title: "Deepak Kumar — UI/UX Designer & React Developer | Portfolio",
-    description: "Portfolio of Deepak Kumar — UI/UX designer and React developer from Mohali, India. 24+ design shots covering mobile apps, dashboards, SaaS and POS design.",
+    title: "CodesPanda — Design. Build. Impress. | High-quality UI Kits, Templates, Dashboards & SaaS Experiences",
+    description: "High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design.",
     ogImage: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
   },
   "/legal/privacy": {

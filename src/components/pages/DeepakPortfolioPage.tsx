@@ -276,16 +276,16 @@ export function DeepakPortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>Deepak Kumar — UI/UX Designer & React Developer | Portfolio</title>
+        <title>CodesPanda — Design. Build. Impress. | High-quality UI Kits, Templates, Dashboards & SaaS Experiences</title>
         <meta
           name="description"
-          content="Portfolio of Deepak Kumar — UI/UX designer and React developer from Mohali, India. 24+ design shots on Dribbble covering mobile apps, dashboards, and web design."
+          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
         />
         <link rel="canonical" href="https://codespanda.com/portfolio" />
-        <meta property="og:title" content="Deepak Kumar — UI/UX Designer & React Developer" />
+        <meta property="og:title" content="CodesPanda — Design. Build. Impress." />
         <meta
           property="og:description"
-          content="Portfolio of Deepak Kumar — UI/UX designer and React developer. 24+ Dribbble shots across mobile app UI, dashboards, SaaS, and POS design."
+          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
         />
         <meta property="og:url" content="https://codespanda.com/portfolio" />
         <meta property="og:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
