@@ -40,7 +40,7 @@ export const TEMPLATES: Template[] = [
     badge: "New",
     badgeColor: "from-blue-500 to-cyan-600",
     liveUrl: "https://deepcity-care.codespanda.com/",
-    docsUrl: "https://github.com/codespanda/deepcity-care-hospital/blob/master/docs/README.md",
+    docsUrl: "https://deepcity-care.codespanda.com/#/docs",
     detailsUrl: "/templates/deepcity-care",
     screenshotUrl: "/images/deepcity-care/dashboard.png",
     techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
