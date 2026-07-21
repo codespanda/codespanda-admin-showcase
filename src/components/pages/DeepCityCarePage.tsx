@@ -16,7 +16,7 @@ const Footer = lazy(() =>
 );
 
 const GITHUB_URL  = "https://github.com/codespanda/deepcity-care-hospital";
-const DOCS_URL    = "https://deepcity-care.codespanda.com/#/docs";
+const DOCS_URL    = "https://deepcity-care.codespanda.com/docs";
 const PREVIEW_URL = "https://deepcity-care.codespanda.com/";
 
 const GALLERY = [
