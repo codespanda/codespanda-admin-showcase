@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "deepcity-care-hospital",
+    name: "DeepCity Care Hospital",
+    description:
+      "A full hospital administration dashboard covering appointments, patients, doctors, billing, pharmacy, lab reports, beds & rooms, inventory, insurance and messaging — all in a clean, intuitive interface.",
+    category: "Healthcare / Hospital Admin",
+    badge: "New",
+    badgeColor: "from-blue-500 to-cyan-600",
+    liveUrl: "https://deepcity-care.codespanda.com/",
+    docsUrl: "https://github.com/codespanda/deepcity-care-hospital/blob/master/docs/README.md",
+    detailsUrl: "/templates/deepcity-care",
+    screenshotUrl: "/images/deepcity-care/dashboard.png",
+    techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    features: ["Modern Design", "Hospital Admin", "Dark Mode", "Responsive"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "flowers-pos",
     name: "Flowers POS",
     description:
@@ -202,7 +219,6 @@ export const COMING_SOON: ComingSoonTemplate[] = [
   { name: "Accounting Dashboard", category: "Finance", gradient: "from-emerald-500/20 to-teal-500/10" },
   { name: "School ERP", category: "Education", gradient: "from-blue-500/20 to-indigo-500/10" },
   { name: "CRM Dashboard", category: "Sales", gradient: "from-orange-500/20 to-rose-500/10" },
-  { name: "Hospital Management", category: "Healthcare", gradient: "from-red-500/20 to-pink-500/10" },
   { name: "Finance Dashboard", category: "Finance", gradient: "from-violet-500/20 to-purple-500/10" },
   { name: "Payroll System", category: "HR", gradient: "from-amber-500/20 to-yellow-500/10" },
   { name: "Inventory Management", category: "Operations", gradient: "from-cyan-500/20 to-sky-500/10" },
@@ -257,7 +273,7 @@ export interface Stat {
 }
 
 export const HERO_STATS: Stat[] = [
-  { label: "Templates available", value: 5 },
+  { label: "Templates available", value: 6 },
   { label: "Pages included", value: 30, suffix: "+" },
   { label: "Categories", value: 9, suffix: "+" },
   { label: "Technologies", value: 5, suffix: "+" },

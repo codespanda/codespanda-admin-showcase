@@ -15,6 +15,7 @@ const ROUTES = [
   { path: "/templates/Brisk-Admin",          changefreq: "monthly", priority: "0.9" },
   { path: "/templates/portfolio-template",   changefreq: "monthly", priority: "0.9" },
   { path: "/templates/flowers",              changefreq: "monthly", priority: "0.9" },
+  { path: "/templates/deepcity-care",        changefreq: "monthly", priority: "0.9" },
   { path: "/templates/cornerstone",          changefreq: "monthly", priority: "0.9" },
   { path: "/portfolio",                       changefreq: "monthly", priority: "0.8" },
   { path: "/legal/privacy",                  changefreq: "yearly",  priority: "0.3" },

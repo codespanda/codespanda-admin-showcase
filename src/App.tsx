@@ -12,6 +12,7 @@ const PortfolioTemplatePage = lazy(() => import("@/components/pages/PortfolioTem
 const CornerstonePage     = lazy(() => import("@/components/pages/CornerstonePage").then(m => ({ default: m.CornerstonePage })));
 const TemplatesPage       = lazy(() => import("@/components/pages/TemplatesPage").then(m => ({ default: m.TemplatesPage })));
 const FlowersPosPage      = lazy(() => import("@/components/pages/FlowersPosPage").then(m => ({ default: m.FlowersPosPage })));
+const DeepCityCarePage    = lazy(() => import("@/components/pages/DeepCityCarePage").then(m => ({ default: m.DeepCityCarePage })));
 const DeepakPortfolioPage = lazy(() => import("@/components/pages/DeepakPortfolioPage").then(m => ({ default: m.DeepakPortfolioPage })));
 const PortfolioShotPage   = lazy(() => import("@/components/pages/PortfolioShotPage").then(m => ({ default: m.PortfolioShotPage })));
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/templates/portfolio" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
         <Route path="/templates/cornerstone" element={<Suspense><CornerstonePage /></Suspense>} />
         <Route path="/templates/flowers" element={<Suspense><FlowersPosPage /></Suspense>} />
+        <Route path="/templates/deepcity-care" element={<Suspense><DeepCityCarePage /></Suspense>} />
         <Route path="/portfolio" element={<Suspense><DeepakPortfolioPage /></Suspense>} />
         <Route path="/portfolio/:shotId" element={<Suspense><PortfolioShotPage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />

@@ -32,6 +32,7 @@ const CATEGORY_DEFS: CategoryDef[] = [
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
+  "deepcity-care-hospital": ["healthcare", "admin-dashboard"],
   "flowers-pos":        ["retail-pos"],
   "alpine-admin-react": ["admin-dashboard", "hr-management"],
   "brisk-admin":        ["admin-dashboard", "crm"],

@@ -21,6 +21,7 @@ const ROUTES = [
   "/templates/portfolio-template",
   "/templates/cornerstone",
   "/templates/flowers",
+  "/templates/deepcity-care",
   "/portfolio",
   "/legal/privacy",
   "/legal/terms",
@@ -65,6 +66,11 @@ const PAGE_META = {
     description: "A beautiful point-of-sale system template for flower shops and retail boutiques. Covers product grid, cart, coupons, orders, customers and reports.",
     ogImage: `${BASE}/images/flowers/pos-counter.png`,
   },
+  "/templates/deepcity-care": {
+    title: "DeepCity Care Hospital — Free React Hospital Admin Template | CodeSpanda",
+    description: "A free React hospital administration dashboard template covering appointments, patients, doctors, billing, pharmacy, lab reports, beds & rooms, inventory and insurance.",
+    ogImage: `${BASE}/images/deepcity-care/dashboard.png`,
+  },
   "/portfolio": {
     title: "CodesPanda — Design. Build. Impress. | High-quality UI Kits, Templates, Dashboards & SaaS Experiences",
     description: "High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design.",
@@ -94,6 +100,7 @@ const HERO_IMAGE = {
   "/templates/portfolio-template": "/images/portfolio/portfolio.jpg",
   "/templates/cornerstone": "/images/cornerstone-dashboard-2.png",
   "/templates/flowers": "/images/flowers/pos-counter.png",
+  "/templates/deepcity-care": "/images/deepcity-care/dashboard.png",
 };
 
 function withHeroPreload(html, route) {
