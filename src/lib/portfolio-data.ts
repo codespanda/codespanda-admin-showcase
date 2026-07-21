@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "parkease",
+    title: "ParkEase - Smart Parking Mobile App UI",
+    category: "Mobile App",
+    tags: ["Parking", "Mobile", "Booking", "Maps"],
+    dribbbleUrl: "https://dribbble.com/shots/27577284-ParkEase-Smart-Parking-Mobile-App-UI",
+    imgUrl: "/images/parkease/parkease-screens.png",
+    fullImgUrl: "/images/parkease/parkease-screens.png",
+    gallery: [
+      "/images/parkease/parkease-watch.png",
+      "/images/parkease/parkease-phone.png",
+    ],
+    description: `Designed a clean and premium parking booking experience focused on speed, simplicity, and usability. From discovering nearby parking spots to booking and managing reservations, every screen is crafted with an intuitive flow and modern aesthetics.
+
+Highlights
+• Clean & minimal interface
+• Interactive map experience
+• Smart parking search & filters
+• Real-time availability & pricing
+• Quick booking flow
+• Booking details & payment confirmation
+• Premium green gradient theme
+• Apple-inspired design system
+
+Designed for a seamless user experience with attention to spacing, typography, and micro interactions.
+
+💚 Designed by CodeSpanda
+🌐 https://codespanda.com`,
+  },
+  {
     id: "stayease",
     title: "StayEase – Premium Hotel & Stay Booking App UI/UX",
     category: "Mobile App",
