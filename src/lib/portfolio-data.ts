@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "sos-app",
+    title: "SOS Emergency Mobile App UI Design | Modern Safety App UI/UX",
+    category: "Mobile App",
+    tags: ["Emergency", "Safety", "SOS", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27579010-SOS-Emergency-Mobile-App-UI-Design-Modern-Safety-App-UI-UX",
+    imgUrl: "https://cdn.dribbble.com/userupload/48458324/file/eeadefcbfa7e353c7956b1f6f14cbb28.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48458324/file/eeadefcbfa7e353c7956b1f6f14cbb28.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48458326/file/d19463019ef20855f0f4389c2e257fb1.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48458327/file/9110c414f2f2ce02486a852c830bde22.png?resize=1600x&vertical=center",
+    ],
+    description: `Designed a modern SOS Emergency Mobile App focused on user safety, instant emergency response, and a clean mobile experience.
+
+✨ Highlights
+
+• Beautiful Onboarding Screen
+• Dashboard with Quick Actions
+• One-Tap SOS Alert
+• Live Location Sharing
+• Emergency Contacts
+• Safety Tips
+• Voice Recording
+• Fake Call Feature
+• Modern Glassmorphism UI
+• Soft Gradients & Clean Layouts
+
+🌐 codespanda.com`,
+  },
+  {
     id: "parkease",
     title: "ParkEase - Smart Parking Mobile App UI",
     category: "Mobile App",
