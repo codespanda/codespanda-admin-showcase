@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
-import { Logo } from "@/components/shared/Logo";
 import { Button } from "@/components/ui/button";
 import { SHOTS } from "@/lib/portfolio-data";
 import type { Shot } from "@/lib/portfolio-data";
@@ -117,8 +116,8 @@ export function DeepakPortfolioPage() {
           <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
             Portfolio
           </span>
-          <h1 className="mt-4 flex justify-center">
-            <Logo imgClassName="h-16 sm:h-20" />
+          <h1 className="mt-4 text-5xl font-extrabold tracking-tight sm:text-6xl">
+            <span style={{ color: "#0095DD" }}>Codes</span><span>Panda</span>
           </h1>
           <p className="mt-4 text-xl font-semibold text-primary sm:text-2xl">
             Design. Build. Impress.
