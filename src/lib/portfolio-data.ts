@@ -12,6 +12,37 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "vpn-app",
+    title: "Modern VPN App UI Design | Secure & Fast VPN Experience",
+    category: "Mobile App",
+    tags: ["VPN", "Security", "Privacy", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27579106-Modern-VPN-App-UI-Design-Secure-Fast-VPN-Experience",
+    imgUrl: "https://cdn.dribbble.com/userupload/48458598/file/58700554c9882ea6b10bd4913cfdd9a5.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48458598/file/58700554c9882ea6b10bd4913cfdd9a5.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48458599/file/6f3f0d5bebcc925e9a1161620f051e04.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48458600/file/f463b1417ba6b76375f6f1de5a025078.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean and modern VPN App UI designed to provide a seamless experience for users who value online privacy, security, and speed.
+
+✨ Highlights
+
+• Beautiful Onboarding Experience
+• One-Tap VPN Connect
+• Global Server Selection
+• Fast Connection Status
+• Real-Time IP Address Display
+• Speed Test Dashboard
+• Security Score
+• Kill Switch Settings
+• Split Tunneling
+• Dark & Light Mode Ready
+• Premium Subscription Screens
+• Clean Minimal Interface
+
+🌐 codespanda.com`,
+  },
+  {
     id: "sos-app",
     title: "SOS Emergency Mobile App UI Design | Modern Safety App UI/UX",
     category: "Mobile App",
