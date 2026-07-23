@@ -20,7 +20,17 @@ const DOCS_URL    = "https://eva-autocare.codespanda.com/docs";
 const PREVIEW_URL = "https://eva-autocare.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/eva-autocare/dashboard.png", label: "Dashboard" },
+  { src: "/images/eva-autocare/dashboard.png",    label: "Dashboard" },
+  { src: "/images/eva-autocare/appointments.png", label: "Appointments" },
+  { src: "/images/eva-autocare/customers.png",    label: "Customers" },
+  { src: "/images/eva-autocare/vehicles.png",     label: "Vehicles" },
+  { src: "/images/eva-autocare/work-orders.png",  label: "Work Orders" },
+  { src: "/images/eva-autocare/invoices.png",     label: "Invoices & Billing" },
+  { src: "/images/eva-autocare/inventory.png",    label: "Inventory" },
+  { src: "/images/eva-autocare/reports.png",      label: "Reports" },
+  { src: "/images/eva-autocare/technicians.png",  label: "Technicians" },
+  { src: "/images/eva-autocare/reviews.png",      label: "Reviews & Ratings" },
+  { src: "/images/eva-autocare/settings.png",     label: "Settings" },
 ];
 
 const MODULES = [
@@ -50,18 +60,18 @@ const FEATURES = [
 
 const STATUS_STYLES: Record<string, string> = {
   Live: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-  New:  "bg-indigo-500/10  text-indigo-600  dark:text-indigo-400  border-indigo-500/20",
-  Soon: "bg-amber-500/10   text-amber-600   dark:text-amber-400   border-amber-500/20",
+  New:  "bg-blue-500/10  text-blue-600  dark:text-blue-400  border-blue-500/20",
+  Soon: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
 };
 
 const TECH = [
-  { name: "React",        color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"   },
-  { name: "Vite",         color: "bg-violet-500/10  text-violet-600  dark:text-violet-400" },
-  { name: "TypeScript",   color: "bg-blue-500/10    text-blue-600    dark:text-blue-400"   },
-  { name: "Tailwind CSS", color: "bg-sky-500/10     text-sky-600     dark:text-sky-400"    },
-  { name: "shadcn/ui",    color: "bg-slate-500/10   text-slate-600   dark:text-slate-300"  },
-  { name: "radix-ui",     color: "bg-orange-500/10  text-orange-600  dark:text-orange-400" },
-  { name: "React Router", color: "bg-red-500/10     text-red-600     dark:text-red-400"    },
+  { name: "React",        color: "bg-cyan-500/10    text-cyan-600    dark:text-cyan-400"    },
+  { name: "Vite",         color: "bg-violet-500/10  text-violet-600  dark:text-violet-400"  },
+  { name: "TypeScript",   color: "bg-blue-500/10    text-blue-600    dark:text-blue-400"    },
+  { name: "Tailwind CSS", color: "bg-sky-500/10     text-sky-600     dark:text-sky-400"     },
+  { name: "shadcn/ui",    color: "bg-slate-500/10   text-slate-600   dark:text-slate-300"   },
+  { name: "radix-ui",     color: "bg-orange-500/10  text-orange-600  dark:text-orange-400"  },
+  { name: "React Router", color: "bg-red-500/10     text-red-600     dark:text-red-400"     },
   { name: "Recharts",     color: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" },
 ];
 
@@ -93,7 +103,7 @@ const STEPS = [
 
 function GalleryImage({ src, label }: { src: string; label: string }) {
   return (
-    <Reveal className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-md hover:shadow-xl hover:shadow-orange-500/10 transition-all duration-300">
+    <Reveal className="group relative overflow-hidden rounded-2xl border border-border bg-card shadow-md hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300">
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
@@ -187,7 +197,7 @@ export function EvaAutocarePage() {
           <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:gap-16">
             <div className="flex-1">
               <div className="mb-4 flex flex-wrap items-center gap-2">
-                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 px-3 py-1 text-xs font-semibold text-white shadow">
+                <span className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 px-3 py-1 text-xs font-semibold text-white shadow">
                   New
                 </span>
                 <span className="inline-flex items-center gap-1 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
@@ -200,7 +210,7 @@ export function EvaAutocarePage() {
 
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
                 Eva{" "}
-                <span className="bg-gradient-to-r from-orange-500 to-amber-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                   AutoCare
                 </span>
               </h1>
@@ -237,7 +247,7 @@ export function EvaAutocarePage() {
                     <Github className="h-4 w-4" /> View on GitHub
                   </a>
                 </Button>
-                <Button size="lg" className="border border-orange-500/40 bg-orange-500/10 text-orange-600 hover:bg-orange-500/20 dark:text-orange-400" asChild>
+                <Button size="lg" className="border border-blue-500/40 bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 dark:text-blue-400" asChild>
                   <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">
                     <BookOpen className="h-4 w-4" /> Documentation
                   </a>
@@ -247,8 +257,8 @@ export function EvaAutocarePage() {
 
             {/* Hero image */}
             <Reveal className="relative flex-1 lg:max-w-xl">
-              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-orange-500/20 to-amber-500/10 blur-2xl" />
-              <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-orange-500/10 ring-1 ring-orange-500/10">
+              <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-500/20 to-blue-400/10 blur-2xl" />
+              <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-blue-500/10 ring-1 ring-blue-500/10">
                 <img
                   src="/images/eva-autocare/dashboard.png"
                   alt="Eva AutoCare dashboard preview"
@@ -294,7 +304,7 @@ export function EvaAutocarePage() {
                     "Teams replacing spreadsheets with a modern React service-center UI",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-muted-foreground">
-                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-orange-500" />
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-blue-500" />
                       {item}
                     </li>
                   ))}
@@ -308,7 +318,7 @@ export function EvaAutocarePage() {
         <section className="px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-10 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-500">Gallery</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-500">Gallery</p>
               <h2 className="text-3xl font-bold">See it in action</h2>
               <p className="mt-3 text-muted-foreground">
                 A tour of the key modules — every page is production-ready and fully responsive.
@@ -320,7 +330,7 @@ export function EvaAutocarePage() {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <Button className="border border-orange-500/40 bg-orange-500/10 text-orange-600 hover:bg-orange-500/20 dark:text-orange-400" asChild>
+              <Button className="border border-blue-500/40 bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 dark:text-blue-400" asChild>
                 <a href={PREVIEW_URL} target="_blank" rel="noreferrer noopener">
                   <Monitor className="h-4 w-4" /> Explore all
                 </a>
@@ -333,7 +343,7 @@ export function EvaAutocarePage() {
         <section className="border-y border-border bg-secondary/20 px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-500">Why Eva AutoCare</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-500">Why Eva AutoCare</p>
               <h2 className="text-3xl font-bold">Built for real automotive service projects</h2>
             </div>
             <Stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -342,8 +352,8 @@ export function EvaAutocarePage() {
                   key={f.title}
                   className="rounded-2xl border border-border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-orange-500/10">
-                    <f.icon className="h-5 w-5 text-orange-500" />
+                  <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-500/10">
+                    <f.icon className="h-5 w-5 text-blue-500" />
                   </div>
                   <h3 className="font-semibold">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.desc}</p>
@@ -357,7 +367,7 @@ export function EvaAutocarePage() {
         <section className="px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-500">What's included</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-500">What's included</p>
               <h2 className="text-3xl font-bold">{MODULES.length} fully built modules</h2>
               <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
                 Every module ships with working layouts, realistic sample data, and full responsiveness.
@@ -369,8 +379,8 @@ export function EvaAutocarePage() {
                   key={mod.label}
                   className="flex items-start gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-orange-500/10">
-                    <mod.icon className="h-5 w-5 text-orange-500" />
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-blue-500/10">
+                    <mod.icon className="h-5 w-5 text-blue-500" />
                   </div>
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
@@ -390,7 +400,7 @@ export function EvaAutocarePage() {
         {/* Tech Stack */}
         <section className="border-y border-border bg-secondary/20 px-4 py-20">
           <div className="mx-auto max-w-6xl text-center">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-500">Tech Stack</p>
+            <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-500">Tech Stack</p>
             <h2 className="text-3xl font-bold">Built with modern tools</h2>
             <Stagger className="mt-10 flex flex-wrap justify-center gap-3">
               {TECH.map((t) => (
@@ -408,14 +418,14 @@ export function EvaAutocarePage() {
         <section className="px-4 py-20">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-500">Documentation</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-500">Documentation</p>
               <h2 className="text-3xl font-bold">Get running in 2 minutes</h2>
               <p className="mt-3 text-muted-foreground">Node.js 18+ required. No paid tools, no account sign-ups.</p>
             </div>
             <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {STEPS.map((s) => (
                 <StaggerItem key={s.step} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                  <span className="text-sm font-bold text-orange-500">{s.step}</span>
+                  <span className="text-sm font-bold text-blue-500">{s.step}</span>
                   <p className="mt-2 font-semibold">{s.title}</p>
                   <code className="mt-3 block overflow-x-auto rounded-lg bg-secondary px-3 py-2 text-xs text-muted-foreground">
                     {s.code}
@@ -424,7 +434,7 @@ export function EvaAutocarePage() {
               ))}
             </Stagger>
             <div className="mt-8 text-center">
-              <Button size="lg" className="border border-orange-500/40 bg-orange-500/10 text-orange-600 hover:bg-orange-500/20 dark:text-orange-400" asChild>
+              <Button size="lg" className="border border-blue-500/40 bg-blue-500/10 text-blue-600 hover:bg-blue-500/20 dark:text-blue-400" asChild>
                 <a href={DOCS_URL} target="_blank" rel="noreferrer noopener">
                   <BookOpen className="h-4 w-4" /> View Documentation
                 </a>
@@ -437,7 +447,7 @@ export function EvaAutocarePage() {
         <section className="border-y border-border bg-secondary/20 px-4 py-20">
           <div className="mx-auto max-w-3xl">
             <div className="mb-12 text-center">
-              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-orange-500">FAQ</p>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-widest text-blue-500">FAQ</p>
               <h2 className="text-3xl font-bold">Common questions</h2>
             </div>
             <div className="divide-y divide-border">
@@ -453,13 +463,13 @@ export function EvaAutocarePage() {
 
         {/* CTA */}
         <section className="px-4 pb-24">
-          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-orange-500 to-amber-600 p-12 text-center text-white shadow-2xl shadow-orange-500/30">
+          <div className="mx-auto max-w-3xl overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 to-blue-500 p-12 text-center text-white shadow-2xl shadow-blue-500/30">
             <h2 className="text-3xl font-extrabold">Ready to build?</h2>
-            <p className="mt-3 text-orange-100">
+            <p className="mt-3 text-blue-100">
               Eva AutoCare is completely free and open-source. Clone it, customise it, and ship it.
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Button size="lg" className="bg-white text-orange-700 hover:bg-orange-50" asChild>
+              <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50" asChild>
                 <a href={PREVIEW_URL} target="_blank" rel="noreferrer noopener">
                   <ExternalLink className="h-4 w-4" /> Live Preview
                 </a>
