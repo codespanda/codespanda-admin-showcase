@@ -75,6 +75,11 @@
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "cv11", "ss01";
     font-variation-settings: normal;
+    caret-color: transparent;
+  }
+
+  input, textarea, [contenteditable] {
+    caret-color: auto;
   }
 
   ::selection {
