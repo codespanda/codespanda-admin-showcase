@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "eva-autocare",
+    name: "Eva AutoCare",
+    description:
+      "A full auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing, reports and reviews — built with React, Vite, Tailwind CSS and TypeScript.",
+    category: "Automotive / Service Center Admin",
+    badge: "New",
+    badgeColor: "from-orange-500 to-amber-500",
+    liveUrl: "https://eva-autocare.codespanda.com/",
+    docsUrl: "https://eva-autocare.codespanda.com/docs",
+    detailsUrl: "/templates/eva-autocare",
+    screenshotUrl: "/images/eva-autocare/dashboard.png",
+    techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    features: ["Modern Design", "Auto Service Admin", "Dark Mode", "Responsive"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "deepcity-care-hospital",
     name: "DeepCity Care Hospital",
     description:
