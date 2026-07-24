@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Reveal, StaggerItem, Stagger } from "@/components/shared/Reveal";
 import {
-  ExternalLink, ArrowLeft, Star, Github, BookOpen, Monitor,
-  CheckCircle2, Code2, Palette, Smartphone, Zap, Layers, MapPin,
+  ExternalLink, ArrowLeft, Star, Github, Monitor,
+  CheckCircle2, Palette, Smartphone, Zap, Layers, MapPin,
   CalendarDays, Utensils, Hotel, Landmark, Map, Film, Image,
   Clock, Tag, Sun, Globe,
 } from "lucide-react";
