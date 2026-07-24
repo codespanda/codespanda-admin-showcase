@@ -19,13 +19,19 @@ const GITHUB_URL  = "https://github.com/codespanda/hamara-bharat";
 const PREVIEW_URL = "https://hamarabharat.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/hamarabharat/hero.png",         label: "Hero — Cinematic Slideshow" },
-  { src: "/images/hamarabharat/trip-planner.png", label: "Trip Planner" },
-  { src: "/images/hamarabharat/india-map.png",    label: "Interactive India Map" },
-  { src: "/images/hamarabharat/experiences.png",  label: "Experiences" },
-  { src: "/images/hamarabharat/festivals.png",    label: "Festivals & Culture" },
-  { src: "/images/hamarabharat/food-trails.png",  label: "Food Trails" },
-  { src: "/images/hamarabharat/gallery.png",      label: "Photo Gallery" },
+  { src: "/images/hamarabharat/hero.png",              label: "Hero — Cinematic Slideshow" },
+  { src: "/images/hamarabharat/trip-planner.png",      label: "Trip Planner" },
+  { src: "/images/hamarabharat/india-map.png",         label: "Interactive India Map" },
+  { src: "/images/hamarabharat/experiences.png",       label: "Experiences" },
+  { src: "/images/hamarabharat/unesco.png",            label: "UNESCO Heritage Sites" },
+  { src: "/images/hamarabharat/itinerary-builder.png", label: "Itinerary Builder" },
+  { src: "/images/hamarabharat/festivals.png",         label: "Festivals & Culture" },
+  { src: "/images/hamarabharat/hotels.png",            label: "Hotels" },
+  { src: "/images/hamarabharat/food-trails.png",       label: "Food Trails" },
+  { src: "/images/hamarabharat/cinematic-videos.png",  label: "Cinematic Videos" },
+  { src: "/images/hamarabharat/gallery.png",           label: "Photo Gallery" },
+  { src: "/images/hamarabharat/best-time.png",         label: "Best Time to Visit" },
+  { src: "/images/hamarabharat/visa-info.png",         label: "Visa & Travel Info" },
 ];
 
 const SECTIONS = [

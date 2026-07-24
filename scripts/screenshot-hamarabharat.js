@@ -18,28 +18,48 @@ const browser = await puppeteer.launch({
 
 const page = await browser.newPage();
 await page.setViewport({ width: 1440, height: 900 });
-
-// Load page once
 await page.goto(BASE, { waitUntil: 'networkidle0', timeout: 30000 });
-await new Promise(r => setTimeout(r, 2000));
+await new Promise(r => setTimeout(r, 2500));
 
-const SHOTS = [
-  { file: 'hero.png',          selector: null,                scrollY: 0 },
-  { file: 'trip-planner.png',  selector: null,                scrollY: 900 },
-  { file: 'india-map.png',     selector: null,                scrollY: 1800 },
-  { file: 'experiences.png',   selector: null,                scrollY: 2700 },
-  { file: 'festivals.png',     selector: null,                scrollY: 4500 },
-  { file: 'food-trails.png',   selector: null,                scrollY: 5400 },
-  { file: 'gallery.png',       selector: null,                scrollY: 7200 },
+// Get scroll positions of ALL sections
+const sectionTops = await page.evaluate(() => {
+  const maxScroll = document.body.scrollHeight - window.innerHeight;
+  return Array.from(document.querySelectorAll('section')).map((el, i) => ({
+    index: i,
+    id: el.id || null,
+    top: Math.min(el.getBoundingClientRect().top + window.scrollY, maxScroll),
+  }));
+});
+console.log('All sections:', JSON.stringify(sectionTops, null, 2));
+
+// Map section indices to output filenames
+// Order in App.tsx: Hero(0) TripPlanner(1) IndiaMap(2) Experiences(3) Unesco(4)
+//   ItineraryBuilder(5) Festivals(6) Hotels(7) FoodTrails(8) CinematicVideos(9)
+//   Gallery(10) BestTime(11) VisaInfo(12)
+const FILE_MAP = [
+  'hero.png',
+  'trip-planner.png',
+  'india-map.png',
+  'experiences.png',
+  'unesco.png',
+  'itinerary-builder.png',
+  'festivals.png',
+  'hotels.png',
+  'food-trails.png',
+  'cinematic-videos.png',
+  'gallery.png',
+  'best-time.png',
+  'visa-info.png',
 ];
 
-for (const { file, scrollY } of SHOTS) {
+for (const sec of sectionTops) {
+  const file = FILE_MAP[sec.index];
+  if (!file) continue;
   try {
-    await page.evaluate((y) => window.scrollTo(0, y), scrollY);
-    await new Promise(r => setTimeout(r, 800));
-    const out = path.join(OUT_DIR, file);
-    await page.screenshot({ path: out, fullPage: false });
-    console.log(`✓ ${file}`);
+    await page.evaluate((y) => window.scrollTo(0, y), sec.top);
+    await new Promise(r => setTimeout(r, 900));
+    await page.screenshot({ path: path.join(OUT_DIR, file), fullPage: false });
+    console.log(`✓ ${file} (section #${sec.index}, id="${sec.id}", scrollY=${sec.top})`);
   } catch (err) {
     console.error(`✗ ${file}: ${err.message}`);
   }
