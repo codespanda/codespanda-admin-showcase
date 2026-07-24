@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake, ShoppingCart,
-  Factory, HeartPulse, GraduationCap, Bot, Car, ChevronLeft, ChevronRight, type LucideIcon,
+  Factory, HeartPulse, GraduationCap, Bot, Car, MapPin, ChevronLeft, ChevronRight, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -28,11 +28,13 @@ const CATEGORY_DEFS: CategoryDef[] = [
   { id: "healthcare",           label: "Healthcare",           icon: HeartPulse,      color: "text-rose-500" },
   { id: "education",            label: "Education",            icon: GraduationCap,   color: "text-sky-500" },
   { id: "ai-saas",              label: "AI / SaaS",            icon: Bot,             color: "text-fuchsia-500" },
+  { id: "travel",               label: "Travel",               icon: MapPin,          color: "text-orange-500" },
   { id: "automotive",           label: "Automotive",           icon: Car,             color: "text-blue-500" },
   { id: "portfolio",            label: "Portfolio",            icon: Briefcase,       color: "text-rose-500" },
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
+  "hamara-bharat":          ["travel"],
   "eva-autocare":           ["automotive", "admin-dashboard"],
   "deepcity-care-hospital": ["healthcare", "admin-dashboard"],
   "flowers-pos":        ["retail-pos"],
