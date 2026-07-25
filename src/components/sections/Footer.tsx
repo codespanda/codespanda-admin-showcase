@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Youtube, Mail } from "lucide-react";
-import { Facebook, Instagram } from "lucide-react";
+import { Linkedin, Mail, Facebook, Instagram } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Logo } from "@/components/shared/Logo";
 import { FOOTER_NAV, SITE } from "@/lib/constants";
@@ -9,7 +8,7 @@ const SOCIALS = [
   { icon: Linkedin,  label: "LinkedIn",  href: "https://www.linkedin.com/company/codespanda/" },
   { icon: Facebook,  label: "Facebook",  href: "https://www.facebook.com/people/CodesPanda/61592241216317/" },
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/codespanda2026" },
-  { icon: Youtube,   label: "YouTube",   href: "https://youtube.com/@codespanda" },
+  { icon: Mail,      label: "Email",     href: "mailto:contact@codespanda.com" },
 ];
 
 const linkClass =
@@ -55,12 +54,6 @@ export function Footer() {
               Premium React templates for modern developers. Built with care,
               shipped production-ready.
             </p>
-            <div className="mt-4 flex items-center gap-1.5 text-sm text-muted-foreground">
-              <Mail className="h-4 w-4" />
-              <a href={`mailto:${SITE.email}`} className="hover:text-foreground transition-colors">
-                {SITE.email}
-              </a>
-            </div>
             <div className="mt-5 flex items-center gap-2">
               {SOCIALS.map(({ icon: Icon, label, href }) => (
                 <a
