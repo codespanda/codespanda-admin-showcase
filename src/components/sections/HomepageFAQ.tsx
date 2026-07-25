@@ -3,29 +3,24 @@ import { ChevronDown } from "lucide-react";
 
 const HOMEPAGE_FAQ = [
   {
-    question: "Are CodeSpanda templates free to use commercially?",
+    question: "What is an admin dashboard template?",
     answer:
-      "All three templates — Alpine Admin React, Brisk Admin, and the Portfolio Template — are released under the MIT License. You can use them in client projects, white-labeled products, and commercial applications with no attribution required. The templates currently available are free; premium templates are in development.",
+      "An admin dashboard template is a pre-built front-end codebase that gives you the complete UI shell of an admin panel — sidebar navigation, data tables, charts, forms, and authentication layouts — without building it from scratch. CodeSpanda admin dashboard templates are built with React, Vite, and Tailwind CSS so you get a production-ready starting point for any internal tool, SaaS back-office, or client portal.",
   },
   {
-    question: "What tech stack do the templates use?",
+    question: "Are your admin templates free or paid?",
     answer:
-      "All templates are built with React 18 and Vite. Alpine Admin React uses TypeScript, Tailwind CSS, shadcn/ui component primitives, and Recharts for data visualization. Brisk Admin uses JavaScript, Tailwind CSS, and shadcn/ui. The Portfolio Template uses TypeScript, Tailwind CSS, and Framer Motion for animations. Each template's detail page lists its complete stack.",
+      "Every admin dashboard template in the current library is completely free and released under the MIT License. You can use them in commercial client projects, white-label them, or build SaaS products on top — no attribution required. Premium dashboard templates with extended page sets and additional modules are in development.",
   },
   {
-    question: "Do the templates support dark mode?",
+    question: "Can I customize the theme admin colors and branding?",
     answer:
-      "Alpine Admin React ships with full light and dark themes out of the box — toggled via Tailwind's dark-class strategy, no configuration needed. Brisk Admin and the Portfolio Template are light-mode only by default. Tailwind's built-in dark utilities make adding a dark theme to either template straightforward.",
+      "Yes. All templates follow the shadcn/ui theming convention: change the CSS custom properties in one file and every component updates automatically. You can swap primary, accent, background, and surface tokens in minutes to match any brand. Tailwind's config file gives you full control over the type scale, border radius, and spacing.",
   },
   {
-    question: "Can I customize the colors and design tokens?",
+    question: "Do I need a backend to use a template administrator panel?",
     answer:
-      "Yes. All templates use Tailwind CSS, so colors, spacing, typography, and border radius are controlled through tailwind.config.js and CSS custom properties. Alpine Admin React and Brisk Admin follow the shadcn/ui theming convention — edit the CSS variables in one file and the change propagates across the entire template. The Portfolio Template uses Tailwind utility classes directly, so re-theming is a matter of updating the config.",
-  },
-  {
-    question: "How do I get support or request a custom template?",
-    answer:
-      "For bug reports or feature requests, open an issue on the relevant GitHub repository. For custom template work, freelance React development, or a dedicated support arrangement, reach out at contact@codespanda.com — or use the Hire Me link in the footer. Typical response time is within 48 hours.",
+      "No. Every template ships with static mock data so you can run it immediately with just npm install && npm run dev. When you're ready to connect a real backend, replace the mock data layer with your own API calls — REST or GraphQL. The templates have no opinion about the backend, so they work equally well with Node.js, Laravel, Django, or any headless CMS.",
   },
 ];
 

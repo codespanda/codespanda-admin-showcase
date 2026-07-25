@@ -75,14 +75,19 @@ export function Hero() {
           </Badge>
 
           <h1 className="text-balance text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-[3.4rem]">
-            Beautiful React Templates{" "}
+            Admin Dashboard Templates{" "}
             <span className="text-gradient">Built for Modern</span> Developers
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            CodeSpanda offers premium dashboards and web application templates
-            built with modern technologies. Start with our featured admin
-            templates and stay tuned for upcoming releases.
+            CodeSpanda is a free admin dashboard template library built for
+            developers who ship. Every template in our collection — from HR
+            management and CRM to retail POS and healthcare — is built with
+            React, Vite, and Tailwind CSS. Each admin dashboard template is
+            production-ready from day one: TypeScript, shadcn/ui components,
+            responsive layouts, and clean code you can actually maintain.
+            Download any template, adapt the theme admin colors to your brand,
+            and go live. No license fees, no attribution required.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-3">

@@ -141,11 +141,11 @@ export function TemplatesPage() {
   return (
     <>
       <Helmet>
-        <title>All Templates — CodeSpanda</title>
-        <meta name="description" content="Browse all free, production-ready React admin dashboard and SaaS templates by CodeSpanda. Built with Vite, Tailwind CSS and TypeScript." />
+        <title>Browse Admin Dashboard Templates | CodeSpanda</title>
+        <meta name="description" content="Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service &amp; POS. Every template is free, React + Tailwind ready." />
         <link rel="canonical" href="https://codespanda.com/templates" />
-        <meta property="og:title" content="All Templates — CodeSpanda" />
-        <meta property="og:description" content="Browse all free, production-ready React admin dashboard and SaaS templates by CodeSpanda." />
+        <meta property="og:title" content="Browse Admin Dashboard Templates | CodeSpanda" />
+        <meta property="og:description" content="Explore our full library of free admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service &amp; POS. Built with React, Vite &amp; Tailwind." />
         <meta property="og:url" content="https://codespanda.com/templates" />
       </Helmet>
 
@@ -158,10 +158,10 @@ export function TemplatesPage() {
               All Templates
             </span>
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">
-              Browse Every Template
+              Admin Dashboard Templates for Every Use Case
             </h1>
             <p className="mx-auto mt-4 max-w-xl text-base text-muted-foreground">
-              {TEMPLATES.length} free, production-ready templates built with React, Vite, Tailwind CSS and TypeScript.
+              {TEMPLATES.length} free admin dashboard templates covering HR, CRM, SaaS, healthcare, retail POS, and more — each built with React, Vite, Tailwind CSS, and TypeScript.
             </p>
           </div>
 

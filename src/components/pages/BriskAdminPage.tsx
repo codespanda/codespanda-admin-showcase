@@ -122,11 +122,11 @@ export function BriskAdminPage() {
   return (
     <>
       <Helmet>
-        <title>Brisk Admin — Free shadcn/ui React Dashboard | CodeSpanda</title>
-        <meta name="description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
+        <title>Brisk Admin — Free CRM Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Brisk Admin is a free CRM admin dashboard template — clean layouts with shadcn/ui components, enterprise UI polish, fully responsive. React, Vite &amp; Tailwind CSS." />
         <meta name="keywords" content="shadcn ui dashboard template, free react admin template, react crm dashboard, shadcn admin panel, react dashboard template, vite admin template" />
         <link rel="canonical" href="https://codespanda.com/templates/brisk-admin" />
-        <meta property="og:title" content="Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda" />
+        <meta property="og:title" content="Brisk Admin — Free CRM Dashboard Template | CodeSpanda" />
         <meta property="og:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <meta property="og:url" content="https://codespanda.com/templates/brisk-admin" />
         <meta property="og:type" content="website" />
@@ -135,7 +135,7 @@ export function BriskAdminPage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Brisk Admin dashboard — free shadcn/ui React CRM template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda" />
+        <meta name="twitter:title" content="Brisk Admin — Free CRM Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <meta name="twitter:image" content="https://codespanda.com/images/brisk/dashboard.png" />
         <meta name="twitter:image:alt" content="Brisk Admin dashboard — free shadcn/ui React CRM template" />
@@ -203,7 +203,7 @@ export function BriskAdminPage() {
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
                   Admin
                 </span>
-                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free shadcn/ui React Dashboard Template</span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">— Free CRM Admin Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

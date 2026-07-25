@@ -8,8 +8,8 @@ export function WhyUs() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Why CodeSpanda"
-          title="Built the Way Developers Expect"
-          description="Every template ships with the quality, structure, and flexibility that professional developers demand."
+          title="We Build Admin Dashboard Templates for Developers Who Ship"
+          description="Every admin dashboard template we build starts from the same question: what would make this admin dashboard layout genuinely good to work in, not just good to look at?"
         />
 
         <Stagger className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

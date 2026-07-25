@@ -123,11 +123,11 @@ export function DeepCityCarePage() {
   return (
     <>
       <Helmet>
-        <title>DeepCity Care — Free Hospital Admin Template | CodeSpanda</title>
-        <meta name="description" content="DeepCity Care is a free React hospital admin — appointments, patients, billing, pharmacy, beds & rooms and inventory. Built with Vite, Tailwind, TypeScript." />
+        <title>DeepCity Care — Healthcare Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="DeepCity Care is a free hospital admin dashboard template — appointments, patients, billing, pharmacy &amp; inventory. React, Vite &amp; Tailwind CSS." />
         <meta name="keywords" content="react hospital admin template, free react healthcare dashboard, hospital management dashboard, tailwind hospital template, react patient management, vite react healthcare admin" />
         <link rel="canonical" href="https://codespanda.com/templates/deepcity-care" />
-        <meta property="og:title" content="DeepCity Care Hospital — Free React Hospital Admin Template | CodeSpanda" />
+        <meta property="og:title" content="DeepCity Care — Healthcare Dashboard Template | CodeSpanda" />
         <meta property="og:description" content="Free React hospital admin — appointments, patients, billing, pharmacy, beds & rooms and inventory. Built with Vite, Tailwind, TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/deepcity-care" />
         <meta property="og:type" content="website" />
@@ -136,7 +136,7 @@ export function DeepCityCarePage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="DeepCity Care Hospital dashboard — React hospital admin template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="DeepCity Care Hospital — Free React Hospital Admin Template | CodeSpanda" />
+        <meta name="twitter:title" content="DeepCity Care — Healthcare Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="DeepCity Care Hospital is a free React hospital administration dashboard covering appointments, patients, billing, pharmacy, lab reports, beds & rooms, inventory and insurance." />
         <meta name="twitter:image" content="https://codespanda.com/images/deepcity-care/dashboard.png" />
         <meta name="twitter:image:alt" content="DeepCity Care Hospital dashboard — React hospital admin template" />
@@ -203,7 +203,7 @@ export function DeepCityCarePage() {
                 <span className="bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-transparent">
                   Hospital
                 </span>
-                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Hospital Admin Template</span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">— Free Hospital Admin Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

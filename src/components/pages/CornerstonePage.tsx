@@ -128,11 +128,11 @@ export function CornerstonePage() {
   return (
     <>
       <Helmet>
-        <title>Cornerstone — Free React SaaS Dashboard | CodeSpanda</title>
-        <meta name="description" content="Cornerstone is a free React SaaS dashboard with 30+ pages for customers, orders, billing, analytics and support. Vite, Tailwind CSS, shadcn/ui, TypeScript." />
+        <title>Cornerstone — SaaS Admin Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Cornerstone is a free SaaS admin dashboard template — 30+ pages for customers, orders, billing &amp; analytics. Built with React, Vite, Tailwind CSS &amp; TypeScript." />
         <meta name="keywords" content="react saas dashboard template, free react admin template, saas admin dashboard, tailwind saas template, shadcn ui dashboard, vite react dashboard" />
         <link rel="canonical" href="https://codespanda.com/templates/cornerstone" />
-        <meta property="og:title" content="Cornerstone — Free React SaaS Dashboard Template | CodeSpanda" />
+        <meta property="og:title" content="Cornerstone — SaaS Admin Dashboard Template | CodeSpanda" />
         <meta property="og:description" content="Free React SaaS dashboard with 30+ pages for customers, orders, billing, analytics and support. Vite, Tailwind CSS, shadcn/ui, TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/cornerstone" />
         <meta property="og:type" content="website" />
@@ -141,7 +141,7 @@ export function CornerstonePage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Cornerstone SaaS dashboard — free React admin template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cornerstone — Free React SaaS Dashboard Template | CodeSpanda" />
+        <meta name="twitter:title" content="Cornerstone — SaaS Admin Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support." />
         <meta name="twitter:image" content="https://codespanda.com/images/cornerstone-dashboard-2.png" />
         <meta name="twitter:image:alt" content="Cornerstone SaaS dashboard — free React admin template" />
@@ -208,7 +208,7 @@ export function CornerstonePage() {
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
                   Dashboard
                 </span>
-                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React SaaS Dashboard Template</span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">— SaaS Admin Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

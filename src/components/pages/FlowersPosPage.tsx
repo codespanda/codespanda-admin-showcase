@@ -122,11 +122,11 @@ export function FlowersPosPage() {
   return (
     <>
       <Helmet>
-        <title>Flowers POS — Free React Retail POS Template | CodeSpanda</title>
-        <meta name="description" content="Flowers POS is a free React retail POS template — product grid, cart, coupons, orders, customers and reports. Built with Vite, Tailwind CSS and TypeScript." />
+        <title>Flowers POS — Retail POS Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Flowers POS is a free retail POS admin dashboard template — product grid, cart, coupons, orders, customers &amp; reports. React, Vite &amp; Tailwind CSS." />
         <meta name="keywords" content="react pos template, free react retail template, point of sale dashboard, tailwind pos template, react shop admin, vite react pos" />
         <link rel="canonical" href="https://codespanda.com/templates/flowers" />
-        <meta property="og:title" content="Flowers POS — Free React Retail POS Template | CodeSpanda" />
+        <meta property="og:title" content="Flowers POS — Retail POS Dashboard Template | CodeSpanda" />
         <meta property="og:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
         <meta property="og:url" content="https://codespanda.com/templates/flowers" />
         <meta property="og:type" content="website" />
@@ -135,7 +135,7 @@ export function FlowersPosPage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Flowers POS counter — React retail point-of-sale template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Flowers POS — Free React Retail POS Template | CodeSpanda" />
+        <meta name="twitter:title" content="Flowers POS — Retail POS Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
         <meta name="twitter:image" content="https://codespanda.com/images/flowers/pos-counter.png" />
         <meta name="twitter:image:alt" content="Flowers POS counter — React retail point-of-sale template" />
@@ -202,7 +202,7 @@ export function FlowersPosPage() {
                 <span className="bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">
                   POS
                 </span>
-                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Retail POS Template</span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">— Free Retail POS Admin Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

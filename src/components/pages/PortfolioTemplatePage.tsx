@@ -117,11 +117,11 @@ export function PortfolioTemplatePage() {
   return (
     <>
       <Helmet>
-        <title>Free React Portfolio Template for Developers | CodeSpanda</title>
-        <meta name="description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
+        <title>Portfolio Template — Free React Portfolio | CodeSpanda</title>
+        <meta name="description" content="Portfolio Template is a free React developer portfolio built with Vite &amp; Tailwind CSS. Showcase your work, experience &amp; projects — fully customizable." />
         <meta name="keywords" content="free react portfolio template, react portfolio website, vite portfolio template, tailwind css portfolio, react developer portfolio, free portfolio template" />
         <link rel="canonical" href="https://codespanda.com/templates/portfolio-template" />
-        <meta property="og:title" content="Free React Portfolio Template for Developers &amp; Designers | CodeSpanda" />
+        <meta property="og:title" content="Portfolio Template — Free React Portfolio | CodeSpanda" />
         <meta property="og:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
         <meta property="og:url" content="https://codespanda.com/templates/portfolio-template" />
         <meta property="og:type" content="website" />
@@ -130,7 +130,7 @@ export function PortfolioTemplatePage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="React portfolio template hero section — free developer portfolio" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Free React Portfolio Template for Developers &amp; Designers | CodeSpanda" />
+        <meta name="twitter:title" content="Portfolio Template — Free React Portfolio | CodeSpanda" />
         <meta name="twitter:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
         <meta name="twitter:image" content="https://codespanda.com/images/portfolio/portfolio.jpg" />
         <meta name="twitter:image:alt" content="React portfolio template hero section — free developer portfolio" />
@@ -198,7 +198,7 @@ export function PortfolioTemplatePage() {
                 <span className="bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text text-transparent">
                   Template
                 </span>
-                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Portfolio Template for Developers</span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">— Free React Developer Portfolio Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

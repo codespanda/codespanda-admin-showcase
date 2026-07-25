@@ -73,22 +73,22 @@ export function DeepakPortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>CodeSpanda — UI Kits, Templates & SaaS Design</title>
+        <title>UI/UX Portfolio — Dashboard &amp; Product Design | CodeSpanda</title>
         <meta
           name="description"
-          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodeSpanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
+          content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodeSpanda templates."
         />
         <link rel="canonical" href="https://codespanda.com/portfolio" />
-        <meta property="og:title" content="CodeSpanda Portfolio — UI Kits, Templates & SaaS Design" />
+        <meta property="og:title" content="UI/UX Portfolio — Dashboard &amp; Product Design | CodeSpanda" />
         <meta
           property="og:description"
-          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodeSpanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
+          content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodeSpanda templates."
         />
         <meta property="og:url" content="https://codespanda.com/portfolio" />
         <meta property="og:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="CodeSpanda Portfolio — UI Kits, Templates & SaaS Design" />
-        <meta name="twitter:description" content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodeSpanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design." />
+        <meta name="twitter:title" content="UI/UX Portfolio — Dashboard &amp; Product Design | CodeSpanda" />
+        <meta name="twitter:description" content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX." />
         <meta name="twitter:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -117,13 +117,13 @@ export function DeepakPortfolioPage() {
             Portfolio
           </span>
           <h1 className="mt-4 text-5xl font-extrabold tracking-tight sm:text-6xl">
-            <span style={{ color: "#0095DD" }}>Codes</span><span>Panda</span>
+            Dashboard Design &amp; Product UI Case Studies
           </h1>
           <p className="mt-4 text-xl font-semibold text-primary sm:text-2xl">
             Design. Build. Impress.
           </p>
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            High-quality UI Kits, Templates, Dashboards &amp; SaaS Experiences.
+            A collection of dashboard design, admin dashboard UI, and product design case studies — covering SaaS admin panels, mobile app UX, retail POS, and healthcare management interfaces.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">

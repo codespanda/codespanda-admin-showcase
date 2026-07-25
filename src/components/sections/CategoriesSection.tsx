@@ -204,8 +204,8 @@ export function CategoriesSection() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Browse by Category"
-          title="Find the Right Template"
-          description="Templates organized by industry and use case. Click a category to explore available templates."
+          title="Find the Right Admin Dashboard Layout by Category"
+          description="Not all admin templates are built the same. Browse dashboard templates by category to find the admin dashboard layout that already matches your use case."
         />
 
         <div className="mt-14">
