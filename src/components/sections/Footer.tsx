@@ -7,7 +7,7 @@ import { FOOTER_NAV, SITE } from "@/lib/constants";
 const SOCIALS = [
   { icon: Twitter, label: "Twitter", href: "https://x.com/codespanda" },
   { icon: Github, label: "GitHub", href: "https://github.com/codespanda" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com/company/codespanda" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/codespanda/" },
   { icon: Youtube, label: "YouTube", href: "https://youtube.com/@codespanda" },
 ];
 
