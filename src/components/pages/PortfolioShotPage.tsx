@@ -71,11 +71,21 @@ export function PortfolioShotPage() {
     <>
       <Helmet>
         <title>{shot.title} — CodeSpanda Portfolio</title>
-        <meta name="description" content={`${shot.title} — ${shot.category} design by CodeSpanda. ${shot.tags.join(", ")}.`} />
+        <meta name="description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodeSpanda. ${shot.tags.join(", ")}.`} />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://codespanda.com/portfolio/${shot.id}`} />
-        <meta property="og:title" content={`${shot.title} — CodesPanda`} />
-        <meta property="og:image" content={shot.imgUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${shot.title} — CodeSpanda`} />
+        <meta property="og:description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodeSpanda.`} />
         <meta property="og:url" content={`https://codespanda.com/portfolio/${shot.id}`} />
+        <meta property="og:image" content={shot.fullImgUrl ?? shot.imgUrl} />
+        <meta property="og:image:alt" content={`${shot.title} — CodeSpanda portfolio`} />
+        <meta property="og:site_name" content="CodeSpanda" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${shot.title} — CodeSpanda`} />
+        <meta name="twitter:description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodeSpanda.`} />
+        <meta name="twitter:image" content={shot.fullImgUrl ?? shot.imgUrl} />
+        <meta name="twitter:image:alt" content={`${shot.title} — CodeSpanda portfolio`} />
       </Helmet>
 
       <Navbar />
