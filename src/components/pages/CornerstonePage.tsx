@@ -136,14 +136,22 @@ export function CornerstonePage() {
         <meta property="og:description" content="Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support." />
         <meta property="og:url" content="https://codespanda.com/templates/cornerstone" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://codespanda.com/images/cornerstone-dashboard-2.png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="Cornerstone SaaS dashboard — free React admin template" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Cornerstone — Free React SaaS Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support." />
+        <meta name="twitter:image" content="https://codespanda.com/images/cornerstone-dashboard-2.png" />
+        <meta name="twitter:image:alt" content="Cornerstone SaaS dashboard — free React admin template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Cornerstone",
           "description": "Cornerstone is a free SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support. Built with React, Vite, Tailwind CSS, shadcn/ui and TypeScript.",
           "url": "https://codespanda.com/templates/cornerstone",
+          "image": "https://codespanda.com/images/cornerstone-dashboard-2.png",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {

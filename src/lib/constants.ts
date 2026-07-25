@@ -27,8 +27,11 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
       { label: "Hamara Bharat", href: "/templates/hamara-bharat" },
       { label: "Eva AutoCare", href: "/templates/eva-autocare" },
       { label: "DeepCity Care Hospital", href: "/templates/deepcity-care" },
-      { label: "Flowers POS", href: "https://flowers.codespanda.com/", external: true },
-      { label: "Brisk Admin", href: "https://brisk.codespanda.com/dashboard", external: true },
+      { label: "Flowers POS", href: "/templates/flowers" },
+      { label: "Brisk Admin", href: "/templates/Brisk-Admin" },
+      { label: "Alpine Admin React", href: "/templates/Alpine-Admin-React" },
+      { label: "Cornerstone", href: "/templates/cornerstone" },
+      { label: "Portfolio Template", href: "/templates/portfolio-template" },
     ],
   },
   {

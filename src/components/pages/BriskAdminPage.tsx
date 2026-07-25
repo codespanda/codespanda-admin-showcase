@@ -130,8 +130,15 @@ export function BriskAdminPage() {
         <meta property="og:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <meta property="og:url" content="https://codespanda.com/templates/Brisk-Admin" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://codespanda.com/images/brisk/dashboard.png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="Brisk Admin dashboard — free shadcn/ui React CRM template" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
+        <meta name="twitter:image" content="https://codespanda.com/images/brisk/dashboard.png" />
+        <meta name="twitter:image:alt" content="Brisk Admin dashboard — free shadcn/ui React CRM template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",

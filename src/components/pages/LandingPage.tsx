@@ -64,7 +64,7 @@ export function LandingPage() {
               "name": "Are CodeSpanda templates free to use commercially?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "All three templates — Alpine Admin React, Brisk Admin, and the Portfolio Template — are released under the MIT License. You can use them in client projects, white-labeled products, and commercial applications with no attribution required. The templates currently available are free; premium templates are in development."
+                "text": "All eight templates — Alpine Admin React, Brisk Admin, Portfolio Template, Cornerstone, Flowers POS, DeepCity Care Hospital, Eva AutoCare, and Hamara Bharat — are released under the MIT License. You can use them in client projects, white-labeled products, and commercial applications with no attribution required. All templates currently available are free; premium templates are in development."
               }
             },
             {

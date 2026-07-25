@@ -131,8 +131,15 @@ export function DeepCityCarePage() {
         <meta property="og:description" content="DeepCity Care Hospital is a free React hospital administration dashboard covering appointments, patients, billing, pharmacy, lab reports, beds & rooms, inventory and insurance." />
         <meta property="og:url" content="https://codespanda.com/templates/deepcity-care" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://codespanda.com/images/deepcity-care/dashboard.png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="DeepCity Care Hospital dashboard — React hospital admin template" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="DeepCity Care Hospital — Free React Hospital Admin Template | CodeSpanda" />
         <meta name="twitter:description" content="DeepCity Care Hospital is a free React hospital administration dashboard covering appointments, patients, billing, pharmacy, lab reports, beds & rooms, inventory and insurance." />
+        <meta name="twitter:image" content="https://codespanda.com/images/deepcity-care/dashboard.png" />
+        <meta name="twitter:image:alt" content="DeepCity Care Hospital dashboard — React hospital admin template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",

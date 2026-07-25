@@ -125,8 +125,15 @@ export function PortfolioTemplatePage() {
         <meta property="og:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
         <meta property="og:url" content="https://codespanda.com/templates/portfolio-template" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://codespanda.com/images/portfolio/portfolio.jpg" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="React portfolio template hero section — free developer portfolio" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Free React Portfolio Template for Developers &amp; Designers | CodeSpanda" />
         <meta name="twitter:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
+        <meta name="twitter:image" content="https://codespanda.com/images/portfolio/portfolio.jpg" />
+        <meta name="twitter:image:alt" content="React portfolio template hero section — free developer portfolio" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
@@ -141,7 +148,7 @@ export function PortfolioTemplatePage() {
             "price": "0",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "url": "https://codespanda.com/templates/portfolio"
+            "url": "https://codespanda.com/templates/portfolio-template"
           },
           "aggregateRating": {
             "@type": "AggregateRating",

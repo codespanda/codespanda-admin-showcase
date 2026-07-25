@@ -141,8 +141,14 @@ export function EvaAutocarePage() {
         <meta property="og:url" content="https://codespanda.com/templates/eva-autocare" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/eva-autocare/dashboard.png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="Eva AutoCare dashboard — free React auto-service admin template" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Eva AutoCare — Free React Auto-Service Admin Template | CodeSpanda" />
         <meta name="twitter:description" content="Eva AutoCare is a free React auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews." />
+        <meta name="twitter:image" content="https://codespanda.com/images/eva-autocare/dashboard.png" />
+        <meta name="twitter:image:alt" content="Eva AutoCare dashboard — free React auto-service admin template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",

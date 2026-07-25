@@ -139,6 +139,14 @@ export function HamaraBharatPage() {
         <meta property="og:url" content="https://codespanda.com/templates/hamara-bharat" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/hamarabharat/hero.png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="Hamara Bharat cinematic hero — free React travel landing page template" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hamara Bharat — Free React Travel Landing Page Template | CodeSpanda" />
+        <meta name="twitter:description" content="A cinematic React travel landing page for India tourism — interactive map, trip planner, festivals, food trails, photo gallery and 13 rich sections." />
+        <meta name="twitter:image" content="https://codespanda.com/images/hamarabharat/hero.png" />
+        <meta name="twitter:image:alt" content="Hamara Bharat cinematic hero — free React travel landing page template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",

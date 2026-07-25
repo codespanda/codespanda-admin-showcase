@@ -130,8 +130,15 @@ export function FlowersPosPage() {
         <meta property="og:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
         <meta property="og:url" content="https://codespanda.com/templates/flowers" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://codespanda.com/images/flowers/pos-counter.png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="900" />
+        <meta property="og:image:alt" content="Flowers POS counter — React retail point-of-sale template" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Flowers POS — Free React Retail POS Template | CodeSpanda" />
         <meta name="twitter:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
+        <meta name="twitter:image" content="https://codespanda.com/images/flowers/pos-counter.png" />
+        <meta name="twitter:image:alt" content="Flowers POS counter — React retail point-of-sale template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
