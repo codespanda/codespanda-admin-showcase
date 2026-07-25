@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import { Twitter, Github, Linkedin, Youtube, Mail } from "lucide-react";
+import { Linkedin, Youtube, Mail } from "lucide-react";
+import { Facebook, Instagram } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Logo } from "@/components/shared/Logo";
 import { FOOTER_NAV, SITE } from "@/lib/constants";
 
 const SOCIALS = [
-  { icon: Twitter, label: "Twitter", href: "https://x.com/codespanda" },
-  { icon: Github, label: "GitHub", href: "https://github.com/codespanda" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/codespanda/" },
-  { icon: Youtube, label: "YouTube", href: "https://youtube.com/@codespanda" },
+  { icon: Linkedin,  label: "LinkedIn",  href: "https://www.linkedin.com/company/codespanda/" },
+  { icon: Facebook,  label: "Facebook",  href: "https://facebook.com/codespanda" },
+  { icon: Instagram, label: "Instagram", href: "https://instagram.com/codespanda" },
+  { icon: Youtube,   label: "YouTube",   href: "https://youtube.com/@codespanda" },
 ];
 
 const linkClass =
