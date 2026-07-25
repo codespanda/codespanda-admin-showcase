@@ -107,7 +107,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Eva AutoCare — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -132,8 +132,8 @@ export function EvaAutocarePage() {
   return (
     <>
       <Helmet>
-        <title>Eva AutoCare — Free React Auto-Service Admin Template | CodeSpanda</title>
-        <meta name="description" content="Eva AutoCare is a free React auto-service admin dashboard template. Covers appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews. Built with Vite, Tailwind CSS and TypeScript." />
+        <title>Eva AutoCare — Free React Auto-Service Admin | CodeSpanda</title>
+        <meta name="description" content="Eva AutoCare is a free React auto-service admin template — appointments, vehicles, work orders, inventory, technicians and invoicing. Built with Vite and Tailwind CSS." />
         <meta name="keywords" content="react auto service admin template, free react automotive dashboard, garage management dashboard, tailwind auto service template, react vehicle management, vite react auto admin" />
         <link rel="canonical" href="https://codespanda.com/templates/eva-autocare" />
         <meta property="og:title" content="Eva AutoCare — Free React Auto-Service Admin Template | CodeSpanda" />
@@ -164,13 +164,6 @@ export function EvaAutocarePage() {
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "https://codespanda.com/templates/eva-autocare"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -219,6 +212,7 @@ export function EvaAutocarePage() {
                 <span className="bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent">
                   AutoCare
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Auto-Service Admin Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

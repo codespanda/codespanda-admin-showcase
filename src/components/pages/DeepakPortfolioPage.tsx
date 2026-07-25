@@ -73,22 +73,22 @@ export function DeepakPortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>CodeSpanda Portfolio — UI Kits, Templates, Dashboards & SaaS Design</title>
+        <title>CodeSpanda — UI Kits, Templates & SaaS Design</title>
         <meta
           name="description"
-          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
+          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodeSpanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
         />
         <link rel="canonical" href="https://codespanda.com/portfolio" />
         <meta property="og:title" content="CodeSpanda Portfolio — UI Kits, Templates & SaaS Design" />
         <meta
           property="og:description"
-          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
+          content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodeSpanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design."
         />
         <meta property="og:url" content="https://codespanda.com/portfolio" />
         <meta property="og:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="CodeSpanda Portfolio — UI Kits, Templates & SaaS Design" />
-        <meta name="twitter:description" content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodesPanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design." />
+        <meta name="twitter:description" content="High-quality UI Kits, Templates, Dashboards & SaaS Experiences by CodeSpanda. 24+ design shots covering mobile apps, dashboards, SaaS and POS design." />
         <meta name="twitter:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",

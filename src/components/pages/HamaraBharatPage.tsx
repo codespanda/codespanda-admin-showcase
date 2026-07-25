@@ -105,7 +105,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Hamara Bharat — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -130,8 +130,8 @@ export function HamaraBharatPage() {
   return (
     <>
       <Helmet>
-        <title>Hamara Bharat — Free React Travel Landing Page Template | CodeSpanda</title>
-        <meta name="description" content="Hamara Bharat is a free React travel landing page template for India tourism. Features a cinematic hero, interactive SVG map, trip planner, festivals, food trails, photo gallery and more. Built with Vite, Tailwind CSS v4 and Framer Motion." />
+        <title>Hamara Bharat — Free React Travel Template | CodeSpanda</title>
+        <meta name="description" content="Hamara Bharat is a free React travel landing page template for India tourism — cinematic hero, interactive map, trip planner, festivals and food trails." />
         <meta name="keywords" content="react travel landing page template, free react tourism website, india travel template, tailwind css travel template, framer motion react template, vite travel website" />
         <link rel="canonical" href="https://codespanda.com/templates/hamara-bharat" />
         <meta property="og:title" content="Hamara Bharat — Free React Travel Landing Page Template | CodeSpanda" />
@@ -157,7 +157,6 @@ export function HamaraBharatPage() {
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Landing Page",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "1", "bestRating": "5", "worstRating": "1" }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -202,6 +201,7 @@ export function HamaraBharatPage() {
                 <span className="bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">
                   Bharat
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Travel Landing Page Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

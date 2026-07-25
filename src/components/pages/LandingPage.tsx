@@ -33,7 +33,7 @@ export function LandingPage() {
   return (
     <>
       <Helmet>
-        <title>React Admin Dashboard Templates — Free &amp; Premium | CodeSpanda</title>
+        <title>Free React Admin Dashboard Templates | CodeSpanda</title>
         <meta name="description" content="Free, production-ready React admin dashboard templates built with Vite, Tailwind CSS &amp; TypeScript. Download and ship faster." />
         <meta name="keywords" content="react admin dashboard template, free admin template, react dashboard, tailwind css admin, vite react template, typescript dashboard, shadcn ui template, open source admin panel" />
         <meta name="robots" content="index, follow" />

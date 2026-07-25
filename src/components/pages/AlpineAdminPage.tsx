@@ -98,7 +98,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Alpine Admin React — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -124,13 +124,13 @@ export function AlpineAdminPage() {
   return (
     <>
       <Helmet>
-        <title>Alpine Admin React — Free React HR Management Dashboard Template | CodeSpanda</title>
-        <meta name="description" content="Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
+        <title>Alpine Admin React — Free HR Dashboard Template | CodeSpanda</title>
+        <meta name="description" content="Free React HR management dashboard — 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
         <meta name="keywords" content="react hr management dashboard template, free react admin template, hr dashboard react, react admin dashboard, tailwind hr template, vite react dashboard" />
-        <link rel="canonical" href="https://codespanda.com/templates/Alpine-Admin-React" />
+        <link rel="canonical" href="https://codespanda.com/templates/alpine-admin-react" />
         <meta property="og:title" content="Alpine Admin React — Free React HR Management Dashboard Template | CodeSpanda" />
-        <meta property="og:description" content="Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
-        <meta property="og:url" content="https://codespanda.com/templates/Alpine-Admin-React" />
+        <meta property="og:description" content="Free React HR management dashboard — 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
+        <meta property="og:url" content="https://codespanda.com/templates/alpine-admin-react" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/alpine/dashboard.png" />
         <meta property="og:image:width" content="1440" />
@@ -155,14 +155,7 @@ export function AlpineAdminPage() {
             "price": "0",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "url": "https://codespanda.com/templates/Alpine-Admin-React"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
+            "url": "https://codespanda.com/templates/alpine-admin-react"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -212,6 +205,7 @@ export function AlpineAdminPage() {
                 <span className="bg-clip-text text-transparent" style={{backgroundImage:"linear-gradient(to right,hsl(var(--primary)),hsl(var(--primary-end,var(--primary)/0.72))"}}>
                   React
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React HR Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

@@ -96,7 +96,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Brisk Admin — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -122,13 +122,13 @@ export function BriskAdminPage() {
   return (
     <>
       <Helmet>
-        <title>Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda</title>
+        <title>Brisk Admin — Free shadcn/ui React Dashboard | CodeSpanda</title>
         <meta name="description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <meta name="keywords" content="shadcn ui dashboard template, free react admin template, react crm dashboard, shadcn admin panel, react dashboard template, vite admin template" />
-        <link rel="canonical" href="https://codespanda.com/templates/Brisk-Admin" />
+        <link rel="canonical" href="https://codespanda.com/templates/brisk-admin" />
         <meta property="og:title" content="Brisk Admin — Free shadcn/ui React Dashboard Template | CodeSpanda" />
         <meta property="og:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
-        <meta property="og:url" content="https://codespanda.com/templates/Brisk-Admin" />
+        <meta property="og:url" content="https://codespanda.com/templates/brisk-admin" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/brisk/dashboard.png" />
         <meta property="og:image:width" content="1440" />
@@ -153,14 +153,7 @@ export function BriskAdminPage() {
             "price": "0",
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "url": "https://codespanda.com/templates/Brisk-Admin"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
+            "url": "https://codespanda.com/templates/brisk-admin"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -210,6 +203,7 @@ export function BriskAdminPage() {
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
                   Admin
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free shadcn/ui React Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

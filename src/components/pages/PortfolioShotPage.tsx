@@ -70,8 +70,8 @@ export function PortfolioShotPage() {
   return (
     <>
       <Helmet>
-        <title>{shot.title} — CodesPanda Portfolio</title>
-        <meta name="description" content={`${shot.title} — ${shot.category} design by CodesPanda. ${shot.tags.join(", ")}.`} />
+        <title>{shot.title} — CodeSpanda Portfolio</title>
+        <meta name="description" content={`${shot.title} — ${shot.category} design by CodeSpanda. ${shot.tags.join(", ")}.`} />
         <link rel="canonical" href={`https://codespanda.com/portfolio/${shot.id}`} />
         <meta property="og:title" content={`${shot.title} — CodesPanda`} />
         <meta property="og:image" content={shot.imgUrl} />

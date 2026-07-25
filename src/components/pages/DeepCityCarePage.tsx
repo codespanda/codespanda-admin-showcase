@@ -98,7 +98,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`DeepCity Care Hospital — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -123,12 +123,12 @@ export function DeepCityCarePage() {
   return (
     <>
       <Helmet>
-        <title>DeepCity Care Hospital — Free React Hospital Admin Template | CodeSpanda</title>
-        <meta name="description" content="DeepCity Care Hospital is a free React hospital administration dashboard template. Covers appointments, patients, doctors, billing, pharmacy, lab reports, beds & rooms, inventory, insurance and messaging. Built with Vite, Tailwind CSS and TypeScript." />
+        <title>DeepCity Care — Free Hospital Admin Template | CodeSpanda</title>
+        <meta name="description" content="DeepCity Care is a free React hospital admin — appointments, patients, billing, pharmacy, beds & rooms and inventory. Built with Vite, Tailwind, TypeScript." />
         <meta name="keywords" content="react hospital admin template, free react healthcare dashboard, hospital management dashboard, tailwind hospital template, react patient management, vite react healthcare admin" />
         <link rel="canonical" href="https://codespanda.com/templates/deepcity-care" />
         <meta property="og:title" content="DeepCity Care Hospital — Free React Hospital Admin Template | CodeSpanda" />
-        <meta property="og:description" content="DeepCity Care Hospital is a free React hospital administration dashboard covering appointments, patients, billing, pharmacy, lab reports, beds & rooms, inventory and insurance." />
+        <meta property="og:description" content="Free React hospital admin — appointments, patients, billing, pharmacy, beds & rooms and inventory. Built with Vite, Tailwind, TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/deepcity-care" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/deepcity-care/dashboard.png" />
@@ -155,13 +155,6 @@ export function DeepCityCarePage() {
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "https://codespanda.com/templates/deepcity-care"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -210,6 +203,7 @@ export function DeepCityCarePage() {
                 <span className="bg-gradient-to-r from-blue-500 to-cyan-600 bg-clip-text text-transparent">
                   Hospital
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Hospital Admin Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

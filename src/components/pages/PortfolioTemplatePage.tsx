@@ -91,7 +91,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Portfolio Template — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -117,7 +117,7 @@ export function PortfolioTemplatePage() {
   return (
     <>
       <Helmet>
-        <title>Free React Portfolio Template for Developers &amp; Designers | CodeSpanda</title>
+        <title>Free React Portfolio Template for Developers | CodeSpanda</title>
         <meta name="description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
         <meta name="keywords" content="free react portfolio template, react portfolio website, vite portfolio template, tailwind css portfolio, react developer portfolio, free portfolio template" />
         <link rel="canonical" href="https://codespanda.com/templates/portfolio-template" />
@@ -149,13 +149,6 @@ export function PortfolioTemplatePage() {
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "https://codespanda.com/templates/portfolio-template"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -205,6 +198,7 @@ export function PortfolioTemplatePage() {
                 <span className="bg-gradient-to-r from-rose-500 to-pink-600 bg-clip-text text-transparent">
                   Template
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Portfolio Template for Developers</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

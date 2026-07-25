@@ -97,7 +97,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Flowers POS — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -123,7 +123,7 @@ export function FlowersPosPage() {
     <>
       <Helmet>
         <title>Flowers POS — Free React Retail POS Template | CodeSpanda</title>
-        <meta name="description" content="Flowers POS is a free React point-of-sale template for a florist counter. Covers product grid, cart, coupons, orders, customers, and reports. Built with Vite, Tailwind CSS and TypeScript." />
+        <meta name="description" content="Flowers POS is a free React retail POS template — product grid, cart, coupons, orders, customers and reports. Built with Vite, Tailwind CSS and TypeScript." />
         <meta name="keywords" content="react pos template, free react retail template, point of sale dashboard, tailwind pos template, react shop admin, vite react pos" />
         <link rel="canonical" href="https://codespanda.com/templates/flowers" />
         <meta property="og:title" content="Flowers POS — Free React Retail POS Template | CodeSpanda" />
@@ -154,13 +154,6 @@ export function FlowersPosPage() {
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "https://codespanda.com/templates/flowers"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -209,6 +202,7 @@ export function FlowersPosPage() {
                 <span className="bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">
                   POS
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React Retail POS Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">

@@ -102,7 +102,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
       <div className="relative overflow-hidden" style={{ paddingBottom: "62.5%" }}>
         <img
           src={src}
-          alt={label}
+          alt={`Cornerstone — ${label}`}
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
@@ -128,12 +128,12 @@ export function CornerstonePage() {
   return (
     <>
       <Helmet>
-        <title>Cornerstone — Free React SaaS Dashboard Template | CodeSpanda</title>
-        <meta name="description" content="Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support. Built with Vite, Tailwind CSS, shadcn/ui and TypeScript." />
+        <title>Cornerstone — Free React SaaS Dashboard | CodeSpanda</title>
+        <meta name="description" content="Cornerstone is a free React SaaS dashboard with 30+ pages for customers, orders, billing, analytics and support. Vite, Tailwind CSS, shadcn/ui, TypeScript." />
         <meta name="keywords" content="react saas dashboard template, free react admin template, saas admin dashboard, tailwind saas template, shadcn ui dashboard, vite react dashboard" />
         <link rel="canonical" href="https://codespanda.com/templates/cornerstone" />
         <meta property="og:title" content="Cornerstone — Free React SaaS Dashboard Template | CodeSpanda" />
-        <meta property="og:description" content="Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support." />
+        <meta property="og:description" content="Free React SaaS dashboard with 30+ pages for customers, orders, billing, analytics and support. Vite, Tailwind CSS, shadcn/ui, TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/cornerstone" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/cornerstone-dashboard-2.png" />
@@ -160,13 +160,6 @@ export function CornerstonePage() {
             "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
             "url": "https://codespanda.com/templates/cornerstone"
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "1",
-            "bestRating": "5",
-            "worstRating": "1"
           }
         })}</script>
         <script type="application/ld+json">{JSON.stringify({
@@ -215,6 +208,7 @@ export function CornerstonePage() {
                 <span className="bg-gradient-to-r from-emerald-500 to-teal-600 bg-clip-text text-transparent">
                   Dashboard
                 </span>
+                <span className="block text-base font-medium text-muted-foreground mt-1.5">Free React SaaS Dashboard Template</span>
               </h1>
 
               <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground">
@@ -265,7 +259,7 @@ export function CornerstonePage() {
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-emerald-500/10 ring-1 ring-emerald-500/10">
                 <img
                   src="/images/cornerstone-dashboard-2.png"
-                  alt="Cornerstone — Property Management dashboard preview"
+                  alt="Cornerstone — SaaS dashboard preview"
                   width={1313}
                   height={908}
                   loading="eager"

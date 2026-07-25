@@ -27,7 +27,9 @@ function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/templates" element={<Suspense><TemplatesPage /></Suspense>} />
+        <Route path="/templates/alpine-admin-react" element={<Suspense><AlpineAdminPage /></Suspense>} />
         <Route path="/templates/Alpine-Admin-React" element={<Suspense><AlpineAdminPage /></Suspense>} />
+        <Route path="/templates/brisk-admin" element={<Suspense><BriskAdminPage /></Suspense>} />
         <Route path="/templates/Brisk-Admin" element={<Suspense><BriskAdminPage /></Suspense>} />
         <Route path="/templates/portfolio-template" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
         <Route path="/templates/portfolio" element={<Suspense><PortfolioTemplatePage /></Suspense>} />
