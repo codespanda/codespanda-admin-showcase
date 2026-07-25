@@ -89,6 +89,16 @@ export function Footer() {
                     </FooterLink>
                   </li>
                 ))}
+                {column.title === "Templates" && (
+                  <li>
+                    <Link
+                      to="/templates"
+                      className="text-sm font-medium text-primary hover:underline transition-colors"
+                    >
+                      More templates →
+                    </Link>
+                  </li>
+                )}
               </ul>
             </div>
           ))}

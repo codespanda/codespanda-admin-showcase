@@ -30,8 +30,6 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
       { label: "Flowers POS", href: "/templates/flowers" },
       { label: "Brisk Admin", href: "/templates/brisk-admin" },
       { label: "Alpine Admin React", href: "/templates/alpine-admin-react" },
-      { label: "Cornerstone", href: "/templates/cornerstone" },
-      { label: "Portfolio Template", href: "/templates/portfolio-template" },
     ],
   },
   {
