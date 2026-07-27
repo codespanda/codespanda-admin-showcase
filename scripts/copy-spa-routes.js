@@ -192,24 +192,40 @@ function withPageMeta(html, route) {
   if (!meta) return html;
 
   const canonical = `${BASE}${route}`;
+  const isShotPage = route.startsWith("/portfolio/") && route !== "/portfolio";
+  const ogType = isShotPage ? "article" : "website";
 
   // Replace <title>
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);
+
+  // Strip generic fallback og:image / twitter:image from base HTML so the
+  // per-route injection below wins and crawlers don't pick up the wrong image.
+  if (meta.ogImage) {
+    html = html.replace(/[ \t]*<!-- Social fallback[^\n]*\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image" content="https:\/\/codespanda\.com\/og-image\.png"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image:width"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image:height"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image:alt"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta name="twitter:image" content="https:\/\/codespanda\.com\/og-image\.png"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta name="twitter:image:alt"[^>]*>\r?\n/g, "");
+  }
 
   // Build the injection block (goes right after <meta name="viewport">)
   const inject = [
     `<meta name="description" content="${meta.description}" />`,
     `<meta name="robots" content="index, follow" />`,
     `<link rel="canonical" href="${canonical}" />`,
-    `<meta property="og:type" content="website" />`,
+    `<meta property="og:type" content="${ogType}" />`,
     `<meta property="og:title" content="${meta.title}" />`,
     `<meta property="og:description" content="${meta.description}" />`,
     `<meta property="og:url" content="${canonical}" />`,
     meta.ogImage ? `<meta property="og:image" content="${meta.ogImage}" />` : "",
+    meta.ogImage ? `<meta property="og:image:alt" content="${meta.title}" />` : "",
     `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${meta.title}" />`,
     `<meta name="twitter:description" content="${meta.description}" />`,
     meta.ogImage ? `<meta name="twitter:image" content="${meta.ogImage}" />` : "",
+    meta.ogImage ? `<meta name="twitter:image:alt" content="${meta.title}" />` : "",
   ].filter(Boolean).join("\n    ");
 
   // Insert after viewport meta
