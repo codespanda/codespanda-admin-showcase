@@ -12,6 +12,32 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "digital-wellbeing",
+    title: "Digital Wellbeing Dashboard UI — Mobile App Design",
+    category: "Mobile App",
+    tags: ["Wellbeing", "Health", "Mobile", "Dashboard", "Productivity"],
+    dribbbleUrl: "https://dribbble.com/shots/27593701-Digital-Wellbeing-Dashboard-UI-Mobile-App-Design",
+    imgUrl: "https://cdn.dribbble.com/shots/27593701/normal/shot.jpg",
+    fullImgUrl: "https://cdn.dribbble.com/shots/27593701/normal/shot.jpg",
+    description: `A modern Digital Wellbeing mobile app designed to help users track screen time, manage app usage, build healthy digital habits, and achieve a better work-life balance.
+
+✨ Highlights
+
+• Daily Screen Time Overview
+• Per-App Usage Breakdown
+• Focus Mode & Do Not Disturb
+• Weekly & Monthly Trends
+• Digital Goals & Habit Tracker
+• Sleep & Bedtime Reminders
+• App Usage Limits & Alerts
+• Mindfulness & Break Reminders
+• Activity Score & Streaks
+• Clean Minimal Mobile UI
+• Dark & Light Mode Ready
+
+🌐 codespanda.com`,
+  },
+  {
     id: "fundora",
     title: "Fundora — Fundraising Admin Dashboard UI",
     category: "Web Dashboard",
