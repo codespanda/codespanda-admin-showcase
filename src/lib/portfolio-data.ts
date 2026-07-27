@@ -17,8 +17,8 @@ export const SHOTS: Shot[] = [
     category: "Web Dashboard",
     tags: ["Invoice", "Finance", "Admin Dashboard", "SaaS", "Billing"],
     dribbbleUrl: "https://dribbble.com/shots/27593486-InvoiceHub-Modern-Invoice-Management-Admin-Dashboard-UI",
-    imgUrl: "https://cdn.dribbble.com/shots/27593486/normal/shot.jpg",
-    fullImgUrl: "https://cdn.dribbble.com/shots/27593486/normal/shot.jpg",
+    imgUrl: "https://cdn.dribbble.com/userupload/48511047/file/3a62b06e2d0514e597b3f2a6f1f7ae08.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48511047/file/3a62b06e2d0514e597b3f2a6f1f7ae08.png?resize=1600x&vertical=center",
     description: `InvoiceHub is a modern invoice management admin dashboard designed for freelancers, agencies, and SaaS businesses to manage billing, track payments, and generate professional invoices — all from a clean, intuitive interface.
 
 ✨ Highlights
