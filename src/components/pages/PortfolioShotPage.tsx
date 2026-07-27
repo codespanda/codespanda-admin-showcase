@@ -33,15 +33,16 @@ function ShotDescription({ text }: { text: string }) {
         return (
           <p key={bi} className={lines[0].startsWith("✨") || lines[0].startsWith("🌐") ? "font-semibold text-foreground" : "text-muted-foreground"}>
             {lines.map((l, li) => {
-              // Make URLs clickable
-              const urlMatch = l.match(/(https?:\/\/\S+)/);
+              // Make URLs and bare codespanda.com clickable
+              const urlMatch = l.match(/(https?:\/\/\S+|codespanda\.com)/);
               if (urlMatch) {
-                const [before, url, after] = l.split(/(https?:\/\/\S+)/);
+                const [before, match, after] = l.split(/(https?:\/\/\S+|codespanda\.com)/);
+                const href = match.startsWith("http") ? match : `https://${match}`;
                 return (
                   <span key={li}>
                     {before}
-                    <a href={url} target="_blank" rel="noreferrer noopener" className="text-primary underline underline-offset-2 hover:opacity-80">
-                      {url}
+                    <a href={href} target="_blank" rel="noreferrer noopener" className="text-primary underline underline-offset-2 hover:opacity-80">
+                      {match}
                     </a>
                     {after}
                     {li < lines.length - 1 && <br />}
