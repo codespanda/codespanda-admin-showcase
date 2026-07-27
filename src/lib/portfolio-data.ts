@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "kids-learning-2",
+    title: "Kids Learning App UI — Designed for Curious Minds",
+    category: "Mobile App",
+    tags: ["Kids", "Education", "Learning", "Mobile", "E-Learning"],
+    dribbbleUrl: "https://dribbble.com/shots/27595162-Kids-Learning-App-UI-Designed-for-Curious-Minds",
+    imgUrl: "https://cdn.dribbble.com/userupload/48516430/file/a850b9b23faa669b28f6ec25133e16c4.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48516430/file/a850b9b23faa669b28f6ec25133e16c4.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48516431/file/5097fcdb0f23286714f4100fd7c952f5.png?resize=1600x&vertical=center",
+    ],
+    description: `A fun, colorful, and engaging Kids Learning App UI designed to spark curiosity and make learning an adventure — covering interactive lessons, quizzes, stories, and rewards for young learners.
+
+✨ Highlights
+
+• Playful Onboarding & Character Selection
+• Subject & Topic Discovery
+• Interactive Lessons & Flashcards
+• Quiz & Challenge Mode
+• Story & Audio Reading
+• Progress Tracker & Badges
+• Daily Learning Goals
+• Parent Dashboard & Controls
+• Reward System & Star Coins
+• Bright, Child-Friendly UI
+• Age-Appropriate UX Design
+
+🌐 codespanda.com`,
+  },
+  {
     id: "gaming-streaming",
     title: "Gaming Streaming Platform UI Design",
     category: "Web Dashboard",
