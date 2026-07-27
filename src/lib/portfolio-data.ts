@@ -12,6 +12,31 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "invoice-hub",
+    title: "InvoiceHub — Modern Invoice Management Admin Dashboard UI",
+    category: "Web Dashboard",
+    tags: ["Invoice", "Finance", "Admin Dashboard", "SaaS", "Billing"],
+    dribbbleUrl: "https://dribbble.com/shots/27593486-InvoiceHub-Modern-Invoice-Management-Admin-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/shots/27593486/normal/shot.jpg",
+    fullImgUrl: "https://cdn.dribbble.com/shots/27593486/normal/shot.jpg",
+    description: `InvoiceHub is a modern invoice management admin dashboard designed for freelancers, agencies, and SaaS businesses to manage billing, track payments, and generate professional invoices — all from a clean, intuitive interface.
+
+✨ Highlights
+
+• Invoice Creation & Management
+• Payment Status Tracking (Paid / Pending / Overdue)
+• Client Directory
+• Revenue Analytics & Charts
+• Recurring Billing Support
+• Tax & Discount Calculations
+• PDF Export & Email Send
+• Multi-Currency Support
+• Dark & Light Mode
+• Responsive Admin Layout
+
+🌐 codespanda.com`,
+  },
+  {
     id: "vpn-app",
     title: "Modern VPN App UI Design | Secure & Fast VPN Experience",
     category: "Mobile App",
