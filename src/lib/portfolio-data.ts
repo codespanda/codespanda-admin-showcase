@@ -12,6 +12,32 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "fundora",
+    title: "Fundora — Fundraising Admin Dashboard UI",
+    category: "Web Dashboard",
+    tags: ["Fundraising", "NGO", "Admin Dashboard", "Analytics", "Donations"],
+    dribbbleUrl: "https://dribbble.com/shots/27593657-Fundora-Fundraising-Admin-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/shots/27593657/normal/shot.jpg",
+    fullImgUrl: "https://cdn.dribbble.com/shots/27593657/normal/shot.jpg",
+    description: `Fundora is a modern fundraising admin dashboard designed for nonprofits, NGOs, and campaign managers to track donations, manage campaigns, and monitor fundraising performance in real time.
+
+✨ Highlights
+
+• Donation Analytics & Revenue Charts
+• Campaign Management & Progress Tracking
+• Donor Directory & Profiles
+• Goal vs. Actual Fundraising Overview
+• Recent Transactions & Payment History
+• Top Donors Leaderboard
+• Campaign Categories & Tags
+• Recurring Donations Management
+• Email & Notification Center
+• Dark & Light Mode
+• Responsive Admin Layout
+
+🌐 codespanda.com`,
+  },
+  {
     id: "shopsphere",
     title: "ShopSphere — Modern eCommerce Admin Dashboard UI",
     category: "Web Dashboard",
