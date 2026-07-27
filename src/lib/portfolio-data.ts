@@ -17,8 +17,11 @@ export const SHOTS: Shot[] = [
     category: "Web Dashboard",
     tags: ["Fundraising", "NGO", "Admin Dashboard", "Analytics", "Donations"],
     dribbbleUrl: "https://dribbble.com/shots/27593657-Fundora-Fundraising-Admin-Dashboard-UI",
-    imgUrl: "https://cdn.dribbble.com/shots/27593657/normal/shot.jpg",
-    fullImgUrl: "https://cdn.dribbble.com/shots/27593657/normal/shot.jpg",
+    imgUrl: "https://cdn.dribbble.com/userupload/48511577/file/e5691675ccb60c962a99ba19a0e2dc0a.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48511577/file/e5691675ccb60c962a99ba19a0e2dc0a.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48511578/file/343e1889669ef026230fbcd515771788.png?resize=1600x&vertical=center",
+    ],
     description: `Fundora is a modern fundraising admin dashboard designed for nonprofits, NGOs, and campaign managers to track donations, manage campaigns, and monitor fundraising performance in real time.
 
 ✨ Highlights
