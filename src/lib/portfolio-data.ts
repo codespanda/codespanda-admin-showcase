@@ -12,6 +12,32 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "shopsphere",
+    title: "ShopSphere — Modern eCommerce Admin Dashboard UI",
+    category: "Web Dashboard",
+    tags: ["eCommerce", "Admin Dashboard", "SaaS", "Retail", "Analytics"],
+    dribbbleUrl: "https://dribbble.com/shots/27593575-ShopSphere-Modern-eCommerce-Admin-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/shots/27593575/normal/shot.jpg",
+    fullImgUrl: "https://cdn.dribbble.com/shots/27593575/normal/shot.jpg",
+    description: `ShopSphere is a modern eCommerce admin dashboard designed to help online store owners manage products, orders, customers, and revenue analytics from a single, clean interface.
+
+✨ Highlights
+
+• Sales & Revenue Analytics
+• Order Management & Tracking
+• Product Catalog & Inventory
+• Customer Directory & Profiles
+• Category & Tag Management
+• Discount & Coupon Engine
+• Returns & Refund Management
+• Multi-Store Support
+• Real-Time Notifications
+• Dark & Light Mode
+• Responsive Admin Layout
+
+🌐 codespanda.com`,
+  },
+  {
     id: "invoice-hub",
     title: "InvoiceHub — Modern Invoice Management Admin Dashboard UI",
     category: "Web Dashboard",

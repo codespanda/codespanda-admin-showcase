@@ -9,6 +9,7 @@ const BASE_URL = "https://codespanda.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 const SHOT_IDS = [
+  "shopsphere",
   "invoice-hub",
   "vpn-app", "sos-app", "parkease", "stayease", "fittrack", "glowskin",
   "homefinder", "taxi", "music", "medicare", "carwash", "kids-learning",
