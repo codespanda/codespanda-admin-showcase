@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "vista-streaming",
+    title: "Vista — Streaming Platform Dashboard UI",
+    category: "Web Dashboard",
+    tags: ["Streaming", "Media", "Dashboard", "SaaS", "Entertainment"],
+    dribbbleUrl: "https://dribbble.com/shots/27593781-Vista-Streaming-Platform-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48511949/file/70b8c1ab59a4f8bcfa02415f4e01c397.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48511949/file/70b8c1ab59a4f8bcfa02415f4e01c397.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48511950/file/d32e49fbf293647a614e0efd924eb0ad.png?resize=1600x&vertical=center",
+    ],
+    description: `Vista is a modern streaming platform admin dashboard designed to help media companies and content creators manage their library, track viewer analytics, and monitor subscription revenue — all from a sleek, dark-mode-first interface.
+
+✨ Highlights
+
+• Content Library Management
+• Real-Time Viewer Analytics
+• Subscription & Revenue Overview
+• Genre & Category Management
+• Featured Content Scheduler
+• Top Trending Shows & Movies
+• User Watch History & Profiles
+• Live Stream Monitoring
+• Comments & Moderation Panel
+• Revenue & Retention Charts
+• Dark & Light Mode Ready
+
+🌐 codespanda.com`,
+  },
+  {
     id: "digital-wellbeing",
     title: "Digital Wellbeing Dashboard UI — Mobile App Design",
     category: "Mobile App",
