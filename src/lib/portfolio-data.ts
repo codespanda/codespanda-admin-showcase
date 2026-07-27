@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "gaming-streaming",
+    title: "Gaming Streaming Platform UI Design",
+    category: "Web Dashboard",
+    tags: ["Gaming", "Streaming", "Platform", "Dashboard", "Entertainment"],
+    dribbbleUrl: "https://dribbble.com/shots/27595084-Gaming-Streaming-Platform-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48516145/file/522ff3393087c14a0ab23694f453ca9d.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48516145/file/522ff3393087c14a0ab23694f453ca9d.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48516146/file/9ee091061e1aea9ed076c8942a0618b0.png?resize=1600x&vertical=center",
+    ],
+    description: `A bold and immersive Gaming Streaming Platform UI designed for gamers, streamers, and gaming communities — featuring live stream discovery, channel browsing, game categories, and a content-first layout built for high engagement.
+
+✨ Highlights
+
+• Live Stream Discovery & Browse
+• Game & Category Navigation
+• Streamer Channel Pages
+• Viewer Count & Live Badges
+• Chat & Interaction Panel
+• Top Games & Trending Streams
+• Follow & Subscription Management
+• VOD & Clip Library
+• Dark Immersive Theme
+• Responsive Platform Layout
+• Esports & Tournament Section
+
+🌐 codespanda.com`,
+  },
+  {
     id: "vista-streaming",
     title: "Vista — Streaming Platform Dashboard UI",
     category: "Web Dashboard",
