@@ -17,8 +17,12 @@ export const SHOTS: Shot[] = [
     category: "Web Dashboard",
     tags: ["eCommerce", "Admin Dashboard", "SaaS", "Retail", "Analytics"],
     dribbbleUrl: "https://dribbble.com/shots/27593575-ShopSphere-Modern-eCommerce-Admin-Dashboard-UI",
-    imgUrl: "https://cdn.dribbble.com/shots/27593575/normal/shot.jpg",
-    fullImgUrl: "https://cdn.dribbble.com/shots/27593575/normal/shot.jpg",
+    imgUrl: "https://cdn.dribbble.com/userupload/48511326/file/527e48f50abb9a114d0f6e4f38ae4763.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48511326/file/527e48f50abb9a114d0f6e4f38ae4763.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48511328/file/031dbd0e55013d8e9a7c203b9c44ef86.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48511327/file/759f2b093663b83a08090f92abbb7889.png?resize=1600x&vertical=center",
+    ],
     description: `ShopSphere is a modern eCommerce admin dashboard designed to help online store owners manage products, orders, customers, and revenue analytics from a single, clean interface.
 
 ✨ Highlights
