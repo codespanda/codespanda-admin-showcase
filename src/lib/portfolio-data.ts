@@ -17,8 +17,11 @@ export const SHOTS: Shot[] = [
     category: "Mobile App",
     tags: ["Wellbeing", "Health", "Mobile", "Dashboard", "Productivity"],
     dribbbleUrl: "https://dribbble.com/shots/27593701-Digital-Wellbeing-Dashboard-UI-Mobile-App-Design",
-    imgUrl: "https://cdn.dribbble.com/shots/27593701/normal/shot.jpg",
-    fullImgUrl: "https://cdn.dribbble.com/shots/27593701/normal/shot.jpg",
+    imgUrl: "https://cdn.dribbble.com/userupload/48511733/file/1fcec917b62d81a3e7a09c41b965a671.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48511733/file/1fcec917b62d81a3e7a09c41b965a671.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48511734/file/19f08e143791039291fcd4c8d6aedad3.png?resize=1600x&vertical=center",
+    ],
     description: `A modern Digital Wellbeing mobile app designed to help users track screen time, manage app usage, build healthy digital habits, and achieve a better work-life balance.
 
 ✨ Highlights
