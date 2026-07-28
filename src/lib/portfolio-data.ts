@@ -12,6 +12,37 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "error-pages",
+    title: "Modern Error Pages UI — Admin Dashboard Template",
+    category: "Web Dashboard",
+    tags: ["Error Pages", "404", "Admin Dashboard", "UI Design", "Components"],
+    dribbbleUrl: "https://dribbble.com/shots/27598546-Modern-Error-Pages-UI-Admin-Dashboard-Template-CodesPanda",
+    imgUrl: "https://cdn.dribbble.com/userupload/48528847/file/bc22abc4c1f525fd7962f2dd012ec48a.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48528847/file/bc22abc4c1f525fd7962f2dd012ec48a.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48528850/file/d515d0d3e2fae6bd27d666cfa0001818.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48528848/file/a15d3d743a14d066c03617b77cbf6937.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48528849/file/fe448f07c88290ec4478504999fd245c.png?resize=1600x&vertical=center",
+    ],
+    description: `A set of modern, beautifully designed Error Pages UI built for admin dashboards — covering the most common error states with clear messaging, helpful actions, and a consistent design language.
+
+✨ Highlights
+
+• 404 Page Not Found
+• 500 Internal Server Error
+• 403 Forbidden / Access Denied
+• 401 Unauthorized
+• 503 Service Unavailable
+• Maintenance Mode Page
+• Consistent Admin Dashboard Style
+• Illustration-Based Layouts
+• CTA Buttons (Go Home, Go Back)
+• Dark & Light Mode Ready
+• Fully Responsive Design
+
+🌐 codespanda.com`,
+  },
+  {
     id: "auth-ui",
     title: "Modern Authentication UI — Sign In & Sign Up Admin Dashboard",
     category: "Web Dashboard",
