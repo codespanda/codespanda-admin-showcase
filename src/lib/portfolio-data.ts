@@ -21,10 +21,8 @@ export const SHOTS: Shot[] = [
     fullImgUrl: "https://cdn.dribbble.com/userupload/48527992/file/d596976a5101c15c2c4d6e7af0b0e6be.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48527993/file/efda599797ed3179c66d0f6ea90044aa.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48527996/file/a5a4bc7f34b0c553a22cd8ec7e0f5067.png?resize=1600x&vertical=center",
       "https://cdn.dribbble.com/userupload/48527994/file/a0923bdefdc409033ad64db102254bb6.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48527997/file/449b3c976f785ea577eaccb5ae2d7331.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48527995/file/d8d08d87a06e381322c8416ba59c77ac.png?resize=1600x&vertical=center",
-      "https://cdn.dribbble.com/userupload/48528000/file/84b8c6c022c154c61888ef7b319da3a3.png?resize=1600x&vertical=center",
     ],
     description: `A clean and modern Authentication UI kit covering Sign In, Sign Up, Forgot Password, OTP Verification, and more — designed to drop into any admin dashboard with a polished, professional look.
 
