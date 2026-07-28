@@ -242,6 +242,13 @@ function withPageMeta(html, route) {
     `$1\n    ${inject}`
   );
 
+  // Inject a <noscript> body block with real text content so Google's crawler
+  // sees meaningful content before JS executes — prevents soft 404 detection.
+  if (isShotPage && meta.description) {
+    const noscript = `\n    <noscript>\n      <article style="font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px">\n        <h1>${meta.title}</h1>\n        <p>${meta.description}</p>\n        <p><a href="${BASE}/portfolio">← Back to Portfolio</a> | <a href="${BASE}">CodeSpanda — React Admin Templates</a></p>\n      </article>\n    </noscript>`;
+    html = html.replace('<div id="root"></div>', `<div id="root"></div>${noscript}`);
+  }
+
   return html;
 }
 
