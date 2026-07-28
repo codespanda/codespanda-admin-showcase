@@ -9,6 +9,7 @@ const BASE_URL = "https://codespanda.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 const SHOT_IDS = [
+  "auth-ui",
   "kids-learning-2",
   "gaming-streaming",
   "vista-streaming",
