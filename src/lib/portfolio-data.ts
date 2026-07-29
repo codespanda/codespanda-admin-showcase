@@ -12,6 +12,38 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "empty-states",
+    title: "Modern Empty States & System Feedback UI",
+    category: "Web Dashboard",
+    tags: ["Empty States", "UI Components", "Feedback", "Admin Dashboard", "UX Design"],
+    dribbbleUrl: "https://dribbble.com/shots/27602376-Modern-Empty-States-System-Feedback-UI-CodesPanda",
+    imgUrl: "https://cdn.dribbble.com/userupload/48542587/file/3460c2294f94cea59f9147c2763bb9a8.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48542587/file/3460c2294f94cea59f9147c2763bb9a8.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48542589/file/cfd453d0000e65758d62e5ba9c5010bc.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48542588/file/1c0a05411af44281b9b9565c05f8add6.png?resize=1600x&vertical=center",
+      "https://cdn.dribbble.com/userupload/48542590/file/dfb6fe8fa18de31a0778dce9db817b99.png?resize=1600x&vertical=center",
+    ],
+    description: `A comprehensive Empty States & System Feedback UI kit designed for admin dashboards — covering every scenario where content is missing, loading, or unavailable, with clear messaging and actionable CTAs.
+
+✨ Highlights
+
+• No Data / No Results Empty State
+• No Notifications State
+• Empty Inbox / Messages State
+• No Search Results State
+• Upload & Drag-Drop Empty State
+• Error State with Retry Action
+• Loading & Skeleton Screens
+• Success & Confirmation Feedback
+• Warning & Alert States
+• Illustration-Based Layouts
+• Dark & Light Mode Ready
+• Fully Responsive Components
+
+🌐 codespanda.com`,
+  },
+  {
     id: "error-pages",
     title: "Modern Error Pages UI — Admin Dashboard Template",
     category: "Web Dashboard",
