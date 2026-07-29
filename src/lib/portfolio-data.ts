@@ -44,10 +44,10 @@ export const SHOTS: Shot[] = [
 🌐 codespanda.com`,
   },
   {
-    id: "error-pages",
-    title: "Modern Error Pages UI — Admin Dashboard Template",
+    id: "error-state-ui",
+    title: "Admin Dashboard UI Design — Error State Screens & Feedback Components",
     category: "Web Dashboard",
-    tags: ["Error Pages", "404", "Admin Dashboard", "UI Design", "Components"],
+    tags: ["UI Components", "Admin Dashboard", "UI Design", "Feedback States", "Design System"],
     dribbbleUrl: "https://dribbble.com/shots/27598546-Modern-Error-Pages-UI-Admin-Dashboard-Template-CodesPanda",
     imgUrl: "https://cdn.dribbble.com/userupload/48528847/file/bc22abc4c1f525fd7962f2dd012ec48a.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48528847/file/bc22abc4c1f525fd7962f2dd012ec48a.png?resize=1600x&vertical=center",
@@ -56,19 +56,19 @@ export const SHOTS: Shot[] = [
       "https://cdn.dribbble.com/userupload/48528848/file/a15d3d743a14d066c03617b77cbf6937.png?resize=1600x&vertical=center",
       "https://cdn.dribbble.com/userupload/48528849/file/fe448f07c88290ec4478504999fd245c.png?resize=1600x&vertical=center",
     ],
-    description: `A set of modern, beautifully designed Error Pages UI built for admin dashboards — covering the most common error states with clear messaging, helpful actions, and a consistent design language.
+    description: `A polished set of admin dashboard UI screens covering system feedback states — designed with consistent illustration style, clear user messaging, and actionable recovery flows for every edge case a user might encounter.
 
 ✨ Highlights
 
-• 404 Page Not Found
-• 500 Internal Server Error
-• 403 Forbidden / Access Denied
-• 401 Unauthorized
-• 503 Service Unavailable
-• Maintenance Mode Page
-• Consistent Admin Dashboard Style
+• Page Not Found Screen (HTTP 404)
+• Server Unavailable Screen (HTTP 500)
+• Access Restricted Screen (HTTP 403)
+• Session Expired Screen (HTTP 401)
+• Maintenance Mode Screen
+• Service Downtime Screen
+• Consistent Admin Dashboard Visual Language
 • Illustration-Based Layouts
-• CTA Buttons (Go Home, Go Back)
+• Recovery Action Buttons
 • Dark & Light Mode Ready
 • Fully Responsive Design
 

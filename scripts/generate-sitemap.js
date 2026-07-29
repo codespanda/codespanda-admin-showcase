@@ -10,7 +10,7 @@ const TODAY = new Date().toISOString().split("T")[0];
 
 const SHOT_IDS = [
   "empty-states",
-  "error-pages",
+  "error-state-ui",
   "auth-ui",
   "kids-learning-2",
   "gaming-streaming",
