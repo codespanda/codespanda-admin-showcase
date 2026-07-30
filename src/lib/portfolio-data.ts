@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "eyewear-app",
+    title: "Eyewear Shopping App UI with AI Virtual Try-On",
+    category: "Mobile App",
+    tags: ["Eyewear", "Shopping", "AR", "AI", "Mobile", "E-Commerce"],
+    dribbbleUrl: "https://dribbble.com/shots/27605002-Eyewear-Shopping-App-UI-with-AI-Virtual-Try-On",
+    imgUrl: "https://cdn.dribbble.com/userupload/48552346/file/2f8b76fd7b205b7396f2c1a0fed42536.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48552346/file/2f8b76fd7b205b7396f2c1a0fed42536.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48552347/file/90d6d0149ee53568b3333b34d440ef4f.png?resize=1600x&vertical=center",
+    ],
+    description: `A sleek and modern Eyewear Shopping App UI featuring an AI-powered Virtual Try-On experience — letting users browse frames, try them on in real time using their camera, and shop with confidence.
+
+✨ Highlights
+
+• AI Virtual Try-On with Face Detection
+• Frame & Lens Browser
+• Style & Shape Filters
+• Product Detail & 360° View
+• Prescription Upload
+• Wishlist & Favourites
+• Size Guide & Fit Advisor
+• Smooth Add-to-Cart Flow
+• Order Tracking
+• Clean Premium Mobile UI
+• Dark & Light Mode Ready
+
+🌐 codespanda.com`,
+  },
+  {
     id: "lingora",
     title: "Lingora — Language Learning Dashboard UI",
     category: "Web Dashboard",
