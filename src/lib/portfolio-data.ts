@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "review-ratings",
+    title: "Review & Ratings Mobile App UI Design",
+    category: "Mobile App",
+    tags: ["Reviews", "Ratings", "Mobile", "Community", "Social"],
+    dribbbleUrl: "https://dribbble.com/shots/27605029-Review-Ratings-Mobile-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48552476/file/349597aa213f6e59d69c16758dcf6673.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48552476/file/349597aa213f6e59d69c16758dcf6673.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48552477/file/0f6d554c6de22b3ca2398497833961b3.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean and modern Review & Ratings mobile app UI designed to help users discover trusted opinions, share their experiences, and make confident decisions — built around a content-first, community-driven interface.
+
+✨ Highlights
+
+• Product & Service Review Feed
+• Star Rating & Score Breakdown
+• Photo & Video Review Uploads
+• Verified Purchase Badges
+• Helpful / Not Helpful Voting
+• Review Filters & Sorting
+• User Profiles & Review History
+• Brand & Store Pages
+• Top Reviewer Leaderboard
+• Report & Moderation Flow
+• Clean Minimal Mobile UI
+
+🌐 codespanda.com`,
+  },
+  {
     id: "eyewear-app",
     title: "Eyewear Shopping App UI with AI Virtual Try-On",
     category: "Mobile App",
