@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "coupon-deals",
+    title: "Coupon & Deals Mobile App UI Design",
+    category: "Mobile App",
+    tags: ["Coupons", "Deals", "Shopping", "Mobile", "E-Commerce"],
+    dribbbleUrl: "https://dribbble.com/shots/27604915-Coupon-Deals-Mobile-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48552004/file/43391c824d13b2a88d34343f0a5ba296.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48552004/file/43391c824d13b2a88d34343f0a5ba296.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48552005/file/3634821a8e848adff2049bc053843769.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern Coupon & Deals mobile app UI designed to help users discover, save, and redeem the best offers from their favourite brands — with a clean, engaging interface that makes deal-hunting effortless.
+
+✨ Highlights
+
+• Deal Discovery & Browse
+• Category-Based Filtering
+• Featured & Flash Deals
+• Coupon Code Redemption
+• QR Code Scanner
+• Saved Coupons Wallet
+• Brand & Store Directory
+• Expiry Countdown Timers
+• Push Notification Alerts
+• Referral & Rewards System
+• Clean Minimal Mobile UI
+
+🌐 codespanda.com`,
+  },
+  {
     id: "empty-states",
     title: "Modern Empty States & System Feedback UI",
     category: "Web Dashboard",
