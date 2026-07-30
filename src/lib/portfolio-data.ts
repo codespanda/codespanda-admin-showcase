@@ -12,6 +12,35 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "lingora",
+    title: "Lingora — Language Learning Dashboard UI",
+    category: "Web Dashboard",
+    tags: ["Language Learning", "E-Learning", "Dashboard", "Education", "SaaS"],
+    dribbbleUrl: "https://dribbble.com/shots/27604960-Lingora-Language-Learning-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48552171/file/c2ca1b58a550287f7426a5c9cf1d6563.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48552171/file/c2ca1b58a550287f7426a5c9cf1d6563.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48552172/file/0bd8cebbe4c1b892a60742058c97fd69.png?resize=1600x&vertical=center",
+    ],
+    description: `Lingora is a modern language learning dashboard UI designed for learners and educators — tracking progress, managing lessons, and motivating users through streaks, XP, and structured learning paths.
+
+✨ Highlights
+
+• Daily Learning Streak & XP Tracker
+• Lesson Progress & Completion Stats
+• Language Course Library
+• Vocabulary & Flashcard Module
+• Speaking & Listening Practice
+• Grammar Exercises & Quizzes
+• Leaderboard & Community
+• Learning Path & Level Map
+• Achievement Badges & Rewards
+• Multi-Language Support
+• Dark & Light Mode Ready
+
+🌐 codespanda.com`,
+  },
+  {
     id: "coupon-deals",
     title: "Coupon & Deals Mobile App UI Design",
     category: "Mobile App",
