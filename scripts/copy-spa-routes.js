@@ -182,6 +182,7 @@ for (const shot of SHOTS) {
 // Each page's eager/fetchPriority=high hero <img> src
 const HERO_IMAGE = {
   "/": "/images/alpine-dashboard.webp",
+  "/templates": "/images/hamarabharat/hero.webp",
   "/templates/alpine-admin-react": "/images/alpine/dashboard.webp",
   "/templates/brisk-admin": "/images/brisk/dashboard.webp",
   "/templates/portfolio-template": "/images/portfolio/portfolio.webp",
