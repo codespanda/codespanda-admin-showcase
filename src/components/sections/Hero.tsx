@@ -121,7 +121,7 @@ export function Hero() {
         <div className="relative hidden lg:block">
           <div className="absolute -right-4 top-6 w-[85%] opacity-80">
             <MiniFrame
-              imgSrc="/images/brisk-dashboard.png"
+              imgSrc="/images/brisk-dashboard.webp"
               urlLabel="brisk.codespanda.com"
               delay={0.3}
             />
@@ -129,7 +129,7 @@ export function Hero() {
 
           <div className="relative left-0 top-0 w-[88%] animate-float-slow">
             <MiniFrame
-              imgSrc="/images/alpine-dashboard.png"
+              imgSrc="/images/alpine-dashboard.webp"
               urlLabel="codespanda.github.io/Alpine-Admin-React"
               delay={0.15}
               priority
@@ -165,7 +165,7 @@ export function Hero() {
         {/* Mobile: single frame */}
         <div className="lg:hidden">
           <MiniFrame
-            imgSrc="/images/alpine-dashboard.png"
+            imgSrc="/images/alpine-dashboard.webp"
             urlLabel="codespanda.github.io/Alpine-Admin-React"
             delay={0.2}
           />

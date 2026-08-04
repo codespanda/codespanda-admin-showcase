@@ -20,12 +20,12 @@ const DOCS_URL    = "https://deepcity-care.codespanda.com/docs";
 const PREVIEW_URL = "https://deepcity-care.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/deepcity-care/dashboard.png",    label: "Dashboard"        },
-  { src: "/images/deepcity-care/appointments.png", label: "Appointments"     },
-  { src: "/images/deepcity-care/patients.png",     label: "Patients"         },
-  { src: "/images/deepcity-care/billing.png",      label: "Billing & Invoices" },
-  { src: "/images/deepcity-care/beds-rooms.png",   label: "Beds & Rooms"     },
-  { src: "/images/deepcity-care/settings.png",     label: "Settings"        },
+  { src: "/images/deepcity-care/dashboard.webp",    label: "Dashboard"        },
+  { src: "/images/deepcity-care/appointments.webp", label: "Appointments"     },
+  { src: "/images/deepcity-care/patients.webp",     label: "Patients"         },
+  { src: "/images/deepcity-care/billing.webp",      label: "Billing & Invoices" },
+  { src: "/images/deepcity-care/beds-rooms.webp",   label: "Beds & Rooms"     },
+  { src: "/images/deepcity-care/settings.webp",     label: "Settings"        },
 ];
 
 const MODULES = [
@@ -131,14 +131,14 @@ export function DeepCityCarePage() {
         <meta property="og:description" content="Free React hospital admin — appointments, patients, billing, pharmacy, beds & rooms and inventory. Built with Vite, Tailwind, TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/deepcity-care" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/deepcity-care/dashboard.png" />
+        <meta property="og:image" content="https://codespanda.com/images/deepcity-care/dashboard.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="DeepCity Care Hospital dashboard — React hospital admin template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="DeepCity Care — Healthcare Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="DeepCity Care Hospital is a free React hospital administration dashboard covering appointments, patients, billing, pharmacy, lab reports, beds & rooms, inventory and insurance." />
-        <meta name="twitter:image" content="https://codespanda.com/images/deepcity-care/dashboard.png" />
+        <meta name="twitter:image" content="https://codespanda.com/images/deepcity-care/dashboard.webp" />
         <meta name="twitter:image:alt" content="DeepCity Care Hospital dashboard — React hospital admin template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -146,7 +146,7 @@ export function DeepCityCarePage() {
           "name": "DeepCity Care Hospital",
           "description": "A free React hospital administration dashboard template covering appointments, patients, doctors, billing, pharmacy, lab reports, beds & rooms, inventory, insurance and messaging. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/deepcity-care",
-          "image": "https://codespanda.com/images/deepcity-care/dashboard.png",
+          "image": "https://codespanda.com/images/deepcity-care/dashboard.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
@@ -251,7 +251,7 @@ export function DeepCityCarePage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-500/20 to-cyan-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-blue-500/10 ring-1 ring-blue-500/10">
                 <img
-                  src="/images/deepcity-care/dashboard.png"
+                  src="/images/deepcity-care/dashboard.webp"
                   alt="DeepCity Care Hospital dashboard preview"
                   loading="eager"
                   fetchPriority="high"

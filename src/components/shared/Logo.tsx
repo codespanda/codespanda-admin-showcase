@@ -10,7 +10,7 @@ interface LogoProps {
 }
 
 /**
- * CodesPanda brand logo — uses the original artwork at `public/logo.png`
+ * CodesPanda brand logo — uses the original artwork at `public/logo.webp`
  * exactly as provided (panda mascot + wordmark lockup, transparent PNG).
  */
 export function Logo({ className, imgClassName, to = "/" }: LogoProps) {
@@ -22,7 +22,7 @@ export function Logo({ className, imgClassName, to = "/" }: LogoProps) {
       tabIndex={-1}
     >
       <img
-        src="/logo.png"
+        src="/logo.webp"
         alt="CodesPanda"
         width={481}
         height={480}

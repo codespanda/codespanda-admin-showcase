@@ -64,7 +64,7 @@ export function CreatorSection() {
                 className="group block h-full"
               >
                 <img
-                  src="/images/portfolio/portfolio.jpg"
+                  src="/images/portfolio/portfolio.webp"
                   alt="Deepak Kumar Portfolio"
                   className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                 />

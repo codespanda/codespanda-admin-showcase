@@ -19,19 +19,19 @@ const GITHUB_URL  = "https://github.com/codespanda/hamara-bharat";
 const PREVIEW_URL = "https://hamarabharat.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/hamarabharat/hero.png",              label: "Hero — Cinematic Slideshow" },
-  { src: "/images/hamarabharat/trip-planner.png",      label: "Trip Planner" },
-  { src: "/images/hamarabharat/india-map.png",         label: "Interactive India Map" },
-  { src: "/images/hamarabharat/experiences.png",       label: "Experiences" },
-  { src: "/images/hamarabharat/unesco.png",            label: "UNESCO Heritage Sites" },
-  { src: "/images/hamarabharat/itinerary-builder.png", label: "Itinerary Builder" },
-  { src: "/images/hamarabharat/festivals.png",         label: "Festivals & Culture" },
-  { src: "/images/hamarabharat/hotels.png",            label: "Hotels" },
-  { src: "/images/hamarabharat/food-trails.png",       label: "Food Trails" },
-  { src: "/images/hamarabharat/cinematic-videos.png",  label: "Cinematic Videos" },
-  { src: "/images/hamarabharat/gallery.png",           label: "Photo Gallery" },
-  { src: "/images/hamarabharat/best-time.png",         label: "Best Time to Visit" },
-  { src: "/images/hamarabharat/visa-info.png",         label: "Visa & Travel Info" },
+  { src: "/images/hamarabharat/hero.webp",              label: "Hero — Cinematic Slideshow" },
+  { src: "/images/hamarabharat/trip-planner.webp",      label: "Trip Planner" },
+  { src: "/images/hamarabharat/india-map.webp",         label: "Interactive India Map" },
+  { src: "/images/hamarabharat/experiences.webp",       label: "Experiences" },
+  { src: "/images/hamarabharat/unesco.webp",            label: "UNESCO Heritage Sites" },
+  { src: "/images/hamarabharat/itinerary-builder.webp", label: "Itinerary Builder" },
+  { src: "/images/hamarabharat/festivals.webp",         label: "Festivals & Culture" },
+  { src: "/images/hamarabharat/hotels.webp",            label: "Hotels" },
+  { src: "/images/hamarabharat/food-trails.webp",       label: "Food Trails" },
+  { src: "/images/hamarabharat/cinematic-videos.webp",  label: "Cinematic Videos" },
+  { src: "/images/hamarabharat/gallery.webp",           label: "Photo Gallery" },
+  { src: "/images/hamarabharat/best-time.webp",         label: "Best Time to Visit" },
+  { src: "/images/hamarabharat/visa-info.webp",         label: "Visa & Travel Info" },
 ];
 
 const SECTIONS = [
@@ -138,14 +138,14 @@ export function HamaraBharatPage() {
         <meta property="og:description" content="A cinematic React travel landing page for India tourism — interactive map, trip planner, festivals, food trails, photo gallery and 13 rich sections." />
         <meta property="og:url" content="https://codespanda.com/templates/hamara-bharat" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/hamarabharat/hero.png" />
+        <meta property="og:image" content="https://codespanda.com/images/hamarabharat/hero.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Hamara Bharat cinematic hero — free React travel landing page template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hamara Bharat — Travel Landing Page Template | CodeSpanda" />
         <meta name="twitter:description" content="A cinematic React travel landing page for India tourism — interactive map, trip planner, festivals, food trails, photo gallery and 13 rich sections." />
-        <meta name="twitter:image" content="https://codespanda.com/images/hamarabharat/hero.png" />
+        <meta name="twitter:image" content="https://codespanda.com/images/hamarabharat/hero.webp" />
         <meta name="twitter:image:alt" content="Hamara Bharat cinematic hero — free React travel landing page template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -153,7 +153,7 @@ export function HamaraBharatPage() {
           "name": "Hamara Bharat",
           "description": "A free React travel landing page template for India tourism with cinematic hero, interactive SVG map, trip planner, festivals, food trails and photo gallery.",
           "url": "https://codespanda.com/templates/hamara-bharat",
-          "image": "https://codespanda.com/images/hamarabharat/hero.png",
+          "image": "https://codespanda.com/images/hamarabharat/hero.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Landing Page",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
@@ -244,7 +244,7 @@ export function HamaraBharatPage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-orange-500/20 to-amber-400/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-orange-500/10 ring-1 ring-orange-500/10">
                 <img
-                  src="/images/hamarabharat/hero.png"
+                  src="/images/hamarabharat/hero.webp"
                   alt="Hamara Bharat — cinematic hero preview"
                   loading="eager"
                   fetchPriority="high"

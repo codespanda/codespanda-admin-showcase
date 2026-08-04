@@ -21,12 +21,12 @@ const DOCS_URL = "https://cornerstone.codespanda.com/docs/";
 const PREVIEW_URL = "https://cornerstone.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/cornerstone-dashboard-2.png",   label: "Main Dashboard" },
-  { src: "/images/cornerstone-properties.png",    label: "Properties"     },
-  { src: "/images/cornerstone-tenants.png",       label: "Tenants"        },
-  { src: "/images/cornerstone-payments.png",      label: "Payments"       },
-  { src: "/images/cornerstone-maintenance.png",   label: "Maintenance"    },
-  { src: "/images/cornerstone-analytics.png",     label: "Analytics"      },
+  { src: "/images/cornerstone-dashboard-2.webp",   label: "Main Dashboard" },
+  { src: "/images/cornerstone-properties.webp",    label: "Properties"     },
+  { src: "/images/cornerstone-tenants.webp",       label: "Tenants"        },
+  { src: "/images/cornerstone-payments.webp",      label: "Payments"       },
+  { src: "/images/cornerstone-maintenance.webp",   label: "Maintenance"    },
+  { src: "/images/cornerstone-analytics.webp",     label: "Analytics"      },
 ];
 
 const MODULES = [
@@ -136,14 +136,14 @@ export function CornerstonePage() {
         <meta property="og:description" content="Free React SaaS dashboard with 30+ pages for customers, orders, billing, analytics and support. Vite, Tailwind CSS, shadcn/ui, TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/cornerstone" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/cornerstone-dashboard-2.png" />
+        <meta property="og:image" content="https://codespanda.com/images/cornerstone-dashboard-2.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Cornerstone SaaS dashboard — free React admin template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Cornerstone — SaaS Admin Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support." />
-        <meta name="twitter:image" content="https://codespanda.com/images/cornerstone-dashboard-2.png" />
+        <meta name="twitter:image" content="https://codespanda.com/images/cornerstone-dashboard-2.webp" />
         <meta name="twitter:image:alt" content="Cornerstone SaaS dashboard — free React admin template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -151,7 +151,7 @@ export function CornerstonePage() {
           "name": "Cornerstone",
           "description": "Cornerstone is a free SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support. Built with React, Vite, Tailwind CSS, shadcn/ui and TypeScript.",
           "url": "https://codespanda.com/templates/cornerstone",
-          "image": "https://codespanda.com/images/cornerstone-dashboard-2.png",
+          "image": "https://codespanda.com/images/cornerstone-dashboard-2.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
@@ -258,7 +258,7 @@ export function CornerstonePage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-teal-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-emerald-500/10 ring-1 ring-emerald-500/10">
                 <img
-                  src="/images/cornerstone-dashboard-2.png"
+                  src="/images/cornerstone-dashboard-2.webp"
                   alt="Cornerstone — SaaS dashboard preview"
                   width={1313}
                   height={908}

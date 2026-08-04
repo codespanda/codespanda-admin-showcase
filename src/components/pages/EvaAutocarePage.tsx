@@ -20,17 +20,17 @@ const DOCS_URL    = "https://eva-autocare.codespanda.com/docs";
 const PREVIEW_URL = "https://eva-autocare.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/eva-autocare/dashboard.png",    label: "Dashboard" },
-  { src: "/images/eva-autocare/appointments.png", label: "Appointments" },
-  { src: "/images/eva-autocare/customers.png",    label: "Customers" },
-  { src: "/images/eva-autocare/vehicles.png",     label: "Vehicles" },
-  { src: "/images/eva-autocare/work-orders.png",  label: "Work Orders" },
-  { src: "/images/eva-autocare/invoices.png",     label: "Invoices & Billing" },
-  { src: "/images/eva-autocare/inventory.png",    label: "Inventory" },
-  { src: "/images/eva-autocare/reports.png",      label: "Reports" },
-  { src: "/images/eva-autocare/technicians.png",  label: "Technicians" },
-  { src: "/images/eva-autocare/reviews.png",      label: "Reviews & Ratings" },
-  { src: "/images/eva-autocare/settings.png",     label: "Settings" },
+  { src: "/images/eva-autocare/dashboard.webp",    label: "Dashboard" },
+  { src: "/images/eva-autocare/appointments.webp", label: "Appointments" },
+  { src: "/images/eva-autocare/customers.webp",    label: "Customers" },
+  { src: "/images/eva-autocare/vehicles.webp",     label: "Vehicles" },
+  { src: "/images/eva-autocare/work-orders.webp",  label: "Work Orders" },
+  { src: "/images/eva-autocare/invoices.webp",     label: "Invoices & Billing" },
+  { src: "/images/eva-autocare/inventory.webp",    label: "Inventory" },
+  { src: "/images/eva-autocare/reports.webp",      label: "Reports" },
+  { src: "/images/eva-autocare/technicians.webp",  label: "Technicians" },
+  { src: "/images/eva-autocare/reviews.webp",      label: "Reviews & Ratings" },
+  { src: "/images/eva-autocare/settings.webp",     label: "Settings" },
 ];
 
 const MODULES = [
@@ -140,14 +140,14 @@ export function EvaAutocarePage() {
         <meta property="og:description" content="Eva AutoCare is a free React auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews." />
         <meta property="og:url" content="https://codespanda.com/templates/eva-autocare" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/eva-autocare/dashboard.png" />
+        <meta property="og:image" content="https://codespanda.com/images/eva-autocare/dashboard.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Eva AutoCare dashboard — free React auto-service admin template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Eva AutoCare — Auto-Service Admin Dashboard | CodeSpanda" />
         <meta name="twitter:description" content="Eva AutoCare is a free React auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews." />
-        <meta name="twitter:image" content="https://codespanda.com/images/eva-autocare/dashboard.png" />
+        <meta name="twitter:image" content="https://codespanda.com/images/eva-autocare/dashboard.webp" />
         <meta name="twitter:image:alt" content="Eva AutoCare dashboard — free React auto-service admin template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -155,7 +155,7 @@ export function EvaAutocarePage() {
           "name": "Eva AutoCare",
           "description": "A free React auto-service admin dashboard template covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/eva-autocare",
-          "image": "https://codespanda.com/images/eva-autocare/dashboard.png",
+          "image": "https://codespanda.com/images/eva-autocare/dashboard.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
@@ -260,7 +260,7 @@ export function EvaAutocarePage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-500/20 to-blue-400/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-blue-500/10 ring-1 ring-blue-500/10">
                 <img
-                  src="/images/eva-autocare/dashboard.png"
+                  src="/images/eva-autocare/dashboard.webp"
                   alt="Eva AutoCare dashboard preview"
                   loading="eager"
                   fetchPriority="high"

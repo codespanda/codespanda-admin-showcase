@@ -20,12 +20,12 @@ const DOCS_URL   = "https://flowers.codespanda.com/docs";
 const PREVIEW_URL = "https://flowers.codespanda.com/";
 
 const GALLERY = [
-  { src: "/images/flowers/pos-counter.png",   label: "POS Counter" },
-  { src: "/images/flowers/orders-live.png",   label: "Orders"      },
-  { src: "/images/flowers/customers-live.png",label: "Customers"   },
-  { src: "/images/flowers/coupons-live.png",  label: "Coupons"     },
-  { src: "/images/flowers/reports-live.png",  label: "Reports"     },
-  { src: "/images/flowers/settings-live.png", label: "Settings"    },
+  { src: "/images/flowers/pos-counter.webp",   label: "POS Counter" },
+  { src: "/images/flowers/orders-live.webp",   label: "Orders"      },
+  { src: "/images/flowers/customers-live.webp",label: "Customers"   },
+  { src: "/images/flowers/coupons-live.webp",  label: "Coupons"     },
+  { src: "/images/flowers/reports-live.webp",  label: "Reports"     },
+  { src: "/images/flowers/settings-live.webp", label: "Settings"    },
 ];
 
 const MODULES = [
@@ -130,14 +130,14 @@ export function FlowersPosPage() {
         <meta property="og:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
         <meta property="og:url" content="https://codespanda.com/templates/flowers" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/flowers/pos-counter.png" />
+        <meta property="og:image" content="https://codespanda.com/images/flowers/pos-counter.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Flowers POS counter — React retail point-of-sale template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Flowers POS — Retail POS Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports." />
-        <meta name="twitter:image" content="https://codespanda.com/images/flowers/pos-counter.png" />
+        <meta name="twitter:image" content="https://codespanda.com/images/flowers/pos-counter.webp" />
         <meta name="twitter:image:alt" content="Flowers POS counter — React retail point-of-sale template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -145,7 +145,7 @@ export function FlowersPosPage() {
           "name": "Flowers POS",
           "description": "A free React point-of-sale template for a florist counter with product grid, cart, coupons, orders, customers, and reports. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/flowers",
-          "image": "https://codespanda.com/images/flowers/pos-counter.png",
+          "image": "https://codespanda.com/images/flowers/pos-counter.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > POS System",
           "offers": {
@@ -250,7 +250,7 @@ export function FlowersPosPage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-pink-500/20 to-rose-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-pink-500/10 ring-1 ring-pink-500/10">
                 <img
-                  src="/images/flowers/pos-counter.png"
+                  src="/images/flowers/pos-counter.webp"
                   alt="Flowers POS counter preview"
                   loading="eager"
                   fetchPriority="high"

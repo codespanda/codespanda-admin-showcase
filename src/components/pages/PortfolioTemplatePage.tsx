@@ -18,7 +18,7 @@ const Footer = lazy(() =>
 const LIVE = "https://codespanda.github.io/portfolio";
 
 const GALLERY = [
-  { src: "/images/portfolio/portfolio.jpg",  label: "Hero Section" },
+  { src: "/images/portfolio/portfolio.webp",  label: "Hero Section" },
   { src: "/images/portfolio/about.jpg",      label: "About Me" },
   { src: "/images/portfolio/projects.jpg",   label: "Projects Showcase" },
   { src: "/images/portfolio/skills.jpg",     label: "Skills & Tech Stack" },
@@ -96,7 +96,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = "/images/portfolio/portfolio.jpg";
+            (e.currentTarget as HTMLImageElement).src = "/images/portfolio/portfolio.webp";
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -125,14 +125,14 @@ export function PortfolioTemplatePage() {
         <meta property="og:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
         <meta property="og:url" content="https://codespanda.com/templates/portfolio-template" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/portfolio/portfolio.jpg" />
+        <meta property="og:image" content="https://codespanda.com/images/portfolio/portfolio.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="React portfolio template hero section — free developer portfolio" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Portfolio Template — Free React Portfolio | CodeSpanda" />
         <meta name="twitter:description" content="A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize." />
-        <meta name="twitter:image" content="https://codespanda.com/images/portfolio/portfolio.jpg" />
+        <meta name="twitter:image" content="https://codespanda.com/images/portfolio/portfolio.webp" />
         <meta name="twitter:image:alt" content="React portfolio template hero section — free developer portfolio" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -140,7 +140,7 @@ export function PortfolioTemplatePage() {
           "name": "Portfolio Template",
           "description": "A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize.",
           "url": "https://codespanda.com/templates/portfolio-template",
-          "image": "https://codespanda.com/images/portfolio/portfolio.jpg",
+          "image": "https://codespanda.com/images/portfolio/portfolio.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Portfolio",
           "offers": {
@@ -252,7 +252,7 @@ export function PortfolioTemplatePage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-rose-500/20 to-pink-600/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-rose-500/10">
                 <img
-                  src="/images/portfolio/portfolio.jpg"
+                  src="/images/portfolio/portfolio.webp"
                   alt="Portfolio Template preview"
                   loading="eager"
                   fetchPriority="high"

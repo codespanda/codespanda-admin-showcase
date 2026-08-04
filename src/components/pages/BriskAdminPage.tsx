@@ -19,7 +19,7 @@ const Footer = lazy(() =>
 const LIVE = "https://brisk.codespanda.com";
 
 const GALLERY = [
-  { src: "/images/brisk/dashboard.png",   label: "Dashboard Overview" },
+  { src: "/images/brisk/dashboard.webp",   label: "Dashboard Overview" },
   { src: "/images/brisk/products.png",    label: "Products" },
   { src: "/images/brisk/orders.png",      label: "Orders" },
   { src: "/images/brisk/customers.png",   label: "Customers" },
@@ -101,7 +101,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
           onError={(e) => {
-            (e.currentTarget as HTMLImageElement).src = "/images/brisk/dashboard.png";
+            (e.currentTarget as HTMLImageElement).src = "/images/brisk/dashboard.webp";
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -130,14 +130,14 @@ export function BriskAdminPage() {
         <meta property="og:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
         <meta property="og:url" content="https://codespanda.com/templates/brisk-admin" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/images/brisk/dashboard.png" />
+        <meta property="og:image" content="https://codespanda.com/images/brisk/dashboard.webp" />
         <meta property="og:image:width" content="1440" />
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Brisk Admin dashboard — free shadcn/ui React CRM template" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Brisk Admin — Free CRM Dashboard Template | CodeSpanda" />
         <meta name="twitter:description" content="Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive." />
-        <meta name="twitter:image" content="https://codespanda.com/images/brisk/dashboard.png" />
+        <meta name="twitter:image" content="https://codespanda.com/images/brisk/dashboard.webp" />
         <meta name="twitter:image:alt" content="Brisk Admin dashboard — free shadcn/ui React CRM template" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
@@ -145,7 +145,7 @@ export function BriskAdminPage() {
           "name": "Brisk Admin",
           "description": "Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive.",
           "url": "https://codespanda.com/templates/Brisk-Admin",
-          "image": "https://codespanda.com/images/brisk/dashboard.png",
+          "image": "https://codespanda.com/images/brisk/dashboard.webp",
           "brand": { "@type": "Brand", "name": "CodeSpanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
@@ -257,7 +257,7 @@ export function BriskAdminPage() {
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-teal-500/10 blur-2xl" />
               <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-emerald-500/10">
                 <img
-                  src="/images/brisk/dashboard.png"
+                  src="/images/brisk/dashboard.webp"
                   alt="Brisk Admin dashboard preview"
                   loading="eager"
                   fetchPriority="high"

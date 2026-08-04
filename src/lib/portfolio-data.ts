@@ -515,11 +515,11 @@ export const SHOTS: Shot[] = [
     category: "Mobile App",
     tags: ["Parking", "Mobile", "Booking", "Maps"],
     dribbbleUrl: "https://dribbble.com/shots/27577284-ParkEase-Smart-Parking-Mobile-App-UI",
-    imgUrl: "/images/parkease/parkease-screens.png",
-    fullImgUrl: "/images/parkease/parkease-screens.png",
+    imgUrl: "/images/parkease/parkease-screens.webp",
+    fullImgUrl: "/images/parkease/parkease-screens.webp",
     gallery: [
-      "/images/parkease/parkease-watch.png",
-      "/images/parkease/parkease-phone.png",
+      "/images/parkease/parkease-watch.webp",
+      "/images/parkease/parkease-phone.webp",
     ],
     description: `Designed a clean and premium parking booking experience focused on speed, simplicity, and usability. From discovering nearby parking spots to booking and managing reservations, every screen is crafted with an intuitive flow and modern aesthetics.
 
@@ -603,8 +603,8 @@ Designed in Figma with a focus on accessibility, visual hierarchy, and an engagi
     category: "Mobile App",
     tags: ["Skincare", "eCommerce", "Mobile", "Shopping"],
     dribbbleUrl: "https://dribbble.com/shots/27572084-GlowSkin-Premium-Skincare-E-commerce-UI-UX-Design",
-    imgUrl: "/images/glowskin/glowskin-app.png",
-    fullImgUrl: "/images/glowskin/glowskin-app.png",
+    imgUrl: "/images/glowskin/glowskin-app.webp",
+    fullImgUrl: "/images/glowskin/glowskin-app.webp",
     description: `A modern skincare shopping experience designed with a clean, minimal, and premium aesthetic. The interface focuses on effortless product discovery, seamless shopping, and an elegant checkout flow across both mobile and desktop.
 
 ✨ Highlights

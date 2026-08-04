@@ -181,15 +181,15 @@ for (const shot of SHOTS) {
 
 // Each page's eager/fetchPriority=high hero <img> src
 const HERO_IMAGE = {
-  "/": "/images/alpine-dashboard.png",
+  "/": "/images/alpine-dashboard.webp",
   "/templates/alpine-admin-react": "/images/alpine/dashboard.webp",
-  "/templates/brisk-admin": "/images/brisk/dashboard.png",
-  "/templates/portfolio-template": "/images/portfolio/portfolio.jpg",
-  "/templates/cornerstone": "/images/cornerstone-dashboard-2.png",
-  "/templates/flowers": "/images/flowers/pos-counter.png",
-  "/templates/deepcity-care": "/images/deepcity-care/dashboard.png",
-  "/templates/eva-autocare": "/images/eva-autocare/dashboard.png",
-  "/templates/hamara-bharat": "/images/hamarabharat/hero.png",
+  "/templates/brisk-admin": "/images/brisk/dashboard.webp",
+  "/templates/portfolio-template": "/images/portfolio/portfolio.webp",
+  "/templates/cornerstone": "/images/cornerstone-dashboard-2.webp",
+  "/templates/flowers": "/images/flowers/pos-counter.webp",
+  "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
+  "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
+  "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
 };
 
 function withHeroPreload(html, route) {
