@@ -12,6 +12,34 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "mobile-onboarding",
+    title: "Modern Mobile App Onboarding UI Design",
+    category: "Mobile App",
+    tags: ["Onboarding", "Mobile", "UX", "Welcome Screen", "Sign Up"],
+    dribbbleUrl: "https://dribbble.com/shots/27618700-Modern-Mobile-App-Onboarding-UI-CodesPanda",
+    imgUrl: "https://cdn.dribbble.com/userupload/48605293/file/46f9fb352f436c8fbca61d7c90bede00.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48605293/file/46f9fb352f436c8fbca61d7c90bede00.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48605294/file/791d844315812c22cbd833d04a8aaef2.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern mobile app onboarding UI designed to welcome new users with a clean, friendly, and engaging first-time experience — guiding them smoothly from splash to sign-up with clear visuals and intuitive flow.
+
+✨ Highlights
+
+• Welcome & Splash Screens
+• Multi-Step Onboarding Flow
+• Illustrated Feature Highlights
+• Progress Indicators & Dots
+• Sign Up & Log In Screens
+• Social Authentication Options
+• Smooth Transitions & Micro-Interactions
+• Skip & Get Started CTAs
+• Clean Minimal Mobile UI
+• Dark & Light Mode Ready
+
+🌐 codespanda.com`,
+  },
+  {
     id: "review-ratings",
     title: "Review & Ratings Mobile App UI Design",
     category: "Mobile App",
