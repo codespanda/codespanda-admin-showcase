@@ -19,11 +19,11 @@ const LIVE = "https://codespanda.github.io/portfolio";
 
 const GALLERY = [
   { src: "/images/portfolio/portfolio.webp",  label: "Hero Section" },
-  { src: "/images/portfolio/about.jpg",      label: "About Me" },
-  { src: "/images/portfolio/projects.jpg",   label: "Projects Showcase" },
-  { src: "/images/portfolio/skills.jpg",     label: "Skills & Tech Stack" },
-  { src: "/images/portfolio/contact.jpg",    label: "Contact Form" },
-  { src: "/images/portfolio/footer.jpg",     label: "Footer" },
+  { src: "/images/portfolio/about.webp",      label: "About Me" },
+  { src: "/images/portfolio/projects.webp",   label: "Projects Showcase" },
+  { src: "/images/portfolio/skills.webp",     label: "Skills & Tech Stack" },
+  { src: "/images/portfolio/contact.webp",    label: "Contact Form" },
+  { src: "/images/portfolio/footer.webp",     label: "Footer" },
 ];
 
 const SECTIONS = [

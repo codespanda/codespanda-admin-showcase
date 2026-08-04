@@ -18,11 +18,11 @@ const Footer = lazy(() =>
 
 const GALLERY = [
   { src: "/images/alpine/dashboard.webp",    label: "Main Dashboard" },
-  { src: "/images/alpine/employees.png",    label: "Employee Directory" },
-  { src: "/images/alpine/attendance.png",   label: "Attendance Tracker" },
-  { src: "/images/alpine/leave.png",        label: "Leave Management" },
-  { src: "/images/alpine/payroll.png",      label: "Payroll Module" },
-  { src: "/images/alpine/performance.png",  label: "Performance Reviews" },
+  { src: "/images/alpine/employees.webp",    label: "Employee Directory" },
+  { src: "/images/alpine/attendance.webp",   label: "Attendance Tracker" },
+  { src: "/images/alpine/leave.webp",        label: "Leave Management" },
+  { src: "/images/alpine/payroll.webp",      label: "Payroll Module" },
+  { src: "/images/alpine/performance.webp",  label: "Performance Reviews" },
 ];
 
 const MODULES = [

@@ -20,11 +20,11 @@ const LIVE = "https://brisk.codespanda.com";
 
 const GALLERY = [
   { src: "/images/brisk/dashboard.webp",   label: "Dashboard Overview" },
-  { src: "/images/brisk/products.png",    label: "Products" },
-  { src: "/images/brisk/orders.png",      label: "Orders" },
-  { src: "/images/brisk/customers.png",   label: "Customers" },
-  { src: "/images/brisk/analytics.png",   label: "Analytics" },
-  { src: "/images/brisk/settings.png",    label: "Settings" },
+  { src: "/images/brisk/products.webp",    label: "Products" },
+  { src: "/images/brisk/orders.webp",      label: "Orders" },
+  { src: "/images/brisk/customers.webp",   label: "Customers" },
+  { src: "/images/brisk/analytics.webp",   label: "Analytics" },
+  { src: "/images/brisk/settings.webp",    label: "Settings" },
 ];
 
 const MODULES = [
