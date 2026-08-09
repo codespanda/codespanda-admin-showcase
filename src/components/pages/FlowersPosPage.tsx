@@ -2,7 +2,9 @@ import { lazy, Suspense, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Reveal, StaggerItem, Stagger } from "@/components/shared/Reveal";
+import { useViewCount } from "@/hooks/use-view-count";
 import {
+  Eye,
   ExternalLink, ArrowLeft, Star, Github, BookOpen, Monitor,
   CheckCircle2, LayoutGrid, ShoppingCart, Users, Tag,
   BarChart3, Settings, Bell, KeyRound, Clock,
@@ -114,6 +116,7 @@ function GalleryImage({ src, label }: { src: string; label: string }) {
 }
 
 export function FlowersPosPage() {
+  const views = useViewCount("tpl-flowers", 0);
   useEffect(() => {
     document.documentElement.dataset.template = "flowers";
     return () => { delete document.documentElement.dataset.template; };
@@ -194,6 +197,9 @@ export function FlowersPosPage() {
                 </span>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-600 dark:text-emerald-400">
                   <CheckCircle2 className="h-3 w-3" /> Free
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground">
+                  <Eye className="h-3.5 w-3.5" /> {views.toLocaleString()} views
                 </span>
               </div>
 
