@@ -1,7 +1,7 @@
 import { lazy, Suspense, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Eye } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { SHOTS } from "@/lib/portfolio-data";
@@ -41,9 +41,17 @@ function ShotCard({ shot, index }: { shot: Shot; index: number }) {
 
       {/* Info */}
       <div className="flex flex-1 flex-col gap-2 p-4">
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">
-          {shot.category}
-        </span>
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">
+            {shot.category}
+          </span>
+          {shot.views !== undefined && (
+            <span className="inline-flex items-center gap-1 text-[10px] font-medium text-muted-foreground">
+              <Eye className="h-3 w-3" />
+              {shot.views.toLocaleString()}
+            </span>
+          )}
+        </div>
         <h3 className="text-sm font-semibold leading-snug line-clamp-2">{shot.title}</h3>
         <div className="mt-auto flex flex-wrap gap-1 pt-2">
           {shot.tags.slice(0, 3).map((t) => (
