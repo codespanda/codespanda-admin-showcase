@@ -8,6 +8,7 @@ export interface Shot {
   fullImgUrl?: string;    // full-quality shot image from Dribbble
   gallery?: string[];     // additional full-res images for multi-image shots
   description?: string;   // shot description / case study text
+  views?: number;         // manually-entered view count sourced from the shot's Pinterest pin
 }
 
 export const SHOTS: Shot[] = [
@@ -103,6 +104,7 @@ export const SHOTS: Shot[] = [
     category: "Web Dashboard",
     tags: ["Language Learning", "E-Learning", "Dashboard", "Education", "SaaS"],
     dribbbleUrl: "https://dribbble.com/shots/27604960-Lingora-Language-Learning-Dashboard-UI",
+    views: 245,
     imgUrl: "https://cdn.dribbble.com/userupload/48552171/file/c2ca1b58a550287f7426a5c9cf1d6563.png?format=webp&resize=400x300&vertical=center",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48552171/file/c2ca1b58a550287f7426a5c9cf1d6563.png?resize=1600x&vertical=center",
     gallery: [

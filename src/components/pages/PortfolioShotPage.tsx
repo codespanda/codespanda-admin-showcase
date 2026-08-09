@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ExternalLink } from "lucide-react";
+import { ArrowLeft, ExternalLink, Eye } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { getShotById, SHOTS } from "@/lib/portfolio-data";
@@ -121,9 +121,17 @@ export function PortfolioShotPage() {
         {/* Details */}
         <div className="mx-auto max-w-5xl px-4 pt-10">
           <div className="flex flex-col gap-5">
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-              {shot.category}
-            </span>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+                {shot.category}
+              </span>
+              {shot.views !== undefined && (
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                  <Eye className="h-3.5 w-3.5" />
+                  {shot.views.toLocaleString()} views
+                </span>
+              )}
+            </div>
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
               {shot.title}
             </h1>
