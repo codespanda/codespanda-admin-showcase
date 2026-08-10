@@ -194,6 +194,93 @@ const HERO_IMAGE = {
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
 };
 
+// Route → JSON-LD @type for the structured-data block injected statically
+// into <head> below, so crawlers/tools that don't execute JS still see
+// valid schema (the richer per-page schema some components inject via
+// react-helmet-async — e.g. Alpine's FAQPage — still layers on top once JS
+// runs; this is a baseline that's always present).
+const SCHEMA_TYPE = {
+  "/templates": "collection",
+  "/portfolio": "collection",
+  "/templates/hamara-bharat": "software",
+  "/templates/eva-autocare": "software",
+  "/templates/deepcity-care": "software",
+  "/templates/cornerstone": "software",
+  "/templates/flowers": "software",
+  "/templates/brisk-admin": "software",
+  "/templates/alpine-admin-react": "software",
+  "/templates/portfolio-template": "software",
+};
+
+function schemaTypeFor(route) {
+  if (SCHEMA_TYPE[route]) return SCHEMA_TYPE[route];
+  if (route.startsWith("/portfolio/") && route !== "/portfolio") return "creativework";
+  return null;
+}
+
+function buildStructuredData(route, meta) {
+  const type = schemaTypeFor(route);
+  if (!type || !meta) return null;
+  const canonical = `${BASE}${route}`;
+  const name = meta.title.split(" — ")[0].split(" | ")[0].trim();
+
+  if (type === "software") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name,
+      description: meta.description,
+      image: meta.ogImage,
+      url: canonical,
+      applicationCategory: "DesignApplication",
+      operatingSystem: "Web",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "1", bestRating: "5", worstRating: "1" },
+    };
+  }
+  if (type === "collection") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: meta.title,
+      description: meta.description,
+      url: canonical,
+    };
+  }
+  if (type === "creativework") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name,
+      description: meta.description,
+      image: meta.ogImage,
+      url: canonical,
+      author: { "@type": "Person", name: "Deepak Kumar" },
+    };
+  }
+  return null;
+}
+
+// Minimal escaping for text dropped into the static <noscript> fallback —
+// our own authored copy, not user input, but escaped defensively anyway.
+function escapeHtml(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// Where the noscript fallback's "back" link should point, per route shape.
+function backLinkFor(route) {
+  if (route.startsWith("/portfolio/") && route !== "/portfolio") {
+    return { href: `${BASE}/portfolio`, label: "← Back to Portfolio" };
+  }
+  if (route.startsWith("/templates/")) {
+    return { href: `${BASE}/templates`, label: "← Back to Templates" };
+  }
+  if (route.startsWith("/legal/")) {
+    return { href: BASE, label: "← Back to Home" };
+  }
+  return null; // "/", "/templates", "/portfolio" — no back link needed
+}
+
 function withHeroPreload(html, route) {
   const heroSrc = HERO_IMAGE[route];
   if (!heroSrc) return html;
@@ -250,10 +337,24 @@ function withPageMeta(html, route) {
     `$1\n    ${inject}`
   );
 
-  // Inject a <noscript> body block with real text content so Google's crawler
-  // sees meaningful content before JS executes — prevents soft 404 detection.
-  if (isShotPage && meta.description) {
-    const noscript = `\n    <noscript>\n      <article style="font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px">\n        <h1>${meta.title}</h1>\n        <p>${meta.description}</p>\n        <p><a href="${BASE}/portfolio">← Back to Portfolio</a> | <a href="${BASE}">CodeSpanda — React Admin Templates</a></p>\n      </article>\n    </noscript>`;
+  // Static structured data (in addition to whatever a page's own
+  // react-helmet-async schema adds once JS runs) — see buildStructuredData.
+  const structuredData = buildStructuredData(route, meta);
+  if (structuredData) {
+    const script = `\n    <script type="application/ld+json">${JSON.stringify(structuredData)}</script>`;
+    html = html.replace("</head>", `${script}\n  </head>`);
+  }
+
+  // Inject a <noscript> body block with real text content so crawlers/tools
+  // that don't execute JS see meaningful content — prevents soft-404
+  // detection and gives every route a text fallback, not just shot pages.
+  if (meta.description) {
+    const back = backLinkFor(route);
+    const links = [
+      back ? `<a href="${back.href}">${escapeHtml(back.label)}</a>` : "",
+      back && back.href === BASE ? "" : `<a href="${BASE}">CodeSpanda — React Admin Templates</a>`,
+    ].filter(Boolean).join(" | ");
+    const noscript = `\n    <noscript>\n      <article style="font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px">\n        <h1>${escapeHtml(meta.title)}</h1>\n        <p>${escapeHtml(meta.description)}</p>\n        <p>${links}</p>\n      </article>\n    </noscript>`;
     html = html.replace('<div id="root"></div>', `<div id="root"></div>${noscript}`);
   }
 

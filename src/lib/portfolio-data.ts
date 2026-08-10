@@ -13,6 +13,32 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "fresh-grocery",
+    title: "Fresh Grocery App – Mobile UI Design",
+    category: "Mobile App",
+    tags: ["Grocery", "Shopping", "eCommerce", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27632298-Fresh-Grocery-App-Mobile-UI-Design",
+    imgUrl: "https://cdn.dribbble.com/userupload/48656188/file/21b60f15ddd2c4f01ff495c7ecfef30c.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48656188/file/21b60f15ddd2c4f01ff495c7ecfef30c.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48656189/file/5512b9ecd7496c4a089e5603b29c8f4c.png?resize=1600x&vertical=center",
+    ],
+    description: `A fresh, intuitive, and conversion-focused grocery shopping experience — designed to make discovering products, managing the cart, and checking out simple, fast, and delightful.
+
+✨ Highlights
+
+• Personalized Home Experience
+• Smart Product Categories
+• Seamless Cart Experience
+• Offers & Savings
+• Easy Product Discovery
+• Quick Add-to-Cart Flow
+• Simple Checkout Journey
+• Clean Minimal Mobile UI
+
+🌐 codespanda.com`,
+  },
+  {
     id: "mobile-onboarding",
     title: "Modern Mobile App Onboarding UI Design",
     category: "Mobile App",
@@ -1891,33 +1917,8 @@ The concept includes everything businesses need to manage sales efficiently — 
 
 🌐 codespanda.com`,
   },
-  {
-    id: "fresh-grocery",
-    title: "Fresh Grocery App – Mobile UI Design",
-    category: "Mobile App",
-    tags: ["Grocery", "Shopping", "eCommerce", "Mobile"],
-    dribbbleUrl: "https://dribbble.com/shots/27632298-Fresh-Grocery-App-Mobile-UI-Design",
-    imgUrl: "https://cdn.dribbble.com/userupload/48656188/file/21b60f15ddd2c4f01ff495c7ecfef30c.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48656188/file/21b60f15ddd2c4f01ff495c7ecfef30c.png?resize=1600x&vertical=center",
-    gallery: [
-      "https://cdn.dribbble.com/userupload/48656189/file/5512b9ecd7496c4a089e5603b29c8f4c.png?resize=1600x&vertical=center",
-    ],
-    description: `A fresh, intuitive, and conversion-focused grocery shopping experience — designed to make discovering products, managing the cart, and checking out simple, fast, and delightful.
-
-✨ Highlights
-
-• Personalized Home Experience
-• Smart Product Categories
-• Seamless Cart Experience
-• Offers & Savings
-• Easy Product Discovery
-• Quick Add-to-Cart Flow
-• Simple Checkout Journey
-• Clean Minimal Mobile UI
-
-🌐 codespanda.com`,
-  },
 ];
+
 
 export function getShotById(id: string): Shot | undefined {
   return SHOTS.find((s) => s.id === id);
