@@ -32,7 +32,7 @@ const SHOT_IDS = [
   "ecommerce-admin", "greenerp", "pos-system", "lumia", "hireai", "sprout",
   "dashboard-app", "kanban", "portfolio-web", "design-system", "dating-app",
   "calories-app", "ecommerce-app", "car-app", "cricket-app", "crypto-app",
-  "employee-mgmt", "fresh-grocery",
+  "employee-mgmt", "fresh-grocery", "carwash-pro",
 ];
 
 const ROUTES = [

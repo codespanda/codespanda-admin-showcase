@@ -13,6 +13,31 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "carwash-pro",
+    title: "CarWash Pro – A Smarter Way to Manage Your Car Wash Business",
+    category: "Web Dashboard",
+    tags: ["Car Wash", "Business Management", "Dashboard", "SaaS"],
+    dribbbleUrl: "https://dribbble.com/shots/27642251-CarWash-Pro-A-Smarter-Way-to-Manage-Your-Car-Wash-Business",
+    views: 22,
+    imgUrl: "https://cdn.dribbble.com/userupload/48692893/file/337f13a3c835810a6c61b69a2a914aa0.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48692893/file/337f13a3c835810a6c61b69a2a914aa0.png?resize=1600x&vertical=center",
+    description: `CarWash Pro brings appointments, customers, vehicles, services, staff, inventory, and revenue together in one clean, modern car wash management dashboard — built to help car wash businesses save time, reduce manual work, and make better decisions with real-time insights.
+
+✨ Highlights
+
+• Revenue & Business Analytics
+• Appointment Management
+• Customer Management
+• Vehicle Tracking
+• Service & Package Management
+• Staff Management
+• Inventory Tracking
+• Invoice & Payment Workflows
+• Quick Actions for Everyday Operations
+
+🌐 codespanda.com`,
+  },
+  {
     id: "fresh-grocery",
     title: "Fresh Grocery App – Mobile UI Design",
     category: "Mobile App",
