@@ -49,6 +49,23 @@ export const TEMPLATES: Template[] = [
     responsive: true,
   },
   {
+    id: "finovo",
+    name: "Finovo",
+    description:
+      "A full accounting/ERP admin dashboard covering invoicing, purchases, banking, expenses, payroll, inventory, projects, GST/TDS tax filing, reports and contacts, plus a fully-tabbed settings area — built with React, Vite, Tailwind CSS and TypeScript.",
+    category: "Finance / Accounting Admin",
+    badge: "New",
+    badgeColor: "from-emerald-500 to-blue-500",
+    liveUrl: "https://finovo.codespanda.com/",
+    docsUrl: "https://finovo.codespanda.com/docs",
+    detailsUrl: "/templates/finovo",
+    screenshotUrl: "/images/finovo/dashboard.webp",
+    techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
+    features: ["Modern Design", "GST & TDS Filing", "Dark Mode", "Responsive"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "eva-autocare",
     name: "Eva AutoCare",
     description:
