@@ -24,6 +24,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
   {
     title: "Templates",
     links: [
+      { label: "Finovo", href: "/templates/finovo" },
       { label: "Hamara Bharat", href: "/templates/hamara-bharat" },
       { label: "Eva AutoCare", href: "/templates/eva-autocare" },
       { label: "DeepCity Care Hospital", href: "/templates/deepcity-care" },
@@ -35,6 +36,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
   {
     title: "Resources",
     links: [
+      { label: "Finovo Docs", href: "https://finovo.codespanda.com/docs", external: true },
       { label: "Hamara Bharat Preview", href: "https://hamarabharat.codespanda.com/", external: true },
       { label: "Eva AutoCare Docs", href: "https://eva-autocare.codespanda.com/docs", external: true },
       { label: "DeepCity Care Docs", href: "https://deepcity-care.codespanda.com/docs", external: true },
