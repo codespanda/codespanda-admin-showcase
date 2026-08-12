@@ -32,23 +32,6 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
-    id: "hamara-bharat",
-    name: "Hamara Bharat",
-    description:
-      "A cinematic React travel landing page for India tourism — animated hero slideshow, clickable SVG state map, trip planner wizard, UNESCO heritage showcase, festival calendar, food trails, hotel cards and a masonry photo gallery across 13 sections.",
-    category: "Travel / Tourism Landing Page",
-    badge: "New",
-    badgeColor: "from-orange-500 to-amber-400",
-    liveUrl: "https://hamarabharat.codespanda.com/",
-    docsUrl: "https://hamarabharat.codespanda.com/",
-    detailsUrl: "/templates/hamara-bharat",
-    screenshotUrl: "/images/hamarabharat/hero.webp",
-    techStack: ["React", "Vite", "Tailwind CSS v4", "Framer Motion"],
-    features: ["Cinematic Animations", "Interactive Map", "Trip Planner", "Responsive"],
-    darkMode: true,
-    responsive: true,
-  },
-  {
     id: "finovo",
     name: "Finovo",
     description:
@@ -62,6 +45,23 @@ export const TEMPLATES: Template[] = [
     screenshotUrl: "/images/finovo/dashboard.webp",
     techStack: ["React", "Vite", "Tailwind CSS", "TypeScript"],
     features: ["Modern Design", "GST & TDS Filing", "Dark Mode", "Responsive"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
+    id: "hamara-bharat",
+    name: "Hamara Bharat",
+    description:
+      "A cinematic React travel landing page for India tourism — animated hero slideshow, clickable SVG state map, trip planner wizard, UNESCO heritage showcase, festival calendar, food trails, hotel cards and a masonry photo gallery across 13 sections.",
+    category: "Travel / Tourism Landing Page",
+    badge: "New",
+    badgeColor: "from-orange-500 to-amber-400",
+    liveUrl: "https://hamarabharat.codespanda.com/",
+    docsUrl: "https://hamarabharat.codespanda.com/",
+    detailsUrl: "/templates/hamara-bharat",
+    screenshotUrl: "/images/hamarabharat/hero.webp",
+    techStack: ["React", "Vite", "Tailwind CSS v4", "Framer Motion"],
+    features: ["Cinematic Animations", "Interactive Map", "Trip Planner", "Responsive"],
     darkMode: true,
     responsive: true,
   },
