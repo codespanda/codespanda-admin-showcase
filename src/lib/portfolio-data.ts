@@ -13,6 +13,41 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "messaging-calling-app",
+    title: "Modern Messaging & Calling App UI/UX Concept",
+    category: "Mobile App",
+    tags: ["Messaging", "Calling", "Communication", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27644822-Modern-Messaging-Calling-App-UI-UX-Concept",
+    imgUrl: "https://cdn.dribbble.com/userupload/48702804/file/50e19800c02353aa77306d8101f9f5dd.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48702804/file/50e19800c02353aa77306d8101f9f5dd.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48702805/file/8e46429a1736716db0801ad5b75cdbc0.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean, modern communication app concept designed by CodesPanda, combining messaging, voice calls, video calls, contacts, and call history into a simple mobile experience.
+
+📱 Key Screens
+
+• Chats & conversations
+• Search messages and contacts
+• Favorites, groups & unread filters
+• One-to-one messaging
+• Media sharing
+• Voice & video calling
+• Call history with incoming, outgoing & missed calls
+• Contact management
+• End-to-end encrypted calling interface
+
+🎨 Design Direction
+
+The interface uses a fresh blue-and-white visual language, soft gradients, rounded components, intuitive icons, and clear typography to create a friendly and premium communication experience.
+
+The goal was to keep everyday actions fast and familiar while giving the product a polished modern SaaS/mobile-app feel.
+
+Designed by CodesPanda
+
+🌐 codespanda.com`,
+  },
+  {
     id: "logistics-driver-management",
     title: "Modern Logistics Driver Management UI",
     category: "Web Dashboard",
