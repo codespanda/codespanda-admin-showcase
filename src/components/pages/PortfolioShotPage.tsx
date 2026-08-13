@@ -1,11 +1,10 @@
 import { lazy, Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ExternalLink, Eye } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { getShotById, SHOTS } from "@/lib/portfolio-data";
-import { useViewCount } from "@/hooks/use-view-count";
 
 const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
@@ -62,11 +61,6 @@ function ShotDescription({ text }: { text: string }) {
 export function PortfolioShotPage() {
   const { shotId } = useParams<{ shotId: string }>();
   const shot = getShotById(shotId ?? "");
-
-  // Called unconditionally (before the early return below) to keep hook
-  // order stable across renders — falls back to a static baseline of 0
-  // when there's no matching shot, which never renders anyway.
-  const views = useViewCount(shot?.id ?? shotId ?? "unknown", shot?.views ?? 0);
 
   if (!shot) return <Navigate to="/portfolio" replace />;
 
@@ -127,15 +121,9 @@ export function PortfolioShotPage() {
         {/* Details */}
         <div className="mx-auto max-w-5xl px-4 pt-10">
           <div className="flex flex-col gap-5">
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                {shot.category}
-              </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-border bg-secondary px-2.5 py-1 text-xs font-medium text-muted-foreground">
-                <Eye className="h-3.5 w-3.5" />
-                {views.toLocaleString()} views
-              </span>
-            </div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-primary">
+              {shot.category}
+            </span>
             <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
               {shot.title}
             </h1>
