@@ -13,6 +13,49 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "logistics-driver-management",
+    title: "Modern Logistics Driver Management UI",
+    category: "Web Dashboard",
+    tags: ["Logistics", "Fleet Management", "Dashboard", "Mobile App"],
+    dribbbleUrl: "https://dribbble.com/shots/27644788-Modern-Logistics-Driver-Management-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48702701/file/9546cb2c1ce09c077066f67e7d6a0b8e.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48702701/file/9546cb2c1ce09c077066f67e7d6a0b8e.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48702702/file/e609c357a1bed0596631abeb5b6374a7.png?resize=1600x&vertical=center",
+    ],
+    description: `This concept brings together a mobile driver application and tablet-based operations dashboard, focusing on clean navigation, real-time load visibility, route tracking, earnings, and fleet activity.
+
+📱 Mobile App
+
+• Active Load overview
+• Load Details & Route Tracking
+• My Loads management
+• Delivery status
+• Earnings & driving-time insights
+• Documents & fuel locations
+• Quick Actions
+• Driver-friendly navigation
+
+💻 Operations Dashboard
+
+• Active shipment overview
+• Driving & earnings analytics
+• Weekly load tracking
+• Recent activity
+• Next-stop route visualization
+• Dispatch updates
+• Maintenance & fuel management
+
+🎨 Design Approach
+
+The interface combines clean layouts, modern cards, intuitive navigation, strong visual hierarchy, and a focused blue design system to create a professional SaaS-style transportation experience.
+
+At CodesPanda, we design digital products that turn complex workflows into simple, scalable and user-friendly experiences.
+
+Designed by CodesPanda
+🌐 codespanda.com`,
+  },
+  {
     id: "carwash-pro",
     title: "CarWash Pro – A Smarter Way to Manage Your Car Wash Business",
     category: "Web Dashboard",
