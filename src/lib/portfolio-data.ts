@@ -13,6 +13,32 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "furniture-app",
+    title: "Furniture App UI Design",
+    category: "Mobile App",
+    tags: ["Furniture", "eCommerce", "Shopping", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27649585-Furniture-App-UI-Design-by-CodesPanda",
+    imgUrl: "https://cdn.dribbble.com/userupload/48720201/file/2cc1c9ff529e649dba24103bd6e12fe0.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48720201/file/2cc1c9ff529e649dba24103bd6e12fe0.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48720202/file/3e83d0d3b53a4a789e7574433e29726f.png?resize=1600x&vertical=center",
+    ],
+    description: `A modern furniture shopping app concept — combining elegant visuals, intuitive navigation, smart product discovery, and a seamless shopping experience. Designed to make it easier for users to discover, customize, compare, and buy furniture from their mobile devices.
+
+✨ Highlights
+
+• Modern Furniture Marketplace UI
+• Clean Product Discovery Experience
+• Advanced Categories & Filters
+• Furniture Product Detail Screens
+• Wishlist & Shopping Cart
+• Personalized Home Decor Experience
+• Mobile-First UX
+• Conversion-Focused eCommerce Flow
+
+🌐 codespanda.com`,
+  },
+  {
     id: "messaging-calling-app",
     title: "Modern Messaging & Calling App UI/UX Concept",
     category: "Mobile App",
