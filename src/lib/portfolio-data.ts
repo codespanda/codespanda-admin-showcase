@@ -13,6 +13,28 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "ancient-wisdom",
+    title: "Ancient Wisdom, Reimagined for Mobile",
+    category: "Mobile App",
+    tags: ["Ayurveda", "Wellness", "Health", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27653140-Ancient-Wisdom-Reimagined-for-Mobile",
+    imgUrl: "https://cdn.dribbble.com/userupload/48733928/file/349dae96794aafc45a0167d77a672556.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48733928/file/349dae96794aafc45a0167d77a672556.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48733929/file/b97a4a5e9cee2dada1168b2dd7d1a4ec.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean and calming Ayurvedic wellness app UI designed to bring traditional remedies into a modern digital experience.
+
+From personalized wellness discovery to remedy browsing and detailed product insights, every screen focuses on simplicity, trust, and natural aesthetics.
+
+🌱 Designed for: Ayurvedic wellness & natural remedies
+📱 Platform: Mobile App UI/UX
+🎨 Style: Minimal • Organic • Premium • User-Friendly
+💻 Design by: CodesPanda
+
+🌐 codespanda.com`,
+  },
+  {
     id: "furniture-app",
     title: "Furniture App UI Design",
     category: "Mobile App",
