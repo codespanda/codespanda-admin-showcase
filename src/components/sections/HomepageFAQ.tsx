@@ -5,7 +5,7 @@ const HOMEPAGE_FAQ = [
   {
     question: "What is an admin dashboard template?",
     answer:
-      "An admin dashboard template is a pre-built front-end codebase that gives you the complete UI shell of an admin panel — sidebar navigation, data tables, charts, forms, and authentication layouts — without building it from scratch. CodeSpanda admin dashboard templates are built with React, Vite, and Tailwind CSS so you get a production-ready starting point for any internal tool, SaaS back-office, or client portal.",
+      "An admin dashboard template is a pre-built front-end codebase that gives you the complete UI shell of an admin panel — sidebar navigation, data tables, charts, forms, and authentication layouts — without building it from scratch. CodesPanda admin dashboard templates are built with React, Vite, and Tailwind CSS so you get a production-ready starting point for any internal tool, SaaS back-office, or client portal.",
   },
   {
     question: "Are your admin templates free or paid?",

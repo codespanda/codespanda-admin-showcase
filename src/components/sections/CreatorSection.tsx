@@ -21,7 +21,7 @@ export function CreatorSection() {
                   Frontend developer passionate about building clean, production-ready React templates and open-source tools that help developers ship faster.
                 </p>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-                  CodeSpanda is my way of giving back to the community — every template here is free, well-crafted, and actively maintained.
+                  CodesPanda is my way of giving back to the community — every template here is free, well-crafted, and actively maintained.
                 </p>
               </div>
 

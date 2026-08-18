@@ -135,11 +135,11 @@ export function EvaAutocarePage() {
   return (
     <>
       <Helmet>
-        <title>Eva AutoCare — Auto-Service Admin Dashboard | CodeSpanda</title>
+        <title>Eva AutoCare — Auto-Service Admin Dashboard | CodesPanda</title>
         <meta name="description" content="Eva AutoCare is a free auto-service admin dashboard template — appointments, work orders, vehicles, technicians &amp; invoicing. React, Vite &amp; Tailwind CSS." />
         <meta name="keywords" content="react auto service admin template, free react automotive dashboard, garage management dashboard, tailwind auto service template, react vehicle management, vite react auto admin" />
         <link rel="canonical" href="https://codespanda.com/templates/eva-autocare" />
-        <meta property="og:title" content="Eva AutoCare — Auto-Service Admin Dashboard | CodeSpanda" />
+        <meta property="og:title" content="Eva AutoCare — Auto-Service Admin Dashboard | CodesPanda" />
         <meta property="og:description" content="Eva AutoCare is a free React auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews." />
         <meta property="og:url" content="https://codespanda.com/templates/eva-autocare" />
         <meta property="og:type" content="website" />
@@ -148,7 +148,7 @@ export function EvaAutocarePage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Eva AutoCare dashboard — free React auto-service admin template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Eva AutoCare — Auto-Service Admin Dashboard | CodeSpanda" />
+        <meta name="twitter:title" content="Eva AutoCare — Auto-Service Admin Dashboard | CodesPanda" />
         <meta name="twitter:description" content="Eva AutoCare is a free React auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews." />
         <meta name="twitter:image" content="https://codespanda.com/images/eva-autocare/dashboard.webp" />
         <meta name="twitter:image:alt" content="Eva AutoCare dashboard — free React auto-service admin template" />
@@ -159,7 +159,7 @@ export function EvaAutocarePage() {
           "description": "A free React auto-service admin dashboard template covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/eva-autocare",
           "image": "https://codespanda.com/images/eva-autocare/dashboard.webp",
-          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
             "@type": "Offer",

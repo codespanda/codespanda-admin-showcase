@@ -187,7 +187,7 @@ export const TEMPLATES: Template[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/* Why CodeSpanda features                                             */
+/* Why CodesPanda features                                             */
 /* ------------------------------------------------------------------ */
 export interface Feature {
   icon: LucideIcon;

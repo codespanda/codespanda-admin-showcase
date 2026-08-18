@@ -133,11 +133,11 @@ export function HamaraBharatPage() {
   return (
     <>
       <Helmet>
-        <title>Hamara Bharat — Travel Landing Page Template | CodeSpanda</title>
+        <title>Hamara Bharat — Travel Landing Page Template | CodesPanda</title>
         <meta name="description" content="Hamara Bharat is a free React travel landing page template for India tourism — cinematic hero, interactive map, trip planner, festivals and food trails." />
         <meta name="keywords" content="react travel landing page template, free react tourism website, india travel template, tailwind css travel template, framer motion react template, vite travel website" />
         <link rel="canonical" href="https://codespanda.com/templates/hamara-bharat" />
-        <meta property="og:title" content="Hamara Bharat — Travel Landing Page Template | CodeSpanda" />
+        <meta property="og:title" content="Hamara Bharat — Travel Landing Page Template | CodesPanda" />
         <meta property="og:description" content="A cinematic React travel landing page for India tourism — interactive map, trip planner, festivals, food trails, photo gallery and 13 rich sections." />
         <meta property="og:url" content="https://codespanda.com/templates/hamara-bharat" />
         <meta property="og:type" content="website" />
@@ -146,7 +146,7 @@ export function HamaraBharatPage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Hamara Bharat cinematic hero — free React travel landing page template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hamara Bharat — Travel Landing Page Template | CodeSpanda" />
+        <meta name="twitter:title" content="Hamara Bharat — Travel Landing Page Template | CodesPanda" />
         <meta name="twitter:description" content="A cinematic React travel landing page for India tourism — interactive map, trip planner, festivals, food trails, photo gallery and 13 rich sections." />
         <meta name="twitter:image" content="https://codespanda.com/images/hamarabharat/hero.webp" />
         <meta name="twitter:image:alt" content="Hamara Bharat cinematic hero — free React travel landing page template" />
@@ -157,7 +157,7 @@ export function HamaraBharatPage() {
           "description": "A free React travel landing page template for India tourism with cinematic hero, interactive SVG map, trip planner, festivals, food trails and photo gallery.",
           "url": "https://codespanda.com/templates/hamara-bharat",
           "image": "https://codespanda.com/images/hamarabharat/hero.webp",
-          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Landing Page",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
         })}</script>

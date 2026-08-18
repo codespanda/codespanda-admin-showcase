@@ -127,11 +127,11 @@ export function AlpineAdminPage() {
   return (
     <>
       <Helmet>
-        <title>Alpine Admin React — HR Dashboard Template | CodeSpanda</title>
+        <title>Alpine Admin React — HR Dashboard Template | CodesPanda</title>
         <meta name="description" content="Alpine Admin React is a free HR admin dashboard template — 30+ pages for employees, payroll, attendance &amp; leave management. React, Vite &amp; Tailwind CSS." />
         <meta name="keywords" content="react hr management dashboard template, free react admin template, hr dashboard react, react admin dashboard, tailwind hr template, vite react dashboard" />
         <link rel="canonical" href="https://codespanda.com/templates/alpine-admin-react" />
-        <meta property="og:title" content="Alpine Admin React — HR Dashboard Template | CodeSpanda" />
+        <meta property="og:title" content="Alpine Admin React — HR Dashboard Template | CodesPanda" />
         <meta property="og:description" content="Free React HR management dashboard — 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
         <meta property="og:url" content="https://codespanda.com/templates/alpine-admin-react" />
         <meta property="og:type" content="website" />
@@ -140,7 +140,7 @@ export function AlpineAdminPage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Alpine Admin React HR dashboard — free React HR management template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Alpine Admin React — HR Dashboard Template | CodeSpanda" />
+        <meta name="twitter:title" content="Alpine Admin React — HR Dashboard Template | CodesPanda" />
         <meta name="twitter:description" content="Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript." />
         <meta name="twitter:image" content="https://codespanda.com/images/alpine/dashboard.webp" />
         <meta name="twitter:image:alt" content="Alpine Admin React HR dashboard — free React HR management template" />
@@ -151,7 +151,7 @@ export function AlpineAdminPage() {
           "description": "Alpine Admin React is a free HR dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/Alpine-Admin-React",
           "image": "https://codespanda.com/images/alpine/dashboard.webp",
-          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
             "@type": "Offer",

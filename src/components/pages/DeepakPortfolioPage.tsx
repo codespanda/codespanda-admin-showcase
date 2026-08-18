@@ -73,21 +73,21 @@ export function DeepakPortfolioPage() {
   return (
     <>
       <Helmet>
-        <title>UI/UX Portfolio — Dashboard &amp; Product Design | CodeSpanda</title>
+        <title>UI/UX Portfolio — Dashboard &amp; Product Design | CodesPanda</title>
         <meta
           name="description"
-          content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodeSpanda templates."
+          content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodesPanda templates."
         />
         <link rel="canonical" href="https://codespanda.com/portfolio" />
-        <meta property="og:title" content="UI/UX Portfolio — Dashboard &amp; Product Design | CodeSpanda" />
+        <meta property="og:title" content="UI/UX Portfolio — Dashboard &amp; Product Design | CodesPanda" />
         <meta
           property="og:description"
-          content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodeSpanda templates."
+          content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodesPanda templates."
         />
         <meta property="og:url" content="https://codespanda.com/portfolio" />
         <meta property="og:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="UI/UX Portfolio — Dashboard &amp; Product Design | CodeSpanda" />
+        <meta name="twitter:title" content="UI/UX Portfolio — Dashboard &amp; Product Design | CodesPanda" />
         <meta name="twitter:description" content="Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX." />
         <meta name="twitter:image" content="https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center" />
         <script type="application/ld+json">{JSON.stringify({

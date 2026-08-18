@@ -7,7 +7,7 @@ export function WhyUs() {
     <section id="why-us" className="px-4 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
-          eyebrow="Why CodeSpanda"
+          eyebrow="Why CodesPanda"
           title="We Build Admin Dashboard Templates for Developers Who Ship"
           description="Every admin dashboard template we build starts from the same question: what would make this admin dashboard layout genuinely good to work in, not just good to look at?"
         />

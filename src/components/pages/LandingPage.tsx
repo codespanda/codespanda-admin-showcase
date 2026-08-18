@@ -33,28 +33,28 @@ export function LandingPage() {
   return (
     <>
       <Helmet>
-        <title>Admin Dashboard Templates &amp; UI Kits | CodeSpanda</title>
+        <title>Admin Dashboard Templates &amp; UI Kits | CodesPanda</title>
         <meta name="description" content="Premium &amp; free admin dashboard templates built with React, Vite &amp; Tailwind. Modern dashboard design for SaaS, CRM, HR, POS &amp; more — ship faster." />
         <meta name="keywords" content="admin dashboard template, react admin dashboard, free admin template, dashboard design, theme admin, template administrator panel, saas dashboard, crm dashboard, hr dashboard, pos template" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://codespanda.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://codespanda.com/" />
-        <meta property="og:title" content="Admin Dashboard Templates &amp; UI Kits | CodeSpanda" />
+        <meta property="og:title" content="Admin Dashboard Templates &amp; UI Kits | CodesPanda" />
         <meta property="og:description" content="Premium &amp; free admin dashboard templates built with React, Vite &amp; Tailwind. Modern dashboard design for SaaS, CRM, HR, POS &amp; more — ship faster." />
-        <meta property="og:site_name" content="CodeSpanda" />
+        <meta property="og:site_name" content="CodesPanda" />
         <meta property="og:image" content="https://codespanda.com/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="CodeSpanda — React Admin Templates" />
+        <meta property="og:image:alt" content="CodesPanda — React Admin Templates" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@codespanda" />
         <meta name="twitter:creator" content="@codespanda" />
-        <meta name="twitter:title" content="Admin Dashboard Templates &amp; UI Kits | CodeSpanda" />
+        <meta name="twitter:title" content="Admin Dashboard Templates &amp; UI Kits | CodesPanda" />
         <meta name="twitter:description" content="Premium &amp; free admin dashboard templates built with React, Vite &amp; Tailwind. Modern dashboard design for SaaS, CRM, HR, POS &amp; more." />
         <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
-        <meta name="twitter:image:alt" content="CodeSpanda — React Admin Templates" />
+        <meta name="twitter:image:alt" content="CodesPanda — React Admin Templates" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -64,7 +64,7 @@ export function LandingPage() {
               "name": "What is an admin dashboard template?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "An admin dashboard template is a pre-built front-end codebase that gives you the complete UI shell of an admin panel — sidebar navigation, data tables, charts, forms, and authentication layouts — without building it from scratch. CodeSpanda admin dashboard templates are built with React, Vite, and Tailwind CSS so you get a production-ready starting point for any internal tool, SaaS back-office, or client portal."
+                "text": "An admin dashboard template is a pre-built front-end codebase that gives you the complete UI shell of an admin panel — sidebar navigation, data tables, charts, forms, and authentication layouts — without building it from scratch. CodesPanda admin dashboard templates are built with React, Vite, and Tailwind CSS so you get a production-ready starting point for any internal tool, SaaS back-office, or client portal."
               }
             },
             {

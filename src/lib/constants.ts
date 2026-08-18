@@ -1,6 +1,6 @@
 /** Centralised site config — brand, nav, social links. */
 export const SITE = {
-  name: "CodeSpanda",
+  name: "CodesPanda",
   tagline: "Premium React Templates for Modern Developers",
   email: "contact@codespanda.com",
   githubOrg: "https://github.com/codespanda",

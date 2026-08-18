@@ -144,10 +144,10 @@ export function TemplatesPage() {
   return (
     <>
       <Helmet>
-        <title>Browse Admin Dashboard Templates | CodeSpanda</title>
+        <title>Browse Admin Dashboard Templates | CodesPanda</title>
         <meta name="description" content="Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service &amp; POS. Every template is free, React + Tailwind ready." />
         <link rel="canonical" href="https://codespanda.com/templates" />
-        <meta property="og:title" content="Browse Admin Dashboard Templates | CodeSpanda" />
+        <meta property="og:title" content="Browse Admin Dashboard Templates | CodesPanda" />
         <meta property="og:description" content="Explore our full library of free admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service &amp; POS. Built with React, Vite &amp; Tailwind." />
         <meta property="og:url" content="https://codespanda.com/templates" />
       </Helmet>

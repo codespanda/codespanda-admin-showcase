@@ -732,7 +732,7 @@ Highlights
 
 Designed for a seamless user experience with attention to spacing, typography, and micro interactions.
 
-💚 Designed by CodeSpanda
+💚 Designed by CodesPanda
 🌐 https://codespanda.com`,
   },
   {
@@ -897,7 +897,7 @@ Designed with a modern design system, premium UI components, smooth user flows, 
 
 Looking to build a ride-hailing, logistics, or on-demand service app?
 
-CodeSpanda creates premium UI/UX for startups, SaaS platforms, mobile applications, dashboards, and enterprise software.
+CodesPanda creates premium UI/UX for startups, SaaS platforms, mobile applications, dashboards, and enterprise software.
 
 🌐 https://codespanda.com
 
@@ -936,7 +936,7 @@ Designed with elegant typography, fluid animations, and a clean design system to
 
 Looking to build a music, entertainment, or streaming platform?
 
-CodeSpanda creates premium UI/UX for mobile apps, SaaS platforms, dashboards, AI products, and modern web applications.
+CodesPanda creates premium UI/UX for mobile apps, SaaS platforms, dashboards, AI products, and modern web applications.
 
 🌐 https://codespanda.com
 
@@ -1016,7 +1016,7 @@ Designed with clean layouts, smooth interactions, premium gradients, and a user-
 
 Looking to build a custom mobile app or SaaS platform?
 
-CodeSpanda creates premium UI/UX for startups, automotive businesses, SaaS products, dashboards, and mobile applications.
+CodesPanda creates premium UI/UX for startups, automotive businesses, SaaS products, dashboards, and mobile applications.
 
 🌐 https://codespanda.com
 

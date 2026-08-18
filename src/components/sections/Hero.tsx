@@ -80,7 +80,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            CodeSpanda is a free admin dashboard template library built for
+            CodesPanda is a free admin dashboard template library built for
             developers who ship. Every template in our collection — from HR
             management and CRM to retail POS and healthcare — is built with
             React, Vite, and Tailwind CSS. Each admin dashboard template is

@@ -108,78 +108,78 @@ const ROUTES = [...STATIC_ROUTES, ...SHOT_ROUTES];
 // social scrapers see correct title/description/canonical before JS runs.
 const PAGE_META = {
   "/": {
-    title: "Admin Dashboard Templates & UI Kits | CodeSpanda",
+    title: "Admin Dashboard Templates & UI Kits | CodesPanda",
     description: "Premium & free admin dashboard templates built with React, Vite & Tailwind. Modern dashboard design for SaaS, CRM, HR, POS & more — ship faster.",
     ogImage: `${BASE}/og-image.png`,
   },
   "/templates": {
-    title: "Browse Admin Dashboard Templates | CodeSpanda",
+    title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-image.png`,
   },
   "/templates/hamara-bharat": {
-    title: "Hamara Bharat — Travel Landing Page Template | CodeSpanda",
+    title: "Hamara Bharat — Travel Landing Page Template | CodesPanda",
     description: "Hamara Bharat is a free React travel landing page template — cinematic hero, interactive map, trip planner, festivals and food trails.",
     ogImage: `${BASE}/images/hamarabharat/hero.png`,
   },
   "/templates/eva-autocare": {
-    title: "Eva AutoCare — Auto-Service Admin Dashboard | CodeSpanda",
+    title: "Eva AutoCare — Auto-Service Admin Dashboard | CodesPanda",
     description: "Eva AutoCare is a free auto-service admin dashboard template — appointments, work orders, vehicles, technicians & invoicing. React, Vite & Tailwind CSS.",
     ogImage: `${BASE}/images/eva-autocare/dashboard.png`,
   },
   "/templates/deepcity-care": {
-    title: "DeepCity Care — Healthcare Dashboard Template | CodeSpanda",
+    title: "DeepCity Care — Healthcare Dashboard Template | CodesPanda",
     description: "DeepCity Care is a free hospital admin dashboard template — appointments, patients, billing, pharmacy & inventory. React, Vite & Tailwind CSS.",
     ogImage: `${BASE}/images/deepcity-care/dashboard.png`,
   },
   "/templates/cornerstone": {
-    title: "Cornerstone — SaaS Admin Dashboard Template | CodeSpanda",
+    title: "Cornerstone — SaaS Admin Dashboard Template | CodesPanda",
     description: "Cornerstone is a free SaaS admin dashboard template — 30+ pages for customers, orders, billing & analytics. Built with React, Vite, Tailwind CSS & TypeScript.",
     ogImage: `${BASE}/images/cornerstone-dashboard-2.png`,
   },
   "/templates/flowers": {
-    title: "Flowers POS — Retail POS Dashboard Template | CodeSpanda",
+    title: "Flowers POS — Retail POS Dashboard Template | CodesPanda",
     description: "Flowers POS is a free retail POS admin dashboard template — product grid, cart, coupons, orders, customers & reports. React, Vite & Tailwind CSS.",
     ogImage: `${BASE}/images/flowers/pos-counter.png`,
   },
   "/templates/brisk-admin": {
-    title: "Brisk Admin — Free CRM Dashboard Template | CodeSpanda",
+    title: "Brisk Admin — Free CRM Dashboard Template | CodesPanda",
     description: "Brisk Admin is a free CRM admin dashboard template — clean layouts with shadcn/ui components, enterprise UI polish, fully responsive. React, Vite & Tailwind CSS.",
     ogImage: `${BASE}/images/brisk/dashboard.png`,
   },
   "/templates/alpine-admin-react": {
-    title: "Alpine Admin React — HR Dashboard Template | CodeSpanda",
+    title: "Alpine Admin React — HR Dashboard Template | CodesPanda",
     description: "Alpine Admin React is a free HR admin dashboard template — 30+ pages for employees, payroll, attendance & leave management. React, Vite & Tailwind CSS.",
     ogImage: `${BASE}/images/alpine/dashboard.webp`,
   },
   "/templates/portfolio-template": {
-    title: "Portfolio Template — Free React Portfolio | CodeSpanda",
+    title: "Portfolio Template — Free React Portfolio | CodesPanda",
     description: "Portfolio Template is a free React developer portfolio built with Vite & Tailwind CSS. Showcase your work, experience & projects — fully customizable.",
     ogImage: `${BASE}/images/portfolio/portfolio.jpg`,
   },
   "/portfolio": {
-    title: "UI/UX Portfolio — Dashboard & Product Design | CodeSpanda",
-    description: "Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodeSpanda templates.",
+    title: "UI/UX Portfolio — Dashboard & Product Design | CodesPanda",
+    description: "Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodesPanda templates.",
     ogImage: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
   },
   "/legal/privacy": {
-    title: "Privacy Policy — CodeSpanda",
-    description: "Privacy policy for CodeSpanda — how we collect, use and protect your data.",
+    title: "Privacy Policy — CodesPanda",
+    description: "Privacy policy for CodesPanda — how we collect, use and protect your data.",
   },
   "/legal/terms": {
-    title: "Terms of Service — CodeSpanda",
-    description: "Terms of service for CodeSpanda React templates.",
+    title: "Terms of Service — CodesPanda",
+    description: "Terms of service for CodesPanda React templates.",
   },
   "/legal/security": {
-    title: "Security — CodeSpanda",
-    description: "Security policy for CodeSpanda.",
+    title: "Security — CodesPanda",
+    description: "Security policy for CodesPanda.",
   },
 };
 
 // Auto-populate PAGE_META for all shot pages
 for (const shot of SHOTS) {
   PAGE_META[`/portfolio/${shot.id}`] = {
-    title: `${shot.title} — CodeSpanda Portfolio`,
+    title: `${shot.title} — CodesPanda Portfolio`,
     description: shot.desc,
     ogImage: shot.ogImage,
   };
@@ -357,7 +357,7 @@ function withPageMeta(html, route) {
     const back = backLinkFor(route);
     const links = [
       back ? `<a href="${back.href}">${escapeHtml(back.label)}</a>` : "",
-      back && back.href === BASE ? "" : `<a href="${BASE}">CodeSpanda — React Admin Templates</a>`,
+      back && back.href === BASE ? "" : `<a href="${BASE}">CodesPanda — React Admin Templates</a>`,
     ].filter(Boolean).join(" | ");
     const noscript = `\n    <noscript>\n      <article style="font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px">\n        <h1>${escapeHtml(meta.title)}</h1>\n        <p>${escapeHtml(meta.description)}</p>\n        <p>${links}</p>\n      </article>\n    </noscript>`;
     html = html.replace('<div id="root"></div>', `<div id="root"></div>${noscript}`);

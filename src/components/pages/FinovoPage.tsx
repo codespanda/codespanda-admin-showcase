@@ -135,11 +135,11 @@ export function FinovoPage() {
   return (
     <>
       <Helmet>
-        <title>Finovo — Accounting & ERP Admin Dashboard | CodeSpanda</title>
+        <title>Finovo — Accounting & ERP Admin Dashboard | CodesPanda</title>
         <meta name="description" content="Finovo is a free accounting/ERP admin dashboard template — invoicing, purchases, banking, payroll, inventory &amp; GST/TDS tax filing. React, Vite &amp; Tailwind CSS." />
         <meta name="keywords" content="react accounting admin template, free react erp dashboard, gst tds filing dashboard, tailwind accounting template, react invoicing dashboard, vite react erp admin" />
         <link rel="canonical" href="https://codespanda.com/templates/finovo" />
-        <meta property="og:title" content="Finovo — Accounting & ERP Admin Dashboard | CodeSpanda" />
+        <meta property="og:title" content="Finovo — Accounting & ERP Admin Dashboard | CodesPanda" />
         <meta property="og:description" content="Finovo is a free React accounting/ERP admin dashboard covering invoicing, purchases, banking, expenses, payroll, inventory, projects, GST/TDS tax filing, reports and contacts." />
         <meta property="og:url" content="https://codespanda.com/templates/finovo" />
         <meta property="og:type" content="website" />
@@ -148,7 +148,7 @@ export function FinovoPage() {
         <meta property="og:image:height" content="900" />
         <meta property="og:image:alt" content="Finovo dashboard — free React accounting/ERP admin template" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Finovo — Accounting & ERP Admin Dashboard | CodeSpanda" />
+        <meta name="twitter:title" content="Finovo — Accounting & ERP Admin Dashboard | CodesPanda" />
         <meta name="twitter:description" content="Finovo is a free React accounting/ERP admin dashboard covering invoicing, purchases, banking, expenses, payroll, inventory, projects, GST/TDS tax filing, reports and contacts." />
         <meta name="twitter:image" content="https://codespanda.com/images/finovo/dashboard.webp" />
         <meta name="twitter:image:alt" content="Finovo dashboard — free React accounting/ERP admin template" />
@@ -159,7 +159,7 @@ export function FinovoPage() {
           "description": "A free React accounting/ERP admin dashboard template covering invoicing, purchases, banking, expenses, payroll, inventory, projects, GST/TDS tax filing, reports and contacts. Built with React, Vite, Tailwind CSS and TypeScript.",
           "url": "https://codespanda.com/templates/finovo",
           "image": "https://codespanda.com/images/finovo/dashboard.webp",
-          "brand": { "@type": "Brand", "name": "CodeSpanda" },
+          "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Admin Dashboard",
           "offers": {
             "@type": "Offer",
