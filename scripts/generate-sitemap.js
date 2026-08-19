@@ -33,7 +33,7 @@ const SHOT_IDS = [
   "dashboard-app", "kanban", "portfolio-web", "design-system", "dating-app",
   "calories-app", "ecommerce-app", "car-app", "cricket-app", "crypto-app",
   "employee-mgmt", "fresh-grocery", "carwash-pro", "logistics-driver-management",
-  "messaging-calling-app", "furniture-app", "ancient-wisdom",
+  "messaging-calling-app", "furniture-app", "ancient-wisdom", "healthcare-appointment",
 ];
 
 const ROUTES = [

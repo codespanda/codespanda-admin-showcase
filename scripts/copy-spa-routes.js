@@ -80,6 +80,7 @@ const SHOTS = [
   { id: "messaging-calling-app", title: "Modern Messaging & Calling App UI/UX Concept",                             ogImage: "https://cdn.dribbble.com/userupload/48702804/file/50e19800c02353aa77306d8101f9f5dd.png?resize=1600x&vertical=center",  desc: "A clean, modern communication app concept — messaging, voice and video calls, contacts, and call history in a simple mobile experience." },
   { id: "furniture-app",      title: "Furniture App UI Design",                                                    ogImage: "https://cdn.dribbble.com/userupload/48720201/file/2cc1c9ff529e649dba24103bd6e12fe0.png?resize=1600x&vertical=center",  desc: "A modern furniture shopping app concept — product discovery, categories, filters, wishlist, and a conversion-focused checkout flow." },
   { id: "ancient-wisdom",     title: "Ancient Wisdom, Reimagined for Mobile",                                      ogImage: "https://cdn.dribbble.com/userupload/48733928/file/349dae96794aafc45a0167d77a672556.png?resize=1600x&vertical=center",  desc: "A clean and calming Ayurvedic wellness app UI bringing traditional remedies into a modern digital experience." },
+  { id: "healthcare-appointment", title: "Healthcare Appointment App – Mobile UI",                                 ogImage: "https://cdn.dribbble.com/userupload/48749322/file/29e4904871659abc8c10b9b2e753a375.png?resize=1600x&vertical=center",  desc: "A clean mobile UI concept for a healthcare appointment experience — doctor discovery, availability, and visit management." },
 ];
 
 // Static routes (non-shot pages)

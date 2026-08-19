@@ -13,6 +13,34 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "healthcare-appointment",
+    title: "Healthcare Appointment App – Mobile UI",
+    category: "Mobile App",
+    tags: ["Healthcare", "Appointment", "Mobile", "UX"],
+    dribbbleUrl: "https://dribbble.com/shots/27657489-Healthcare-Appointment-App-Mobile-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48749322/file/29e4904871659abc8c10b9b2e753a375.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48749322/file/29e4904871659abc8c10b9b2e753a375.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48749323/file/cc0150bd2bed114c6b94b6918398d290.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean mobile UI concept for a healthcare appointment experience.
+
+The flow helps patients discover specialists, compare doctors, check availability, review appointment information, and manage upcoming visits.
+
+✨ Highlights
+
+• Clear Information Hierarchy
+• Simple Doctor Discovery
+• Appointment-Focused Interactions
+• Trust-Building Through Ratings & Clinic Details
+• Clean Cards & Rounded UI Components
+• Consistent Spacing & Visual Hierarchy
+
+The purple-focused visual system gives the experience a calm, modern healthcare feel while keeping important actions easy to find.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "ancient-wisdom",
     title: "Ancient Wisdom, Reimagined for Mobile",
     category: "Mobile App",
