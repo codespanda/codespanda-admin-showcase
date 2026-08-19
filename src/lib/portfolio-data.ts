@@ -13,6 +13,32 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "food-delivery-concept",
+    title: "Food Delivery App – Mobile UI Concept",
+    category: "Mobile App",
+    tags: ["Food Delivery", "eCommerce", "Mobile", "UX"],
+    dribbbleUrl: "https://dribbble.com/shots/27661182-Food-Delivery-App-Mobile-UI-Concept",
+    imgUrl: "https://cdn.dribbble.com/userupload/48763336/file/ff32b57e4631bbb24c85a0feb1efa81e.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48763336/file/ff32b57e4631bbb24c85a0feb1efa81e.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48763337/file/57030633b0c6788a3efc1c08ecb172fc.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean, modern food delivery experience designed around three essential moments: discovering restaurants, exploring a menu, and completing checkout.
+
+✨ Highlights
+
+• Simple Restaurant Discovery
+• Clear Food Categories
+• High-Quality Food Presentation
+• Easy Add-to-Cart Interactions
+• Transparent Pricing & Checkout
+• Minimal, Conversion-Focused Mobile UX
+
+Designed with a focus on modern UI/UX, usability, and scalable mobile product design.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "healthcare-appointment",
     title: "Healthcare Appointment App – Mobile UI",
     category: "Mobile App",
