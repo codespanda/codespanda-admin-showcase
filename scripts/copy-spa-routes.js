@@ -317,7 +317,7 @@ function buildStructuredData(route, meta) {
       headline: name,
       description: meta.description,
       url: canonical,
-      author: { "@type": "Person", name: "Deepak Kumar" },
+      author: { "@type": "Organization", name: "CodesPanda" },
       publisher: { "@type": "Organization", name: "CodesPanda" },
     };
   }

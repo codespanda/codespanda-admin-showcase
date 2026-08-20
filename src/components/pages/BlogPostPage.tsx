@@ -96,7 +96,7 @@ export function BlogPostPage() {
           "description": description,
           "url": `https://codespanda.com/blog/${post.slug}`,
           "datePublished": post.date,
-          "author": { "@type": "Person", "name": post.author },
+          "author": { "@type": "Organization", "name": post.author },
           "publisher": { "@type": "Organization", "name": "CodesPanda" },
         })}</script>
       </Helmet>
