@@ -217,6 +217,7 @@ Vibe coding is still evolving, but one thing is already clear: AI is changing th
     readTime: "7 min read",
     gradient: "from-orange-600 to-red-600",
     icon: "Puzzle",
+    coverImage: "/images/blogs/signs-your-business-needs-custom-web-application.webp",
     content: `Off-the-shelf software can be a great starting point for many businesses. But as your operations become more complex, generic tools can start creating limitations instead of solving problems.
 
 A custom web application is designed around your business processes, customers, data, and growth goals. It can help eliminate repetitive work, connect disconnected systems, and give your team the flexibility they need to operate more efficiently.
