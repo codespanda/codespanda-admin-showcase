@@ -119,14 +119,14 @@ export function BlogPostPage() {
         {/* Cover */}
         <div className="mx-auto max-w-3xl px-4">
           {post.coverImage ? (
-            <div className="overflow-hidden rounded-2xl shadow-xl shadow-black/10">
+            <div className="aspect-video overflow-hidden rounded-2xl bg-secondary/40 shadow-xl shadow-black/10">
               <img
                 src={post.coverImage}
                 alt={post.title}
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
-                className="h-56 w-full object-cover sm:h-72"
+                className="h-full w-full object-contain"
               />
             </div>
           ) : (

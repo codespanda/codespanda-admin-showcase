@@ -31,7 +31,7 @@ function PostCard({ post, index }: { post: BlogPost; index: number }) {
       className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
     >
       {/* Cover */}
-      <div className="relative h-40 overflow-hidden">
+      <div className="relative aspect-video overflow-hidden bg-secondary/40">
         {post.coverImage ? (
           <img
             src={post.coverImage}
@@ -41,7 +41,7 @@ function PostCard({ post, index }: { post: BlogPost; index: number }) {
             loading={index === 0 ? "eager" : "lazy"}
             fetchPriority={index === 0 ? "high" : "auto"}
             decoding="async"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
           <div className={`flex h-full items-center justify-center bg-gradient-to-br ${post.gradient}`}>
