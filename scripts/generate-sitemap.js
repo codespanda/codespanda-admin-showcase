@@ -40,6 +40,7 @@ const SHOT_IDS = [
 const BLOG_SLUGS = [
   "vibe-coding-future-of-software-development",
   "signs-your-business-needs-custom-web-application",
+  "ai-powered-web-application-from-scratch",
   "why-we-built-codespanda",
   "shadcn-vs-mui-vs-antd",
   "admin-dashboard-design-mistakes",

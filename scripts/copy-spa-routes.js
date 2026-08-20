@@ -108,6 +108,7 @@ const STATIC_ROUTES = [
 const BLOG_POSTS = [
   { slug: "vibe-coding-future-of-software-development", title: "Vibe Coding: The Future of Software Development?", desc: "AI-powered coding tools are changing how developers write, test, and ship software. Is vibe coding a passing trend, or a fundamental shift in how software gets built?", ogImage: `${BASE}/images/blogs/vibe-coding-future-of-software-development.webp` },
   { slug: "signs-your-business-needs-custom-web-application", title: "7 Signs Your Business Needs a Custom Web Application", desc: "Off-the-shelf software is a great starting point, but as operations get more complex, generic tools start creating limitations instead of solving problems.", ogImage: `${BASE}/images/blogs/signs-your-business-needs-custom-web-application.webp` },
+  { slug: "ai-powered-web-application-from-scratch", title: "How to Build an AI-Powered Web Application From Scratch", desc: "Building an AI-powered web application is not just about connecting an AI API to a website. A practical roadmap covering UX, architecture, models, RAG, security, and cost control.", ogImage: `${BASE}/images/blogs/ai-powered-web-application-from-scratch.webp` },
   { slug: "why-we-built-codespanda",             title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free", desc: "Every admin template we shipped started the same way — we needed one ourselves, couldn't find one that didn't feel like a compromise, and built it instead." },
   { slug: "shadcn-vs-mui-vs-antd",                title: "shadcn/ui vs Material UI vs Ant Design: Picking a Component Library in 2026", desc: "The honest trade-offs between the three component approaches we get asked about most — and why most of our templates ended up on shadcn/ui." },
   { slug: "admin-dashboard-design-mistakes",      title: "10 Mistakes to Avoid When Designing an Admin Dashboard", desc: "Dense data screens forgive bad decisions less than marketing pages do. Here's what we've had to walk back across a dozen dashboard builds." },
@@ -239,6 +240,7 @@ const HERO_IMAGE = {
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
   "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
   "/blog/signs-your-business-needs-custom-web-application": "/images/blogs/signs-your-business-needs-custom-web-application.webp",
+  "/blog/ai-powered-web-application-from-scratch": "/images/blogs/ai-powered-web-application-from-scratch.webp",
 };
 
 // Route → JSON-LD @type for the structured-data block injected statically
