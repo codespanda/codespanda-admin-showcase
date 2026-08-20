@@ -324,7 +324,9 @@ export interface Stat {
 }
 
 export const HERO_STATS: Stat[] = [
-  { label: "Templates available", value: 6 },
+  // Derived from TEMPLATES.length instead of a hardcoded number, so it
+  // can't drift out of sync when a template is added or removed.
+  { label: "Templates available", value: TEMPLATES.length },
   { label: "Pages included", value: 30, suffix: "+" },
   { label: "Categories", value: 9, suffix: "+" },
   { label: "Technologies", value: 5, suffix: "+" },
