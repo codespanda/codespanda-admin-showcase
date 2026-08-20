@@ -13,6 +13,36 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "fitequip",
+    title: "FitEquip – Fitness Equipment Shopping App",
+    category: "Mobile App",
+    tags: ["Fitness", "eCommerce", "Shopping", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27664374-FitEquip-Fitness-Equipment-Shopping-App",
+    imgUrl: "https://cdn.dribbble.com/userupload/48774788/file/619bd3427cfb0151200fd5ed8bfb3a93.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48774788/file/619bd3427cfb0151200fd5ed8bfb3a93.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48774789/file/e90780867cf5fedc8b59e030c16c3629.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean and modern mobile e-commerce experience designed for discovering and purchasing fitness equipment.
+
+The concept focuses on making product discovery simple through:
+
+• Clear category navigation
+• Product-focused cards
+• Ratings and pricing at a glance
+• Quick add-to-cart interactions
+• Detailed product information
+• Minimal, distraction-free checkout actions
+
+The visual direction combines a bright interface with bold product imagery and subtle red accents to create a focused, energetic shopping experience.
+
+Designed for: Fitness Equipment E-commerce
+
+Focus: UI/UX Design · Mobile App · E-commerce · Product Design
+
+🌐 codespanda.com`,
+  },
+  {
     id: "food-delivery-concept",
     title: "Food Delivery App – Mobile UI Concept",
     category: "Mobile App",

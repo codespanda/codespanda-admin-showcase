@@ -82,6 +82,7 @@ const SHOTS = [
   { id: "ancient-wisdom",     title: "Ancient Wisdom, Reimagined for Mobile",                                      ogImage: "https://cdn.dribbble.com/userupload/48733928/file/349dae96794aafc45a0167d77a672556.png?resize=1600x&vertical=center",  desc: "A clean and calming Ayurvedic wellness app UI bringing traditional remedies into a modern digital experience." },
   { id: "healthcare-appointment", title: "Healthcare Appointment App – Mobile UI",                                 ogImage: "https://cdn.dribbble.com/userupload/48749322/file/29e4904871659abc8c10b9b2e753a375.png?resize=1600x&vertical=center",  desc: "A clean mobile UI concept for a healthcare appointment experience — doctor discovery, availability, and visit management." },
   { id: "food-delivery-concept", title: "Food Delivery App – Mobile UI Concept",                                   ogImage: "https://cdn.dribbble.com/userupload/48763336/file/ff32b57e4631bbb24c85a0feb1efa81e.png?resize=1600x&vertical=center",  desc: "A clean, modern food delivery experience — restaurant discovery, menu exploration, and a minimal, conversion-focused checkout." },
+  { id: "fitequip",           title: "FitEquip – Fitness Equipment Shopping App",                                  ogImage: "https://cdn.dribbble.com/userupload/48774788/file/619bd3427cfb0151200fd5ed8bfb3a93.png?resize=1600x&vertical=center",  desc: "A clean, modern mobile e-commerce experience for discovering and purchasing fitness equipment." },
 ];
 
 // Static routes (non-shot pages)

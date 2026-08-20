@@ -34,7 +34,7 @@ const SHOT_IDS = [
   "calories-app", "ecommerce-app", "car-app", "cricket-app", "crypto-app",
   "employee-mgmt", "fresh-grocery", "carwash-pro", "logistics-driver-management",
   "messaging-calling-app", "furniture-app", "ancient-wisdom", "healthcare-appointment",
-  "food-delivery-concept",
+  "food-delivery-concept", "fitequip",
 ];
 
 const BLOG_SLUGS = [
