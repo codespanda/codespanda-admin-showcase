@@ -37,13 +37,24 @@ const SHOT_IDS = [
   "food-delivery-concept",
 ];
 
+const BLOG_SLUGS = [
+  "why-we-built-codespanda",
+  "shadcn-vs-mui-vs-antd",
+  "admin-dashboard-design-mistakes",
+  "figma-to-production-workflow",
+  "why-vite-for-admin-panels",
+  "theme-shadcn-dashboard-in-10-minutes",
+];
+
 const ROUTES = [
   // Core pages
   { path: "/",                                  changefreq: "weekly",  priority: "1.0" },
   { path: "/templates",                         changefreq: "weekly",  priority: "0.9" },
   { path: "/portfolio",                         changefreq: "weekly",  priority: "0.8" },
+  { path: "/blog",                              changefreq: "weekly",  priority: "0.8" },
 
   // Template detail pages
+  { path: "/templates/finovo",                  changefreq: "monthly", priority: "0.9" },
   { path: "/templates/hamara-bharat",           changefreq: "monthly", priority: "0.9" },
   { path: "/templates/eva-autocare",            changefreq: "monthly", priority: "0.9" },
   { path: "/templates/deepcity-care",           changefreq: "monthly", priority: "0.9" },
@@ -55,6 +66,9 @@ const ROUTES = [
 
   // Portfolio shot pages
   ...SHOT_IDS.map((id) => ({ path: `/portfolio/${id}`, changefreq: "monthly", priority: "0.7" })),
+
+  // Blog posts
+  ...BLOG_SLUGS.map((slug) => ({ path: `/blog/${slug}`, changefreq: "monthly", priority: "0.6" })),
 
   // Legal
   { path: "/legal/privacy",                     changefreq: "yearly",  priority: "0.3" },

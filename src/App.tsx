@@ -18,6 +18,8 @@ const FinovoPage          = lazy(() => import("@/components/pages/FinovoPage").t
 const HamaraBharatPage    = lazy(() => import("@/components/pages/HamaraBharatPage").then(m => ({ default: m.HamaraBharatPage })));
 const DeepakPortfolioPage = lazy(() => import("@/components/pages/DeepakPortfolioPage").then(m => ({ default: m.DeepakPortfolioPage })));
 const PortfolioShotPage   = lazy(() => import("@/components/pages/PortfolioShotPage").then(m => ({ default: m.PortfolioShotPage })));
+const BlogPage            = lazy(() => import("@/components/pages/BlogPage").then(m => ({ default: m.BlogPage })));
+const BlogPostPage        = lazy(() => import("@/components/pages/BlogPostPage").then(m => ({ default: m.BlogPostPage })));
 
 function App() {
   return (
@@ -42,6 +44,8 @@ function App() {
         <Route path="/templates/hamara-bharat" element={<Suspense><HamaraBharatPage /></Suspense>} />
         <Route path="/portfolio" element={<Suspense><DeepakPortfolioPage /></Suspense>} />
         <Route path="/portfolio/:shotId" element={<Suspense><PortfolioShotPage /></Suspense>} />
+        <Route path="/blog" element={<Suspense><BlogPage /></Suspense>} />
+        <Route path="/blog/:slug" element={<Suspense><BlogPostPage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />
         <Route path="*" element={<LegalPage />} />
       </Routes>

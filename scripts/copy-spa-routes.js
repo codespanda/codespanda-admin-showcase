@@ -87,6 +87,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/finovo",
   "/templates/hamara-bharat",
   "/templates/eva-autocare",
   "/templates/deepcity-care",
@@ -96,15 +97,27 @@ const STATIC_ROUTES = [
   "/templates/alpine-admin-react",
   "/templates/portfolio-template",
   "/portfolio",
+  "/blog",
   "/legal/privacy",
   "/legal/terms",
   "/legal/security",
 ];
 
-// Shot routes derived from SHOTS array
-const SHOT_ROUTES = SHOTS.map((s) => `/portfolio/${s.id}`);
+// Blog post metadata — kept in sync with src/lib/blog-data.ts
+const BLOG_POSTS = [
+  { slug: "why-we-built-codespanda",             title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free", desc: "Every admin template we shipped started the same way — we needed one ourselves, couldn't find one that didn't feel like a compromise, and built it instead." },
+  { slug: "shadcn-vs-mui-vs-antd",                title: "shadcn/ui vs Material UI vs Ant Design: Picking a Component Library in 2026", desc: "The honest trade-offs between the three component approaches we get asked about most — and why most of our templates ended up on shadcn/ui." },
+  { slug: "admin-dashboard-design-mistakes",      title: "10 Mistakes to Avoid When Designing an Admin Dashboard", desc: "Dense data screens forgive bad decisions less than marketing pages do. Here's what we've had to walk back across a dozen dashboard builds." },
+  { slug: "figma-to-production-workflow",         title: "From Figma to Production: Our Design-to-Code Workflow", desc: "How a template goes from a Figma file to a shipped, typed, responsive React page — and where we deliberately skip \"pixel-perfect\" for speed." },
+  { slug: "why-vite-for-admin-panels",            title: "Why Vite Is the Right Call for a Modern React Admin Panel", desc: "Cold start, HMR speed, and a build output that doesn't fight you — the practical reasons every CodesPanda template is built on Vite." },
+  { slug: "theme-shadcn-dashboard-in-10-minutes", title: "How to Theme a shadcn/ui Dashboard in Under 10 Minutes", desc: "A practical walkthrough of swapping every CodesPanda template's color system to your own brand — one CSS file, no component edits." },
+];
 
-const ROUTES = [...STATIC_ROUTES, ...SHOT_ROUTES];
+// Shot & blog routes derived from their data arrays
+const SHOT_ROUTES = SHOTS.map((s) => `/portfolio/${s.id}`);
+const BLOG_ROUTES = BLOG_POSTS.map((p) => `/blog/${p.slug}`);
+
+const ROUTES = [...STATIC_ROUTES, ...SHOT_ROUTES, ...BLOG_ROUTES];
 
 // Per-route static meta injected into the pre-rendered HTML so crawlers and
 // social scrapers see correct title/description/canonical before JS runs.
@@ -118,6 +131,11 @@ const PAGE_META = {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-image.png`,
+  },
+  "/templates/finovo": {
+    title: "Finovo — Accounting & ERP Admin Dashboard | CodesPanda",
+    description: "Finovo is a free accounting/ERP admin dashboard template — invoicing, purchases, banking, payroll, inventory & GST/TDS tax filing. React, Vite & Tailwind CSS.",
+    ogImage: `${BASE}/images/finovo/dashboard.webp`,
   },
   "/templates/hamara-bharat": {
     title: "Hamara Bharat — Travel Landing Page Template | CodesPanda",
@@ -164,6 +182,10 @@ const PAGE_META = {
     description: "Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodesPanda templates.",
     ogImage: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
   },
+  "/blog": {
+    title: "Blog — Admin Dashboard Design & React Engineering | CodesPanda",
+    description: "Notes on admin dashboard design, React engineering, and shadcn/ui theming from the team building CodesPanda's free React templates.",
+  },
   "/legal/privacy": {
     title: "Privacy Policy — CodesPanda",
     description: "Privacy policy for CodesPanda — how we collect, use and protect your data.",
@@ -187,10 +209,21 @@ for (const shot of SHOTS) {
   };
 }
 
+// Auto-populate PAGE_META for all blog posts — no ogImage (posts use a
+// gradient+icon cover, not a photo asset), so this falls back to the
+// site-wide og-image.png already baked into the base HTML.
+for (const post of BLOG_POSTS) {
+  PAGE_META[`/blog/${post.slug}`] = {
+    title: `${post.title} — CodesPanda Blog`,
+    description: post.desc,
+  };
+}
+
 // Each page's eager/fetchPriority=high hero <img> src
 const HERO_IMAGE = {
   "/": "/images/alpine-dashboard.webp",
   "/templates": "/images/hamarabharat/hero.webp",
+  "/templates/finovo": "/images/finovo/dashboard.webp",
   "/templates/alpine-admin-react": "/images/alpine/dashboard.webp",
   "/templates/brisk-admin": "/images/brisk/dashboard.webp",
   "/templates/portfolio-template": "/images/portfolio/portfolio.webp",
@@ -209,6 +242,8 @@ const HERO_IMAGE = {
 const SCHEMA_TYPE = {
   "/templates": "collection",
   "/portfolio": "collection",
+  "/blog": "blog",
+  "/templates/finovo": "software",
   "/templates/hamara-bharat": "software",
   "/templates/eva-autocare": "software",
   "/templates/deepcity-care": "software",
@@ -222,6 +257,7 @@ const SCHEMA_TYPE = {
 function schemaTypeFor(route) {
   if (SCHEMA_TYPE[route]) return SCHEMA_TYPE[route];
   if (route.startsWith("/portfolio/") && route !== "/portfolio") return "creativework";
+  if (route.startsWith("/blog/") && route !== "/blog") return "blogpost";
   return null;
 }
 
@@ -265,6 +301,26 @@ function buildStructuredData(route, meta) {
       author: { "@type": "Person", name: "Deepak Kumar" },
     };
   }
+  if (type === "blog") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      name: meta.title,
+      description: meta.description,
+      url: canonical,
+    };
+  }
+  if (type === "blogpost") {
+    return {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: name,
+      description: meta.description,
+      url: canonical,
+      author: { "@type": "Person", name: "Deepak Kumar" },
+      publisher: { "@type": "Organization", name: "CodesPanda" },
+    };
+  }
   return null;
 }
 
@@ -279,13 +335,16 @@ function backLinkFor(route) {
   if (route.startsWith("/portfolio/") && route !== "/portfolio") {
     return { href: `${BASE}/portfolio`, label: "← Back to Portfolio" };
   }
+  if (route.startsWith("/blog/") && route !== "/blog") {
+    return { href: `${BASE}/blog`, label: "← Back to Blog" };
+  }
   if (route.startsWith("/templates/")) {
     return { href: `${BASE}/templates`, label: "← Back to Templates" };
   }
   if (route.startsWith("/legal/")) {
     return { href: BASE, label: "← Back to Home" };
   }
-  return null; // "/", "/templates", "/portfolio" — no back link needed
+  return null; // "/", "/templates", "/portfolio", "/blog" — no back link needed
 }
 
 function withHeroPreload(html, route) {
@@ -302,8 +361,10 @@ function withPageMeta(html, route) {
   if (!meta) return html;
 
   const canonical = `${BASE}${route}`;
-  const isShotPage = route.startsWith("/portfolio/") && route !== "/portfolio";
-  const ogType = isShotPage ? "article" : "website";
+  const isArticlePage =
+    (route.startsWith("/portfolio/") && route !== "/portfolio") ||
+    (route.startsWith("/blog/") && route !== "/blog");
+  const ogType = isArticlePage ? "article" : "website";
 
   // Replace <title>
   html = html.replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`);

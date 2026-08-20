@@ -16,6 +16,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Templates", href: "/#templates" },
   { label: "Categories", href: "/#categories" },
   { label: "Portfolio", href: "/portfolio" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/#why-us" },
   { label: "FAQ", href: "/#faq" },
 ];
@@ -42,6 +43,7 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
       { label: "DeepCity Care Docs", href: "https://deepcity-care.codespanda.com/docs", external: true },
       { label: "Flowers POS Docs", href: "https://flowers.codespanda.com/docs", external: true },
       { label: "Brisk Admin Docs", href: "https://codespanda.github.io/brisk-admin/", external: true },
+      { label: "Blog", href: "/blog" },
       { label: "Contact", href: "mailto:contact@codespanda.com", external: true },
     ],
   },
