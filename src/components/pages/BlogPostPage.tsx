@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { getBlogPostBySlug, BLOG_POSTS } from "@/lib/blog-data";
@@ -10,7 +10,7 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
-const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush };
+const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot };
 
 function formatDate(iso: string) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
@@ -82,19 +82,20 @@ export function BlogPostPage() {
         <meta property="og:title" content={`${post.title} — CodesPanda Blog`} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://codespanda.com/blog/${post.slug}`} />
-        <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta property="og:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-image.png"} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={post.author} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${post.title} — CodesPanda Blog`} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-image.png"} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": post.title,
           "description": description,
           "url": `https://codespanda.com/blog/${post.slug}`,
+          ...(post.coverImage ? { "image": `https://codespanda.com${post.coverImage}` } : {}),
           "datePublished": post.date,
           "author": { "@type": "Organization", "name": post.author },
           "publisher": { "@type": "Organization", "name": "CodesPanda" },
@@ -117,9 +118,22 @@ export function BlogPostPage() {
 
         {/* Cover */}
         <div className="mx-auto max-w-3xl px-4">
-          <div className={`flex h-56 items-center justify-center rounded-2xl bg-gradient-to-br ${post.gradient} shadow-xl shadow-black/10 sm:h-72`}>
-            <Icon className="h-16 w-16 text-white/90" strokeWidth={1.5} />
-          </div>
+          {post.coverImage ? (
+            <div className="overflow-hidden rounded-2xl shadow-xl shadow-black/10">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+                className="h-56 w-full object-cover sm:h-72"
+              />
+            </div>
+          ) : (
+            <div className={`flex h-56 items-center justify-center rounded-2xl bg-gradient-to-br ${post.gradient} shadow-xl shadow-black/10 sm:h-72`}>
+              <Icon className="h-16 w-16 text-white/90" strokeWidth={1.5} />
+            </div>
+          )}
         </div>
 
         {/* Details */}
@@ -186,9 +200,13 @@ export function BlogPostPage() {
                     className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:shadow-md hover:-translate-y-0.5"
                   >
                     <ArrowLeft className="h-4 w-4 shrink-0 text-muted-foreground" />
-                    <div className={`flex h-12 w-16 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${prev.gradient}`}>
-                      {(() => { const PrevIcon = ICONS[prev.icon]; return <PrevIcon className="h-5 w-5 text-white/90" strokeWidth={1.5} />; })()}
-                    </div>
+                    {prev.coverImage ? (
+                      <img src={prev.coverImage} alt={prev.title} width={64} height={48} loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
+                    ) : (
+                      <div className={`flex h-12 w-16 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${prev.gradient}`}>
+                        {(() => { const PrevIcon = ICONS[prev.icon]; return <PrevIcon className="h-5 w-5 text-white/90" strokeWidth={1.5} />; })()}
+                      </div>
+                    )}
                     <div className="min-w-0">
                       <p className="text-[10px] font-semibold uppercase tracking-widest text-primary">{prev.category}</p>
                       <p className="truncate text-sm font-semibold">{prev.title}</p>
@@ -201,9 +219,13 @@ export function BlogPostPage() {
                     className="group flex items-center justify-end gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:shadow-md hover:-translate-y-0.5 sm:flex-row-reverse"
                   >
                     <ArrowLeft className="h-4 w-4 shrink-0 rotate-180 text-muted-foreground" />
-                    <div className={`flex h-12 w-16 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${next.gradient}`}>
-                      {(() => { const NextIcon = ICONS[next.icon]; return <NextIcon className="h-5 w-5 text-white/90" strokeWidth={1.5} />; })()}
-                    </div>
+                    {next.coverImage ? (
+                      <img src={next.coverImage} alt={next.title} width={64} height={48} loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
+                    ) : (
+                      <div className={`flex h-12 w-16 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${next.gradient}`}>
+                        {(() => { const NextIcon = ICONS[next.icon]; return <NextIcon className="h-5 w-5 text-white/90" strokeWidth={1.5} />; })()}
+                      </div>
+                    )}
                     <div className="min-w-0 sm:text-right">
                       <p className="text-[10px] font-semibold uppercase tracking-widest text-primary">{next.category}</p>
                       <p className="truncate text-sm font-semibold">{next.title}</p>

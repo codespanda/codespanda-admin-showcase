@@ -105,6 +105,7 @@ const STATIC_ROUTES = [
 
 // Blog post metadata — kept in sync with src/lib/blog-data.ts
 const BLOG_POSTS = [
+  { slug: "vibe-coding-future-of-software-development", title: "Vibe Coding: The Future of Software Development?", desc: "AI-powered coding tools are changing how developers write, test, and ship software. Is vibe coding a passing trend, or a fundamental shift in how software gets built?", ogImage: `${BASE}/images/blogs/vibe-coding-future-of-software-development.webp` },
   { slug: "why-we-built-codespanda",             title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free", desc: "Every admin template we shipped started the same way — we needed one ourselves, couldn't find one that didn't feel like a compromise, and built it instead." },
   { slug: "shadcn-vs-mui-vs-antd",                title: "shadcn/ui vs Material UI vs Ant Design: Picking a Component Library in 2026", desc: "The honest trade-offs between the three component approaches we get asked about most — and why most of our templates ended up on shadcn/ui." },
   { slug: "admin-dashboard-design-mistakes",      title: "10 Mistakes to Avoid When Designing an Admin Dashboard", desc: "Dense data screens forgive bad decisions less than marketing pages do. Here's what we've had to walk back across a dozen dashboard builds." },
@@ -209,13 +210,15 @@ for (const shot of SHOTS) {
   };
 }
 
-// Auto-populate PAGE_META for all blog posts — no ogImage (posts use a
-// gradient+icon cover, not a photo asset), so this falls back to the
-// site-wide og-image.png already baked into the base HTML.
+// Auto-populate PAGE_META for all blog posts. Most posts use a
+// gradient+icon cover (no photo asset) and fall back to the site-wide
+// og-image.png already baked into the base HTML; posts with a real
+// cover photo set `ogImage` above and it's used here instead.
 for (const post of BLOG_POSTS) {
   PAGE_META[`/blog/${post.slug}`] = {
     title: `${post.title} — CodesPanda Blog`,
     description: post.desc,
+    ...(post.ogImage ? { ogImage: post.ogImage } : {}),
   };
 }
 
@@ -232,6 +235,7 @@ const HERO_IMAGE = {
   "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
+  "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
 };
 
 // Route → JSON-LD @type for the structured-data block injected statically
@@ -317,6 +321,7 @@ function buildStructuredData(route, meta) {
       headline: name,
       description: meta.description,
       url: canonical,
+      ...(meta.ogImage ? { image: meta.ogImage } : {}),
       author: { "@type": "Organization", name: "CodesPanda" },
       publisher: { "@type": "Organization", name: "CodesPanda" },
     };

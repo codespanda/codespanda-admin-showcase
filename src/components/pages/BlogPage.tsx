@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Calendar, Clock } from "lucide-react";
+import { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Calendar, Clock } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
@@ -10,7 +10,7 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
-const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush };
+const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot };
 
 function formatDate(iso: string) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
@@ -23,7 +23,7 @@ function formatDate(iso: string) {
 /* ------------------------------------------------------------------ */
 /* Post card — clicks to the full post                                 */
 /* ------------------------------------------------------------------ */
-function PostCard({ post }: { post: BlogPost }) {
+function PostCard({ post, index }: { post: BlogPost; index: number }) {
   const Icon = ICONS[post.icon];
   return (
     <Link
@@ -31,8 +31,23 @@ function PostCard({ post }: { post: BlogPost }) {
       className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
     >
       {/* Cover */}
-      <div className={`relative flex h-40 items-center justify-center bg-gradient-to-br ${post.gradient}`}>
-        <Icon className="h-12 w-12 text-white/90 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.5} />
+      <div className="relative h-40 overflow-hidden">
+        {post.coverImage ? (
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            width={400}
+            height={225}
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchPriority={index === 0 ? "high" : "auto"}
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className={`flex h-full items-center justify-center bg-gradient-to-br ${post.gradient}`}>
+            <Icon className="h-12 w-12 text-white/90 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.5} />
+          </div>
+        )}
         <span className="absolute left-3 top-3 rounded-full bg-black/25 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-widest text-white backdrop-blur-sm">
           {post.category}
         </span>
@@ -116,8 +131,8 @@ export function BlogPage() {
         {/* Posts grid */}
         <section className="mx-auto max-w-6xl px-4">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {BLOG_POSTS.map((post) => (
-              <PostCard key={post.slug} post={post} />
+            {BLOG_POSTS.map((post, i) => (
+              <PostCard key={post.slug} post={post} index={i} />
             ))}
           </div>
         </section>

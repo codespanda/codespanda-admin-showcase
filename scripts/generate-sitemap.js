@@ -38,6 +38,7 @@ const SHOT_IDS = [
 ];
 
 const BLOG_SLUGS = [
+  "vibe-coding-future-of-software-development",
   "why-we-built-codespanda",
   "shadcn-vs-mui-vs-antd",
   "admin-dashboard-design-mistakes",
