@@ -13,6 +13,31 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "event-management",
+    title: "Event Management Mobile App UI/UX Concept",
+    category: "Mobile App",
+    tags: ["Events", "Management", "Mobile", "Dashboard"],
+    dribbbleUrl: "https://dribbble.com/shots/27667647-Event-Management-Mobile-App-UI-UX-Concept",
+    imgUrl: "https://cdn.dribbble.com/userupload/48786630/file/5fc33c67c5a78ec4b02ebc7beea3cd47.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48786630/file/5fc33c67c5a78ec4b02ebc7beea3cd47.png?resize=1600x&vertical=center",
+    description: `A clean and modern mobile experience designed to simplify event management, from discovering upcoming events to managing attendees, schedules, tickets, and revenue.
+
+✨ Highlights
+
+• Event Management Dashboard
+• Upcoming Events Listing
+• Event Details & Schedule
+• Attendee and Ticket Insights
+• Revenue and Check-in Analytics
+• Quick Actions for Event Organizers
+
+The design focuses on clarity, accessibility, visual hierarchy, and effortless navigation, with a vibrant purple visual language and polished card-based UI.
+
+Designed for modern event organizers who want everything in one place.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "fitequip",
     title: "FitEquip – Fitness Equipment Shopping App",
     category: "Mobile App",
