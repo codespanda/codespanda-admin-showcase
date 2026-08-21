@@ -106,6 +106,7 @@ const STATIC_ROUTES = [
 
 // Blog post metadata — kept in sync with src/lib/blog-data.ts
 const BLOG_POSTS = [
+  { slug: "ai-powered-saas-development-2026", title: "AI-Powered SaaS Development: Building Smarter Software for 2026", desc: "Adding a chatbot to an existing app is no longer enough. Businesses want AI-native SaaS platforms that understand data, automate workflows, and help users decide faster.", ogImage: `${BASE}/images/blogs/ai-powered-saas-development-2026.webp` },
   { slug: "vibe-coding-future-of-software-development", title: "Vibe Coding: The Future of Software Development?", desc: "AI-powered coding tools are changing how developers write, test, and ship software. Is vibe coding a passing trend, or a fundamental shift in how software gets built?", ogImage: `${BASE}/images/blogs/vibe-coding-future-of-software-development.webp` },
   { slug: "signs-your-business-needs-custom-web-application", title: "7 Signs Your Business Needs a Custom Web Application", desc: "Off-the-shelf software is a great starting point, but as operations get more complex, generic tools start creating limitations instead of solving problems.", ogImage: `${BASE}/images/blogs/signs-your-business-needs-custom-web-application.webp` },
   { slug: "ai-powered-web-application-from-scratch", title: "How to Build an AI-Powered Web Application From Scratch", desc: "Building an AI-powered web application is not just about connecting an AI API to a website. A practical roadmap covering UX, architecture, models, RAG, security, and cost control.", ogImage: `${BASE}/images/blogs/ai-powered-web-application-from-scratch.webp` },
@@ -241,6 +242,7 @@ const HERO_IMAGE = {
   "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
   "/blog/signs-your-business-needs-custom-web-application": "/images/blogs/signs-your-business-needs-custom-web-application.webp",
   "/blog/ai-powered-web-application-from-scratch": "/images/blogs/ai-powered-web-application-from-scratch.webp",
+  "/blog/ai-powered-saas-development-2026": "/images/blogs/ai-powered-saas-development-2026.webp",
 };
 
 // Route → JSON-LD @type for the structured-data block injected statically

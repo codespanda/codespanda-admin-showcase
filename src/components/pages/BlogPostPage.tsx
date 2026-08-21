@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit } from "lucide-react";
+import { ArrowLeft, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit, Cloud } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { getBlogPostBySlug, BLOG_POSTS } from "@/lib/blog-data";
@@ -10,7 +10,7 @@ const Footer = lazy(() =>
   import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
 );
 
-const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit };
+const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit, Cloud };
 
 function formatDate(iso: string) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {

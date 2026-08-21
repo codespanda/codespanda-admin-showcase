@@ -38,6 +38,7 @@ const SHOT_IDS = [
 ];
 
 const BLOG_SLUGS = [
+  "ai-powered-saas-development-2026",
   "vibe-coding-future-of-software-development",
   "signs-your-business-needs-custom-web-application",
   "ai-powered-web-application-from-scratch",
