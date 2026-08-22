@@ -32,6 +32,22 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "ca-firm",
+    name: "Your CA Firm",
+    description:
+      "A complete marketing site for a chartered accountancy or financial advisory practice — a two-column hero, an auto-scrolling client marquee, service and industry grids, a four-step process, testimonials, and dedicated Careers and Contact pages, all in a navy-and-gold system built for trust and precision.",
+    category: "Financial & Advisory Landing Page",
+    badge: "New",
+    badgeColor: "from-amber-500 to-yellow-500",
+    liveUrl: "https://ca-firm.codespanda.com/",
+    docsUrl: "https://github.com/codespanda/CA-Firm",
+    detailsUrl: "/templates/ca-firm",
+    techStack: ["React 19", "Vite", "Tailwind CSS v4", "shadcn/ui"],
+    features: ["Navy & Gold Design", "Careers & Contact Pages", "Real Interactivity", "Responsive"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "finovo",
     name: "Finovo",
     description:

@@ -48,6 +48,31 @@ src/
 Hero · Trusted-by logos · Features grid · Dashboard preview (tabbed) · Modules ·
 Analytics showcase · AI Automation · Pricing · Testimonials · FAQ · CTA · Footer.
 
+## 🖥️ Templates Showcased
+
+This site is also the marketing showcase for CodesPanda's free React templates —
+each has its own `/templates/<slug>` marketing page in this repo
+(`src/components/pages/`) plus a separately-hosted live demo:
+
+| Template | Live Demo | Category |
+|---|---|---|
+| [Your CA Firm](https://ca-firm.codespanda.com/) | `/templates/ca-firm` | Financial & Advisory Landing Page |
+| [Finovo](https://finovo.codespanda.com/) | `/templates/finovo` | Finance / Accounting Admin |
+| [Hamara Bharat](https://hamarabharat.codespanda.com/) | `/templates/hamara-bharat` | Travel / Tourism Landing Page |
+| [Eva AutoCare](https://eva-autocare.codespanda.com/) | `/templates/eva-autocare` | Automotive / Service Center Admin |
+| [DeepCity Care Hospital](https://deepcity-care.codespanda.com/) | `/templates/deepcity-care` | Healthcare Admin |
+| [Flowers POS](https://flowers.codespanda.com/) | `/templates/flowers` | Retail POS |
+| [Alpine Admin React](https://codespanda.github.io/Alpine-Admin-React/dashboard) | `/templates/alpine-admin-react` | HR Admin |
+| [Brisk Admin](https://brisk.codespanda.com/dashboard) | `/templates/brisk-admin` | CRM Admin |
+| [Cornerstone](https://cornerstone.codespanda.com/) | `/templates/cornerstone` | SaaS Admin |
+| [Portfolio Template](https://codespanda.github.io/portfolio/) | `/templates/portfolio-template` | Developer Portfolio |
+
+Adding a new template means: an entry in `src/lib/data.ts` (`TEMPLATES`), a
+`<Name>Page.tsx` marketing page + route in `App.tsx`, an entry in
+`FOOTER_NAV` (`src/lib/constants.ts`), the static `ItemList` schema in
+`index.html`, and prerender/SEO metadata + sitemap entries in
+`scripts/copy-spa-routes.js` and `scripts/generate-sitemap.js`.
+
 ## 🎨 Design Tokens
 
 Colors are defined as HSL CSS variables in `src/index.css` (`:root` and `.dark`)

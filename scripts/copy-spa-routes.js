@@ -90,6 +90,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/ca-firm",
   "/templates/finovo",
   "/templates/hamara-bharat",
   "/templates/eva-autocare",
@@ -139,6 +140,10 @@ const PAGE_META = {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-image.png`,
+  },
+  "/templates/ca-firm": {
+    title: "Your CA Firm — Financial & Advisory Landing Page | CodesPanda",
+    description: "Your CA Firm is a free React template for chartered accountants and financial advisory firms — services, industries, engagement models, testimonials, Careers and Contact pages.",
   },
   "/templates/finovo": {
     title: "Finovo — Accounting & ERP Admin Dashboard | CodesPanda",
@@ -258,6 +263,7 @@ const SCHEMA_TYPE = {
   "/templates": "collection",
   "/portfolio": "collection",
   "/blog": "blog",
+  "/templates/ca-firm": "software",
   "/templates/finovo": "software",
   "/templates/hamara-bharat": "software",
   "/templates/eva-autocare": "software",
