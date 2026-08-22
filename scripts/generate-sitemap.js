@@ -38,6 +38,7 @@ const SHOT_IDS = [
 ];
 
 const BLOG_SLUGS = [
+  "will-ai-replace-junior-developers",
   "ai-powered-saas-development-2026",
   "vibe-coding-future-of-software-development",
   "signs-your-business-needs-custom-web-application",
