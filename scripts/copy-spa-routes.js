@@ -144,6 +144,7 @@ const PAGE_META = {
   "/templates/ca-firm": {
     title: "Your CA Firm — Financial & Advisory Landing Page | CodesPanda",
     description: "Your CA Firm is a free React template for chartered accountants and financial advisory firms — services, industries, engagement models, testimonials, Careers and Contact pages.",
+    ogImage: `${BASE}/images/ca-firm/hero.webp`,
   },
   "/templates/finovo": {
     title: "Finovo — Accounting & ERP Admin Dashboard | CodesPanda",
@@ -247,6 +248,7 @@ const HERO_IMAGE = {
   "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
+  "/templates/ca-firm": "/images/ca-firm/hero.webp",
   "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
   "/blog/signs-your-business-needs-custom-web-application": "/images/blogs/signs-your-business-needs-custom-web-application.webp",
   "/blog/ai-powered-web-application-from-scratch": "/images/blogs/ai-powered-web-application-from-scratch.webp",

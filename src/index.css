@@ -131,6 +131,14 @@
   --accent: 243 75% 59%;
   --ring: 243 75% 59%;
 }
+[data-template="cafirm"],
+[data-template="cafirm"].dark {
+  --primary: 38 75% 50%;
+  --primary-end: 37 78% 40%;
+  --primary-foreground: 220 60% 12%;
+  --accent: 38 75% 50%;
+  --ring: 38 75% 50%;
+}
 
 /* ── Scroll reveal animations (replaces framer-motion) ── */
 [data-reveal] {

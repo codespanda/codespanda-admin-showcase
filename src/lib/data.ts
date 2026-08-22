@@ -42,6 +42,7 @@ export const TEMPLATES: Template[] = [
     liveUrl: "https://ca-firm.codespanda.com/",
     docsUrl: "https://github.com/codespanda/CA-Firm",
     detailsUrl: "/templates/ca-firm",
+    screenshotUrl: "/images/ca-firm/hero.webp",
     techStack: ["React 19", "Vite", "Tailwind CSS v4", "shadcn/ui"],
     features: ["Navy & Gold Design", "Careers & Contact Pages", "Real Interactivity", "Responsive"],
     darkMode: true,

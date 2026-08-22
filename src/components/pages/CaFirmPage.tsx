@@ -87,58 +87,6 @@ const STEPS = [
   { step: "04", title: "Open in browser",      code: "http://localhost:5173/" },
 ];
 
-/** CSS-only mock browser preview — no real screenshot exists yet, so this
- * mirrors the template's own navy/gold hero instead of a fake/broken image. */
-function HeroMock() {
-  return (
-    <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-amber-500/10 ring-1 ring-amber-500/10">
-      <div className="flex items-center gap-1.5 bg-[#08122a] px-3.5 py-2.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="h-2.5 w-2.5 rounded-full bg-white/15" />
-        <span className="ml-3 flex-1 rounded bg-white/10 px-2 py-0.5 text-[10px] text-white/50">
-          ca-firm.codespanda.com
-        </span>
-      </div>
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#0f2148] to-[#0a1730] px-6 py-8">
-        <div className="absolute -right-14 -top-16 h-56 w-56 rounded-full bg-amber-400/20 blur-3xl" />
-        <div className="relative flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="grid h-6 w-6 place-items-center rounded-full border border-amber-400 text-[9px] font-bold text-amber-400">CA</span>
-            <span className="text-[10px] tracking-widest text-white/75">YOUR CA FIRM</span>
-          </div>
-          <div className="flex gap-2.5">
-            {[...Array(4)].map((_, i) => (
-              <span key={i} className="h-[3px] w-5 rounded-full bg-white/15" />
-            ))}
-          </div>
-        </div>
-        <div className="relative mt-9 space-y-2.5">
-          <div className="h-3.5 w-[82%] rounded bg-white/90" />
-          <div className="h-3.5 w-[68%] rounded bg-white/90" />
-          <div className="h-3.5 w-[58%] rounded bg-amber-400" />
-        </div>
-        <div className="relative mt-4 space-y-1.5">
-          <span className="block h-1.5 w-[90%] rounded-full bg-white/25" />
-          <span className="block h-1.5 w-[70%] rounded-full bg-white/25" />
-        </div>
-        <div className="relative mt-5 flex gap-2.5">
-          <span className="h-6 w-24 rounded bg-amber-400" />
-          <span className="h-6 w-24 rounded border border-white/20" />
-        </div>
-        <div className="relative mt-7 grid grid-cols-4 gap-2.5 text-center">
-          {[["500+", "CLIENTS"], ["12+", "YEARS"], ["1000+", "PROJECTS"], ["98%", "RATING"]].map(([n, l]) => (
-            <div key={l}>
-              <p className="font-serif text-sm font-bold text-amber-400">{n}</p>
-              <p className="mt-1 text-[6.5px] tracking-wide text-white/45">{l}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function CaFirmPage() {
   const views = useViewCount("tpl-ca-firm", 0);
   useEffect(() => {
@@ -244,7 +192,7 @@ export function CaFirmPage() {
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button variant="gradient" size="lg" asChild>
+                <Button variant="gradient" size="lg" className="text-[#0a1730]" asChild>
                   <a href={PREVIEW_URL} target="_blank" rel="noreferrer noopener">
                     <ExternalLink className="h-4 w-4" /> Live Preview
                   </a>
@@ -257,11 +205,26 @@ export function CaFirmPage() {
               </div>
             </div>
 
-            {/* Hero preview */}
+            {/* Hero image */}
             <Reveal className="relative flex-1 lg:max-w-xl">
               <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-amber-500/20 to-yellow-500/10 blur-2xl" />
-              <div className="relative">
-                <HeroMock />
+              <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl shadow-amber-500/10 ring-1 ring-amber-500/10">
+                <img
+                  src="/images/ca-firm/hero.webp"
+                  alt="Your CA Firm — hero preview"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  className="w-full object-cover object-top"
+                />
+                <div className="absolute top-0 left-0 right-0 flex items-center gap-1.5 bg-black/40 px-3 py-2 backdrop-blur-sm">
+                  <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-400/80" />
+                  <span className="ml-3 flex-1 rounded bg-white/10 px-2 py-0.5 text-[10px] text-white/60">
+                    ca-firm.codespanda.com
+                  </span>
+                </div>
               </div>
             </Reveal>
           </div>
