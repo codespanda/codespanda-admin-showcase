@@ -13,6 +13,30 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "personal-finance-crypto-dashboard",
+    title: "Personal Finance & Crypto Dashboard UI",
+    category: "Mobile App",
+    tags: ["Finance", "Crypto", "Dashboard", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27668841-Personal-Finance-Crypto-Dashboard-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48790917/file/4eddc5f1f6cff5f5f93fffbbf3f281d2.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48790917/file/4eddc5f1f6cff5f5f93fffbbf3f281d2.png?resize=1600x&vertical=center",
+    description: `A clean mobile finance experience designed to make portfolio tracking, spending insights, and everyday transactions easier to understand.
+
+The concept combines:
+
+• Portfolio Value & Performance Tracking
+• Crypto Asset Overview
+• Spending Analytics
+• Savings Goals
+• Recent Transactions
+• Quick Financial Actions
+• Simple Mobile Navigation
+
+The visual direction uses a bright, minimal interface with soft cards, rounded components, purple accents, and clear data visualization for a modern fintech experience.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "event-management",
     title: "Event Management Mobile App UI/UX Concept",
     category: "Mobile App",
