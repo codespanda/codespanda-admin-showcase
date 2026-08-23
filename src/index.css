@@ -140,6 +140,60 @@
   --ring: 38 75% 50%;
 }
 
+/* ── Restyle Razorpay's embedded payment button to match the site's own
+   "gradient" Button (Browse Templates), since Razorpay's widget can't be
+   themed from their dashboard. Their required "Secured by Razorpay"
+   trust line is kept, just restyled to sit quietly under the label
+   instead of stripped — removing it isn't ours to decide. ── */
+.razorpay-coffee-btn .razorpay-payment-button {
+  display: inline-flex;
+}
+.razorpay-coffee-btn a.PaymentButton {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  height: auto !important;
+  min-height: 3rem !important;
+  padding: 0.625rem 1.75rem !important;
+  border: none !important;
+  border-radius: 1rem !important;
+  background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary-end, var(--primary) / 0.72))) !important;
+  box-shadow: 0 10px 15px -3px hsl(var(--primary) / 0.25) !important;
+  transition: opacity 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease !important;
+}
+.razorpay-coffee-btn a.PaymentButton:hover {
+  opacity: 0.9;
+  box-shadow: 0 20px 25px -5px hsl(var(--primary) / 0.35) !important;
+  transform: translateY(-2px);
+}
+.razorpay-coffee-btn a.PaymentButton svg {
+  flex-shrink: 0;
+}
+.razorpay-coffee-btn a.PaymentButton svg path {
+  fill: hsl(var(--primary-foreground)) !important;
+}
+.razorpay-coffee-btn .PaymentButton-contents {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+}
+.razorpay-coffee-btn .PaymentButton-text {
+  font-family: inherit !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+.razorpay-coffee-btn .PaymentButton-securedBy {
+  font-family: inherit !important;
+  font-size: 0.6875rem !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  color: hsl(var(--primary-foreground) / 0.7) !important;
+}
+
 /* ── Scroll reveal animations (replaces framer-motion) ── */
 [data-reveal] {
   opacity: 0;
