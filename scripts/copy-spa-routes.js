@@ -85,6 +85,7 @@ const SHOTS = [
   { id: "fitequip",           title: "FitEquip – Fitness Equipment Shopping App",                                  ogImage: "https://cdn.dribbble.com/userupload/48774788/file/619bd3427cfb0151200fd5ed8bfb3a93.png?resize=1600x&vertical=center",  desc: "A clean, modern mobile e-commerce experience for discovering and purchasing fitness equipment." },
   { id: "event-management",   title: "Event Management Mobile App UI/UX Concept",                                  ogImage: "https://cdn.dribbble.com/userupload/48786630/file/5fc33c67c5a78ec4b02ebc7beea3cd47.png?resize=1600x&vertical=center",  desc: "A clean, modern mobile experience for event management — attendees, schedules, tickets, and revenue in one place." },
   { id: "personal-finance-crypto-dashboard", title: "Personal Finance & Crypto Dashboard UI",                        ogImage: "https://cdn.dribbble.com/userupload/48790917/file/4eddc5f1f6cff5f5f93fffbbf3f281d2.png?resize=1600x&vertical=center",  desc: "A clean mobile finance experience for portfolio tracking, crypto assets, spending insights, and everyday transactions." },
+  { id: "fitflow",            title: "FitFlow — Modern Fitness App UI",                                            ogImage: "https://cdn.dribbble.com/userupload/48797805/file/ec0964f9cb2409c10f8298070f50d8d0.png?resize=1600x&vertical=center",  desc: "A clean, premium dual-theme fitness dashboard — workout streaks, water intake, mindful minutes, and weekly progress." },
 ];
 
 // Static routes (non-shot pages)

@@ -13,6 +13,33 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "fitflow",
+    title: "FitFlow — Modern Fitness App UI",
+    category: "Mobile App",
+    tags: ["Fitness", "Wellness", "Dashboard", "Mobile"],
+    dribbbleUrl: "https://dribbble.com/shots/27670671-FitFlow-Modern-Fitness-App-UI",
+    imgUrl: "https://cdn.dribbble.com/userupload/48797805/file/ec0964f9cb2409c10f8298070f50d8d0.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48797805/file/ec0964f9cb2409c10f8298070f50d8d0.png?resize=1600x&vertical=center",
+    description: `A clean, premium fitness experience designed to make daily workouts feel simple and motivating.
+
+This concept explores a dual-theme fitness dashboard with:
+
+• 🏃 Personalized Daily Workout Focus
+• 🔥 Workout Streak & Activity Tracking
+• 💧 Water Intake Monitoring
+• 🧘 Mindful Minutes
+• 📊 Weekly Progress Visualization
+• 🏆 Workout Points & Achievements
+• 📅 Calendar-Based Activity Planning
+• 🌙 Dark & Light UI Experiences
+
+The goal was to balance strong visual hierarchy, wellness-focused interactions, and effortless navigation while keeping the interface energetic and approachable.
+
+Designed for modern fitness enthusiasts who want their progress to feel as motivating as the workout itself.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "personal-finance-crypto-dashboard",
     title: "Personal Finance & Crypto Dashboard UI",
     category: "Mobile App",

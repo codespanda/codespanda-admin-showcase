@@ -35,6 +35,7 @@ const SHOT_IDS = [
   "employee-mgmt", "fresh-grocery", "carwash-pro", "logistics-driver-management",
   "messaging-calling-app", "furniture-app", "ancient-wisdom", "healthcare-appointment",
   "food-delivery-concept", "fitequip", "event-management", "personal-finance-crypto-dashboard",
+  "fitflow",
 ];
 
 const BLOG_SLUGS = [
