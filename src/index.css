@@ -155,7 +155,12 @@
   gap: 0.5rem !important;
   height: auto !important;
   min-height: 3rem !important;
-  padding: 0.625rem 1.75rem !important;
+  /* No left padding here — Razorpay draws a fixed-size decorative flag/icon
+     via an absolutely-positioned ::before + <svg> that ignores this box's
+     padding entirely, so the reserved space for it lives on
+     .PaymentButton-contents below instead (padding-left, not padding here),
+     otherwise it overlaps and clips the first letter of the label. */
+  padding: 0.625rem 1.75rem 0.625rem 0 !important;
   border: none !important;
   border-radius: 1rem !important;
   background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary-end, var(--primary) / 0.72))) !important;
@@ -179,7 +184,9 @@
   align-items: flex-start !important;
   gap: 0 !important;
   margin: 0 !important;
-  padding: 0 !important;
+  /* Reserves room for Razorpay's fixed ~47px-wide icon/flag graphic (see
+     note on a.PaymentButton above) so the label text starts clear of it. */
+  padding: 0 0 0 3.25rem !important;
 }
 .razorpay-coffee-btn .PaymentButton-text {
   font-family: inherit !important;
@@ -200,7 +207,7 @@
 .razorpay-coffee-btn--sm a.PaymentButton {
   gap: 0.25rem !important;
   min-height: 2rem !important;
-  padding: 0.125rem 0.75rem !important;
+  padding: 0.125rem 0.75rem 0.125rem 0 !important;
   border-radius: var(--radius) !important;
 }
 .razorpay-coffee-btn--sm a.PaymentButton svg {
