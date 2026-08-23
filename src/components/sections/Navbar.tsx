@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, Moon, Sun, ExternalLink } from "lucide-react";
+import { Menu, Moon, Sun, ExternalLink, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -10,11 +10,43 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Logo } from "@/components/shared/Logo";
 import { RazorpayCoffeeButton } from "@/components/shared/RazorpayCoffeeButton";
 import { NAV_LINKS } from "@/lib/constants";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
+
+function BuyMeCoffeeButton({ className }: { className?: string }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button variant="outline" size="sm" className={cn("gap-1.5", className)}>
+          <Coffee className="h-4 w-4" />
+          Buy Me a Coffee
+        </Button>
+      </DialogTrigger>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Buy Me a Coffee</DialogTitle>
+          <DialogDescription>
+            Enjoying the templates? A small tip keeps them free and helps fund new ones.
+          </DialogDescription>
+        </DialogHeader>
+        <div className="flex justify-center py-2">
+          <RazorpayCoffeeButton size="lg" />
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
 
 function ThemeToggle() {
   const { toggleTheme } = useTheme();
@@ -97,7 +129,7 @@ export function Navbar() {
               Hire Me
             </a>
           </Button>
-          <RazorpayCoffeeButton size="sm" />
+          <BuyMeCoffeeButton />
         </div>
 
         {/* Mobile */}
