@@ -18,6 +18,108 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "why-we-built-codespanda",
+    title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free",
+    excerpt: "There are plenty of free admin dashboard templates on the internet. But 'free' often doesn't mean production-ready — here's the frustration that became the starting point for CodesPanda.",
+    category: "Story",
+    tags: ["CodesPanda", "Admin Dashboard", "React", "Tailwind CSS", "SaaS"],
+    author: "CodesPanda",
+    date: "2026-08-23",
+    readTime: "6 min read",
+    gradient: "from-indigo-500 to-purple-600",
+    icon: "Sparkles",
+    coverImage: "/images/blogs/why-we-built-codespanda.webp",
+    content: `There are plenty of free admin dashboard templates on the internet.
+
+But when we started building web applications, we noticed a problem: "Free" often didn't mean production-ready.
+
+Some templates looked great in screenshots but felt outdated when you actually used them. Others had incomplete pages, inconsistent components, messy code, or locked the most useful features behind a premium version.
+
+That frustration became the starting point for CodesPanda.
+
+## We Wanted Better, Not Just Free
+
+Every admin template we shipped started the same way: we needed one ourselves, couldn't find one that didn't feel like a compromise, and built it instead.
+
+We believe developers shouldn't have to choose between:
+
+- A beautiful interface and clean code
+- Free access and useful features
+- Modern design and practical usability
+- A quick starting point and a scalable foundation
+
+So we decided to build dashboards that aim to deliver all of them.
+
+CodesPanda focuses on modern admin templates and UI kits for applications such as SaaS, CRM, HR, POS, analytics, and other web products, with technologies including React, Vite, and Tailwind.
+
+## What Makes a Dashboard Feel "Free"?
+
+A dashboard can technically be free and still feel unfinished.
+
+You know the feeling. A beautiful dashboard preview. Then you download it. The table contains three fake rows. The chart is just a placeholder. Several buttons don't do anything. The responsive layout breaks. The design system isn't consistent.
+
+And suddenly, the "free" template costs you hours of development time.
+
+We don't think free software should feel like a demo.
+
+## Our Design Philosophy
+
+At CodesPanda, we care about the details developers interact with every day.
+
+## 1. Modern UI
+
+Admin interfaces don't have to look boring. We aim for clean layouts, thoughtful spacing, strong typography, useful visual hierarchy, and interfaces that feel at home in modern SaaS products.
+
+## 2. Reusable Components
+
+A dashboard isn't just a homepage. It needs tables, forms, charts, cards, navigation, authentication screens, settings, notifications, and other building blocks that can work together.
+
+## 3. Developer-Friendly Foundations
+
+A beautiful UI is only useful if developers can actually work with it. Our goal is to make templates easier to understand, customize, extend, and integrate into real projects.
+
+## 4. Responsive Experiences
+
+Admin applications aren't always used on a large desktop monitor. Responsive layouts matter when teams access dashboards from laptops, tablets, and smaller screens.
+
+## 5. A Real Starting Point
+
+We don't want CodesPanda to be the final destination for your application. We want it to be the starting point that saves you time.
+
+Instead of spending days creating navigation, layouts, tables, cards, forms, and dashboard structures from scratch, developers can focus on the product logic that actually makes their application unique.
+
+## Free Should Help Developers Move Faster
+
+The developer ecosystem is full of incredible open-source and free resources. Today's dashboard landscape includes free options across technologies such as Bootstrap, React, Vue, Angular, Tailwind, Svelte, and others.
+
+We don't want to add another template just for the sake of adding another template. We want to contribute something useful.
+
+- Something a freelancer can use for a client project
+- Something a startup can use for an MVP
+- Something a designer can use to explore an idea
+- Something a developer can customize instead of rebuilding from zero
+
+## Why CodesPanda?
+
+Because we believe developers deserve better starting points.
+
+Not every project needs a huge enterprise design system. Not every developer has the time to build an admin interface from scratch. And not every useful template needs to be expensive.
+
+That's why we're building CodesPanda around a simple idea: free should mean accessible — not unfinished.
+
+We're continuing to improve our templates, components, UI patterns, and developer experience as we learn from the people who use them.
+
+## What's Next?
+
+CodesPanda is more than a collection of dashboard screens. It's an ongoing experiment in how much useful design and development work we can make accessible to developers.
+
+We're building for developers, designers, startups, freelancers, and makers.
+
+If you're building a SaaS product, CRM, analytics platform, internal tool, e-commerce application, or your next side project, we hope CodesPanda gives you a head start.
+
+Explore the templates, use what helps, customize what you need, and build something great.`,
+  },
+  {
     slug: "will-ai-replace-junior-developers",
     title: "Will AI Replace Junior Developers?",
     excerpt: "AI can now generate components, write functions, and debug errors in minutes. AI may replace some junior-level tasks, but it won't eliminate the need for junior developers.",
@@ -940,36 +1042,6 @@ The opportunity is enormous for businesses that can transform AI from a simple c
 If you're planning to build an AI-powered SaaS, business automation platform, accounting application, customer-support system, or custom AI solution, the best place to start is with the problem — not the technology.
 
 What AI-powered application would you build today?`,
-  },
-  {
-    slug: "why-we-built-codespanda",
-    title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free",
-    excerpt: "Every admin template we shipped started the same way — we needed one ourselves, couldn't find one that didn't feel like a compromise, and built it instead.",
-    category: "Story",
-    tags: ["CodesPanda", "Templates", "Story"],
-    author: "CodesPanda",
-    date: "2026-06-02",
-    readTime: "5 min read",
-    gradient: "from-indigo-500 to-purple-600",
-    icon: "Sparkles",
-    content: `Most "free admin template" libraries make you pay eventually — in missing pages, in components that don't quite work together, in a design system that falls apart the moment you add your own feature. We got tired of that trade-off, so CodesPanda started as a rule, not a roadmap: every template has to be something we'd actually want to build a real product on top of.
-
-## The gap we kept running into
-
-Freelance and internal-tool work kept putting us in the same spot — a client needed an admin panel *now*, and the choices were a bloated enterprise UI kit, a half-finished free template, or starting from a blank Vite project again. None of those are good uses of a sprint.
-
-## What "production-ready" actually means to us
-
-- Every page is wired to real (if mocked) data — no lorem-ipsum placeholders pretending to be a table
-- Dark mode isn't bolted on afterward; it's a token swap because the theme was built that way from day one
-- TypeScript throughout, so the editor catches the mistakes before your users do
-- No paid component library hiding behind the free template
-
-## Where this is going
-
-Alpine, Brisk, Cornerstone, Finovo — each template started from a real use case (HR, CRM, SaaS billing, accounting) rather than a generic "admin dashboard" brief. That's slower than shipping one template and reskinning it six times, but it's the only way the pages end up actually useful instead of just good-looking in a screenshot.
-
-If there's a domain you keep needing an admin panel for and nobody's built a decent free one, that's usually a good sign it's next on our list.`,
   },
   {
     slug: "shadcn-vs-mui-vs-antd",
