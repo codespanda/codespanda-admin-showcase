@@ -3,7 +3,6 @@ import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Counter } from "@/components/shared/Counter";
-import { RazorpayCoffeeButton } from "@/components/shared/RazorpayCoffeeButton";
 import { HERO_STATS } from "@/lib/data";
 
 function MiniFrame({
@@ -98,7 +97,6 @@ export function Hero() {
                 <ArrowRight className="transition-transform group-hover:translate-x-0.5" />
               </Link>
             </Button>
-            <RazorpayCoffeeButton />
           </div>
 
           <dl className="mt-12 grid max-w-md grid-cols-2 gap-6 sm:grid-cols-4">

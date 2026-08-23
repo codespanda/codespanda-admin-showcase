@@ -11,6 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { Logo } from "@/components/shared/Logo";
+import { RazorpayCoffeeButton } from "@/components/shared/RazorpayCoffeeButton";
 import { NAV_LINKS } from "@/lib/constants";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
@@ -96,6 +97,7 @@ export function Navbar() {
               Hire Me
             </a>
           </Button>
+          <RazorpayCoffeeButton size="sm" />
         </div>
 
         {/* Mobile */}
