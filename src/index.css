@@ -178,6 +178,8 @@
   flex-direction: column !important;
   align-items: flex-start !important;
   gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 .razorpay-coffee-btn .PaymentButton-text {
   font-family: inherit !important;
@@ -196,20 +198,20 @@
 
 /* Compact variant — sized to match the navbar's "sm" Button (Hire Me). */
 .razorpay-coffee-btn--sm a.PaymentButton {
-  gap: 0.375rem !important;
-  min-height: 2.25rem !important;
-  padding: 0.25rem 1rem !important;
+  gap: 0.25rem !important;
+  min-height: 2rem !important;
+  padding: 0.125rem 0.75rem !important;
   border-radius: var(--radius) !important;
 }
 .razorpay-coffee-btn--sm a.PaymentButton svg {
-  width: 13px !important;
-  height: 15px !important;
+  width: 11px !important;
+  height: 13px !important;
 }
 .razorpay-coffee-btn--sm .PaymentButton-text {
-  font-size: 0.8125rem !important;
+  font-size: 0.75rem !important;
 }
 .razorpay-coffee-btn--sm .PaymentButton-securedBy {
-  font-size: 0.5rem !important;
+  font-size: 0.4375rem !important;
 }
 
 /* ── Scroll reveal animations (replaces framer-motion) ── */
