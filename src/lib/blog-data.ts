@@ -18,6 +18,141 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "admin-dashboard-design-mistakes",
+    title: "10 Mistakes to Avoid When Designing an Admin Dashboard",
+    excerpt: "An admin dashboard is more than a collection of cards, charts, tables, and menus — it's a workspace. Here are 10 common mistakes to avoid when designing one.",
+    category: "Design",
+    tags: ["UI Design", "Dashboards", "UX", "Admin Dashboard"],
+    author: "CodesPanda",
+    date: "2026-08-24",
+    readTime: "8 min read",
+    gradient: "from-emerald-500 to-teal-600",
+    icon: "Palette",
+    coverImage: "/images/blogs/admin-dashboard-design-mistakes.webp",
+    content: `An admin dashboard is more than a collection of cards, charts, tables, and menus.
+
+It is a workspace where users monitor information, make decisions, manage records, and take action. When the design is confusing, even powerful functionality can become frustrating.
+
+At CodesPanda, we believe a great admin dashboard should make complex information feel simple, organized, and actionable.
+
+Here are 10 common mistakes to avoid when designing an admin dashboard.
+
+## 1. Showing Too Much Information
+
+One of the biggest dashboard mistakes is trying to display everything on the first screen.
+
+Too many KPIs, charts, tables, notifications, and widgets create visual overload and make it difficult to identify what actually matters.
+
+Better approach: prioritize the most important information and use progressive disclosure for secondary details. A dashboard should answer the user's most important questions first.
+
+## 2. Poor Visual Hierarchy
+
+If every element has the same size, color, and visual weight, nothing stands out.
+
+Users should immediately understand:
+
+- What is most important?
+- What requires attention?
+- What action should I take?
+- Where can I find more details?
+
+Use typography, spacing, positioning, and scale to establish a clear hierarchy.
+
+## 3. Overusing Colors
+
+Using multiple bright colors throughout a dashboard may make the interface look exciting, but it can quickly become distracting.
+
+Color should communicate meaning — not simply decoration. For example: green for success, orange for warning, red for error, blue for informational.
+
+Keep your palette consistent and reserve strong colors for important states or actions.
+
+## 4. Complicated Navigation
+
+A dashboard can contain dozens or even hundreds of features. Putting every option into one massive sidebar makes navigation difficult.
+
+Group features according to user goals and workflows. For example, "Sales → Customers → Orders → Invoices" is usually easier to understand than an unstructured list of unrelated pages.
+
+Good information architecture reduces the amount users have to remember.
+
+## 5. Ignoring Empty States
+
+What happens when a user has no transactions, projects, customers, or reports?
+
+A blank screen is not an effective answer. Instead, use meaningful empty states that explain:
+
+- What is missing
+- Why the area is empty
+- What the user can do next
+
+An empty state can become an onboarding opportunity rather than a dead end.
+
+## 6. Designing Without Loading and Error States
+
+Real applications don't always load instantly. APIs fail. Networks disconnect. Data may be unavailable.
+
+Designing only the "perfect data loaded" state creates a fragile user experience. Include:
+
+- Loading indicators
+- Skeleton screens
+- Error messages
+- Retry actions
+- Permission states
+- No-data states
+
+Users should always understand what is happening.
+
+## 7. Making Tables Difficult to Scan
+
+Admin dashboards often contain large amounts of tabular data. A poorly designed table can turn a simple task into a frustrating experience.
+
+Consider:
+
+- Clear column hierarchy
+- Consistent alignment
+- Search and filters
+- Sorting
+- Pagination
+- Appropriate row spacing
+- Sticky headers where useful
+- Clear actions
+
+Don't make users hunt through a wall of numbers to find one record.
+
+## 8. Designing for Desktop Only
+
+Many admin interfaces are primarily used on desktops, but that doesn't mean mobile and smaller screens can be ignored.
+
+Users may need to check notifications, approve requests, review metrics, or perform quick actions from a tablet or phone. A responsive dashboard should adapt its navigation, tables, cards, charts, forms, and actions to different screen sizes.
+
+## 9. Using Charts Just Because They Look Good
+
+Not every number needs a graph. A beautifully designed chart is still useless if it doesn't help users understand something faster.
+
+Before adding a visualization, ask: "What decision will this chart help the user make?"
+
+If the answer is unclear, a simple number, comparison, or table may communicate the information better.
+
+## 10. Forgetting Accessibility
+
+A dashboard should work for as many users as possible.
+
+Don't rely exclusively on color to communicate status. Provide sufficient contrast, readable typography, visible focus states, meaningful labels, and keyboard-friendly interactions.
+
+Accessibility isn't something to add at the end of the project. It should be considered from the beginning.
+
+## The Goal: Make Complexity Feel Simple
+
+A great admin dashboard doesn't try to impress users with the number of components on the screen. It helps them accomplish their work faster.
+
+The best dashboards combine clear hierarchy, simple navigation, useful data, consistent interactions, accessibility, and actionable insights.
+
+Before launching your next admin dashboard, ask yourself: can a new user understand what matters within a few seconds?
+
+If the answer is no, the solution may not be adding more features. It may be removing unnecessary complexity.
+
+At CodesPanda, we're building admin templates designed to help developers create clean, modern, production-ready interfaces without starting every dashboard from scratch.`,
+  },
+  {
     slug: "why-we-built-codespanda",
     title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free",
     excerpt: "There are plenty of free admin dashboard templates on the internet. But 'free' often doesn't mean production-ready — here's the frustration that became the starting point for CodesPanda.",
@@ -1075,61 +1210,6 @@ This is the part people miss — shadcn/ui isn't a package you install, it's com
 ## Why most of our templates use it
 
 Every CodesPanda template ships with real customization in mind — swap the theme tokens, adapt a table, restyle a card — and shadcn/ui is the only one of the three where that's a five-minute edit instead of a theming-API archaeology dig. It's not the right call for every project, but for a template meant to be a *starting point*, owning the components beats renting them.`,
-  },
-  {
-    slug: "admin-dashboard-design-mistakes",
-    title: "10 Mistakes to Avoid When Designing an Admin Dashboard",
-    excerpt: "Dense data screens forgive bad decisions less than marketing pages do. Here's what we've had to walk back across a dozen dashboard builds.",
-    category: "Design",
-    tags: ["UI Design", "Dashboards", "UX"],
-    author: "CodesPanda",
-    date: "2026-07-05",
-    readTime: "8 min read",
-    gradient: "from-emerald-500 to-teal-600",
-    icon: "Palette",
-    content: `A landing page hides its sins behind whitespace and a hero image. A dashboard doesn't — every spacing decision, every color choice, gets multiplied across fifty rows of data and stared at for eight hours a day. These are the mistakes that actually hurt once real data and real usage show up.
-
-## 1. Designing for the empty state, not the full one
-
-A table with three rows of sample data looks nothing like the same table with three hundred. Design for the dense, ugly, real version first — the empty state is the easy part to fix afterward.
-
-## 2. Too many accent colors
-
-If every KPI card gets its own gradient, none of them stand out. Pick one primary accent and reserve color for status (success/warning/error), not decoration.
-
-## 3. Charts that prioritize style over legibility
-
-3D pie charts and heavy drop shadows look impressive in a portfolio shot and are actively hostile to someone trying to compare two bars at a glance. Flat, high-contrast, labeled — every time.
-
-## 4. Ignoring keyboard and table density
-
-Power users live in dense tables and keyboard shortcuts, not spacious cards. A dashboard aimed at daily use needs a compact density option, not just the airy default that demos well.
-
-## 5. Inconsistent spacing scale
-
-Mixing 12px, 14px, and 18px gaps across a page reads as "unfinished" even when nobody can articulate why. Pick a spacing scale (4/8/12/16/24/32) and never step outside it.
-
-## 6. Notifications that block the workflow
-
-A modal for every save confirmation trains users to click through without reading. Reserve modals for destructive or irreversible actions; use inline or toast feedback for everything else.
-
-## 7. Dark mode as an afterthought
-
-Bolting dark mode on with a single CSS filter produces muddy grays and broken contrast. It has to be planned as a token system from the start, not patched in after launch.
-
-## 8. Sidebar navigation with no hierarchy
-
-Twenty flat links in a sidebar is not navigation, it's a list. Group by function, collapse secondary items, and make the current section unmistakable.
-
-## 9. Forgetting loading and error states
-
-Every async table, chart, and card needs a designed loading skeleton and error state — not a blank rectangle or an unstyled browser alert.
-
-## 10. Optimizing only for the happy path
-
-Long names overflow. Zero-value states look broken. Permission-denied screens get forgotten entirely. The edge cases are where a dashboard's design quality actually gets tested.
-
-None of these are exotic — they're the boring, unglamorous decisions that separate a dashboard that demos well from one that survives six months of real use.`,
   },
   {
     slug: "figma-to-production-workflow",
