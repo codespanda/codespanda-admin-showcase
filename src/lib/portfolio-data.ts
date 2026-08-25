@@ -13,6 +13,31 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "rsvp-event-signin",
+    title: "RSVP — Event Management Sign-In Experience",
+    category: "Web App",
+    tags: ["Events", "Authentication", "Sign In", "Web App"],
+    dribbbleUrl: "https://dribbble.com/shots/27677494-RSVP-Event-Management-Sign-In-Experience",
+    imgUrl: "https://cdn.dribbble.com/userupload/48822567/file/9e8e12a819e1a52e0375b0fb9cf1814b.png?format=webp&resize=400x300&vertical=center",
+    fullImgUrl: "https://cdn.dribbble.com/userupload/48822567/file/9e8e12a819e1a52e0375b0fb9cf1814b.png?resize=1600x&vertical=center",
+    gallery: [
+      "https://cdn.dribbble.com/userupload/48822568/file/edebbceec95e43efe21dca0bc08e8f0e.png?resize=1600x&vertical=center",
+    ],
+    description: `A clean, modern authentication experience designed for an event management platform.
+
+The concept combines a warm, immersive event visual with a focused sign-in/sign-up interface to create a balance between emotion and usability.
+
+• ✨ Easy Event Planning
+• 👥 Guest Management
+• 📊 Smart Insights
+• 🔐 Simple Authentication
+• 🎨 Purple-Focused Visual Identity
+
+Designed to make event planning feel simple, organized, and welcoming.
+
+🌐 codespanda.com`,
+  },
+  {
     id: "fitflow",
     title: "FitFlow — Modern Fitness App UI",
     category: "Mobile App",

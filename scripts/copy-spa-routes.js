@@ -86,6 +86,7 @@ const SHOTS = [
   { id: "event-management",   title: "Event Management Mobile App UI/UX Concept",                                  ogImage: "https://cdn.dribbble.com/userupload/48786630/file/5fc33c67c5a78ec4b02ebc7beea3cd47.png?resize=1600x&vertical=center",  desc: "A clean, modern mobile experience for event management — attendees, schedules, tickets, and revenue in one place." },
   { id: "personal-finance-crypto-dashboard", title: "Personal Finance & Crypto Dashboard UI",                        ogImage: "https://cdn.dribbble.com/userupload/48790917/file/4eddc5f1f6cff5f5f93fffbbf3f281d2.png?resize=1600x&vertical=center",  desc: "A clean mobile finance experience for portfolio tracking, crypto assets, spending insights, and everyday transactions." },
   { id: "fitflow",            title: "FitFlow — Modern Fitness App UI",                                            ogImage: "https://cdn.dribbble.com/userupload/48797805/file/ec0964f9cb2409c10f8298070f50d8d0.png?resize=1600x&vertical=center",  desc: "A clean, premium dual-theme fitness dashboard — workout streaks, water intake, mindful minutes, and weekly progress." },
+  { id: "rsvp-event-signin",  title: "RSVP — Event Management Sign-In Experience",                                 ogImage: "https://cdn.dribbble.com/userupload/48822567/file/9e8e12a819e1a52e0375b0fb9cf1814b.png?resize=1600x&vertical=center",  desc: "A clean, modern authentication experience for an event management platform — a warm event visual paired with a focused sign-in/sign-up flow." },
 ];
 
 // Static routes (non-shot pages)

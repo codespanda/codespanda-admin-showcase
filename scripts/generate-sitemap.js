@@ -36,6 +36,7 @@ const SHOT_IDS = [
   "messaging-calling-app", "furniture-app", "ancient-wisdom", "healthcare-appointment",
   "food-delivery-concept", "fitequip", "event-management", "personal-finance-crypto-dashboard",
   "fitflow",
+  "rsvp-event-signin",
 ];
 
 const BLOG_SLUGS = [
