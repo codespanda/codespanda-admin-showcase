@@ -119,7 +119,7 @@ const BLOG_POSTS = [
   { slug: "why-we-built-codespanda",             title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free", desc: "There are plenty of free admin dashboard templates on the internet. But 'free' often doesn't mean production-ready — here's the frustration that became the starting point for CodesPanda.", ogImage: `${BASE}/images/blogs/why-we-built-codespanda.webp` },
   { slug: "shadcn-vs-mui-vs-antd",                title: "shadcn/ui vs Material UI vs Ant Design: Picking a Component Library in 2026", desc: "Choosing a React component library in 2026 isn't about which one has the most components — it's about which approach gives your team the right balance of speed, customization, and long-term control.", ogImage: `${BASE}/images/blogs/shadcn-vs-mui-vs-antd.webp` },
   { slug: "admin-dashboard-design-mistakes",      title: "10 Mistakes to Avoid When Designing an Admin Dashboard", desc: "An admin dashboard is more than a collection of cards, charts, tables, and menus — it's a workspace. Here are 10 common mistakes to avoid when designing one.", ogImage: `${BASE}/images/blogs/admin-dashboard-design-mistakes.webp` },
-  { slug: "figma-to-production-workflow",         title: "From Figma to Production: Our Design-to-Code Workflow", desc: "How a template goes from a Figma file to a shipped, typed, responsive React page — and where we deliberately skip \"pixel-perfect\" for speed." },
+  { slug: "figma-to-production-workflow",         title: "From Figma to Production: Our Design-to-Code Workflow", desc: "Turning a Figma design into a production-ready website is about much more than translating pixels into HTML and CSS. Here's the workflow we follow to move from Figma concepts to production-ready interfaces.", ogImage: `${BASE}/images/blogs/figma-to-production-workflow.webp` },
   { slug: "why-vite-for-admin-panels",            title: "Why Vite Is the Right Call for a Modern React Admin Panel", desc: "Cold start, HMR speed, and a build output that doesn't fight you — the practical reasons every CodesPanda template is built on Vite." },
   { slug: "theme-shadcn-dashboard-in-10-minutes", title: "How to Theme a shadcn/ui Dashboard in Under 10 Minutes", desc: "A practical walkthrough of swapping every CodesPanda template's color system to your own brand — one CSS file, no component edits." },
 ];
@@ -259,6 +259,7 @@ const HERO_IMAGE = {
   "/blog/why-we-built-codespanda": "/images/blogs/why-we-built-codespanda.webp",
   "/blog/admin-dashboard-design-mistakes": "/images/blogs/admin-dashboard-design-mistakes.webp",
   "/blog/shadcn-vs-mui-vs-antd": "/images/blogs/shadcn-vs-mui-vs-antd.webp",
+  "/blog/figma-to-production-workflow": "/images/blogs/figma-to-production-workflow.webp",
 };
 
 // Route → JSON-LD @type for the structured-data block injected statically

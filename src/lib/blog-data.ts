@@ -18,6 +18,133 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "figma-to-production-workflow",
+    title: "From Figma to Production: Our Design-to-Code Workflow",
+    excerpt: "Turning a Figma design into a production-ready website is about much more than translating pixels into HTML and CSS. Here's the workflow we follow to move from Figma concepts to production-ready interfaces.",
+    category: "Design",
+    tags: ["Figma", "Workflow", "React", "Design Systems"],
+    author: "CodesPanda",
+    date: "2026-08-26",
+    readTime: "9 min read",
+    gradient: "from-pink-500 to-rose-600",
+    icon: "Figma",
+    coverImage: "/images/blogs/figma-to-production-workflow.webp",
+    content: `Turning a Figma design into a production-ready website or application is about much more than simply translating pixels into HTML and CSS.
+
+A great design-to-code workflow creates a bridge between design, development, performance, accessibility, and scalability.
+
+Here's the workflow we follow to move from Figma concepts to production-ready interfaces.
+
+## 1. Start With the Design System
+
+Before writing code, we review the Figma file for:
+
+- Typography
+- Colors
+- Spacing
+- Grid systems
+- Border radius
+- Shadows
+- Components
+- Responsive behavior
+- States and interactions
+
+The goal is to identify reusable design patterns before they become duplicated code.
+
+## 2. Break Designs Into Components
+
+We don't treat every Figma screen as a separate page. Instead, we identify reusable components such as:
+
+- Navigation bars
+- Buttons
+- Cards
+- Forms
+- Tables
+- Modals
+- Dropdowns
+- Alerts
+- Dashboard widgets
+
+This makes the final codebase easier to maintain and allows design changes to propagate consistently.
+
+## 3. Define Responsive Behavior
+
+A Figma design may look perfect at one resolution, but production products need to work across many screen sizes. We determine how each component behaves from desktop to tablet to mobile, looking for changes in:
+
+- Grid columns
+- Typography
+- Navigation
+- Card layouts
+- Padding
+- Image sizes
+- Table behavior
+- Form layouts
+
+Responsive design is planned — not added as an afterthought.
+
+## 4. Choose the Right Technology
+
+The design itself doesn't dictate the entire technology stack. Depending on the project, we might use technologies such as React, Next.js, Tailwind CSS, shadcn/ui, TypeScript, component libraries, and API integrations.
+
+The objective is to choose tools that support the product's long-term requirements rather than simply matching the visual design.
+
+## 5. Build the Component Foundation
+
+Before building complete pages, we establish the foundation: design tokens, then components, then sections, then pages. For example, a Button becomes a Form, which becomes a Login Form, which becomes the Login Page.
+
+This approach keeps the interface consistent and reduces repetitive development work.
+
+## 6. Convert Figma Into Real Interfaces
+
+Now the visual implementation begins. We translate Figma into components, layout, interactions, and functional UI. But pixel accuracy isn't the only goal — the interface also needs to be:
+
+- Accessible
+- Responsive
+- Fast
+- Maintainable
+- SEO-friendly where applicable
+- Consistent with the design system
+
+## 7. Test Against the Original Design
+
+One of the most important steps is visual comparison. We compare the implementation against the Figma design and check:
+
+- Spacing
+- Typography
+- Alignment
+- Colors
+- Component dimensions
+- Icons
+- Responsive layouts
+- Hover and active states
+
+Small inconsistencies can make an otherwise good interface feel unfinished.
+
+## 8. Add Real Data and Interactions
+
+A static Figma design doesn't show everything a real product needs. Production UI must handle loading, success, empty, error, disabled, and validation states.
+
+For example, a dashboard shouldn't only show what happens when data exists. It should also answer: what does the user see when there is no data? What happens when an API fails? What happens while the page is loading? These states are essential for production-quality UX.
+
+## 9. Optimize Performance
+
+Once the interface works, we optimize it. This can include image optimization, code splitting, lazy loading, font optimization, reducing unnecessary JavaScript, component optimization, and improving Core Web Vitals.
+
+A beautiful interface that loads slowly isn't a great user experience.
+
+## 10. Final QA Before Production
+
+Before deployment, we test across different browsers, desktop resolutions, tablets, mobile devices, different interaction states, and accessibility requirements. We also check for visual regressions and functional issues.
+
+## The Complete Workflow
+
+Our design-to-code process can be summarized as: Figma, design system, components, responsive architecture, development, real data, QA, performance, production.
+
+The best design-to-code workflow isn't about converting a Figma file into code as quickly as possible. It's about creating a reliable system where design and development work together.
+
+Because the real goal isn't simply "make the website look like Figma." It's to turn the design into a scalable product that works beautifully in the real world.`,
+  },
+  {
     slug: "shadcn-vs-mui-vs-antd",
     title: "shadcn/ui vs Material UI vs Ant Design: Picking a Component Library in 2026",
     excerpt: "Choosing a React component library in 2026 isn't about which one has the most components — it's about which approach gives your team the right balance of speed, customization, and long-term control.",
@@ -1301,44 +1428,6 @@ The opportunity is enormous for businesses that can transform AI from a simple c
 If you're planning to build an AI-powered SaaS, business automation platform, accounting application, customer-support system, or custom AI solution, the best place to start is with the problem — not the technology.
 
 What AI-powered application would you build today?`,
-  },
-  {
-    slug: "figma-to-production-workflow",
-    title: "From Figma to Production: Our Design-to-Code Workflow",
-    excerpt: "How a template goes from a Figma file to a shipped, typed, responsive React page — and where we deliberately skip \"pixel-perfect\" for speed.",
-    category: "Design",
-    tags: ["Figma", "Workflow", "React"],
-    author: "CodesPanda",
-    date: "2026-07-20",
-    readTime: "6 min read",
-    gradient: "from-pink-500 to-rose-600",
-    icon: "Figma",
-    content: `Every CodesPanda template goes through the same four stages before it ships. None of them are novel on their own, but the order and the discipline around each stage is what keeps templates consistent across a dozen different domains.
-
-## 1. Structure before style
-
-We block out layout, spacing, and information hierarchy in grayscale first — no color, no icons, no final copy. If a screen doesn't work in grayscale, more color and polish won't fix it; it'll just hide the problem for a while.
-
-## 2. One source-of-truth token file
-
-Colors, radii, spacing, and type scale get defined once, in Figma variables that map directly onto our Tailwind theme tokens. This is the step that makes "swap the theme in five minutes" actually true later — because design and code were reading from the same source from day one.
-
-## 3. Build with real (mocked) data early
-
-We resist finalizing visual polish until real-shaped mock data is in every table, card, and chart. A design that only survives with three tidy rows of sample data isn't done — it's decorated.
-
-## 4. Deliberately skip pixel-perfect
-
-This is the unpopular one: we don't chase 1:1 pixel parity between Figma and the shipped page. Browsers render text, shadows, and gradients slightly differently than Figma does, and burning hours closing a 2px gap nobody will ever notice is time not spent on the parts that matter — keyboard navigation, loading states, responsive breakpoints.
-
-## What actually gets the attention instead
-
-- Real breakpoint testing on actual devices, not just resizing a browser window
-- Focus states and keyboard traversal order
-- Dark mode contrast checked against WCAG, not eyeballed
-- Loading and error states for every async surface
-
-The result isn't a design that's *more* accurate — it's one where the hours went into the things a user actually notices when they're trying to get work done, not the things a designer notices when they zoom to 400%.`,
   },
   {
     slug: "why-vite-for-admin-panels",
