@@ -20,6 +20,7 @@ import {
 } from "@/components/ui/dialog";
 import { Logo } from "@/components/shared/Logo";
 import { RazorpayCoffeeButton } from "@/components/shared/RazorpayCoffeeButton";
+import { PayPalCoffeeButton } from "@/components/shared/PayPalCoffeeButton";
 import { NAV_LINKS } from "@/lib/constants";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
@@ -33,15 +34,21 @@ function BuyMeCoffeeButton({ className }: { className?: string }) {
           Buy Me a Coffee
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent className="max-h-[85vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Buy Me a Coffee</DialogTitle>
           <DialogDescription>
             Enjoying the templates? A small tip keeps them free and helps fund new ones.
           </DialogDescription>
         </DialogHeader>
-        <div className="flex justify-center py-2">
+        <div className="flex flex-col items-center gap-4 py-2">
           <RazorpayCoffeeButton size="lg" />
+          <div className="flex w-full items-center gap-3 text-xs text-muted-foreground">
+            <div className="h-px flex-1 bg-border" />
+            or
+            <div className="h-px flex-1 bg-border" />
+          </div>
+          <PayPalCoffeeButton />
         </div>
       </DialogContent>
     </Dialog>

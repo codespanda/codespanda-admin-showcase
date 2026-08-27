@@ -221,6 +221,15 @@
   font-size: 0.4375rem !important;
 }
 
+/* ── PayPal's hosted button renders into this container asynchronously —
+   reserve space up front so the "Buy Me a Coffee" popup doesn't jump/collapse
+   while the SDK is still loading it in. ── */
+.paypal-coffee-btn {
+  min-height: 2.75rem;
+  width: 100%;
+  max-width: 16rem;
+}
+
 /* ── Scroll reveal animations (replaces framer-motion) ── */
 [data-reveal] {
   opacity: 0;
