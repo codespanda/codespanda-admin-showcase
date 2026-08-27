@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
   LayoutDashboard, Users, DollarSign, Handshake, ShoppingCart,
-  Factory, HeartPulse, GraduationCap, Bot, Car, MapPin, ChevronLeft, ChevronRight, type LucideIcon,
+  Factory, HeartPulse, GraduationCap, Bot, Car, MapPin, Landmark, ChevronLeft, ChevronRight, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -23,6 +23,7 @@ const CATEGORY_DEFS: CategoryDef[] = [
   { id: "admin-dashboard",      label: "Admin Dashboard",      icon: LayoutDashboard, color: "text-indigo-500" },
   { id: "hr-management",        label: "HR Management",        icon: Users,           color: "text-violet-500" },
   { id: "finance-accounting",   label: "Finance & Accounting", icon: DollarSign,      color: "text-emerald-500" },
+  { id: "professional",         label: "Professional",         icon: Landmark,        color: "text-amber-500" },
   { id: "crm",                  label: "CRM",                  icon: Handshake,       color: "text-orange-500" },
   { id: "erp-systems",          label: "ERP Systems",          icon: Factory,         color: "text-blue-500" },
   { id: "healthcare",           label: "Healthcare",           icon: HeartPulse,      color: "text-rose-500" },
@@ -34,6 +35,7 @@ const CATEGORY_DEFS: CategoryDef[] = [
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
+  "ca-firm":                ["professional"],
   "hamara-bharat":          ["travel"],
   "finovo":                 ["finance-accounting", "erp-systems", "admin-dashboard"],
   "eva-autocare":           ["automotive", "admin-dashboard"],
