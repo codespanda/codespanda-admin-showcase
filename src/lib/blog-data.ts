@@ -18,6 +18,136 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: "theme-shadcn-dashboard-in-10-minutes",
+    title: "How to Theme a shadcn/ui Dashboard in Under 10 Minutes",
+    excerpt: "Building a polished admin dashboard doesn't always require hours of custom CSS or a design system from scratch. With shadcn/ui, you can create a consistent, professional theme in minutes.",
+    category: "Tutorial",
+    tags: ["shadcn/ui", "Tailwind", "Theming", "Tutorial"],
+    author: "CodesPanda",
+    date: "2026-08-30",
+    readTime: "8 min read",
+    gradient: "from-amber-500 to-orange-600",
+    icon: "Paintbrush",
+    coverImage: "/images/blogs/theme-shadcn-dashboard-in-10-minutes.webp",
+    content: `Building a polished admin dashboard doesn't always require hours of custom CSS or a complete design system from scratch.
+
+With shadcn/ui, you can create a consistent, professional dashboard theme in minutes — while keeping full control over the code.
+
+Here's a practical approach to doing it in under 10 minutes.
+
+## 1. Start With Your Design Tokens
+
+The fastest way to theme a dashboard is to avoid styling individual components one by one.
+
+Instead, define your core design tokens:
+
+- Primary color
+- Background
+- Foreground/text
+- Card colors
+- Borders
+- Muted colors
+- Accent colors
+- Border radius
+
+Once these values are established, your entire interface can change consistently.
+
+## 2. Customize the Global CSS
+
+shadcn/ui uses CSS variables for much of its theming system. That means you can change the overall personality of your dashboard by updating a small set of variables rather than rewriting every component.
+
+For example, you might create a modern SaaS theme with soft backgrounds, high-contrast text, subtle borders, rounded cards, and one strong brand accent.
+
+Change the variables once, and the dashboard immediately feels different.
+
+## 3. Pick One Strong Accent Color
+
+A common mistake is using too many colors.
+
+For a professional admin dashboard, start with one primary brand color and use neutral colors everywhere else. For example: a green primary, neutral background, white or dark-neutral cards, high-contrast text, gray muted text, and status colors reserved for success, warning, and error states.
+
+This creates visual hierarchy without making the interface feel noisy.
+
+## 4. Adjust Border Radius
+
+Border radius has a surprisingly large impact on the overall look. You can make your dashboard feel:
+
+- Enterprise — smaller radius and sharper components
+- Modern SaaS — medium radius with soft cards
+- Friendly / product-led — larger radius and more rounded controls
+
+Instead of changing every button and card individually, define the radius globally.
+
+## 5. Style the Core Components
+
+Once the global theme is ready, focus on the components users interact with most:
+
+- Buttons
+- Cards
+- Inputs
+- Tables
+- Dropdowns
+- Tabs
+- Sidebar
+- Dialogs
+
+Don't over-customize everything. The goal is to create consistency, not make every component visually unique.
+
+## 6. Don't Forget Dark Mode
+
+If your dashboard supports dark mode, test it early. A good dark theme isn't simply "change white to black." You need to adjust:
+
+- Background contrast
+- Card surfaces
+- Border visibility
+- Text hierarchy
+- Muted colors
+- Hover states
+- Focus states
+
+shadcn/ui makes this easier because your components can inherit the theme through CSS variables.
+
+## 7. Create a Small Visual System
+
+Before adding dozens of screens, define a few rules: use a consistent spacing scale, keep heading and body sizes predictable, use the same radius family across components, keep shadows subtle, and use semantic colors rather than random hex values.
+
+These small decisions make a dashboard feel designed rather than assembled.
+
+## 8. Test One Complete Screen
+
+Don't spend 10 minutes tweaking isolated components. Build one complete dashboard screen containing a sidebar, header, KPI cards, a chart, a table, buttons, and forms.
+
+Then evaluate the whole composition. If that screen looks cohesive, the same theme can be extended across the rest of the application.
+
+## The 10-Minute Workflow
+
+Here's the process:
+
+- Minute 1–2: Choose your color palette.
+- Minute 3–4: Update global CSS variables.
+- Minute 5: Set typography and border radius.
+- Minute 6–7: Customize buttons, cards, inputs, and tables.
+- Minute 8: Configure dark mode.
+- Minute 9: Review spacing and visual hierarchy.
+- Minute 10: Test one complete dashboard screen.
+
+That's it. You don't need to rebuild your component library to create a unique dashboard.
+
+## The Bigger Advantage of shadcn/ui
+
+The real power of shadcn/ui isn't just that it looks good out of the box. It's that you own the code.
+
+You can modify components, create your own design tokens, introduce brand-specific patterns, and evolve the system as your product grows. For teams building modern React admin panels, this provides a great balance between speed, consistency, and customization.
+
+## Final Thought
+
+A good dashboard theme isn't about adding more visual effects. It's about creating a system where colors, spacing, typography, components, and interactions work together.
+
+With shadcn/ui and a focused design-token approach, you can go from a generic interface to a recognizable product experience in minutes.
+
+Design faster. Theme smarter. Build consistently.`,
+  },
+  {
     slug: "why-vite-for-admin-panels",
     title: "Why Vite Is the Right Call for a Modern React Admin Panel",
     excerpt: "Building a modern React admin panel is about delivering an interface that feels fast, scales smoothly, and stays easy for developers to maintain. That's where Vite stands out.",
@@ -1523,47 +1653,6 @@ The opportunity is enormous for businesses that can transform AI from a simple c
 If you're planning to build an AI-powered SaaS, business automation platform, accounting application, customer-support system, or custom AI solution, the best place to start is with the problem — not the technology.
 
 What AI-powered application would you build today?`,
-  },
-  {
-    slug: "theme-shadcn-dashboard-in-10-minutes",
-    title: "How to Theme a shadcn/ui Dashboard in Under 10 Minutes",
-    excerpt: "A practical walkthrough of swapping every CodesPanda template's color system to your own brand — one CSS file, no component edits.",
-    category: "Tutorial",
-    tags: ["shadcn/ui", "Tailwind", "Theming", "Tutorial"],
-    author: "CodesPanda",
-    date: "2026-08-10",
-    readTime: "6 min read",
-    gradient: "from-amber-500 to-orange-600",
-    icon: "Paintbrush",
-    content: `Every CodesPanda template follows the same theming convention, so this walkthrough applies whether you're re-skinning Alpine, Cornerstone, or Finovo. The whole process happens in one file — no component code needs to change.
-
-## Step 1: find the token file
-
-Every template defines its palette as CSS custom properties, usually in \`src/index.css\` under \`:root\` and \`.dark\`. These are HSL triplets like \`--primary: 243 75% 59%\`, not hex codes — that's what lets shadcn/ui components derive hover, focus, and muted variants automatically.
-
-## Step 2: pick your brand's core tokens
-
-You only need to touch a handful of variables to reskin the whole app:
-
-- \`--primary\` — buttons, active states, links
-- \`--secondary\` — subtle backgrounds, hover states
-- \`--accent\` — highlights and badges
-- \`--destructive\` — delete buttons, error states
-- \`--background\` / \`--foreground\` — base page colors
-
-## Step 3: convert your brand color to HSL
-
-Take your brand hex code, convert it to HSL (any color picker will do this), and drop the three numbers in — no "hsl()" wrapper, just the raw triplet, since Tailwind's config wraps it for you: \`hsl(var(--primary))\`.
-
-## Step 4: check both themes
-
-Every token needs a light-mode and dark-mode value. It's tempting to just invert the lightness value and move on, but check contrast in both — a primary color that reads fine at 59% lightness on a white background can wash out completely on a dark one.
-
-## Step 5: rebuild and scan for hardcoded colors
-
-Run the dev server and click through every page. Any component still showing your old brand color after this point has a hardcoded Tailwind class (like \`bg-indigo-500\`) instead of a token reference — that's the one thing worth grepping for before you call the reskin done.
-
-That's the entire process. No component file needs an edit, because every shadcn/ui primitive in the template already reads from these tokens — which is the whole point of building on a theming system instead of hardcoded colors in the first place.`,
   },
 ];
 
