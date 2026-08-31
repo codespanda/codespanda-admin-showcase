@@ -18,45 +18,6 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
-    slug: "state-management-when-you-need-redux",
-    title: "State Management in 2026: When You Actually Need Redux (and When You Don't)",
-    excerpt: "Every admin panel eventually asks the state-management question. Most of the time the honest answer is: you already have everything you need, and reaching for a global store first just adds a layer to debug later.",
-    category: "Engineering",
-    tags: ["React", "State Management", "Architecture"],
-    author: "CodesPanda",
-    date: "2026-08-31",
-    readTime: "6 min read",
-    gradient: "from-blue-500 to-cyan-600",
-    icon: "Puzzle",
-    content: `Every admin panel eventually runs into the same question: where does this piece of state actually live? The honest answer, most of the time, is that you already have everything you need without reaching for a global store.
-
-## Start with what React already gives you
-
-useState and useContext cover more ground than teams usually give them credit for. A sidebar's collapsed state, a modal's open/closed flag, a table's current page — none of that needs to travel through a dedicated state library. If a value is only read by the component that owns it and maybe one or two children, prop drilling three levels deep is still cheaper than the indirection a store adds.
-
-## Server state is not the same problem
-
-A lot of "state management" pain in admin dashboards is actually server-state caching wearing a disguise — the list of users, the current invoice, the dashboard's live metrics. That's what TanStack Query or SWR are built for: caching, revalidation, loading and error states, optimistic updates. Putting server data in Redux just means manually rebuilding a worse version of what those libraries already do for free.
-
-## When a real client store earns its place
-
-There's still a real category of state that justifies something like Zustand, Jotai, or Redux Toolkit: state that many unrelated components need to read and write, that outlives any single page, and that has real business logic attached — a shopping cart, a multi-step wizard's progress, an active theme or workspace selection.
-
-- Multiple, unrelated components need the same value
-- The value needs to survive route changes
-- Updates to it involve real logic, not just a setter
-
-If none of those are true, you probably don't need it yet.
-
-## Our default for new templates
-
-Every CodesPanda template starts with plain React state and TanStack Query for anything that comes from an API. We only reach for Zustand once a template has a genuine cross-cutting concern — like a POS template's active cart, or a dashboard's saved table filters that need to persist across pages. It's a small library, no boilerplate, and easy to rip out if the requirement turns out smaller than it looked.
-
-## The real cost isn't the library
-
-Redux Toolkit today is nowhere near as heavy as classic Redux — the complaint was never really about the library itself. It's that a global store makes every state change traceable through one more layer, and that cost is worth paying only when the alternative (prop drilling, duplicated fetches, out-of-sync UI) is actually worse. Reach for it when the problem shows up, not before.`,
-  },
-  {
     slug: "theme-shadcn-dashboard-in-10-minutes",
     title: "How to Theme a shadcn/ui Dashboard in Under 10 Minutes",
     excerpt: "Building a polished admin dashboard doesn't always require hours of custom CSS or a design system from scratch. With shadcn/ui, you can create a consistent, professional theme in minutes.",

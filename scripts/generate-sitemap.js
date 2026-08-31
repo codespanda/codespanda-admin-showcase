@@ -51,7 +51,6 @@ const BLOG_SLUGS = [
   "figma-to-production-workflow",
   "why-vite-for-admin-panels",
   "theme-shadcn-dashboard-in-10-minutes",
-  "state-management-when-you-need-redux",
 ];
 
 const ROUTES = [
