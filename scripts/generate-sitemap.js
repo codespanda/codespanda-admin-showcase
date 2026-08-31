@@ -51,6 +51,7 @@ const BLOG_SLUGS = [
   "figma-to-production-workflow",
   "why-vite-for-admin-panels",
   "theme-shadcn-dashboard-in-10-minutes",
+  "best-ai-tools-for-web-developers-2026",
 ];
 
 const ROUTES = [
