@@ -52,6 +52,7 @@ const BLOG_SLUGS = [
   "why-vite-for-admin-panels",
   "theme-shadcn-dashboard-in-10-minutes",
   "best-ai-tools-for-web-developers-2026",
+  "ai-vs-traditional-web-development",
 ];
 
 const ROUTES = [
