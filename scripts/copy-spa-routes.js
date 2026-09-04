@@ -111,6 +111,7 @@ const STATIC_ROUTES = [
 
 // Blog post metadata — kept in sync with src/lib/blog-data.ts
 const BLOG_POSTS = [
+  { slug: "50-best-free-admin-dashboard-templates-2026", title: "50 Best Free Admin Dashboard Templates for 2026", desc: "Building an admin panel from scratch can take weeks. Here are 50 of the best free admin dashboard templates for 2026, covering Bootstrap, React, Vue, Angular, Tailwind CSS, and more.", ogImage: `${BASE}/images/blogs/50-best-free-admin-dashboard-templates-2026.webp` },
   { slug: "will-ai-replace-junior-developers", title: "Will AI Replace Junior Developers?", desc: "AI can now generate components, write functions, and debug errors in minutes. AI may replace some junior-level tasks, but it won't eliminate the need for junior developers.", ogImage: `${BASE}/images/blogs/will-ai-replace-junior-developers.webp` },
   { slug: "ai-powered-saas-development-2026", title: "AI-Powered SaaS Development: Building Smarter Software for 2026", desc: "Adding a chatbot to an existing app is no longer enough. Businesses want AI-native SaaS platforms that understand data, automate workflows, and help users decide faster.", ogImage: `${BASE}/images/blogs/ai-powered-saas-development-2026.webp` },
   { slug: "vibe-coding-future-of-software-development", title: "Vibe Coding: The Future of Software Development?", desc: "AI-powered coding tools are changing how developers write, test, and ship software. Is vibe coding a passing trend, or a fundamental shift in how software gets built?", ogImage: `${BASE}/images/blogs/vibe-coding-future-of-software-development.webp` },
@@ -241,6 +242,7 @@ for (const post of BLOG_POSTS) {
 
 // Each page's eager/fetchPriority=high hero <img> src
 const HERO_IMAGE = {
+  "/blog/50-best-free-admin-dashboard-templates-2026": "/images/blogs/50-best-free-admin-dashboard-templates-2026.webp",
   "/": "/images/alpine-dashboard.webp",
   "/templates": "/images/hamarabharat/hero.webp",
   "/templates/finovo": "/images/finovo/dashboard.webp",
