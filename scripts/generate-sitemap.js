@@ -40,6 +40,7 @@ const SHOT_IDS = [
 ];
 
 const BLOG_SLUGS = [
+  "web-design-trends-2026",
   "50-best-free-admin-dashboard-templates-2026",
   "will-ai-replace-junior-developers",
   "ai-powered-saas-development-2026",
