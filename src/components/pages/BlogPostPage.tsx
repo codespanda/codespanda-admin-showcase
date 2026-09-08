@@ -1,7 +1,11 @@
 import { lazy, Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit, Cloud, GraduationCap } from "lucide-react";
+import {
+  ArrowLeft, ArrowUpRight, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot,
+  Puzzle, BrainCircuit, Cloud, GraduationCap, LayoutTemplate, Shapes, Layers, Accessibility, Type, Lightbulb,
+  Component, type LucideIcon,
+} from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Button } from "@/components/ui/button";
 import { getBlogPostBySlug, BLOG_POSTS } from "@/lib/blog-data";
@@ -11,6 +15,44 @@ const Footer = lazy(() =>
 );
 
 const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit, Cloud, GraduationCap };
+
+const RESOURCE_ICONS: Record<string, LucideIcon> = {
+  Figma, LayoutGrid, LayoutTemplate, Shapes, Layers, Accessibility, Type, Palette, Lightbulb, Component,
+};
+
+/** Interactive "quick links" grid — clickable cards with real outbound links, shown above the article body when a post defines resourceLinks. */
+function ResourceLinksGrid({ links }: { links: NonNullable<import("@/lib/blog-data").BlogPost["resourceLinks"]> }) {
+  return (
+    <div className="mt-10">
+      <h2 className="mb-4 text-lg font-bold">Quick Links</h2>
+      <div className="grid gap-3 sm:grid-cols-2">
+        {links.map((r) => {
+          const Icon = RESOURCE_ICONS[r.icon] ?? Shapes;
+          return (
+            <a
+              key={r.title}
+              href={r.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md hover:shadow-primary/5"
+            >
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                <Icon className="h-5 w-5" strokeWidth={1.75} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-center gap-1.5">
+                  <p className="text-sm font-semibold">{r.title}</p>
+                  <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
+                </div>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{r.description}</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 function formatDate(iso: string) {
   return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
@@ -167,6 +209,9 @@ export function BlogPostPage() {
               </span>
             ))}
           </div>
+
+          {/* Interactive resource links, when this post defines them */}
+          {post.resourceLinks && <ResourceLinksGrid links={post.resourceLinks} />}
 
           {/* Content */}
           <div className="mt-10 rounded-2xl border border-border bg-card px-6 py-7 sm:px-8">

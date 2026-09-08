@@ -14,6 +14,13 @@ export interface BlogPost {
   /** Real cover photo — when set, replaces the gradient+icon placeholder */
   coverImage?: string;
   content: string;     // lightweight markdown: "## " headings, "- " bullets, blank-line paragraphs
+  /** Optional interactive "quick links" grid rendered above the article body — real outbound links to the resources the post discusses */
+  resourceLinks?: {
+    title: string;
+    description: string;
+    url: string;
+    icon: "Figma" | "LayoutGrid" | "LayoutTemplate" | "Shapes" | "Layers" | "Accessibility" | "Type" | "Palette" | "Lightbulb" | "Component";
+  }[];
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -29,6 +36,18 @@ export const BLOG_POSTS: BlogPost[] = [
     gradient: "from-emerald-600 to-teal-700",
     icon: "Palette",
     coverImage: "/images/blogs/best-free-ui-ux-resources-2026.webp",
+    resourceLinks: [
+      { title: "Figma Community", description: "Free UI kits, wireframes, dashboard templates, and design systems built by individuals and organizations.", url: "https://www.figma.com/community", icon: "Figma" },
+      { title: "Material Design", description: "Google's production-ready component and pattern library for buttons, forms, cards, and more.", url: "https://m3.material.io/", icon: "Component" },
+      { title: "Figma UI Kits", description: "Official component libraries — Material 3, Apple platform UI, and more — with styles and variables.", url: "https://www.figma.com/community/ui-kits", icon: "LayoutGrid" },
+      { title: "Figma Templates", description: "Wireframes, responsive grids, and 8-point layout structures to plan a screen before you build it.", url: "https://www.figma.com/templates/", icon: "LayoutTemplate" },
+      { title: "Lucide Icons", description: "A consistent, open-source icon set with matching stroke and sizing — the icons this site itself uses.", url: "https://lucide.dev", icon: "Shapes" },
+      { title: "Design Systems Repo", description: "A directory of real, public design systems to study how tokens, components, and rules connect.", url: "https://designsystemsrepo.com/", icon: "Layers" },
+      { title: "W3C Web Accessibility", description: "The official guidance for keyboard navigation, contrast, focus states, and screen-reader support.", url: "https://www.w3.org/WAI/", icon: "Accessibility" },
+      { title: "Google Fonts", description: "Free, open-source font families with weights and pairings ready to drop into a type scale.", url: "https://fonts.google.com", icon: "Type" },
+      { title: "Coolors", description: "Generate and fine-tune color palettes, then export them straight into CSS variables or tokens.", url: "https://coolors.co", icon: "Palette" },
+      { title: "Mobbin", description: "A searchable library of real product screens — dashboards, onboarding, checkout — for UX inspiration.", url: "https://mobbin.com", icon: "Lightbulb" },
+    ],
     content: `Developers don't always need to become full-time designers.
 
 But knowing where to find good UI kits, design systems, icons, fonts, wireframes, accessibility guidance, and inspiration can dramatically improve the quality of the products you build.
