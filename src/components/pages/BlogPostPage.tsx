@@ -160,7 +160,22 @@ export function BlogPostPage() {
 
         {/* Cover */}
         <div className="mx-auto max-w-3xl px-4">
-          {post.coverImage ? (
+          {post.coverVideo ? (
+            <div className="aspect-video overflow-hidden rounded-2xl bg-secondary/40 shadow-xl shadow-black/10">
+              <video
+                src={post.coverVideo}
+                poster={post.coverImage}
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="h-full w-full object-contain"
+              >
+                Your browser doesn't support embedded video.
+              </video>
+            </div>
+          ) : post.coverImage ? (
             <div className="aspect-video overflow-hidden rounded-2xl bg-secondary/40 shadow-xl shadow-black/10">
               <img
                 src={post.coverImage}

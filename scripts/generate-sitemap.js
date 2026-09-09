@@ -40,6 +40,7 @@ const SHOT_IDS = [
 ];
 
 const BLOG_SLUGS = [
+  "what-is-agentic-ai-development",
   "best-free-ui-ux-resources-2026",
   "web-design-trends-2026",
   "50-best-free-admin-dashboard-templates-2026",

@@ -111,6 +111,7 @@ const STATIC_ROUTES = [
 
 // Blog post metadata — kept in sync with src/lib/blog-data.ts
 const BLOG_POSTS = [
+  { slug: "what-is-agentic-ai-development", title: "What Is Agentic AI Development? The Next Evolution of AI-Powered Software", desc: "AI is moving beyond generating answers toward systems that can plan, use tools, take actions, and adapt along the way. Here's what agentic AI development actually means.", ogImage: `${BASE}/images/blogs/agentic-ai-development.jpg` },
   { slug: "best-free-ui-ux-resources-2026", title: "Best Free UI/UX Resources for Developers in 2026", desc: "Developers don't always need to become full-time designers. Knowing where to find good UI kits, design systems, icons, fonts, and accessibility guidance can dramatically improve what you build.", ogImage: `${BASE}/images/blogs/best-free-ui-ux-resources-2026.webp` },
   { slug: "web-design-trends-2026", title: "Web Design Trends for 2026: What Modern Websites Will Look Like", desc: "Users expect websites to be faster, smarter, more accessible, interactive, and visually engaging. Here are the major web design trends shaping 2026.", ogImage: `${BASE}/images/blogs/web-design-trends-2026.webp` },
   { slug: "50-best-free-admin-dashboard-templates-2026", title: "50 Best Free Admin Dashboard Templates for 2026", desc: "Building an admin panel from scratch can take weeks. Here are 50 of the best free admin dashboard templates for 2026, covering Bootstrap, React, Vue, Angular, Tailwind CSS, and more.", ogImage: `${BASE}/images/blogs/50-best-free-admin-dashboard-templates-2026.webp` },
@@ -244,6 +245,7 @@ for (const post of BLOG_POSTS) {
 
 // Each page's eager/fetchPriority=high hero <img> src
 const HERO_IMAGE = {
+  "/blog/what-is-agentic-ai-development": "/images/blogs/agentic-ai-development.jpg",
   "/blog/best-free-ui-ux-resources-2026": "/images/blogs/best-free-ui-ux-resources-2026.webp",
   "/blog/web-design-trends-2026": "/images/blogs/web-design-trends-2026.webp",
   "/blog/50-best-free-admin-dashboard-templates-2026": "/images/blogs/50-best-free-admin-dashboard-templates-2026.webp",
