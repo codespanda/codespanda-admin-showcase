@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "interio",
+    name: "Interio",
+    description:
+      "A complete marketing and portfolio site for an interior design studio — a two-column hero, a services grid, a filterable project portfolio, a five-step process timeline, testimonials, and a blog, all in a warm cream-and-terracotta editorial design.",
+    category: "Interior Design / Portfolio Landing Page",
+    badge: "New",
+    badgeColor: "from-orange-500 to-amber-600",
+    liveUrl: "https://interio.codespanda.com/",
+    docsUrl: "https://github.com/codespanda/interio",
+    detailsUrl: "/templates/interio",
+    screenshotUrl: "/images/interio/hero.webp",
+    techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "shadcn/ui"],
+    features: ["Cream & Terracotta Design", "Portfolio & Process", "Editorial Typography", "Responsive"],
+    darkMode: false,
+    responsive: true,
+  },
+  {
     id: "school",
     name: "Gouri International School",
     description:

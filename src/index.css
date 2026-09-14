@@ -147,6 +147,14 @@
   --accent: 43 89% 53%;
   --ring: 43 89% 53%;
 }
+[data-template="interio"],
+[data-template="interio"].dark {
+  --primary: 28 55% 50%;
+  --primary-end: 22 60% 40%;
+  --primary-foreground: 40 40% 97%;
+  --accent: 28 55% 50%;
+  --ring: 28 55% 50%;
+}
 
 /* ── Restyle Razorpay's embedded payment button to match the site's own
    "gradient" Button (Browse Templates), since Razorpay's widget can't be

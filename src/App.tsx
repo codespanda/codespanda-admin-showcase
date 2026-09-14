@@ -17,6 +17,7 @@ const EvaAutocarePage     = lazy(() => import("@/components/pages/EvaAutocarePag
 const FinovoPage          = lazy(() => import("@/components/pages/FinovoPage").then(m => ({ default: m.FinovoPage })));
 const CaFirmPage          = lazy(() => import("@/components/pages/CaFirmPage").then(m => ({ default: m.CaFirmPage })));
 const SchoolPage          = lazy(() => import("@/components/pages/SchoolPage").then(m => ({ default: m.SchoolPage })));
+const InterioPage         = lazy(() => import("@/components/pages/InterioPage").then(m => ({ default: m.InterioPage })));
 const HamaraBharatPage    = lazy(() => import("@/components/pages/HamaraBharatPage").then(m => ({ default: m.HamaraBharatPage })));
 const DeepakPortfolioPage = lazy(() => import("@/components/pages/DeepakPortfolioPage").then(m => ({ default: m.DeepakPortfolioPage })));
 const PortfolioShotPage   = lazy(() => import("@/components/pages/PortfolioShotPage").then(m => ({ default: m.PortfolioShotPage })));
@@ -45,6 +46,7 @@ function App() {
         <Route path="/templates/finovo" element={<Suspense><FinovoPage /></Suspense>} />
         <Route path="/templates/ca-firm" element={<Suspense><CaFirmPage /></Suspense>} />
         <Route path="/templates/school" element={<Suspense><SchoolPage /></Suspense>} />
+        <Route path="/templates/interio" element={<Suspense><InterioPage /></Suspense>} />
         <Route path="/templates/hamara-bharat" element={<Suspense><HamaraBharatPage /></Suspense>} />
         <Route path="/portfolio" element={<Suspense><DeepakPortfolioPage /></Suspense>} />
         <Route path="/portfolio/:shotId" element={<Suspense><PortfolioShotPage /></Suspense>} />

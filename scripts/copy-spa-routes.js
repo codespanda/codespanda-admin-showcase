@@ -92,6 +92,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/interio",
   "/templates/school",
   "/templates/ca-firm",
   "/templates/finovo",
@@ -150,6 +151,11 @@ const PAGE_META = {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-image.png`,
+  },
+  "/templates/interio": {
+    title: "Interio — Free Interior Design Studio Website Template | CodesPanda",
+    description: "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design.",
+    ogImage: `${BASE}/images/interio/hero.webp`,
   },
   "/templates/school": {
     title: "Gouri International School — Free School Website Template | CodesPanda",
@@ -268,6 +274,7 @@ const HERO_IMAGE = {
   "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
+  "/templates/interio": "/images/interio/hero.webp",
   "/templates/school": "/images/school/hero.webp",
   "/templates/ca-firm": "/images/ca-firm/hero.webp",
   "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
@@ -294,6 +301,7 @@ const SCHEMA_TYPE = {
   "/templates": "collection",
   "/portfolio": "collection",
   "/blog": "blog",
+  "/templates/interio": "software",
   "/templates/school": "software",
   "/templates/ca-firm": "software",
   "/templates/finovo": "software",
