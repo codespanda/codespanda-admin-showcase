@@ -92,6 +92,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/school",
   "/templates/ca-firm",
   "/templates/finovo",
   "/templates/hamara-bharat",
@@ -149,6 +150,11 @@ const PAGE_META = {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-image.png`,
+  },
+  "/templates/school": {
+    title: "Gouri International School — Free School Website Template | CodesPanda",
+    description: "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design.",
+    ogImage: `${BASE}/images/school/hero.webp`,
   },
   "/templates/ca-firm": {
     title: "Your CA Firm — Financial & Advisory Landing Page | CodesPanda",
@@ -262,6 +268,7 @@ const HERO_IMAGE = {
   "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
+  "/templates/school": "/images/school/hero.webp",
   "/templates/ca-firm": "/images/ca-firm/hero.webp",
   "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
   "/blog/signs-your-business-needs-custom-web-application": "/images/blogs/signs-your-business-needs-custom-web-application.webp",
@@ -287,6 +294,7 @@ const SCHEMA_TYPE = {
   "/templates": "collection",
   "/portfolio": "collection",
   "/blog": "blog",
+  "/templates/school": "software",
   "/templates/ca-firm": "software",
   "/templates/finovo": "software",
   "/templates/hamara-bharat": "software",

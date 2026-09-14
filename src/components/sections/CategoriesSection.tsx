@@ -35,6 +35,7 @@ const CATEGORY_DEFS: CategoryDef[] = [
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
+  "school":                 ["education"],
   "ca-firm":                ["professional"],
   "hamara-bharat":          ["travel"],
   "finovo":                 ["finance-accounting", "erp-systems", "admin-dashboard"],

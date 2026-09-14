@@ -139,6 +139,14 @@
   --accent: 38 75% 50%;
   --ring: 38 75% 50%;
 }
+[data-template="school"],
+[data-template="school"].dark {
+  --primary: 43 89% 53%;
+  --primary-end: 38 85% 45%;
+  --primary-foreground: 222 55% 15%;
+  --accent: 43 89% 53%;
+  --ring: 43 89% 53%;
+}
 
 /* ── Restyle Razorpay's embedded payment button to match the site's own
    "gradient" Button (Browse Templates), since Razorpay's widget can't be

@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "school",
+    name: "Gouri International School",
+    description:
+      "A complete marketing site for a school or educational institution — a two-column hero with a live stat counter, an academics program grid, a campus facilities showcase, an Embla-powered testimonial carousel, and a news & admissions flow, all in a navy-and-gold system built for trust.",
+    category: "Education / School Landing Page",
+    badge: "New",
+    badgeColor: "from-amber-500 to-yellow-500",
+    liveUrl: "https://school.codespanda.com/",
+    docsUrl: "https://github.com/codespanda/gouri-international-school",
+    detailsUrl: "/templates/school",
+    screenshotUrl: "/images/school/hero.webp",
+    techStack: ["React 19", "Vite", "Tailwind CSS v4", "shadcn/ui"],
+    features: ["Navy & Gold Design", "Academics & Admissions", "Testimonial Carousel", "Responsive"],
+    darkMode: false,
+    responsive: true,
+  },
+  {
     id: "ca-firm",
     name: "Your CA Firm",
     description:

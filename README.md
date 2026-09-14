@@ -56,6 +56,7 @@ each has its own `/templates/<slug>` marketing page in this repo
 
 | Template | Live Demo | Category |
 |---|---|---|
+| [Gouri International School](https://school.codespanda.com/) | `/templates/school` | Education / School Landing Page |
 | [Your CA Firm](https://ca-firm.codespanda.com/) | `/templates/ca-firm` | Financial & Advisory Landing Page |
 | [Finovo](https://finovo.codespanda.com/) | `/templates/finovo` | Finance / Accounting Admin |
 | [Hamara Bharat](https://hamarabharat.codespanda.com/) | `/templates/hamara-bharat` | Travel / Tourism Landing Page |
