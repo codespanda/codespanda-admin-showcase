@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   ExternalLink, Monitor, Clock, LayoutGrid, Briefcase,
-  LayoutDashboard, Users, DollarSign, Handshake, ShoppingCart,
+  LayoutDashboard, Users, DollarSign, Handshake, ShoppingCart, ShoppingBag,
   Factory, HeartPulse, GraduationCap, Bot, Car, MapPin, Landmark, Sofa, ChevronLeft, ChevronRight, type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -33,9 +33,11 @@ const CATEGORY_DEFS: CategoryDef[] = [
   { id: "automotive",           label: "Automotive",           icon: Car,             color: "text-blue-500" },
   { id: "portfolio",            label: "Portfolio",            icon: Briefcase,       color: "text-rose-500" },
   { id: "interior-design",      label: "Interior Design",      icon: Sofa,            color: "text-lime-600" },
+  { id: "ecommerce",            label: "E-commerce",           icon: ShoppingBag,     color: "text-cyan-600" },
 ];
 
 const TEMPLATE_CATEGORY_MAP: Record<string, string[]> = {
+  "shopperscrown":          ["ecommerce"],
   "interio":                ["interior-design"],
   "school":                 ["education"],
   "ca-firm":                ["professional"],

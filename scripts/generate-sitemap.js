@@ -68,6 +68,7 @@ const ROUTES = [
   { path: "/blog",                              changefreq: "weekly",  priority: "0.8" },
 
   // Template detail pages
+  { path: "/templates/shopperscrown",           changefreq: "monthly", priority: "0.9" },
   { path: "/templates/interio",                 changefreq: "monthly", priority: "0.9" },
   { path: "/templates/school",                  changefreq: "monthly", priority: "0.9" },
   { path: "/templates/ca-firm",                 changefreq: "monthly", priority: "0.9" },

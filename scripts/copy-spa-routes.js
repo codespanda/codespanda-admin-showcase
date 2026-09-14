@@ -92,6 +92,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/shopperscrown",
   "/templates/interio",
   "/templates/school",
   "/templates/ca-firm",
@@ -151,6 +152,11 @@ const PAGE_META = {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-image.png`,
+  },
+  "/templates/shopperscrown": {
+    title: "Shoppers Crown — Free International Shopping & Package-Forwarding Template | CodesPanda",
+    description: "A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard, with 17 real routed pages.",
+    ogImage: `${BASE}/images/shopperscrown/hero.webp`,
   },
   "/templates/interio": {
     title: "Interio — Free Interior Design Studio Website Template | CodesPanda",
@@ -274,6 +280,7 @@ const HERO_IMAGE = {
   "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
+  "/templates/shopperscrown": "/images/shopperscrown/hero.webp",
   "/templates/interio": "/images/interio/hero.webp",
   "/templates/school": "/images/school/hero.webp",
   "/templates/ca-firm": "/images/ca-firm/hero.webp",
@@ -301,6 +308,7 @@ const SCHEMA_TYPE = {
   "/templates": "collection",
   "/portfolio": "collection",
   "/blog": "blog",
+  "/templates/shopperscrown": "software",
   "/templates/interio": "software",
   "/templates/school": "software",
   "/templates/ca-firm": "software",

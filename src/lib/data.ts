@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "shopperscrown",
+    name: "Shoppers Crown",
+    description:
+      "A complete international shopping and package-forwarding application — a marketing homepage, a real shop and cart flow, an interactive shipping calculator, tracking, and an account dashboard, across 17 genuinely routed pages built with React Router, TanStack Query and React Hook Form.",
+    category: "E-commerce / Package-Forwarding Platform",
+    badge: "New",
+    badgeColor: "from-blue-500 to-indigo-600",
+    liveUrl: "https://shopperscrown.codespanda.com/",
+    docsUrl: "https://github.com/codespanda/Shoppers-Crown",
+    detailsUrl: "/templates/shopperscrown",
+    screenshotUrl: "/images/shopperscrown/hero.webp",
+    techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "React Router"],
+    features: ["17 Routed Pages", "Real Form Validation", "Shipping Calculator", "Dark Mode"],
+    darkMode: true,
+    responsive: true,
+  },
+  {
     id: "interio",
     name: "Interio",
     description:
