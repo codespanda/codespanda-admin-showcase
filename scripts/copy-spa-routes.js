@@ -223,7 +223,7 @@ const PAGE_META = {
   "/projects": {
     title: "Projects — Our Live Products | CodesPanda",
     description: "Live products built by CodesPanda: AI Invoice, an AI-assisted invoice generator, and AccountingPanda, an outsourced accounting and bookkeeping website.",
-    ogImage: `${BASE}/images/products/ai-invoice/dashboard.webp`,
+    ogImage: `${BASE}/images/products/ai-invoice/hero.webp`,
   },
   "/services": {
     title: "Services — UI/UX Design & React Development | CodesPanda",

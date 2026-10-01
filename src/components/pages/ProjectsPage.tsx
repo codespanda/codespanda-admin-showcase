@@ -24,6 +24,8 @@ interface Product {
   /** Label for the main button. */
   cta: string;
   tint: string;
+  /** Screenshots of a whole page get a card frame; illustrations sit on the tint as they are. */
+  framed?: boolean;
 }
 
 /** Live products CodesPanda builds and runs. Copy comes from each product's own site. */
@@ -34,8 +36,8 @@ const PRODUCTS: Product[] = [
     category: "SaaS · Invoicing",
     url: "https://ai-invoice.accountingpanda.com",
     logo: "/images/products/ai-invoice/logo.webp",
-    image: "/images/products/ai-invoice/dashboard.webp",
-    imageAlt: "AI Invoice dashboard generating an invoice, with a preview of the finished PDF",
+    image: "/images/products/ai-invoice/hero.webp",
+    imageAlt: "AI Invoice home page: a plain-English prompt turned into a ready-to-send invoice",
     tagline: "Type the job. Get the invoice.",
     description:
       "An AI-powered invoice generator for freelancers and small businesses. Describe your work in plain English: AI drafts the invoice, the app does every calculation, and it goes out as a polished PDF or straight to your client's inbox.",
@@ -52,6 +54,7 @@ const PRODUCTS: Product[] = [
     plan: "Free forever: up to 2 invoices a day, every feature included, no credit card required.",
     cta: "Create your first invoice",
     tint: "#E6F0FF",
+    framed: true,
   },
   {
     id: "accountingpanda",
@@ -133,7 +136,16 @@ function ProductShowcase({ product, flip }: { product: Product; flip: boolean })
         className="tint-panel flex items-center justify-center p-5 lg:flex-1 lg:p-10"
         style={{ ["--tint" as string]: product.tint }}
       >
-        <img src={product.image} alt={product.imageAlt} loading="eager" decoding="async" className="block h-auto w-full max-w-[720px]" />
+        <img
+          src={product.image}
+          alt={product.imageAlt}
+          loading="eager"
+          decoding="async"
+          className={cn(
+            "block h-auto w-full max-w-[720px]",
+            product.framed && "rounded-[12px] border border-border shadow-[0_18px_40px_-18px_rgba(14,23,38,0.35)]"
+          )}
+        />
       </div>
     </article>
   );
@@ -152,7 +164,7 @@ export function ProjectsPage() {
         <meta property="og:title" content="Projects — Our Live Products | CodesPanda" />
         <meta property="og:description" content="Live products built by CodesPanda: AI Invoice and AccountingPanda." />
         <meta property="og:url" content="https://codespanda.com/projects" />
-        <meta property="og:image" content="https://codespanda.com/images/products/ai-invoice/dashboard.webp" />
+        <meta property="og:image" content="https://codespanda.com/images/products/ai-invoice/hero.webp" />
       </Helmet>
 
       <div className="flex min-h-screen flex-col bg-background">
