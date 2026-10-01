@@ -230,7 +230,7 @@ export function PortfolioShotPage() {
                 </a>
               </div>
 
-              <div className="flex items-center gap-4 rounded-[18px] border border-border bg-card p-[18px]">
+              <div className="flex items-start gap-4 rounded-[18px] border border-border bg-card p-[18px]">
                 <Logo imgClassName="h-14 w-14 rounded-[10px] bg-logo-bg" />
                 <div className="flex min-w-0 flex-col gap-1">
                   <span className="text-base font-bold">Designed by CodesPanda</span>
