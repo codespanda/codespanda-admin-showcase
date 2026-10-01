@@ -1,202 +1,126 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, Moon, Sun, ExternalLink, Coffee } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
-import { RazorpayCoffeeButton } from "@/components/shared/RazorpayCoffeeButton";
-import { PayPalCoffeeButton } from "@/components/shared/PayPalCoffeeButton";
-import { NAV_LINKS } from "@/lib/constants";
+import { BuyMeCoffee } from "@/components/shared/BuyMeCoffee";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
 
-function BuyMeCoffeeButton({ className }: { className?: string }) {
-  return (
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button variant="outline" size="sm" className={cn("gap-1.5", className)}>
-          <Coffee className="h-4 w-4" />
-          Buy Me a Coffee
-        </Button>
-      </DialogTrigger>
-      <DialogContent className="max-h-[85vh] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle>Buy Me a Coffee</DialogTitle>
-          <DialogDescription>
-            Enjoying the templates? A small tip keeps them free and helps fund new ones.
-          </DialogDescription>
-        </DialogHeader>
-        <div className="flex flex-col items-center gap-4 py-2">
-          <RazorpayCoffeeButton size="lg" />
-          <div className="flex w-full items-center gap-3 text-xs text-muted-foreground">
-            <div className="h-px flex-1 bg-border" />
-            or
-            <div className="h-px flex-1 bg-border" />
-          </div>
-          <PayPalCoffeeButton />
-        </div>
-      </DialogContent>
-    </Dialog>
-  );
+interface NavItem {
+  label: string;
+  to: string;
+  /** Path (+ optional ?type) that marks this item as the current page. */
+  match?: (path: string, search: string) => boolean;
 }
 
-function ThemeToggle() {
+const HIRE_URL = "https://www.linkedin.com/company/codespanda";
+
+const NAV: NavItem[] = [
+  { label: "Templates", to: "/templates", match: (p, s) => p === "/templates" && !s.includes("type=") },
+  { label: "Web pages", to: "/templates?type=web", match: (p, s) => p === "/templates" && s.includes("type=web") },
+  { label: "Admin panels", to: "/templates?type=admin", match: (p, s) => p === "/templates" && s.includes("type=admin") },
+  { label: "Portfolio", to: "/portfolio", match: (p) => p.startsWith("/portfolio") },
+  { label: "Why CodesPanda", to: "/#features" },
+  { label: "Blog", to: "/blog", match: (p) => p.startsWith("/blog") },
+];
+
+function ThemeToggle({ className }: { className?: string }) {
   const { toggleTheme } = useTheme();
   return (
-    <Button
-      variant="ghost"
-      size="icon"
+    <button
+      type="button"
       onClick={toggleTheme}
-      aria-label="Toggle theme"
-      className="rounded-xl"
+      aria-label="Toggle dark mode"
+      className={cn(
+        "relative flex h-11 w-11 items-center justify-center rounded-[10px] border border-border bg-card text-foreground transition-colors hover:bg-secondary",
+        className
+      )}
     >
-      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-    </Button>
+      <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" aria-hidden />
+      <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" aria-hidden />
+    </button>
   );
 }
 
-function NavItem({ link }: { link: { label: string; href: string; external?: boolean } }) {
-  const cls =
-    "rounded-lg px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground";
-
-  if (link.external) {
+function NavAnchor({ item, className, onClick }: { item: NavItem; className: string; onClick?: () => void }) {
+  const { pathname, search } = useLocation();
+  const active = item.match?.(pathname, search) ?? false;
+  const cls = cn(className, active ? "font-bold text-link" : "text-foreground hover:text-link");
+  // "/#…" links go through the browser so the page scrolls to the section.
+  if (item.to.startsWith("/#")) {
     return (
-      <a href={link.href} target="_blank" rel="noreferrer noopener" className={cls}>
-        {link.label}
+      <a href={item.to} className={cls} onClick={onClick}>
+        {item.label}
       </a>
     );
   }
-
-  // Hash or root-hash links — use plain <a> so the browser navigates to / then scrolls
-  if (link.href.startsWith("#") || link.href.startsWith("/#")) {
-    return (
-      <a href={link.href} className={cls}>
-        {link.label}
-      </a>
-    );
-  }
-
   return (
-    <Link to={link.href} className={cls}>
-      {link.label}
+    <Link to={item.to} className={cls} onClick={onClick} aria-current={active ? "page" : undefined}>
+      {item.label}
     </Link>
   );
 }
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { pathname, search } = useLocation();
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  useEffect(() => setOpen(false), [pathname, search]);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 animate-slide-down px-4 pt-3">
-      <nav
-        className={cn(
-          "mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300 sm:px-5 select-none",
-          scrolled
-            ? "glass-strong shadow-lg shadow-black/5"
-            : "border border-transparent"
-        )}
-      >
-        <Logo imgClassName="h-[84px] w-auto my-[-14px]" />
-
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-1 lg:flex">
-          {NAV_LINKS.map((link) => (
-            <NavItem key={link.href} link={link} />
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card select-none">
+      {/* Desktop: 80px bar */}
+      <div className="mx-auto hidden h-20 max-w-[1440px] items-center justify-between px-20 lg:flex xl:px-20">
+        <Logo imgClassName="h-[60px] w-[60px] rounded-[10px] bg-logo-bg" />
+        <nav aria-label="Primary" className="flex gap-7 text-[15px] font-medium">
+          {NAV.map((item) => (
+            <NavAnchor key={item.label} item={item} className="transition-colors" />
           ))}
-        </div>
-
-        {/* Desktop actions */}
-        <div className="hidden items-center gap-2 lg:flex">
+        </nav>
+        <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button variant="gradient" size="sm" asChild>
-            <a href="https://www.linkedin.com/company/codespanda" target="_blank" rel="noreferrer noopener">
-              Hire Me
-            </a>
-          </Button>
-          <BuyMeCoffeeButton />
+          <a href={HIRE_URL} target="_blank" rel="noreferrer noopener" className="flex h-11 items-center px-[18px] text-[15px] font-semibold text-foreground hover:text-link">
+            Hire Us
+          </a>
+          <BuyMeCoffee className="flex h-11 items-center rounded-[10px] bg-brand px-5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90" />
         </div>
+      </div>
 
-        {/* Mobile */}
-        <div className="flex items-center gap-1.5 lg:hidden">
+      {/* Mobile: 64px bar with a dropdown menu */}
+      <div className="flex h-16 items-center justify-between px-4 lg:hidden">
+        <Logo imgClassName="h-12 w-12 rounded-[10px] bg-logo-bg" />
+        <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" aria-label="Open menu" className="rounded-xl">
-                <Menu className="h-5 w-5" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-72">
-              <SheetHeader>
-                <SheetTitle className="flex items-center gap-2">
-                  <Logo />
-                </SheetTitle>
-              </SheetHeader>
-              <div className="flex flex-col gap-1 px-4">
-                {NAV_LINKS.map((link) => (
-                  <SheetClose asChild key={link.href}>
-                    {link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary flex items-center gap-2"
-                      >
-                        {link.label}
-                        <ExternalLink className="h-3.5 w-3.5 text-muted-foreground" />
-                      </a>
-                    ) : link.href.startsWith("#") || link.href.startsWith("/#") ? (
-                      <a
-                        href={link.href}
-                        className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        to={link.href}
-                        className="rounded-lg px-3 py-2.5 text-base font-medium text-foreground transition-colors hover:bg-secondary"
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </SheetClose>
-                ))}
-              </div>
-              <div className="mt-4 px-4">
-                <Button variant="gradient" className="w-full" asChild>
-                  <Link to="/templates">Browse Templates</Link>
-                </Button>
-                <p className="mt-3 text-center text-xs text-muted-foreground">
-                  Premium React Template Marketplace
-                </p>
-              </div>
-            </SheetContent>
-          </Sheet>
+          <button
+            type="button"
+            aria-label="Menu"
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+            className="flex h-11 w-11 items-center justify-center rounded-[10px] border border-border bg-card"
+          >
+            {open ? <X className="h-5 w-5" aria-hidden /> : <Menu className="h-5 w-5" aria-hidden />}
+          </button>
         </div>
-      </nav>
+      </div>
+      {open && (
+        <nav
+          aria-label="Primary"
+          className="absolute inset-x-0 top-16 flex flex-col border-b border-border bg-card px-4 pb-5 pt-2 shadow-[0_16px_32px_rgba(14,23,38,0.12)] lg:hidden"
+        >
+          {NAV.map((item) => (
+            <NavAnchor
+              key={item.label}
+              item={item}
+              onClick={() => setOpen(false)}
+              className="flex h-[52px] items-center border-b border-line-2 text-[17px] font-semibold"
+            />
+          ))}
+          <a href={HIRE_URL} target="_blank" rel="noreferrer noopener" onClick={() => setOpen(false)} className="flex h-[52px] items-center text-[17px] font-semibold text-foreground">
+            Hire Us
+          </a>
+          <BuyMeCoffee className="mt-2 flex h-[52px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white" />
+        </nav>
+      )}
     </header>
   );
 }

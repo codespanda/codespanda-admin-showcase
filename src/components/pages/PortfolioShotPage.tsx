@@ -67,6 +67,8 @@ export function PortfolioShotPage() {
   const currentIndex = SHOTS.findIndex((s) => s.id === shot.id);
   const prev = SHOTS[currentIndex - 1];
   const next = SHOTS[currentIndex + 1];
+  const shareImage = shot.fullImgUrl ?? shot.imgUrl;
+  const shareImageUrl = shareImage.startsWith("/") ? `https://codespanda.com${shareImage}` : shareImage;
 
   return (
     <>
@@ -79,13 +81,13 @@ export function PortfolioShotPage() {
         <meta property="og:title" content={`${shot.title} — CodesPanda`} />
         <meta property="og:description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodesPanda.`} />
         <meta property="og:url" content={`https://codespanda.com/portfolio/${shot.id}`} />
-        <meta property="og:image" content={shot.fullImgUrl ?? shot.imgUrl} />
+        <meta property="og:image" content={shareImageUrl} />
         <meta property="og:image:alt" content={`${shot.title} — CodesPanda portfolio`} />
         <meta property="og:site_name" content="CodesPanda" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${shot.title} — CodesPanda`} />
         <meta name="twitter:description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodesPanda.`} />
-        <meta name="twitter:image" content={shot.fullImgUrl ?? shot.imgUrl} />
+        <meta name="twitter:image" content={shareImageUrl} />
         <meta name="twitter:image:alt" content={`${shot.title} — CodesPanda portfolio`} />
       </Helmet>
 

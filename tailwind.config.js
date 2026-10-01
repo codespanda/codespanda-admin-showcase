@@ -41,6 +41,15 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: "hsl(var(--brand))",
+        link: "hsl(var(--link))",
+        "blue-soft": "hsl(var(--blue-soft))",
+        "blue-ink": "hsl(var(--blue-ink))",
+        "soft-2": "hsl(var(--soft-2))",
+        "line-2": "hsl(var(--line-2))",
+        skel: "hsl(var(--skel))",
+        band: "hsl(var(--band))",
+        "logo-bg": "hsl(var(--logo-bg))",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",
@@ -49,7 +58,9 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
+        display: ["Bricolage Grotesque", "Figtree", "ui-sans-serif", "system-ui", "sans-serif"],
         sans: [
+          "Figtree",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",

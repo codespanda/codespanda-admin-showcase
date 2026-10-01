@@ -6,6 +6,8 @@ const PAYMENT_BUTTON_ID = "pl_TT7ErTw1FQZEdx";
 interface RazorpayCoffeeButtonProps {
   /** Matches the site's Button size scale — "sm" mirrors the navbar's "Hire Me" button. */
   size?: "sm" | "lg";
+  /** Replaces the label Razorpay's widget renders (set in their dashboard as "Buy A Coffee"). */
+  label?: string;
 }
 
 /**
@@ -20,7 +22,7 @@ interface RazorpayCoffeeButtonProps {
  * since Razorpay's default widget CSS can't be themed from their
  * dashboard. Pass size="sm" to match a compact context like the navbar.
  */
-export function RazorpayCoffeeButton({ size = "lg" }: RazorpayCoffeeButtonProps) {
+export function RazorpayCoffeeButton({ size = "lg", label = "Pay with Razorpay" }: RazorpayCoffeeButtonProps) {
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -33,6 +35,21 @@ export function RazorpayCoffeeButton({ size = "lg" }: RazorpayCoffeeButtonProps)
     script.setAttribute("data-payment_button_id", PAYMENT_BUTTON_ID);
     form.appendChild(script);
   }, []);
+
+  // Razorpay renders its button after the script loads (and may re-render it),
+  // so swap the label whenever its text node appears or changes.
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form) return;
+    const relabel = () => {
+      const text = form.querySelector<HTMLElement>(".PaymentButton-text");
+      if (text && text.textContent !== label) text.textContent = label;
+    };
+    relabel();
+    const observer = new MutationObserver(relabel);
+    observer.observe(form, { childList: true, subtree: true, characterData: true });
+    return () => observer.disconnect();
+  }, [label]);
 
   return (
     <form

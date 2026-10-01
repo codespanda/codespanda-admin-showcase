@@ -3,61 +3,84 @@
 @tailwind utilities;
 
 @layer base {
+  /* Palette from the CodesPanda Website canvas (light + dark artboards). */
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222 47% 11%;
+    --background: 210 29% 97%;
+    --foreground: 218 46% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 218 46% 10%;
 
-    --primary: 203 100% 43%;
-    --primary-end: 207 100% 32%;
+    --primary: 204 100% 37%;
+    --primary-end: 204 100% 29%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 203 20% 96%;
-    --secondary-foreground: 203 47% 11%;
+    --secondary: 210 27% 96%;
+    --secondary-foreground: 218 46% 10%;
 
-    --muted: 203 20% 96%;
-    --muted-foreground: 203 10% 46%;
+    --muted: 210 27% 96%;
+    --muted-foreground: 211 15% 38%;
 
-    --accent: 203 100% 43%;
+    --accent: 204 100% 37%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 203 15% 90%;
-    --input: 203 15% 90%;
-    --ring: 203 100% 43%;
+    --border: 210 26% 91%;
+    --input: 210 24% 84%;
+    --ring: 204 100% 37%;
 
     --radius: 0.75rem;
+
+    /* Canvas-only tokens */
+    --brand: 204 100% 37%;        /* filled buttons, both themes */
+    --link: 204 100% 37%;         /* link and eyebrow text */
+    --blue-soft: 204 67% 94%;     /* "Web page" pill fill */
+    --blue-ink: 204 100% 29%;     /* text on blue-soft, link hover */
+    --soft-2: 210 29% 93%;        /* tab track */
+    --line-2: 210 29% 95%;        /* hairline dividers inside cards */
+    --skel: 210 20% 86%;
+    --band: 217 49% 8%;           /* dark showcase bands */
+    --logo-bg: 0 0% 100% / 0;     /* transparent behind the logo in light */
   }
 
   .dark {
-    --background: 224 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 218 42% 7%;
+    --foreground: 212 35% 93%;
 
-    --card: 224 39% 9%;
-    --card-foreground: 210 40% 98%;
+    --card: 215 37% 12%;
+    --card-foreground: 212 35% 93%;
 
-    --primary: 203 100% 58%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 204 83% 65%;
+    --primary-end: 204 100% 29%;
+    --primary-foreground: 218 42% 7%;
 
-    --secondary: 203 25% 14%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 212 35% 93%;
 
-    --muted: 203 25% 14%;
-    --muted-foreground: 203 15% 65%;
+    --muted: 217 33% 15%;
+    --muted-foreground: 212 19% 67%;
 
-    --accent: 203 100% 58%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 204 83% 65%;
+    --accent-foreground: 218 42% 7%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 203 20% 18%;
-    --input: 203 20% 18%;
-    --ring: 203 100% 58%;
+    --border: 216 33% 21%;
+    --input: 216 29% 29%;
+    --ring: 204 83% 65%;
+
+    --brand: 204 100% 37%;
+    --link: 204 83% 65%;
+    --blue-soft: 208 64% 16%;
+    --blue-ink: 205 85% 79%;
+    --soft-2: 217 36% 14%;
+    --line-2: 216 33% 16%;
+    --skel: 214 26% 31%;
+    --band: 216 47% 11%;
+    --logo-bg: 210 29% 97% / 1;   /* light tile so the near-black "Panda" stays readable */
   }
 }
 
@@ -76,6 +99,10 @@
     font-feature-settings: "cv11", "ss01";
     font-variation-settings: normal;
     caret-color: transparent;
+  }
+
+  h1, h2, h3 {
+    @apply font-display;
   }
 
   input, textarea, [contenteditable] {
@@ -227,6 +254,20 @@
   color: hsl(var(--primary-foreground) / 0.7) !important;
 }
 
+/* The "Buy Me a Coffee" dialog shows the item name and price above both
+   payment buttons (BuyMeCoffee.tsx), so hide PayPal's own copy of it. */
+.paypal-coffee-btn .item-header {
+  display: none !important;
+}
+/* ...and the spacing PayPal leaves for that heading above and below its buttons. */
+.paypal-coffee-btn [id^="paypal-form-fields-container-"][id$="-wrapper"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.paypal-coffee-btn .paypal-buttons-layout {
+  margin-top: 0 !important;
+}
+
 /* Compact variant — sized to match the navbar's "sm" Button (Hire Me). */
 .razorpay-coffee-btn--sm a.PaymentButton {
   gap: 0.25rem !important;
@@ -296,6 +337,21 @@
 }
 
 @layer utilities {
+  /* Section side padding: 80px, growing on wide screens so content stays in
+     the same centred 1280px column as the header (max-w 1440px minus 2×80px). */
+  .px-page {
+    padding-left: max(5rem, calc((100% - 1280px) / 2));
+    padding-right: max(5rem, calc((100% - 1280px) / 2));
+  }
+
+  /* Pastel panel behind template/shot screenshots; dimmed in dark mode. */
+  .tint-panel {
+    background: var(--tint, hsl(var(--secondary)));
+  }
+  .dark .tint-panel {
+    background: linear-gradient(rgba(11, 17, 27, 0.62), rgba(11, 17, 27, 0.62)), var(--tint, hsl(var(--secondary)));
+  }
+
   .text-gradient {
     background: linear-gradient(to right, #0095DD, #005FA3);
     -webkit-background-clip: text;

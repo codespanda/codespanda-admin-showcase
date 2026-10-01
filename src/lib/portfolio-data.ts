@@ -18,7 +18,7 @@ export const SHOTS: Shot[] = [
     category: "Web App",
     tags: ["Events", "Authentication", "Sign In", "Web App"],
     dribbbleUrl: "https://dribbble.com/shots/27677494-RSVP-Event-Management-Sign-In-Experience",
-    imgUrl: "https://cdn.dribbble.com/userupload/48822567/file/9e8e12a819e1a52e0375b0fb9cf1814b.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/rsvp-event-signin.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48822567/file/9e8e12a819e1a52e0375b0fb9cf1814b.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48822568/file/edebbceec95e43efe21dca0bc08e8f0e.png?resize=1600x&vertical=center",
@@ -43,8 +43,8 @@ Designed to make event planning feel simple, organized, and welcoming.
     category: "Mobile App",
     tags: ["Fitness", "Wellness", "Dashboard", "Mobile"],
     dribbbleUrl: "https://dribbble.com/shots/27670671-FitFlow-Modern-Fitness-App-UI",
-    imgUrl: "https://cdn.dribbble.com/userupload/48797805/file/ec0964f9cb2409c10f8298070f50d8d0.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48797805/file/ec0964f9cb2409c10f8298070f50d8d0.png?resize=1600x&vertical=center",
+    imgUrl: "/images/portfolio/shots/fitflow.webp",
+    fullImgUrl: "/images/portfolio/shots/fitflow-large.webp",
     description: `A clean, premium fitness experience designed to make daily workouts feel simple and motivating.
 
 This concept explores a dual-theme fitness dashboard with:
@@ -70,7 +70,7 @@ Designed for modern fitness enthusiasts who want their progress to feel as motiv
     category: "Mobile App",
     tags: ["Finance", "Crypto", "Dashboard", "Mobile"],
     dribbbleUrl: "https://dribbble.com/shots/27668841-Personal-Finance-Crypto-Dashboard-UI",
-    imgUrl: "https://cdn.dribbble.com/userupload/48790917/file/4eddc5f1f6cff5f5f93fffbbf3f281d2.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/personal-finance-crypto-dashboard.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48790917/file/4eddc5f1f6cff5f5f93fffbbf3f281d2.png?resize=1600x&vertical=center",
     description: `A clean mobile finance experience designed to make portfolio tracking, spending insights, and everyday transactions easier to understand.
 
@@ -94,7 +94,7 @@ The visual direction uses a bright, minimal interface with soft cards, rounded c
     category: "Mobile App",
     tags: ["Events", "Management", "Mobile", "Dashboard"],
     dribbbleUrl: "https://dribbble.com/shots/27667647-Event-Management-Mobile-App-UI-UX-Concept",
-    imgUrl: "https://cdn.dribbble.com/userupload/48786630/file/5fc33c67c5a78ec4b02ebc7beea3cd47.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/event-management.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48786630/file/5fc33c67c5a78ec4b02ebc7beea3cd47.png?resize=1600x&vertical=center",
     description: `A clean and modern mobile experience designed to simplify event management, from discovering upcoming events to managing attendees, schedules, tickets, and revenue.
 
@@ -119,7 +119,7 @@ Designed for modern event organizers who want everything in one place.
     category: "Mobile App",
     tags: ["Fitness", "eCommerce", "Shopping", "Mobile"],
     dribbbleUrl: "https://dribbble.com/shots/27664374-FitEquip-Fitness-Equipment-Shopping-App",
-    imgUrl: "https://cdn.dribbble.com/userupload/48774788/file/619bd3427cfb0151200fd5ed8bfb3a93.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/fitequip.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48774788/file/619bd3427cfb0151200fd5ed8bfb3a93.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48774789/file/e90780867cf5fedc8b59e030c16c3629.png?resize=1600x&vertical=center",
@@ -149,7 +149,7 @@ Focus: UI/UX Design · Mobile App · E-commerce · Product Design
     category: "Mobile App",
     tags: ["Food Delivery", "eCommerce", "Mobile", "UX"],
     dribbbleUrl: "https://dribbble.com/shots/27661182-Food-Delivery-App-Mobile-UI-Concept",
-    imgUrl: "https://cdn.dribbble.com/userupload/48763336/file/ff32b57e4631bbb24c85a0feb1efa81e.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/food-delivery-concept.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48763336/file/ff32b57e4631bbb24c85a0feb1efa81e.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48763337/file/57030633b0c6788a3efc1c08ecb172fc.png?resize=1600x&vertical=center",
@@ -175,7 +175,7 @@ Designed with a focus on modern UI/UX, usability, and scalable mobile product de
     category: "Mobile App",
     tags: ["Healthcare", "Appointment", "Mobile", "UX"],
     dribbbleUrl: "https://dribbble.com/shots/27657489-Healthcare-Appointment-App-Mobile-UI",
-    imgUrl: "https://cdn.dribbble.com/userupload/48749322/file/29e4904871659abc8c10b9b2e753a375.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/healthcare-appointment.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48749322/file/29e4904871659abc8c10b9b2e753a375.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48749323/file/cc0150bd2bed114c6b94b6918398d290.png?resize=1600x&vertical=center",
@@ -286,7 +286,7 @@ Designed by CodesPanda
     category: "Web Dashboard",
     tags: ["Logistics", "Fleet Management", "Dashboard", "Mobile App"],
     dribbbleUrl: "https://dribbble.com/shots/27644788-Modern-Logistics-Driver-Management-UI",
-    imgUrl: "https://cdn.dribbble.com/userupload/48702701/file/9546cb2c1ce09c077066f67e7d6a0b8e.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/logistics-driver-management.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48702701/file/9546cb2c1ce09c077066f67e7d6a0b8e.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48702702/file/e609c357a1bed0596631abeb5b6374a7.png?resize=1600x&vertical=center",
@@ -330,7 +330,7 @@ Designed by CodesPanda
     tags: ["Car Wash", "Business Management", "Dashboard", "SaaS"],
     dribbbleUrl: "https://dribbble.com/shots/27642251-CarWash-Pro-A-Smarter-Way-to-Manage-Your-Car-Wash-Business",
     views: 26,
-    imgUrl: "https://cdn.dribbble.com/userupload/48692893/file/337f13a3c835810a6c61b69a2a914aa0.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/carwash-pro.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48692893/file/337f13a3c835810a6c61b69a2a914aa0.png?resize=1600x&vertical=center",
     description: `CarWash Pro brings appointments, customers, vehicles, services, staff, inventory, and revenue together in one clean, modern car wash management dashboard — built to help car wash businesses save time, reduce manual work, and make better decisions with real-time insights.
 
@@ -441,7 +441,7 @@ Designed by CodesPanda
     tags: ["Eyewear", "Shopping", "AR", "AI", "Mobile", "E-Commerce"],
     dribbbleUrl: "https://dribbble.com/shots/27605002-Eyewear-Shopping-App-UI-with-AI-Virtual-Try-On",
     views: 368,
-    imgUrl: "https://cdn.dribbble.com/userupload/48552346/file/2f8b76fd7b205b7396f2c1a0fed42536.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/eyewear-app.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48552346/file/2f8b76fd7b205b7396f2c1a0fed42536.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48552347/file/90d6d0149ee53568b3333b34d440ef4f.png?resize=1600x&vertical=center",
@@ -471,7 +471,7 @@ Designed by CodesPanda
     tags: ["Language Learning", "E-Learning", "Dashboard", "Education", "SaaS"],
     dribbbleUrl: "https://dribbble.com/shots/27604960-Lingora-Language-Learning-Dashboard-UI",
     views: 270,
-    imgUrl: "https://cdn.dribbble.com/userupload/48552171/file/c2ca1b58a550287f7426a5c9cf1d6563.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/lingora.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48552171/file/c2ca1b58a550287f7426a5c9cf1d6563.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48552172/file/0bd8cebbe4c1b892a60742058c97fd69.png?resize=1600x&vertical=center",
@@ -531,7 +531,7 @@ Designed by CodesPanda
     tags: ["Empty States", "UI Components", "Feedback", "Admin Dashboard", "UX Design"],
     dribbbleUrl: "https://dribbble.com/shots/27602376-Modern-Empty-States-System-Feedback-UI-CodesPanda",
     views: 606,
-    imgUrl: "https://cdn.dribbble.com/userupload/48542587/file/3460c2294f94cea59f9147c2763bb9a8.png?format=webp&resize=400x300&vertical=center",
+    imgUrl: "/images/portfolio/shots/empty-states.webp",
     fullImgUrl: "https://cdn.dribbble.com/userupload/48542587/file/3460c2294f94cea59f9147c2763bb9a8.png?resize=1600x&vertical=center",
     gallery: [
       "https://cdn.dribbble.com/userupload/48542589/file/cfd453d0000e65758d62e5ba9c5010bc.png?resize=1600x&vertical=center",

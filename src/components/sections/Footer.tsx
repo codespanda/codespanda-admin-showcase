@@ -1,136 +1,98 @@
 import { Link } from "react-router-dom";
-import { Linkedin, Mail, Facebook, Instagram } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
+import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
-import { FOOTER_NAV, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 
 const SOCIALS = [
-  { icon: Linkedin,  label: "LinkedIn",  href: "https://www.linkedin.com/company/codespanda/" },
-  { icon: Facebook,  label: "Facebook",  href: "https://www.facebook.com/people/CodesPanda/61592241216317/" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/codespanda/" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/CodesPanda/61592241216317/" },
   { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/codespanda2026" },
-  { icon: Mail,      label: "Email",     href: "mailto:contact@codespanda.com" },
+  { icon: Mail, label: "Email", href: `mailto:${SITE.email}` },
 ];
 
-const linkClass =
-  "text-sm text-muted-foreground transition-colors hover:text-foreground";
+const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
+  {
+    title: "Templates",
+    links: [
+      { label: "Web pages", href: "/templates?type=web" },
+      { label: "Admin panels", href: "/templates?type=admin" },
+      { label: "Portfolio", href: "/portfolio" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "/#features" },
+      { label: "Blog", href: "/blog" },
+      { label: "Contact", href: `mailto:${SITE.email}` },
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      { label: "Privacy", href: "/legal/privacy" },
+      { label: "Terms", href: "/legal/terms" },
+      { label: "Security", href: "/legal/security" },
+    ],
+  },
+];
 
-function FooterLink({
-  href,
-  className,
-  children,
-}: {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  if (href.startsWith("/")) {
+function FooterLink({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
+  if (href.startsWith("/") && !href.startsWith("/#")) {
     return (
       <Link to={href} className={className}>
         {children}
       </Link>
     );
   }
-  const isExternal = href.startsWith("http") || href.startsWith("mailto");
   return (
-    <a
-      href={href}
-      className={className}
-      {...(isExternal ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-    >
+    <a href={href} className={className}>
       {children}
     </a>
   );
 }
 
+/** Site footer (logo, blurb, three link columns), the same on every page. */
 export function Footer() {
-  return (
-    <footer className="border-t border-border bg-secondary/20 px-4 pb-10 pt-16">
-      <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[1.6fr_repeat(3,1fr)]">
-          {/* Brand */}
-          <div className="max-w-xs">
-            <Logo imgClassName="h-[100px]" />
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-              Premium React templates for modern developers. Built with care,
-              shipped production-ready.
-            </p>
-            <div className="mt-5 flex items-center gap-2">
-              {SOCIALS.map(({ icon: Icon, label, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  aria-label={label}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="grid h-9 w-9 place-items-center rounded-xl border border-border text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary"
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
-          </div>
+  const year = 2026;
 
-          {/* Nav columns */}
-          {FOOTER_NAV.map((column) => (
-            <div key={column.title}>
-              <h4 className="text-sm font-semibold">{column.title}</h4>
-              <ul className="mt-4 space-y-2.5">
-                {column.links.slice(0, 5).map((link) => (
-                  <li key={link.label}>
-                    <FooterLink href={link.href} className={linkClass}>
-                      {link.label}
-                    </FooterLink>
-                  </li>
-                ))}
-                {column.title === "Templates" && (
-                  <li>
-                    <Link
-                      to="/templates"
-                      className="text-sm font-medium text-primary hover:underline transition-colors"
-                    >
-                      More templates →
-                    </Link>
-                  </li>
-                )}
-              </ul>
+  return (
+    <footer id="blog" className="mt-auto flex flex-col gap-6 border-t border-border bg-card px-4 pb-7 pt-9 lg:gap-10 lg:px-page lg:pb-10 lg:pt-14">
+      <div className="flex flex-col gap-6 lg:flex-row lg:justify-between lg:gap-12">
+        <div className="flex flex-col gap-3.5 lg:w-[340px]">
+          <Logo imgClassName="h-20 w-20 rounded-[10px] bg-logo-bg" />
+          <p className="hidden text-[15px] leading-relaxed text-muted-foreground lg:block">
+            Web page and admin panel templates for teams who'd rather ship than start from scratch.
+          </p>
+          <div className="flex items-center gap-2">
+            {SOCIALS.map(({ icon: Icon, label, href }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                {...(href.startsWith("http") ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-border text-muted-foreground transition-colors hover:border-link hover:text-link"
+              >
+                <Icon className="h-[18px] w-[18px]" aria-hidden />
+              </a>
+            ))}
+          </div>
+        </div>
+        <div className="grid grid-cols-3 gap-4 text-[15px] lg:gap-20">
+          {COLUMNS.map((col) => (
+            <div key={col.title} className="flex flex-col gap-1 lg:gap-3">
+              <span className="pb-1.5 font-bold lg:pb-0">{col.title}</span>
+              {col.links.map((l) => (
+                <FooterLink key={l.label} href={l.href} className="py-2 text-muted-foreground hover:text-foreground lg:py-0">
+                  {l.label}
+                </FooterLink>
+              ))}
             </div>
           ))}
         </div>
-
-        {/* Newsletter strip — hidden for now */}
-        {/* <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-border bg-card p-6 sm:flex-row sm:items-center">
-          <div>
-            <p className="font-semibold">Stay in the loop</p>
-            <p className="text-sm text-muted-foreground">
-              Get notified when new templates launch.
-            </p>
-          </div>
-          <a
-            href={`mailto:${SITE.email}?subject=Notify me about new templates`}
-            className="shrink-0 rounded-xl border border-border bg-secondary px-5 py-2.5 text-sm font-semibold transition-colors hover:bg-primary hover:text-primary-foreground hover:border-primary"
-          >
-            Subscribe →
-          </a>
-        </div> */}
-
-        <Separator className="my-8" />
-
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {SITE.name}. All rights reserved.
-          </p>
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
-            <Link to="/legal/privacy" className="transition-colors hover:text-foreground">
-              Privacy
-            </Link>
-            <Link to="/legal/terms" className="transition-colors hover:text-foreground">
-              Terms
-            </Link>
-            <Link to="/legal/security" className="transition-colors hover:text-foreground">
-              Security
-            </Link>
-          </div>
-        </div>
+      </div>
+      <div className="border-t border-line-2 pt-[18px] text-[13px] text-muted-foreground lg:pt-6 lg:text-sm">
+        © {year} CodesPanda. All rights reserved.
       </div>
     </footer>
   );

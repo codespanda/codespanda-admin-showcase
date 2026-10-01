@@ -1,74 +1,83 @@
-import { lazy, Suspense, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ExternalLink } from "lucide-react";
+import { AppWindow, Check, Layers, LayoutDashboard, Smartphone } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
-import { Button } from "@/components/ui/button";
-import { SHOTS } from "@/lib/portfolio-data";
-import type { Shot } from "@/lib/portfolio-data";
-
-const Footer = lazy(() =>
-  import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
-);
+import { Footer } from "@/components/sections/Footer";
+import { TypeTabs } from "@/components/site/TypeTabs";
+import { SHOTS, getShotById, type Shot } from "@/lib/portfolio-data";
+import { SITE } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
+const PAGE_SIZE = 12;
 
-/* ------------------------------------------------------------------ */
-/* Shot card — clicks to internal detail page                          */
-/* ------------------------------------------------------------------ */
+type Filter = "all" | "mobile" | "web" | "dashboard";
+const TABS: { id: Filter; label: string }[] = [
+  { id: "all", label: "All" },
+  { id: "mobile", label: "Mobile apps" },
+  { id: "web", label: "Web apps" },
+  { id: "dashboard", label: "Dashboards" },
+];
+
+function groupOf(shot: Shot): Exclude<Filter, "all"> {
+  if (shot.category === "Mobile App") return "mobile";
+  if (shot.category === "Web Dashboard") return "dashboard";
+  return "web";
+}
+
+const SERVICES = [
+  { icon: Smartphone, title: "Mobile apps", body: "Fitness, food delivery, healthcare, shopping and messaging apps.", short: "Fitness, food delivery, healthcare, shopping and messaging." },
+  { icon: AppWindow, title: "Web apps", body: "Sign-in and onboarding flows, booking and event platforms.", short: "Sign-in and onboarding flows, booking and event platforms." },
+  { icon: LayoutDashboard, title: "Dashboards", body: "SaaS, logistics, e-learning and business management panels.", short: "SaaS, logistics, e-learning and business management." },
+  { icon: Layers, title: "UI systems", body: "Components, empty states and feedback patterns that scale.", short: "Components, empty states and feedback patterns." },
+];
+
+const FITFLOW_POINTS = ["Daily workout focus", "Streak tracking", "Water intake", "Mindful minutes", "Weekly progress", "Dark & light themes"];
+
 function ShotCard({ shot, index }: { shot: Shot; index: number }) {
+  const mobile = groupOf(shot) === "mobile";
   return (
     <Link
       to={`/portfolio/${shot.id}`}
-      className="group flex flex-col rounded-2xl border border-border bg-card overflow-hidden shadow-sm hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 hover:-translate-y-1"
+      className="group flex flex-col overflow-hidden rounded-[14px] border border-border bg-card text-foreground lg:rounded-[18px]"
     >
-      {/* Thumbnail */}
-      <div className="relative h-48 overflow-hidden bg-secondary/40">
-        {/* skeleton shimmer shown until image loads */}
-        <div className="absolute inset-0 animate-pulse bg-secondary/60" />
-        <img
-          src={shot.imgUrl}
-          alt={shot.title}
-          width={400}
-          height={300}
-          loading={index < 4 ? "eager" : "lazy"}
-          fetchPriority={index === 0 ? "high" : "auto"}
-          decoding="async"
-          className="relative h-full w-full object-cover object-top opacity-0 transition-[transform,opacity] duration-500 group-hover:scale-105"
-          onLoad={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "1"; }}
-        />
-      </div>
-
-      {/* Info */}
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <span className="text-[10px] font-semibold uppercase tracking-widest text-primary">
+      <img
+        src={shot.imgUrl}
+        alt={`${shot.title} — screens`}
+        width={800}
+        height={600}
+        loading={index < 3 ? "eager" : "lazy"}
+        decoding="async"
+        className="block aspect-[4/3] w-full bg-secondary object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+      />
+      <div className="flex flex-col gap-1.5 p-3 pb-3.5 lg:gap-2.5 lg:px-[22px] lg:pb-[22px] lg:pt-5">
+        <span
+          className={cn(
+            "self-start rounded-[5px] px-[7px] py-[3px] text-[11px] font-bold lg:rounded-md lg:px-[9px] lg:py-1 lg:text-xs",
+            mobile ? "bg-blue-soft text-blue-ink" : "bg-band text-white"
+          )}
+        >
           {shot.category}
         </span>
-        <h3 className="text-sm font-semibold leading-snug line-clamp-2">{shot.title}</h3>
-        <div className="mt-auto flex flex-wrap gap-1 pt-2">
-          {shot.tags.slice(0, 3).map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-border bg-secondary px-2 py-0.5 text-[10px] font-medium text-muted-foreground"
-            >
-              {t}
-            </span>
-          ))}
-        </div>
+        <h3 className="text-[15px] font-bold leading-[1.3] lg:text-[19px] lg:tracking-[-0.01em]">{shot.title}</h3>
+        <span className="hidden text-sm text-muted-foreground lg:block">{shot.tags.slice(0, 3).join(" · ")}</span>
       </div>
     </Link>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Page                                                                 */
-/* ------------------------------------------------------------------ */
-const PAGE_SIZE = 12;
-
 export function DeepakPortfolioPage() {
+  const [filter, setFilter] = useState<Filter>("all");
   const [visible, setVisible] = useState(PAGE_SIZE);
-  const visibleShots = SHOTS.slice(0, visible);
-  const hasMore = visible < SHOTS.length;
+  const filtered = SHOTS.filter((s) => filter === "all" || groupOf(s) === filter);
+  const shots = filtered.slice(0, visible);
+  const fitflow = getShotById("fitflow");
+
+  const pickFilter = (f: Filter) => {
+    setFilter(f);
+    setVisible(PAGE_SIZE);
+  };
 
   return (
     <>
@@ -108,96 +117,161 @@ export function DeepakPortfolioPage() {
         })}</script>
       </Helmet>
 
-      <Navbar />
+      <div className="flex min-h-screen flex-col bg-background">
+        <Navbar />
 
-      <main className="min-h-screen pt-24 pb-20">
-        {/* Hero */}
-        <section className="mx-auto max-w-4xl px-4 pt-12 pb-16 text-center">
-          <span className="mb-4 inline-block rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-primary">
-            Portfolio
-          </span>
-          <h1 className="mt-4 text-5xl font-extrabold tracking-tight sm:text-6xl">
-            Dashboard Design &amp; Product UI Case Studies
-          </h1>
-          <p className="mt-4 text-xl font-semibold text-primary sm:text-2xl">
-            Design. Build. Impress.
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            A collection of dashboard design, admin dashboard UI, and product design case studies — covering SaaS admin panels, mobile app UX, retail POS, and healthcare management interfaces.
-          </p>
+        <main className="pt-16 lg:pt-20">
+          {/* Hero */}
+          <section className="flex flex-col gap-[18px] border-b border-border bg-card px-4 pb-10 pt-9 lg:flex-row lg:items-end lg:justify-between lg:gap-16 lg:px-page lg:pb-20 lg:pt-[88px]">
+            <div className="flex flex-col gap-[18px] lg:w-[820px] lg:gap-[22px]">
+              <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-link lg:text-sm">UI/UX design portfolio</span>
+              <h1 className="text-[40px] font-extrabold leading-[1.04] tracking-[-0.035em] lg:text-[68px] lg:leading-[1.02]">
+                Apps, web apps and dashboards we've designed.
+              </h1>
+              <p className="text-base leading-[1.55] text-muted-foreground lg:text-xl">
+                Mobile apps, sign-in flows, SaaS dashboards and design systems — <span className="hidden lg:inline">each explored </span>from
+                first wireframe to<span className="hidden lg:inline"> polished,</span> hand-off-ready screens.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 lg:w-[300px]">
+              <a
+                href={`mailto:${SITE.email}`}
+                className="flex h-[54px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white hover:opacity-90 lg:h-14 lg:text-[17px]"
+              >
+                Start a design project
+              </a>
+              <a
+                href="#work"
+                className="hidden h-14 items-center justify-center rounded-xl border-[1.5px] border-input text-[17px] font-semibold text-foreground hover:bg-secondary lg:flex"
+              >
+                See the work
+              </a>
+            </div>
+          </section>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button variant="gradient" asChild>
-              <a href="https://dribbble.com/deepak1605" target="_blank" rel="noreferrer noopener">
-                <ExternalLink className="h-4 w-4" />
+          {/* Featured case */}
+          {fitflow && (
+            <section className="flex flex-col gap-[18px] bg-band px-4 py-11 text-white lg:flex-row lg:items-center lg:gap-[72px] lg:px-page lg:py-24">
+              <div className="flex flex-col gap-[18px] lg:w-[460px] lg:shrink-0 lg:gap-[22px]">
+                <div className="flex gap-2">
+                  <span className="rounded-[7px] bg-[#16283F] px-2.5 py-[5px] text-xs font-bold text-[#7CC4F2] lg:text-[13px]">Featured</span>
+                  <span className="rounded-[7px] bg-[#16283F] px-2.5 py-[5px] text-xs font-semibold text-[#E3E9F0] lg:text-[13px]">Mobile app</span>
+                </div>
+                <h2 className="text-[30px] font-bold leading-[1.1] tracking-[-0.025em] lg:text-5xl lg:leading-[1.05] lg:tracking-[-0.03em]">
+                  FitFlow — a fitness app that makes progress feel motivating.
+                </h2>
+                <p className="hidden text-lg leading-[1.6] text-[#B7C3D1] lg:block">
+                  A dual-theme fitness dashboard balancing strong visual hierarchy with calm, wellness-focused interactions.
+                </p>
+                <ul className="hidden grid-cols-2 gap-x-5 gap-y-3 text-[15px] text-[#E3E9F0] lg:grid">
+                  {FITFLOW_POINTS.map((p) => (
+                    <li key={p} className="flex items-center gap-2.5">
+                      <Check className="h-[18px] w-[18px] text-[#7CC4F2]" strokeWidth={2.2} aria-hidden />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={fitflow.dribbbleUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="hidden h-[52px] items-center self-start rounded-xl bg-white px-6 text-base font-bold text-[#0B1320] hover:opacity-90 lg:flex"
+                >
+                  View on Dribbble
+                </a>
+              </div>
+              <Link to="/portfolio/fitflow" className="block min-w-0 lg:flex-1">
+                <img
+                  src={fitflow.fullImgUrl ?? fitflow.imgUrl}
+                  alt="FitFlow fitness app — light and dark screens"
+                  className="block aspect-[3/2] w-full rounded-[20px] bg-[#FDEEE3] object-cover lg:aspect-auto lg:h-[540px] lg:rounded-3xl"
+                />
+              </Link>
+              <p className="text-base leading-[1.6] text-[#B7C3D1] lg:hidden">
+                A dual-theme fitness dashboard: daily workout focus, streaks, water intake, mindful minutes and weekly progress.
+              </p>
+              <a
+                href={fitflow.dribbbleUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="flex h-[52px] items-center justify-center rounded-xl bg-white text-base font-bold text-[#0B1320] lg:hidden"
+              >
                 View on Dribbble
               </a>
-            </Button>
-            <Button variant="outline" asChild>
-              <a href={LINKEDIN_URL} target="_blank" rel="noreferrer noopener">
-                LinkedIn
-              </a>
-            </Button>
-          </div>
-        </section>
-
-        {/* Design work */}
-        <section className="mx-auto max-w-6xl px-4">
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold">Design Work</h2>
-            <a
-              href="https://dribbble.com/deepak1605"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-            >
-              View all on Dribbble
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {visibleShots.map((shot, i) => (
-              <ShotCard key={shot.id} shot={shot} index={i} />
-            ))}
-          </div>
-
-          {hasMore && (
-            <div className="mt-10 flex justify-center">
-              <Button
-                variant="outline"
-                size="lg"
-                onClick={() => setVisible(v => v + PAGE_SIZE)}
-                className="min-w-[160px]"
-              >
-                Load More
-              </Button>
-            </div>
+            </section>
           )}
-        </section>
 
-        {/* CodesPanda templates CTA */}
-        <section className="mx-auto mt-20 max-w-3xl px-4 text-center">
-          <div className="rounded-3xl border border-border bg-card p-10 shadow-sm">
-            <h2 className="text-2xl font-bold">React Templates by CodesPanda</h2>
-            <p className="mx-auto mt-3 max-w-md text-sm text-muted-foreground">
-              Designs brought to life as free, production-ready React templates. Browse all CodesPanda templates built from these UI concepts.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button variant="gradient" asChild>
-                <a href="/templates">Browse Templates</a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href="mailto:contact@codespanda.com">Get in Touch</a>
-              </Button>
+          {/* Shots */}
+          <section id="work" className="flex flex-col gap-[18px] px-4 py-11 lg:gap-9 lg:px-page lg:py-[104px]">
+            <div className="flex flex-col gap-[18px] lg:flex-row lg:items-end lg:justify-between">
+              <div className="flex flex-col gap-3">
+                <span className="hidden text-sm font-bold uppercase tracking-[0.08em] text-link lg:block">Selected work</span>
+                <h2 className="text-[28px] font-bold tracking-[-0.025em] lg:text-[44px] lg:tracking-[-0.03em]">Recent shots</h2>
+              </div>
+              <TypeTabs tabs={TABS} value={filter} onChange={pickFilter} label="Project type" className="grid grid-cols-2 lg:flex" />
             </div>
-          </div>
-        </section>
-      </main>
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-7">
+              {shots.map((s, i) => (
+                <ShotCard key={s.id} shot={s} index={i} />
+              ))}
+            </div>
+            {visible < filtered.length && (
+              <button
+                type="button"
+                onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                className="flex h-[52px] items-center justify-center self-stretch rounded-xl border-[1.5px] border-input bg-card px-[26px] text-base font-semibold text-foreground hover:bg-secondary lg:self-center"
+              >
+                Show more shots
+              </button>
+            )}
+          </section>
 
-      <Suspense fallback={<div className="h-72 animate-pulse bg-secondary/30" />}>
+          {/* Services */}
+          <section className="flex flex-col gap-4 px-4 pb-11 lg:gap-10 lg:px-page lg:pb-[104px]">
+            <div className="flex flex-col gap-3 lg:w-[720px]">
+              <span className="hidden text-sm font-bold uppercase tracking-[0.08em] text-link lg:block">What we design</span>
+              <h2 className="text-[28px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[44px] lg:leading-[1.1] lg:tracking-[-0.03em]">
+                <span className="lg:hidden">What we design</span>
+                <span className="hidden lg:inline">From first wireframe to code-ready screens.</span>
+              </h2>
+            </div>
+            <div className="flex flex-col gap-4 lg:grid lg:grid-cols-4 lg:gap-5">
+              {SERVICES.map(({ icon: Icon, title, body, short }) => (
+                <div key={title} className="flex flex-col gap-1.5 rounded-[14px] border border-border bg-card p-[18px] lg:gap-3 lg:rounded-2xl lg:p-7">
+                  <Icon className="hidden h-[26px] w-[26px] text-link lg:block" strokeWidth={1.9} aria-hidden />
+                  <h3 className="text-[17px] font-bold lg:text-[19px]">{title}</h3>
+                  <p className="text-[15px] leading-[1.5] text-muted-foreground lg:leading-[1.55]">
+                    <span className="lg:hidden">{short}</span>
+                    <span className="hidden lg:inline">{body}</span>
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section id="contact" className="px-4 pb-12 lg:px-page lg:pb-[104px]">
+            <div className="flex flex-col gap-3.5 rounded-[22px] bg-brand px-[22px] py-8 text-white lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:rounded-[28px] lg:px-page lg:py-[72px]">
+              <div className="flex flex-col gap-3.5 lg:w-[700px] lg:gap-4">
+                <h2 className="text-[28px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[46px] lg:leading-[1.08] lg:tracking-[-0.03em]">
+                  Have a product that needs design?
+                </h2>
+                <p className="text-base leading-[1.6] text-[#DCEEFA] lg:text-lg">
+                  We design it in Figma and can build it in React too<span className="hidden lg:inline"> — one team from wireframe to production</span>.
+                </p>
+              </div>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="flex h-[54px] items-center justify-center rounded-xl bg-white px-7 text-[17px] font-bold text-[#005A94] hover:opacity-90 lg:h-14"
+              >
+                Talk to us
+              </a>
+            </div>
+          </section>
+        </main>
+
         <Footer />
-      </Suspense>
+      </div>
     </>
   );
 }
