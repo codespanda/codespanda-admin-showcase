@@ -1,30 +1,37 @@
-import { lazy, Suspense } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
-  ArrowLeft, ArrowUpRight, Calendar, Clock, Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot,
-  Puzzle, BrainCircuit, Cloud, GraduationCap, LayoutTemplate, Shapes, Layers, Accessibility, Type, Lightbulb,
-  Component, type LucideIcon,
+  ArrowLeft, ArrowRight, ArrowUpRight, ChevronRight, Figma, LayoutGrid, Palette, LayoutTemplate, Shapes, Layers,
+  Accessibility, Type, Lightbulb, Component, type LucideIcon,
 } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
-import { Button } from "@/components/ui/button";
-import { getBlogPostBySlug, BLOG_POSTS } from "@/lib/blog-data";
-
-const Footer = lazy(() =>
-  import("@/components/sections/Footer").then((m) => ({ default: m.Footer }))
-);
-
-const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit, Cloud, GraduationCap };
+import { Footer } from "@/components/sections/Footer";
+import { BlogCard, CategoryPill, PostCover, formatPostDate } from "@/components/site/BlogCard";
+import { StartProjectDialog } from "@/components/site/StartProjectDialog";
+import { getBlogPostBySlug, BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
 
 const RESOURCE_ICONS: Record<string, LucideIcon> = {
   Figma, LayoutGrid, LayoutTemplate, Shapes, Layers, Accessibility, Type, Palette, Lightbulb, Component,
 };
 
-/** Interactive "quick links" grid — clickable cards with real outbound links, shown above the article body when a post defines resourceLinks. */
-function ResourceLinksGrid({ links }: { links: NonNullable<import("@/lib/blog-data").BlogPost["resourceLinks"]> }) {
+function headingId(text: string) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
+/** "## " headings in the post body, for the table of contents. */
+function headingsOf(text: string) {
+  return text
+    .split(/\n{2,}/)
+    .map((b) => b.trim())
+    .filter((b) => b.startsWith("## "))
+    .map((b) => b.replace(/^##\s*/, ""));
+}
+
+/** Clickable cards with real outbound links, shown above the article body when a post defines resourceLinks. */
+function ResourceLinksGrid({ links }: { links: NonNullable<BlogPost["resourceLinks"]> }) {
   return (
-    <div className="mt-10">
-      <h2 className="mb-4 text-lg font-bold">Quick Links</h2>
+    <div className="flex flex-col gap-4">
+      <h2 className="text-[22px] font-bold tracking-[-0.02em] lg:text-2xl">Quick links</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         {links.map((r) => {
           const Icon = RESOURCE_ICONS[r.icon] ?? Shapes;
@@ -34,18 +41,18 @@ function ResourceLinksGrid({ links }: { links: NonNullable<import("@/lib/blog-da
               href={r.url}
               target="_blank"
               rel="noreferrer noopener"
-              className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all duration-200 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md hover:shadow-primary/5"
+              className="group flex items-start gap-3.5 rounded-[16px] border border-border bg-card p-4 transition-colors hover:border-link"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <Icon className="h-5 w-5" strokeWidth={1.75} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-1.5">
-                  <p className="text-sm font-semibold">{r.title}</p>
-                  <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary" />
-                </div>
-                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{r.description}</p>
-              </div>
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-blue-soft text-link">
+                <Icon className="h-5 w-5" strokeWidth={1.8} aria-hidden />
+              </span>
+              <span className="flex min-w-0 flex-1 flex-col gap-1">
+                <span className="flex items-center gap-1.5 text-[15px] font-semibold">
+                  {r.title}
+                  <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground transition-colors group-hover:text-link" aria-hidden />
+                </span>
+                <span className="text-[13px] leading-[1.5] text-muted-foreground">{r.description}</span>
+              </span>
             </a>
           );
         })}
@@ -54,25 +61,22 @@ function ResourceLinksGrid({ links }: { links: NonNullable<import("@/lib/blog-da
   );
 }
 
-function formatDate(iso: string) {
-  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
-}
-
 /** Lightweight markdown renderer: "## " headings, "- " bullet lists, blank-line paragraphs */
 function PostContent({ text }: { text: string }) {
   const blocks = text.split(/\n{2,}/);
   return (
-    <div className="prose prose-sm dark:prose-invert max-w-none space-y-5 text-[15px] leading-relaxed text-foreground">
+    <div className="flex flex-col gap-5 text-[17px] leading-[1.75] text-foreground/85 lg:text-lg">
       {blocks.map((block, bi) => {
         const trimmed = block.trim();
         if (trimmed.startsWith("## ")) {
+          const heading = trimmed.replace(/^##\s*/, "");
           return (
-            <h2 key={bi} className="!mt-10 text-xl font-bold tracking-tight">
-              {trimmed.replace(/^##\s*/, "")}
+            <h2
+              key={bi}
+              id={headingId(heading)}
+              className="mt-6 scroll-mt-28 text-[26px] font-bold leading-[1.2] tracking-[-0.025em] text-foreground first:mt-0 lg:text-[30px]"
+            >
+              {heading}
             </h2>
           );
         }
@@ -80,23 +84,35 @@ function PostContent({ text }: { text: string }) {
         const isList = lines.length > 0 && lines.every((l) => l.startsWith("- "));
         if (isList) {
           return (
-            <ul key={bi} className="space-y-1.5 pl-1">
+            <ul key={bi} className="flex flex-col gap-2.5">
               {lines.map((l, li) => (
-                <li key={li} className="flex items-start gap-2 text-muted-foreground">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                <li key={li} className="flex items-start gap-3">
+                  <span className="mt-[0.7em] h-1.5 w-1.5 shrink-0 rounded-full bg-link" aria-hidden />
                   <span>{l.replace(/^-\s*/, "")}</span>
                 </li>
               ))}
             </ul>
           );
         }
-        return (
-          <p key={bi} className="text-muted-foreground">
-            {lines.join(" ")}
-          </p>
-        );
+        return <p key={bi}>{lines.join(" ")}</p>;
       })}
     </div>
+  );
+}
+
+function AdjacentPost({ post, dir }: { post: BlogPost; dir: "prev" | "next" }) {
+  return (
+    <Link
+      to={`/blog/${post.slug}`}
+      className={`group flex flex-col gap-2 rounded-[18px] border border-border bg-card p-5 transition-colors hover:border-link lg:p-6 ${dir === "next" ? "sm:items-end sm:text-right" : ""}`}
+    >
+      <span className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-muted-foreground">
+        {dir === "prev" ? <ArrowLeft className="h-4 w-4" aria-hidden /> : null}
+        {dir === "prev" ? "Previous article" : "Next article"}
+        {dir === "next" ? <ArrowRight className="h-4 w-4" aria-hidden /> : null}
+      </span>
+      <span className="text-[17px] font-bold leading-[1.3] tracking-[-0.01em] transition-colors group-hover:text-link">{post.title}</span>
+    </Link>
   );
 }
 
@@ -109,7 +125,12 @@ export function BlogPostPage() {
   const currentIndex = BLOG_POSTS.findIndex((p) => p.slug === post.slug);
   const prev = BLOG_POSTS[currentIndex - 1];
   const next = BLOG_POSTS[currentIndex + 1];
-  const Icon = ICONS[post.icon];
+  const headings = headingsOf(post.content);
+  // Same topic first, then the newest of the rest.
+  const related = [
+    ...BLOG_POSTS.filter((p) => p.slug !== post.slug && p.category === post.category),
+    ...[...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date)).filter((p) => p.slug !== post.slug && p.category !== post.category),
+  ].slice(0, 3);
 
   const description = post.excerpt;
 
@@ -144,163 +165,157 @@ export function BlogPostPage() {
         })}</script>
       </Helmet>
 
-      <Navbar />
+      <div className="flex min-h-screen flex-col bg-background">
+        <Navbar />
 
-      <main className="min-h-screen pt-20 pb-20">
-        {/* Back nav */}
-        <div className="mx-auto max-w-3xl px-4 pt-8 pb-6">
-          <Link
-            to="/blog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Blog
-          </Link>
-        </div>
-
-        {/* Cover */}
-        <div className="mx-auto max-w-3xl px-4">
-          {post.coverVideo ? (
-            <div className="aspect-video overflow-hidden rounded-2xl bg-secondary/40 shadow-xl shadow-black/10">
-              <video
-                src={post.coverVideo}
-                poster={post.coverImage}
-                autoPlay
-                muted
-                loop
-                playsInline
-                controls
-                className="h-full w-full object-contain"
-              >
-                Your browser doesn't support embedded video.
-              </video>
-            </div>
-          ) : post.coverImage ? (
-            <div className="aspect-video overflow-hidden rounded-2xl bg-secondary/40 shadow-xl shadow-black/10">
-              <img
-                src={post.coverImage}
-                alt={post.title}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="h-full w-full object-contain"
-              />
-            </div>
-          ) : (
-            <div className={`flex h-56 items-center justify-center rounded-2xl bg-gradient-to-br ${post.gradient} shadow-xl shadow-black/10 sm:h-72`}>
-              <Icon className="h-16 w-16 text-white/90" strokeWidth={1.5} />
-            </div>
-          )}
-        </div>
-
-        {/* Details */}
-        <div className="mx-auto max-w-3xl px-4 pt-8">
-          <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-            {post.category}
-          </span>
-          <h1 className="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">
-            {post.title}
-          </h1>
-
-          <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-            <span className="font-medium text-foreground">{post.author}</span>
-            <span className="inline-flex items-center gap-1.5">
-              <Calendar className="h-3.5 w-3.5" />
-              {formatDate(post.date)}
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Clock className="h-3.5 w-3.5" />
-              {post.readTime}
-            </span>
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-2">
-            {post.tags.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-muted-foreground"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-
-          {/* Interactive resource links, when this post defines them */}
-          {post.resourceLinks && <ResourceLinksGrid links={post.resourceLinks} />}
-
-          {/* Content */}
-          <div className="mt-10 rounded-2xl border border-border bg-card px-6 py-7 sm:px-8">
-            <PostContent text={post.content} />
-          </div>
-
-          {/* Written by CodesPanda */}
-          <div className="mt-8 flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-primary/60">
-              <span className="text-sm font-black text-primary-foreground">CP</span>
-            </div>
-            <div>
-              <p className="text-sm font-bold">Written by {post.author}</p>
-              <p className="text-xs text-muted-foreground">CodesPanda — Free React Admin Templates</p>
-            </div>
-            <div className="ml-auto hidden sm:block">
-              <Button variant="outline" size="sm" asChild>
-                <Link to="/templates">Browse Templates</Link>
-              </Button>
-            </div>
-          </div>
-
-          {/* Prev / Next navigation */}
-          {(prev || next) && (
-            <div className="mt-12">
-              <h2 className="mb-5 text-lg font-bold">More Posts</h2>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {prev && (
-                  <Link
-                    to={`/blog/${prev.slug}`}
-                    className="group flex items-center gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:shadow-md hover:-translate-y-0.5"
-                  >
-                    <ArrowLeft className="h-4 w-4 shrink-0 text-muted-foreground" />
-                    {prev.coverImage ? (
-                      <img src={prev.coverImage} alt={prev.title} width={64} height={48} loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
-                    ) : (
-                      <div className={`flex h-12 w-16 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${prev.gradient}`}>
-                        {(() => { const PrevIcon = ICONS[prev.icon]; return <PrevIcon className="h-5 w-5 text-white/90" strokeWidth={1.5} />; })()}
-                      </div>
-                    )}
-                    <div className="min-w-0">
-                      <p className="text-[10px] font-semibold uppercase tracking-widest text-primary">{prev.category}</p>
-                      <p className="truncate text-sm font-semibold">{prev.title}</p>
-                    </div>
-                  </Link>
-                )}
-                {next && (
-                  <Link
-                    to={`/blog/${next.slug}`}
-                    className="group flex items-center justify-end gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:shadow-md hover:-translate-y-0.5 sm:flex-row-reverse"
-                  >
-                    <ArrowLeft className="h-4 w-4 shrink-0 rotate-180 text-muted-foreground" />
-                    {next.coverImage ? (
-                      <img src={next.coverImage} alt={next.title} width={64} height={48} loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
-                    ) : (
-                      <div className={`flex h-12 w-16 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${next.gradient}`}>
-                        {(() => { const NextIcon = ICONS[next.icon]; return <NextIcon className="h-5 w-5 text-white/90" strokeWidth={1.5} />; })()}
-                      </div>
-                    )}
-                    <div className="min-w-0 sm:text-right">
-                      <p className="text-[10px] font-semibold uppercase tracking-widest text-primary">{next.category}</p>
-                      <p className="truncate text-sm font-semibold">{next.title}</p>
-                    </div>
-                  </Link>
-                )}
+        <main className="flex flex-1 flex-col pt-16 lg:pt-20">
+          {/* Header */}
+          <section className="border-b border-border bg-card px-4 pb-10 pt-7 lg:px-page lg:pb-16 lg:pt-12">
+            <div className="mx-auto flex max-w-[1080px] flex-col gap-5 lg:gap-6">
+              <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-muted-foreground">
+                <Link to="/blog" className="font-medium hover:text-foreground">Blog</Link>
+                <ChevronRight className="h-3.5 w-3.5" aria-hidden />
+                <span className="truncate">{post.category}</span>
+              </nav>
+              <div className="flex flex-wrap items-center gap-2">
+                <CategoryPill>{post.category}</CategoryPill>
+                <span className="text-[13px] text-muted-foreground">{post.readTime}</span>
+              </div>
+              <h1 className="max-w-[900px] text-balance text-[34px] font-extrabold leading-[1.08] tracking-[-0.035em] lg:text-[54px] lg:leading-[1.05]">
+                {post.title}
+              </h1>
+              <p className="max-w-[820px] text-[17px] leading-[1.6] text-muted-foreground lg:text-xl">{post.excerpt}</p>
+              <div className="flex items-center gap-3 pt-1">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-logo-bg">
+                  <img src="/logo.webp" alt="" width={44} height={44} className="h-9 w-9 object-contain" />
+                </span>
+                <span className="flex flex-col">
+                  <span className="text-[15px] font-semibold">{post.author}</span>
+                  <span className="text-[13px] text-muted-foreground">
+                    <time dateTime={post.date}>{formatPostDate(post.date, "long")}</time> · {post.readTime}
+                  </span>
+                </span>
               </div>
             </div>
-          )}
-        </div>
-      </main>
+          </section>
 
-      <Suspense fallback={<div className="h-72 animate-pulse bg-secondary/30" />}>
+          {/* Cover */}
+          <section className="px-4 pt-8 lg:px-page lg:pt-14">
+            <div className="mx-auto max-w-[1080px] overflow-hidden rounded-[18px] border border-border bg-soft-2 lg:rounded-[22px]">
+              {post.coverVideo ? (
+                <video
+                  src={post.coverVideo}
+                  poster={post.coverImage}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  className="aspect-video h-full w-full object-contain"
+                >
+                  Your browser doesn't support embedded video.
+                </video>
+              ) : (
+                <PostCover post={post} eager className="aspect-video" imgClassName="group-hover:scale-100" />
+              )}
+            </div>
+          </section>
+
+          {/* Article + sidebar */}
+          <section className="px-4 py-10 lg:px-page lg:py-16">
+            <div className="mx-auto flex max-w-[1080px] flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
+              <article className="flex min-w-0 flex-1 flex-col gap-10">
+                {post.resourceLinks && <ResourceLinksGrid links={post.resourceLinks} />}
+                <PostContent text={post.content} />
+
+                {post.tags.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-2 border-t border-border pt-6">
+                    <span className="mr-1 text-sm font-semibold">Tags</span>
+                    {post.tags.map((t) => (
+                      <span key={t} className="rounded-md bg-secondary px-2.5 py-1 text-[13px] font-medium text-muted-foreground">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                )}
+
+                {/* Written by */}
+                <div className="flex flex-col gap-4 rounded-[18px] border border-border bg-card p-5 sm:flex-row sm:items-center lg:p-6">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-[14px] bg-logo-bg">
+                    <img src="/logo.webp" alt="" width={56} height={56} className="h-12 w-12 object-contain" />
+                  </span>
+                  <span className="flex flex-1 flex-col gap-0.5">
+                    <span className="text-[17px] font-bold">Written by {post.author}</span>
+                    <span className="text-sm text-muted-foreground">We design and build web pages, admin panels and SaaS products in React.</span>
+                  </span>
+                  <Link
+                    to="/templates"
+                    className="flex h-11 shrink-0 items-center justify-center rounded-xl border-[1.5px] border-input px-5 text-[15px] font-semibold hover:bg-secondary"
+                  >
+                    Browse templates
+                  </Link>
+                </div>
+
+                {(prev || next) && (
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {prev ? <AdjacentPost post={prev} dir="prev" /> : <span className="hidden sm:block" />}
+                    {next && <AdjacentPost post={next} dir="next" />}
+                  </div>
+                )}
+              </article>
+
+              <aside className="flex flex-col gap-5 lg:sticky lg:top-28 lg:w-[300px] lg:shrink-0">
+                {headings.length > 1 && (
+                  <nav aria-label="On this page" className="hidden flex-col gap-3 rounded-[18px] border border-border bg-card p-5 lg:flex">
+                    <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-link">On this page</span>
+                    <ol className="flex max-h-[44vh] flex-col gap-2 overflow-y-auto">
+                      {headings.map((h) => (
+                        <li key={h}>
+                          <a href={`#${headingId(h)}`} className="block text-sm leading-[1.45] text-muted-foreground hover:text-foreground">
+                            {h}
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                )}
+                <div className="flex flex-col gap-3 rounded-[18px] bg-band p-6 text-white">
+                  <span className="text-xl font-bold leading-[1.25]">Need this built for you?</span>
+                  <span className="text-[15px] leading-[1.55] text-[#B7C3D1]">
+                    We design and build dashboards, web apps and SaaS products in React.
+                  </span>
+                  <StartProjectDialog>
+                    <button type="button" className="mt-1 flex h-12 items-center justify-center rounded-xl bg-brand text-[15px] font-bold text-white hover:opacity-90">
+                      Start a project
+                    </button>
+                  </StartProjectDialog>
+                </div>
+              </aside>
+            </div>
+          </section>
+
+          {/* Related */}
+          {related.length > 0 && (
+            <section className="flex flex-col gap-6 border-t border-border bg-card px-4 py-12 lg:gap-8 lg:px-page lg:py-[88px]">
+              <div className="flex items-end justify-between gap-4">
+                <h2 className="text-[30px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[44px] lg:leading-[1.1] lg:tracking-[-0.03em]">
+                  Keep reading
+                </h2>
+                <Link to="/blog" className="shrink-0 pb-1 text-[15px] font-semibold text-link hover:text-blue-ink">
+                  All articles →
+                </Link>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 lg:gap-6 xl:grid-cols-3">
+                {related.map((p) => (
+                  <BlogCard key={p.slug} post={p} />
+                ))}
+              </div>
+            </section>
+          )}
+        </main>
+
         <Footer />
-      </Suspense>
+      </div>
     </>
   );
 }
