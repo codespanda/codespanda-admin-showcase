@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Dribbble, Linkedin } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { Logo } from "@/components/shared/Logo";
@@ -43,6 +43,11 @@ function Linkified({ line }: { line: string }) {
   );
 }
 
+/** A bullet line without its "•" and any leading emoji (with skin-tone, variation and joiner marks). */
+function stripBullet(line: string) {
+  return line.replace(/^•\s*/, "").replace(/^[\p{Extended_Pictographic}\u{1F3FB}-\u{1F3FF}️‍]+\s*/u, "");
+}
+
 /** The description's remaining blocks: bullet lists and paragraphs. */
 function DescriptionBlocks({ blocks }: { blocks: string[] }) {
   return (
@@ -55,7 +60,7 @@ function DescriptionBlocks({ blocks }: { blocks: string[] }) {
               {lines.map((l, li) => (
                 <li key={li} className="flex items-start gap-2.5 text-[15px] leading-[1.6] text-muted-foreground lg:text-base">
                   <span className="mt-[9px] h-1.5 w-1.5 shrink-0 rounded-full bg-link" aria-hidden />
-                  {l.replace(/^•\s*/, "")}
+                  {stripBullet(l)}
                 </li>
               ))}
             </ul>
@@ -230,9 +235,23 @@ export function PortfolioShotPage() {
                 <div className="flex min-w-0 flex-col gap-1">
                   <span className="text-base font-bold">Designed by CodesPanda</span>
                   <span className="text-sm text-muted-foreground">UI kits, templates, dashboards and SaaS experiences.</span>
-                  <span className="flex gap-4 pt-1 text-sm font-semibold">
-                    <a href={DRIBBBLE_PROFILE} target="_blank" rel="noreferrer noopener" className="text-link hover:text-blue-ink">Dribbble</a>
-                    <a href={LINKEDIN_URL} target="_blank" rel="noreferrer noopener" className="text-link hover:text-blue-ink">LinkedIn</a>
+                  <span className="flex flex-wrap gap-2 pt-2">
+                    <a
+                      href={DRIBBBLE_PROFILE}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="flex h-10 items-center gap-2 rounded-[10px] border-[1.5px] border-input px-3.5 text-sm font-semibold text-foreground transition-colors hover:border-link hover:text-link"
+                    >
+                      <Dribbble className="h-4 w-4" aria-hidden /> Dribbble
+                    </a>
+                    <a
+                      href={LINKEDIN_URL}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="flex h-10 items-center gap-2 rounded-[10px] border-[1.5px] border-input px-3.5 text-sm font-semibold text-foreground transition-colors hover:border-link hover:text-link"
+                    >
+                      <Linkedin className="h-4 w-4" aria-hidden /> LinkedIn
+                    </a>
                   </span>
                 </div>
               </div>
