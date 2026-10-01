@@ -16,9 +16,9 @@ interface NavItem {
 const HIRE_URL = "https://www.linkedin.com/company/codespanda";
 
 const NAV: NavItem[] = [
-  { label: "Templates", to: "/templates", match: (p, s) => p === "/templates" && !s.includes("type=") },
-  { label: "Web pages", to: "/templates?type=web", match: (p, s) => p === "/templates" && s.includes("type=web") },
-  { label: "Admin panels", to: "/templates?type=admin", match: (p, s) => p === "/templates" && s.includes("type=admin") },
+  { label: "Templates", to: "/templates", match: (p) => p.startsWith("/templates") },
+  { label: "Projects", to: "/projects", match: (p) => p.startsWith("/projects") },
+  { label: "Services", to: "/services", match: (p) => p.startsWith("/services") },
   { label: "Portfolio", to: "/portfolio", match: (p) => p.startsWith("/portfolio") },
   { label: "Why CodesPanda", to: "/#features" },
   { label: "Blog", to: "/blog", match: (p) => p.startsWith("/blog") },

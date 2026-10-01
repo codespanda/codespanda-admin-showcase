@@ -8,6 +8,7 @@ import { TypeTabs } from "@/components/site/TypeTabs";
 import { ShotCard, groupOf } from "@/components/site/ShotCard";
 import { SHOTS, getShotById } from "@/lib/portfolio-data";
 import { SITE } from "@/lib/constants";
+import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
 const PAGE_SIZE = 12;
@@ -96,12 +97,11 @@ export function DeepakPortfolioPage() {
               </p>
             </div>
             <div className="flex flex-col gap-3 lg:w-[300px]">
-              <a
-                href={`mailto:${SITE.email}`}
-                className="flex h-[54px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white hover:opacity-90 lg:h-14 lg:text-[17px]"
-              >
-                Start a design project
-              </a>
+              <StartProjectDialog defaultType="UI/UX design">
+                <button type="button" className="flex h-[54px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white hover:opacity-90 lg:h-14 lg:text-[17px]">
+                  Start a design project
+                </button>
+              </StartProjectDialog>
               <a
                 href="#work"
                 className="hidden h-14 items-center justify-center rounded-xl border-[1.5px] border-input text-[17px] font-semibold text-foreground hover:bg-secondary lg:flex"

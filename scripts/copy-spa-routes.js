@@ -106,6 +106,8 @@ const STATIC_ROUTES = [
   "/templates/alpine-admin-react",
   "/templates/portfolio-template",
   "/portfolio",
+  "/projects",
+  "/services",
   "/blog",
   "/legal/privacy",
   "/legal/terms",
@@ -217,6 +219,16 @@ const PAGE_META = {
     title: "Portfolio Template — Free React Portfolio | CodesPanda",
     description: "Portfolio Template is a free React developer portfolio built with Vite & Tailwind CSS. Showcase your work, experience & projects — fully customizable.",
     ogImage: `${BASE}/images/portfolio/portfolio.jpg`,
+  },
+  "/projects": {
+    title: "Projects — Our Live Products | CodesPanda",
+    description: "Live products built by CodesPanda: AI Invoice, an AI-assisted invoice generator, and AccountingPanda, an outsourced accounting and bookkeeping website.",
+    ogImage: `${BASE}/images/products/ai-invoice/dashboard.webp`,
+  },
+  "/services": {
+    title: "Services — UI/UX Design & React Development | CodesPanda",
+    description: "CodesPanda designs and builds web pages, admin panels and custom web applications — UI/UX design in Figma and development in React, Vite and Tailwind CSS.",
+    ogImage: `${BASE}/og-image.png`,
   },
   "/portfolio": {
     title: "UI/UX Portfolio — Dashboard & Product Design | CodesPanda",

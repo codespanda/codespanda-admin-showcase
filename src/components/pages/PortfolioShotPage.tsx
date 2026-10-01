@@ -6,7 +6,7 @@ import { Footer } from "@/components/sections/Footer";
 import { Logo } from "@/components/shared/Logo";
 import { ShotCard, ShotCategoryPill, groupOf } from "@/components/site/ShotCard";
 import { getShotById, SHOTS, type Shot } from "@/lib/portfolio-data";
-import { SITE } from "@/lib/constants";
+import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 
 const DRIBBBLE_PROFILE = "https://dribbble.com/deepak1605";
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
@@ -222,12 +222,11 @@ export function PortfolioShotPage() {
                 >
                   View on Dribbble
                 </a>
-                <a
-                  href={`mailto:${SITE.email}`}
-                  className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input text-base font-semibold text-foreground hover:bg-secondary"
-                >
-                  Start a design project
-                </a>
+                <StartProjectDialog defaultType="UI/UX design">
+                  <button type="button" className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input text-base font-semibold text-foreground hover:bg-secondary">
+                    Start a design project
+                  </button>
+                </StartProjectDialog>
               </div>
 
               <div className="flex items-start gap-4 rounded-[18px] border border-border bg-card p-[18px]">

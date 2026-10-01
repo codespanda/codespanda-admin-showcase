@@ -22,6 +22,8 @@ const ShoppersCrownPage   = lazy(() => import("@/components/pages/ShoppersCrownP
 const HamaraBharatPage    = lazy(() => import("@/components/pages/HamaraBharatPage").then(m => ({ default: m.HamaraBharatPage })));
 const DeepakPortfolioPage = lazy(() => import("@/components/pages/DeepakPortfolioPage").then(m => ({ default: m.DeepakPortfolioPage })));
 const PortfolioShotPage   = lazy(() => import("@/components/pages/PortfolioShotPage").then(m => ({ default: m.PortfolioShotPage })));
+const ProjectsPage        = lazy(() => import("@/components/pages/ProjectsPage").then(m => ({ default: m.ProjectsPage })));
+const ServicesPage        = lazy(() => import("@/components/pages/ServicesPage").then(m => ({ default: m.ServicesPage })));
 const BlogPage            = lazy(() => import("@/components/pages/BlogPage").then(m => ({ default: m.BlogPage })));
 const BlogPostPage        = lazy(() => import("@/components/pages/BlogPostPage").then(m => ({ default: m.BlogPostPage })));
 
@@ -52,6 +54,8 @@ function App() {
         <Route path="/templates/hamara-bharat" element={<Suspense><HamaraBharatPage /></Suspense>} />
         <Route path="/portfolio" element={<Suspense><DeepakPortfolioPage /></Suspense>} />
         <Route path="/portfolio/:shotId" element={<Suspense><PortfolioShotPage /></Suspense>} />
+        <Route path="/projects" element={<Suspense><ProjectsPage /></Suspense>} />
+        <Route path="/services" element={<Suspense><ServicesPage /></Suspense>} />
         <Route path="/blog" element={<Suspense><BlogPage /></Suspense>} />
         <Route path="/blog/:slug" element={<Suspense><BlogPostPage /></Suspense>} />
         <Route path="/legal/:slug" element={<LegalPage />} />
