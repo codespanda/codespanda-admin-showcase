@@ -52,7 +52,7 @@ const PRODUCTS: Product[] = [
       "Multi-currency billing",
     ],
     plan: "Free forever: up to 2 invoices a day, every feature included, no credit card required.",
-    cta: "Create your first invoice",
+    cta: "Try AI Invoice free",
     tint: "#E6F0FF",
     framed: true,
   },
