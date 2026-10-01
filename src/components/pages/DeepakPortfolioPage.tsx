@@ -5,9 +5,9 @@ import { AppWindow, Check, Layers, LayoutDashboard, Smartphone } from "lucide-re
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { TypeTabs } from "@/components/site/TypeTabs";
-import { SHOTS, getShotById, type Shot } from "@/lib/portfolio-data";
+import { ShotCard, groupOf } from "@/components/site/ShotCard";
+import { SHOTS, getShotById } from "@/lib/portfolio-data";
 import { SITE } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
 const PAGE_SIZE = 12;
@@ -20,12 +20,6 @@ const TABS: { id: Filter; label: string }[] = [
   { id: "dashboard", label: "Dashboards" },
 ];
 
-function groupOf(shot: Shot): Exclude<Filter, "all"> {
-  if (shot.category === "Mobile App") return "mobile";
-  if (shot.category === "Web Dashboard") return "dashboard";
-  return "web";
-}
-
 const SERVICES = [
   { icon: Smartphone, title: "Mobile apps", body: "Fitness, food delivery, healthcare, shopping and messaging apps.", short: "Fitness, food delivery, healthcare, shopping and messaging." },
   { icon: AppWindow, title: "Web apps", body: "Sign-in and onboarding flows, booking and event platforms.", short: "Sign-in and onboarding flows, booking and event platforms." },
@@ -34,38 +28,6 @@ const SERVICES = [
 ];
 
 const FITFLOW_POINTS = ["Daily workout focus", "Streak tracking", "Water intake", "Mindful minutes", "Weekly progress", "Dark & light themes"];
-
-function ShotCard({ shot, index }: { shot: Shot; index: number }) {
-  const mobile = groupOf(shot) === "mobile";
-  return (
-    <Link
-      to={`/portfolio/${shot.id}`}
-      className="group flex flex-col overflow-hidden rounded-[14px] border border-border bg-card text-foreground lg:rounded-[18px]"
-    >
-      <img
-        src={shot.imgUrl}
-        alt={`${shot.title} — screens`}
-        width={800}
-        height={600}
-        loading={index < 3 ? "eager" : "lazy"}
-        decoding="async"
-        className="block aspect-[4/3] w-full bg-secondary object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-      />
-      <div className="flex flex-col gap-1.5 p-3 pb-3.5 lg:gap-2.5 lg:px-[22px] lg:pb-[22px] lg:pt-5">
-        <span
-          className={cn(
-            "self-start rounded-[5px] px-[7px] py-[3px] text-[11px] font-bold lg:rounded-md lg:px-[9px] lg:py-1 lg:text-xs",
-            mobile ? "bg-blue-soft text-blue-ink" : "bg-band text-white"
-          )}
-        >
-          {shot.category}
-        </span>
-        <h3 className="text-[15px] font-bold leading-[1.3] lg:text-[19px] lg:tracking-[-0.01em]">{shot.title}</h3>
-        <span className="hidden text-sm text-muted-foreground lg:block">{shot.tags.slice(0, 3).join(" · ")}</span>
-      </div>
-    </Link>
-  );
-}
 
 export function DeepakPortfolioPage() {
   const [filter, setFilter] = useState<Filter>("all");
