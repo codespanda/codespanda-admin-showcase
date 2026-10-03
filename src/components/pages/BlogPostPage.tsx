@@ -9,6 +9,7 @@ import { Footer } from "@/components/sections/Footer";
 import { BlogCard, CategoryPill, PostCover, formatPostDate } from "@/components/site/BlogCard";
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 import { getBlogPostBySlug, BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
+import { postSeo, seoTitle } from "@/lib/seo";
 
 const RESOURCE_ICONS: Record<string, LucideIcon> = {
   Figma, LayoutGrid, LayoutTemplate, Shapes, Layers, Accessibility, Type, Palette, Lightbulb, Component,
@@ -132,24 +133,26 @@ export function BlogPostPage() {
     ...[...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date)).filter((p) => p.slug !== post.slug && p.category !== post.category),
   ].slice(0, 3);
 
-  const description = post.excerpt;
+  const seo = postSeo(post.slug);
+  const title = seoTitle(seo.title ?? post.title);
+  const description = seo.description ?? post.excerpt;
 
   return (
     <>
       <Helmet>
-        <title>{post.title} — CodesPanda Blog</title>
+        <title>{title}</title>
         <meta name="description" content={description} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://codespanda.com/blog/${post.slug}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${post.title} — CodesPanda Blog`} />
+        <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://codespanda.com/blog/${post.slug}`} />
         <meta property="og:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-image.png"} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={post.author} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${post.title} — CodesPanda Blog`} />
+        <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-image.png"} />
         <script type="application/ld+json">{JSON.stringify({

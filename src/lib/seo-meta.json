@@ -1,0 +1,93 @@
+{
+  "shots": {
+    "mobile-onboarding": {
+      "description": "A modern mobile app onboarding UI — welcome and splash screens, a multi-step flow, illustrated highlights, sign up and log in, and smooth micro-interactions."
+    },
+    "coupon-deals": {
+      "description": "A Coupon & Deals mobile app UI to discover, save and redeem offers from favourite brands — deal browsing, a coupon wallet, QR redemption and more."
+    },
+    "empty-states": {
+      "description": "An Empty States & System Feedback UI kit for admin dashboards — no data, empty inbox, search results, loading skeletons and error states with CTAs."
+    },
+    "error-state-ui": {
+      "title": "Admin Dashboard Error State Screens UI Design",
+      "description": "Admin dashboard UI screens for system feedback states — page not found, server unavailable, access restricted, maintenance mode and more."
+    },
+    "gaming-streaming": {
+      "description": "A bold, immersive Gaming Streaming Platform UI for gamers and streamers — live stream discovery, channel browsing and a content-first layout."
+    },
+    "fundora": {
+      "description": "Fundora is a fundraising admin dashboard for nonprofits, NGOs and campaign managers to track donations, manage campaigns and monitor performance live."
+    },
+    "invoice-hub": {
+      "description": "InvoiceHub is an invoice management admin dashboard for freelancers, agencies and SaaS teams to manage billing, track payments and send invoices."
+    },
+    "greenerp": {
+      "title": "GreenERP – ERP Dashboard for Finance & Business"
+    },
+    "pos-system": {
+      "title": "POS System Dashboard UI for Retail & Inventory"
+    },
+    "hireai": {
+      "title": "HireAI – AI Recruitment Platform Landing Page UI"
+    }
+  },
+  "posts": {
+    "what-is-agentic-ai-development": {
+      "title": "What Is Agentic AI Development?",
+      "description": "AI is moving beyond answering questions toward systems that plan, use tools, take actions and adapt. Here's what agentic AI development actually means."
+    },
+    "best-free-ui-ux-resources-2026": {
+      "description": "Where to find good free UI kits, design systems, icons, fonts and accessibility guidance: the resources that most improve what developers build in 2026."
+    },
+    "web-design-trends-2026": {
+      "title": "Web Design Trends for 2026: What Websites Will Look Like",
+      "description": "Users expect websites to be faster, smarter, more accessible, interactive, and visually engaging. Here are the major web design trends shaping 2026."
+    },
+    "50-best-free-admin-dashboard-templates-2026": {
+      "description": "Building an admin panel from scratch can take weeks. Here are 50 of the best free admin dashboard templates for 2026, for React, Vue, Angular and more."
+    },
+    "will-ai-replace-junior-developers": {
+      "description": "AI can generate components, write functions and fix bugs in minutes. It may replace some junior-level tasks, but not the need for junior developers."
+    },
+    "ai-powered-saas-development-2026": {
+      "title": "AI-Powered SaaS Development: Smarter Software for 2026",
+      "description": "A chatbot bolted onto an app is no longer enough. Businesses want AI-native SaaS that understands data, automates workflows and helps users decide faster."
+    },
+    "vibe-coding-future-of-software-development": {
+      "description": "AI coding tools are changing how developers write, test and ship software. Is vibe coding a passing trend or a real shift in how software gets built?"
+    },
+    "ai-powered-web-application-from-scratch": {
+      "description": "A practical roadmap for building an AI-powered web application: UX, architecture, choosing models, RAG, security and keeping costs under control."
+    },
+    "why-we-built-codespanda": {
+      "title": "Why We Built CodesPanda's Free Admin Dashboards",
+      "description": "Plenty of free admin dashboard templates exist, but 'free' rarely means production-ready. Here's the frustration that became the start of CodesPanda."
+    },
+    "shadcn-vs-mui-vs-antd": {
+      "title": "shadcn/ui vs Material UI vs Ant Design (2026)",
+      "description": "Picking a React component library in 2026 isn't about who has the most components. It's about the right balance of speed, customization and control."
+    },
+    "figma-to-production-workflow": {
+      "description": "Turning a Figma design into production is more than translating pixels into HTML and CSS. Here's the design-to-code workflow we follow on every project."
+    },
+    "why-vite-for-admin-panels": {
+      "description": "A modern React admin panel should feel fast, scale smoothly and stay easy to maintain. Here's why Vite is the right build tool for the job."
+    },
+    "ai-vs-traditional-web-development": {
+      "description": "Has AI replaced traditional web development? Not really. It has changed how developers work: the real comparison is developers with AI versus without."
+    },
+    "best-ai-tools-for-web-developers-2026": {
+      "description": "With dozens of AI development tools available, which are worth using for web development in 2026? Here are the strongest options to consider."
+    },
+    "theme-shadcn-dashboard-in-10-minutes": {
+      "description": "A polished admin dashboard doesn't need hours of custom CSS. With shadcn/ui you can build a consistent, professional theme in under 10 minutes."
+    },
+    "ai-powered-web-development-guide": {
+      "description": "AI is changing almost every stage of the web development lifecycle — from requirements and UI/UX to code generation, debugging, testing, and security."
+    },
+    "signs-your-business-needs-custom-web-application": {
+      "description": "Off-the-shelf software is a great starting point, but as operations get more complex, generic tools start creating limitations instead of solving problems."
+    }
+  }
+}

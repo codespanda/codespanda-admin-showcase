@@ -76,6 +76,10 @@ export function ServicesPage() {
         <meta property="og:description" content="UI/UX design, web pages, admin panels and custom web applications, built with React, Vite and Tailwind CSS." />
         <meta property="og:url" content="https://codespanda.com/services" />
         <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Services — UI/UX Design & React Development | CodesPanda" />
+        <meta name="twitter:description" content="UI/UX design, web pages, admin panels and custom web applications, built with React, Vite and Tailwind CSS." />
+        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
       </Helmet>
 
       <div className="flex min-h-screen flex-col bg-background">

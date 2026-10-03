@@ -165,6 +165,10 @@ export function ProjectsPage() {
         <meta property="og:description" content="Live products built by CodesPanda: AI Invoice and AccountingPanda." />
         <meta property="og:url" content="https://codespanda.com/projects" />
         <meta property="og:image" content="https://codespanda.com/images/products/ai-invoice/hero.webp" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Projects — Our Live Products | CodesPanda" />
+        <meta name="twitter:description" content="Live products built by CodesPanda: AI Invoice and AccountingPanda." />
+        <meta name="twitter:image" content="https://codespanda.com/images/products/ai-invoice/hero.webp" />
       </Helmet>
 
       <div className="flex min-h-screen flex-col bg-background">

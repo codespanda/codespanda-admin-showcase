@@ -10,6 +10,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DIST = resolve(__dirname, "../dist");
 const BASE = "https://codespanda.com";
 
+// Shorter search titles/descriptions shared with the React pages (src/lib/seo.ts).
+const SEO_META = JSON.parse(readFileSync(resolve(__dirname, "../src/lib/seo-meta.json"), "utf8"));
+const seoTitle = (title) => ((title + " | CodesPanda").length <= 60 ? title + " | CodesPanda" : title);
+
 // ------------------------------------------------------------
 // Shot metadata — kept in sync with src/lib/portfolio-data.ts
 // ------------------------------------------------------------
@@ -156,23 +160,23 @@ const PAGE_META = {
     ogImage: `${BASE}/og-image.png`,
   },
   "/templates/shopperscrown": {
-    title: "Shoppers Crown — Free International Shopping & Package-Forwarding Template | CodesPanda",
-    description: "A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard, with 17 real routed pages.",
+    title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
+    description: "A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages.",
     ogImage: `${BASE}/images/shopperscrown/hero.webp`,
   },
   "/templates/interio": {
-    title: "Interio — Free Interior Design Studio Website Template | CodesPanda",
+    title: "Interio — Free Interior Design Website Template | CodesPanda",
     description: "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design.",
     ogImage: `${BASE}/images/interio/hero.webp`,
   },
   "/templates/school": {
-    title: "Gouri International School — Free School Website Template | CodesPanda",
+    title: "Free School Website Template — Gouri International | CodesPanda",
     description: "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design.",
     ogImage: `${BASE}/images/school/hero.webp`,
   },
   "/templates/ca-firm": {
     title: "Your CA Firm — Financial & Advisory Landing Page | CodesPanda",
-    description: "Your CA Firm is a free React template for chartered accountants and financial advisory firms — services, industries, engagement models, testimonials, Careers and Contact pages.",
+    description: "A free React template for chartered accountants and advisory firms — services, industries, engagement models, testimonials, careers and contact pages.",
     ogImage: `${BASE}/images/ca-firm/hero.webp`,
   },
   "/templates/finovo": {
@@ -232,7 +236,7 @@ const PAGE_META = {
   },
   "/portfolio": {
     title: "UI/UX Portfolio — Dashboard & Product Design | CodesPanda",
-    description: "Case studies in dashboard design, admin dashboard UI, and product design — from SaaS admin panels to mobile app UX. See the design thinking behind CodesPanda templates.",
+    description: "Case studies in admin dashboard UI and product design, from SaaS admin panels to mobile app UX: the design thinking behind CodesPanda templates.",
     ogImage: "https://cdn.dribbble.com/userupload/48428945/file/007a381ab43254d9a40ffde8369916a5.png?format=webp&resize=400x300&vertical=center",
   },
   "/blog": {
@@ -245,19 +249,19 @@ const PAGE_META = {
   },
   "/legal/terms": {
     title: "Terms of Service — CodesPanda",
-    description: "Terms of service for CodesPanda React templates.",
+    description: "The terms that govern your access to and use of CodesPanda, including our free React admin dashboard and website templates.",
   },
   "/legal/security": {
     title: "Security — CodesPanda",
-    description: "Security policy for CodesPanda.",
+    description: "Security is foundational to how CodesPanda builds and operates. Here are the measures we take to protect your data.",
   },
 };
 
 // Auto-populate PAGE_META for all shot pages
 for (const shot of SHOTS) {
   PAGE_META[`/portfolio/${shot.id}`] = {
-    title: `${shot.title} — CodesPanda Portfolio`,
-    description: shot.desc,
+    title: seoTitle(SEO_META.shots[shot.id]?.title ?? shot.title),
+    description: SEO_META.shots[shot.id]?.description ?? shot.desc,
     ogImage: shot.ogImage,
   };
 }
@@ -268,8 +272,8 @@ for (const shot of SHOTS) {
 // cover photo set `ogImage` above and it's used here instead.
 for (const post of BLOG_POSTS) {
   PAGE_META[`/blog/${post.slug}`] = {
-    title: `${post.title} — CodesPanda Blog`,
-    description: post.desc,
+    title: seoTitle(SEO_META.posts[post.slug]?.title ?? post.title),
+    description: SEO_META.posts[post.slug]?.description ?? post.desc,
     ...(post.ogImage ? { ogImage: post.ogImage } : {}),
   };
 }
@@ -359,7 +363,6 @@ function buildStructuredData(route, meta) {
       applicationCategory: "DesignApplication",
       operatingSystem: "Web",
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      aggregateRating: { "@type": "AggregateRating", ratingValue: "5", reviewCount: "1", bestRating: "5", worstRating: "1" },
     };
   }
   if (type === "collection") {
@@ -463,22 +466,24 @@ function withPageMeta(html, route) {
     html = html.replace(/[ \t]*<meta name="twitter:image:alt"[^>]*>\r?\n/g, "");
   }
 
-  // Build the injection block (goes right after <meta name="viewport">)
+  // Build the injection block (goes right after <meta name="viewport">).
+  // data-rh marks the tags as react-helmet-async's, so the page's own <Helmet>
+  // replaces them once JS runs instead of adding a second copy of each.
   const inject = [
-    `<meta name="description" content="${meta.description}" />`,
-    `<meta name="robots" content="index, follow" />`,
-    `<link rel="canonical" href="${canonical}" />`,
-    `<meta property="og:type" content="${ogType}" />`,
-    `<meta property="og:title" content="${meta.title}" />`,
-    `<meta property="og:description" content="${meta.description}" />`,
-    `<meta property="og:url" content="${canonical}" />`,
-    meta.ogImage ? `<meta property="og:image" content="${meta.ogImage}" />` : "",
-    meta.ogImage ? `<meta property="og:image:alt" content="${meta.title}" />` : "",
-    `<meta name="twitter:card" content="summary_large_image" />`,
-    `<meta name="twitter:title" content="${meta.title}" />`,
-    `<meta name="twitter:description" content="${meta.description}" />`,
-    meta.ogImage ? `<meta name="twitter:image" content="${meta.ogImage}" />` : "",
-    meta.ogImage ? `<meta name="twitter:image:alt" content="${meta.title}" />` : "",
+    `<meta data-rh="true" name="description" content="${meta.description}" />`,
+    `<meta data-rh="true" name="robots" content="index, follow" />`,
+    `<link data-rh="true" rel="canonical" href="${canonical}" />`,
+    `<meta data-rh="true" property="og:type" content="${ogType}" />`,
+    `<meta data-rh="true" property="og:title" content="${meta.title}" />`,
+    `<meta data-rh="true" property="og:description" content="${meta.description}" />`,
+    `<meta data-rh="true" property="og:url" content="${canonical}" />`,
+    meta.ogImage ? `<meta data-rh="true" property="og:image" content="${meta.ogImage}" />` : "",
+    meta.ogImage ? `<meta data-rh="true" property="og:image:alt" content="${meta.title}" />` : "",
+    `<meta data-rh="true" name="twitter:card" content="summary_large_image" />`,
+    `<meta data-rh="true" name="twitter:title" content="${meta.title}" />`,
+    `<meta data-rh="true" name="twitter:description" content="${meta.description}" />`,
+    meta.ogImage ? `<meta data-rh="true" name="twitter:image" content="${meta.ogImage}" />` : "",
+    meta.ogImage ? `<meta data-rh="true" name="twitter:image:alt" content="${meta.title}" />` : "",
   ].filter(Boolean).join("\n    ");
 
   // Insert after viewport meta

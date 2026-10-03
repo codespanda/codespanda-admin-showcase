@@ -70,17 +70,17 @@ export function SchoolPage() {
   return (
     <>
       <Helmet>
-        <title>Gouri International School — Free School Website Template | CodesPanda</title>
-        <meta name="description" content="A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design built for trust." />
+        <title>Free School Website Template — Gouri International | CodesPanda</title>
+        <meta name="description" content="A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design." />
         <meta name="keywords" content="react school website template, free school landing page, education website react, tailwind css v4 template, shadcn ui react template, school admissions website" />
         <link rel="canonical" href="https://codespanda.com/templates/school" />
-        <meta property="og:title" content="Gouri International School — Free School Website Template | CodesPanda" />
+        <meta property="og:title" content="Free School Website Template — Gouri International | CodesPanda" />
         <meta property="og:description" content="A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design." />
         <meta property="og:url" content="https://codespanda.com/templates/school" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Gouri International School — Free School Website Template | CodesPanda" />
+        <meta name="twitter:title" content="Free School Website Template — Gouri International | CodesPanda" />
         <meta name="twitter:description" content="A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news." />
         <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
         <script type="application/ld+json">{JSON.stringify({

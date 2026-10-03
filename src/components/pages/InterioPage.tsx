@@ -70,17 +70,17 @@ export function InterioPage() {
   return (
     <>
       <Helmet>
-        <title>Interio — Free Interior Design Studio Website Template | CodesPanda</title>
+        <title>Interio — Free Interior Design Website Template | CodesPanda</title>
         <meta name="description" content="A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design." />
         <meta name="keywords" content="react interior design template, free interior design website, interior design studio landing page react, tailwind css v4 template, shadcn ui react template, portfolio website template" />
         <link rel="canonical" href="https://codespanda.com/templates/interio" />
-        <meta property="og:title" content="Interio — Free Interior Design Studio Website Template | CodesPanda" />
+        <meta property="og:title" content="Interio — Free Interior Design Website Template | CodesPanda" />
         <meta property="og:description" content="A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design." />
         <meta property="og:url" content="https://codespanda.com/templates/interio" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Interio — Free Interior Design Studio Website Template | CodesPanda" />
+        <meta name="twitter:title" content="Interio — Free Interior Design Website Template | CodesPanda" />
         <meta name="twitter:description" content="A free React template for interior design studios — services, portfolio, process, testimonials, and a blog." />
         <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
         <script type="application/ld+json">{JSON.stringify({

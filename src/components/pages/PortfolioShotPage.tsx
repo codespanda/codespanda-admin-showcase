@@ -7,6 +7,7 @@ import { Logo } from "@/components/shared/Logo";
 import { ShotCard, ShotCategoryPill, groupOf } from "@/components/site/ShotCard";
 import { getShotById, SHOTS, type Shot } from "@/lib/portfolio-data";
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
+import { seoTitle, shotSeo } from "@/lib/seo";
 
 const DRIBBBLE_PROFILE = "https://dribbble.com/deepak1605";
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
@@ -103,24 +104,30 @@ export function PortfolioShotPage() {
   const { intro, rest } = splitDescription(shot.description);
   const images = [shot.fullImgUrl ?? shot.imgUrl, ...(shot.gallery ?? [])];
   const related = relatedShots(shot);
+  const seo = shotSeo(shot.id);
+  const title = seoTitle(seo.title ?? shot.title);
+  const summary = shot.description
+    ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...`
+    : `${shot.title} — ${shot.category} design by CodesPanda.`;
+  const description = seo.description ?? summary;
 
   return (
     <>
       <Helmet>
-        <title>{shot.title} — CodesPanda Portfolio</title>
-        <meta name="description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodesPanda. ${shot.tags.join(", ")}.`} />
+        <title>{title}</title>
+        <meta name="description" content={seo.description ?? (shot.description ? summary : `${summary} ${shot.tags.join(", ")}.`)} />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={`https://codespanda.com/portfolio/${shot.id}`} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content={`${shot.title} — CodesPanda`} />
-        <meta property="og:description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodesPanda.`} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://codespanda.com/portfolio/${shot.id}`} />
         <meta property="og:image" content={shareImageUrl} />
         <meta property="og:image:alt" content={`${shot.title} — CodesPanda portfolio`} />
         <meta property="og:site_name" content="CodesPanda" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={`${shot.title} — CodesPanda`} />
-        <meta name="twitter:description" content={shot.description ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...` : `${shot.title} — ${shot.category} design by CodesPanda.`} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={shareImageUrl} />
         <meta name="twitter:image:alt" content={`${shot.title} — CodesPanda portfolio`} />
       </Helmet>

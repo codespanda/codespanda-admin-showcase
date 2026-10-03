@@ -78,17 +78,17 @@ export function ShoppersCrownPage() {
   return (
     <>
       <Helmet>
-        <title>Shoppers Crown — Free International Shopping &amp; Package-Forwarding Template | CodesPanda</title>
-        <meta name="description" content="A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard, with 17 real routed pages." />
+        <title>Shoppers Crown — Package-Forwarding Template | CodesPanda</title>
+        <meta name="description" content="A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages." />
         <meta name="keywords" content="react ecommerce template, package forwarding website template, shipping calculator react, react shopping cart template, tailwind css v4 template, react router ecommerce" />
         <link rel="canonical" href="https://codespanda.com/templates/shopperscrown" />
-        <meta property="og:title" content="Shoppers Crown — Free International Shopping & Package-Forwarding Template | CodesPanda" />
+        <meta property="og:title" content="Shoppers Crown — Package-Forwarding Template | CodesPanda" />
         <meta property="og:description" content="A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard." />
         <meta property="og:url" content="https://codespanda.com/templates/shopperscrown" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/og-image.png" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Shoppers Crown — Free International Shopping & Package-Forwarding Template | CodesPanda" />
+        <meta name="twitter:title" content="Shoppers Crown — Package-Forwarding Template | CodesPanda" />
         <meta name="twitter:description" content="A free React template for international shopping and package-forwarding platforms — 17 real routed pages." />
         <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
         <script type="application/ld+json">{JSON.stringify({

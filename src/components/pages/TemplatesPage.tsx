@@ -80,6 +80,11 @@ export function TemplatesPage() {
         <meta property="og:title" content="Browse Admin Dashboard Templates | CodesPanda" />
         <meta property="og:description" content="Explore our full library of free admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service &amp; POS. Built with React, Vite &amp; Tailwind." />
         <meta property="og:url" content="https://codespanda.com/templates" />
+        <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Browse Admin Dashboard Templates | CodesPanda" />
+        <meta name="twitter:description" content="Explore our full library of free admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service &amp; POS. Built with React, Vite &amp; Tailwind." />
+        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
       </Helmet>
 
       <div className="flex min-h-screen flex-col bg-background">

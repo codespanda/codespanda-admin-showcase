@@ -91,7 +91,7 @@ export function CaFirmPage() {
     <>
       <Helmet>
         <title>Your CA Firm — Financial &amp; Advisory Landing Page | CodesPanda</title>
-        <meta name="description" content="Your CA Firm is a free React template for chartered accountants — services, industries, engagement models, testimonials, Careers and Contact pages in a navy-and-gold design." />
+        <meta name="description" content="A free React template for chartered accountants and advisory firms — services, industries, engagement models, testimonials, careers and contact pages." />
         <meta name="keywords" content="react ca firm template, free chartered accountant website, financial advisory landing page react, tailwind css v4 template, shadcn ui react template, accounting firm website template" />
         <link rel="canonical" href="https://codespanda.com/templates/ca-firm" />
         <meta property="og:title" content="Your CA Firm — Financial & Advisory Landing Page | CodesPanda" />
