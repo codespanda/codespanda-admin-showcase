@@ -4,9 +4,8 @@ import { AppWindow, Check, Code2, Layers, LayoutDashboard, PenTool, Smartphone }
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { TechLogo } from "@/components/site/TechLogo";
+import { HireUsDialog } from "@/components/site/HireUsDialog";
 import { SITE } from "@/lib/constants";
-
-const HIRE_URL = "https://www.linkedin.com/company/codespanda";
 
 const SERVICES = [
   {
@@ -104,14 +103,14 @@ export function ServicesPage() {
               >
                 Talk to us
               </a>
-              <a
-                href={HIRE_URL}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex h-[54px] items-center justify-center rounded-xl border-[1.5px] border-input text-base font-semibold text-foreground hover:bg-secondary lg:h-14 lg:text-[17px]"
-              >
-                Hire us
-              </a>
+              <HireUsDialog>
+                <button
+                  type="button"
+                  className="flex h-[54px] items-center justify-center rounded-xl border-[1.5px] border-input text-base font-semibold text-foreground hover:bg-secondary lg:h-14 lg:text-[17px]"
+                >
+                  Hire us
+                </button>
+              </HireUsDialog>
             </div>
           </section>
 

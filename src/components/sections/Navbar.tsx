@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
 import { BuyMeCoffee } from "@/components/shared/BuyMeCoffee";
+import { HireUsDialog } from "@/components/site/HireUsDialog";
 import { useTheme } from "@/hooks/use-theme";
 import { cn } from "@/lib/utils";
 
@@ -12,8 +13,6 @@ interface NavItem {
   /** Path (+ optional ?type) that marks this item as the current page. */
   match?: (path: string, search: string) => boolean;
 }
-
-const HIRE_URL = "https://www.linkedin.com/company/codespanda";
 
 const NAV: NavItem[] = [
   { label: "Templates", to: "/templates", match: (p) => p.startsWith("/templates") },
@@ -79,9 +78,11 @@ export function Navbar() {
         </nav>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <a href={HIRE_URL} target="_blank" rel="noreferrer noopener" className="flex h-11 items-center px-[18px] text-[15px] font-semibold text-foreground hover:text-link">
-            Hire Us
-          </a>
+          <HireUsDialog>
+            <button type="button" className="flex h-11 items-center px-[18px] text-[15px] font-semibold text-foreground hover:text-link">
+              Hire Us
+            </button>
+          </HireUsDialog>
           <BuyMeCoffee className="flex h-11 items-center rounded-[10px] bg-brand px-5 text-[15px] font-semibold text-white transition-opacity hover:opacity-90" />
         </div>
       </div>
@@ -115,9 +116,12 @@ export function Navbar() {
               className="flex h-[52px] items-center border-b border-line-2 text-[17px] font-semibold"
             />
           ))}
-          <a href={HIRE_URL} target="_blank" rel="noreferrer noopener" onClick={() => setOpen(false)} className="flex h-[52px] items-center text-[17px] font-semibold text-foreground">
-            Hire Us
-          </a>
+          {/* The menu stays open behind the popup: closing it would unmount the dialog. */}
+          <HireUsDialog>
+            <button type="button" className="flex h-[52px] items-center text-left text-[17px] font-semibold text-foreground">
+              Hire Us
+            </button>
+          </HireUsDialog>
           <BuyMeCoffee className="mt-2 flex h-[52px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white" />
         </nav>
       )}

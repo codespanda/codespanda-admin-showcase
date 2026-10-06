@@ -5,8 +5,7 @@ import { Footer } from "@/components/sections/Footer";
 import { SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
-
-const HIRE_URL = "https://www.linkedin.com/company/codespanda";
+import { HireUsDialog } from "@/components/site/HireUsDialog";
 
 interface Product {
   id: string;
@@ -66,17 +65,19 @@ const PRODUCTS: Product[] = [
     imageAlt: "AccountingPanda mascot working on bookkeeping and financial reports",
     tagline: "Your trusted outsourcing partner for the USA and Australia.",
     description:
-      "AccountingPanda delivers accurate, compliant and scalable outsourced accounting and bookkeeping services for businesses and CPA firms across the USA and Australia, from day-to-day bookkeeping to financial statements.",
+      "Accurate, compliant and scalable accounting and bookkeeping for businesses and CPA firms in the USA and Australia, from day-to-day bookkeeping to financial statements, so they can focus on growth.",
     features: [
       "Bookkeeping in QuickBooks and Xero",
       "Financial reporting",
-      "Bank reconciliation",
-      "Accounts payable",
-      "Accounts receivable",
-      "Payroll processing",
+      "Bank and credit card reconciliation",
+      "Accounts payable and receivable",
+      "Payroll processing and tax filings",
+      "US: GAAP statements, sales tax and 1099",
+      "Australia: BAS, IAS, GST and super",
+      "Support for CPA firms",
     ],
-    plan: "Serving businesses and CPA firms in the USA and Australia.",
-    cta: "Visit AccountingPanda",
+    plan: "100% data security, CPA-approved processes and on-time delivery, with 24/7 support.",
+    cta: "Get a free consultation",
     tint: "#E8F5EC",
   },
 ];
@@ -215,14 +216,14 @@ export function ProjectsPage() {
                 <a href={`mailto:${SITE.email}`} className="flex h-[54px] items-center justify-center rounded-xl bg-white px-7 text-[17px] font-bold text-[#005A94] hover:opacity-90 lg:h-14">
                   Talk to us
                 </a>
-                <a
-                  href={HIRE_URL}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="flex h-[54px] items-center justify-center rounded-xl border-[1.5px] border-[#7CC4F2] px-[26px] text-[17px] font-semibold text-white hover:bg-white/10 lg:h-14"
-                >
-                  Hire us
-                </a>
+                <HireUsDialog>
+                  <button
+                    type="button"
+                    className="flex h-[54px] items-center justify-center rounded-xl border-[1.5px] border-[#7CC4F2] px-[26px] text-[17px] font-semibold text-white hover:bg-white/10 lg:h-14"
+                  >
+                    Hire us
+                  </button>
+                </HireUsDialog>
               </div>
             </div>
           </section>
