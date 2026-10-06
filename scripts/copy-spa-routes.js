@@ -18,6 +18,7 @@ const seoTitle = (title) => ((title + " | CodesPanda").length <= 60 ? title + " 
 // Shot metadata — kept in sync with src/lib/portfolio-data.ts
 // ------------------------------------------------------------
 const SHOTS = [
+  { id: "ai-invoice",         title: "AI Invoice — AI-Powered Invoicing SaaS",                                    ogImage: `${BASE}/images/portfolio/shots/ai-invoice.webp`,  desc: "AI Invoice is an AI-powered invoicing SaaS designed and built by CodesPanda — landing page, dashboard, invoice list and a two-step AI invoice editor." },
   { id: "mobile-onboarding",  title: "Modern Mobile App Onboarding UI Design",                                    ogImage: "https://cdn.dribbble.com/userupload/48605293/file/46f9fb352f436c8fbca61d7c90bede00.png?resize=1600x&vertical=center",  desc: "A modern mobile app onboarding UI to welcome new users — welcome & splash screens, multi-step flow, illustrated highlights, sign up / log in, and smooth micro-interactions." },
   { id: "review-ratings",     title: "Review & Ratings Mobile App UI Design",                                     ogImage: "https://cdn.dribbble.com/userupload/48552476/file/349597aa213f6e59d69c16758dcf6673.png?resize=1600x&vertical=center",  desc: "A clean Review & Ratings mobile app UI — product reviews, star ratings, photo uploads, verified badges, voting, filters and community-driven discovery." },
   { id: "eyewear-app",        title: "Eyewear Shopping App UI with AI Virtual Try-On",                             ogImage: "https://cdn.dribbble.com/userupload/48552346/file/2f8b76fd7b205b7396f2c1a0fed42536.png?resize=1600x&vertical=center",  desc: "A sleek Eyewear Shopping App UI with AI-powered Virtual Try-On — browse frames, try on in real time, prescription upload, wishlist, and smooth checkout flow." },
@@ -242,6 +243,7 @@ const PAGE_META = {
   "/blog": {
     title: "Blog — Admin Dashboard Design & React Engineering | CodesPanda",
     description: "Notes on admin dashboard design, React engineering, and shadcn/ui theming from the team building CodesPanda's free React templates.",
+    ogImage: `${BASE}/og-image.png`,
   },
   "/legal/privacy": {
     title: "Privacy Policy — CodesPanda",

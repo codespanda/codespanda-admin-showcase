@@ -110,6 +110,10 @@ export function PortfolioShotPage() {
     ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...`
     : `${shot.title} — ${shot.category} design by CodesPanda.`;
   const description = seo.description ?? summary;
+  // Live products link to the product; design shots link to Dribbble.
+  const primary = shot.liveUrl
+    ? { label: "Visit live product", href: shot.liveUrl }
+    : { label: "View on Dribbble", href: shot.dribbbleUrl };
 
   return (
     <>
@@ -161,12 +165,12 @@ export function PortfolioShotPage() {
               </div>
               <div className="flex flex-col gap-2.5 lg:shrink-0 lg:flex-row lg:gap-3">
                 <a
-                  href={shot.dribbbleUrl}
+                  href={primary.href}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="flex h-[54px] items-center justify-center gap-2 rounded-xl bg-brand px-[26px] text-base font-bold text-white hover:opacity-90"
                 >
-                  View on Dribbble <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  {primary.label} <ArrowUpRight className="h-4 w-4" aria-hidden />
                 </a>
                 <Link
                   to="/portfolio"
@@ -222,12 +226,12 @@ export function PortfolioShotPage() {
                   </div>
                 </dl>
                 <a
-                  href={shot.dribbbleUrl}
+                  href={primary.href}
                   target="_blank"
                   rel="noreferrer noopener"
                   className="flex h-[52px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white hover:opacity-90"
                 >
-                  View on Dribbble
+                  {primary.label}
                 </a>
                 <StartProjectDialog defaultType="UI/UX design">
                   <button type="button" className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input text-base font-semibold text-foreground hover:bg-secondary">

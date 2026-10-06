@@ -3,7 +3,8 @@ export interface Shot {
   title: string;
   category: string;
   tags: string[];
-  dribbbleUrl: string;
+  dribbbleUrl?: string;
+  liveUrl?: string;       // live product, shown instead of Dribbble when set
   imgUrl: string;         // thumbnail (400×300)
   fullImgUrl?: string;    // full-quality shot image from Dribbble
   gallery?: string[];     // additional full-res images for multi-image shots
@@ -12,6 +13,32 @@ export interface Shot {
 }
 
 export const SHOTS: Shot[] = [
+  {
+    id: "ai-invoice",
+    title: "AI Invoice — AI-Powered Invoicing SaaS",
+    category: "Web App",
+    tags: ["SaaS", "AI", "Invoicing", "Dashboard"],
+    liveUrl: "https://ai-invoice.accountingpanda.com",
+    imgUrl: "/images/portfolio/shots/ai-invoice.webp",
+    fullImgUrl: "/images/portfolio/shots/ai-invoice-landing.webp",
+    gallery: [
+      "/images/portfolio/shots/ai-invoice-dashboard.webp",
+      "/images/portfolio/shots/ai-invoice-list.webp",
+      "/images/portfolio/shots/ai-invoice-editor.webp",
+    ],
+    description: `AI Invoice is an AI-powered invoicing SaaS for freelancers and small businesses, designed and built by CodesPanda. Type the job in plain English and get a ready-to-send invoice.
+
+AI only reads what you type (customer, items, quantities); the app computes every subtotal, tax and total, so the numbers are always right.
+
+• Landing page that explains the product in one sentence
+• Dashboard with revenue, outstanding and overdue at a glance
+• Invoice list with status filters, search and quick actions
+• Two-step invoice editor: describe it, then review and edit
+• Multi-tax, multi-currency and five invoice templates
+• PDF export and email delivery to clients
+
+Live at ai-invoice.accountingpanda.com`,
+  },
   {
     id: "rsvp-event-signin",
     title: "RSVP — Event Management Sign-In Experience",
