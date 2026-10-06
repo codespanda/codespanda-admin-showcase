@@ -1896,8 +1896,8 @@ The concept includes everything businesses need to manage sales efficiently — 
     tags: ["AI", "HR", "SaaS", "Recruitment"],
     dribbbleUrl: "https://dribbble.com/shots/27545541-HireAI-AI-Recruitment-Platform-Landing-Page-HR-Tech-SaaS-UI",
     views: 291,
-    imgUrl: "https://cdn.dribbble.com/userupload/48336424/file/9ca36d05aa64805a2064e64500de0955.png?format=webp&resize=400x300&vertical=center",
-    fullImgUrl: "https://cdn.dribbble.com/userupload/48336424/file/9ca36d05aa64805a2064e64500de0955.png?resize=1600x&vertical=center",
+    imgUrl: "/images/portfolio/shots/hireai.webp",
+    fullImgUrl: "/images/portfolio/shots/hireai-full.webp",
     description: `HireAI is an AI-powered recruitment platform landing page concept. The design showcases modern HR tech with clean sections for job discovery, AI candidate matching, automated screening, and seamless onboarding workflows.
 
 ✨ Highlights
