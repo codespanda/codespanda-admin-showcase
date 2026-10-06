@@ -190,7 +190,7 @@ export function ServicesPage() {
                 <h2 className="text-[30px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[46px] lg:leading-[1.08] lg:tracking-[-0.03em]">
                   Let's build your next product.
                 </h2>
-                <p className="text-base leading-[1.6] text-[#DCEEFA] lg:text-lg">
+                <p className="text-base leading-[1.6] text-white lg:text-lg">
                   Start from one of our templates or from a blank page. Tell us what you need and we'll take it from there.
                 </p>
               </div>

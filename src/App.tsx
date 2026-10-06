@@ -1,7 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { GradientBlobs } from "@/components/shared/GradientBlobs";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { LandingPage } from "@/components/pages/LandingPage";
 import { LegalPage } from "@/components/pages/LegalPage";
@@ -30,7 +29,6 @@ const BlogPostPage        = lazy(() => import("@/components/pages/BlogPostPage")
 function App() {
   return (
     <TooltipProvider delayDuration={150}>
-      <GradientBlobs />
       <ScrollToTop />
 
       <Routes>

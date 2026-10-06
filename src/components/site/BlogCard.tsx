@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Bot, BrainCircuit, Cloud, Figma, GraduationCap, LayoutGrid, Paintbrush, Palette, Puzzle, Rocket, Sparkles } from "lucide-react";
 import type { BlogPost } from "@/lib/blog-data";
 import { cn } from "@/lib/utils";
+import { POST_CARD_SIZES, imageSrcSet } from "@/lib/responsive-image";
 
 const ICONS = { Sparkles, LayoutGrid, Palette, Rocket, Figma, Paintbrush, Bot, Puzzle, BrainCircuit, Cloud, GraduationCap };
 
@@ -15,11 +16,14 @@ export function PostCover({
   eager,
   className,
   imgClassName,
+  sizes = POST_CARD_SIZES,
 }: {
   post: BlogPost;
   eager?: boolean;
   className?: string;
   imgClassName?: string;
+  /** How wide the cover shows, for picking the small or full image. */
+  sizes?: string;
 }) {
   const Icon = ICONS[post.icon];
   return (
@@ -27,6 +31,8 @@ export function PostCover({
       {post.coverImage ? (
         <img
           src={post.coverImage}
+          srcSet={imageSrcSet(post.coverImage)}
+          sizes={sizes}
           alt={post.title}
           width={800}
           height={450}

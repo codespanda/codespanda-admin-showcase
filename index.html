@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- GitHub Pages SPA: restore path encoded by 404.html -->
     <script>
       (function () {
@@ -12,26 +14,33 @@
       })();
     </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8S1SQRNF5Y"></script>
+    <!-- Google tag (gtag.js). Queued now, script fetched once the page has loaded
+         so analytics never competes with the first paint. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-8S1SQRNF5Y');
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8S1SQRNF5Y';
+          document.head.appendChild(s);
+        }, 1500);
+      });
     </script>
-    <!-- PayPal Hosted Buttons SDK — powers the PayPal option in the "Buy Me a Coffee" popup (src/components/shared/PayPalCoffeeButton.tsx) -->
-    <script src="https://www.paypal.com/sdk/js?client-id=BAAddcIHPZnTZW67aHyPV7GifBehq31nIkzmN6xbl6dF96oEdhRyQUBpEG2RuWbtQvY0SSdqB0NdUo2yVI&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+    <!-- The PayPal SDK for the "Buy Me a Coffee" popup loads on demand (src/components/shared/PayPalCoffeeButton.tsx). -->
 
-    <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" />
+    <!-- Fonts load without blocking the first paint (display=swap shows fallback text meanwhile). -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" /></noscript>
     <link rel="apple-touch-icon" href="/logo.png" />
-    <link rel="preload" as="image" href="/logo.webp" />
-    <link rel="preload" as="image" href="/images/finovo/dashboard.webp" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preload" as="image" href="/logo-160.webp" />
 
     <!-- Global meta — page-specific title/description/canonical/og/twitter are injected per-route by react-helmet-async -->
     <title>CodesPanda</title>
@@ -172,9 +181,7 @@
     }
     </script>
 
-    <link rel="preconnect" href="https://cdn.dribbble.com" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.dribbble.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://codespanda.github.io" />
   </head>
   <body>

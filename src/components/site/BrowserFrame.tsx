@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { FRAME_SIZES, imageSrcSet } from "@/lib/responsive-image";
 
 interface BrowserFrameProps {
   src: string;
@@ -51,6 +52,8 @@ export function BrowserFrame({ src, alt, url, dark, size = "md", className, load
       </div>
       <img
         src={src}
+        srcSet={imageSrcSet(src)}
+        sizes={FRAME_SIZES}
         alt={alt}
         loading={loading}
         decoding="async"

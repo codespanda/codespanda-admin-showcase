@@ -6,7 +6,7 @@
 // - Caps very large images at 1600px wide (plenty for full-width web heroes).
 // - quality 80 (82 for the logo) — visually lossless for UI screenshots.
 // - Skips regeneration when an up-to-date .webp already exists.
-import { readdirSync, statSync, existsSync } from "fs";
+import { readdirSync, statSync, existsSync, writeFileSync } from "fs";
 import { resolve, dirname, join, extname } from "path";
 import { fileURLToPath } from "url";
 import sharp from "sharp";
@@ -64,3 +64,40 @@ for (const src of targets) {
 console.log(
   `\n✓ ${converted} converted, ${skipped} up-to-date — saved ${Math.round(savedBytes / 1024 / 1024 * 10) / 10} MB`
 );
+
+// Small (800px) variants of large .webp images for srcset, so phones and
+// card grids don't download 1440px screenshots. The list of images that have
+// one is written to src/lib/responsive-images.json for the <img> components.
+const SM_WIDTH = 800;
+const SM_MIN_SOURCE = 1000;
+function collectWebp(dir, out = []) {
+  for (const name of readdirSync(dir)) {
+    const full = join(dir, name);
+    if (statSync(full).isDirectory()) collectWebp(full, out);
+    else if (name.endsWith(".webp") && !name.endsWith("-sm.webp")) out.push(full);
+  }
+  return out;
+}
+const responsive = [];
+let made = 0;
+for (const src of collectWebp(join(PUBLIC, "images"))) {
+  const sm = src.replace(/\.webp$/, "-sm.webp");
+  const rel = "/" + src.slice(PUBLIC.length + 1).replace(/\\/g, "/");
+  try {
+    const { width = 0, height = 0 } = await sharp(src).metadata();
+    if (width < SM_MIN_SOURCE) continue;
+    if (!existsSync(sm) || statSync(sm).mtimeMs < statSync(src).mtimeMs) {
+      await sharp(src).resize({ width: SM_WIDTH }).webp({ quality: 80 }).toFile(sm);
+      made++;
+    }
+    responsive.push([rel, [width, height]]);
+  } catch (err) {
+    console.warn(`  ! no small variant for ${rel} — ${err.message.split("\n")[0]}`);
+  }
+}
+responsive.sort((a, b) => a[0].localeCompare(b[0]));
+writeFileSync(
+  resolve(__dirname, "../src/lib/responsive-images.json"),
+  JSON.stringify(Object.fromEntries(responsive), null, 2) + "\n"
+);
+console.log(`✓ ${made} small variants written, ${responsive.length} images responsive`);

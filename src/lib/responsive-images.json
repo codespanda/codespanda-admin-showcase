@@ -1,0 +1,534 @@
+{
+  "/images/alpine-dashboard.webp": [
+    1600,
+    812
+  ],
+  "/images/alpine/attendance.webp": [
+    1440,
+    900
+  ],
+  "/images/alpine/dashboard.webp": [
+    1600,
+    812
+  ],
+  "/images/alpine/employees.webp": [
+    1440,
+    900
+  ],
+  "/images/alpine/leave.webp": [
+    1440,
+    900
+  ],
+  "/images/alpine/payroll.webp": [
+    1440,
+    900
+  ],
+  "/images/alpine/performance.webp": [
+    1440,
+    900
+  ],
+  "/images/blogs/10 Mistakes to Avoid When Designing an Admin Dashboard.webp": [
+    1536,
+    1024
+  ],
+  "/images/blogs/50 Best Free Admin Dashboard Templates for 2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/50-best-free-admin-dashboard-templates-2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/7 Signs Your Business Needs a Custom Web Application.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/admin-dashboard-design-mistakes.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/agentic-ai-development.webp": [
+    1280,
+    720
+  ],
+  "/images/blogs/AI vs Traditional Web Development What Has Changed.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/AI-Powered SaaS Development Building Smarter Software for 2026.webp": [
+    1600,
+    893
+  ],
+  "/images/blogs/AI-Powered Web Development The Complete Guide.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/ai-powered-saas-development-2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/ai-powered-web-application-from-scratch.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/ai-powered-web-development-guide.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/ai-vs-traditional-web-development.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/Best AI Tools for Web Developers in 2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/Best Free UIUX Resources for Developers in 2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/best-ai-tools-for-web-developers-2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/best-free-ui-ux-resources-2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/figma-to-production-workflow.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/From Figma to Production Our Design-to-Code Workflow.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/How to Build an AI-Powered Web Application From Scratch.webp": [
+    1536,
+    1024
+  ],
+  "/images/blogs/How to Theme a shadcnui Dashboard in Under 10 Minutes.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/shadcn-vs-mui-vs-antd.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/shadcnui vs Material UI vs Ant Design Picking a Component Library in 2026.webp": [
+    1536,
+    1024
+  ],
+  "/images/blogs/signs-your-business-needs-custom-web-application.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/theme-shadcn-dashboard-in-10-minutes.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/Vibe Coding The Future of Software Development.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/vibe-coding-future-of-software-development.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/Web Design Trends for 2026 What Modern Websites Will Look Like.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/web-design-trends-2026.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/Why Vite Is the Right Call for a Modern React Admin Panel.webp": [
+    1600,
+    917
+  ],
+  "/images/blogs/Why We Built CodesPanda Free Admin Dashboards That Don't Feel Free.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/why-vite-for-admin-panels.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/why-we-built-codespanda.webp": [
+    1600,
+    900
+  ],
+  "/images/blogs/Will AI Replace Junior Developers.webp": [
+    1600,
+    893
+  ],
+  "/images/blogs/will-ai-replace-junior-developers.webp": [
+    1600,
+    900
+  ],
+  "/images/brisk-dashboard.webp": [
+    1600,
+    785
+  ],
+  "/images/brisk/analytics.webp": [
+    1440,
+    900
+  ],
+  "/images/brisk/customers.webp": [
+    1440,
+    900
+  ],
+  "/images/brisk/dashboard.webp": [
+    1600,
+    785
+  ],
+  "/images/brisk/orders.webp": [
+    1440,
+    900
+  ],
+  "/images/brisk/products.webp": [
+    1440,
+    900
+  ],
+  "/images/brisk/settings.webp": [
+    1440,
+    900
+  ],
+  "/images/ca-firm/hero.webp": [
+    1440,
+    900
+  ],
+  "/images/cornerstone-analytics.webp": [
+    1440,
+    900
+  ],
+  "/images/cornerstone-dashboard-2.webp": [
+    1600,
+    1106
+  ],
+  "/images/cornerstone-dashboard.webp": [
+    1600,
+    900
+  ],
+  "/images/cornerstone-leases.webp": [
+    1440,
+    900
+  ],
+  "/images/cornerstone-maintenance.webp": [
+    1440,
+    900
+  ],
+  "/images/cornerstone-payments.webp": [
+    1440,
+    900
+  ],
+  "/images/cornerstone-properties.webp": [
+    1440,
+    900
+  ],
+  "/images/cornerstone-tenants.webp": [
+    1440,
+    900
+  ],
+  "/images/deepcity-care/appointments.webp": [
+    1440,
+    900
+  ],
+  "/images/deepcity-care/beds-rooms.webp": [
+    1440,
+    900
+  ],
+  "/images/deepcity-care/billing.webp": [
+    1440,
+    900
+  ],
+  "/images/deepcity-care/dashboard.webp": [
+    1440,
+    900
+  ],
+  "/images/deepcity-care/patients.webp": [
+    1440,
+    900
+  ],
+  "/images/deepcity-care/settings.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/appointments.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/customers.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/dashboard.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/inventory.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/invoices.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/reports.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/reviews.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/settings.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/technicians.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/vehicles.webp": [
+    1440,
+    900
+  ],
+  "/images/eva-autocare/work-orders.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/banking.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/contacts.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/dashboard.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/inventory.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/payroll.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/projects.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/purchases.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/reports.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/sales.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/settings.webp": [
+    1440,
+    900
+  ],
+  "/images/finovo/tax.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/coupons-live.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/customers-live.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/customers.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/dashboard.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/inventory.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/orders-live.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/orders.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/pos-counter.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/products.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/reports-live.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/reports.webp": [
+    1440,
+    900
+  ],
+  "/images/flowers/settings-live.webp": [
+    1440,
+    900
+  ],
+  "/images/glowskin/glowskin-app.webp": [
+    1536,
+    1024
+  ],
+  "/images/hamarabharat/best-time.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/cinematic-videos.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/experiences.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/festivals.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/food-trails.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/gallery.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/hero.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/hotels.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/india-map.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/itinerary-builder.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/trip-planner.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/unesco.webp": [
+    1440,
+    900
+  ],
+  "/images/hamarabharat/visa-info.webp": [
+    1440,
+    900
+  ],
+  "/images/interio/hero.webp": [
+    1440,
+    900
+  ],
+  "/images/parkease/parkease-phone.webp": [
+    1402,
+    1122
+  ],
+  "/images/parkease/parkease-screens.webp": [
+    1536,
+    1024
+  ],
+  "/images/parkease/parkease-watch.webp": [
+    1402,
+    1122
+  ],
+  "/images/portfolio/about.webp": [
+    1440,
+    900
+  ],
+  "/images/portfolio/contact.webp": [
+    1440,
+    900
+  ],
+  "/images/portfolio/footer.webp": [
+    1440,
+    900
+  ],
+  "/images/portfolio/portfolio.webp": [
+    1600,
+    1364
+  ],
+  "/images/portfolio/projects.webp": [
+    1440,
+    900
+  ],
+  "/images/portfolio/shots/ai-invoice-dashboard.webp": [
+    2880,
+    2480
+  ],
+  "/images/portfolio/shots/ai-invoice-editor.webp": [
+    2880,
+    2482
+  ],
+  "/images/portfolio/shots/ai-invoice-landing.webp": [
+    2880,
+    8600
+  ],
+  "/images/portfolio/shots/ai-invoice-list.webp": [
+    2880,
+    2240
+  ],
+  "/images/portfolio/shots/ai-invoice.webp": [
+    1200,
+    900
+  ],
+  "/images/portfolio/shots/fitflow-large.webp": [
+    1536,
+    1024
+  ],
+  "/images/portfolio/shots/hireai-full.webp": [
+    1600,
+    4687
+  ],
+  "/images/portfolio/skills.webp": [
+    1440,
+    900
+  ],
+  "/images/products/accountingpanda/hero.webp": [
+    1120,
+    747
+  ],
+  "/images/products/ai-invoice/hero.webp": [
+    1600,
+    880
+  ],
+  "/images/school/hero.webp": [
+    1440,
+    900
+  ],
+  "/images/shopperscrown/hero.webp": [
+    1440,
+    900
+  ]
+}

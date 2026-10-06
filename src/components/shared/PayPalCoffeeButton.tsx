@@ -1,6 +1,18 @@
 import { useEffect, useRef } from "react";
 
 const HOSTED_BUTTON_ID = "VHZUWQ6H7QZTQ";
+const SDK_URL =
+  "https://www.paypal.com/sdk/js?client-id=BAAddcIHPZnTZW67aHyPV7GifBehq31nIkzmN6xbl6dF96oEdhRyQUBpEG2RuWbtQvY0SSdqB0NdUo2yVI&components=hosted-buttons&disable-funding=venmo&currency=USD";
+
+/** Adds the PayPal SDK once, the first time a coffee popup needs it. Loading it
+ *  site-wide blocked rendering and set PayPal's third-party cookies on every page. */
+function loadPayPalSdk() {
+  if (window.paypal || document.querySelector(`script[src="${SDK_URL}"]`)) return;
+  const script = document.createElement("script");
+  script.src = SDK_URL;
+  script.async = true;
+  document.head.appendChild(script);
+}
 
 declare global {
   interface Window {
@@ -14,8 +26,7 @@ declare global {
 
 /**
  * Renders PayPal's hosted "Buy Me a Coffee" button via their official SDK
- * (the SDK script itself is loaded once, site-wide, from index.html so it's
- * ready before any popup that might need it). The SDK exposes itself as
+ * (loaded on demand by loadPayPalSdk). The SDK exposes itself as
  * `window.paypal` asynchronously, so this polls briefly for it rather than
  * assuming it's already loaded the first time the popup opens, and renders
  * into a ref'd container instead of PayPal's usual id-selector so multiple
@@ -40,6 +51,7 @@ export function PayPalCoffeeButton() {
     if (window.paypal) {
       render();
     } else {
+      loadPayPalSdk();
       pollId = setInterval(() => {
         if (window.paypal) {
           clearInterval(pollId);

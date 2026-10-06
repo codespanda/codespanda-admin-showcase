@@ -224,6 +224,7 @@ export function TemplatesPage() {
                       key={t.id}
                       template={t}
                       compact
+                      headingLevel="h2"
                       thumbClassName="h-[196px] px-[22px] pt-[26px] lg:h-[200px] lg:px-6 lg:pt-[30px]"
                       aside={
                         <a

@@ -289,6 +289,7 @@ const HERO_IMAGE = {
   "/blog/50-best-free-admin-dashboard-templates-2026": "/images/blogs/50-best-free-admin-dashboard-templates-2026.webp",
   "/": "/images/finovo/dashboard.webp",
   "/templates": "/images/shopperscrown/hero.webp",
+  "/portfolio": "/images/portfolio/shots/fitflow-large.webp",
   "/templates/finovo": "/images/finovo/dashboard.webp",
   "/templates/alpine-admin-react": "/images/alpine/dashboard.webp",
   "/templates/brisk-admin": "/images/brisk/dashboard.webp",
@@ -434,11 +435,42 @@ function backLinkFor(route) {
   return null; // "/", "/templates", "/portfolio", "/blog" — no back link needed
 }
 
+// Images with an 800px "-sm.webp" variant (written by optimize-images.js), and
+// the `sizes` their components use — kept in sync with src/lib/responsive-image.ts
+// so the preload fetches the same file the <img> picks.
+const RESPONSIVE = JSON.parse(readFileSync(resolve(__dirname, "../src/lib/responsive-images.json"), "utf8"));
+const FRAME_SIZES = "(min-width: 1024px) 55vw, 90vw";
+const CARD_SIZES = "(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw";
+const FEATURED_POST_SIZES = "(min-width: 1024px) 56vw, 100vw";
+const POST_COVER_SIZES = "(min-width: 1080px) 1080px, 100vw";
+
+// /blog features the newest post, so preload that post's cover (read from blog-data.ts).
+{
+  const src = readFileSync(resolve(__dirname, "../src/lib/blog-data.ts"), "utf8");
+  const posts = [...src.matchAll(/date:\s*"(\d{4}-\d{2}-\d{2})"[\s\S]*?coverImage:\s*"([^"]+)"/g)].map((m) => ({ date: m[1], cover: m[2] }));
+  const newest = posts.sort((a, b) => b.date.localeCompare(a.date))[0];
+  if (newest) HERO_IMAGE["/blog"] = newest.cover;
+}
+
+function sizesFor(route) {
+  if (route === "/templates") return CARD_SIZES; // TemplateCard
+  if (route === "/" || route.startsWith("/templates/")) return FRAME_SIZES; // BrowserFrame
+  if (route === "/blog") return FEATURED_POST_SIZES;
+  if (route.startsWith("/blog/")) return POST_COVER_SIZES;
+  return null;
+}
+
 function withHeroPreload(html, route) {
   const heroSrc = HERO_IMAGE[route];
   if (!heroSrc) return html;
-  const tag = `<link rel="preload" as="image" fetchpriority="high" href="${heroSrc}" />\n    `;
-  return html.replace("<meta name=\"viewport\"", tag + "<meta name=\"viewport\"");
+  const sizes = sizesFor(route);
+  const [width] = RESPONSIVE[heroSrc] ?? [];
+  const responsive = sizes && width
+    ? ` imagesrcset="${heroSrc.replace(/\.webp$/, "-sm.webp")} 800w, ${heroSrc} ${width}w" imagesizes="${sizes}"`
+    : "";
+  // After the viewport meta: imagesizes in vw must resolve against the device width, not the 980px default.
+  const tag = `<link rel="preload" as="image" fetchpriority="high" href="${heroSrc}"${responsive} />`;
+  return html.replace(/(<meta name="viewport"[^>]*>)/, `$1\n    ${tag}`);
 }
 
 // Inject per-page title, description, canonical and og tags into the <head>

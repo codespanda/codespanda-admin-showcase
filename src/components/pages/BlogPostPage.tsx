@@ -10,6 +10,7 @@ import { BlogCard, CategoryPill, PostCover, formatPostDate } from "@/components/
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 import { getBlogPostBySlug, BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
 import { postSeo, seoTitle } from "@/lib/seo";
+import { POST_COVER_SIZES } from "@/lib/responsive-image";
 
 const RESOURCE_ICONS: Record<string, LucideIcon> = {
   Figma, LayoutGrid, LayoutTemplate, Shapes, Layers, Accessibility, Type, Palette, Lightbulb, Component,
@@ -190,7 +191,7 @@ export function BlogPostPage() {
               <p className="max-w-[820px] text-[17px] leading-[1.6] text-muted-foreground lg:text-xl">{post.excerpt}</p>
               <div className="flex items-center gap-3 pt-1">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-logo-bg">
-                  <img src="/logo.webp" alt="" width={44} height={44} className="h-9 w-9 object-contain" />
+                  <img src="/logo-160.webp" alt="" width={44} height={44} className="h-9 w-9 object-contain" />
                 </span>
                 <span className="flex flex-col">
                   <span className="text-[15px] font-semibold">{post.author}</span>
@@ -219,7 +220,7 @@ export function BlogPostPage() {
                   Your browser doesn't support embedded video.
                 </video>
               ) : (
-                <PostCover post={post} eager className="aspect-video" imgClassName="group-hover:scale-100" />
+                <PostCover post={post} eager sizes={POST_COVER_SIZES} className="aspect-video" imgClassName="group-hover:scale-100" />
               )}
             </div>
           </section>
@@ -245,7 +246,7 @@ export function BlogPostPage() {
                 {/* Written by */}
                 <div className="flex flex-col gap-4 rounded-[18px] border border-border bg-card p-5 sm:flex-row sm:items-center lg:p-6">
                   <span className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-[14px] bg-logo-bg">
-                    <img src="/logo.webp" alt="" width={56} height={56} className="h-12 w-12 object-contain" />
+                    <img src="/logo-160.webp" alt="" width={56} height={56} className="h-12 w-12 object-contain" />
                   </span>
                   <span className="flex flex-1 flex-col gap-0.5">
                     <span className="text-[17px] font-bold">Written by {post.author}</span>

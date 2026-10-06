@@ -8,6 +8,7 @@ import { BlogCard, CategoryPill, PostCover, formatPostDate } from "@/components/
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 import { BLOG_POSTS } from "@/lib/blog-data";
 import { cn } from "@/lib/utils";
+import { FEATURED_POST_SIZES } from "@/lib/responsive-image";
 
 /** Newest first; the first post is featured. */
 const POSTS = [...BLOG_POSTS].sort((a, b) => b.date.localeCompare(a.date));
@@ -90,7 +91,7 @@ export function BlogPage() {
               className="group flex flex-col overflow-hidden rounded-[22px] border border-border bg-card transition-[border-color,box-shadow] hover:border-line-2 hover:shadow-[0_14px_40px_-16px_rgba(14,23,38,0.2)] lg:flex-row lg:items-stretch"
             >
               <div className="flex items-center border-b border-border bg-soft-2 lg:w-[56%] lg:shrink-0 lg:border-b-0 lg:border-r">
-                <PostCover post={featured} eager className="aspect-video w-full" />
+                <PostCover post={featured} eager sizes={FEATURED_POST_SIZES} className="aspect-video w-full" />
               </div>
               <div className="flex flex-col gap-4 p-6 lg:flex-1 lg:justify-center lg:gap-5 lg:p-12">
                 <div className="flex items-center gap-2">
@@ -154,7 +155,7 @@ export function BlogPage() {
                 <h2 className="text-[30px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[46px] lg:leading-[1.08] lg:tracking-[-0.03em]">
                   Put it into practice.
                 </h2>
-                <p className="text-base leading-[1.6] text-[#DCEEFA] lg:text-lg">
+                <p className="text-base leading-[1.6] text-white lg:text-lg">
                   Every idea here is already built into our free React templates. Browse them, or tell us what you want to build.
                 </p>
               </div>

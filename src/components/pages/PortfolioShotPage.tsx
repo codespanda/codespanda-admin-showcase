@@ -8,6 +8,7 @@ import { ShotCard, ShotCategoryPill, groupOf } from "@/components/site/ShotCard"
 import { getShotById, SHOTS, type Shot } from "@/lib/portfolio-data";
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 import { seoTitle, shotSeo } from "@/lib/seo";
+import { SHOT_SIZES, imageSize, imageSrcSet } from "@/lib/responsive-image";
 
 const DRIBBBLE_PROFILE = "https://dribbble.com/deepak1605";
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
@@ -191,6 +192,9 @@ export function PortfolioShotPage() {
               >
                 <img
                   src={src}
+                  srcSet={imageSrcSet(src)}
+                  sizes={SHOT_SIZES}
+                  {...imageSize(src)}
                   alt={i === 0 ? shot.title : `${shot.title} — view ${i + 1}`}
                   loading={i === 0 ? "eager" : "lazy"}
                   decoding="async"

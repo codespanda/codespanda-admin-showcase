@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { stackLabel, type SiteTemplate } from "@/lib/site";
+import { CARD_SIZES, imageSrcSet } from "@/lib/responsive-image";
 
 interface TemplateCardProps {
   template: SiteTemplate;
@@ -10,6 +11,8 @@ interface TemplateCardProps {
   aside?: React.ReactNode;
   compact?: boolean;
   className?: string;
+  /** Heading level for the template name; h2 where the grid sits right under the page h1. */
+  headingLevel?: "h2" | "h3";
 }
 
 export function KindPill({ kind, label }: { kind: SiteTemplate["kind"]; label: string }) {
@@ -30,7 +33,7 @@ export function NewPill() {
 }
 
 /** Template card: pastel panel with the real screenshot, then type, name and category. */
-export function TemplateCard({ template: t, thumbClassName = "h-[236px] px-7 pt-9", aside, compact, className }: TemplateCardProps) {
+export function TemplateCard({ template: t, thumbClassName = "h-[236px] px-7 pt-9", aside, compact, className, headingLevel: Heading = "h3" }: TemplateCardProps) {
   return (
     <article className={cn("flex flex-col overflow-hidden rounded-[18px] border border-border bg-card", className)}>
       <div
@@ -40,6 +43,8 @@ export function TemplateCard({ template: t, thumbClassName = "h-[236px] px-7 pt-
         {t.screenshotUrl && (
           <img
             src={t.screenshotUrl}
+            srcSet={imageSrcSet(t.screenshotUrl)}
+            sizes={CARD_SIZES}
             alt={`${t.name} template screenshot`}
             loading="lazy"
             decoding="async"
@@ -52,7 +57,7 @@ export function TemplateCard({ template: t, thumbClassName = "h-[236px] px-7 pt-
           <KindPill kind={t.kind} label={t.kindLabel} />
           {t.isNew && <NewPill />}
         </div>
-        <h3 className={cn("font-bold tracking-[-0.015em]", compact ? "text-[19px] lg:text-xl" : "text-[22px]")}>{t.name}</h3>
+        <Heading className={cn("font-bold tracking-[-0.015em]", compact ? "text-[19px] lg:text-xl" : "text-[22px]")}>{t.name}</Heading>
         <p className={cn("text-muted-foreground", compact ? "text-sm" : "text-[15px]")}>{t.shortCategory}</p>
         <div className={cn("flex items-center justify-between border-t border-line-2", compact ? "mt-1 pt-3 lg:mt-2 lg:pt-3.5" : "mt-2 pt-4")}>
           <Link to={t.href} className="text-[15px] font-semibold text-link hover:text-blue-ink">

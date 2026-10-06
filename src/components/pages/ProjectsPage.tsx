@@ -208,7 +208,7 @@ export function ProjectsPage() {
                 <h2 className="text-[30px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[46px] lg:leading-[1.08] lg:tracking-[-0.03em]">
                   Have a product in mind?
                 </h2>
-                <p className="text-base leading-[1.6] text-[#DCEEFA] lg:text-lg">
+                <p className="text-base leading-[1.6] text-white lg:text-lg">
                   Tell us what you're building. We'll design it, build it in React and ship it with you.
                 </p>
               </div>

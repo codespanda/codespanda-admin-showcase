@@ -218,7 +218,7 @@ export function DeepakPortfolioPage() {
                 <h2 className="text-[28px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[46px] lg:leading-[1.08] lg:tracking-[-0.03em]">
                   Have a product that needs design?
                 </h2>
-                <p className="text-base leading-[1.6] text-[#DCEEFA] lg:text-lg">
+                <p className="text-base leading-[1.6] text-white lg:text-lg">
                   We design it in Figma and can build it in React too<span className="hidden lg:inline"> — one team from wireframe to production</span>.
                 </p>
               </div>
