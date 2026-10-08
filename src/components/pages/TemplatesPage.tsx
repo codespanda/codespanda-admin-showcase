@@ -30,7 +30,7 @@ function CustomBox({ className }: { className?: string }) {
       <span className="text-lg font-bold lg:text-[17px]">Need something custom?</span>
       <span className="text-[15px] leading-[1.55] text-[#B7C3D1] lg:text-sm">We build web apps and admin panels to order.</span>
       <a href={`mailto:${SITE.email}`} className="py-1.5 text-[15px] font-semibold text-[#7CC4F2] lg:py-0">
-        Talk to us →
+        Chat with Us →
       </a>
     </div>
   );
