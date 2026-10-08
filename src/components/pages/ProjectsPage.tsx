@@ -80,6 +80,32 @@ const PRODUCTS: Product[] = [
     cta: "Get a free consultation",
     tint: "#E8F5EC",
   },
+  {
+    id: "systema-ai",
+    name: "Systema AI",
+    category: "AI tool · Design systems",
+    url: "https://systemaai.codespanda.com",
+    logo: "/images/products/systema-ai/logo.webp",
+    image: "/images/products/systema-ai/hero.webp",
+    imageAlt: "Systema AI home page: describe a website or app idea, pick a platform and mood, and generate design directions",
+    tagline: "Describe your idea. Get a complete design system.",
+    description:
+      "An AI design system generator. Describe a website or app idea, pick the platform and mood, and Systema AI proposes three design directions to choose from, then lets you copy the colors, typography, spacing and components in one click.",
+    features: [
+      "Design systems from a plain-English idea",
+      "Three design directions to choose from",
+      "Website, mobile app or both",
+      "Moods: minimal, playful, bold, elegant, dark",
+      "Colors, typography and spacing tokens",
+      "Ready-made component styles",
+      "Copy everything in one click",
+      "Save a system and reopen it later",
+    ],
+    plan: "Free to try: describe your idea and generate three directions in seconds.",
+    cta: "Try Systema AI",
+    tint: "#EEF0FF",
+    framed: true,
+  },
 ];
 
 function hostOf(url: string) {
@@ -159,16 +185,16 @@ export function ProjectsPage() {
         <title>Projects — Our Live Products | CodesPanda</title>
         <meta
           name="description"
-          content="Live products built by CodesPanda: AI Invoice, an AI-assisted invoice generator, and AccountingPanda, an outsourced accounting and bookkeeping website."
+          content="Live products built by CodesPanda: AI Invoice, an AI invoice generator; AccountingPanda, an accounting services site; and Systema AI, a design system generator."
         />
         <link rel="canonical" href="https://codespanda.com/projects" />
         <meta property="og:title" content="Projects — Our Live Products | CodesPanda" />
-        <meta property="og:description" content="Live products built by CodesPanda: AI Invoice and AccountingPanda." />
+        <meta property="og:description" content="Live products built by CodesPanda: AI Invoice, AccountingPanda and Systema AI." />
         <meta property="og:url" content="https://codespanda.com/projects" />
         <meta property="og:image" content="https://codespanda.com/images/products/ai-invoice/hero.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Projects — Our Live Products | CodesPanda" />
-        <meta name="twitter:description" content="Live products built by CodesPanda: AI Invoice and AccountingPanda." />
+        <meta name="twitter:description" content="Live products built by CodesPanda: AI Invoice, AccountingPanda and Systema AI." />
         <meta name="twitter:image" content="https://codespanda.com/images/products/ai-invoice/hero.webp" />
       </Helmet>
 

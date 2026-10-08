@@ -227,7 +227,7 @@ const PAGE_META = {
   },
   "/projects": {
     title: "Projects — Our Live Products | CodesPanda",
-    description: "Live products built by CodesPanda: AI Invoice, an AI-assisted invoice generator, and AccountingPanda, an outsourced accounting and bookkeeping website.",
+    description: "Live products built by CodesPanda: AI Invoice, an AI invoice generator; AccountingPanda, an accounting services site; and Systema AI, a design system generator.",
     ogImage: `${BASE}/images/products/ai-invoice/hero.webp`,
   },
   "/services": {
