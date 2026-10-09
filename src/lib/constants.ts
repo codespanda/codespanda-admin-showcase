@@ -3,6 +3,8 @@ export const SITE = {
   name: "CodesPanda",
   tagline: "Premium React Templates for Modern Developers",
   email: "contact@codespanda.com",
+  /** "Chat with Us" opens a WhatsApp chat with this number, with a greeting filled in. */
+  whatsappUrl: `https://wa.me/916280347210?text=${encodeURIComponent("Hi CodesPanda, I'd like to chat about a project.")}`,
   githubOrg: "https://github.com/codespanda",
 } as const;
 

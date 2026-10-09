@@ -511,6 +511,18 @@
     1600,
     4687
   ],
+  "/images/portfolio/shots/my-listings-2.webp": [
+    2560,
+    1800
+  ],
+  "/images/portfolio/shots/my-listings-full.webp": [
+    2560,
+    3120
+  ],
+  "/images/portfolio/shots/my-listings.webp": [
+    1200,
+    900
+  ],
   "/images/portfolio/skills.webp": [
     1440,
     900
@@ -522,6 +534,10 @@
   "/images/products/ai-invoice/hero.webp": [
     1600,
     880
+  ],
+  "/images/products/systema-ai/hero.webp": [
+    1600,
+    1262
   ],
   "/images/school/hero.webp": [
     1440,

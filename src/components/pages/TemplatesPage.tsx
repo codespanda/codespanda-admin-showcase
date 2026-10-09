@@ -29,7 +29,7 @@ function CustomBox({ className }: { className?: string }) {
     <div className={cn("flex flex-col gap-2.5 rounded-2xl bg-band p-[22px] text-white lg:gap-3", className)}>
       <span className="text-lg font-bold lg:text-[17px]">Need something custom?</span>
       <span className="text-[15px] leading-[1.55] text-[#B7C3D1] lg:text-sm">We build web apps and admin panels to order.</span>
-      <a href={`mailto:${SITE.email}`} className="py-1.5 text-[15px] font-semibold text-[#7CC4F2] lg:py-0">
+      <a href={SITE.whatsappUrl} target="_blank" rel="noreferrer noopener" className="py-1.5 text-[15px] font-semibold text-[#7CC4F2] lg:py-0">
         Chat with Us →
       </a>
     </div>

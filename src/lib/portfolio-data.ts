@@ -14,6 +14,30 @@ export interface Shot {
 
 export const SHOTS: Shot[] = [
   {
+    id: "my-listings",
+    title: "My Listings — Clean Marketplace Seller Dashboard UI",
+    category: "Web App",
+    tags: ["Marketplace", "Dashboard", "E-commerce", "Web App"],
+    dribbbleUrl: "https://dribbble.com/shots/27791468-My-Listings-Clean-Marketplace-Seller-Dashboard-UI",
+    imgUrl: "/images/portfolio/shots/my-listings.webp",
+    fullImgUrl: "/images/portfolio/shots/my-listings-full.webp",
+    gallery: ["/images/portfolio/shots/my-listings-2.webp"],
+    description: `A clean and modern My Listings dashboard UI designed for a marketplace platform. The interface helps sellers easily track products from draft to review, live, rejected, and sold.
+
+The dashboard includes:
+
+• Listing status tabs
+• In-review and live listings
+• Rejection & refund messaging
+• Fix & resubmit workflow
+• Listing preview and editing
+• Mark as sold actions
+• Listing fee/payment flow
+• Seller guidance panel
+
+Designed with a minimal, trustworthy marketplace experience in mind.`,
+  },
+  {
     id: "ai-invoice",
     title: "AI Invoice — AI-Powered Invoicing SaaS",
     category: "Web App",

@@ -98,7 +98,9 @@ export function ServicesPage() {
             </div>
             <div className="flex flex-col gap-3 lg:w-[300px] lg:shrink-0">
               <a
-                href={`mailto:${SITE.email}`}
+                href={SITE.whatsappUrl}
+                target="_blank"
+                rel="noreferrer noopener"
                 className="flex h-[54px] items-center justify-center rounded-xl bg-brand text-base font-bold text-white hover:opacity-90 lg:h-14 lg:text-[17px]"
               >
                 Chat with Us
@@ -195,7 +197,7 @@ export function ServicesPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 lg:flex-row">
-                <a href={`mailto:${SITE.email}`} className="flex h-[54px] items-center justify-center rounded-xl bg-white px-7 text-[17px] font-bold text-[#005A94] hover:opacity-90 lg:h-14">
+                <a href={SITE.whatsappUrl} target="_blank" rel="noreferrer noopener" className="flex h-[54px] items-center justify-center rounded-xl bg-white px-7 text-[17px] font-bold text-[#005A94] hover:opacity-90 lg:h-14">
                   Chat with Us
                 </a>
                 <Link
