@@ -8,6 +8,7 @@ import { HireUsDialog } from "@/components/site/HireUsDialog";
 import { getTemplateDocs, type TemplateDocs } from "@/lib/template-docs";
 import { getSiteTemplate, type SiteTemplate } from "@/lib/site";
 import { SITE } from "@/lib/constants";
+import { imageSrcSet } from "@/lib/responsive-image";
 
 function CodeBlock({ code, label }: { code: string; label?: string }) {
   const [copied, setCopied] = useState(false);
@@ -67,8 +68,36 @@ function Callout({ children }: { children: ReactNode }) {
   );
 }
 
+/** One screenshot, linking to the full-size image. */
+function Shot({ src, label, alt, sizes, eager, className }: { src: string; label: string; alt: string; sizes: string; eager?: boolean; className?: string }) {
+  return (
+    <figure className={`flex flex-col gap-2.5 ${className ?? ""}`}>
+      <a
+        href={src}
+        target="_blank"
+        rel="noreferrer noopener"
+        className="group block overflow-hidden rounded-[14px] border border-border bg-secondary shadow-[0_10px_30px_-14px_rgba(14,23,38,0.25)]"
+      >
+        <img
+          src={src}
+          srcSet={imageSrcSet(src)}
+          sizes={sizes}
+          alt={alt}
+          width={1600}
+          height={1000}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          className="block aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.015]"
+        />
+      </a>
+      <figcaption className="text-sm font-medium text-muted-foreground">{label}</figcaption>
+    </figure>
+  );
+}
+
 function tocFor(d: TemplateDocs) {
   return [
+    { id: "screenshots", label: "Screenshots" },
     { id: "quick-start", label: "Quick start" },
     { id: "scripts", label: "Scripts" },
     { id: "structure", label: "Project structure" },
@@ -89,8 +118,35 @@ cd ${repoName}
 npm install
 npm run dev`;
 
+  const [main, ...rest] = d.screens;
+
   return (
     <article className="flex min-w-0 flex-1 flex-col gap-10">
+      {main && (
+        <Section id="screenshots" title="Screenshots">
+          <Shot src={main.src} label={main.label} alt={`${t.name} — ${main.label}`} sizes="(min-width: 1024px) 760px, 100vw" eager />
+          {rest.length > 0 && (
+            <div className="grid gap-5 sm:grid-cols-2">
+              {rest.map((s, i) => {
+                // An odd one out at the end spans the full row instead of leaving a gap.
+                const wide = rest.length % 2 === 1 && i === rest.length - 1;
+                return (
+                  <Shot
+                    key={s.src}
+                    src={s.src}
+                    label={s.label}
+                    alt={`${t.name} — ${s.label}`}
+                    sizes={wide ? "(min-width: 1024px) 760px, 100vw" : "(min-width: 1024px) 370px, (min-width: 640px) 50vw, 100vw"}
+                    className={wide ? "sm:col-span-2" : undefined}
+                  />
+                );
+              })}
+            </div>
+          )}
+          <P>Click a screenshot to open it full size, or explore everything in the live preview.</P>
+        </Section>
+      )}
+
       <Section id="quick-start" title="Quick start">
         <P>
           You need Node.js {d.framework === "Next.js" ? "20.9" : "20"} or newer and npm. Clone the repository, install the dependencies and start

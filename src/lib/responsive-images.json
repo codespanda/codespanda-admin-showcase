@@ -195,9 +195,21 @@
     1440,
     900
   ],
+  "/images/ca-firm/careers.webp": [
+    1600,
+    1000
+  ],
+  "/images/ca-firm/contact.webp": [
+    1600,
+    1000
+  ],
   "/images/ca-firm/hero.webp": [
     1440,
     900
+  ],
+  "/images/ca-firm/services.webp": [
+    1600,
+    1000
   ],
   "/images/cornerstone-analytics.webp": [
     1440,
@@ -451,6 +463,18 @@
     1440,
     900
   ],
+  "/images/interio/portfolio.webp": [
+    1600,
+    1000
+  ],
+  "/images/interio/process.webp": [
+    1600,
+    1000
+  ],
+  "/images/interio/testimonials.webp": [
+    1600,
+    1000
+  ],
   "/images/kundeep-kitchen/about.webp": [
     1600,
     1000
@@ -555,12 +579,36 @@
     1600,
     1262
   ],
+  "/images/school/about.webp": [
+    1600,
+    1000
+  ],
+  "/images/school/campus.webp": [
+    1600,
+    1000
+  ],
   "/images/school/hero.webp": [
     1440,
     900
   ],
+  "/images/school/news.webp": [
+    1600,
+    1000
+  ],
+  "/images/shopperscrown/calculator.webp": [
+    1600,
+    1000
+  ],
   "/images/shopperscrown/hero.webp": [
     1440,
     900
+  ],
+  "/images/shopperscrown/pricing.webp": [
+    1600,
+    1000
+  ],
+  "/images/shopperscrown/shop.webp": [
+    1600,
+    1000
   ]
 }
