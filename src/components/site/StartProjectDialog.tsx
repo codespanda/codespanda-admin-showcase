@@ -8,6 +8,9 @@ const HIRE_URL = "https://www.linkedin.com/company/codespanda";
 /** FormSubmit's AJAX endpoint delivers the form to this address. The first ever
  *  submission sends a one-time activation email to SITE.email that must be confirmed. */
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${SITE.email}`;
+/** FormSubmit only delivers file uploads from a regular multipart form post, not from
+ *  its AJAX endpoint, so enquiries with an attachment are posted here instead. */
+const FORM_UPLOAD_ENDPOINT = `https://formsubmit.co/${SITE.email}`;
 
 export const PROJECT_TYPES = ["Web page", "Admin panel", "SaaS product", "Mobile app", "Custom web app", "UI/UX design", "Something else"] as const;
 export type ProjectType = (typeof PROJECT_TYPES)[number];
@@ -20,6 +23,59 @@ type Status = "idle" | "sending" | "sent" | "error";
 const MAX_FILE_BYTES = 1024 * 1024;
 const FILE_EXTENSIONS = [".pdf", ".doc", ".docx", ".odt", ".rtf", ".txt", ".png", ".jpg", ".jpeg", ".webp", ".gif"];
 const FILE_ACCEPT = FILE_EXTENSIONS.join(",");
+
+/**
+ * Posts the fields and file as a regular multipart form into a hidden iframe, so the
+ * visitor stays on the page. The response is cross-origin and can't be read, so the
+ * iframe finishing its load counts as sent; no load within the timeout counts as failed.
+ */
+function postWithAttachment(fields: Record<string, string>, file: File): Promise<boolean> {
+  return new Promise((resolve) => {
+    const name = `cp-upload-${Date.now()}`;
+    const iframe = document.createElement("iframe");
+    iframe.name = name;
+    iframe.title = "Upload";
+    iframe.style.display = "none";
+
+    const form = document.createElement("form");
+    form.method = "POST";
+    form.action = FORM_UPLOAD_ENDPOINT;
+    form.enctype = "multipart/form-data";
+    form.target = name;
+    form.style.display = "none";
+    for (const [key, value] of Object.entries(fields)) {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    }
+    const fileField = document.createElement("input");
+    fileField.type = "file";
+    fileField.name = "attachment";
+    const files = new DataTransfer();
+    files.items.add(file);
+    fileField.files = files.files;
+    form.appendChild(fileField);
+
+    const cleanUp = () => setTimeout(() => {
+      iframe.remove();
+      form.remove();
+    }, 1000);
+    const timer = setTimeout(() => {
+      cleanUp();
+      resolve(false);
+    }, 30000);
+    iframe.addEventListener("load", () => {
+      clearTimeout(timer);
+      cleanUp();
+      resolve(true);
+    });
+
+    document.body.append(iframe, form);
+    form.submit();
+  });
+}
 
 function formatSize(bytes: number) {
   return bytes < 1024 * 1024 ? `${Math.max(1, Math.round(bytes / 1024))} KB` : `${(bytes / 1024 / 1024).toFixed(1)} MB`;
@@ -94,19 +150,28 @@ export function StartProjectDialog({ children, defaultType = "Custom web app" }:
     e.preventDefault();
     if (honey) return; // filled only by bots
     setStatus("sending");
+    const fields: Record<string, string> = {
+      name,
+      email,
+      "Project type": type,
+      Timeline: timeline,
+      message: details,
+      _subject: subject,
+      _replyto: email,
+      _template: "table",
+    };
     try {
-      // Multipart so FormSubmit can deliver the attachment; the browser sets the boundary header.
-      const form = new FormData();
-      form.append("name", name);
-      form.append("email", email);
-      form.append("Project type", type);
-      form.append("Timeline", timeline);
-      form.append("message", details);
-      form.append("_subject", subject);
-      form.append("_replyto", email);
-      form.append("_template", "table");
-      if (file) form.append("attachment", file, file.name);
-      const res = await fetch(FORM_ENDPOINT, { method: "POST", headers: { Accept: "application/json" }, body: form });
+      if (file) {
+        // The captcha page would sit unseen in the hidden iframe, so it's turned off here.
+        const sent = await postWithAttachment({ ...fields, _captcha: "false" }, file);
+        setStatus(sent ? "sent" : "error");
+        return;
+      }
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(fields),
+      });
       const data = (await res.json().catch(() => ({}))) as { success?: string | boolean };
       setStatus(res.ok && String(data.success) === "true" ? "sent" : "error");
     } catch {
