@@ -98,6 +98,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/kundeep-kitchen",
   "/templates/shopperscrown",
   "/templates/interio",
   "/templates/school",
@@ -165,6 +166,11 @@ const PAGE_META = {
     title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
     description: "A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages.",
     ogImage: `${BASE}/images/shopperscrown/hero.webp`,
+  },
+  "/templates/kundeep-kitchen": {
+    title: "Kundeep Kitchen — Free Restaurant Website Template | CodesPanda",
+    description: "A free Next.js restaurant website template — signature dishes, about, gallery, reviews, WhatsApp table booking and a full menu page with search and filters.",
+    ogImage: `${BASE}/images/kundeep-kitchen/hero.webp`,
   },
   "/templates/interio": {
     title: "Interio — Free Interior Design Website Template | CodesPanda",
@@ -301,6 +307,7 @@ const HERO_IMAGE = {
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
   "/templates/shopperscrown": "/images/shopperscrown/hero.webp",
+  "/templates/kundeep-kitchen": "/images/kundeep-kitchen/hero.webp",
   "/templates/interio": "/images/interio/hero.webp",
   "/templates/school": "/images/school/hero.webp",
   "/templates/ca-firm": "/images/ca-firm/hero.webp",
@@ -329,6 +336,7 @@ const SCHEMA_TYPE = {
   "/portfolio": "collection",
   "/blog": "blog",
   "/templates/shopperscrown": "software",
+  "/templates/kundeep-kitchen": "software",
   "/templates/interio": "software",
   "/templates/school": "software",
   "/templates/ca-firm": "software",

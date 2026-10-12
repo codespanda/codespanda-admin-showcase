@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "kundeep-kitchen",
+    name: "Kundeep Kitchen",
+    description:
+      "A warm, appetising website for a pure-vegetarian restaurant — a hero with reservation CTAs, a WhatsApp table-booking form, signature dishes, an about story, a photo gallery, guest reviews, and a full menu page with 11 categories, search and a bestsellers filter across 72 dishes.",
+    category: "Restaurant / Food Landing Page",
+    badge: "New",
+    badgeColor: "from-emerald-600 to-amber-500",
+    liveUrl: "https://kundeep-kitchen.codespanda.com/",
+    docsUrl: "https://github.com/codespanda/kundeep-kitchen",
+    detailsUrl: "/templates/kundeep-kitchen",
+    screenshotUrl: "/images/kundeep-kitchen/hero.webp",
+    techStack: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS v4"],
+    features: ["Full Menu Page", "Menu Search & Filters", "WhatsApp Table Booking", "Responsive"],
+    darkMode: false,
+    responsive: true,
+  },
+  {
     id: "shopperscrown",
     name: "Shoppers Crown",
     description:

@@ -15,6 +15,7 @@ export const INDUSTRIES = [
   "Travel",
   "Automotive",
   "SaaS",
+  "Food & dining",
 ] as const;
 export type Industry = (typeof INDUSTRIES)[number];
 
@@ -25,6 +26,7 @@ interface TemplateMeta {
 }
 
 const META: Record<string, TemplateMeta> = {
+  "kundeep-kitchen": { tint: "#F3ECDD", industry: "Food & dining" },
   shopperscrown: { tint: "#FDEBD8", industry: "E-commerce & retail" },
   interio: { tint: "#EFE7DC" },
   school: { tint: "#E3EEFB", industry: "Education" },
