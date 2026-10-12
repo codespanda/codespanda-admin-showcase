@@ -147,7 +147,11 @@ const BLOG_POSTS = [
 const SHOT_ROUTES = SHOTS.map((s) => `/portfolio/${s.id}`);
 const BLOG_ROUTES = BLOG_POSTS.map((p) => `/blog/${p.slug}`);
 
-const ROUTES = [...STATIC_ROUTES, ...SHOT_ROUTES, ...BLOG_ROUTES];
+// Template docs pages (/templates/<slug>/docs), listed in src/lib/template-docs-routes.json.
+const TEMPLATE_DOCS = JSON.parse(readFileSync(resolve(__dirname, "../src/lib/template-docs-routes.json"), "utf8"));
+const DOCS_ROUTES = TEMPLATE_DOCS.map((d) => `/templates/${d.slug}/docs`);
+
+const ROUTES = [...STATIC_ROUTES, ...SHOT_ROUTES, ...BLOG_ROUTES, ...DOCS_ROUTES];
 
 // Per-route static meta injected into the pre-rendered HTML so crawlers and
 // social scrapers see correct title/description/canonical before JS runs.
@@ -325,6 +329,16 @@ const HERO_IMAGE = {
   "/blog/best-ai-tools-for-web-developers-2026": "/images/blogs/best-ai-tools-for-web-developers-2026.webp",
   "/blog/ai-vs-traditional-web-development": "/images/blogs/ai-vs-traditional-web-development.webp",
 };
+
+// Docs pages reuse their template's screenshot. Title and description match TemplateDocsPage.tsx.
+for (const d of TEMPLATE_DOCS) {
+  const hero = HERO_IMAGE[`/templates/${d.slug}`];
+  PAGE_META[`/templates/${d.slug}/docs`] = {
+    title: `${d.name} Documentation | CodesPanda`,
+    description: `How to install, customise and deploy ${d.name}, the free ${d.framework} template: setup, scripts, project structure, theming and hosting.`,
+    ogImage: hero ? `${BASE}${hero}` : `${BASE}/og-cover.png`,
+  };
+}
 
 // Route → JSON-LD @type for the structured-data block injected statically
 // into <head> below, so crawlers/tools that don't execute JS still see

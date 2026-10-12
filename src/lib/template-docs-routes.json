@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "kundeep-kitchen",
+    "name": "Kundeep Kitchen",
+    "framework": "Next.js"
+  },
+  {
+    "slug": "shopperscrown",
+    "name": "Shoppers Crown",
+    "framework": "Vite"
+  },
+  {
+    "slug": "interio",
+    "name": "Interio",
+    "framework": "Vite"
+  },
+  {
+    "slug": "school",
+    "name": "Gouri International School",
+    "framework": "Vite"
+  },
+  {
+    "slug": "ca-firm",
+    "name": "Your CA Firm",
+    "framework": "Vite"
+  },
+  {
+    "slug": "finovo",
+    "name": "Finovo",
+    "framework": "Vite"
+  },
+  {
+    "slug": "hamara-bharat",
+    "name": "Hamara Bharat",
+    "framework": "Vite"
+  },
+  {
+    "slug": "eva-autocare",
+    "name": "Eva AutoCare",
+    "framework": "Vite"
+  },
+  {
+    "slug": "deepcity-care",
+    "name": "DeepCity Care Hospital",
+    "framework": "Vite"
+  },
+  {
+    "slug": "flowers",
+    "name": "Flowers POS",
+    "framework": "Vite"
+  },
+  {
+    "slug": "alpine-admin-react",
+    "name": "Alpine Admin React",
+    "framework": "Vite"
+  },
+  {
+    "slug": "brisk-admin",
+    "name": "Brisk Admin",
+    "framework": "Vite"
+  },
+  {
+    "slug": "cornerstone",
+    "name": "Cornerstone",
+    "framework": "Vite"
+  },
+  {
+    "slug": "portfolio-template",
+    "name": "Portfolio Template",
+    "framework": "Vite"
+  }
+]

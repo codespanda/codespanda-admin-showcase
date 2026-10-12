@@ -1,6 +1,6 @@
 // Run as part of the build: node scripts/generate-sitemap.js
 // Reads ROUTES below and writes public/sitemap.xml automatically.
-import { writeFileSync } from "fs";
+import { readFileSync, writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -89,6 +89,11 @@ const ROUTES = [
 
   // Portfolio shot pages
   ...SHOT_IDS.map((id) => ({ path: `/portfolio/${id}`, changefreq: "monthly", priority: "0.7" })),
+  ...JSON.parse(readFileSync(resolve(__dirname, "../src/lib/template-docs-routes.json"), "utf8")).map((d) => ({
+    path: `/templates/${d.slug}/docs`,
+    changefreq: "monthly",
+    priority: "0.6",
+  })),
 
   // Blog posts
   ...BLOG_SLUGS.map((slug) => ({ path: `/blog/${slug}`, changefreq: "monthly", priority: "0.6" })),

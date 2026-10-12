@@ -9,7 +9,7 @@ import { getSiteTemplate } from "@/lib/site";
 import { FaqSection, faqJsonLd, type FaqItem } from "@/components/site/FaqSection";
 
 const GITHUB_URL = "https://github.com/codespanda/finovo";
-const DOCS_URL = "https://finovo.codespanda.com/docs";
+const DOCS_URL = "/templates/finovo/docs";
 const PREVIEW_URL = "https://finovo.codespanda.com/";
 
 const TITLE = "Finovo — Accounting & ERP Admin Dashboard | CodesPanda";
@@ -197,14 +197,12 @@ export function FinovoPage() {
                   >
                     Live preview <ArrowUpRight className="hidden h-4 w-4 lg:block" aria-hidden />
                   </a>
-                  <a
-                    href={DOCS_URL}
-                    target="_blank"
-                    rel="noreferrer noopener"
+                  <Link
+                    to={DOCS_URL}
                     className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input px-[22px] text-[15px] font-semibold text-foreground hover:bg-secondary lg:h-[54px] lg:text-base"
                   >
                     Docs
-                  </a>
+                  </Link>
                 </div>
                 <a
                   href={GITHUB_URL}

@@ -72,7 +72,13 @@ export function TemplateDetail({ id, githubUrl, updated, screens, inside, faq = 
         {["Full source code", "Documentation", "Lifetime updates"].map((item) => (
           <li key={item} className="flex items-center gap-1.5 lg:gap-2.5">
             <Check className="h-4 w-4 text-link lg:h-[18px] lg:w-[18px]" strokeWidth={2.4} aria-hidden />
-            {item}
+            {item === "Documentation" && t.docsUrl.startsWith("/") ? (
+              <Link to={t.docsUrl} className="font-semibold text-link hover:text-blue-ink">
+                {item}
+              </Link>
+            ) : (
+              item
+            )}
           </li>
         ))}
       </ul>
@@ -113,16 +119,24 @@ export function TemplateDetail({ id, githubUrl, updated, screens, inside, faq = 
                 >
                   Live preview <ArrowUpRight className="hidden h-4 w-4 lg:block" aria-hidden />
                 </a>
-                {showDocs && (
-                  <a
-                    href={t.docsUrl}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input px-[22px] text-[15px] font-semibold text-foreground hover:bg-secondary lg:h-[54px] lg:text-base"
-                  >
-                    Docs
-                  </a>
-                )}
+                {showDocs &&
+                  (t.docsUrl.startsWith("/") ? (
+                    <Link
+                      to={t.docsUrl}
+                      className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input px-[22px] text-[15px] font-semibold text-foreground hover:bg-secondary lg:h-[54px] lg:text-base"
+                    >
+                      Docs
+                    </Link>
+                  ) : (
+                    <a
+                      href={t.docsUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="flex h-[50px] items-center justify-center rounded-xl border-[1.5px] border-input px-[22px] text-[15px] font-semibold text-foreground hover:bg-secondary lg:h-[54px] lg:text-base"
+                    >
+                      Docs
+                    </a>
+                  ))}
               </div>
               <a
                 href={githubUrl}
