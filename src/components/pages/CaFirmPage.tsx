@@ -98,18 +98,18 @@ export function CaFirmPage() {
         <meta property="og:description" content="A free React template for chartered accountants and financial advisory firms — services, industries, engagement models, testimonials, Careers and Contact pages." />
         <meta property="og:url" content="https://codespanda.com/templates/ca-firm" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta property="og:image" content="https://codespanda.com/og-cover.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Your CA Firm — Financial & Advisory Landing Page | CodesPanda" />
         <meta name="twitter:description" content="A free React template for chartered accountants and financial advisory firms — services, industries, engagement models, testimonials, Careers and Contact pages." />
-        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:image" content="https://codespanda.com/og-cover.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Your CA Firm",
           "description": "A free React template for chartered accountancy and financial advisory practices — services, industries, engagement models, testimonials, and dedicated Careers and Contact pages.",
           "url": "https://codespanda.com/templates/ca-firm",
-          "image": "https://codespanda.com/og-image.png",
+          "image": "https://codespanda.com/og-cover.png",
           "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Landing Page",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },

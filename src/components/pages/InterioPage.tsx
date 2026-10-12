@@ -78,18 +78,18 @@ export function InterioPage() {
         <meta property="og:description" content="A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design." />
         <meta property="og:url" content="https://codespanda.com/templates/interio" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta property="og:image" content="https://codespanda.com/og-cover.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Interio — Free Interior Design Website Template | CodesPanda" />
         <meta name="twitter:description" content="A free React template for interior design studios — services, portfolio, process, testimonials, and a blog." />
-        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:image" content="https://codespanda.com/og-cover.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Interio",
           "description": "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog.",
           "url": "https://codespanda.com/templates/interio",
-          "image": "https://codespanda.com/og-image.png",
+          "image": "https://codespanda.com/og-cover.png",
           "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Landing Page",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },

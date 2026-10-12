@@ -417,7 +417,7 @@ export function LandingPage() {
         <meta property="og:title" content="Admin Dashboard Templates &amp; UI Kits | CodesPanda" />
         <meta property="og:description" content="Premium &amp; free admin dashboard templates built with React, Vite &amp; Tailwind. Modern dashboard design for SaaS, CRM, HR, POS &amp; more — ship faster." />
         <meta property="og:site_name" content="CodesPanda" />
-        <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta property="og:image" content="https://codespanda.com/og-cover.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta property="og:image:alt" content="CodesPanda — React Admin Templates" />
@@ -427,7 +427,7 @@ export function LandingPage() {
         <meta name="twitter:creator" content="@codespanda" />
         <meta name="twitter:title" content="Admin Dashboard Templates &amp; UI Kits | CodesPanda" />
         <meta name="twitter:description" content="Premium &amp; free admin dashboard templates built with React, Vite &amp; Tailwind. Modern dashboard design for SaaS, CRM, HR, POS &amp; more." />
-        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:image" content="https://codespanda.com/og-cover.png" />
         <meta name="twitter:image:alt" content="CodesPanda — React Admin Templates" />
         <script type="application/ld+json">{faqJsonLd(HOME_FAQ)}</script>
       </Helmet>

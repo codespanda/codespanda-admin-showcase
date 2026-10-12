@@ -78,18 +78,18 @@ export function SchoolPage() {
         <meta property="og:description" content="A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design." />
         <meta property="og:url" content="https://codespanda.com/templates/school" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/og-image.png" />
+        <meta property="og:image" content="https://codespanda.com/og-cover.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Free School Website Template — Gouri International | CodesPanda" />
         <meta name="twitter:description" content="A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news." />
-        <meta name="twitter:image" content="https://codespanda.com/og-image.png" />
+        <meta name="twitter:image" content="https://codespanda.com/og-cover.png" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Gouri International School",
           "description": "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news.",
           "url": "https://codespanda.com/templates/school",
-          "image": "https://codespanda.com/og-image.png",
+          "image": "https://codespanda.com/og-cover.png",
           "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > Landing Page",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },

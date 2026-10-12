@@ -154,12 +154,12 @@ const PAGE_META = {
   "/": {
     title: "Admin Dashboard Templates & UI Kits | CodesPanda",
     description: "Premium & free admin dashboard templates built with React, Vite & Tailwind. Modern dashboard design for SaaS, CRM, HR, POS & more — ship faster.",
-    ogImage: `${BASE}/og-image.png`,
+    ogImage: `${BASE}/og-cover.png`,
   },
   "/templates": {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
-    ogImage: `${BASE}/og-image.png`,
+    ogImage: `${BASE}/og-cover.png`,
   },
   "/templates/shopperscrown": {
     title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
@@ -234,7 +234,7 @@ const PAGE_META = {
   "/services": {
     title: "Services — UI/UX Design & React Development | CodesPanda",
     description: "CodesPanda designs and builds web pages, admin panels and custom web applications — UI/UX design in Figma and development in React, Vite and Tailwind CSS.",
-    ogImage: `${BASE}/og-image.png`,
+    ogImage: `${BASE}/og-cover.png`,
   },
   "/portfolio": {
     title: "UI/UX Portfolio — Dashboard & Product Design | CodesPanda",
@@ -244,7 +244,7 @@ const PAGE_META = {
   "/blog": {
     title: "Blog — Admin Dashboard Design & React Engineering | CodesPanda",
     description: "Notes on admin dashboard design, React engineering, and shadcn/ui theming from the team building CodesPanda's free React templates.",
-    ogImage: `${BASE}/og-image.png`,
+    ogImage: `${BASE}/og-cover.png`,
   },
   "/legal/privacy": {
     title: "Privacy Policy — CodesPanda",
@@ -271,7 +271,7 @@ for (const shot of SHOTS) {
 
 // Auto-populate PAGE_META for all blog posts. Most posts use a
 // gradient+icon cover (no photo asset) and fall back to the site-wide
-// og-image.png already baked into the base HTML; posts with a real
+// og-cover.png already baked into the base HTML; posts with a real
 // cover photo set `ogImage` above and it's used here instead.
 for (const post of BLOG_POSTS) {
   PAGE_META[`/blog/${post.slug}`] = {
@@ -493,11 +493,11 @@ function withPageMeta(html, route) {
   // per-route injection below wins and crawlers don't pick up the wrong image.
   if (meta.ogImage) {
     html = html.replace(/[ \t]*<!-- Social fallback[^\n]*\n/g, "");
-    html = html.replace(/[ \t]*<meta property="og:image" content="https:\/\/codespanda\.com\/og-image\.png"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image" content="https:\/\/codespanda\.com\/og-cover\.png"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta property="og:image:width"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta property="og:image:height"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta property="og:image:alt"[^>]*>\r?\n/g, "");
-    html = html.replace(/[ \t]*<meta name="twitter:image" content="https:\/\/codespanda\.com\/og-image\.png"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta name="twitter:image" content="https:\/\/codespanda\.com\/og-cover\.png"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta name="twitter:image:alt"[^>]*>\r?\n/g, "");
   }
 
