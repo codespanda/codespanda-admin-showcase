@@ -149,13 +149,13 @@ export function BlogPostPage() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={`https://codespanda.com/blog/${post.slug}`} />
-        <meta property="og:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-cover.png"} />
+        <meta property="og:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-share.jpg"} />
         <meta property="article:published_time" content={post.date} />
         <meta property="article:author" content={post.author} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-cover.png"} />
+        <meta name="twitter:image" content={post.coverImage ? `https://codespanda.com${post.coverImage}` : "https://codespanda.com/og-share.jpg"} />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "BlogPosting",

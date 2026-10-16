@@ -4,18 +4,14 @@ import { faqJsonLd, type FaqItem } from "@/components/site/FaqSection";
 
 const SCREENS: { src: string; label: string }[] = [
   { src: "/images/carewell/hero.webp", label: "Home" },
-  { src: "/images/carewell/services.webp", label: "Services" },
+  { src: "/images/carewell/packages.webp", label: "Health packages" },
   { src: "/images/carewell/doctors.webp", label: "Doctors" },
 ];
 
 const INSIDE = [
   {
-    label: "Header",
-    desc: "Logo, page links with an active state, a click-to-call number and a Book Appointment button.",
-  },
-  {
-    label: "Hero",
-    desc: "Headline with appointment and services CTAs, trust badges, and an info bar with hours, location and emergency line.",
+    label: "Header & hero",
+    desc: "Sticky nav with click-to-call and Book Appointment, a doctor banner, trust badges, and an info bar with hours, location and emergency line.",
   },
   {
     label: "Services",
@@ -26,24 +22,28 @@ const INSIDE = [
     desc: "Directory of eight doctors with a speciality filter, qualifications, experience and booking buttons.",
   },
   {
+    label: "Health packages",
+    desc: "Six check-up packages with prices, discounts, included tests and a Most Popular highlight.",
+  },
+  {
+    label: "Lab reports",
+    desc: "Look up test status and download reports by report ID or mobile number.",
+  },
+  {
     label: "Appointment booking",
     desc: "Patient details, service, doctor, preferred date and time, with a confirmation screen.",
   },
   {
-    label: "Testimonials",
-    desc: "Nine patient reviews on the home page and on their own page.",
+    label: "Blog, gallery & careers",
+    desc: "Six health articles, an eight-photo gallery, and five job openings with perks.",
   },
   {
-    label: "Health blog",
-    desc: "Six articles with a listing page and individual post pages.",
-  },
-  {
-    label: "About, contact & FAQs",
-    desc: "Clinic story and stats, contact cards and form, and an accordion of common questions.",
+    label: "About, contact & FAQ",
+    desc: "Clinic story and stats, contact cards and form, and a FAQ page with 13 questions in four groups.",
   },
   {
     label: "Footer & legal",
-    desc: "Quick links, services, contact details and hours, plus privacy policy and terms pages.",
+    desc: "Quick links, services, contact details and hours, patient reviews on the home page, plus privacy policy and terms pages.",
   },
 ];
 
@@ -57,12 +57,12 @@ const FAQ: FaqItem[] = [
     a: "No — it works for multi-speciality clinics, dental and skin clinics, physiotherapy centres, diagnostic labs and small hospitals. Services, doctors, posts and contact details are plain data, so swap them for your own.",
   },
   {
-    q: "Do the appointment and contact forms send anything?",
-    a: "Not out of the box. They validate and show a confirmation on the page. Connect them to a form service, email API, WhatsApp or your booking system in src/pages/Appointment.jsx and src/pages/Contact.jsx.",
+    q: "Do the forms and the report lookup work out of the box?",
+    a: "They work as a front end: the appointment and contact forms show a confirmation, and the report lookup searches sample reports. Connect them to your form service, booking system and lab system in src/pages/Appointment.jsx, Contact.jsx and Reports.jsx.",
   },
   {
     q: "How do I change the content?",
-    a: "Almost everything lives in one file, src/data/site.js: contact details and hours, navigation, services, doctors, testimonials, blog posts, stats and FAQs. Pages update automatically.",
+    a: "Content lives in two data files: src/data/site.js for contact details, navigation, services, doctors, testimonials, blog posts and stats, and src/data/extra.js for packages, sample reports, gallery, jobs and FAQs. Pages update automatically.",
   },
 ];
 
@@ -71,11 +71,11 @@ export function CarewellClinicPage() {
     <>
       <Helmet>
         <title>CareWell Clinic — Free Clinic Website Template | CodesPanda</title>
-        <meta name="description" content="A free React clinic website template — services, doctors directory, appointment booking, testimonials, health blog and contact pages in a calm teal design." />
+        <meta name="description" content="A free React clinic website template — services, doctors, health packages, lab report lookup, appointment booking, blog and contact pages in a calm teal design." />
         <meta name="keywords" content="clinic website template, medical website template, doctor website template, hospital website react, healthcare template free, appointment booking template" />
         <link rel="canonical" href="https://codespanda.com/templates/carewell-clinic" />
         <meta property="og:title" content="CareWell Clinic — Free Clinic Website Template | CodesPanda" />
-        <meta property="og:description" content="A free React clinic website template — services, doctors directory, appointment booking, testimonials, health blog and contact pages in a calm teal design." />
+        <meta property="og:description" content="A free React clinic website template — services, doctors, health packages, lab report lookup, appointment booking, blog and contact pages in a calm teal design." />
         <meta property="og:url" content="https://codespanda.com/templates/carewell-clinic" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://codespanda.com/images/carewell/hero.webp" />

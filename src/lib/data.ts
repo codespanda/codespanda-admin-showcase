@@ -35,7 +35,7 @@ export const TEMPLATES: Template[] = [
     id: "carewell-clinic",
     name: "CareWell Clinic",
     description:
-      "A complete multi-page website for a clinic or medical practice — a hero with appointment CTAs, eight service pages, a filterable doctors directory, patient testimonials, a health blog, an appointment booking form, contact, FAQs and legal pages, in a calm teal design.",
+      "A complete multi-page website for a clinic or medical practice — eight service pages, a filterable doctors directory, health check-up packages, an online lab report lookup, an appointment booking form, a health blog, gallery, careers, FAQs and contact pages, in a calm teal design.",
     category: "Healthcare / Clinic Website",
     badge: "New",
     badgeColor: "from-teal-500 to-emerald-600",
@@ -44,7 +44,7 @@ export const TEMPLATES: Template[] = [
     detailsUrl: "/templates/carewell-clinic",
     screenshotUrl: "/images/carewell/hero.webp",
     techStack: ["React 18", "Vite", "Tailwind CSS v4", "shadcn/ui", "React Router"],
-    features: ["12 Routed Pages", "Doctors Directory", "Appointment Booking Form", "Responsive"],
+    features: ["16 Routed Pages", "Doctors Directory", "Lab Report Lookup", "Appointment Booking"],
     darkMode: false,
     responsive: true,
   },

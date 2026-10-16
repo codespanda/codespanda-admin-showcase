@@ -38,11 +38,11 @@ export function BlogPage() {
           content="Notes on admin dashboard design, React engineering, and shadcn/ui theming from the team building CodesPanda's free React templates."
         />
         <meta property="og:url" content="https://codespanda.com/blog" />
-        <meta property="og:image" content="https://codespanda.com/og-cover.png" />
+        <meta property="og:image" content="https://codespanda.com/og-share.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Blog — Admin Dashboard Design & React Engineering | CodesPanda" />
         <meta name="twitter:description" content="Notes on admin dashboard design, React engineering, and shadcn/ui theming from the team building CodesPanda's free React templates." />
-        <meta name="twitter:image" content="https://codespanda.com/og-cover.png" />
+        <meta name="twitter:image" content="https://codespanda.com/og-share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Blog",

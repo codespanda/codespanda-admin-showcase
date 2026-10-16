@@ -273,7 +273,7 @@ export function TemplateDocsPage() {
   const url = `https://codespanda.com/templates/${d.slug}/docs`;
   const title = `${t.name} Documentation | CodesPanda`;
   const description = `How to install, customise and deploy ${t.name}, the free ${d.framework} template: setup, scripts, project structure, theming and hosting.`;
-  const image = t.screenshotUrl ? `https://codespanda.com${t.screenshotUrl}` : "https://codespanda.com/og-cover.png";
+  const image = t.screenshotUrl ? `https://codespanda.com${t.screenshotUrl}` : "https://codespanda.com/og-share.jpg";
   const toc = tocFor(d);
 
   return (

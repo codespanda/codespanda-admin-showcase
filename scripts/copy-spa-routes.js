@@ -174,12 +174,12 @@ const PAGE_META = {
   "/": {
     title: "Admin Dashboard Templates & UI Kits | CodesPanda",
     description: "Premium & free admin dashboard templates built with React, Vite & Tailwind. Modern dashboard design for SaaS, CRM, HR, POS & more — ship faster.",
-    ogImage: `${BASE}/og-cover.png`,
+    ogImage: `${BASE}/og-share.jpg`,
   },
   "/templates": {
     title: "Browse Admin Dashboard Templates | CodesPanda",
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
-    ogImage: `${BASE}/og-cover.png`,
+    ogImage: `${BASE}/og-share.jpg`,
   },
   "/templates/shopperscrown": {
     title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
@@ -188,7 +188,7 @@ const PAGE_META = {
   },
   "/templates/carewell-clinic": {
     title: "CareWell Clinic — Free Clinic Website Template | CodesPanda",
-    description: "A free React clinic website template — services, doctors directory, appointment booking, testimonials, health blog and contact pages in a calm teal design.",
+    description: "A free React clinic website template — services, doctors, health packages, lab report lookup, appointment booking, blog and contact pages in a calm teal design.",
     ogImage: `${BASE}/images/carewell/hero.webp`,
   },
   "/templates/kundeep-kitchen": {
@@ -264,7 +264,7 @@ const PAGE_META = {
   "/services": {
     title: "Services — UI/UX Design & React Development | CodesPanda",
     description: "CodesPanda designs and builds web pages, admin panels and custom web applications — UI/UX design in Figma and development in React, Vite and Tailwind CSS.",
-    ogImage: `${BASE}/og-cover.png`,
+    ogImage: `${BASE}/og-share.jpg`,
   },
   "/portfolio": {
     title: "UI/UX Portfolio — Dashboard & Product Design | CodesPanda",
@@ -274,7 +274,7 @@ const PAGE_META = {
   "/blog": {
     title: "Blog — Admin Dashboard Design & React Engineering | CodesPanda",
     description: "Notes on admin dashboard design, React engineering, and shadcn/ui theming from the team building CodesPanda's free React templates.",
-    ogImage: `${BASE}/og-cover.png`,
+    ogImage: `${BASE}/og-share.jpg`,
   },
   "/legal/privacy": {
     title: "Privacy Policy — CodesPanda",
@@ -301,7 +301,7 @@ for (const shot of SHOTS) {
 
 // Auto-populate PAGE_META for all blog posts. Most posts use a
 // gradient+icon cover (no photo asset) and fall back to the site-wide
-// og-cover.png already baked into the base HTML; posts with a real
+// og-share.jpg already baked into the base HTML; posts with a real
 // cover photo set `ogImage` above and it's used here instead.
 for (const post of BLOG_POSTS) {
   PAGE_META[`/blog/${post.slug}`] = {
@@ -360,7 +360,7 @@ for (const d of TEMPLATE_DOCS) {
   PAGE_META[`/templates/${d.slug}/docs`] = {
     title: `${d.name} Documentation | CodesPanda`,
     description: `How to install, customise and deploy ${d.name}, the free ${d.framework} template: setup, scripts, project structure, theming and hosting.`,
-    ogImage: hero ? `${BASE}${hero}` : `${BASE}/og-cover.png`,
+    ogImage: hero ? `${BASE}${hero}` : `${BASE}/og-share.jpg`,
   };
 }
 
@@ -541,11 +541,12 @@ function withPageMeta(html, route) {
   // per-route injection below wins and crawlers don't pick up the wrong image.
   if (meta.ogImage) {
     html = html.replace(/[ \t]*<!-- Social fallback[^\n]*\n/g, "");
-    html = html.replace(/[ \t]*<meta property="og:image" content="https:\/\/codespanda\.com\/og-cover\.png"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image" content="https:\/\/codespanda\.com\/og-share\.jpg"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta property="og:image:type"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta property="og:image:width"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta property="og:image:height"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta property="og:image:alt"[^>]*>\r?\n/g, "");
-    html = html.replace(/[ \t]*<meta name="twitter:image" content="https:\/\/codespanda\.com\/og-cover\.png"[^>]*>\r?\n/g, "");
+    html = html.replace(/[ \t]*<meta name="twitter:image" content="https:\/\/codespanda\.com\/og-share\.jpg"[^>]*>\r?\n/g, "");
     html = html.replace(/[ \t]*<meta name="twitter:image:alt"[^>]*>\r?\n/g, "");
   }
 
@@ -561,6 +562,10 @@ function withPageMeta(html, route) {
     `<meta data-rh="true" property="og:description" content="${meta.description}" />`,
     `<meta data-rh="true" property="og:url" content="${canonical}" />`,
     meta.ogImage ? `<meta data-rh="true" property="og:image" content="${meta.ogImage}" />` : "",
+    // Size and type for the site-wide share image, so WhatsApp and LinkedIn render it without probing.
+    meta.ogImage === `${BASE}/og-share.jpg` ? `<meta property="og:image:type" content="image/jpeg" />` : "",
+    meta.ogImage === `${BASE}/og-share.jpg` ? `<meta property="og:image:width" content="1200" />` : "",
+    meta.ogImage === `${BASE}/og-share.jpg` ? `<meta property="og:image:height" content="630" />` : "",
     meta.ogImage ? `<meta data-rh="true" property="og:image:alt" content="${meta.title}" />` : "",
     `<meta data-rh="true" name="twitter:card" content="summary_large_image" />`,
     `<meta data-rh="true" name="twitter:title" content="${meta.title}" />`,

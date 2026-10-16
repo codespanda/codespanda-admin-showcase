@@ -86,18 +86,18 @@ export function ShoppersCrownPage() {
         <meta property="og:description" content="A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard." />
         <meta property="og:url" content="https://codespanda.com/templates/shopperscrown" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://codespanda.com/og-cover.png" />
+        <meta property="og:image" content="https://codespanda.com/og-share.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Shoppers Crown — Package-Forwarding Template | CodesPanda" />
         <meta name="twitter:description" content="A free React template for international shopping and package-forwarding platforms — 17 real routed pages." />
-        <meta name="twitter:image" content="https://codespanda.com/og-cover.png" />
+        <meta name="twitter:image" content="https://codespanda.com/og-share.jpg" />
         <script type="application/ld+json">{JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Product",
           "name": "Shoppers Crown",
           "description": "A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard.",
           "url": "https://codespanda.com/templates/shopperscrown",
-          "image": "https://codespanda.com/og-cover.png",
+          "image": "https://codespanda.com/og-share.jpg",
           "brand": { "@type": "Brand", "name": "CodesPanda" },
           "category": "Software > Templates > E-commerce",
           "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/InStock" },
