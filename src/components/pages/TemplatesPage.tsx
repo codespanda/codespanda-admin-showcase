@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Search } from "lucide-react";
@@ -38,6 +38,9 @@ function CustomBox({ className }: { className?: string }) {
 
 const sideLabel = "text-[13px] font-bold uppercase tracking-[0.08em] text-muted-foreground";
 
+/** Templates shown at first and added by each "Load more". */
+const PAGE_SIZE = 15;
+
 export function TemplatesPage() {
   const [params, setParams] = useSearchParams();
   const typeParam = params.get("type");
@@ -70,6 +73,12 @@ export function TemplatesPage() {
     );
     return sort === "name" ? [...list].sort((a, b) => a.name.localeCompare(b.name)) : list;
   }, [type, q, industries, darkOnly, tsOnly, sort]);
+
+  // Start again from the first page whenever the filters, search or sort change.
+  const [visible, setVisible] = useState(PAGE_SIZE);
+  useEffect(() => setVisible(PAGE_SIZE), [type, q, industries, darkOnly, tsOnly, sort]);
+  const shown = items.slice(0, visible);
+  const remaining = items.length - shown.length;
 
   return (
     <>
@@ -194,7 +203,8 @@ export function TemplatesPage() {
 
               <div className="flex items-center justify-between">
                 <span className="text-[15px] text-muted-foreground">
-                  Showing <strong className="text-foreground">{items.length}</strong>
+                  Showing <strong className="text-foreground">{shown.length}</strong>
+                  {remaining > 0 && <> of <strong className="text-foreground">{items.length}</strong></>}
                   <span className="hidden lg:inline"> templates</span>
                 </span>
                 <label className="flex items-center gap-2 text-sm text-muted-foreground lg:gap-2.5 lg:text-[15px]">
@@ -219,7 +229,7 @@ export function TemplatesPage() {
                 </div>
               ) : (
                 <div className="grid gap-4 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">
-                  {items.map((t) => (
+                  {shown.map((t) => (
                     <TemplateCard
                       key={t.id}
                       template={t}
@@ -239,6 +249,16 @@ export function TemplatesPage() {
                     />
                   ))}
                 </div>
+              )}
+
+              {remaining > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setVisible((v) => v + PAGE_SIZE)}
+                  className="flex h-[52px] items-center justify-center self-stretch rounded-xl border-[1.5px] border-input bg-card px-[26px] text-base font-semibold text-foreground hover:bg-secondary lg:self-center"
+                >
+                  Load more templates ({remaining} more)
+                </button>
               )}
 
               <CustomBox className="mt-2 lg:hidden" />
