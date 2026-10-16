@@ -56,6 +56,10 @@ each has its own `/templates/<slug>` marketing page in this repo
 
 | Template | Live Demo | Category |
 |---|---|---|
+| [LassiWala](https://lassiwala.codespanda.com/) | `/templates/lassiwala` | Food & Beverage / Brand Website |
+| [FinCore Accounting](https://fincore.codespanda.com/) | `/templates/fincore` | Finance / Accounting Firm Website |
+| [CareWell Clinic](https://carewellclinic.codespanda.com/) | `/templates/carewell-clinic` | Healthcare / Clinic Website |
+| [Kundeep Kitchen](https://kundeep-kitchen.codespanda.com/) | `/templates/kundeep-kitchen` | Restaurant / Food Landing Page |
 | [Shoppers Crown](https://shopperscrown.codespanda.com/) | `/templates/shopperscrown` | E-commerce / Package-Forwarding Platform |
 | [Interio](https://interio.codespanda.com/) | `/templates/interio` | Interior Design / Portfolio Landing Page |
 | [Gouri International School](https://school.codespanda.com/) | `/templates/school` | Education / School Landing Page |
@@ -70,11 +74,20 @@ each has its own `/templates/<slug>` marketing page in this repo
 | [Cornerstone](https://cornerstone.codespanda.com/) | `/templates/cornerstone` | SaaS Admin |
 | [Portfolio Template](https://codespanda.github.io/portfolio/) | `/templates/portfolio-template` | Developer Portfolio |
 
-Adding a new template means: an entry in `src/lib/data.ts` (`TEMPLATES`), a
-`<Name>Page.tsx` marketing page + route in `App.tsx`, an entry in
-`FOOTER_NAV` (`src/lib/constants.ts`), the static `ItemList` schema in
-`index.html`, and prerender/SEO metadata + sitemap entries in
-`scripts/copy-spa-routes.js` and `scripts/generate-sitemap.js`.
+Adding a new template means:
+
+1. Screenshots (1600×1000 WebP) in `public/images/<slug>/` — see
+   `scripts/screenshot-lassiwala.js` for a capture script to copy.
+2. An entry at the top of `TEMPLATES` in `src/lib/data.ts` (newest first) and its
+   card tint and industry in `META` in `src/lib/site.ts`.
+3. A `<Name>Page.tsx` marketing page in `src/components/pages/` and its route in `App.tsx`.
+4. Its docs in `TEMPLATE_DOCS` (`src/lib/template-docs.ts`) and
+   `src/lib/template-docs-routes.json`, which serve `/templates/<slug>/docs`.
+5. Prerender/SEO metadata in `scripts/copy-spa-routes.js` and a sitemap entry in
+   `scripts/generate-sitemap.js`.
+
+`npm run build` then regenerates the small image variants,
+`src/lib/responsive-images.json` and `public/sitemap.xml`.
 
 ## 🎨 Design Tokens
 

@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "lassiwala",
+    name: "LassiWala",
+    description:
+      "A cheerful multi-page website for a lassi bar, dairy or beverage brand — a hero with a clay-kulhad photo, a five-flavour range, an online shop with sizes, quantities and a slide-out cart, a page per flavour with ingredients and a taste profile, an about page, a story timeline, an outlet finder with a map, and a contact page with FAQs.",
+    category: "Food & Beverage / Brand Website",
+    badge: "New",
+    badgeColor: "from-green-600 to-blue-900",
+    liveUrl: "https://lassiwala.codespanda.com/",
+    docsUrl: "/templates/lassiwala/docs",
+    detailsUrl: "/templates/lassiwala",
+    screenshotUrl: "/images/lassiwala/hero.webp",
+    techStack: ["React 18", "TypeScript", "Vite", "Tailwind CSS v4", "shadcn/ui"],
+    features: ["7 Routed Pages", "Shop & Cart", "Outlet Finder", "Responsive"],
+    darkMode: false,
+    responsive: true,
+  },
+  {
     id: "fincore",
     name: "FinCore Accounting",
     description:

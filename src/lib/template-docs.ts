@@ -68,6 +68,67 @@ const PUBLIC_404 =
 
 export const TEMPLATE_DOCS: TemplateDocs[] = [
   {
+    slug: "lassiwala",
+    id: "lassiwala",
+    repo: "https://github.com/codespanda/lassiwala",
+    branch: "main",
+    framework: "Vite",
+    language: "TypeScript",
+    devPort: 5173,
+    outDir: "dist",
+    scripts: [
+      VITE_SCRIPTS.dev,
+      VITE_SCRIPTS.build,
+      { cmd: "npm run build:pages", desc: "Build for GitHub Pages and copy index.html to 404.html for deep links" },
+      VITE_SCRIPTS.preview,
+    ],
+    structure: `src/
+  pages/               Home, OurLassi (shop), Flavors, About, OurStory, FindUs,
+                       Contact, Policy (shipping, returns, terms, privacy), NotFound
+  components/
+    sections/          Header, Hero, Highlights, LassiRange, Feeling, Testimonials,
+                       OrderBanner, Footer
+    layout/            Layout, PageHero, CartSheet
+    ui/                shadcn/ui primitives: button, card, badge, input, textarea,
+                       accordion, sheet
+    ornaments.tsx      Logo, heart divider, leaf sprigs and section titles
+  context/cart.tsx     Cart state, saved to localStorage
+  data/flavors.ts      Flavours, prices, sizes, ingredients and nutrition
+  assets/              Product photos, hero and illustrations
+  App.tsx              Routes
+  index.css            Theme colors, fonts and Tailwind v4 setup`,
+    content: [
+      { path: "src/data/flavors.ts", desc: "The five flavours with names, descriptions, photos, colours, taste profile, ingredients, nutrition and prices for each size. The home cards, shop, flavour pages and cart all read from it." },
+      { path: "src/pages/FindUs.tsx", desc: "The outlets list: name, address, area and opening hours. The address drives the map and the Directions button." },
+      { path: "src/pages/Contact.tsx", desc: "Contact cards, opening hours, head office and FAQs. Replace the sample phone, email and address before launch." },
+      { path: "src/pages/About.tsx  src/pages/OurStory.tsx", desc: "Brand copy, stats, values, the process steps and the story timeline — sample text to replace with your own." },
+      { path: "src/assets/", desc: "Product photos (one per flavour), the hero kulhad and the village illustration. Keep the same file names to swap them in." },
+      { path: "index.html", desc: "The default title, description, fonts and favicon. Each route sets its own title in Layout.tsx." },
+    ],
+    theme: { path: "src/index.css", desc: "Colors are CSS variables in :root (navy --brand-navy: #13235b, green --brand-green: #4c9a3b, heart pink and cream), mapped into Tailwind v4 with @theme inline. Fonts are Anton and Oswald for headings, Kaushan Script for the script lines and Poppins for text, from Google Fonts." },
+    routing: "React Router 6: routes are declared in src/App.tsx inside a shared layout (header, footer and cart). /policies/:slug renders the four policy pages from one component, and links like /flavors#rose-lassi scroll to that flavour.",
+    screens: [
+      { src: "/images/lassiwala/hero.webp", label: "Home" },
+      { src: "/images/lassiwala/range.webp", label: "Lassi range" },
+      { src: "/images/lassiwala/shop.webp", label: "Shop & cart" },
+      { src: "/images/lassiwala/flavors.webp", label: "Flavour page" },
+      { src: "/images/lassiwala/story.webp", label: "Our story" },
+      { src: "/images/lassiwala/find-us.webp", label: "Find us" },
+      { src: "/images/lassiwala/contact.webp", label: "Contact" },
+    ],
+    deploy: {
+      steps: [
+        ...ACTIONS_PAGES.slice(0, 2),
+        "The site is served from a custom domain, so vite.config.ts uses base '/'. To host it at github.io/<repo>/ instead, build with BASE_PATH=/<repo>/.",
+      ],
+      fallback: "npm run build:pages copies index.html to 404.html, so deep links like /flavors or /policies/privacy keep working on GitHub Pages.",
+    },
+    notes: [
+      "Place Order, the contact form and the pincode check show confirmations but don't send anything. Connect them to your ordering backend, payment gateway or form service.",
+      "Prices, outlets, stats and the story timeline are sample content — replace them before launch.",
+    ],
+  },
+  {
     slug: "fincore",
     id: "fincore",
     repo: "https://github.com/codespanda/fincore-accounting",

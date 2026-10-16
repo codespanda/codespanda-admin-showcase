@@ -98,6 +98,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/lassiwala",
   "/templates/fincore",
   "/templates/carewell-clinic",
   "/templates/kundeep-kitchen",
@@ -186,6 +187,11 @@ const PAGE_META = {
     title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
     description: "A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages.",
     ogImage: `${BASE}/images/shopperscrown/hero.webp`,
+  },
+  "/templates/lassiwala": {
+    title: "LassiWala — Free Lassi & Beverage Brand Template | CodesPanda",
+    description: "A free React website template for a lassi bar or beverage brand — flavour range, an online shop with cart, flavour pages, story timeline, outlet finder and contact pages.",
+    ogImage: `${BASE}/images/lassiwala/hero.webp`,
   },
   "/templates/fincore": {
     title: "FinCore Accounting — Free Accounting Firm Template | CodesPanda",
@@ -337,6 +343,7 @@ const HERO_IMAGE = {
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
   "/templates/shopperscrown": "/images/shopperscrown/hero.webp",
+  "/templates/lassiwala": "/images/lassiwala/hero.webp",
   "/templates/fincore": "/images/fincore/hero.webp",
   "/templates/carewell-clinic": "/images/carewell/hero.webp",
   "/templates/kundeep-kitchen": "/images/kundeep-kitchen/hero.webp",
@@ -381,6 +388,7 @@ const SCHEMA_TYPE = {
   "/portfolio": "collection",
   "/blog": "blog",
   "/templates/shopperscrown": "software",
+  "/templates/lassiwala": "software",
   "/templates/fincore": "software",
   "/templates/carewell-clinic": "software",
   "/templates/kundeep-kitchen": "software",
