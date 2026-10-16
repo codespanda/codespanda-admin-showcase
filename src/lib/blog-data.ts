@@ -1,3 +1,5 @@
+import STUDIO_POSTS from "@/content/blog.json";
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -25,7 +27,8 @@ export interface BlogPost {
   }[];
 }
 
-export const BLOG_POSTS: BlogPost[] = [
+/** Posts written in the code. Posts added from /studio live in src/content/blog.json. */
+const BUILT_IN_POSTS: BlogPost[] = [
   {
     slug: "ai-powered-web-development-guide",
     title: "AI-Powered Web Development: The Complete Guide",
@@ -2502,6 +2505,8 @@ If you're planning to build an AI-powered SaaS, business automation platform, ac
 What AI-powered application would you build today?`,
   },
 ];
+
+export const BLOG_POSTS: BlogPost[] = [...(STUDIO_POSTS as BlogPost[]), ...BUILT_IN_POSTS];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);

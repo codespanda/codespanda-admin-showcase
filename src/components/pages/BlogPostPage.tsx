@@ -64,7 +64,7 @@ function ResourceLinksGrid({ links }: { links: NonNullable<BlogPost["resourceLin
 }
 
 /** Lightweight markdown renderer: "## " headings, "- " bullet lists, blank-line paragraphs */
-function PostContent({ text }: { text: string }) {
+export function PostContent({ text }: { text: string }) {
   const blocks = text.split(/\n{2,}/);
   return (
     <div className="flex flex-col gap-5 text-[17px] leading-[1.75] text-foreground/85 lg:text-lg">

@@ -1,5 +1,10 @@
 [
   {
+    "slug": "carewell-clinic",
+    "name": "CareWell Clinic",
+    "framework": "Vite"
+  },
+  {
     "slug": "kundeep-kitchen",
     "name": "Kundeep Kitchen",
     "framework": "Next.js"

@@ -1,3 +1,5 @@
+import STUDIO_SHOTS from "@/content/portfolio.json";
+
 export interface Shot {
   id: string;
   title: string;
@@ -12,7 +14,8 @@ export interface Shot {
   views?: number;         // manually-entered view count sourced from the shot's Pinterest pin
 }
 
-export const SHOTS: Shot[] = [
+/** Shots written in the code. Shots added from /studio live in src/content/portfolio.json. */
+const BUILT_IN_SHOTS: Shot[] = [
   {
     id: "my-listings",
     title: "My Listings — Clean Marketplace Seller Dashboard UI",
@@ -2307,6 +2310,9 @@ The concept includes everything businesses need to manage sales efficiently — 
   },
 ];
 
+
+/** Studio shots first: they're the newest. */
+export const SHOTS: Shot[] = [...(STUDIO_SHOTS as Shot[]), ...BUILT_IN_SHOTS];
 
 export function getShotById(id: string): Shot | undefined {
   return SHOTS.find((s) => s.id === id);

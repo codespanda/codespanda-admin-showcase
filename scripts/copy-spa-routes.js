@@ -98,6 +98,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
+  "/templates/carewell-clinic",
   "/templates/kundeep-kitchen",
   "/templates/shopperscrown",
   "/templates/interio",
@@ -144,6 +145,20 @@ const BLOG_POSTS = [
 ];
 
 // Shot & blog routes derived from their data arrays
+// Shots and posts added from /studio (src/content/*.json) get the same treatment.
+const summary = (text = "") => {
+  const t = text.replace(/[✨🌐•]/g, "").replace(/\s+/g, " ").trim();
+  return t.length <= 160 ? t : t.slice(0, 157).replace(/\s+\S*$/, "") + "…";
+};
+const STUDIO_SHOTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8"));
+const STUDIO_POSTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8"));
+for (const s of STUDIO_SHOTS) {
+  SHOTS.push({ id: s.id, title: s.title, ogImage: `${BASE}${s.imgUrl}`, desc: summary(s.description) || s.title });
+}
+for (const p of STUDIO_POSTS) {
+  BLOG_POSTS.push({ slug: p.slug, title: p.title, desc: summary(p.excerpt), ...(p.coverImage ? { ogImage: `${BASE}${p.coverImage}` } : {}) });
+}
+
 const SHOT_ROUTES = SHOTS.map((s) => `/portfolio/${s.id}`);
 const BLOG_ROUTES = BLOG_POSTS.map((p) => `/blog/${p.slug}`);
 
@@ -170,6 +185,11 @@ const PAGE_META = {
     title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
     description: "A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages.",
     ogImage: `${BASE}/images/shopperscrown/hero.webp`,
+  },
+  "/templates/carewell-clinic": {
+    title: "CareWell Clinic — Free Clinic Website Template | CodesPanda",
+    description: "A free React clinic website template — services, doctors directory, appointment booking, testimonials, health blog and contact pages in a calm teal design.",
+    ogImage: `${BASE}/images/carewell/hero.webp`,
   },
   "/templates/kundeep-kitchen": {
     title: "Kundeep Kitchen — Free Restaurant Website Template | CodesPanda",
@@ -311,6 +331,7 @@ const HERO_IMAGE = {
   "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
   "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
   "/templates/shopperscrown": "/images/shopperscrown/hero.webp",
+  "/templates/carewell-clinic": "/images/carewell/hero.webp",
   "/templates/kundeep-kitchen": "/images/kundeep-kitchen/hero.webp",
   "/templates/interio": "/images/interio/hero.webp",
   "/templates/school": "/images/school/hero.webp",
@@ -329,6 +350,9 @@ const HERO_IMAGE = {
   "/blog/best-ai-tools-for-web-developers-2026": "/images/blogs/best-ai-tools-for-web-developers-2026.webp",
   "/blog/ai-vs-traditional-web-development": "/images/blogs/ai-vs-traditional-web-development.webp",
 };
+
+// Studio posts preload their cover like the built-in ones.
+for (const p of STUDIO_POSTS) if (p.coverImage) HERO_IMAGE[`/blog/${p.slug}`] = p.coverImage;
 
 // Docs pages reuse their template's screenshot. Title and description match TemplateDocsPage.tsx.
 for (const d of TEMPLATE_DOCS) {
@@ -350,6 +374,7 @@ const SCHEMA_TYPE = {
   "/portfolio": "collection",
   "/blog": "blog",
   "/templates/shopperscrown": "software",
+  "/templates/carewell-clinic": "software",
   "/templates/kundeep-kitchen": "software",
   "/templates/interio": "software",
   "/templates/school": "software",
@@ -471,6 +496,7 @@ const POST_COVER_SIZES = "(min-width: 1080px) 1080px, 100vw";
 {
   const src = readFileSync(resolve(__dirname, "../src/lib/blog-data.ts"), "utf8");
   const posts = [...src.matchAll(/date:\s*"(\d{4}-\d{2}-\d{2})"[\s\S]*?coverImage:\s*"([^"]+)"/g)].map((m) => ({ date: m[1], cover: m[2] }));
+  for (const p of STUDIO_POSTS) if (p.coverImage) posts.push({ date: p.date, cover: p.coverImage });
   const newest = posts.sort((a, b) => b.date.localeCompare(a.date))[0];
   if (newest) HERO_IMAGE["/blog"] = newest.cover;
 }

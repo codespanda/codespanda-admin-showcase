@@ -68,6 +68,57 @@ const PUBLIC_404 =
 
 export const TEMPLATE_DOCS: TemplateDocs[] = [
   {
+    slug: "carewell-clinic",
+    id: "carewell-clinic",
+    repo: "https://github.com/codespanda/carewell-clinic",
+    branch: "main",
+    framework: "Vite",
+    language: "JavaScript",
+    devPort: 5173,
+    outDir: "dist",
+    scripts: [VITE_SCRIPTS.dev, VITE_SCRIPTS.buildJs, VITE_SCRIPTS.preview],
+    structure: `src/
+  pages/               Home, About, Services, ServiceDetail, DoctorsPage,
+                       TestimonialsPage, Blog, BlogPost, Contact, Appointment,
+                       Legal (privacy & terms), NotFound
+  components/
+    layout/            Layout, Navbar and Footer around every page
+    sections/          Hero, InfoBar, ServicesGrid, WhyChoose, Doctors,
+                       Testimonials, CtaBanner
+    ui/                shadcn/ui primitives: button, card, accordion, input…
+    shared.jsx         Small shared pieces
+  data/site.js         Contact details, hours, services, doctors, testimonials,
+                       blog posts, stats and FAQs
+  App.jsx              Routes
+  index.css            Theme colors and Tailwind v4 setup
+public/CNAME           Custom domain for GitHub Pages`,
+    content: [
+      { path: "src/data/site.js", desc: "Almost all content in one file: contact details and opening hours, navigation, the 8 services, 8 doctors, 9 testimonials, 6 blog posts, stats, \"why choose us\" points and FAQs. Service and blog pages are generated from it." },
+      { path: "src/data/site.js → images", desc: "Photos are loaded from Unsplash URLs. Put your own photos in public/ and point these entries at them before launch." },
+      { path: "src/pages/Appointment.jsx", desc: "The booking form's fields, services and time slots." },
+      { path: "index.html", desc: "The page title, description and favicon." },
+    ],
+    theme: { path: "src/index.css", desc: "Colors are CSS variables in :root (the teal brand is --primary: #14968f), mapped into Tailwind v4 with @theme inline. The shadcn/ui components in src/components/ui pick them up automatically." },
+    routing: "React Router 6: routes are declared in src/App.jsx inside a shared Layout (navbar and footer). /services/:slug and /blog/:slug render from the entries in src/data/site.js, so adding a service or post adds its page.",
+    screens: [
+      { src: "/images/carewell/hero.webp", label: "Home" },
+      { src: "/images/carewell/services.webp", label: "Services" },
+      { src: "/images/carewell/doctors.webp", label: "Doctors" },
+      { src: "/images/carewell/appointment.webp", label: "Appointment booking" },
+    ],
+    deploy: {
+      steps: [
+        ...ACTIONS_PAGES.slice(0, 2),
+        "public/CNAME holds the custom domain (carewellclinic.codespanda.com). Replace it with your own domain, or delete it to use the default github.io address.",
+      ],
+      fallback: "The deploy workflow copies index.html to 404.html, so deep links like /doctors keep working on GitHub Pages.",
+    },
+    notes: [
+      "The appointment and contact forms validate and show a confirmation but don't send anything. Connect them to a form service, email API or booking system in src/pages/Appointment.jsx and src/pages/Contact.jsx.",
+      "Every page shares the title set in index.html. For better SEO, give each page its own title and description, for example with react-helmet-async.",
+    ],
+  },
+  {
     slug: "kundeep-kitchen",
     id: "kundeep-kitchen",
     repo: "https://github.com/codespanda/kundeep-kitchen",

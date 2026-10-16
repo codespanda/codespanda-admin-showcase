@@ -73,6 +73,7 @@ const ROUTES = [
 
   // Template detail pages
   { path: "/templates/shopperscrown",           changefreq: "monthly", priority: "0.9" },
+  { path: "/templates/carewell-clinic",         changefreq: "monthly", priority: "0.9" },
   { path: "/templates/kundeep-kitchen",         changefreq: "monthly", priority: "0.9" },
   { path: "/templates/interio",                 changefreq: "monthly", priority: "0.9" },
   { path: "/templates/school",                  changefreq: "monthly", priority: "0.9" },
@@ -89,6 +90,17 @@ const ROUTES = [
 
   // Portfolio shot pages
   ...SHOT_IDS.map((id) => ({ path: `/portfolio/${id}`, changefreq: "monthly", priority: "0.7" })),
+  // Shots and posts added from /studio
+  ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8")).map((s) => ({
+    path: `/portfolio/${s.id}`,
+    changefreq: "monthly",
+    priority: "0.7",
+  })),
+  ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8")).map((p) => ({
+    path: `/blog/${p.slug}`,
+    changefreq: "monthly",
+    priority: "0.6",
+  })),
   ...JSON.parse(readFileSync(resolve(__dirname, "../src/lib/template-docs-routes.json"), "utf8")).map((d) => ({
     path: `/templates/${d.slug}/docs`,
     changefreq: "monthly",

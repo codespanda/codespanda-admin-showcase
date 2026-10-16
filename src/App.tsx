@@ -18,7 +18,9 @@ const CaFirmPage          = lazy(() => import("@/components/pages/CaFirmPage").t
 const SchoolPage          = lazy(() => import("@/components/pages/SchoolPage").then(m => ({ default: m.SchoolPage })));
 const InterioPage         = lazy(() => import("@/components/pages/InterioPage").then(m => ({ default: m.InterioPage })));
 const KundeepKitchenPage  = lazy(() => import("@/components/pages/KundeepKitchenPage").then(m => ({ default: m.KundeepKitchenPage })));
+const CarewellClinicPage  = lazy(() => import("@/components/pages/CarewellClinicPage").then(m => ({ default: m.CarewellClinicPage })));
 const TemplateDocsPage    = lazy(() => import("@/components/pages/TemplateDocsPage").then(m => ({ default: m.TemplateDocsPage })));
+const StudioPage          = lazy(() => import("@/components/pages/StudioPage").then(m => ({ default: m.StudioPage })));
 const ShoppersCrownPage   = lazy(() => import("@/components/pages/ShoppersCrownPage").then(m => ({ default: m.ShoppersCrownPage })));
 const HamaraBharatPage    = lazy(() => import("@/components/pages/HamaraBharatPage").then(m => ({ default: m.HamaraBharatPage })));
 const DeepakPortfolioPage = lazy(() => import("@/components/pages/DeepakPortfolioPage").then(m => ({ default: m.DeepakPortfolioPage })));
@@ -50,6 +52,9 @@ function App() {
         <Route path="/templates/ca-firm" element={<Suspense><CaFirmPage /></Suspense>} />
         <Route path="/templates/school" element={<Suspense><SchoolPage /></Suspense>} />
         <Route path="/templates/:slug/docs" element={<Suspense><TemplateDocsPage /></Suspense>} />
+        {/* Not linked anywhere and noindex: the content studio. */}
+        <Route path="/studio" element={<Suspense><StudioPage /></Suspense>} />
+        <Route path="/templates/carewell-clinic" element={<Suspense><CarewellClinicPage /></Suspense>} />
         <Route path="/templates/kundeep-kitchen" element={<Suspense><KundeepKitchenPage /></Suspense>} />
         <Route path="/templates/interio" element={<Suspense><InterioPage /></Suspense>} />
         <Route path="/templates/shopperscrown" element={<Suspense><ShoppersCrownPage /></Suspense>} />
