@@ -73,6 +73,7 @@ const ROUTES = [
 
   // Template detail pages
   { path: "/templates/shopperscrown",           changefreq: "monthly", priority: "0.9" },
+  { path: "/templates/fincore",                 changefreq: "monthly", priority: "0.9" },
   { path: "/templates/carewell-clinic",         changefreq: "monthly", priority: "0.9" },
   { path: "/templates/kundeep-kitchen",         changefreq: "monthly", priority: "0.9" },
   { path: "/templates/interio",                 changefreq: "monthly", priority: "0.9" },

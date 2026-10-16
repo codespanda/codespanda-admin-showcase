@@ -26,6 +26,7 @@ interface TemplateMeta {
 }
 
 const META: Record<string, TemplateMeta> = {
+  fincore: { tint: "#E3EBF8", industry: "Finance" },
   "carewell-clinic": { tint: "#DDF2EF", industry: "Healthcare" },
   "kundeep-kitchen": { tint: "#F3ECDD", industry: "Food & dining" },
   shopperscrown: { tint: "#FDEBD8", industry: "E-commerce & retail" },

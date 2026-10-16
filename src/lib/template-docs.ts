@@ -68,6 +68,56 @@ const PUBLIC_404 =
 
 export const TEMPLATE_DOCS: TemplateDocs[] = [
   {
+    slug: "fincore",
+    id: "fincore",
+    repo: "https://github.com/codespanda/fincore-accounting",
+    branch: "main",
+    framework: "Vite",
+    language: "TypeScript",
+    devPort: 5173,
+    outDir: "dist",
+    scripts: [VITE_SCRIPTS.dev, VITE_SCRIPTS.build, VITE_SCRIPTS.preview, VITE_SCRIPTS.oxlint],
+    structure: `src/
+  pages/               home, about, services, service-detail, industries,
+                       resources, contact, legal (privacy & terms), not-found
+  components/
+    sections/          header, hero, benefits-bar, services, stats, why-choose-us,
+                       testimonials, cta-banner, footer
+    ui/                shadcn/ui primitives (Base UI): button, card, tabs, accordion…
+    layout.tsx  logo.tsx  page-hero.tsx  section-heading.tsx  social-icons.tsx
+  data/site.ts         Contact details, navigation, services, industries, team,
+                       articles, guides and FAQs
+  App.tsx              Routes
+  index.css            Theme colors, fonts and Tailwind v4 setup`,
+    content: [
+      { path: "src/data/site.ts", desc: "All content in one typed file: contact details, hours and map address, navigation, the 6 services and their page content, 8 industries, the team of 4, 6 articles, 4 guides and 6 FAQs. Service pages are generated from it." },
+      { path: "src/data/site.ts → contact", desc: "Replace the sample phone, email and address before launch. The address also drives the embedded Google Map on the contact page." },
+      { path: "src/data/site.ts → team", desc: "Team photos load from Unsplash URLs. Add your own photos to public/ and point the entries at them." },
+      { path: "index.html", desc: "The page title, description and favicon." },
+    ],
+    theme: { path: "src/index.css", desc: "Colors are CSS variables in :root (the navy brand is --primary: #0b3a86), mapped into Tailwind v4 with @theme inline. Fonts are Plus Jakarta Sans and Geist, installed with Fontsource." },
+    routing: "React Router 8: routes are declared in src/App.tsx inside a shared layout (header and footer). /services/:slug renders from the services in src/data/site.ts, so adding a service adds its page.",
+    screens: [
+      { src: "/images/fincore/hero.webp", label: "Home" },
+      { src: "/images/fincore/services.webp", label: "Services" },
+      { src: "/images/fincore/service-detail.webp", label: "Service page" },
+      { src: "/images/fincore/industries.webp", label: "Industries" },
+      { src: "/images/fincore/resources.webp", label: "Resources" },
+      { src: "/images/fincore/contact.webp", label: "Contact" },
+    ],
+    deploy: {
+      steps: [
+        ...ACTIONS_PAGES.slice(0, 2),
+        "The site is served from a custom domain, so vite.config.ts uses base '/'. To host it at github.io/<repo>/ instead, set base to '/<repo>/'.",
+      ],
+      fallback: "The deploy workflow copies index.html to 404.html, so deep links like /services/bookkeeping keep working on GitHub Pages.",
+    },
+    notes: [
+      "The contact form shows a confirmation but doesn't send anything. Connect it to a form service, email API or CRM in src/pages/contact.tsx.",
+      "Every page shares the title set in index.html. For better SEO, give each page its own title and description.",
+    ],
+  },
+  {
     slug: "carewell-clinic",
     id: "carewell-clinic",
     repo: "https://github.com/codespanda/carewell-clinic",

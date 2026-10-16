@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "fincore",
+    name: "FinCore Accounting",
+    description:
+      "A professional multi-page website for an accounting, tax or bookkeeping firm — six service pages, eight industries served, a resources hub with articles, guides and FAQs, an about page with the team, and a contact page with a consultation form and map, in a confident navy design.",
+    category: "Finance / Accounting Firm Website",
+    badge: "New",
+    badgeColor: "from-blue-700 to-indigo-700",
+    liveUrl: "https://fincore.codespanda.com/",
+    docsUrl: "/templates/fincore/docs",
+    detailsUrl: "/templates/fincore",
+    screenshotUrl: "/images/fincore/hero.webp",
+    techStack: ["React 19", "TypeScript", "Vite", "Tailwind CSS v4", "shadcn/ui"],
+    features: ["10 Routed Pages", "6 Service Pages", "Resources Hub", "Responsive"],
+    darkMode: false,
+    responsive: true,
+  },
+  {
     id: "carewell-clinic",
     name: "CareWell Clinic",
     description:

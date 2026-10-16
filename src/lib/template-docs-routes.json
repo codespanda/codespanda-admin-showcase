@@ -1,5 +1,10 @@
 [
   {
+    "slug": "fincore",
+    "name": "FinCore Accounting",
+    "framework": "Vite"
+  },
+  {
     "slug": "carewell-clinic",
     "name": "CareWell Clinic",
     "framework": "Vite"
