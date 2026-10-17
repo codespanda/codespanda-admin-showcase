@@ -1,5 +1,10 @@
 [
   {
+    "slug": "schulflow",
+    "name": "SchulFlow",
+    "framework": "Vite"
+  },
+  {
     "slug": "lassiwala",
     "name": "LassiWala",
     "framework": "Vite"

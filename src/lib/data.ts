@@ -32,6 +32,23 @@ export interface Template {
 
 export const TEMPLATES: Template[] = [
   {
+    id: "schulflow",
+    name: "SchulFlow",
+    description:
+      "A school management system with its marketing website — a landing page, features and pricing, plus a sign-in-protected dashboard for students, teachers, classes, attendance, a clash-free timetable generator, fees, exams and downloadable reports, in a bright yellow-and-navy design.",
+    category: "Education / School Management Dashboard",
+    badge: "New",
+    badgeColor: "from-amber-400 to-yellow-500",
+    liveUrl: "https://schulflow.codespanda.com/",
+    docsUrl: "/templates/schulflow/docs",
+    detailsUrl: "/templates/schulflow",
+    screenshotUrl: "/images/schulflow/hero.webp",
+    techStack: ["React 18", "Vite", "Tailwind CSS", "shadcn/ui", "React Router"],
+    features: ["Website + Dashboard", "Timetable Generator", "Demo Login", "CSV Reports"],
+    darkMode: false,
+    responsive: true,
+  },
+  {
     id: "lassiwala",
     name: "LassiWala",
     description:

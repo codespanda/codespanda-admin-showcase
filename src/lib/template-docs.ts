@@ -68,6 +68,63 @@ const PUBLIC_404 =
 
 export const TEMPLATE_DOCS: TemplateDocs[] = [
   {
+    slug: "schulflow",
+    id: "schulflow",
+    repo: "https://github.com/codespanda/schulflow",
+    branch: "main",
+    framework: "Vite",
+    language: "JavaScript",
+    devPort: 5173,
+    outDir: "dist",
+    scripts: [VITE_SCRIPTS.dev, VITE_SCRIPTS.buildJs, VITE_SCRIPTS.preview],
+    structure: `src/
+  pages/               Home, Features, Pricing, About, Contact, Login, Signup, NotFound
+    dashboard/         Overview, Students, Teachers, Classes, Attendance,
+                       Timetable, Fees, Exams, Reports, Settings, ComingSoon
+  components/
+    sections/          Header, Hero, Features, Operations, WhyChoose,
+                       Testimonials, CallToAction, Footer
+    dashboard/         DashboardLayout (sidebar and top bar), BarChart, shared UI
+    ui/                shadcn/ui primitives: button, card, sheet, switch, accordion…
+  context/AuthContext.jsx   Signed-in user and route guards
+  lib/
+    auth.js            Mock auth service (localStorage) with the demo account
+    timetable.js       The clash-free timetable generator
+  data/school.js       Students, teachers, classes, invoices, exams, results, charts
+  App.jsx              Website, auth and dashboard routes
+  index.css            Theme colors as CSS variables
+tailwind.config.js     Tailwind theme
+scripts/spa-routes.mjs Writes a real page for every route on GitHub Pages`,
+    content: [
+      { path: "src/data/school.js", desc: "Sample school data: 10 students, 6 teachers, 10 classes, 10 invoices, 4 exams with schedules and results, plus attendance, fee and activity data for the charts. Swap it for API calls when you add a backend." },
+      { path: "src/lib/auth.js", desc: "A mock auth service that keeps accounts in localStorage so the sign-up → dashboard flow works without a server. Demo login: demo@schulflow.com / demo1234. Replace each function with a call to your API before going live." },
+      { path: "src/pages/Pricing.jsx", desc: "The Starter, Standard and Premium plans, prices and FAQs." },
+      { path: "public/images/", desc: "Logo, hero visual, classroom photo and avatars." },
+      { path: "index.html", desc: "The page title, description and favicon." },
+    ],
+    theme: { path: "src/index.css + tailwind.config.js", desc: "Colors are CSS variables in index.css (the yellow brand is --primary: 45 95% 55%), mapped to Tailwind in tailwind.config.js together with the navy text color and fonts. The shadcn/ui components pick them up." },
+    routing: "React Router 6: src/App.jsx has three groups of routes — the public website inside a shared layout, Login and Signup (GuestOnly redirects signed-in users), and /dashboard/* behind RequireAuth. Dashboard links you haven't built yet show a Coming Soon page.",
+    screens: [
+      { src: "/images/schulflow/hero.webp", label: "Website" },
+      { src: "/images/schulflow/dashboard.webp", label: "Dashboard" },
+      { src: "/images/schulflow/students.webp", label: "Students" },
+      { src: "/images/schulflow/timetable.webp", label: "Timetable generator" },
+      { src: "/images/schulflow/fees.webp", label: "Fees" },
+      { src: "/images/schulflow/pricing.webp", label: "Pricing" },
+    ],
+    deploy: {
+      steps: [
+        ...ACTIONS_PAGES.slice(0, 2),
+        "The workflow sets VITE_BASE from your Pages settings: '/' for a custom domain, '/<repo>/' for a github.io address. To use your own domain, add it under Settings → Pages → Custom domain.",
+      ],
+      fallback: "After building, scripts/spa-routes.mjs writes a real index.html for every route plus a 404.html, so refreshing /dashboard/students returns the page instead of a 404. Keep its route list in sync with App.jsx. public/_redirects and vercel.json cover Netlify and Vercel.",
+    },
+    notes: [
+      "The contact form shows a confirmation but doesn't send anything. Connect it to a form service or CRM in src/pages/Contact.jsx.",
+      "Every page shares the title set in index.html. For better SEO on the website pages, give each its own title and description.",
+    ],
+  },
+  {
     slug: "lassiwala",
     id: "lassiwala",
     repo: "https://github.com/codespanda/lassiwala",

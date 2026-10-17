@@ -615,6 +615,14 @@
     1200,
     900
   ],
+  "/images/portfolio/shots/carewell-clinic-full.webp": [
+    2660,
+    7746
+  ],
+  "/images/portfolio/shots/carewell-clinic.webp": [
+    1200,
+    900
+  ],
   "/images/portfolio/shots/fitflow-large.webp": [
     1536,
     1024
@@ -668,6 +676,42 @@
     900
   ],
   "/images/school/news.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/attendance.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/dashboard.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/exams.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/fees.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/hero.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/login.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/pricing.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/students.webp": [
+    1600,
+    1000
+  ],
+  "/images/schulflow/timetable.webp": [
     1600,
     1000
   ],

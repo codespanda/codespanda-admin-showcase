@@ -9,6 +9,7 @@ const BASE_URL = "https://codespanda.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 const SHOT_IDS = [
+  "carewell-clinic",
   "my-listings",
   "ai-invoice",
   "mobile-onboarding",
@@ -74,6 +75,7 @@ const ROUTES = [
   // Template detail pages
   { path: "/templates/shopperscrown",           changefreq: "monthly", priority: "0.9" },
   { path: "/templates/lassiwala",               changefreq: "monthly", priority: "0.9" },
+  { path: "/templates/schulflow",               changefreq: "monthly", priority: "0.9" },
   { path: "/templates/fincore",                 changefreq: "monthly", priority: "0.9" },
   { path: "/templates/carewell-clinic",         changefreq: "monthly", priority: "0.9" },
   { path: "/templates/kundeep-kitchen",         changefreq: "monthly", priority: "0.9" },

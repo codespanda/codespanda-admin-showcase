@@ -17,6 +17,29 @@ export interface Shot {
 /** Shots written in the code. Shots added from /studio live in src/content/portfolio.json. */
 const BUILT_IN_SHOTS: Shot[] = [
   {
+    id: "carewell-clinic",
+    title: "CareWell Clinic — Modern Healthcare Website UI Design",
+    category: "Web App",
+    tags: ["Healthcare", "Clinic", "Website", "Landing Page"],
+    dribbbleUrl: "https://dribbble.com/shots/27817700-CareWell-Clinic-Modern-Healthcare-Website-UI-Design",
+    imgUrl: "/images/portfolio/shots/carewell-clinic.webp",
+    fullImgUrl: "/images/portfolio/shots/carewell-clinic-full.webp",
+    description: `A modern healthcare website concept designed to make quality healthcare feel accessible, trustworthy, and patient-friendly.
+
+The design combines a clean layout, calming teal colors, intuitive navigation, and a patient-first experience to help visitors explore medical services, discover experienced doctors, and book appointments effortlessly.
+
+Design Highlights
+
+• Modern healthcare landing page UI
+• Clean and responsive website layout
+• Doctor profiles and medical specialties
+• Online appointment booking CTA
+• Patient testimonials and trust indicators
+• Professional typography and calming colors
+
+Designed with a focus on usability, accessibility, and a seamless patient journey. It's also available as a free React template: codespanda.com/templates/carewell-clinic`,
+  },
+  {
     id: "my-listings",
     title: "My Listings — Clean Marketplace Seller Dashboard UI",
     category: "Web App",

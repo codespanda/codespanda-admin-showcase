@@ -26,6 +26,7 @@ interface TemplateMeta {
 }
 
 const META: Record<string, TemplateMeta> = {
+  schulflow: { tint: "#FFF3D1", industry: "Education" },
   lassiwala: { tint: "#F6EFDF", industry: "Food & dining" },
   fincore: { tint: "#E3EBF8", industry: "Finance" },
   "carewell-clinic": { tint: "#DDF2EF", industry: "Healthcare" },

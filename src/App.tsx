@@ -21,6 +21,7 @@ const KundeepKitchenPage  = lazy(() => import("@/components/pages/KundeepKitchen
 const CarewellClinicPage  = lazy(() => import("@/components/pages/CarewellClinicPage").then(m => ({ default: m.CarewellClinicPage })));
 const LassiwalaPage       = lazy(() => import("@/components/pages/LassiwalaPage").then(m => ({ default: m.LassiwalaPage })));
 const FincorePage         = lazy(() => import("@/components/pages/FincorePage").then(m => ({ default: m.FincorePage })));
+const SchulflowPage       = lazy(() => import("@/components/pages/SchulflowPage").then(m => ({ default: m.SchulflowPage })));
 const TemplateDocsPage    = lazy(() => import("@/components/pages/TemplateDocsPage").then(m => ({ default: m.TemplateDocsPage })));
 const StudioPage          = lazy(() => import("@/components/pages/StudioPage").then(m => ({ default: m.StudioPage })));
 const ShoppersCrownPage   = lazy(() => import("@/components/pages/ShoppersCrownPage").then(m => ({ default: m.ShoppersCrownPage })));
@@ -57,6 +58,7 @@ function App() {
         {/* Not linked anywhere and noindex: the content studio. */}
         <Route path="/studio" element={<Suspense><StudioPage /></Suspense>} />
         <Route path="/templates/lassiwala" element={<Suspense><LassiwalaPage /></Suspense>} />
+        <Route path="/templates/schulflow" element={<Suspense><SchulflowPage /></Suspense>} />
         <Route path="/templates/fincore" element={<Suspense><FincorePage /></Suspense>} />
         <Route path="/templates/carewell-clinic" element={<Suspense><CarewellClinicPage /></Suspense>} />
         <Route path="/templates/kundeep-kitchen" element={<Suspense><KundeepKitchenPage /></Suspense>} />
