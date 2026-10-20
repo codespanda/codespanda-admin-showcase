@@ -127,30 +127,10 @@ const STATIC_ROUTES = [
   "/legal/security",
 ];
 
-// Blog post metadata — kept in sync with src/lib/blog-data.ts
-const BLOG_POSTS = [
-  { slug: "ai-powered-web-development-guide", title: "AI-Powered Web Development: The Complete Guide", desc: "AI is changing almost every stage of the web development lifecycle — from requirements and UI/UX to code generation, debugging, testing, and security.", ogImage: `${BASE}/images/blogs/ai-powered-web-development-guide.webp` },
-  { slug: "what-is-agentic-ai-development", title: "What Is Agentic AI Development? The Next Evolution of AI-Powered Software", desc: "AI is moving beyond generating answers toward systems that can plan, use tools, take actions, and adapt along the way. Here's what agentic AI development actually means.", ogImage: `${BASE}/images/blogs/agentic-ai-development.jpg` },
-  { slug: "best-free-ui-ux-resources-2026", title: "Best Free UI/UX Resources for Developers in 2026", desc: "Developers don't always need to become full-time designers. Knowing where to find good UI kits, design systems, icons, fonts, and accessibility guidance can dramatically improve what you build.", ogImage: `${BASE}/images/blogs/best-free-ui-ux-resources-2026.webp` },
-  { slug: "web-design-trends-2026", title: "Web Design Trends for 2026: What Modern Websites Will Look Like", desc: "Users expect websites to be faster, smarter, more accessible, interactive, and visually engaging. Here are the major web design trends shaping 2026.", ogImage: `${BASE}/images/blogs/web-design-trends-2026.webp` },
-  { slug: "50-best-free-admin-dashboard-templates-2026", title: "50 Best Free Admin Dashboard Templates for 2026", desc: "Building an admin panel from scratch can take weeks. Here are 50 of the best free admin dashboard templates for 2026, covering Bootstrap, React, Vue, Angular, Tailwind CSS, and more.", ogImage: `${BASE}/images/blogs/50-best-free-admin-dashboard-templates-2026.webp` },
-  { slug: "will-ai-replace-junior-developers", title: "Will AI Replace Junior Developers?", desc: "AI can now generate components, write functions, and debug errors in minutes. AI may replace some junior-level tasks, but it won't eliminate the need for junior developers.", ogImage: `${BASE}/images/blogs/will-ai-replace-junior-developers.webp` },
-  { slug: "ai-powered-saas-development-2026", title: "AI-Powered SaaS Development: Building Smarter Software for 2026", desc: "Adding a chatbot to an existing app is no longer enough. Businesses want AI-native SaaS platforms that understand data, automate workflows, and help users decide faster.", ogImage: `${BASE}/images/blogs/ai-powered-saas-development-2026.webp` },
-  { slug: "vibe-coding-future-of-software-development", title: "Vibe Coding: The Future of Software Development?", desc: "AI-powered coding tools are changing how developers write, test, and ship software. Is vibe coding a passing trend, or a fundamental shift in how software gets built?", ogImage: `${BASE}/images/blogs/vibe-coding-future-of-software-development.webp` },
-  { slug: "signs-your-business-needs-custom-web-application", title: "7 Signs Your Business Needs a Custom Web Application", desc: "Off-the-shelf software is a great starting point, but as operations get more complex, generic tools start creating limitations instead of solving problems.", ogImage: `${BASE}/images/blogs/signs-your-business-needs-custom-web-application.webp` },
-  { slug: "ai-powered-web-application-from-scratch", title: "How to Build an AI-Powered Web Application From Scratch", desc: "Building an AI-powered web application is not just about connecting an AI API to a website. A practical roadmap covering UX, architecture, models, RAG, security, and cost control.", ogImage: `${BASE}/images/blogs/ai-powered-web-application-from-scratch.webp` },
-  { slug: "why-we-built-codespanda",             title: "Why We Built CodesPanda: Free Admin Dashboards That Don't Feel Free", desc: "There are plenty of free admin dashboard templates on the internet. But 'free' often doesn't mean production-ready — here's the frustration that became the starting point for CodesPanda.", ogImage: `${BASE}/images/blogs/why-we-built-codespanda.webp` },
-  { slug: "shadcn-vs-mui-vs-antd",                title: "shadcn/ui vs Material UI vs Ant Design: Picking a Component Library in 2026", desc: "Choosing a React component library in 2026 isn't about which one has the most components — it's about which approach gives your team the right balance of speed, customization, and long-term control.", ogImage: `${BASE}/images/blogs/shadcn-vs-mui-vs-antd.webp` },
-  { slug: "admin-dashboard-design-mistakes",      title: "10 Mistakes to Avoid When Designing an Admin Dashboard", desc: "An admin dashboard is more than a collection of cards, charts, tables, and menus — it's a workspace. Here are 10 common mistakes to avoid when designing one.", ogImage: `${BASE}/images/blogs/admin-dashboard-design-mistakes.webp` },
-  { slug: "figma-to-production-workflow",         title: "From Figma to Production: Our Design-to-Code Workflow", desc: "Turning a Figma design into a production-ready website is about much more than translating pixels into HTML and CSS. Here's the workflow we follow to move from Figma concepts to production-ready interfaces.", ogImage: `${BASE}/images/blogs/figma-to-production-workflow.webp` },
-  { slug: "why-vite-for-admin-panels",            title: "Why Vite Is the Right Call for a Modern React Admin Panel", desc: "Building a modern React admin panel is about delivering an interface that feels fast, scales smoothly, and stays easy for developers to maintain. That's where Vite stands out.", ogImage: `${BASE}/images/blogs/why-vite-for-admin-panels.webp` },
-  { slug: "ai-vs-traditional-web-development",   title: "AI vs Traditional Web Development: What Has Changed?", desc: "Has AI replaced traditional web development? Not really — it has changed how developers work. The real comparison isn't AI vs. human developer, it's developer plus AI vs. developer without AI.", ogImage: `${BASE}/images/blogs/ai-vs-traditional-web-development.webp` },
-  { slug: "best-ai-tools-for-web-developers-2026", title: "Best AI Tools for Web Developers in 2026", desc: "With dozens of AI development tools available, one question remains: which ones are actually worth using for web development in 2026? Here are the strongest options to consider.", ogImage: `${BASE}/images/blogs/best-ai-tools-for-web-developers-2026.webp` },
-  { slug: "theme-shadcn-dashboard-in-10-minutes", title: "How to Theme a shadcn/ui Dashboard in Under 10 Minutes", desc: "Building a polished admin dashboard doesn't always require hours of custom CSS or a design system from scratch. With shadcn/ui, you can create a consistent, professional theme in minutes.", ogImage: `${BASE}/images/blogs/theme-shadcn-dashboard-in-10-minutes.webp` },
-];
+const BLOG_POSTS = [];
 
 // Shot & blog routes derived from their data arrays
-// Shots and posts added from /studio (src/content/*.json) get the same treatment.
+// Shots added from /studio and every blog post live in src/content/*.json.
 const summary = (text = "") => {
   const t = text.replace(/[✨🌐•]/g, "").replace(/\s+/g, " ").trim();
   return t.length <= 160 ? t : t.slice(0, 157).replace(/\s+\S*$/, "") + "…";
@@ -520,13 +500,10 @@ const CARD_SIZES = "(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw";
 const FEATURED_POST_SIZES = "(min-width: 1024px) 56vw, 100vw";
 const POST_COVER_SIZES = "(min-width: 1080px) 1080px, 100vw";
 
-// /blog features the newest post, so preload that post's cover (read from blog-data.ts).
+// /blog features the newest post, so preload that post's cover.
 {
-  const src = readFileSync(resolve(__dirname, "../src/lib/blog-data.ts"), "utf8");
-  const posts = [...src.matchAll(/date:\s*"(\d{4}-\d{2}-\d{2})"[\s\S]*?coverImage:\s*"([^"]+)"/g)].map((m) => ({ date: m[1], cover: m[2] }));
-  for (const p of STUDIO_POSTS) if (p.coverImage) posts.push({ date: p.date, cover: p.coverImage });
-  const newest = posts.sort((a, b) => b.date.localeCompare(a.date))[0];
-  if (newest) HERO_IMAGE["/blog"] = newest.cover;
+  const newest = STUDIO_POSTS.filter((p) => p.coverImage).sort((a, b) => b.date.localeCompare(a.date))[0];
+  if (newest) HERO_IMAGE["/blog"] = newest.coverImage;
 }
 
 function sizesFor(route) {

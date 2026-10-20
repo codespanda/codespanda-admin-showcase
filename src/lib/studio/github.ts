@@ -2,6 +2,9 @@
  * Minimal GitHub client for /studio: reads a file and commits several files at once
  * to the site repository. Pushing to main triggers the existing Pages deploy.
  */
+/** The only GitHub account allowed to use /studio. */
+export const STUDIO_LOGIN = "codespanda";
+
 export const REPO = { owner: "codespanda", name: "codespanda-admin-showcase", branch: "main" };
 
 const API = "https://api.github.com";
@@ -75,6 +78,10 @@ function explain(status: number, message: string, path: string, method: string) 
  */
 export async function checkAccess(token: string): Promise<{ login: string }> {
   const user = await gh<{ login: string }>(token, "/user");
+  // The studio is for the site owner only, even if other accounts can write to the repository.
+  if (user.login.toLowerCase() !== STUDIO_LOGIN) {
+    throw new Error(`This studio is only for the ${STUDIO_LOGIN} GitHub account. You're signed in as ${user.login}.`);
+  }
   await gh(token, repoPath);
   await gh(token, `${repoPath}/contents/src/content/portfolio.json?ref=${REPO.branch}`);
   await gh(token, `${repoPath}/git/blobs`, { method: "POST", body: JSON.stringify({ content: "studio access check", encoding: "utf-8" }) });

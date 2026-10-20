@@ -45,27 +45,6 @@ const SHOT_IDS = [
   "rsvp-event-signin",
 ];
 
-const BLOG_SLUGS = [
-  "ai-powered-web-development-guide",
-  "what-is-agentic-ai-development",
-  "best-free-ui-ux-resources-2026",
-  "web-design-trends-2026",
-  "50-best-free-admin-dashboard-templates-2026",
-  "will-ai-replace-junior-developers",
-  "ai-powered-saas-development-2026",
-  "vibe-coding-future-of-software-development",
-  "signs-your-business-needs-custom-web-application",
-  "ai-powered-web-application-from-scratch",
-  "why-we-built-codespanda",
-  "shadcn-vs-mui-vs-antd",
-  "admin-dashboard-design-mistakes",
-  "figma-to-production-workflow",
-  "why-vite-for-admin-panels",
-  "theme-shadcn-dashboard-in-10-minutes",
-  "best-ai-tools-for-web-developers-2026",
-  "ai-vs-traditional-web-development",
-];
-
 const ROUTES = [
   // Core pages
   { path: "/",                                  changefreq: "weekly",  priority: "1.0" },
@@ -97,7 +76,7 @@ const ROUTES = [
 
   // Portfolio shot pages
   ...SHOT_IDS.map((id) => ({ path: `/portfolio/${id}`, changefreq: "monthly", priority: "0.7" })),
-  // Shots and posts added from /studio
+  // Shots added from /studio, and every blog post
   ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8")).filter(isDue).map((s) => ({
     path: `/portfolio/${s.id}`,
     changefreq: "monthly",
@@ -113,9 +92,6 @@ const ROUTES = [
     changefreq: "monthly",
     priority: "0.6",
   })),
-
-  // Blog posts
-  ...BLOG_SLUGS.map((slug) => ({ path: `/blog/${slug}`, changefreq: "monthly", priority: "0.6" })),
 
   // Legal
   { path: "/legal/privacy",                     changefreq: "yearly",  priority: "0.3" },

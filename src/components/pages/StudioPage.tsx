@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { CalendarClock, CheckCircle2, ExternalLink, FilePen, ImagePlus, Loader2, LogOut, Pencil, Send, Trash2, TriangleAlert, X } from "lucide-react";
+import { CalendarClock, CheckCircle2, ExternalLink, FilePen, ImagePlus, Loader2, LogOut, Pencil, Send, Trash2, TriangleAlert } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
-import { PostContent } from "@/components/pages/BlogPostPage";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import { RichTextEditor } from "@/components/studio/RichTextEditor";
 import { SHOTS, type Shot } from "@/lib/portfolio-data";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
 import { isLive } from "@/lib/schedule";
@@ -25,6 +26,13 @@ interface Drafts {
   posts: BlogPost[];
 }
 type Mode = "now" | "schedule" | "draft";
+/** An item opened for editing: a draft, or something already on the site. */
+interface Editing<T> {
+  item: T;
+  from: "draft" | "published";
+}
+/** Scheduled items reopen on the schedule; everything else on "Publish now". */
+const startMode = (e?: Editing<{ publishAt?: string }>): Mode => (e?.item.publishAt && !isLive(e.item) ? "schedule" : "now");
 /** What the banner shows after a save: deploy progress, or a plain note for drafts. */
 export interface SaveResult {
   sha: string;
@@ -107,45 +115,89 @@ function DeployStatus({ token, result, onClose }: { token: string; result: SaveR
     };
   }, [token, result]);
 
-  if (result.note) {
-    return (
-      <div className="flex items-start gap-3 rounded-[14px] bg-blue-soft px-4 py-3.5 text-[15px] text-blue-ink">
-        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" />
-        <span className="flex-1 font-semibold">{result.note}</span>
-        <button type="button" onClick={onClose} aria-label="Dismiss" className="rounded-md p-1 hover:bg-black/5">
-          <X className="h-4 w-4" />
-        </button>
-      </div>
-    );
-  }
-
   const done = run?.status === "completed";
   const ok = done && run?.conclusion === "success";
+  const failed = done && !ok;
+  const state: "note" | "waiting" | "deploying" | "live" | "failed" = result.note ? "note" : !run ? "waiting" : !done ? "deploying" : ok ? "live" : "failed";
+  const title = {
+    note: "Saved",
+    waiting: "Saved — starting the deploy",
+    deploying: "Deploying to codespanda.com",
+    live: "Live on codespanda.com",
+    failed: "Saved, but the deploy failed",
+  }[state];
+  const body = {
+    note: result.note,
+    waiting: "Your changes are committed. GitHub is starting the deploy; the page goes live about a minute after saving.",
+    deploying: "Building and publishing the site. You can close this — it keeps going in the background.",
+    live: "Your page is published and ready to share.",
+    failed: "The content is saved in the repository, but the site didn't rebuild. Open the deploy log to see why.",
+  }[state];
+
   return (
-    <div className={cn("flex items-start gap-3 rounded-[14px] px-4 py-3.5 text-[15px]", done && !ok ? "bg-[#FDECEC] text-[#9B1C1C]" : "bg-blue-soft text-blue-ink")}>
-      {done ? ok ? <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0" /> : <TriangleAlert className="mt-0.5 h-5 w-5 shrink-0" /> : <Loader2 className="mt-0.5 h-5 w-5 shrink-0 animate-spin" />}
-      <div className="flex flex-1 flex-col gap-1">
-        <span className="font-semibold">
-          {!run ? "Saved. Waiting for the deploy to start…" : !done ? "Saved. Deploying to codespanda.com…" : ok ? "Live on codespanda.com" : "Saved, but the deploy failed"}
-        </span>
-        <span className="flex flex-wrap gap-x-4 gap-y-1">
+    <Dialog open onOpenChange={(open) => !open && onClose()}>
+      <DialogContent className="max-w-[440px] gap-0 p-0">
+        <div className="flex flex-col items-center gap-4 px-6 pb-6 pt-8 text-center">
+          <span
+            className={cn(
+              "flex h-14 w-14 items-center justify-center rounded-full",
+              failed ? "bg-[#FDECEC] text-[#B42318]" : state === "live" || state === "note" ? "bg-[#DCF5EA] text-[#05603F]" : "bg-blue-soft text-link"
+            )}
+          >
+            {failed ? <TriangleAlert className="h-7 w-7" /> : state === "live" || state === "note" ? <CheckCircle2 className="h-7 w-7" /> : <Loader2 className="h-7 w-7 animate-spin" />}
+          </span>
+          <div className="flex flex-col gap-1.5">
+            <DialogTitle className="font-display text-[22px] font-bold tracking-[-0.02em]">{title}</DialogTitle>
+            <DialogDescription className="text-[15px] leading-[1.55] text-muted-foreground">{body}</DialogDescription>
+          </div>
+          {!result.note && !done && (
+            <ol className="flex w-full items-center justify-center gap-2 text-[13px] font-semibold text-muted-foreground">
+              {["Saved", "Building", "Live"].map((step, i) => {
+                const reached = i === 0 || (i === 1 && !!run) || (i === 2 && ok);
+                return (
+                  <li key={step} className="flex items-center gap-2">
+                    {i > 0 && <span className="h-px w-6 bg-border" />}
+                    <span className={cn("rounded-full px-2.5 py-1", reached ? "bg-blue-soft text-blue-ink" : "bg-secondary")}>{step}</span>
+                  </li>
+                );
+              })}
+            </ol>
+          )}
+        </div>
+        <div className="flex flex-col gap-2.5 border-t border-border px-6 py-5 sm:flex-row-reverse">
           {ok && (
-            <a href={result.url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 font-semibold underline">
-              Open the page <ExternalLink className="h-3.5 w-3.5" />
+            <a
+              href={result.url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl bg-brand text-[15px] font-bold text-white hover:opacity-90"
+            >
+              Open the page <ExternalLink className="h-4 w-4" />
             </a>
           )}
-          {run && (
-            <a href={run.html_url} target="_blank" rel="noreferrer noopener" className="inline-flex items-center gap-1 underline">
-              Deploy log <ExternalLink className="h-3.5 w-3.5" />
+          {run && (failed || !ok) && (
+            <a
+              href={run.html_url}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="flex h-12 flex-1 items-center justify-center gap-2 rounded-xl border-[1.5px] border-input text-[15px] font-semibold hover:bg-secondary"
+            >
+              Deploy log <ExternalLink className="h-4 w-4" />
             </a>
           )}
-          <span className="opacity-80">The page goes live about a minute after saving.</span>
-        </span>
-      </div>
-      <button type="button" onClick={onClose} aria-label="Dismiss" className="rounded-md p-1 hover:bg-black/5">
-        <X className="h-4 w-4" />
-      </button>
-    </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className={cn(
+              "flex h-12 flex-1 items-center justify-center rounded-xl text-[15px] font-semibold",
+              ok || run ? "border-[1.5px] border-input hover:bg-secondary" : "bg-brand font-bold text-white hover:opacity-90"
+            )}
+          >
+            {result.note || ok ? "Done" : "Close"}
+          </button>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
 
@@ -197,11 +249,11 @@ function ImagePick({
 }
 
 /** Publish now, schedule for later, or keep as a draft. */
-function PublishOptions({ mode, setMode, at, setAt }: { mode: Mode; setMode: (m: Mode) => void; at: string; setAt: (v: string) => void }) {
+function PublishOptions({ mode, setMode, at, setAt, published }: { mode: Mode; setMode: (m: Mode) => void; at: string; setAt: (v: string) => void; published?: boolean }) {
   const options: { id: Mode; label: string; hint: string }[] = [
-    { id: "now", label: "Publish now", hint: "Live in about a minute" },
-    { id: "schedule", label: "Schedule", hint: "Goes live at a date and time" },
-    { id: "draft", label: "Save as draft", hint: "Only visible here" },
+    { id: "now", label: published ? "Update now" : "Publish now", hint: "Live in about a minute" },
+    { id: "schedule", label: "Schedule", hint: published ? "Hidden until a date and time" : "Goes live at a date and time" },
+    { id: "draft", label: published ? "Move to drafts" : "Save as draft", hint: published ? "Takes it off the site" : "Only visible here" },
   ];
   return (
     <fieldset className="flex flex-col gap-3">
@@ -260,12 +312,15 @@ function SaveBar({ busy, progress, error, disabled, label, onCancel }: { busy: b
   );
 }
 
-const submitLabel = (mode: Mode, noun: string) => (mode === "draft" ? "Save draft" : mode === "schedule" ? `Schedule ${noun}` : `Publish ${noun}`);
+const submitLabel = (mode: Mode, noun: string, published?: boolean) =>
+  mode === "draft" ? (published ? "Move to drafts" : "Save draft") : mode === "schedule" ? `Schedule ${noun}` : published ? `Update ${noun}` : `Publish ${noun}`;
 
 /* ------------------------------------------------------------------ */
-/* Portfolio shot (new, or a draft being edited)                       */
+/* Portfolio shot (new, or an existing one being edited)               */
 /* ------------------------------------------------------------------ */
-function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (r: SaveResult) => void; draft?: Shot; onDone?: () => void }) {
+function ShotForm({ token, onSaved, editing, onDone }: { token: string; onSaved: (r: SaveResult) => void; editing?: Editing<Shot>; onDone?: () => void }) {
+  const draft = editing?.item;
+  const published = editing?.from === "published";
   const [title, setTitle] = useState(draft?.title ?? "");
   const [id, setId] = useState(draft?.id ?? "");
   const [idTouched, setIdTouched] = useState(!!draft);
@@ -276,20 +331,21 @@ function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
   const [description, setDescription] = useState(draft?.description ?? "");
   const [main, setMain] = useState<File[]>([]);
   const [extra, setExtra] = useState<File[]>([]);
-  const [mode, setMode] = useState<Mode>("now");
-  const [at, setAt] = useState(tomorrowNine());
+  const [mode, setMode] = useState<Mode>(startMode(editing));
+  const [at, setAt] = useState(draft?.publishAt && !isLive(draft) ? toLocalInput(draft.publishAt) : tomorrowNine());
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState("");
   const [error, setError] = useState("");
 
   const slug = idTouched ? id : slugify(title);
-  const clash = SHOTS.some((s) => s.id === slug);
+  const clash = SHOTS.some((s) => s.id === slug && s.id !== draft?.id);
   const hasMain = !!main[0] || !!draft?.imgUrl;
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
     if (!slug || clash) return;
+    if (!description.trim()) return setError("Write a description first.");
     if (mode !== "draft" && !hasMain) return setError("Add a main image before publishing, or save as a draft.");
     setBusy(true);
     try {
@@ -322,10 +378,10 @@ function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
       }
 
       setProgress("Reading the current portfolio…");
-      const published = await readJson<Shot[]>(token, PORTFOLIO_JSON);
+      const live = await readJson<Shot[]>(token, PORTFOLIO_JSON);
       const drafts = await readDrafts(token);
-      if (published.some((s) => s.id === slug)) throw new Error(`A shot with the address "${slug}" is already published.`);
-      if (drafts.shots.some((s) => s.id === slug && s.id !== draft?.id)) throw new Error(`A draft with the address "${slug}" already exists.`);
+      if (live.some((s) => s.id === slug && !(published && s.id === draft?.id))) throw new Error(`A shot with the address "${slug}" is already published.`);
+      if (drafts.shots.some((s) => s.id === slug && !(!published && s.id === draft?.id))) throw new Error(`A draft with the address "${slug}" already exists.`);
 
       const shot: Shot = {
         id: slug,
@@ -340,16 +396,19 @@ function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
         description: description.trim(),
         ...(mode === "schedule" ? { publishAt: new Date(at).toISOString() } : {}),
       };
-      const otherDrafts = drafts.shots.filter((s) => s.id !== draft?.id);
+      const otherDrafts = published ? drafts.shots : drafts.shots.filter((s) => s.id !== draft?.id);
+      const otherLive = published ? live.filter((s) => s.id !== draft?.id) : live;
       if (mode === "draft") {
         files.push({ path: DRAFTS_JSON, content: json({ ...drafts, shots: [shot, ...otherDrafts] }), encoding: "utf-8" });
+        if (published) files.push({ path: PORTFOLIO_JSON, content: json(otherLive), encoding: "utf-8" });
       } else {
-        files.push({ path: PORTFOLIO_JSON, content: json([shot, ...published]), encoding: "utf-8" });
-        if (draft) files.push({ path: DRAFTS_JSON, content: json({ ...drafts, shots: otherDrafts }), encoding: "utf-8" });
+        // An edited shot keeps its place in the portfolio; a new one goes first.
+        files.push({ path: PORTFOLIO_JSON, content: json(published ? live.map((s) => (s.id === draft?.id ? shot : s)) : [shot, ...live]), encoding: "utf-8" });
+        if (draft && !published) files.push({ path: DRAFTS_JSON, content: json({ ...drafts, shots: otherDrafts }), encoding: "utf-8" });
       }
 
       setProgress(`Committing ${files.length} files…`);
-      const verb = mode === "draft" ? "Save draft shot" : mode === "schedule" ? "Schedule portfolio shot" : "Add portfolio shot";
+      const verb = mode === "draft" ? (published ? "Unpublish portfolio shot" : "Save draft shot") : mode === "schedule" ? "Schedule portfolio shot" : published ? "Update portfolio shot" : "Add portfolio shot";
       const sha = await commitFiles(token, `${verb}: ${shot.title}`, files);
       onSaved({
         sha,
@@ -377,15 +436,16 @@ function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
 
   return (
     <form onSubmit={submit} className="flex flex-col gap-5">
-      {draft && <p className="rounded-xl bg-soft-2 px-4 py-3 text-[15px] font-semibold">Editing draft: {draft.title}</p>}
+      {draft && <p className="rounded-xl bg-soft-2 px-4 py-3 text-[15px] font-semibold">{published ? "Editing published shot" : "Editing draft"}: {draft.title}</p>}
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="Title">
           <input required value={title} onChange={(e) => setTitle(e.target.value)} className={field} placeholder="My Listings — Marketplace Seller Dashboard UI" />
         </Field>
-        <Field label="Page address" hint={clash ? <span className="font-semibold text-[#B42318]">This address is taken — change it.</span> : `codespanda.com/portfolio/${slug || "…"}`}>
+        <Field label="Page address" hint={clash ? <span className="font-semibold text-[#B42318]">This address is taken — change it.</span> : `codespanda.com/portfolio/${slug || "…"}${published ? " — fixed once published, so links keep working" : ""}`}>
           <input
             required
             value={slug}
+            disabled={published}
             onChange={(e) => {
               setIdTouched(true);
               setId(slugify(e.target.value));
@@ -411,9 +471,11 @@ function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
           <input type="url" value={liveUrl} onChange={(e) => setLiveUrl(e.target.value)} className={field} placeholder="https://…" />
         </Field>
       </div>
-      <Field label="Description" hint="The first paragraph shows under the title. Start lines with • for bullet points.">
-        <textarea required rows={8} value={description} onChange={(e) => setDescription(e.target.value)} className={cn(field, "resize-y leading-[1.55]")} />
-      </Field>
+      <div className="flex flex-col gap-1.5">
+        <span className={labelCls}>Description</span>
+        <RichTextEditor label="Description" flavor="shot" value={description} onChange={setDescription} minHeight={200} placeholder="What the design is, who it's for and what's inside…" />
+        <span className="text-[13px] text-muted-foreground">The first paragraph shows under the title. Use Bullets for feature lists.</span>
+      </div>
       <div className="grid gap-5 md:grid-cols-2">
         <ImagePick
           label="Main image"
@@ -424,16 +486,18 @@ function ShotForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
         />
         <ImagePick label="More screens (optional)" hint="Shown below the main image, in order." multiple files={extra} onChange={setExtra} current={draft?.gallery ?? []} />
       </div>
-      <PublishOptions mode={mode} setMode={setMode} at={at} setAt={setAt} />
-      <SaveBar busy={busy} progress={progress} error={error} disabled={!slug || clash || (mode !== "draft" && !hasMain)} label={submitLabel(mode, "shot")} onCancel={onDone} />
+      <PublishOptions mode={mode} setMode={setMode} at={at} setAt={setAt} published={published} />
+      <SaveBar busy={busy} progress={progress} error={error} disabled={!slug || clash || (mode !== "draft" && !hasMain)} label={submitLabel(mode, "shot", published)} onCancel={onDone} />
     </form>
   );
 }
 
 /* ------------------------------------------------------------------ */
-/* Blog post (new, or a draft being edited)                            */
+/* Blog post (new, or an existing one being edited)                    */
 /* ------------------------------------------------------------------ */
-function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (r: SaveResult) => void; draft?: BlogPost; onDone?: () => void }) {
+function PostForm({ token, onSaved, editing, onDone }: { token: string; onSaved: (r: SaveResult) => void; editing?: Editing<BlogPost>; onDone?: () => void }) {
+  const draft = editing?.item;
+  const published = editing?.from === "published";
   const [title, setTitle] = useState(draft?.title ?? "");
   const [slugText, setSlugText] = useState(draft?.slug ?? "");
   const [slugTouched, setSlugTouched] = useState(!!draft);
@@ -444,14 +508,14 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
   const [date, setDate] = useState(draft?.date ?? today());
   const [content, setContent] = useState(draft?.content ?? "");
   const [cover, setCover] = useState<File[]>([]);
-  const [mode, setMode] = useState<Mode>("now");
-  const [at, setAt] = useState(tomorrowNine());
+  const [mode, setMode] = useState<Mode>(startMode(editing));
+  const [at, setAt] = useState(draft?.publishAt && !isLive(draft) ? toLocalInput(draft.publishAt) : tomorrowNine());
   const [busy, setBusy] = useState(false);
   const [progress, setProgress] = useState("");
   const [error, setError] = useState("");
 
   const slug = slugTouched ? slugText : slugify(title);
-  const clash = BLOG_POSTS.some((p) => p.slug === slug);
+  const clash = BLOG_POSTS.some((p) => p.slug === slug && p.slug !== draft?.slug);
   const words = content.trim() ? content.trim().split(/\s+/).length : 0;
   const readTime = `${Math.max(1, Math.round(words / 200))} min read`;
   const hasCover = !!cover[0] || !!draft?.coverImage;
@@ -460,6 +524,7 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
     e.preventDefault();
     setError("");
     if (!slug || clash) return;
+    if (!content.trim()) return setError("Write the post first.");
     if (mode !== "draft" && !hasCover) return setError("Add a cover image before publishing, or save as a draft.");
     setBusy(true);
     try {
@@ -474,13 +539,16 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
         coverImage = path;
       }
       setProgress("Reading the current posts…");
-      const published = await readJson<BlogPost[]>(token, BLOG_JSON);
+      const live = await readJson<BlogPost[]>(token, BLOG_JSON);
       const drafts = await readDrafts(token);
-      if (published.some((p) => p.slug === slug)) throw new Error(`A post with the address "${slug}" is already published.`);
-      if (drafts.posts.some((p) => p.slug === slug && p.slug !== draft?.slug)) throw new Error(`A draft with the address "${slug}" already exists.`);
+      if (live.some((p) => p.slug === slug && !(published && p.slug === draft?.slug))) throw new Error(`A post with the address "${slug}" is already published.`);
+      if (drafts.posts.some((p) => p.slug === slug && !(!published && p.slug === draft?.slug))) throw new Error(`A draft with the address "${slug}" already exists.`);
 
       const publishAt = mode === "schedule" ? new Date(at).toISOString() : undefined;
+      // Start from the stored post so fields the form doesn't show (cover video, resource links) are kept.
+      const { publishAt: _old, ...base } = live.find((p) => p.slug === draft?.slug) ?? draft ?? ({} as Partial<BlogPost>);
       const post: BlogPost = {
+        ...base,
         slug,
         title: title.trim(),
         excerpt: excerpt.trim(),
@@ -490,22 +558,24 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
         // A scheduled post is dated the day it goes live, so it sorts as the newest then.
         date: publishAt ? localDate(new Date(publishAt)) : date,
         readTime,
-        gradient: "from-sky-500 to-blue-600",
-        icon: "Sparkles",
+        gradient: base.gradient ?? "from-sky-500 to-blue-600",
+        icon: base.icon ?? "Sparkles",
         ...(coverImage ? { coverImage } : {}),
         content: content.trim(),
         ...(publishAt ? { publishAt } : {}),
       };
-      const otherDrafts = drafts.posts.filter((p) => p.slug !== draft?.slug);
+      const otherDrafts = published ? drafts.posts : drafts.posts.filter((p) => p.slug !== draft?.slug);
       if (mode === "draft") {
         files.push({ path: DRAFTS_JSON, content: json({ ...drafts, posts: [post, ...otherDrafts] }), encoding: "utf-8" });
+        if (published) files.push({ path: BLOG_JSON, content: json(live.filter((p) => p.slug !== draft?.slug)), encoding: "utf-8" });
       } else {
-        files.push({ path: BLOG_JSON, content: json([post, ...published]), encoding: "utf-8" });
-        if (draft) files.push({ path: DRAFTS_JSON, content: json({ ...drafts, posts: otherDrafts }), encoding: "utf-8" });
+        // An edited post keeps its place; a new one goes first.
+        files.push({ path: BLOG_JSON, content: json(published ? live.map((p) => (p.slug === draft?.slug ? post : p)) : [post, ...live]), encoding: "utf-8" });
+        if (draft && !published) files.push({ path: DRAFTS_JSON, content: json({ ...drafts, posts: otherDrafts }), encoding: "utf-8" });
       }
 
       setProgress("Committing…");
-      const verb = mode === "draft" ? "Save draft post" : mode === "schedule" ? "Schedule blog post" : "Add blog post";
+      const verb = mode === "draft" ? (published ? "Unpublish blog post" : "Save draft post") : mode === "schedule" ? "Schedule blog post" : published ? "Update blog post" : "Add blog post";
       const sha = await commitFiles(token, `${verb}: ${post.title}`, files);
       onSaved({
         sha,
@@ -531,15 +601,16 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
 
   return (
     <form onSubmit={submit} className="flex flex-col gap-5">
-      {draft && <p className="rounded-xl bg-soft-2 px-4 py-3 text-[15px] font-semibold">Editing draft: {draft.title}</p>}
+      {draft && <p className="rounded-xl bg-soft-2 px-4 py-3 text-[15px] font-semibold">{published ? "Editing published post" : "Editing draft"}: {draft.title}</p>}
       <div className="grid gap-4 md:grid-cols-2">
         <Field label="Title">
           <input required value={title} onChange={(e) => setTitle(e.target.value)} className={field} placeholder="How We Build Admin Dashboards in a Week" />
         </Field>
-        <Field label="Page address" hint={clash ? <span className="font-semibold text-[#B42318]">This address is taken — change it.</span> : `codespanda.com/blog/${slug || "…"}`}>
+        <Field label="Page address" hint={clash ? <span className="font-semibold text-[#B42318]">This address is taken — change it.</span> : `codespanda.com/blog/${slug || "…"}${published ? " — fixed once published, so links keep working" : ""}`}>
           <input
             required
             value={slug}
+            disabled={published}
             onChange={(e) => {
               setSlugTouched(true);
               setSlugText(slugify(e.target.value));
@@ -580,26 +651,15 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
         onChange={(f) => setCover(f.slice(0, 1))}
         current={draft?.coverImage ? [draft.coverImage] : []}
       />
-      <div className="grid gap-5 lg:grid-cols-2">
-        <Field label="Post" hint={`${words} words · ${readTime}. Use "## " for headings, "- " for bullet points and a blank line between paragraphs.`}>
-          <textarea
-            required
-            rows={18}
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            className={cn(field, "resize-y font-mono text-[14px] leading-[1.6]")}
-            placeholder={"Intro paragraph…\n\n## A heading\n\nA paragraph.\n\n- A bullet\n- Another bullet"}
-          />
-        </Field>
-        <div className="flex flex-col gap-1.5">
-          <span className={labelCls}>Preview</span>
-          <div className="max-h-[520px] overflow-y-auto rounded-xl border border-border bg-background p-5">
-            {content.trim() ? <PostContent text={content} /> : <p className="text-sm text-muted-foreground">Start writing to see the post here.</p>}
-          </div>
-        </div>
+      <div className="flex flex-col gap-1.5">
+        <span className={labelCls}>Post</span>
+        <RichTextEditor label="Post" flavor="post" value={content} onChange={setContent} minHeight={420} placeholder="Start writing. Use Heading for sections and Bullets for lists." />
+        <span className="text-[13px] text-muted-foreground">
+          {words} words · {readTime}. Typing “## ” starts a heading and “- ” a bullet list.
+        </span>
       </div>
-      <PublishOptions mode={mode} setMode={setMode} at={at} setAt={setAt} />
-      <SaveBar busy={busy} progress={progress} error={error} disabled={!slug || clash || excerpt.length > 200 || (mode !== "draft" && !hasCover)} label={submitLabel(mode, "post")} onCancel={onDone} />
+      <PublishOptions mode={mode} setMode={setMode} at={at} setAt={setAt} published={published} />
+      <SaveBar busy={busy} progress={progress} error={error} disabled={!slug || clash || (excerpt.length > 200 && excerpt !== draft?.excerpt) || (mode !== "draft" && !hasCover)} label={submitLabel(mode, "post", published)} onCancel={onDone} />
     </form>
   );
 }
@@ -607,7 +667,7 @@ function PostForm({ token, onSaved, draft, onDone }: { token: string; onSaved: (
 /* ------------------------------------------------------------------ */
 /* Drafts, scheduled and live items added from the studio              */
 /* ------------------------------------------------------------------ */
-type EditTarget = { kind: "shot"; item: Shot } | { kind: "post"; item: BlogPost };
+type EditTarget = ({ kind: "shot" } & Editing<Shot>) | ({ kind: "post" } & Editing<BlogPost>);
 
 function Library({ token, onSaved, onEdit }: { token: string; onSaved: (r: SaveResult) => void; onEdit: (t: EditTarget) => void }) {
   const [shots, setShots] = useState<Shot[]>();
@@ -773,7 +833,7 @@ function Library({ token, onSaved, onEdit }: { token: string; onSaved: (r: SaveR
               title={s.title || "(untitled shot)"}
               meta={`Portfolio shot · /portfolio/${s.id}`}
               actions={[
-                { label: "Edit", icon: <Pencil className="h-4 w-4" />, onClick: () => onEdit({ kind: "shot", item: s }) },
+                { label: "Edit", icon: <Pencil className="h-4 w-4" />, onClick: () => onEdit({ kind: "shot", item: s, from: "draft" }) },
                 { label: "Publish now", icon: <Send className="h-4 w-4" />, onClick: () => publishShotNow(s, "draft") },
                 { label: "Delete", icon: <Trash2 className="h-4 w-4" />, onClick: () => deleteShot(s.id, s.title, "draft"), danger: true },
               ]}
@@ -786,7 +846,7 @@ function Library({ token, onSaved, onEdit }: { token: string; onSaved: (r: SaveR
               title={p.title || "(untitled post)"}
               meta={`Blog post · /blog/${p.slug}`}
               actions={[
-                { label: "Edit", icon: <Pencil className="h-4 w-4" />, onClick: () => onEdit({ kind: "post", item: p }) },
+                { label: "Edit", icon: <Pencil className="h-4 w-4" />, onClick: () => onEdit({ kind: "post", item: p, from: "draft" }) },
                 { label: "Publish now", icon: <Send className="h-4 w-4" />, onClick: () => publishPostNow(p, "draft") },
                 { label: "Delete", icon: <Trash2 className="h-4 w-4" />, onClick: () => deletePost(p.slug, p.title, "draft"), danger: true },
               ]}
@@ -796,8 +856,8 @@ function Library({ token, onSaved, onEdit }: { token: string; onSaved: (r: SaveR
       </section>
 
       <section className="flex flex-col gap-3 border-t border-border pt-6">
-        <h3 className="text-lg font-bold">Published &amp; scheduled</h3>
-        <p className="text-[14px] text-muted-foreground">Shots and posts added from the studio. Content written into the code earlier isn't listed here.</p>
+        <h3 className="text-lg font-bold">Published &amp; scheduled ({shots && posts ? shots.length + posts.length : "…"})</h3>
+        <p className="text-[14px] text-muted-foreground">Every blog post, newest first, and the portfolio shots added from the studio. Shots written into the code earlier aren't listed here.</p>
         {shots && posts && shots.length + posts.length === 0 && <p className="text-sm text-muted-foreground">Nothing yet.</p>}
         <ul>
           {shots?.map((s) => {
@@ -811,13 +871,14 @@ function Library({ token, onSaved, onEdit }: { token: string; onSaved: (r: SaveR
                 href={scheduled ? undefined : `https://codespanda.com/portfolio/${s.id}`}
                 badge={scheduled ? scheduledBadge(s.publishAt!) : liveBadge}
                 actions={[
+                  { label: "Edit", icon: <Pencil className="h-4 w-4" />, onClick: () => onEdit({ kind: "shot", item: s, from: "published" }) },
                   ...(scheduled ? [{ label: "Publish now", icon: <Send className="h-4 w-4" />, onClick: () => publishShotNow(s, "scheduled") }] : []),
                   { label: "Delete", icon: <Trash2 className="h-4 w-4" />, onClick: () => deleteShot(s.id, s.title, "live"), danger: true },
                 ]}
               />
             );
           })}
-          {posts?.map((p) => {
+          {posts && [...posts].sort((a, b) => b.date.localeCompare(a.date)).map((p) => {
             const scheduled = !isLive(p);
             return (
               <Row
@@ -828,6 +889,7 @@ function Library({ token, onSaved, onEdit }: { token: string; onSaved: (r: SaveR
                 href={scheduled ? undefined : `https://codespanda.com/blog/${p.slug}`}
                 badge={scheduled ? scheduledBadge(p.publishAt!) : liveBadge}
                 actions={[
+                  { label: "Edit", icon: <Pencil className="h-4 w-4" />, onClick: () => onEdit({ kind: "post", item: p, from: "published" }) },
                   ...(scheduled ? [{ label: "Publish now", icon: <Send className="h-4 w-4" />, onClick: () => publishPostNow(p, "scheduled") }] : []),
                   { label: "Delete", icon: <Trash2 className="h-4 w-4" />, onClick: () => deletePost(p.slug, p.title, "live"), danger: true },
                 ]}
@@ -942,8 +1004,8 @@ export function StudioPage() {
     setEditing(undefined);
     setTab("library");
   };
-  const draftShot = editing?.kind === "shot" ? editing.item : undefined;
-  const draftPost = editing?.kind === "post" ? editing.item : undefined;
+  const editShot = editing?.kind === "shot" ? editing : undefined;
+  const editPost = editing?.kind === "post" ? editing : undefined;
 
   return (
     <>
@@ -987,6 +1049,10 @@ export function StudioPage() {
                 setLogin(l);
               }}
             />
+          ) : !login ? (
+            <p className="flex items-center gap-2 text-[15px] text-muted-foreground">
+              <Loader2 className="h-4 w-4 animate-spin" /> Checking your access…
+            </p>
           ) : (
             <>
               <div role="tablist" aria-label="Studio" className="flex flex-wrap gap-2">
@@ -1012,8 +1078,8 @@ export function StudioPage() {
               </div>
               {saved && <DeployStatus token={token} result={saved} onClose={() => setSaved(undefined)} />}
               <Card>
-                {tab === "shot" && <ShotForm key={draftShot ? `d-${draftShot.id}` : "new"} token={token} onSaved={setSaved} draft={draftShot} onDone={draftShot ? stopEditing : undefined} />}
-                {tab === "post" && <PostForm key={draftPost ? `d-${draftPost.slug}` : "new"} token={token} onSaved={setSaved} draft={draftPost} onDone={draftPost ? stopEditing : undefined} />}
+                {tab === "shot" && <ShotForm key={editShot ? `${editShot.from}-${editShot.item.id}` : "new"} token={token} onSaved={setSaved} editing={editShot} onDone={editShot ? stopEditing : undefined} />}
+                {tab === "post" && <PostForm key={editPost ? `${editPost.from}-${editPost.item.slug}` : "new"} token={token} onSaved={setSaved} editing={editPost} onDone={editPost ? stopEditing : undefined} />}
                 {tab === "library" && <Library token={token} onSaved={setSaved} onEdit={edit} />}
               </Card>
               <p className="text-[13px] text-muted-foreground">
