@@ -18,6 +18,7 @@ const seoTitle = (title) => ((title + " | CodesPanda").length <= 60 ? title + " 
 // Shot metadata — kept in sync with src/lib/portfolio-data.ts
 // ------------------------------------------------------------
 const SHOTS = [
+  { id: "schulflow",          title: "SchulFlow — School Management System Dashboard & Website UI",               ogImage: `${BASE}/images/portfolio/shots/schulflow.webp`,  desc: "A modern school management system website and dashboard with vibrant yellow accents — students, teachers, attendance, fees, exams and analytics." },
   { id: "carewell-clinic",    title: "CareWell Clinic — Modern Healthcare Website UI Design",                     ogImage: `${BASE}/images/portfolio/shots/carewell-clinic.webp`,  desc: "A modern healthcare website concept with calming teal colors — services, doctor profiles, appointment booking, testimonials and trust indicators." },
   { id: "my-listings",        title: "My Listings — Clean Marketplace Seller Dashboard UI",                       ogImage: `${BASE}/images/portfolio/shots/my-listings.webp`,  desc: "A clean marketplace seller dashboard UI to track listings from draft to review, live, rejected and sold — with fix and resubmit, preview and payments." },
   { id: "ai-invoice",         title: "AI Invoice — AI-Powered Invoicing SaaS",                                    ogImage: `${BASE}/images/portfolio/shots/ai-invoice.webp`,  desc: "AI Invoice is an AI-powered invoicing SaaS designed and built by CodesPanda — landing page, dashboard, invoice list and a two-step AI invoice editor." },

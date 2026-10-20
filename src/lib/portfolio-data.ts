@@ -17,6 +17,27 @@ export interface Shot {
 /** Shots written in the code. Shots added from /studio live in src/content/portfolio.json. */
 const BUILT_IN_SHOTS: Shot[] = [
   {
+    id: "schulflow",
+    title: "SchulFlow — School Management System Dashboard & Website UI",
+    category: "Web Dashboard",
+    tags: ["Education", "School", "Dashboard", "Website"],
+    dribbbleUrl: "https://dribbble.com/shots/27823934-SchulFlow-School-Management-System-Dashboard-Website-UI",
+    imgUrl: "/images/portfolio/shots/schulflow.webp",
+    fullImgUrl: "/images/portfolio/shots/schulflow-full.webp",
+    description: `Introducing SchulFlow, a modern school management system website design that combines a clean interface, vibrant yellow accents, and intuitive dashboard layouts to simplify school administration.
+
+Designed to bring student management, teacher records, attendance tracking, fee management, exams, and analytics into one seamless digital experience.
+
+• Student management
+• Teacher records
+• Attendance tracking
+• Fee management
+• Exams & results
+• Reports & analytics
+
+It's also available as a free React template with a working dashboard: codespanda.com/templates/schulflow`,
+  },
+  {
     id: "carewell-clinic",
     title: "CareWell Clinic — Modern Healthcare Website UI Design",
     category: "Web App",

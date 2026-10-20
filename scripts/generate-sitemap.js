@@ -9,6 +9,7 @@ const BASE_URL = "https://codespanda.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
 const SHOT_IDS = [
+  "schulflow",
   "carewell-clinic",
   "my-listings",
   "ai-invoice",
