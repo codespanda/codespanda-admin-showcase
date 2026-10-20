@@ -1,0 +1,26 @@
+name: Publish scheduled content
+
+# Hourly: when a post or shot scheduled from /studio has come due, start a normal
+# deploy so it gets its static page, preview tags and sitemap entry. (The site
+# already hides scheduled items until their time; this makes the static parts
+# catch up.) Kept separate from the deploy workflow so it never cancels a deploy.
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - id: due
+        run: node scripts/scheduled-due.mjs
+      - if: steps.due.outputs.due == 'true'
+        run: gh workflow run deploy.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}

@@ -46,20 +46,38 @@ async function gh<T>(token: string, path: string, init: RequestInit = {}): Promi
   });
   if (!res.ok) {
     const detail = await res.json().catch(() => ({}));
-    throw new Error(`GitHub ${res.status}: ${(detail as { message?: string }).message ?? res.statusText}`);
+    throw new Error(explain(res.status, (detail as { message?: string }).message ?? res.statusText, path, init.method ?? "GET"));
   }
   return res.json() as Promise<T>;
 }
 
 const repoPath = `/repos/${REPO.owner}/${REPO.name}`;
+const TOKENS_URL = "https://github.com/settings/personal-access-tokens";
 
-/** Confirms the token can push to the site repository. */
+/** Turns GitHub's terse permission errors into what to change on the token. */
+function explain(status: number, message: string, path: string, method: string) {
+  const fix = `Edit the token at ${TOKENS_URL}`;
+  if (status === 401) return `GitHub rejected this token (it may have expired or been revoked). Create a new one at ${TOKENS_URL}.`;
+  if (status === 403 && /not accessible by personal access token/i.test(message)) {
+    if (path.includes("/actions/")) return `The token can't read GitHub Actions. ${fix} and set "Actions" to "Read-only".`;
+    if (method !== "GET") return `The token can read ${REPO.name} but not save to it. ${fix} and set "Contents" to "Read and write".`;
+    return `The token can't read the files in ${REPO.name}. ${fix} and set "Contents" to "Read and write".`;
+  }
+  if (status === 404 && path.startsWith(repoPath))
+    return `The token can't see ${REPO.owner}/${REPO.name}. ${fix}: under "Repository access" choose "Only select repositories" and add ${REPO.name}.`;
+  return `GitHub ${status}: ${message}`;
+}
+
+/**
+ * Confirms the token can read and write the site repository. GitHub only reports
+ * the account's own permissions, not the token's, so this reads a content file and
+ * creates an unused blob (harmless; GitHub discards it) to prove write access.
+ */
 export async function checkAccess(token: string): Promise<{ login: string }> {
-  const [user, repo] = await Promise.all([
-    gh<{ login: string }>(token, "/user"),
-    gh<{ permissions?: { push?: boolean } }>(token, repoPath),
-  ]);
-  if (!repo.permissions?.push) throw new Error(`This token can read ${REPO.name} but not write to it. Give it "Contents: Read and write".`);
+  const user = await gh<{ login: string }>(token, "/user");
+  await gh(token, repoPath);
+  await gh(token, `${repoPath}/contents/src/content/portfolio.json?ref=${REPO.branch}`);
+  await gh(token, `${repoPath}/git/blobs`, { method: "POST", body: JSON.stringify({ content: "studio access check", encoding: "utf-8" }) });
   return user;
 }
 

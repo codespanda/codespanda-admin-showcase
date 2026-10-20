@@ -1,4 +1,5 @@
 import STUDIO_SHOTS from "@/content/portfolio.json";
+import { isLive } from "@/lib/schedule";
 
 export interface Shot {
   id: string;
@@ -7,6 +8,7 @@ export interface Shot {
   tags: string[];
   dribbbleUrl?: string;
   liveUrl?: string;       // live product, shown instead of Dribbble when set
+  publishAt?: string;     // studio scheduling: hidden until this ISO time
   imgUrl: string;         // thumbnail (400×300)
   fullImgUrl?: string;    // full-quality shot image from Dribbble
   gallery?: string[];     // additional full-res images for multi-image shots
@@ -2356,7 +2358,7 @@ The concept includes everything businesses need to manage sales efficiently — 
 
 
 /** Studio shots first: they're the newest. */
-export const SHOTS: Shot[] = [...(STUDIO_SHOTS as Shot[]), ...BUILT_IN_SHOTS];
+export const SHOTS: Shot[] = [...(STUDIO_SHOTS as Shot[]).filter((s) => isLive(s)), ...BUILT_IN_SHOTS];
 
 export function getShotById(id: string): Shot | undefined {
   return SHOTS.find((s) => s.id === id);

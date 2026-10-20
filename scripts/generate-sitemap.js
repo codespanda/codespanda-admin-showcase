@@ -5,6 +5,8 @@ import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+// Studio items scheduled for later (publishAt in the future) stay out of the sitemap until then.
+const isDue = (item) => !item.publishAt || Date.parse(item.publishAt) <= Date.now();
 const BASE_URL = "https://codespanda.com";
 const TODAY = new Date().toISOString().split("T")[0];
 
@@ -96,12 +98,12 @@ const ROUTES = [
   // Portfolio shot pages
   ...SHOT_IDS.map((id) => ({ path: `/portfolio/${id}`, changefreq: "monthly", priority: "0.7" })),
   // Shots and posts added from /studio
-  ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8")).map((s) => ({
+  ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8")).filter(isDue).map((s) => ({
     path: `/portfolio/${s.id}`,
     changefreq: "monthly",
     priority: "0.7",
   })),
-  ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8")).map((p) => ({
+  ...JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8")).filter(isDue).map((p) => ({
     path: `/blog/${p.slug}`,
     changefreq: "monthly",
     priority: "0.6",

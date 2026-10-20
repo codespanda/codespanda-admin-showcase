@@ -1,4 +1,5 @@
 import STUDIO_POSTS from "@/content/blog.json";
+import { isLive } from "@/lib/schedule";
 
 export interface BlogPost {
   slug: string;
@@ -18,6 +19,8 @@ export interface BlogPost {
   /** Optional cover video — when set, the post page plays this (autoplay, muted, loop) instead of showing the static coverImage */
   coverVideo?: string;
   content: string;     // lightweight markdown: "## " headings, "- " bullets, blank-line paragraphs
+  /** Studio scheduling: the post stays hidden until this ISO time. */
+  publishAt?: string;
   /** Optional interactive "quick links" grid rendered above the article body — real outbound links to the resources the post discusses */
   resourceLinks?: {
     title: string;
@@ -2506,7 +2509,7 @@ What AI-powered application would you build today?`,
   },
 ];
 
-export const BLOG_POSTS: BlogPost[] = [...(STUDIO_POSTS as BlogPost[]), ...BUILT_IN_POSTS];
+export const BLOG_POSTS: BlogPost[] = [...(STUDIO_POSTS as BlogPost[]).filter((p) => isLive(p)), ...BUILT_IN_POSTS];
 
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return BLOG_POSTS.find((p) => p.slug === slug);

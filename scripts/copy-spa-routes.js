@@ -155,8 +155,10 @@ const summary = (text = "") => {
   const t = text.replace(/[✨🌐•]/g, "").replace(/\s+/g, " ").trim();
   return t.length <= 160 ? t : t.slice(0, 157).replace(/\s+\S*$/, "") + "…";
 };
-const STUDIO_SHOTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8"));
-const STUDIO_POSTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8"));
+// Scheduled items (publishAt in the future) are left out until a later build.
+const isDue = (item) => !item.publishAt || Date.parse(item.publishAt) <= Date.now();
+const STUDIO_SHOTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8")).filter(isDue);
+const STUDIO_POSTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8")).filter(isDue);
 for (const s of STUDIO_SHOTS) {
   SHOTS.push({ id: s.id, title: s.title, ogImage: `${BASE}${s.imgUrl}`, desc: summary(s.description) || s.title });
 }
