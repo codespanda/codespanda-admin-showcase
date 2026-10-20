@@ -100,24 +100,7 @@ const SHOTS = [
 // Static routes (non-shot pages)
 const STATIC_ROUTES = [
   "/templates",
-  "/templates/lassiwala",
-  "/templates/schulflow",
-  "/templates/fincore",
-  "/templates/carewell-clinic",
-  "/templates/kundeep-kitchen",
-  "/templates/shopperscrown",
-  "/templates/interio",
-  "/templates/school",
-  "/templates/ca-firm",
   "/templates/finovo",
-  "/templates/hamara-bharat",
-  "/templates/eva-autocare",
-  "/templates/deepcity-care",
-  "/templates/cornerstone",
-  "/templates/flowers",
-  "/templates/brisk-admin",
-  "/templates/alpine-admin-react",
-  "/templates/portfolio-template",
   "/portfolio",
   "/projects",
   "/services",
@@ -146,6 +129,12 @@ for (const p of STUDIO_POSTS) {
   BLOG_POSTS.push({ slug: p.slug, title: p.title, desc: summary(p.excerpt), ...(p.coverImage ? { ogImage: `${BASE}${p.coverImage}` } : {}) });
 }
 
+// Template pages added or edited from /studio: cards in templates.json, page content in template-pages.json.
+const TEMPLATE_CARDS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/templates.json"), "utf8")).filter(isDue);
+const TEMPLATE_PAGES = JSON.parse(readFileSync(resolve(__dirname, "../src/content/template-pages.json"), "utf8"));
+const TEMPLATE_DETAILS = TEMPLATE_CARDS.filter((c) => TEMPLATE_PAGES[c.id]).map((c) => ({ card: c, page: TEMPLATE_PAGES[c.id] }));
+const TEMPLATE_ROUTES = TEMPLATE_DETAILS.map(({ page }) => `/templates/${page.slug}`);
+
 const SHOT_ROUTES = SHOTS.map((s) => `/portfolio/${s.id}`);
 const BLOG_ROUTES = BLOG_POSTS.map((p) => `/blog/${p.slug}`);
 
@@ -153,7 +142,7 @@ const BLOG_ROUTES = BLOG_POSTS.map((p) => `/blog/${p.slug}`);
 const TEMPLATE_DOCS = JSON.parse(readFileSync(resolve(__dirname, "../src/lib/template-docs-routes.json"), "utf8"));
 const DOCS_ROUTES = TEMPLATE_DOCS.map((d) => `/templates/${d.slug}/docs`);
 
-const ROUTES = [...STATIC_ROUTES, ...SHOT_ROUTES, ...BLOG_ROUTES, ...DOCS_ROUTES];
+const ROUTES = [...STATIC_ROUTES, ...TEMPLATE_ROUTES, ...SHOT_ROUTES, ...BLOG_ROUTES, ...DOCS_ROUTES];
 
 // Per-route static meta injected into the pre-rendered HTML so crawlers and
 // social scrapers see correct title/description/canonical before JS runs.
@@ -168,95 +157,10 @@ const PAGE_META = {
     description: "Explore our full library of admin dashboard templates — SaaS, HR, CRM, healthcare, auto-service & POS. Every template is free, React + Tailwind ready.",
     ogImage: `${BASE}/og-share.jpg`,
   },
-  "/templates/shopperscrown": {
-    title: "Shoppers Crown — Package-Forwarding Template | CodesPanda",
-    description: "A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages.",
-    ogImage: `${BASE}/images/shopperscrown/hero.webp`,
-  },
-  "/templates/lassiwala": {
-    title: "LassiWala — Free Lassi & Beverage Brand Template | CodesPanda",
-    description: "A free React website template for a lassi bar or beverage brand — flavour range, an online shop with cart, flavour pages, story timeline, outlet finder and contact pages.",
-    ogImage: `${BASE}/images/lassiwala/hero.webp`,
-  },
-  "/templates/schulflow": {
-    title: "SchulFlow — Free School Management Dashboard | CodesPanda",
-    description: "A free React school management template — website, pricing and a dashboard for students, attendance, a timetable generator, fees, exams and reports.",
-    ogImage: `${BASE}/images/schulflow/hero.webp`,
-  },
-  "/templates/fincore": {
-    title: "FinCore Accounting — Free Accounting Firm Template | CodesPanda",
-    description: "A free React accounting firm website template — service pages, industries, a resources hub with articles and FAQs, team and contact pages in a navy design.",
-    ogImage: `${BASE}/images/fincore/hero.webp`,
-  },
-  "/templates/carewell-clinic": {
-    title: "CareWell Clinic — Free Clinic Website Template | CodesPanda",
-    description: "A free React clinic website template — services, doctors, health packages, lab report lookup, appointment booking, blog and contact pages in a calm teal design.",
-    ogImage: `${BASE}/images/carewell/hero.webp`,
-  },
-  "/templates/kundeep-kitchen": {
-    title: "Kundeep Kitchen — Free Restaurant Website Template | CodesPanda",
-    description: "A free Next.js restaurant website template — signature dishes, about, gallery, reviews, WhatsApp table booking and a full menu page with search and filters.",
-    ogImage: `${BASE}/images/kundeep-kitchen/hero.webp`,
-  },
-  "/templates/interio": {
-    title: "Interio — Free Interior Design Website Template | CodesPanda",
-    description: "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design.",
-    ogImage: `${BASE}/images/interio/hero.webp`,
-  },
-  "/templates/school": {
-    title: "Free School Website Template — Gouri International | CodesPanda",
-    description: "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design.",
-    ogImage: `${BASE}/images/school/hero.webp`,
-  },
-  "/templates/ca-firm": {
-    title: "Your CA Firm — Financial & Advisory Landing Page | CodesPanda",
-    description: "A free React template for chartered accountants and advisory firms — services, industries, engagement models, testimonials, careers and contact pages.",
-    ogImage: `${BASE}/images/ca-firm/hero.webp`,
-  },
   "/templates/finovo": {
     title: "Finovo — Accounting & ERP Admin Dashboard | CodesPanda",
     description: "Finovo is a free accounting/ERP admin dashboard template — invoicing, purchases, banking, payroll, inventory & GST/TDS tax filing. React, Vite & Tailwind CSS.",
     ogImage: `${BASE}/images/finovo/dashboard.webp`,
-  },
-  "/templates/hamara-bharat": {
-    title: "Hamara Bharat — Travel Landing Page Template | CodesPanda",
-    description: "Hamara Bharat is a free React travel landing page template — cinematic hero, interactive map, trip planner, festivals and food trails.",
-    ogImage: `${BASE}/images/hamarabharat/hero.png`,
-  },
-  "/templates/eva-autocare": {
-    title: "Eva AutoCare — Auto-Service Admin Dashboard | CodesPanda",
-    description: "Eva AutoCare is a free auto-service admin dashboard template — appointments, work orders, vehicles, technicians & invoicing. React, Vite & Tailwind CSS.",
-    ogImage: `${BASE}/images/eva-autocare/dashboard.png`,
-  },
-  "/templates/deepcity-care": {
-    title: "DeepCity Care — Healthcare Dashboard Template | CodesPanda",
-    description: "DeepCity Care is a free hospital admin dashboard template — appointments, patients, billing, pharmacy & inventory. React, Vite & Tailwind CSS.",
-    ogImage: `${BASE}/images/deepcity-care/dashboard.png`,
-  },
-  "/templates/cornerstone": {
-    title: "Cornerstone — SaaS Admin Dashboard Template | CodesPanda",
-    description: "Cornerstone is a free SaaS admin dashboard template — 30+ pages for customers, orders, billing & analytics. Built with React, Vite, Tailwind CSS & TypeScript.",
-    ogImage: `${BASE}/images/cornerstone-dashboard-2.png`,
-  },
-  "/templates/flowers": {
-    title: "Flowers POS — Retail POS Dashboard Template | CodesPanda",
-    description: "Flowers POS is a free retail POS admin dashboard template — product grid, cart, coupons, orders, customers & reports. React, Vite & Tailwind CSS.",
-    ogImage: `${BASE}/images/flowers/pos-counter.png`,
-  },
-  "/templates/brisk-admin": {
-    title: "Brisk Admin — Free CRM Dashboard Template | CodesPanda",
-    description: "Brisk Admin is a free CRM admin dashboard template — clean layouts with shadcn/ui components, enterprise UI polish, fully responsive. React, Vite & Tailwind CSS.",
-    ogImage: `${BASE}/images/brisk/dashboard.png`,
-  },
-  "/templates/alpine-admin-react": {
-    title: "Alpine Admin React — HR Dashboard Template | CodesPanda",
-    description: "Alpine Admin React is a free HR admin dashboard template — 30+ pages for employees, payroll, attendance & leave management. React, Vite & Tailwind CSS.",
-    ogImage: `${BASE}/images/alpine/dashboard.webp`,
-  },
-  "/templates/portfolio-template": {
-    title: "Portfolio Template — Free React Portfolio | CodesPanda",
-    description: "Portfolio Template is a free React developer portfolio built with Vite & Tailwind CSS. Showcase your work, experience & projects — fully customizable.",
-    ogImage: `${BASE}/images/portfolio/portfolio.jpg`,
   },
   "/projects": {
     title: "Projects — Our Live Products | CodesPanda",
@@ -324,23 +228,6 @@ const HERO_IMAGE = {
   "/templates": "/images/shopperscrown/hero.webp",
   "/portfolio": "/images/portfolio/shots/fitflow-large.webp",
   "/templates/finovo": "/images/finovo/dashboard.webp",
-  "/templates/alpine-admin-react": "/images/alpine/dashboard.webp",
-  "/templates/brisk-admin": "/images/brisk/dashboard.webp",
-  "/templates/portfolio-template": "/images/portfolio/portfolio.webp",
-  "/templates/cornerstone": "/images/cornerstone-dashboard-2.webp",
-  "/templates/flowers": "/images/flowers/pos-counter.webp",
-  "/templates/deepcity-care": "/images/deepcity-care/dashboard.webp",
-  "/templates/eva-autocare": "/images/eva-autocare/dashboard.webp",
-  "/templates/hamara-bharat": "/images/hamarabharat/hero.webp",
-  "/templates/shopperscrown": "/images/shopperscrown/hero.webp",
-  "/templates/lassiwala": "/images/lassiwala/hero.webp",
-  "/templates/schulflow": "/images/schulflow/hero.webp",
-  "/templates/fincore": "/images/fincore/hero.webp",
-  "/templates/carewell-clinic": "/images/carewell/hero.webp",
-  "/templates/kundeep-kitchen": "/images/kundeep-kitchen/hero.webp",
-  "/templates/interio": "/images/interio/hero.webp",
-  "/templates/school": "/images/school/hero.webp",
-  "/templates/ca-firm": "/images/ca-firm/hero.webp",
   "/blog/vibe-coding-future-of-software-development": "/images/blogs/vibe-coding-future-of-software-development.webp",
   "/blog/signs-your-business-needs-custom-web-application": "/images/blogs/signs-your-business-needs-custom-web-application.webp",
   "/blog/ai-powered-web-application-from-scratch": "/images/blogs/ai-powered-web-application-from-scratch.webp",
@@ -358,6 +245,18 @@ const HERO_IMAGE = {
 
 // Studio posts preload their cover like the built-in ones.
 for (const p of STUDIO_POSTS) if (p.coverImage) HERO_IMAGE[`/blog/${p.slug}`] = p.coverImage;
+
+// Template pages: share tags from template-pages.json (the static tags may use a PNG/JPEG, which WhatsApp needs).
+for (const { card, page } of TEMPLATE_DETAILS) {
+  const route = `/templates/${page.slug}`;
+  PAGE_META[route] = {
+    title: page.share?.title ?? page.seo.title,
+    description: page.share?.description ?? page.seo.description,
+    ogImage: `${BASE}${page.share?.image ?? page.seo.image}`,
+  };
+  const hero = page.screens[0]?.src ?? card.screenshotUrl;
+  if (hero) HERO_IMAGE[route] = hero;
+}
 
 // Docs pages reuse their template's screenshot. Title and description match TemplateDocsPage.tsx.
 for (const d of TEMPLATE_DOCS) {
@@ -378,28 +277,12 @@ const SCHEMA_TYPE = {
   "/templates": "collection",
   "/portfolio": "collection",
   "/blog": "blog",
-  "/templates/shopperscrown": "software",
-  "/templates/lassiwala": "software",
-  "/templates/schulflow": "software",
-  "/templates/fincore": "software",
-  "/templates/carewell-clinic": "software",
-  "/templates/kundeep-kitchen": "software",
-  "/templates/interio": "software",
-  "/templates/school": "software",
-  "/templates/ca-firm": "software",
   "/templates/finovo": "software",
-  "/templates/hamara-bharat": "software",
-  "/templates/eva-autocare": "software",
-  "/templates/deepcity-care": "software",
-  "/templates/cornerstone": "software",
-  "/templates/flowers": "software",
-  "/templates/brisk-admin": "software",
-  "/templates/alpine-admin-react": "software",
-  "/templates/portfolio-template": "software",
 };
 
 function schemaTypeFor(route) {
   if (SCHEMA_TYPE[route]) return SCHEMA_TYPE[route];
+  if (TEMPLATE_ROUTES.includes(route)) return "software";
   if (route.startsWith("/portfolio/") && route !== "/portfolio") return "creativework";
   if (route.startsWith("/blog/") && route !== "/blog") return "blogpost";
   return null;

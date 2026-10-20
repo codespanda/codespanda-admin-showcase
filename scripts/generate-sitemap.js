@@ -55,24 +55,16 @@ const ROUTES = [
   { path: "/blog",                              changefreq: "weekly",  priority: "0.8" },
 
   // Template detail pages
-  { path: "/templates/shopperscrown",           changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/lassiwala",               changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/schulflow",               changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/fincore",                 changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/carewell-clinic",         changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/kundeep-kitchen",         changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/interio",                 changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/school",                  changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/ca-firm",                 changefreq: "monthly", priority: "0.9" },
   { path: "/templates/finovo",                  changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/hamara-bharat",           changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/eva-autocare",            changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/deepcity-care",           changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/cornerstone",             changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/flowers",                 changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/brisk-admin",             changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/alpine-admin-react",      changefreq: "monthly", priority: "0.9" },
-  { path: "/templates/portfolio-template",      changefreq: "monthly", priority: "0.9" },
+
+  // Template pages (src/content/templates.json + template-pages.json)
+  ...(() => {
+    const pages = JSON.parse(readFileSync(resolve(__dirname, "../src/content/template-pages.json"), "utf8"));
+    return JSON.parse(readFileSync(resolve(__dirname, "../src/content/templates.json"), "utf8"))
+      .filter(isDue)
+      .filter((c) => pages[c.id])
+      .map((c) => ({ path: `/templates/${pages[c.id].slug}`, changefreq: "monthly", priority: "0.9" }));
+  })(),
 
   // Portfolio shot pages
   ...SHOT_IDS.map((id) => ({ path: `/portfolio/${id}`, changefreq: "monthly", priority: "0.7" })),

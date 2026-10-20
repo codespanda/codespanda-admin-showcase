@@ -1,0 +1,1693 @@
+{
+  "schulflow": {
+    "slug": "schulflow",
+    "githubUrl": "https://github.com/codespanda/schulflow",
+    "updated": "October 2026",
+    "screens": [
+      {
+        "src": "/images/schulflow/hero.webp",
+        "label": "Website"
+      },
+      {
+        "src": "/images/schulflow/dashboard.webp",
+        "label": "Dashboard"
+      },
+      {
+        "src": "/images/schulflow/timetable.webp",
+        "label": "Timetable generator"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Marketing website",
+        "desc": "Landing page with a dashboard preview, modules grid, operations and why-choose sections, testimonials and a call to action."
+      },
+      {
+        "label": "Features, pricing & about",
+        "desc": "A 12-module features page, three plans with a monthly/yearly toggle and FAQs, an about page and a contact form."
+      },
+      {
+        "label": "Sign up & log in",
+        "desc": "Auth pages with a demo account, protected dashboard routes and a mock auth service ready to swap for your API."
+      },
+      {
+        "label": "Dashboard overview",
+        "desc": "Stat cards, weekly attendance chart, recent activity, quick actions and upcoming events."
+      },
+      {
+        "label": "Students & teachers",
+        "desc": "Searchable, filterable tables with fee status, plus an Add Student side panel."
+      },
+      {
+        "label": "Classes & attendance",
+        "desc": "Class sections, and a daily roster to mark students present, absent, late or on leave."
+      },
+      {
+        "label": "Timetable generator",
+        "desc": "Builds clash-free weekly timetables for several sections at once, so no teacher is double-booked."
+      },
+      {
+        "label": "Fees & exams",
+        "desc": "Invoices with collection progress and reminders, exam schedules and results with class averages."
+      },
+      {
+        "label": "Reports & settings",
+        "desc": "Fee and attendance analytics with CSV downloads, and profile and school settings."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is it built with?",
+        "a": "React 18 and JavaScript with Vite, Tailwind CSS, shadcn/ui components (Radix) and React Router. It builds to a static site you can host anywhere."
+      },
+      {
+        "q": "Is the login real?",
+        "a": "It's a working demo: accounts are kept in the browser's localStorage so the sign-up, log-in and dashboard flow works without a server (demo login: demo@schulflow.com / demo1234). Replace the functions in src/lib/auth.js with calls to your API before going live."
+      },
+      {
+        "q": "How does the timetable generator work?",
+        "a": "Pick the working days, periods and class sections, assign teachers to subjects, and it places every lesson so no teacher is booked twice in a period, spreading subjects across the week."
+      },
+      {
+        "q": "How do I change the data?",
+        "a": "Students, teachers, classes, invoices, exams, results and chart data live in src/data/school.js. Swap them for API calls when you connect a backend."
+      }
+    ],
+    "seo": {
+      "title": "SchulFlow — Free School Management Dashboard | CodesPanda",
+      "description": "A free React school management template — website, pricing and a dashboard for students, attendance, a timetable generator, fees, exams and reports.",
+      "keywords": "school management system template, school dashboard react, school erp template, student management dashboard, timetable generator, education admin template",
+      "twitterDescription": "A free React school management website and dashboard with a timetable generator, fees, exams and reports.",
+      "image": "/images/schulflow/hero.webp",
+      "schemaDescription": "A free React school management website and dashboard with a timetable generator, fees, exams and reports.",
+      "schemaName": "SchulFlow",
+      "schemaCategory": "Software > Templates > Admin Dashboard"
+    }
+  },
+  "lassiwala": {
+    "slug": "lassiwala",
+    "githubUrl": "https://github.com/codespanda/lassiwala",
+    "updated": "October 2026",
+    "screens": [
+      {
+        "src": "/images/lassiwala/hero.webp",
+        "label": "Home"
+      },
+      {
+        "src": "/images/lassiwala/shop.webp",
+        "label": "Shop & cart"
+      },
+      {
+        "src": "/images/lassiwala/flavors.webp",
+        "label": "Flavour page"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Header & hero",
+        "desc": "A sticky header with a cart count and mobile menu, and a hero with a clay-kulhad photo, script and poster headings, three trust points and an Explore Flavors button."
+      },
+      {
+        "label": "Highlights & range",
+        "desc": "A floating highlights card (fresh, real ingredients, authentic recipe, good for you) and a five-flavour range in matching colourways."
+      },
+      {
+        "label": "Shop & cart",
+        "desc": "Filter by bestsellers or taste, pick a kulhad or bottle size and quantity, and add to a slide-out cart with totals, a free-delivery nudge and an order confirmation."
+      },
+      {
+        "label": "Flavour pages",
+        "desc": "A section per flavour with ingredients, a taste profile, calories, protein and calcium, and a quick-jump bar."
+      },
+      {
+        "label": "About & story",
+        "desc": "Brand intro, a stats strip, values, a four-step how-it's-made process and a timeline from the first cart to today."
+      },
+      {
+        "label": "Find us",
+        "desc": "A searchable outlet list with live open-now status, an embedded Google Map, and call and directions buttons."
+      },
+      {
+        "label": "Delivery banner",
+        "desc": "A Craving Lassi? banner with a pincode check, plus fast-delivery, safe-packaging and easy-payment badges."
+      },
+      {
+        "label": "Contact & policies",
+        "desc": "Call, WhatsApp, email and visit cards, a validated message form, opening hours, FAQs, and shipping, returns, terms and privacy pages."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is it built with?",
+        "a": "React 18 and TypeScript with Vite, Tailwind CSS v4, shadcn/ui components and React Router. It builds to a static site you can host anywhere."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Lassi bars, juice and shake shops, dairies, sweet shops, cafés and any food or beverage brand with a small menu. Flavours, prices and outlets are plain data, so swap them for your own."
+      },
+      {
+        "q": "Does the cart take payments?",
+        "a": "No. The cart works fully in the browser and remembers items between visits, but Place Order only shows a confirmation. Connect it to your payment gateway or ordering backend in src/components/layout/CartSheet.tsx."
+      },
+      {
+        "q": "How do I change the content?",
+        "a": "Flavours, prices, sizes, ingredients and nutrition live in src/data/flavors.ts; outlets in src/pages/FindUs.tsx; FAQs and contact details in src/pages/Contact.tsx. The home cards, shop, flavour pages and cart all read from the same flavour list."
+      }
+    ],
+    "seo": {
+      "title": "LassiWala — Free Lassi & Beverage Brand Template | CodesPanda",
+      "description": "A free React website template for a lassi bar or beverage brand — flavour range, an online shop with cart, flavour pages, story timeline, outlet finder and contact pages.",
+      "keywords": "lassi website template, beverage brand website template, juice shop website react, food ordering template free, dairy website template",
+      "twitterDescription": "A free React website template for a lassi bar or beverage brand with a shop, cart and outlet finder.",
+      "image": "/images/lassiwala/hero.webp",
+      "schemaDescription": "A free React website template for a lassi bar or beverage brand with a shop, cart and outlet finder.",
+      "schemaName": "LassiWala",
+      "schemaCategory": "Software > Templates > Website"
+    }
+  },
+  "fincore": {
+    "slug": "fincore",
+    "githubUrl": "https://github.com/codespanda/fincore-accounting",
+    "updated": "October 2026",
+    "screens": [
+      {
+        "src": "/images/fincore/hero.webp",
+        "label": "Home"
+      },
+      {
+        "src": "/images/fincore/service-detail.webp",
+        "label": "Service page"
+      },
+      {
+        "src": "/images/fincore/resources.webp",
+        "label": "Resources"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Header & hero",
+        "desc": "Nav with a Services and Resources dropdown, click-to-call and Book a Consultation, a portrait hero with a growth card and trust badges."
+      },
+      {
+        "label": "Benefits & stats",
+        "desc": "A benefits bar (tax savings, accurate records, compliance, better decisions) and a stats band."
+      },
+      {
+        "label": "Services",
+        "desc": "Six services — bookkeeping, tax preparation, payroll, financial statements, business advisory and tax planning."
+      },
+      {
+        "label": "Service pages",
+        "desc": "A page per service with what's included, the process, a sidebar of all services and related services."
+      },
+      {
+        "label": "Industries",
+        "desc": "Eight industries served, from retail and SaaS to healthcare, real estate and hospitality."
+      },
+      {
+        "label": "Resources",
+        "desc": "Six articles with category tabs, four free guides and six FAQs."
+      },
+      {
+        "label": "About & team",
+        "desc": "Firm story, values, a timeline of milestones and a team of four with photos and roles."
+      },
+      {
+        "label": "Testimonials & CTA",
+        "desc": "Client reviews and a Book a Free Consultation banner."
+      },
+      {
+        "label": "Contact & legal",
+        "desc": "Contact cards, a consultation form, an embedded map, plus privacy and terms pages."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is it built with?",
+        "a": "React 19 and TypeScript with Vite, Tailwind CSS v4, shadcn/ui components (on Base UI) and React Router. It builds to a static site you can host anywhere."
+      },
+      {
+        "q": "Who is it for?",
+        "a": "Accounting, bookkeeping, tax and CPA firms, financial advisors and payroll providers. Services, industries, team, articles and FAQs are plain data, so swap them for your own."
+      },
+      {
+        "q": "Does the contact form send anything?",
+        "a": "Not out of the box. It shows a confirmation on the page. Connect it to a form service, email API or your CRM in src/pages/contact.tsx."
+      },
+      {
+        "q": "How do I change the content?",
+        "a": "Everything lives in src/data/site.ts: contact details and hours, navigation, the six services and their page content, industries, team, articles, guides and FAQs. Pages update automatically."
+      }
+    ],
+    "seo": {
+      "title": "FinCore Accounting — Free Accounting Firm Template | CodesPanda",
+      "description": "A free React accounting firm website template — service pages, industries, a resources hub with articles and FAQs, team and contact pages in a navy design.",
+      "keywords": "accounting firm website template, cpa website template, bookkeeping website template, tax firm website react, finance website template free",
+      "twitterDescription": "A free React accounting firm website template with service pages, industries and a resources hub.",
+      "image": "/images/fincore/hero.webp",
+      "schemaDescription": "A free React accounting firm website template with service pages, industries and a resources hub.",
+      "schemaName": "FinCore Accounting",
+      "schemaCategory": "Software > Templates > Website"
+    }
+  },
+  "carewell-clinic": {
+    "slug": "carewell-clinic",
+    "githubUrl": "https://github.com/codespanda/carewell-clinic",
+    "updated": "October 2026",
+    "screens": [
+      {
+        "src": "/images/carewell/hero.webp",
+        "label": "Home"
+      },
+      {
+        "src": "/images/carewell/packages.webp",
+        "label": "Health packages"
+      },
+      {
+        "src": "/images/carewell/doctors.webp",
+        "label": "Doctors"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Header & hero",
+        "desc": "Sticky nav with click-to-call and Book Appointment, a doctor banner, trust badges, and an info bar with hours, location and emergency line."
+      },
+      {
+        "label": "Services",
+        "desc": "Eight specialities — consultation, pediatrics, gynecology, dermatology, cardiology, orthopedics, dental and lab — each with its own page."
+      },
+      {
+        "label": "Doctors",
+        "desc": "Directory of eight doctors with a speciality filter, qualifications, experience and booking buttons."
+      },
+      {
+        "label": "Health packages",
+        "desc": "Six check-up packages with prices, discounts, included tests and a Most Popular highlight."
+      },
+      {
+        "label": "Lab reports",
+        "desc": "Look up test status and download reports by report ID or mobile number."
+      },
+      {
+        "label": "Appointment booking",
+        "desc": "Patient details, service, doctor, preferred date and time, with a confirmation screen."
+      },
+      {
+        "label": "Blog, gallery & careers",
+        "desc": "Six health articles, an eight-photo gallery, and five job openings with perks."
+      },
+      {
+        "label": "About, contact & FAQ",
+        "desc": "Clinic story and stats, contact cards and form, and a FAQ page with 13 questions in four groups."
+      },
+      {
+        "label": "Footer & legal",
+        "desc": "Quick links, services, contact details and hours, patient reviews on the home page, plus privacy policy and terms pages."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is it built with?",
+        "a": "React 18 with Vite, Tailwind CSS v4, shadcn/ui components and React Router, written in JavaScript. It builds to a static site you can host anywhere."
+      },
+      {
+        "q": "Does it only suit general clinics?",
+        "a": "No — it works for multi-speciality clinics, dental and skin clinics, physiotherapy centres, diagnostic labs and small hospitals. Services, doctors, posts and contact details are plain data, so swap them for your own."
+      },
+      {
+        "q": "Do the forms and the report lookup work out of the box?",
+        "a": "They work as a front end: the appointment and contact forms show a confirmation, and the report lookup searches sample reports. Connect them to your form service, booking system and lab system in src/pages/Appointment.jsx, Contact.jsx and Reports.jsx."
+      },
+      {
+        "q": "How do I change the content?",
+        "a": "Content lives in two data files: src/data/site.js for contact details, navigation, services, doctors, testimonials, blog posts and stats, and src/data/extra.js for packages, sample reports, gallery, jobs and FAQs. Pages update automatically."
+      }
+    ],
+    "seo": {
+      "title": "CareWell Clinic — Free Clinic Website Template | CodesPanda",
+      "description": "A free React clinic website template — services, doctors, health packages, lab report lookup, appointment booking, blog and contact pages in a calm teal design.",
+      "keywords": "clinic website template, medical website template, doctor website template, hospital website react, healthcare template free, appointment booking template",
+      "twitterDescription": "A free React clinic website template with a doctors directory, appointment booking and a health blog.",
+      "image": "/images/carewell/hero.webp",
+      "schemaDescription": "A free React clinic website template with a doctors directory, appointment booking and a health blog.",
+      "schemaName": "CareWell Clinic",
+      "schemaCategory": "Software > Templates > Website"
+    }
+  },
+  "kundeep-kitchen": {
+    "slug": "kundeep-kitchen",
+    "githubUrl": "https://github.com/codespanda/kundeep-kitchen",
+    "updated": "October 2026",
+    "screens": [
+      {
+        "src": "/images/kundeep-kitchen/hero.webp",
+        "label": "Home"
+      },
+      {
+        "src": "/images/kundeep-kitchen/menu.webp",
+        "label": "Menu"
+      },
+      {
+        "src": "/images/kundeep-kitchen/about.webp",
+        "label": "About & gallery"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Header",
+        "desc": "Logo lockup, section links with an active state, and a Reserve a Table button."
+      },
+      {
+        "label": "Hero",
+        "desc": "Serif headline, a signature dish photo, Reserve and Explore Menu CTAs, and four trust badges."
+      },
+      {
+        "label": "Signature dishes",
+        "desc": "Six-card specialties grid with photos, short descriptions, and a View Full Menu link."
+      },
+      {
+        "label": "Menu page",
+        "desc": "11 category tabs, live search, a bestsellers filter, prices, and spicy tags across 72 dishes."
+      },
+      {
+        "label": "Table booking",
+        "desc": "Reserve popup for name, phone, date, time, guests and occasion that sends the request to WhatsApp."
+      },
+      {
+        "label": "About & gallery",
+        "desc": "Restaurant story with checklist highlights, a quote card, and a five-photo ambiance strip."
+      },
+      {
+        "label": "Guest reviews",
+        "desc": "Three testimonial cards with names and star ratings."
+      },
+      {
+        "label": "Reservation CTA",
+        "desc": "Closing band with Reserve a Table and a click-to-call phone button."
+      },
+      {
+        "label": "Footer",
+        "desc": "Quick links, menu categories, contact details, opening hours, and a newsletter field."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is it built with?",
+        "a": "Next.js 16 with the App Router, React 19, TypeScript and Tailwind CSS v4. It builds to a static site, so it can be hosted almost anywhere."
+      },
+      {
+        "q": "Does it only work for vegetarian restaurants?",
+        "a": "No — it suits any restaurant, café, cloud kitchen or caterer. The dishes, categories, prices and photos are plain data, so swap them for your own menu."
+      },
+      {
+        "q": "How do table reservations work?",
+        "a": "Reserve a Table opens a booking form for name, phone, date, time, guests, occasion and requests. Submitting it opens WhatsApp with the booking filled in for the restaurant's number — no backend needed. Online ordering isn't included."
+      },
+      {
+        "q": "How do I change the menu?",
+        "a": "Categories and dishes live in one data file (src/data/menu.ts), and the restaurant's name, phone and hours in src/data/site.ts. Add a dish, change a price or mark a bestseller there — search and filters update automatically."
+      }
+    ],
+    "seo": {
+      "title": "Kundeep Kitchen — Free Restaurant Website Template | CodesPanda",
+      "description": "A free Next.js restaurant website template — signature dishes, about, gallery, reviews, WhatsApp table booking and a full menu page with search and filters.",
+      "keywords": "restaurant website template, free restaurant template, next.js restaurant template, food website template, restaurant menu page, tailwind css v4 template",
+      "twitterDescription": "A free Next.js restaurant website template with a full menu page, gallery, reviews and WhatsApp table booking.",
+      "image": "/images/kundeep-kitchen/hero.webp",
+      "schemaDescription": "A free Next.js restaurant website template with a full menu page, gallery, reviews and WhatsApp table booking.",
+      "schemaName": "Kundeep Kitchen",
+      "schemaCategory": "Software > Templates > Landing Page"
+    }
+  },
+  "shopperscrown": {
+    "slug": "shopperscrown",
+    "githubUrl": "https://github.com/codespanda/Shoppers-Crown",
+    "updated": "September 2026",
+    "screens": [],
+    "inside": [
+      {
+        "label": "Header & Navigation",
+        "desc": "Sticky nav with dropdown menus, live cart badge, notifications, and search."
+      },
+      {
+        "label": "Hero",
+        "desc": "Animated shipping-route illustration paired with a dual CTA and trust badges."
+      },
+      {
+        "label": "Brands & Stats",
+        "desc": "Scrolling US-store marquee plus an animated stat-counter row."
+      },
+      {
+        "label": "Featured Products",
+        "desc": "Product grid with pricing, ratings, shipping estimates, and add-to-cart."
+      },
+      {
+        "label": "How It Works",
+        "desc": "Five-step numbered process from signup to doorstep delivery."
+      },
+      {
+        "label": "Shipping Calculator",
+        "desc": "Real interactive rate estimator — country, weight, speed, and insurance."
+      },
+      {
+        "label": "Why Choose Us",
+        "desc": "Eight-feature grid covering consolidation, tax-free shopping, and insurance."
+      },
+      {
+        "label": "Testimonials",
+        "desc": "Rated customer review cards with country and date."
+      },
+      {
+        "label": "FAQ",
+        "desc": "Accordion covering shipping, consolidation, tracking, and insurance questions."
+      },
+      {
+        "label": "Auth Pages",
+        "desc": "Login and signup screens with real React Hook Form + Zod validation."
+      },
+      {
+        "label": "Shop, Cart & Dashboard",
+        "desc": "Product detail, cart, checkout, order success, tracking, and account dashboard."
+      },
+      {
+        "label": "Footer",
+        "desc": "Sitemap columns, contact details, and social links."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use this for a commercial website?",
+        "a": "Yes — it's MIT licensed. Use it for client work, your own shipping/e-commerce product, or any commercial project, no attribution required."
+      },
+      {
+        "q": "Is there a real shipping or payments backend?",
+        "a": "No — it ships with realistic mock data (products, brands, rates) wired through TanStack Query. The data-fetching layer is already in place, so pointing it at a real API is a matter of swapping the query functions, not restructuring the app."
+      },
+      {
+        "q": "Does authentication actually work?",
+        "a": "The login and signup forms have real client-side validation (React Hook Form + Zod) and an AuthContext that manages session state — but there's no real backend behind it out of the box. You'll connect it to your own auth provider."
+      },
+      {
+        "q": "Why Tailwind CSS v4?",
+        "a": "The template is built on Tailwind v4's CSS-first configuration and Vite. For v3, a find-and-replace on the CSS-variable tokens in index.css will get you most of the way there."
+      }
+    ],
+    "seo": {
+      "title": "Shoppers Crown — Package-Forwarding Template | CodesPanda",
+      "description": "A free React template for international shopping and package forwarding — shop, cart, checkout, shipping calculator, tracking and a dashboard, in 17 pages.",
+      "keywords": "react ecommerce template, package forwarding website template, shipping calculator react, react shopping cart template, tailwind css v4 template, react router ecommerce",
+      "ogDescription": "A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard.",
+      "twitterDescription": "A free React template for international shopping and package-forwarding platforms — 17 real routed pages.",
+      "image": "/og-share.jpg",
+      "schemaDescription": "A free React template for international shopping and package-forwarding platforms — shop, cart, checkout, shipping calculator, tracking, and a dashboard.",
+      "schemaName": "Shoppers Crown",
+      "schemaCategory": "Software > Templates > E-commerce"
+    },
+    "share": {
+      "image": "/images/shopperscrown/hero.webp"
+    }
+  },
+  "interio": {
+    "slug": "interio",
+    "githubUrl": "https://github.com/codespanda/interio",
+    "updated": "September 2026",
+    "screens": [],
+    "inside": [
+      {
+        "label": "Header",
+        "desc": "Sticky nav with active-link highlighting, mobile menu, Book a Consultation CTA."
+      },
+      {
+        "label": "Hero",
+        "desc": "Two-column hero with a project photo, trust badges, and a dual CTA pair."
+      },
+      {
+        "label": "Services",
+        "desc": "Five-card grid — residential, commercial, modular kitchen, turnkey, and space planning."
+      },
+      {
+        "label": "Portfolio",
+        "desc": "Filterable project grid across residential and commercial work."
+      },
+      {
+        "label": "Process",
+        "desc": "Five-step numbered timeline from consultation to handover."
+      },
+      {
+        "label": "About",
+        "desc": "Studio story with a four-stat counter row."
+      },
+      {
+        "label": "Testimonials",
+        "desc": "Three-card client quote grid with avatars and roles."
+      },
+      {
+        "label": "Blog / Client Diaries",
+        "desc": "Article preview grid for design trends, tips, and guides."
+      },
+      {
+        "label": "Consultation CTA",
+        "desc": "Closing enquiry band with a direct phone number."
+      },
+      {
+        "label": "Footer",
+        "desc": "Sitemap columns, contact details, and social links."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use this for a commercial website?",
+        "a": "Yes — it's MIT licensed. Use it for client work, your own studio's site, or any commercial project, no attribution required."
+      },
+      {
+        "q": "Does it only work for interior design studios?",
+        "a": "Easily adapts to architecture firms, furniture brands, renovation contractors, and other design-led businesses — the content is data-driven, so swap the services, portfolio and process steps to match."
+      },
+      {
+        "q": "Is there a real backend or booking system?",
+        "a": "No — it's a UI-only template. The Book a Consultation CTAs are presentational; wiring them to a real form handler, calendar tool, or CRM is left to you."
+      },
+      {
+        "q": "Why Tailwind CSS v4?",
+        "a": "The template is built on Tailwind v4's CSS-first configuration and Vite. For v3, a find-and-replace on the CSS-variable tokens in index.css will get you most of the way there."
+      }
+    ],
+    "seo": {
+      "title": "Interio — Free Interior Design Website Template | CodesPanda",
+      "description": "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog, in a warm cream-and-terracotta editorial design.",
+      "keywords": "react interior design template, free interior design website, interior design studio landing page react, tailwind css v4 template, shadcn ui react template, portfolio website template",
+      "twitterDescription": "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog.",
+      "image": "/og-share.jpg",
+      "schemaDescription": "A free React template for interior design studios — services, portfolio, process, testimonials, and a blog.",
+      "schemaName": "Interio",
+      "schemaCategory": "Software > Templates > Landing Page"
+    },
+    "share": {
+      "image": "/images/interio/hero.webp"
+    }
+  },
+  "school": {
+    "slug": "school",
+    "githubUrl": "https://github.com/codespanda/gouri-international-school",
+    "updated": "September 2026",
+    "screens": [],
+    "inside": [
+      {
+        "label": "Header & Top Bar",
+        "desc": "Admissions announcement bar, sticky nav with active-link highlighting, mobile menu."
+      },
+      {
+        "label": "Hero",
+        "desc": "Two-column hero with trust badges, CTA pair, and a live stat counter band."
+      },
+      {
+        "label": "About / Welcome",
+        "desc": "Mission copy paired with a four-value icon grid."
+      },
+      {
+        "label": "Academics",
+        "desc": "Five program cards — Early Years through Senior School and Co-Curricular."
+      },
+      {
+        "label": "Campus & Facilities",
+        "desc": "Six-item facility grid — labs, library, sports, transport, and more."
+      },
+      {
+        "label": "Why Parents Choose Us",
+        "desc": "Icon-led value list paired with imagery."
+      },
+      {
+        "label": "Testimonials",
+        "desc": "Embla-powered parent & student quote carousel."
+      },
+      {
+        "label": "News & Events",
+        "desc": "Dated card grid for school announcements and highlights."
+      },
+      {
+        "label": "Admissions CTA",
+        "desc": "Closing enquiry band with a clear call to action."
+      },
+      {
+        "label": "Footer",
+        "desc": "Sitemap columns, contact details, and social links."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use this for a commercial website?",
+        "a": "Yes — it's MIT licensed. Use it for client work, your own school's site, or any commercial project, no attribution required."
+      },
+      {
+        "q": "Does it only work for K-12 schools?",
+        "a": "Easily adapts to colleges, coaching institutes, and training academies too — the content is data-driven, so swap the copy, program list and facilities grid to match your institution."
+      },
+      {
+        "q": "Is there a real backend or admissions system?",
+        "a": "No — it's a UI-only template. The enquiry and admissions CTAs are presentational; wiring them to a real form handler or CRM is left to you."
+      },
+      {
+        "q": "Why Tailwind CSS v4?",
+        "a": "The template is built on Tailwind v4's CSS-first configuration and Vite. For v3, a find-and-replace on the CSS-variable tokens in index.css will get you most of the way there."
+      }
+    ],
+    "seo": {
+      "title": "Free School Website Template — Gouri International | CodesPanda",
+      "description": "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news, in a navy-and-gold design.",
+      "keywords": "react school website template, free school landing page, education website react, tailwind css v4 template, shadcn ui react template, school admissions website",
+      "twitterDescription": "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news.",
+      "image": "/og-share.jpg",
+      "schemaDescription": "A free React template for schools and educational institutions — academics, campus facilities, admissions, testimonials, and news.",
+      "schemaName": "Gouri International School",
+      "schemaCategory": "Software > Templates > Landing Page"
+    },
+    "share": {
+      "image": "/images/school/hero.webp"
+    }
+  },
+  "ca-firm": {
+    "slug": "ca-firm",
+    "githubUrl": "https://github.com/codespanda/CA-Firm",
+    "updated": "August 2026",
+    "screens": [],
+    "inside": [
+      {
+        "label": "Header",
+        "desc": "Sticky nav with active-link highlighting, mobile menu, Book Consultation CTA."
+      },
+      {
+        "label": "Hero",
+        "desc": "Two-column hero with trust badges and a floating logo card."
+      },
+      {
+        "label": "Trusted By",
+        "desc": "Auto-scrolling, pause-on-hover client logo marquee linking into testimonials."
+      },
+      {
+        "label": "Why Choose Us",
+        "desc": "Icon-led value list paired with a photo and a floating stat card."
+      },
+      {
+        "label": "About",
+        "desc": "Firm story with a four-stat counter row."
+      },
+      {
+        "label": "Services",
+        "desc": "Six-card grid of core service offerings."
+      },
+      {
+        "label": "Industries",
+        "desc": "Eight-industry icon grid, from real estate to non-profit."
+      },
+      {
+        "label": "Engagement Models",
+        "desc": "Four pricing/engagement cards with a “Popular” badge."
+      },
+      {
+        "label": "Our Process",
+        "desc": "Four-step numbered process timeline."
+      },
+      {
+        "label": "Testimonials",
+        "desc": "Rotating client quotes with colorful client-logo chips."
+      },
+      {
+        "label": "Newsletter",
+        "desc": "Standalone subscribe panel with a working success state."
+      },
+      {
+        "label": "Insights",
+        "desc": "Blog / resources preview grid."
+      },
+      {
+        "label": "Footer",
+        "desc": "CTA band, sitemap columns, masked contact number, social links."
+      },
+      {
+        "label": "Careers Page",
+        "desc": "Values, benefits grid, open-roles list, general-application form."
+      },
+      {
+        "label": "Contact Page",
+        "desc": "Info cards, inquiry form, office-location panel, FAQ accordion."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use this for a commercial website?",
+        "a": "Yes — it's MIT licensed. Use it for client work, your own firm's site, or any commercial project, no attribution required."
+      },
+      {
+        "q": "Does it work for firms other than chartered accountants?",
+        "a": "Easily. Section content is data-driven — swap the copy, services list and industries grid and it adapts to legal, consulting or financial-advisory firms."
+      },
+      {
+        "q": "Is there a real backend?",
+        "a": "No — it's a UI-only template. The contact and newsletter forms manage their own state locally and show a success message on submit; wiring them to a real API is left to you."
+      },
+      {
+        "q": "Why Tailwind CSS v4?",
+        "a": "The template is built on Tailwind v4's CSS-first configuration and Vite. For v3, a find-and-replace on the CSS-variable tokens in index.css will get you most of the way there."
+      }
+    ],
+    "seo": {
+      "title": "Your CA Firm — Financial & Advisory Landing Page | CodesPanda",
+      "description": "A free React template for chartered accountants and advisory firms — services, industries, engagement models, testimonials, careers and contact pages.",
+      "keywords": "react ca firm template, free chartered accountant website, financial advisory landing page react, tailwind css v4 template, shadcn ui react template, accounting firm website template",
+      "ogDescription": "A free React template for chartered accountants and financial advisory firms — services, industries, engagement models, testimonials, Careers and Contact pages.",
+      "image": "/og-share.jpg",
+      "schemaDescription": "A free React template for chartered accountancy and financial advisory practices — services, industries, engagement models, testimonials, and dedicated Careers and Contact pages.",
+      "schemaName": "Your CA Firm",
+      "schemaCategory": "Software > Templates > Landing Page"
+    },
+    "share": {
+      "image": "/images/ca-firm/hero.webp"
+    }
+  },
+  "hamara-bharat": {
+    "slug": "hamara-bharat",
+    "githubUrl": "https://github.com/codespanda/hamara-bharat",
+    "updated": "July 2026",
+    "screens": [
+      {
+        "src": "/images/hamarabharat/hero.webp",
+        "label": "Hero — Cinematic Slideshow"
+      },
+      {
+        "src": "/images/hamarabharat/trip-planner.webp",
+        "label": "Trip Planner"
+      },
+      {
+        "src": "/images/hamarabharat/india-map.webp",
+        "label": "Interactive India Map"
+      },
+      {
+        "src": "/images/hamarabharat/experiences.webp",
+        "label": "Experiences"
+      },
+      {
+        "src": "/images/hamarabharat/unesco.webp",
+        "label": "UNESCO Heritage Sites"
+      },
+      {
+        "src": "/images/hamarabharat/itinerary-builder.webp",
+        "label": "Itinerary Builder"
+      },
+      {
+        "src": "/images/hamarabharat/festivals.webp",
+        "label": "Festivals & Culture"
+      },
+      {
+        "src": "/images/hamarabharat/hotels.webp",
+        "label": "Hotels"
+      },
+      {
+        "src": "/images/hamarabharat/food-trails.webp",
+        "label": "Food Trails"
+      },
+      {
+        "src": "/images/hamarabharat/cinematic-videos.webp",
+        "label": "Cinematic Videos"
+      },
+      {
+        "src": "/images/hamarabharat/gallery.webp",
+        "label": "Photo Gallery"
+      },
+      {
+        "src": "/images/hamarabharat/best-time.webp",
+        "label": "Best Time to Visit"
+      },
+      {
+        "src": "/images/hamarabharat/visa-info.webp",
+        "label": "Visa & Travel Info"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Cinematic Hero",
+        "desc": "Full-viewport auto-advancing slideshow of India's iconic destinations with Ken Burns parallax."
+      },
+      {
+        "label": "Trip Planner",
+        "desc": "Interactive wizard — pick budget, duration and interests to generate a personalised itinerary."
+      },
+      {
+        "label": "Interactive India Map",
+        "desc": "SVG clickable state map: hover reveals state highlights; click opens a destination detail card."
+      },
+      {
+        "label": "Experiences",
+        "desc": "Curated grid of travel categories — Adventure, Culture, Beaches, Wildlife, Spiritual, Food, Luxury."
+      },
+      {
+        "label": "UNESCO Heritage",
+        "desc": "Cards for India's UNESCO World Heritage Sites with imagery, description and location tags."
+      },
+      {
+        "label": "Itinerary Builder",
+        "desc": "Day-by-day planner with draggable timeline, activity cards and exportable schedule."
+      },
+      {
+        "label": "Festivals & Culture",
+        "desc": "Seasonal festival showcase with date, region and cultural significance for each celebration."
+      },
+      {
+        "label": "Hotels",
+        "desc": "Curated property cards with amenities, price tier, rating and quick-book CTA."
+      },
+      {
+        "label": "Food Trails",
+        "desc": "Regional cuisine explorer — dishes, flavour profiles and where to find them across India."
+      },
+      {
+        "label": "Cinematic Videos",
+        "desc": "Embedded highlight reels arranged in a responsive masonry-style video wall."
+      },
+      {
+        "label": "Photo Gallery",
+        "desc": "Masonry photo grid with lightbox and category filters — landscapes, monuments, people, food."
+      },
+      {
+        "label": "Best Time to Visit",
+        "desc": "Month-by-month weather and event calendar to help travellers pick the ideal window."
+      },
+      {
+        "label": "Visa & Travel Info",
+        "desc": "e-Visa eligibility, entry requirements and helpful travel tips for international visitors."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use Hamara Bharat for a commercial travel website?",
+        "a": "Yes — it's MIT licensed. Use it for client work, white-labelled travel portals, SaaS products, or any commercial project with no attribution required."
+      },
+      {
+        "q": "Does it work for destinations outside India?",
+        "a": "Absolutely. The sections (hero, trip planner, experiences, gallery, food trails, hotels) are all data-driven. Swap the destination data files and it adapts to any country or region."
+      },
+      {
+        "q": "Is there a real backend or API?",
+        "a": "No — it's a UI-only template. All data lives in static TypeScript fixture files under src/data/. The trip planner generates mock itineraries client-side. Wiring in a real API is left to you."
+      },
+      {
+        "q": "Why Tailwind CSS v4?",
+        "a": "Hamara Bharat is built on Tailwind v4 (CSS-first config) and Vite — both bleeding-edge. If you need v3 compatibility, a quick find-replace on the CSS custom properties will get you there."
+      }
+    ],
+    "seo": {
+      "title": "Hamara Bharat — Travel Landing Page Template | CodesPanda",
+      "description": "Hamara Bharat is a free React travel landing page template for India tourism — cinematic hero, interactive map, trip planner, festivals and food trails.",
+      "keywords": "react travel landing page template, free react tourism website, india travel template, tailwind css travel template, framer motion react template, vite travel website",
+      "ogDescription": "A cinematic React travel landing page for India tourism — interactive map, trip planner, festivals, food trails, photo gallery and 13 rich sections.",
+      "image": "/images/hamarabharat/hero.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "Hamara Bharat cinematic hero — free React travel landing page template",
+      "schemaDescription": "A free React travel landing page template for India tourism with cinematic hero, interactive SVG map, trip planner, festivals, food trails and photo gallery.",
+      "schemaName": "Hamara Bharat",
+      "schemaCategory": "Software > Templates > Landing Page"
+    },
+    "share": {
+      "description": "Hamara Bharat is a free React travel landing page template — cinematic hero, interactive map, trip planner, festivals and food trails.",
+      "image": "/images/hamarabharat/hero.png"
+    }
+  },
+  "eva-autocare": {
+    "slug": "eva-autocare",
+    "githubUrl": "https://github.com/codespanda/eva-autocare",
+    "updated": "July 2026",
+    "screens": [
+      {
+        "src": "/images/eva-autocare/dashboard.webp",
+        "label": "Dashboard"
+      },
+      {
+        "src": "/images/eva-autocare/appointments.webp",
+        "label": "Appointments"
+      },
+      {
+        "src": "/images/eva-autocare/customers.webp",
+        "label": "Customers"
+      },
+      {
+        "src": "/images/eva-autocare/vehicles.webp",
+        "label": "Vehicles"
+      },
+      {
+        "src": "/images/eva-autocare/work-orders.webp",
+        "label": "Work Orders"
+      },
+      {
+        "src": "/images/eva-autocare/invoices.webp",
+        "label": "Invoices & Billing"
+      },
+      {
+        "src": "/images/eva-autocare/inventory.webp",
+        "label": "Inventory"
+      },
+      {
+        "src": "/images/eva-autocare/reports.webp",
+        "label": "Reports"
+      },
+      {
+        "src": "/images/eva-autocare/technicians.webp",
+        "label": "Technicians"
+      },
+      {
+        "src": "/images/eva-autocare/reviews.webp",
+        "label": "Reviews & Ratings"
+      },
+      {
+        "src": "/images/eva-autocare/settings.webp",
+        "label": "Settings"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Dashboard",
+        "desc": "Appointment, revenue, technician and inventory stats with trend charts."
+      },
+      {
+        "label": "Appointments",
+        "desc": "Status tabs, search, filters, and a full booking table with pagination."
+      },
+      {
+        "label": "Service Requests",
+        "desc": "Priority-driven intake queue with technician assignment."
+      },
+      {
+        "label": "Customers",
+        "desc": "Searchable directory with a detailed customer activity panel."
+      },
+      {
+        "label": "Vehicles",
+        "desc": "Fleet directory with owner, insurance and service history detail."
+      },
+      {
+        "label": "Work Orders",
+        "desc": "Full job lifecycle with a live status timeline."
+      },
+      {
+        "label": "Inventory",
+        "desc": "Stock levels, suppliers and reorder alerts with a detail panel."
+      },
+      {
+        "label": "Technicians",
+        "desc": "Skill levels, workload and performance tracking."
+      },
+      {
+        "label": "Invoices & Billing",
+        "desc": "Line-item invoicing, payment history and status tracking."
+      },
+      {
+        "label": "Reports",
+        "desc": "Revenue, service and technician analytics with donut and bar charts."
+      },
+      {
+        "label": "Reviews & Ratings",
+        "desc": "Rating distribution, trends and top-rated technicians."
+      },
+      {
+        "label": "Settings",
+        "desc": "11 tabs covering business profile, branches, users, billing and more."
+      },
+      {
+        "label": "Auth screens",
+        "desc": "Sign in and sign up pages outside the dashboard shell."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use Eva AutoCare in commercial projects?",
+        "a": "Yes. It's released under the MIT License. Use it in client work, SaaS products, white-label builds, and commercial applications with no attribution required."
+      },
+      {
+        "q": "Is it suitable for shops other than a full multi-branch service center?",
+        "a": "Absolutely. While designed around a multi-branch operation, the modules (appointments, vehicles, invoices, inventory) apply just as well to independent garages and single-location workshops. Rename labels and trim modules to fit your domain."
+      },
+      {
+        "q": "Does it include a real backend or database?",
+        "a": "No — it's a UI-only demo. Every list and detail page is driven by static TypeScript fixtures under src/lib/mock-data.ts, with no persistence or API layer. Wiring up your own backend is on you."
+      },
+      {
+        "q": "How is it different from other admin dashboard templates?",
+        "a": "Eva AutoCare is purpose-built for automotive service workflows — appointments, work orders, technician skill tracking, vehicle history and parts inventory — that a general-purpose admin dashboard doesn't touch."
+      }
+    ],
+    "seo": {
+      "title": "Eva AutoCare — Auto-Service Admin Dashboard | CodesPanda",
+      "description": "Eva AutoCare is a free auto-service admin dashboard template — appointments, work orders, vehicles, technicians & invoicing. React, Vite & Tailwind CSS.",
+      "keywords": "react auto service admin template, free react automotive dashboard, garage management dashboard, tailwind auto service template, react vehicle management, vite react auto admin",
+      "ogDescription": "Eva AutoCare is a free React auto-service admin dashboard covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews.",
+      "image": "/images/eva-autocare/dashboard.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "Eva AutoCare dashboard — free React auto-service admin template",
+      "schemaDescription": "A free React auto-service admin dashboard template covering appointments, service requests, customers, vehicles, work orders, inventory, technicians, invoicing and reviews. Built with React, Vite, Tailwind CSS and TypeScript.",
+      "schemaName": "Eva AutoCare",
+      "schemaCategory": "Software > Templates > Admin Dashboard",
+      "offerUrl": true
+    },
+    "share": {
+      "image": "/images/eva-autocare/dashboard.png"
+    }
+  },
+  "deepcity-care-hospital": {
+    "slug": "deepcity-care",
+    "githubUrl": "https://github.com/codespanda/deepcity-care-hospital",
+    "updated": "July 2026",
+    "screens": [
+      {
+        "src": "/images/deepcity-care/dashboard.webp",
+        "label": "Dashboard"
+      },
+      {
+        "src": "/images/deepcity-care/appointments.webp",
+        "label": "Appointments"
+      },
+      {
+        "src": "/images/deepcity-care/patients.webp",
+        "label": "Patients"
+      },
+      {
+        "src": "/images/deepcity-care/billing.webp",
+        "label": "Billing & Invoices"
+      },
+      {
+        "src": "/images/deepcity-care/beds-rooms.webp",
+        "label": "Beds & Rooms"
+      },
+      {
+        "src": "/images/deepcity-care/settings.webp",
+        "label": "Settings"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Dashboard",
+        "desc": "Patient, appointment, revenue and bed stats with trend charts."
+      },
+      {
+        "label": "Appointments",
+        "desc": "List view, a doctor schedule board, and full appointment details."
+      },
+      {
+        "label": "Patients",
+        "desc": "Searchable directory and detailed patient profiles."
+      },
+      {
+        "label": "Doctors & Departments",
+        "desc": "Staff directories with availability and performance charts."
+      },
+      {
+        "label": "Billing & Invoices",
+        "desc": "Invoicing, payment tracking and revenue breakdowns."
+      },
+      {
+        "label": "Pharmacy & Lab Reports",
+        "desc": "Stock, suppliers, purchase orders and test tracking."
+      },
+      {
+        "label": "Beds & Rooms",
+        "desc": "Live occupancy with room transfer and bed management."
+      },
+      {
+        "label": "Settings",
+        "desc": "12 tabs covering profile, security, billing, integrations and more."
+      },
+      {
+        "label": "Auth screens",
+        "desc": "Sign in and sign up pages outside the dashboard shell."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use DeepCity Care Hospital in commercial projects?",
+        "a": "Yes. It's released under the MIT License. Use it in client work, SaaS products, white-label builds, and commercial applications with no attribution required."
+      },
+      {
+        "q": "Is it suitable for clinics other than a full hospital?",
+        "a": "Absolutely. While designed around a multi-department hospital, the modules (appointments, patients, billing, pharmacy, beds & rooms) apply just as well to clinics, diagnostic centers, and smaller multi-specialty practices. Rename labels and trim modules to fit your domain."
+      },
+      {
+        "q": "Does it include a real backend or database?",
+        "a": "No — it's a UI-only demo. Every list and detail page is driven by static TypeScript fixtures under src/data/, with no persistence or API layer. Wiring up your own backend is on you."
+      },
+      {
+        "q": "How is it different from the other templates in the library?",
+        "a": "DeepCity Care Hospital is the only healthcare-focused template in the CodesPanda library — it covers clinical workflows (doctor schedules, lab reports, bed occupancy, pharmacy stock, insurance claims) that a general-purpose admin dashboard doesn't touch."
+      }
+    ],
+    "seo": {
+      "title": "DeepCity Care — Healthcare Dashboard Template | CodesPanda",
+      "description": "DeepCity Care is a free hospital admin dashboard template — appointments, patients, billing, pharmacy & inventory. React, Vite & Tailwind CSS.",
+      "keywords": "react hospital admin template, free react healthcare dashboard, hospital management dashboard, tailwind hospital template, react patient management, vite react healthcare admin",
+      "ogDescription": "Free React hospital admin — appointments, patients, billing, pharmacy, beds & rooms and inventory. Built with Vite, Tailwind, TypeScript.",
+      "twitterDescription": "DeepCity Care Hospital is a free React hospital administration dashboard covering appointments, patients, billing, pharmacy, lab reports, beds & rooms, inventory and insurance.",
+      "image": "/images/deepcity-care/dashboard.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "DeepCity Care Hospital dashboard — React hospital admin template",
+      "schemaDescription": "A free React hospital administration dashboard template covering appointments, patients, doctors, billing, pharmacy, lab reports, beds & rooms, inventory, insurance and messaging. Built with React, Vite, Tailwind CSS and TypeScript.",
+      "schemaName": "DeepCity Care Hospital",
+      "schemaCategory": "Software > Templates > Admin Dashboard",
+      "offerUrl": true
+    },
+    "share": {
+      "image": "/images/deepcity-care/dashboard.png"
+    }
+  },
+  "flowers-pos": {
+    "slug": "flowers",
+    "githubUrl": "https://github.com/codespanda/flowers-pos",
+    "updated": "July 2026",
+    "screens": [
+      {
+        "src": "/images/flowers/pos-counter.webp",
+        "label": "POS Counter"
+      },
+      {
+        "src": "/images/flowers/orders-live.webp",
+        "label": "Orders"
+      },
+      {
+        "src": "/images/flowers/customers-live.webp",
+        "label": "Customers"
+      },
+      {
+        "src": "/images/flowers/coupons-live.webp",
+        "label": "Coupons"
+      },
+      {
+        "src": "/images/flowers/reports-live.webp",
+        "label": "Reports"
+      },
+      {
+        "src": "/images/flowers/settings-live.webp",
+        "label": "Settings"
+      }
+    ],
+    "inside": [
+      {
+        "label": "POS Counter",
+        "desc": "Product grid, cart, coupons and multi-tender checkout."
+      },
+      {
+        "label": "Orders",
+        "desc": "Order history with status and payment filters."
+      },
+      {
+        "label": "Customers",
+        "desc": "Customer directory with spend and order history."
+      },
+      {
+        "label": "Coupons",
+        "desc": "Discount codes with usage caps and expiry tracking."
+      },
+      {
+        "label": "Reports",
+        "desc": "Revenue trend, top products and category breakdowns."
+      },
+      {
+        "label": "Settings",
+        "desc": "Store profile, tax rate, payment methods and team."
+      },
+      {
+        "label": "Notifications",
+        "desc": "Order, inventory and system alerts in one feed."
+      },
+      {
+        "label": "Auth screens",
+        "desc": "Sign in, sign up and forgot-password, fully designed."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use Flowers POS in commercial projects?",
+        "a": "Yes. Flowers POS is released under the MIT License. Use it in client work, SaaS products, white-label builds, and commercial applications with no attribution required."
+      },
+      {
+        "q": "Is it suitable for shops other than flower shops?",
+        "a": "Absolutely. While designed around a flower shop's workflow, the modules (POS counter, orders, customers, coupons, reports) apply to any retail or boutique business. Rename labels and swap categories to fit your domain."
+      },
+      {
+        "q": "Does it include a real payment gateway?",
+        "a": "No — it's a UI-only demo. Cart totals, coupon discounts, and tax are calculated client-side against mock data, with card, cash, and gift-card tender options at checkout. Wiring Stripe or another processor into the checkout flow is on you."
+      },
+      {
+        "q": "How is Flowers POS different from the other templates?",
+        "a": "Flowers POS is the only retail-focused template in the CodesPanda library. It includes a counter checkout flow with coupon codes and multi-tender payment, plus order and customer history — features specific to a brick-and-mortar retail counter rather than a back-office admin panel."
+      }
+    ],
+    "seo": {
+      "title": "Flowers POS — Retail POS Dashboard Template | CodesPanda",
+      "description": "Flowers POS is a free retail POS admin dashboard template — product grid, cart, coupons, orders, customers & reports. React, Vite & Tailwind CSS.",
+      "keywords": "react pos template, free react retail template, point of sale dashboard, tailwind pos template, react shop admin, vite react pos",
+      "ogDescription": "Flowers POS is a free React point-of-sale template for a florist counter covering product grid, cart, coupons, orders, customers, and reports.",
+      "image": "/images/flowers/pos-counter.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "Flowers POS counter — React retail point-of-sale template",
+      "schemaDescription": "A free React point-of-sale template for a florist counter with product grid, cart, coupons, orders, customers, and reports. Built with React, Vite, Tailwind CSS and TypeScript.",
+      "schemaName": "Flowers POS",
+      "schemaCategory": "Software > Templates > POS System",
+      "offerUrl": true
+    },
+    "share": {
+      "image": "/images/flowers/pos-counter.png"
+    }
+  },
+  "alpine-admin-react": {
+    "slug": "alpine-admin-react",
+    "aliases": [
+      "Alpine-Admin-React"
+    ],
+    "githubUrl": "https://github.com/codespanda/Alpine-Admin-React",
+    "updated": "July 2025",
+    "screens": [
+      {
+        "src": "/images/alpine/dashboard.webp",
+        "label": "Main Dashboard"
+      },
+      {
+        "src": "/images/alpine/employees.webp",
+        "label": "Employee Directory"
+      },
+      {
+        "src": "/images/alpine/attendance.webp",
+        "label": "Attendance Tracker"
+      },
+      {
+        "src": "/images/alpine/leave.webp",
+        "label": "Leave Management"
+      },
+      {
+        "src": "/images/alpine/payroll.webp",
+        "label": "Payroll Module"
+      },
+      {
+        "src": "/images/alpine/performance.webp",
+        "label": "Performance Reviews"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Dashboard",
+        "desc": "Headcount, attendance & hiring KPIs at a glance."
+      },
+      {
+        "label": "Employees",
+        "desc": "Full directory with profiles, roles & status."
+      },
+      {
+        "label": "Departments",
+        "desc": "Teams, headcounts & department leads."
+      },
+      {
+        "label": "Designations",
+        "desc": "Job titles & role hierarchy management."
+      },
+      {
+        "label": "Attendance",
+        "desc": "Daily present / absent / late tracking."
+      },
+      {
+        "label": "Leave Management",
+        "desc": "Request submission & manager approval workflow."
+      },
+      {
+        "label": "Payroll",
+        "desc": "Salary processing, payslips & payment status."
+      },
+      {
+        "label": "Performance",
+        "desc": "Goal tracking, peer reviews & rating cycles."
+      },
+      {
+        "label": "Onboarding",
+        "desc": "New-hire checklists, tasks & welcome flows."
+      },
+      {
+        "label": "Charts",
+        "desc": "Recharts line, bar, area, pie & composed charts."
+      },
+      {
+        "label": "Reports",
+        "desc": "Exportable HR analytics & summary reports."
+      },
+      {
+        "label": "Settings",
+        "desc": "Profile, role-based access & site preferences."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use Alpine Admin in commercial projects?",
+        "a": "Yes. Alpine Admin React is released under the MIT License. You can use it in commercial products, client work, and white-labeled HRMS systems with no attribution required."
+      },
+      {
+        "q": "Does it support dark mode?",
+        "a": "Yes. Light and dark themes ship out of the box, toggled via Tailwind's dark class strategy. Every component — including charts and data tables — adapts automatically."
+      },
+      {
+        "q": "Is TypeScript required?",
+        "a": "The template is TypeScript-first. You can rename files to .jsx/.js and strip type annotations if you prefer plain JavaScript, but you'll give up autocomplete, inline type errors, and the refactoring safety net."
+      },
+      {
+        "q": "Can I remove Recharts if I'm using a different chart library?",
+        "a": "Recharts is only used in the Charts module and Dashboard KPI widgets. Remove those pages and the npm package — every other module (Employees, Payroll, Attendance, etc.) is completely independent."
+      }
+    ],
+    "seo": {
+      "title": "Alpine Admin React — HR Dashboard Template | CodesPanda",
+      "description": "Alpine Admin React is a free HR admin dashboard template — 30+ pages for employees, payroll, attendance & leave management. React, Vite & Tailwind CSS.",
+      "keywords": "react hr management dashboard template, free react admin template, hr dashboard react, react admin dashboard, tailwind hr template, vite react dashboard",
+      "ogDescription": "Free React HR management dashboard — 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript.",
+      "twitterDescription": "Alpine Admin React is a free React HR management dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with Vite, Tailwind CSS and TypeScript.",
+      "image": "/images/alpine/dashboard.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "Alpine Admin React HR dashboard — free React HR management template",
+      "schemaDescription": "Alpine Admin React is a free HR dashboard template with 30+ pages for employees, payroll, attendance and leave management. Built with React, Vite, Tailwind CSS and TypeScript.",
+      "schemaName": "Alpine Admin React",
+      "schemaCategory": "Software > Templates > Admin Dashboard",
+      "offerUrl": true
+    }
+  },
+  "brisk-admin": {
+    "slug": "brisk-admin",
+    "aliases": [
+      "Brisk-Admin"
+    ],
+    "githubUrl": "https://github.com/codespanda/brisk-admin",
+    "updated": "July 2025",
+    "screens": [
+      {
+        "src": "/images/brisk/dashboard.webp",
+        "label": "Dashboard Overview"
+      },
+      {
+        "src": "/images/brisk/products.webp",
+        "label": "Products"
+      },
+      {
+        "src": "/images/brisk/orders.webp",
+        "label": "Orders"
+      },
+      {
+        "src": "/images/brisk/customers.webp",
+        "label": "Customers"
+      },
+      {
+        "src": "/images/brisk/analytics.webp",
+        "label": "Analytics"
+      },
+      {
+        "src": "/images/brisk/settings.webp",
+        "label": "Settings"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Dashboard",
+        "desc": "Revenue, orders, and KPI cards at a glance."
+      },
+      {
+        "label": "Orders",
+        "desc": "Order list, status tracking & detail view."
+      },
+      {
+        "label": "Customers",
+        "desc": "Customer directory with profiles and order history."
+      },
+      {
+        "label": "Products",
+        "desc": "Product catalogue with pricing & inventory."
+      },
+      {
+        "label": "Analytics",
+        "desc": "Revenue charts, sales trends & conversion metrics."
+      },
+      {
+        "label": "Notifications",
+        "desc": "System alerts, activity feed & notification centre."
+      },
+      {
+        "label": "Auth Pages",
+        "desc": "Login, register & forgot password screens."
+      },
+      {
+        "label": "Settings",
+        "desc": "Profile, preferences & account management."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is Brisk Admin free to use commercially?",
+        "a": "Yes. Brisk Admin is released under the MIT License. Use it in client work, commercial SaaS products, or any internal tool — no attribution needed."
+      },
+      {
+        "q": "Does Brisk Admin use TypeScript?",
+        "a": "No. Brisk Admin is built with plain JavaScript and CSS Modules. This keeps the setup light and the learning curve low — no tsconfig, no type errors to chase before you can start building."
+      },
+      {
+        "q": "How is Brisk Admin different from Alpine Admin React?",
+        "a": "Alpine Admin is an HR-focused template with 30+ pages and TypeScript. Brisk Admin is a CRM/e-commerce template with 8 focused pages and plain JavaScript. Choose Alpine for deep HR data; choose Brisk for faster iteration on business UIs."
+      },
+      {
+        "q": "Can I add TypeScript to Brisk Admin?",
+        "a": "Yes. Run `npm install -D typescript @types/react @types/react-dom`, add a tsconfig.json, and rename .jsx to .tsx. You can migrate incrementally — TypeScript is fully compatible with the existing Vite setup."
+      }
+    ],
+    "seo": {
+      "title": "Brisk Admin — Free CRM Dashboard Template | CodesPanda",
+      "description": "Brisk Admin is a free CRM admin dashboard template — clean layouts with shadcn/ui components, enterprise UI polish, fully responsive. React, Vite & Tailwind CSS.",
+      "keywords": "shadcn ui dashboard template, free react admin template, react crm dashboard, shadcn admin panel, react dashboard template, vite admin template",
+      "ogDescription": "Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive.",
+      "image": "/images/brisk/dashboard.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "Brisk Admin dashboard — free shadcn/ui React CRM template",
+      "schemaDescription": "Brisk Admin is a free shadcn/ui React dashboard template for CRMs and business management apps. Clean layouts, enterprise UI polish, fully responsive.",
+      "schemaName": "Brisk Admin",
+      "schemaCategory": "Software > Templates > Admin Dashboard",
+      "offerUrl": true
+    },
+    "share": {
+      "image": "/images/brisk/dashboard.png"
+    }
+  },
+  "cornerstone": {
+    "slug": "cornerstone",
+    "githubUrl": "https://github.com/codespanda/cornerstone",
+    "updated": "July 2025",
+    "screens": [
+      {
+        "src": "/images/cornerstone-dashboard-2.webp",
+        "label": "Main Dashboard"
+      },
+      {
+        "src": "/images/cornerstone-properties.webp",
+        "label": "Properties"
+      },
+      {
+        "src": "/images/cornerstone-tenants.webp",
+        "label": "Tenants"
+      },
+      {
+        "src": "/images/cornerstone-payments.webp",
+        "label": "Payments"
+      },
+      {
+        "src": "/images/cornerstone-maintenance.webp",
+        "label": "Maintenance"
+      },
+      {
+        "src": "/images/cornerstone-analytics.webp",
+        "label": "Analytics"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Dashboard",
+        "desc": "Revenue, occupancy, payments and maintenance at a glance."
+      },
+      {
+        "label": "Properties",
+        "desc": "Full property directory with units, occupancy and value."
+      },
+      {
+        "label": "Tenants",
+        "desc": "Tenant profiles, lease status and contact details."
+      },
+      {
+        "label": "Leases",
+        "desc": "Lease agreements, renewals and expiry tracking."
+      },
+      {
+        "label": "Payments",
+        "desc": "Rent collection, receipts, overdue and refund tracking."
+      },
+      {
+        "label": "Maintenance",
+        "desc": "Maintenance requests, priority queue and status workflow."
+      },
+      {
+        "label": "Invoices",
+        "desc": "Invoice generation, due dates and payment reconciliation."
+      },
+      {
+        "label": "Analytics",
+        "desc": "Revenue trends, occupancy charts and property insights."
+      },
+      {
+        "label": "Reports",
+        "desc": "Exportable income, occupancy and maintenance reports."
+      },
+      {
+        "label": "Messages",
+        "desc": "In-app messaging between landlord and tenants."
+      },
+      {
+        "label": "Announcements",
+        "desc": "Broadcast notices to all or selected tenants."
+      },
+      {
+        "label": "Settings",
+        "desc": "Company profile, user roles and app preferences."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use Cornerstone in commercial projects?",
+        "a": "Yes. Cornerstone is released under the MIT License. Use it in client work, SaaS products, white-label builds, and commercial applications with no attribution required."
+      },
+      {
+        "q": "Does it include authentication?",
+        "a": "Cornerstone ships with fully designed login, signup, forgot-password, and onboarding screens. The UI is complete — wiring up a real auth provider (Supabase, Firebase, Clerk, Auth.js) takes minutes."
+      },
+      {
+        "q": "Can I use it without TypeScript?",
+        "a": "The template is TypeScript-first. You can rename files to .jsx and strip type annotations, but you'll lose autocomplete and refactoring safety. Most teams find the types pay for themselves quickly."
+      },
+      {
+        "q": "How is Cornerstone different from Alpine Admin React?",
+        "a": "Alpine Admin React is purpose-built for HR management (employees, payroll, attendance, leave). Cornerstone targets general SaaS and business products — customers, orders, billing, analytics, and support. Pick the one closest to your domain."
+      }
+    ],
+    "seo": {
+      "title": "Cornerstone — SaaS Admin Dashboard Template | CodesPanda",
+      "description": "Cornerstone is a free SaaS admin dashboard template — 30+ pages for customers, orders, billing & analytics. Built with React, Vite, Tailwind CSS & TypeScript.",
+      "keywords": "react saas dashboard template, free react admin template, saas admin dashboard, tailwind saas template, shadcn ui dashboard, vite react dashboard",
+      "ogDescription": "Free React SaaS dashboard with 30+ pages for customers, orders, billing, analytics and support. Vite, Tailwind CSS, shadcn/ui, TypeScript.",
+      "twitterDescription": "Cornerstone is a free React SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support.",
+      "image": "/images/cornerstone-dashboard-2.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "Cornerstone SaaS dashboard — free React admin template",
+      "schemaDescription": "Cornerstone is a free SaaS dashboard template with 30+ pages for customers, orders, billing, analytics and support. Built with React, Vite, Tailwind CSS, shadcn/ui and TypeScript.",
+      "schemaName": "Cornerstone",
+      "schemaCategory": "Software > Templates > Admin Dashboard",
+      "offerUrl": true
+    },
+    "share": {
+      "image": "/images/cornerstone-dashboard-2.png"
+    }
+  },
+  "portfolio": {
+    "slug": "portfolio-template",
+    "aliases": [
+      "portfolio"
+    ],
+    "githubUrl": "https://github.com/codespanda/portfolio",
+    "updated": "July 2025",
+    "screens": [
+      {
+        "src": "/images/portfolio/portfolio.webp",
+        "label": "Hero Section"
+      },
+      {
+        "src": "/images/portfolio/about.webp",
+        "label": "About Me"
+      },
+      {
+        "src": "/images/portfolio/projects.webp",
+        "label": "Projects Showcase"
+      },
+      {
+        "src": "/images/portfolio/skills.webp",
+        "label": "Skills & Tech Stack"
+      },
+      {
+        "src": "/images/portfolio/contact.webp",
+        "label": "Contact Form"
+      },
+      {
+        "src": "/images/portfolio/footer.webp",
+        "label": "Footer"
+      }
+    ],
+    "inside": [
+      {
+        "label": "Hero",
+        "desc": "Animated greeting, tagline, and call-to-action buttons with a profile image."
+      },
+      {
+        "label": "About",
+        "desc": "Personal bio, experience timeline, and a downloadable resume link."
+      },
+      {
+        "label": "Projects",
+        "desc": "Project cards with tech tags, live demo, and GitHub links."
+      },
+      {
+        "label": "Skills",
+        "desc": "Tech stack grid showcasing languages, frameworks, and tools."
+      },
+      {
+        "label": "Contact",
+        "desc": "Functional contact form with validation and social media links."
+      },
+      {
+        "label": "Footer",
+        "desc": "Clean footer with social links and copyright info."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Can I use this template for client work or commercial sites?",
+        "a": "Yes. The MIT License covers commercial use. Build your own portfolio, a client's personal site, or a freelancer's landing page — no restrictions."
+      },
+      {
+        "q": "Do I need to know React to customise it?",
+        "a": "Basic React familiarity helps for structural changes, but all personalizable content — your name, projects, skills, and social links — lives in a single file: src/data/portfolio.js. If you can edit a JavaScript object, you can make it your own."
+      },
+      {
+        "q": "How do I deploy it?",
+        "a": "Run `npm run build` to produce a static dist/ folder, then upload it to GitHub Pages, Vercel, or Netlify. A GitHub Actions workflow for automated Pages deployment is included in the repo."
+      },
+      {
+        "q": "Can I add more sections?",
+        "a": "Yes. Each section is a standalone React component in src/components/. Add a new component, import it in App.jsx, and add your content to portfolio.js. The scroll-reveal animations will pick it up automatically."
+      }
+    ],
+    "seo": {
+      "title": "Portfolio Template — Free React Portfolio | CodesPanda",
+      "description": "Portfolio Template is a free React developer portfolio built with Vite & Tailwind CSS. Showcase your work, experience & projects — fully customizable.",
+      "keywords": "free react portfolio template, react portfolio website, vite portfolio template, tailwind css portfolio, react developer portfolio, free portfolio template",
+      "ogDescription": "A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize.",
+      "image": "/images/portfolio/portfolio.webp",
+      "imageWidth": 1440,
+      "imageHeight": 900,
+      "imageAlt": "React portfolio template hero section — free developer portfolio",
+      "schemaDescription": "A clean, fast-loading React portfolio template built with Vite and Tailwind CSS. Showcase your work and experience — free to download and customize.",
+      "schemaName": "Portfolio Template",
+      "schemaCategory": "Software > Templates > Portfolio",
+      "offerUrl": true
+    },
+    "share": {
+      "image": "/images/portfolio/portfolio.jpg"
+    }
+  }
+}

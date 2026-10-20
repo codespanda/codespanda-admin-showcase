@@ -19,34 +19,7 @@ export const INDUSTRIES = [
 ] as const;
 export type Industry = (typeof INDUSTRIES)[number];
 
-interface TemplateMeta {
-  /** Pastel panel behind the card screenshot. */
-  tint: string;
-  industry?: Industry;
-}
-
-const META: Record<string, TemplateMeta> = {
-  schulflow: { tint: "#FFF3D1", industry: "Education" },
-  lassiwala: { tint: "#F6EFDF", industry: "Food & dining" },
-  fincore: { tint: "#E3EBF8", industry: "Finance" },
-  "carewell-clinic": { tint: "#DDF2EF", industry: "Healthcare" },
-  "kundeep-kitchen": { tint: "#F3ECDD", industry: "Food & dining" },
-  shopperscrown: { tint: "#FDEBD8", industry: "E-commerce & retail" },
-  interio: { tint: "#EFE7DC" },
-  school: { tint: "#E3EEFB", industry: "Education" },
-  "ca-firm": { tint: "#E4F1EC", industry: "Finance" },
-  finovo: { tint: "#E2F3EC", industry: "Finance" },
-  "hamara-bharat": { tint: "#FCE9E4", industry: "Travel" },
-  "eva-autocare": { tint: "#E6ECF5", industry: "Automotive" },
-  "deepcity-care-hospital": { tint: "#E0F2F4", industry: "Healthcare" },
-  "flowers-pos": { tint: "#FBE7EF", industry: "E-commerce & retail" },
-  "alpine-admin-react": { tint: "#E3EDF7", industry: "SaaS" },
-  "brisk-admin": { tint: "#FFF1D6", industry: "SaaS" },
-  cornerstone: { tint: "#ECEAF6", industry: "SaaS" },
-  portfolio: { tint: "#ECE9F7" },
-};
-
-export interface SiteTemplate extends Template {
+export interface SiteTemplate extends Omit<Template, "industry"> {
   kind: TemplateKind;
   kindLabel: "Web page" | "Admin panel";
   /** Category written the way the cards show it: "Finance · Accounting Admin". */
@@ -64,14 +37,13 @@ function kindOf(t: Template): TemplateKind {
 
 export const SITE_TEMPLATES: SiteTemplate[] = TEMPLATES.map((t) => {
   const kind = kindOf(t);
-  const meta = META[t.id] ?? { tint: "#EDF1F5" };
   return {
     ...t,
     kind,
     kindLabel: kind === "admin" ? "Admin panel" : "Web page",
     shortCategory: t.category.replace(/\s*\/\s*/g, " · "),
-    tint: meta.tint,
-    industry: meta.industry,
+    tint: t.tint ?? "#EDF1F5",
+    industry: INDUSTRIES.find((i) => i === t.industry),
     isNew: t.badge === "New",
     href: t.detailsUrl ?? t.liveUrl,
     hasTypeScript: t.techStack.some((s) => /typescript/i.test(s)),

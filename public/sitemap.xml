@@ -37,19 +37,19 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://codespanda.com/templates/shopperscrown</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://codespanda.com/templates/lassiwala</loc>
+    <loc>https://codespanda.com/templates/finovo</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://codespanda.com/templates/schulflow</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://codespanda.com/templates/lassiwala</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -73,6 +73,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://codespanda.com/templates/shopperscrown</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://codespanda.com/templates/interio</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
@@ -86,12 +92,6 @@
   </url>
   <url>
     <loc>https://codespanda.com/templates/ca-firm</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://codespanda.com/templates/finovo</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -115,13 +115,13 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://codespanda.com/templates/cornerstone</loc>
+    <loc>https://codespanda.com/templates/flowers</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://codespanda.com/templates/flowers</loc>
+    <loc>https://codespanda.com/templates/alpine-admin-react</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -133,7 +133,7 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://codespanda.com/templates/alpine-admin-react</loc>
+    <loc>https://codespanda.com/templates/cornerstone</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -602,6 +602,12 @@
   </url>
   <url>
     <loc>https://codespanda.com/portfolio/rsvp-event-signin</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://codespanda.com/portfolio/fincore-accounting-modern-accounting</loc>
     <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

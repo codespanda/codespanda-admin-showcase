@@ -10,9 +10,9 @@ export interface WebpImage {
   bytes: number;
 }
 
-async function toWebp(canvas: HTMLCanvasElement, quality: number): Promise<WebpImage> {
+async function toWebp(canvas: HTMLCanvasElement, quality: number, type = "image/webp"): Promise<WebpImage> {
   const blob = await new Promise<Blob>((resolve, reject) =>
-    canvas.toBlob((b) => (b ? resolve(b) : reject(new Error("This browser can't encode WebP."))), "image/webp", quality)
+    canvas.toBlob((b) => (b ? resolve(b) : reject(new Error(`This browser can't encode ${type}.`))), type, quality)
   );
   const buffer = new Uint8Array(await blob.arrayBuffer());
   let binary = "";
@@ -50,6 +50,17 @@ export async function topCrop(file: File, width: number, height: number, quality
   const sh = sw / ratio;
   const sx = (bitmap.width - sw) / 2;
   const image = await toWebp(draw(bitmap, sx, 0, sw, sh, width, height), quality);
+  bitmap.close();
+  return image;
+}
+
+/** A 1200×630 JPEG link preview cropped from the top of a screenshot (WhatsApp ignores WebP). */
+export async function shareImageJpeg(file: File): Promise<WebpImage> {
+  const bitmap = await createImageBitmap(file);
+  const ratio = 1200 / 630;
+  const sw = Math.min(bitmap.width, bitmap.height * ratio);
+  const sh = sw / ratio;
+  const image = await toWebp(draw(bitmap, (bitmap.width - sw) / 2, 0, sw, sh, 1200, 630), 0.85, "image/jpeg");
   bitmap.close();
   return image;
 }
