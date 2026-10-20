@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
-import { ArrowLeft, CalendarClock, CheckCircle2, ExternalLink, ImagePlus, Loader2, LogOut, Pencil, Plus, Send, Trash2, TriangleAlert } from "lucide-react";
+import { ArrowLeft, CalendarClock, CheckCircle2, ChevronLeft, ChevronRight, ExternalLink, ImagePlus, Loader2, LogOut, Pencil, Plus, Send, Trash2, TriangleAlert } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { RichTextEditor } from "@/components/studio/RichTextEditor";
@@ -1108,6 +1108,52 @@ function TemplateForm({ token, onSaved, editing, onDone }: { token: string; onSa
   );
 }
 
+/** Shows one page of a list at a time, with numbered pages underneath. */
+const PAGE_SIZE = 10;
+function Paged({ rows, label }: { rows: ReactNode[]; label: string }) {
+  const [page, setPage] = useState(0);
+  const pages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  // Stay on a real page when the list shrinks (e.g. after a delete).
+  const current = Math.min(page, pages - 1);
+  const go = (n: number) => {
+    setPage(n);
+    document.getElementById(`list-${label}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const from = current * PAGE_SIZE;
+  const btn = "flex h-9 min-w-9 items-center justify-center rounded-lg px-2.5 text-sm font-semibold transition-colors disabled:opacity-40";
+  return (
+    <div id={`list-${label}`} className="flex scroll-mt-6 flex-col gap-3">
+      <ul>{rows.slice(from, from + PAGE_SIZE)}</ul>
+      {pages > 1 && (
+        <nav aria-label={`${label} pages`} className="flex flex-wrap items-center justify-between gap-3 border-t border-border pt-3">
+          <span className="text-[13px] text-muted-foreground">
+            {from + 1}–{Math.min(from + PAGE_SIZE, rows.length)} of {rows.length}
+          </span>
+          <div className="flex items-center gap-1">
+            <button type="button" onClick={() => go(current - 1)} disabled={current === 0} className={cn(btn, "hover:bg-secondary")} aria-label="Previous page">
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            {Array.from({ length: pages }, (_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => go(i)}
+                aria-current={i === current ? "page" : undefined}
+                className={cn(btn, i === current ? "bg-foreground text-background" : "hover:bg-secondary")}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button type="button" onClick={() => go(current + 1)} disabled={current === pages - 1} className={cn(btn, "hover:bg-secondary")} aria-label="Next page">
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </nav>
+      )}
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------------ */
 /* Drafts, scheduled and live items, one kind at a time                */
 /* ------------------------------------------------------------------ */
@@ -1431,12 +1477,12 @@ function Library({ token, kind, onSaved, onEdit }: { token: string; kind: Kind; 
         <>
           <section className="flex flex-col gap-3">
             <h3 className="text-lg font-bold">Drafts ({draftRows.length})</h3>
-            {draftRows.length === 0 ? <p className="text-sm text-muted-foreground">No drafts. Choose “Save as draft” when adding a {noun} to keep one here.</p> : <ul>{draftRows}</ul>}
+            {draftRows.length === 0 ? <p className="text-sm text-muted-foreground">No drafts. Choose “Save as draft” when adding a {noun} to keep one here.</p> : <Paged rows={draftRows} label="drafts" />}
           </section>
           <section className="flex flex-col gap-3 border-t border-border pt-6">
             <h3 className="text-lg font-bold">Published &amp; scheduled ({liveRows.length})</h3>
             {kind === "shot" && <p className="text-[14px] text-muted-foreground">Shots added from the studio. Shots written into the code earlier aren't listed here.</p>}
-            {liveRows.length === 0 ? <p className="text-sm text-muted-foreground">Nothing yet.</p> : <ul>{liveRows}</ul>}
+            {liveRows.length === 0 ? <p className="text-sm text-muted-foreground">Nothing yet.</p> : <Paged rows={liveRows} label="published" />}
           </section>
         </>
       )}
