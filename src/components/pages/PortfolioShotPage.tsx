@@ -9,6 +9,8 @@ import { getShotById, SHOTS, type Shot } from "@/lib/portfolio-data";
 import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 import { seoTitle, shotSeo } from "@/lib/seo";
 import { SHOT_SIZES, imageSize, imageSrcSet } from "@/lib/responsive-image";
+import { Inline, MarkdownContent } from "@/components/site/MarkdownContent";
+import { markdownToPlain, parseMarkdown } from "@/lib/markdown";
 
 const DRIBBBLE_PROFILE = "https://dribbble.com/deepak1605";
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
@@ -19,6 +21,13 @@ function splitDescription(text?: string) {
   const first = blocks[0];
   const isIntro = first && !first.startsWith("•") && !/^\p{Extended_Pictographic}/u.test(first);
   return isIntro ? { intro: first, rest: blocks.slice(1) } : { intro: undefined, rest: blocks };
+}
+
+/** A studio (Markdown) description: its first paragraph is the intro, the rest is rendered as Markdown. */
+function splitMarkdown(text: string) {
+  const [first, ...more] = text.split(/\n{2,}/);
+  const firstBlock = parseMarkdown(first ?? "")[0];
+  return firstBlock?.kind === "p" ? { intro: first.trim(), rest: more.join("\n\n") } : { intro: undefined, rest: text };
 }
 
 /** Renders a line, turning URLs and bare codespanda.com into links. */
@@ -102,13 +111,15 @@ export function PortfolioShotPage() {
   const next = SHOTS[currentIndex + 1];
   const shareImage = shot.fullImgUrl ?? shot.imgUrl;
   const shareImageUrl = shareImage.startsWith("/") ? `https://codespanda.com${shareImage}` : shareImage;
-  const { intro, rest } = splitDescription(shot.description);
+  const markdown = shot.descriptionFormat === "markdown";
+  const { intro, rest } = markdown ? (({ intro, rest }) => ({ intro, rest: rest ? [rest] : [] }))(splitMarkdown(shot.description ?? "")) : splitDescription(shot.description);
+  const introNode = intro && markdown ? <Inline text={intro} /> : intro;
   const images = [shot.fullImgUrl ?? shot.imgUrl, ...(shot.gallery ?? [])];
   const related = relatedShots(shot);
   const seo = shotSeo(shot.id);
   const title = seoTitle(seo.title ?? shot.title);
   const summary = shot.description
-    ? `${shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim().slice(0, 152)}...`
+    ? `${(markdown ? markdownToPlain(shot.description) : shot.description.replace(/\n+/g, " ").replace(/[✨🌐•]/g, "").trim()).slice(0, 152)}...`
     : `${shot.title} — ${shot.category} design by CodesPanda.`;
   const description = seo.description ?? summary;
   // Live products link to the product; design shots link to Dribbble.
@@ -161,7 +172,7 @@ export function PortfolioShotPage() {
                   {shot.title}
                 </h1>
                 <p className="text-base leading-[1.6] text-muted-foreground lg:text-lg">
-                  {intro ?? `${shot.category} design by CodesPanda — ${shot.tags.join(", ")}.`}
+                  {introNode ?? `${shot.category} design by CodesPanda — ${shot.tags.join(", ")}.`}
                 </p>
               </div>
               <div className="flex flex-col gap-2.5 lg:shrink-0 lg:flex-row lg:gap-3">
@@ -209,10 +220,10 @@ export function PortfolioShotPage() {
             <div className="flex min-w-0 flex-1 flex-col gap-4 rounded-[18px] border border-border bg-card p-[22px] lg:gap-5 lg:p-8">
               <h2 className="text-[26px] font-bold tracking-[-0.02em] lg:text-[32px]">About this design</h2>
               {rest.length > 0 ? (
-                <DescriptionBlocks blocks={rest} />
+                markdown ? <MarkdownContent text={rest[0]} variant="compact" /> : <DescriptionBlocks blocks={rest} />
               ) : (
                 <p className="text-[15px] leading-[1.65] text-muted-foreground lg:text-base">
-                  {intro ?? `A ${shot.category.toLowerCase()} concept designed by CodesPanda.`}
+                  {introNode ?? `A ${shot.category.toLowerCase()} concept designed by CodesPanda.`}
                 </p>
               )}
             </div>

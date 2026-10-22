@@ -13,6 +13,8 @@ export interface Shot {
   fullImgUrl?: string;    // full-quality shot image from Dribbble
   gallery?: string[];     // additional full-res images for multi-image shots
   description?: string;   // shot description / case study text
+  /** "markdown" for descriptions written in the studio's editor; older ones use "•" bullet lines. */
+  descriptionFormat?: "markdown";
   views?: number;         // manually-entered view count sourced from the shot's Pinterest pin
 }
 

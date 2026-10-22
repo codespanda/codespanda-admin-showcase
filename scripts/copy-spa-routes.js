@@ -118,12 +118,23 @@ const summary = (text = "") => {
   const t = text.replace(/[✨🌐•]/g, "").replace(/\s+/g, " ").trim();
   return t.length <= 160 ? t : t.slice(0, 157).replace(/\s+\S*$/, "") + "…";
 };
+// Studio descriptions are Markdown: keep the words, drop images, tables and formatting marks.
+const stripMarkdown = (text = "") =>
+  text
+    .split(/\n{2,}/)
+    .filter((b) => !/^!\[|^\|/.test(b.trim()))
+    .map((b) => b.replace(/^\s*(#{1,6}|[-*+]|\d+[.)]|>)\s+/gm, ""))
+    .join(" ")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_`]/g, "");
+
 // Scheduled items (publishAt in the future) are left out until a later build.
 const isDue = (item) => !item.publishAt || Date.parse(item.publishAt) <= Date.now();
 const STUDIO_SHOTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/portfolio.json"), "utf8")).filter(isDue);
 const STUDIO_POSTS = JSON.parse(readFileSync(resolve(__dirname, "../src/content/blog.json"), "utf8")).filter(isDue);
 for (const s of STUDIO_SHOTS) {
-  SHOTS.push({ id: s.id, title: s.title, ogImage: `${BASE}${s.imgUrl}`, desc: summary(s.description) || s.title });
+  const text = s.descriptionFormat === "markdown" ? stripMarkdown(s.description) : s.description;
+  SHOTS.push({ id: s.id, title: s.title, ogImage: `${BASE}${s.imgUrl}`, desc: summary(text) || s.title });
 }
 for (const p of STUDIO_POSTS) {
   BLOG_POSTS.push({ slug: p.slug, title: p.title, desc: summary(p.excerpt), ...(p.coverImage ? { ogImage: `${BASE}${p.coverImage}` } : {}) });

@@ -280,3 +280,28 @@ export function docToMarkdown(doc: DocNode): string {
     .filter(Boolean)
     .join("\n\n");
 }
+
+/** The words of some Markdown as one line of plain text, for meta descriptions. */
+export function markdownToPlain(markdown: string): string {
+  const words = (tokens: InlineToken[]): string => tokens.map((t) => (t.type === "text" || t.type === "code" ? t.text : words(t.children))).join("");
+  const plain = (text: string) => words(tokenizeInline(text));
+  return parseMarkdown(markdown)
+    .map((b) => {
+      switch (b.kind) {
+        case "ul":
+        case "ol":
+          return b.items.map(plain).join(" ");
+        case "table":
+          return "";
+        case "img":
+        case "hr":
+          return "";
+        default:
+          return plain(b.text);
+      }
+    })
+    .filter(Boolean)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim();
+}

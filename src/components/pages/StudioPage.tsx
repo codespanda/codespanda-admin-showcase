@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, CalendarClock, CheckCircle2, ChevronLeft, ChevronRight, ExternalLink, ImagePlus, Loader2, LogOut, Pencil, Plus, Send, Trash2, TriangleAlert } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
-import { RichTextEditor } from "@/components/studio/RichTextEditor";
 import { PostEditor } from "@/components/studio/PostEditor";
 import { SHOTS, type Shot } from "@/lib/portfolio-data";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
@@ -98,6 +97,28 @@ async function readDrafts(token: string): Promise<Drafts> {
 /** Delete entries for images an item no longer uses. */
 const dropImages = (paths: (string | undefined)[]): CommitFile[] =>
   paths.filter((u): u is string => !!u && u.startsWith("/images/")).map((u) => ({ path: `public${u}`, content: null, encoding: "base64" as const }));
+/**
+ * Images placed in the editor are held as WebP data URLs until saving. This commits each one under
+ * `dir`, points the Markdown at it, and removes images from `dir` that the previous version used but this one doesn't.
+ */
+function uploadInline(markdown: string, previous: string | undefined, dir: string, name: string) {
+  let body = markdown.trim();
+  const files: CommitFile[] = [];
+  const stamp = Date.now().toString(36);
+  const embedded = [...new Set([...body.matchAll(/\]\((data:image\/webp;base64,[A-Za-z0-9+/=]+)\)/g)].map((m) => m[1]))];
+  for (const [i, data] of embedded.entries()) {
+    const path = `${dir}/${name}-${stamp}-${i + 1}.webp`;
+    files.push({ path: `public${path}`, content: data.slice(data.indexOf(",") + 1), encoding: "base64" });
+    body = body.split(`](${data})`).join(`](${path})`);
+  }
+  if (/\]\(data:/.test(body)) throw new Error("An image in the text couldn't be prepared. Remove it and insert it again.");
+  const used = [...(previous ?? "").matchAll(/\]\((\/images\/[^)\s]+)\)/g)].map((m) => m[1]).filter((u) => u.startsWith(`${dir}/`));
+  files.push(...dropImages(used.filter((u) => !body.includes(`](${u})`))));
+  return { body, files };
+}
+/** Older portfolio descriptions use "•" bullet lines and bare links; the editor works in Markdown. */
+const legacyToMarkdown = (text: string) =>
+  text.replace(/^[ \t]*•\s*/gm, "- ").replace(/(^|\s)(https?:\/\/[^\s)]+[^\s).,!?])/g, (_, space: string, url: string) => `${space}[${url}](${url})`);
 const errorText = (err: unknown) => (err instanceof Error ? err.message : String(err));
 
 /* ------------------------------------------------------------------ */
@@ -337,7 +358,7 @@ function ShotForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
   const [tagText, setTagText] = useState(draft?.tags.join(", ") ?? "");
   const [dribbbleUrl, setDribbbleUrl] = useState(draft?.dribbbleUrl ?? "");
   const [liveUrl, setLiveUrl] = useState(draft?.liveUrl ?? "");
-  const [description, setDescription] = useState(draft?.description ?? "");
+  const [description, setDescription] = useState(draft?.descriptionFormat === "markdown" ? (draft.description ?? "") : legacyToMarkdown(draft?.description ?? ""));
   const [main, setMain] = useState<File[]>([]);
   const [extra, setExtra] = useState<File[]>([]);
   const [mode, setMode] = useState<Mode>(startMode(editing));
@@ -392,6 +413,8 @@ function ShotForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
       if (live.some((s) => s.id === slug && !(published && s.id === draft?.id))) throw new Error(`A shot with the address "${slug}" is already published.`);
       if (drafts.shots.some((s) => s.id === slug && !(!published && s.id === draft?.id))) throw new Error(`A draft with the address "${slug}" already exists.`);
 
+      const { body: descriptionBody, files: inlineFiles } = uploadInline(description, draft?.description, "/images/portfolio/shots/inline", slug);
+      files.push(...inlineFiles);
       const shot: Shot = {
         id: slug,
         title: title.trim(),
@@ -402,7 +425,8 @@ function ShotForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
         imgUrl,
         ...(fullImgUrl ? { fullImgUrl } : {}),
         ...(gallery?.length ? { gallery } : {}),
-        description: description.trim(),
+        description: descriptionBody,
+        descriptionFormat: "markdown",
         ...(mode === "schedule" ? { publishAt: new Date(at).toISOString() } : {}),
       };
       const otherDrafts = published ? drafts.shots : drafts.shots.filter((s) => s.id !== draft?.id);
@@ -482,8 +506,8 @@ function ShotForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
       </div>
       <div className="flex flex-col gap-1.5">
         <span className={labelCls}>Description</span>
-        <RichTextEditor label="Description" flavor="shot" value={description} onChange={setDescription} minHeight={200} placeholder="What the design is, who it's for and what's inside…" />
-        <span className="text-[13px] text-muted-foreground">The first paragraph shows under the title. Use Bullets for feature lists.</span>
+        <PostEditor value={description} onChange={setDescription} placeholder="What the design is, who it's for and what's inside…" />
+        <span className="text-[13px] text-muted-foreground">The first paragraph shows under the title; the rest appears under “About this design”.</span>
       </div>
       <div className="grid gap-5 md:grid-cols-2">
         <ImagePick
@@ -553,18 +577,8 @@ function PostForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
         if (coverImage && coverImage !== path) files.push(...dropImages([coverImage]));
         coverImage = path;
       }
-      // Upload images placed in the post (held as WebP data URLs until now), and drop ones it no longer uses.
-      let body = content.trim();
-      const stamp = Date.now().toString(36);
-      const embedded = [...new Set([...body.matchAll(/\]\((data:image\/webp;base64,[A-Za-z0-9+/=]+)\)/g)].map((m) => m[1]))];
-      for (const [i, data] of embedded.entries()) {
-        const path = `/images/blogs/inline/${slug}-${stamp}-${i + 1}.webp`;
-        files.push({ path: `public${path}`, content: data.slice(data.indexOf(",") + 1), encoding: "base64" });
-        body = body.split(`](${data})`).join(`](${path})`);
-      }
-      if (/\]\(data:/.test(body)) throw new Error("An image in the post couldn't be prepared. Remove it and insert it again.");
-      const before = [...(draft?.content ?? "").matchAll(/\]\((\/images\/blogs\/inline\/[^)\s]+)\)/g)].map((m) => m[1]);
-      files.push(...dropImages(before.filter((u) => !body.includes(`](${u})`))));
+      const { body, files: inlineFiles } = uploadInline(content, draft?.content, "/images/blogs/inline", slug);
+      files.push(...inlineFiles);
       setProgress("Reading the current posts…");
       const live = await readJson<BlogPost[]>(token, BLOG_JSON);
       const drafts = await readDrafts(token);
