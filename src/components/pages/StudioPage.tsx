@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { ArrowLeft, CalendarClock, CheckCircle2, ChevronLeft, ChevronRight, ExternalLink, ImagePlus, Loader2, LogOut, Pencil, Plus, Send, Trash2, TriangleAlert } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { RichTextEditor } from "@/components/studio/RichTextEditor";
+import { PostEditor } from "@/components/studio/PostEditor";
 import { SHOTS, type Shot } from "@/lib/portfolio-data";
 import { BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
 import { TEMPLATES, type Template } from "@/lib/data";
@@ -516,9 +517,6 @@ function PostForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
   const [date, setDate] = useState(draft?.date ?? today());
   const [content, setContent] = useState(draft?.content ?? "");
   const [cover, setCover] = useState<File[]>([]);
-  /** Images placed in the post but not saved yet, keyed by their "pending:" src. */
-  const inline = useRef(new Map<string, { file: File; url: string }>());
-  useEffect(() => () => inline.current.forEach((i) => URL.revokeObjectURL(i.url)), []);
   const [mode, setMode] = useState<Mode>(startMode(editing));
   const [at, setAt] = useState(draft?.publishAt && !isLive(draft) ? toLocalInput(draft.publishAt) : tomorrowNine());
   const [busy, setBusy] = useState(false);
@@ -527,7 +525,12 @@ function PostForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
 
   const slug = slugTouched ? slugText : slugify(title);
   const clash = BLOG_POSTS.some((p) => p.slug === slug && p.slug !== draft?.slug);
-  const prose = content.replace(/!\[[^\]]*\]\([^)]*\)/g, "").replace(/[|-]{3,}/g, "").trim();
+  // Count words, not Markdown: drop images, table rules and formatting marks.
+  const prose = content
+    .replace(/!\[[^\]]*\]\([^)]*\)/g, "")
+    .replace(/\]\([^)]*\)/g, "")
+    .replace(/[|#>*_`[\]-]+/g, " ")
+    .trim();
   const words = prose ? prose.split(/\s+/).length : 0;
   const readTime = `${Math.max(1, Math.round(words / 200))} min read`;
   const hasCover = !!cover[0] || !!draft?.coverImage;
@@ -550,19 +553,16 @@ function PostForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
         if (coverImage && coverImage !== path) files.push(...dropImages([coverImage]));
         coverImage = path;
       }
-      // Upload images placed in the post, and drop ones it no longer uses.
+      // Upload images placed in the post (held as WebP data URLs until now), and drop ones it no longer uses.
       let body = content.trim();
       const stamp = Date.now().toString(36);
-      const pending = [...new Set([...body.matchAll(/\]\((pending:[\w-]+)\)/g)].map((m) => m[1]))];
-      for (const [i, key] of pending.entries()) {
-        const item = inline.current.get(key);
-        if (!item) continue;
-        setProgress(`Converting image ${i + 1} of ${pending.length}…`);
-        const image = await convertImage(item.file, 1600);
+      const embedded = [...new Set([...body.matchAll(/\]\((data:image\/webp;base64,[A-Za-z0-9+/=]+)\)/g)].map((m) => m[1]))];
+      for (const [i, data] of embedded.entries()) {
         const path = `/images/blogs/inline/${slug}-${stamp}-${i + 1}.webp`;
-        files.push({ path: `public${path}`, content: image.base64, encoding: "base64" });
-        body = body.split(`](${key})`).join(`](${path})`);
+        files.push({ path: `public${path}`, content: data.slice(data.indexOf(",") + 1), encoding: "base64" });
+        body = body.split(`](${data})`).join(`](${path})`);
       }
+      if (/\]\(data:/.test(body)) throw new Error("An image in the post couldn't be prepared. Remove it and insert it again.");
       const before = [...(draft?.content ?? "").matchAll(/\]\((\/images\/blogs\/inline\/[^)\s]+)\)/g)].map((m) => m[1]);
       files.push(...dropImages(before.filter((u) => !body.includes(`](${u})`))));
       setProgress("Reading the current posts…");
@@ -680,22 +680,9 @@ function PostForm({ token, onSaved, editing, onDone }: { token: string; onSaved:
       />
       <div className="flex flex-col gap-1.5">
         <span className={labelCls}>Post</span>
-        <RichTextEditor
-          label="Post"
-          flavor="post"
-          value={content}
-          onChange={setContent}
-          minHeight={420}
-          placeholder="Start writing. Use Heading for sections, Bullets for lists, and Image or Table to add those."
-          onAddImage={(file) => {
-            const key = `pending:${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
-            inline.current.set(key, { file, url: URL.createObjectURL(file) });
-            return key;
-          }}
-          resolveSrc={(src) => inline.current.get(src)?.url ?? (src.startsWith("/images/") ? `${RAW}${src}` : src)}
-        />
+        <PostEditor value={content} onChange={setContent} placeholder="Start writing. Use the toolbar for headings, lists, links, images and tables." />
         <span className="text-[13px] text-muted-foreground">
-          {words} words · {readTime}. Typing “## ” starts a heading and “- ” a bullet list. In a table, Tab moves to the next cell. Click an image to change its caption.
+          {words} words · {readTime}. Markdown shortcuts work too: “## ” for a heading, “- ” for a bullet, “&gt; ” for a callout, **bold**.
         </span>
       </div>
       <PublishOptions mode={mode} setMode={setMode} at={at} setAt={setAt} published={published} />
