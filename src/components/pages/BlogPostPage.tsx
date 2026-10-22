@@ -11,6 +11,7 @@ import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 import { getBlogPostBySlug, BLOG_POSTS, type BlogPost } from "@/lib/blog-data";
 import { postSeo, seoTitle } from "@/lib/seo";
 import { POST_COVER_SIZES } from "@/lib/responsive-image";
+import { parseImage, parseTable } from "@/lib/post-format";
 
 const RESOURCE_ICONS: Record<string, LucideIcon> = {
   Figma, LayoutGrid, LayoutTemplate, Shapes, Layers, Accessibility, Type, Palette, Lightbulb, Component,
@@ -63,7 +64,7 @@ function ResourceLinksGrid({ links }: { links: NonNullable<BlogPost["resourceLin
   );
 }
 
-/** Lightweight markdown renderer: "## " headings, "- " bullet lists, blank-line paragraphs */
+/** Lightweight markdown renderer: "## " headings, "- " bullet lists, images, tables and blank-line paragraphs */
 export function PostContent({ text }: { text: string }) {
   const blocks = text.split(/\n{2,}/);
   return (
@@ -80,6 +81,45 @@ export function PostContent({ text }: { text: string }) {
             >
               {heading}
             </h2>
+          );
+        }
+        const image = parseImage(trimmed);
+        if (image) {
+          return (
+            <figure key={bi} className="my-2 flex flex-col gap-2.5">
+              <img src={image.src} alt={image.caption} loading="lazy" decoding="async" className="w-full rounded-2xl border border-border bg-secondary" />
+              {image.caption && <figcaption className="text-center text-sm text-muted-foreground">{image.caption}</figcaption>}
+            </figure>
+          );
+        }
+        const table = parseTable(trimmed);
+        if (table) {
+          const [head, ...body] = table;
+          return (
+            <div key={bi} className="my-2 overflow-x-auto rounded-2xl border border-border">
+              <table className="w-full border-collapse text-left text-[15px] leading-[1.55] lg:text-base">
+                <thead className="bg-secondary text-foreground">
+                  <tr>
+                    {head.map((c, ci) => (
+                      <th key={ci} scope="col" className="whitespace-nowrap px-4 py-3 font-semibold">
+                        {c}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {body.map((r, ri) => (
+                    <tr key={ri} className="border-t border-border">
+                      {r.map((c, ci) => (
+                        <td key={ci} className="px-4 py-3 align-top">
+                          {c}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           );
         }
         const lines = trimmed.split("\n").map((l) => l.trim()).filter(Boolean);
