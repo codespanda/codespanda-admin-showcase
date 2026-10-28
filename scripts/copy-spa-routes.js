@@ -175,7 +175,7 @@ const PAGE_META = {
   },
   "/projects": {
     title: "Projects — Our Live Products | CodesPanda",
-    description: "Live products built by CodesPanda: ATS Resume AI, Systema AI, AI Invoice and AccountingPanda — AI tools for resumes, design systems and invoicing.",
+    description: "Live products built by CodesPanda: Pulse, ATS Resume AI, Systema AI, AI Invoice and AccountingPanda: speed tests, resumes, design systems and invoicing.",
     ogImage: `${BASE}/images/products/ats-resume-ai/hero.webp`,
   },
   "/services": {

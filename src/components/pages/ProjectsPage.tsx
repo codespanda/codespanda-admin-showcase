@@ -30,6 +30,32 @@ interface Product {
 /** Live products CodesPanda builds and runs. Copy comes from each product's own site. */
 const PRODUCTS: Product[] = [
   {
+    id: "pulse",
+    name: "Pulse",
+    category: "Web tool · Internet speed test",
+    url: "https://pulse.codespanda.com",
+    logo: "/images/products/pulse/logo.webp",
+    image: "/images/products/pulse/hero.webp",
+    imageAlt: "Pulse speed test: a live gauge and throughput graph measuring latency, download and upload against the nearest Cloudflare server",
+    tagline: "Check your internet speed in seconds.",
+    description:
+      "Pulse tests your connection against the nearest Cloudflare server, measuring latency, download, upload and jitter with a live gauge and graph. No account needed, and your results stay on your device.",
+    features: [
+      "Latency, download, upload and jitter",
+      "Tests against the nearest Cloudflare server",
+      "Live speed gauge and throughput graph",
+      "What your connection can handle at home",
+      "4K streaming, video calls, gaming and backups",
+      "Your provider and test server at a glance",
+      "Recent runs saved on your device",
+      "Light and dark mode",
+    ],
+    plan: "Free, no account: press Start test and get your results in seconds.",
+    cta: "Test my speed",
+    tint: "#E6F0FB",
+    framed: true,
+  },
+  {
     id: "ats-resume-ai",
     name: "ATS Resume AI",
     category: "AI tool · Careers",
@@ -211,16 +237,16 @@ export function ProjectsPage() {
         <title>Projects — Our Live Products | CodesPanda</title>
         <meta
           name="description"
-          content="Live products built by CodesPanda: ATS Resume AI, Systema AI, AI Invoice and AccountingPanda — AI tools for resumes, design systems and invoicing."
+          content="Live products built by CodesPanda: Pulse, ATS Resume AI, Systema AI, AI Invoice and AccountingPanda: speed tests, resumes, design systems and invoicing."
         />
         <link rel="canonical" href="https://codespanda.com/projects" />
         <meta property="og:title" content="Projects — Our Live Products | CodesPanda" />
-        <meta property="og:description" content="Live products built by CodesPanda: ATS Resume AI, Systema AI, AI Invoice and AccountingPanda." />
+        <meta property="og:description" content="Live products built by CodesPanda: Pulse, ATS Resume AI, Systema AI, AI Invoice and AccountingPanda." />
         <meta property="og:url" content="https://codespanda.com/projects" />
         <meta property="og:image" content="https://codespanda.com/images/products/ats-resume-ai/hero.webp" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Projects — Our Live Products | CodesPanda" />
-        <meta name="twitter:description" content="Live products built by CodesPanda: ATS Resume AI, Systema AI, AI Invoice and AccountingPanda." />
+        <meta name="twitter:description" content="Live products built by CodesPanda: Pulse, ATS Resume AI, Systema AI, AI Invoice and AccountingPanda." />
         <meta name="twitter:image" content="https://codespanda.com/images/products/ats-resume-ai/hero.webp" />
       </Helmet>
 
