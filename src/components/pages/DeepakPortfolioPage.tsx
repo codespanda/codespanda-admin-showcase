@@ -13,12 +13,13 @@ import { StartProjectDialog } from "@/components/site/StartProjectDialog";
 const LINKEDIN_URL = "https://www.linkedin.com/company/codespanda";
 const PAGE_SIZE = 12;
 
-type Filter = "all" | "mobile" | "web" | "dashboard";
-const TABS: { id: Filter; label: string }[] = [
+type Filter = "all" | "mobile" | "web" | "dashboard" | "social";
+const TABS: { id: Filter; label: string; short?: string }[] = [
   { id: "all", label: "All" },
-  { id: "mobile", label: "Mobile apps" },
-  { id: "web", label: "Web apps" },
+  { id: "mobile", label: "Mobile apps", short: "Mobile" },
+  { id: "web", label: "Web apps", short: "Web" },
   { id: "dashboard", label: "Dashboards" },
+  { id: "social", label: "Social media", short: "Social" },
 ];
 
 const SERVICES = [
@@ -170,7 +171,7 @@ export function DeepakPortfolioPage() {
                 <span className="hidden text-sm font-bold uppercase tracking-[0.08em] text-link lg:block">Selected work</span>
                 <h2 className="text-[28px] font-bold tracking-[-0.025em] lg:text-[44px] lg:tracking-[-0.03em]">Recent shots</h2>
               </div>
-              <TypeTabs tabs={TABS} value={filter} onChange={pickFilter} label="Project type" className="grid grid-cols-2 lg:flex" />
+              <TypeTabs tabs={TABS} value={filter} onChange={pickFilter} label="Project type" className="grid grid-cols-3 lg:flex" />
             </div>
             <div className="grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-7">
               {shots.map((s, i) => (

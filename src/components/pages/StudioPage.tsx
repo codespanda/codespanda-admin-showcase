@@ -21,7 +21,7 @@ const TEMPLATES_JSON = "src/content/templates.json";
 const TEMPLATE_PAGES_JSON = "src/content/template-pages.json";
 /** Drafts live in their own file, which the website never imports. */
 const DRAFTS_JSON = "src/content/drafts.json";
-const SHOT_CATEGORIES = ["Web App", "Web Dashboard", "Mobile App"] as const;
+const SHOT_CATEGORIES = ["Web App", "Web Dashboard", "Mobile App", "Social Media"] as const;
 const BLOG_CATEGORIES = [...new Set(BLOG_POSTS.map((p) => p.category))].sort();
 const TOKEN_URL = `https://github.com/settings/personal-access-tokens/new`;
 const RAW = `https://raw.githubusercontent.com/${REPO.owner}/${REPO.name}/${REPO.branch}/public`;

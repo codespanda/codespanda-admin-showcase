@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import type { Shot } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
-export type ShotGroup = "mobile" | "web" | "dashboard";
+export type ShotGroup = "mobile" | "web" | "dashboard" | "social";
 
-/** Groups the portfolio filters by: Mobile App, Web Dashboard, everything else is a web app. */
+/** Groups the portfolio filters by: Mobile App, Web Dashboard, Social Media, everything else is a web app. */
 export function groupOf(shot: Shot): ShotGroup {
   if (shot.category === "Mobile App") return "mobile";
   if (shot.category === "Web Dashboard") return "dashboard";
+  if (shot.category === "Social Media") return "social";
   return "web";
 }
 

@@ -1,5 +1,35 @@
 [
   {
+    "id": "modern-designs-real-results",
+    "title": "Modern Designs. Real Results. — Portfolio Instagram Story",
+    "category": "Social Media",
+    "tags": [
+      "Social Media Design",
+      "Instagram Story",
+      "Portfolio Promotion",
+      "Brand Design"
+    ],
+    "imgUrl": "/images/portfolio/shots/modern-designs-real-results.webp",
+    "fullImgUrl": "/images/portfolio/shots/modern-designs-real-results-full.webp",
+    "description": "A tall Instagram story that invites people into the CodesPanda portfolio, pairing a confident headline with real projects on a laptop and phone and friendly handwritten notes.\n\nIt opens with **Modern Designs. Real Results.**, runs through five services, and ends on a dark band with featured projects and a clear call to view the portfolio.\n\n## What it shows\n\n- Web design & development, UI/UX design, branding & graphics, custom solutions and mobile apps\n- The FinCore Accounting website on a laptop and the FitFlow app on a phone\n- Featured projects: CareWell Clinic, SchulFlow and Kundeep Kitchen\n- Handwritten notes: “Ideas to Digital Reality”, “Take a look” and “Check out our work”\n\nWant story and post designs for your own brand? [Start a project with CodesPanda](https://codespanda.com/).",
+    "descriptionFormat": "markdown"
+  },
+  {
+    "id": "designs-that-build-brands",
+    "title": "Designs That Build Brands — Portfolio Social Media Post",
+    "category": "Social Media",
+    "tags": [
+      "Social Media Design",
+      "Instagram Post",
+      "Portfolio Promotion",
+      "Brand Design"
+    ],
+    "imgUrl": "/images/portfolio/shots/designs-that-build-brands.webp",
+    "fullImgUrl": "/images/portfolio/shots/designs-that-build-brands-full.webp",
+    "description": "A square social media post that introduces the CodesPanda portfolio: a bold headline, the services we offer and real projects shown on a laptop and phone.\n\nThe layout leads with **Designs That Build Brands**, lists our four services, and closes on a dark band with featured projects and the tech stack we build with.\n\n## What it shows\n\n- Web design & development, UI/UX design, branding & graphics and custom solutions\n- The FinCore Accounting website on a laptop and the FitFlow app on a phone\n- Featured projects: CareWell Clinic, SchulFlow and Kundeep Kitchen\n- React, Next.js, Figma, Tailwind CSS and Node.js\n\nLooking for social media designs that match your brand? [Start a project with CodesPanda](https://codespanda.com/).",
+    "descriptionFormat": "markdown"
+  },
+  {
     "id": "fincore-accounting-modern-accounting",
     "title": "FinCore Accounting - Modern Accounting & Financial Services Website Design",
     "category": "Web App",

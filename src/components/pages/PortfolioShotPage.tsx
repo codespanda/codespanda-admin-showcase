@@ -92,12 +92,12 @@ function DescriptionBlocks({ blocks }: { blocks: string[] }) {
   );
 }
 
-/** Up to three other shots from the same group, starting after this one. */
+/** Three other shots, starting after this one: from the same group first, topped up from the rest. */
 function relatedShots(shot: Shot) {
   const group = groupOf(shot);
   const i = SHOTS.findIndex((s) => s.id === shot.id);
   const ordered = [...SHOTS.slice(i + 1), ...SHOTS.slice(0, i)];
-  return ordered.filter((s) => groupOf(s) === group).slice(0, 3);
+  return [...ordered.filter((s) => groupOf(s) === group), ...ordered.filter((s) => groupOf(s) !== group)].slice(0, 3);
 }
 
 export function PortfolioShotPage() {
@@ -289,7 +289,7 @@ export function PortfolioShotPage() {
               <div className="flex flex-col gap-2.5 lg:gap-3">
                 <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-link lg:text-sm">More shots</span>
                 <h2 className="text-[28px] font-bold tracking-[-0.025em] lg:text-[44px] lg:tracking-[-0.03em]">
-                  More {groupOf(shot) === "mobile" ? "mobile apps" : groupOf(shot) === "dashboard" ? "dashboards" : "web apps"}
+                  {related.every((s) => groupOf(s) === groupOf(shot)) ? `More ${{ mobile: "mobile apps", dashboard: "dashboards", social: "social media designs", web: "web apps" }[groupOf(shot)]}` : "More shots"}
                 </h2>
               </div>
               <Link to="/portfolio" className="text-base font-semibold text-link hover:text-blue-ink">
