@@ -1,5 +1,20 @@
 [
   {
+    "id": "ideas-to-real-products",
+    "title": "Ideas to Real Products — Portfolio Instagram Story",
+    "category": "Social Media",
+    "tags": [
+      "Social Media Design",
+      "Instagram Story",
+      "Personal Branding",
+      "Portfolio Promotion"
+    ],
+    "imgUrl": "/images/portfolio/shots/ideas-to-real-products.webp",
+    "fullImgUrl": "/images/portfolio/shots/ideas-to-real-products-full.webp",
+    "description": "A friendly, personal Instagram story for the CodesPanda portfolio, with the coding panda front and centre and handwritten notes that make it feel approachable.\n\nIt leads with **Ideas to Real Products**, lists the core services with checkmarks, and moves into a services card, featured projects and a bold call to view the portfolio.\n\n## What it shows\n\n- UI/UX design, web development, branding & graphics, custom solutions and mobile apps\n- Featured projects: CareWell Clinic, SchulFlow and Kundeep Kitchen\n- Handwritten notes: “Creative Tech Solutions”, “Let’s Build Something Great!”, “Real Projects. Real Impact.” and “Built with Passion”\n- The CodesPanda panda as the hero, with a peeking panda at the bottom\n\nWant a story that puts your brand’s personality first? [Start a project with CodesPanda](https://codespanda.com/).",
+    "descriptionFormat": "markdown"
+  },
+  {
     "id": "modern-designs-real-results",
     "title": "Modern Designs. Real Results. — Portfolio Instagram Story",
     "category": "Social Media",
