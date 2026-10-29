@@ -310,7 +310,7 @@ export function PortfolioShotPage() {
                     className="flex items-center gap-3 rounded-2xl border border-border bg-card p-3.5 text-foreground hover:bg-secondary"
                   >
                     <ArrowLeft className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden />
-                    <img src={prev.imgUrl} alt="" loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
+                    <img src={prev.imgUrl} alt={`${prev.title} preview`} loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
                     <span className="flex min-w-0 flex-col">
                       <span className="text-xs font-semibold text-muted-foreground">Previous</span>
                       <span className="truncate text-sm font-bold">{prev.title}</span>
@@ -325,7 +325,7 @@ export function PortfolioShotPage() {
                     className="flex items-center gap-3 rounded-2xl border border-border bg-card p-3.5 text-foreground hover:bg-secondary sm:flex-row-reverse sm:text-right"
                   >
                     <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground" aria-hidden />
-                    <img src={next.imgUrl} alt="" loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
+                    <img src={next.imgUrl} alt={`${next.title} preview`} loading="lazy" className="h-12 w-16 shrink-0 rounded-lg object-cover" />
                     <span className="flex min-w-0 flex-col">
                       <span className="text-xs font-semibold text-muted-foreground">Next</span>
                       <span className="truncate text-sm font-bold">{next.title}</span>

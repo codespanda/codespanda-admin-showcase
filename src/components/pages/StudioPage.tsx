@@ -734,7 +734,7 @@ function ScreensEditor({ rows, setRows }: { rows: ScreenRow[]; setRows: (r: Scre
         <ul className="flex flex-col gap-2">
           {rows.map((r, i) => (
             <li key={r.key} className="flex flex-wrap items-center gap-3 rounded-xl border border-border p-2.5">
-              <img src={r.file ? previews.get(r.key) : `${RAW}${r.src}`} alt="" className="h-16 w-24 rounded-lg border border-border bg-secondary object-cover object-top" />
+              <img src={r.file ? previews.get(r.key) : `${RAW}${r.src}`} alt={r.label || `Screen ${i + 1}`} className="h-16 w-24 rounded-lg border border-border bg-secondary object-cover object-top" />
               <div className="flex min-w-[180px] flex-1 flex-col gap-1">
                 <input value={r.label} onChange={(e) => setRows(rows.map((x) => (x.key === r.key ? { ...x, label: e.target.value } : x)))} className={cn(field, "py-2")} placeholder="Label, e.g. Dashboard" aria-label={`Screen ${i + 1} label`} />
                 <span className="text-xs text-muted-foreground">{i === 0 ? "Main screen — also the card image and link preview" : `Screen ${i + 1}`}{r.file ? " · new" : ""}</span>

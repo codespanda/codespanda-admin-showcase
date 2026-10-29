@@ -216,7 +216,7 @@ export function TemplateDetail({ id, githubUrl, updated, screens, inside, faq = 
                       {o.screenshotUrl && (
                         <img
                           src={o.screenshotUrl}
-                          alt=""
+                          alt={`${o.name} template preview`}
                           loading="lazy"
                           className="block h-full w-full rounded-t object-cover object-left-top lg:rounded-t-lg lg:object-top lg:shadow-[0_8px_20px_rgba(14,23,38,0.14)]"
                         />
