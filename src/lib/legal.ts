@@ -38,7 +38,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
         heading: "What we collect and why",
         body: ["We only collect what we need for the purpose stated next to it:"],
         list: [
-          "Project and hiring enquiries (the “Start a project” and “Hire us” forms): your name, email, the service you're interested in, timeline, project details and any file you attach (up to 1 MB). We use these only to reply to you, prepare a quote and run the project if you go ahead.",
+          "Project and hiring enquiries (the “Start a project” and “Hire us” forms): your name, email, phone and company if you give them, the service you're interested in, timeline and project details. We use these only to reply to you, prepare a quote and run the project if you go ahead.",
           "Analytics, only if you click “Accept” in the cookie banner: pages you visit, how you arrived, device and browser type and approximate location derived from your IP address, collected by Google Analytics. We use it to see which pages are useful.",
           "Emails and WhatsApp messages you send us: your contact details and what you write, used to reply to you.",
           "Payments through the “Buy me a coffee” buttons: handled by Razorpay or PayPal. We receive your name, email and the amount, never your card or bank details.",
@@ -57,7 +57,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
           "We don't sell personal data or use it for advertising. We share it only with the providers that process it for us (Data Processors), under their security and confidentiality terms:",
         ],
         list: [
-          "FormSubmit (formsubmit.co, USA): delivers form submissions and attachments to our email inbox.",
+          "Web3Forms (web3forms.com): delivers form submissions to our email inbox.",
           "Google (USA): Google Analytics, only with your consent, and our email provider.",
           "GitHub (USA): hosts this website. Like any web host, it processes your IP address to serve and protect the site.",
           "Meta (WhatsApp): if you choose to chat with us on WhatsApp.",
@@ -282,7 +282,7 @@ export const LEGAL_DOCS: Record<string, LegalDoc> = {
       {
         heading: "Your enquiries",
         body: [
-          "Form submissions travel over HTTPS to FormSubmit, which delivers them to our inbox. Only the CodesPanda team can read them, and we delete enquiries that don't become projects within 12 months.",
+          "Form submissions travel over HTTPS to Web3Forms, which delivers them to our inbox. Only the CodesPanda team can read them, and we delete enquiries that don't become projects within 12 months.",
         ],
       },
       {

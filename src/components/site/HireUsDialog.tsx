@@ -1,13 +1,13 @@
 import { useId, useState, type FormEvent, type ReactNode } from "react";
+import { sendEnquiry } from "@/lib/web3forms";
 import { FormConsent, consentRecord } from "@/components/site/FormConsent";
 import { Check, CircleCheck, Copy, Loader2, Send, TriangleAlert } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { SITE } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
-/** Hire Us enquiries go to the official inbox (already activated on FormSubmit). */
+/** Hire Us enquiries go to the official inbox, delivered by Web3Forms. */
 export const HIRE_EMAIL = SITE.email;
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${SITE.formsubmitId}`;
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -15,7 +15,7 @@ const field =
   "h-12 w-full rounded-xl border-[1.5px] border-input bg-card px-3.5 text-[15px] text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-link disabled:opacity-60";
 const label = "text-sm font-semibold text-foreground";
 
-/** "Hire Us" contact popup that emails the enquiry to HIRE_EMAIL through FormSubmit. */
+/** "Hire Us" contact popup that emails the enquiry to HIRE_EMAIL through Web3Forms. */
 export function HireUsDialog({ children }: { children: ReactNode }) {
   const uid = useId();
   const [open, setOpen] = useState(false);
@@ -57,23 +57,16 @@ export function HireUsDialog({ children }: { children: ReactNode }) {
     if (!consent) return;
     setStatus("sending");
     try {
-      const res = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          ...(phone ? { phone } : {}),
-          ...(company ? { company } : {}),
-          message,
-          _subject: subject,
-          _replyto: email,
-          _template: "table",
-          Consent: consentRecord(),
-        }),
+      const sent = await sendEnquiry({
+        subject,
+        name,
+        email,
+        ...(phone ? { phone } : {}),
+        ...(company ? { company } : {}),
+        message,
+        Consent: consentRecord(),
       });
-      const data = (await res.json().catch(() => ({}))) as { success?: string | boolean };
-      setStatus(res.ok && String(data.success) === "true" ? "sent" : "error");
+      setStatus(sent ? "sent" : "error");
     } catch {
       setStatus("error");
     }

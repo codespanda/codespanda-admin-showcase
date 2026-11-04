@@ -3,8 +3,8 @@ export const SITE = {
   name: "CodesPanda",
   tagline: "Premium React Templates for Modern Developers",
   email: "contact@codespanda.com",
-  /** FormSubmit alias for the email above, so the address isn't exposed in form requests. */
-  formsubmitId: "43d355b5191fdcb0e575aac07e816e2b",
+  /** Web3Forms access key: forms deliver to the email above (the key is public by design). */
+  web3formsKey: "12d6d748-913c-49ad-a7be-cb6b47b6c835",
   /** "Chat with Us" opens a WhatsApp chat with this number, with a greeting filled in. */
   whatsappUrl: `https://wa.me/916280347210?text=${encodeURIComponent("Hi CodesPanda, I'd like to chat about a project.")}`,
   githubOrg: "https://github.com/codespanda",

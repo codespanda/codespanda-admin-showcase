@@ -19,9 +19,9 @@ const CSP = [
   // Razorpay's button asks for a Google Fonts stylesheet; it stays blocked (falls back to a system font) so visitors' IPs don't go to Google.
   "font-src 'self' data: https://*.paypalobjects.com https://*.razorpay.com",
   "media-src 'self' blob:",
-  "connect-src 'self' https://formsubmit.co https://api.github.com https://raw.githubusercontent.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com https://*.paypal.com https://razorpay.com https://*.razorpay.com",
-  "frame-src 'self' https://formsubmit.co https://*.paypal.com https://razorpay.com https://*.razorpay.com",
-  "form-action 'self' https://formsubmit.co https://*.paypal.com https://razorpay.com https://*.razorpay.com",
+  "connect-src 'self' https://api.web3forms.com https://api.github.com https://raw.githubusercontent.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://stats.g.doubleclick.net https://www.google.com https://*.paypal.com https://razorpay.com https://*.razorpay.com",
+  "frame-src 'self' https://*.paypal.com https://razorpay.com https://*.razorpay.com",
+  "form-action 'self' https://*.paypal.com https://razorpay.com https://*.razorpay.com",
   "object-src 'none'",
   "base-uri 'self'",
   "upgrade-insecure-requests",
