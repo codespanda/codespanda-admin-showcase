@@ -87,6 +87,8 @@ const ROUTES = [
 
   // Legal
   { path: "/legal/privacy",                     changefreq: "yearly",  priority: "0.3" },
+  { path: "/legal/data-rights",                 changefreq: "yearly",  priority: "0.3" },
+  { path: "/legal/cookies",                     changefreq: "yearly",  priority: "0.3" },
   { path: "/legal/terms",                       changefreq: "yearly",  priority: "0.3" },
   { path: "/legal/security",                    changefreq: "yearly",  priority: "0.3" },
 ];

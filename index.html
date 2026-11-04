@@ -4,41 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- GitHub Pages SPA: restore path encoded by 404.html -->
-    <script>
-      (function () {
-        var p = new URLSearchParams(window.location.search).get('p');
-        if (p) {
-          var h = new URLSearchParams(window.location.search).get('h') || '';
-          window.history.replaceState(null, '', decodeURIComponent(p) + decodeURIComponent(h));
-        }
-      })();
-    </script>
+    <script src="/spa-restore.js"></script>
 
-    <!-- Google tag (gtag.js). Queued now, script fetched once the page has loaded
-         so analytics never competes with the first paint. -->
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-8S1SQRNF5Y');
-      window.addEventListener('load', function () {
-        setTimeout(function () {
-          var s = document.createElement('script');
-          s.async = true;
-          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-8S1SQRNF5Y';
-          document.head.appendChild(s);
-        }, 1500);
-      });
-    </script>
     <!-- The PayPal SDK for the "Buy Me a Coffee" popup loads on demand (src/components/shared/PayPalCoffeeButton.tsx). -->
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Fonts load without blocking the first paint (display=swap shows fallback text meanwhile). -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" /></noscript>
     <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="preload" as="image" href="/logo-160.webp" />
 

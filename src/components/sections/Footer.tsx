@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { openConsentSettings } from "@/lib/consent";
 import { Facebook, Instagram, Linkedin, Mail } from "lucide-react";
 import { Logo } from "@/components/shared/Logo";
 import { SITE } from "@/lib/constants";
@@ -31,6 +32,8 @@ const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
     title: "Legal",
     links: [
       { label: "Privacy", href: "/legal/privacy" },
+      { label: "Your data rights", href: "/legal/data-rights" },
+      { label: "Cookies", href: "/legal/cookies" },
       { label: "Terms", href: "/legal/terms" },
       { label: "Security", href: "/legal/security" },
     ],
@@ -87,6 +90,11 @@ export function Footer() {
                   {l.label}
                 </FooterLink>
               ))}
+              {col.title === "Legal" && (
+                <button type="button" onClick={openConsentSettings} className="self-start py-2 text-left text-muted-foreground hover:text-foreground lg:py-0">
+                  Cookie settings
+                </button>
+              )}
             </div>
           ))}
         </div>

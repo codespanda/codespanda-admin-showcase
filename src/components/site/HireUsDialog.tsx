@@ -1,4 +1,5 @@
 import { useId, useState, type FormEvent, type ReactNode } from "react";
+import { FormConsent, consentRecord } from "@/components/site/FormConsent";
 import { Check, CircleCheck, Copy, Loader2, Send, TriangleAlert } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { SITE } from "@/lib/constants";
@@ -6,7 +7,7 @@ import { cn } from "@/lib/utils";
 
 /** Hire Us enquiries go to the official inbox (already activated on FormSubmit). */
 export const HIRE_EMAIL = SITE.email;
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${HIRE_EMAIL}`;
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${SITE.formsubmitId}`;
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -26,6 +27,7 @@ export function HireUsDialog({ children }: { children: ReactNode }) {
   const [company, setCompany] = useState("");
   const [message, setMessage] = useState("");
   const [honey, setHoney] = useState("");
+  const [consent, setConsent] = useState(false);
 
   const subject = `Hire Us enquiry — ${name}`;
   const body = [`Name: ${name}`, `Email: ${email}`, phone && `Phone: ${phone}`, company && `Company: ${company}`, "", message]
@@ -37,6 +39,7 @@ export function HireUsDialog({ children }: { children: ReactNode }) {
     setOpen(next);
     if (!next) {
       if (status === "sent") {
+        setConsent(false);
         setName("");
         setEmail("");
         setPhone("");
@@ -51,6 +54,7 @@ export function HireUsDialog({ children }: { children: ReactNode }) {
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (honey) return; // filled only by bots
+    if (!consent) return;
     setStatus("sending");
     try {
       const res = await fetch(FORM_ENDPOINT, {
@@ -65,6 +69,7 @@ export function HireUsDialog({ children }: { children: ReactNode }) {
           _subject: subject,
           _replyto: email,
           _template: "table",
+          Consent: consentRecord(),
         }),
       });
       const data = (await res.json().catch(() => ({}))) as { success?: string | boolean };
@@ -186,6 +191,8 @@ export function HireUsDialog({ children }: { children: ReactNode }) {
               onChange={(e) => setHoney(e.target.value)}
               className="absolute -left-[9999px] h-px w-px opacity-0"
             />
+
+            <FormConsent id={`${uid}-consent`} checked={consent} onChange={setConsent} />
 
             <button
               type="submit"

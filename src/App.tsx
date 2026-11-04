@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
+import { CookieConsent } from "@/components/site/CookieConsent";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ScrollToTop } from "@/components/shared/ScrollToTop";
 import { LandingPage } from "@/components/pages/LandingPage";
@@ -21,6 +22,7 @@ function App() {
   return (
     <TooltipProvider delayDuration={150}>
       <ScrollToTop />
+      <CookieConsent />
 
       <Routes>
         <Route path="/" element={<LandingPage />} />

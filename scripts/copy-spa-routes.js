@@ -106,6 +106,8 @@ const STATIC_ROUTES = [
   "/services",
   "/blog",
   "/legal/privacy",
+  "/legal/data-rights",
+  "/legal/cookies",
   "/legal/terms",
   "/legal/security",
 ];
@@ -195,7 +197,15 @@ const PAGE_META = {
   },
   "/legal/privacy": {
     title: "Privacy Policy — CodesPanda",
-    description: "Privacy policy for CodesPanda — how we collect, use and protect your data.",
+    description: "What personal data CodesPanda collects, why, who we share it with, how long we keep it and your rights under India's DPDP Act, 2023.",
+  },
+  "/legal/data-rights": {
+    title: "Your Data Rights — CodesPanda",
+    description: "How to access, correct or erase your personal data, withdraw consent, nominate someone or raise a grievance with CodesPanda under the DPDP Act.",
+  },
+  "/legal/cookies": {
+    title: "Cookie Policy — CodesPanda",
+    description: "Every cookie and browser storage item codespanda.com uses. Google Analytics only runs after you consent, and you can change your choice any time.",
   },
   "/legal/terms": {
     title: "Terms of Service — CodesPanda",
@@ -203,7 +213,7 @@ const PAGE_META = {
   },
   "/legal/security": {
     title: "Security — CodesPanda",
-    description: "Security is foundational to how CodesPanda builds and operates. Here are the measures we take to protect your data.",
+    description: "How codespanda.com protects visitors: HTTPS, a Content Security Policy, consent-only analytics, and how to report a vulnerability.",
   },
 };
 

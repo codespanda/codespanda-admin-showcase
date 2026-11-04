@@ -1,4 +1,5 @@
 import { useId, useRef, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
+import { FormConsent, consentRecord } from "@/components/site/FormConsent";
 import { Check, CircleCheck, Copy, FileText, Linkedin, Loader2, Mail, Paperclip, TriangleAlert, X } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { SITE } from "@/lib/constants";
@@ -7,10 +8,10 @@ import { cn } from "@/lib/utils";
 const HIRE_URL = "https://www.linkedin.com/company/codespanda";
 /** FormSubmit's AJAX endpoint delivers the form to this address. The first ever
  *  submission sends a one-time activation email to SITE.email that must be confirmed. */
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${SITE.email}`;
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${SITE.formsubmitId}`;
 /** FormSubmit only delivers file uploads from a regular multipart form post, not from
  *  its AJAX endpoint, so enquiries with an attachment are posted here instead. */
-const FORM_UPLOAD_ENDPOINT = `https://formsubmit.co/${SITE.email}`;
+const FORM_UPLOAD_ENDPOINT = `https://formsubmit.co/${SITE.formsubmitId}`;
 
 export const PROJECT_TYPES = ["Web page", "Admin panel", "SaaS product", "Mobile app", "Custom web app", "UI/UX design", "Something else"] as const;
 export type ProjectType = (typeof PROJECT_TYPES)[number];
@@ -97,6 +98,7 @@ export function StartProjectDialog({ children, defaultType = "Custom web app" }:
   const [timeline, setTimeline] = useState(TIMELINES[4]);
   const [details, setDetails] = useState("");
   const [honey, setHoney] = useState("");
+  const [consent, setConsent] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [fileError, setFileError] = useState("");
   const fileInput = useRef<HTMLInputElement>(null);
@@ -134,6 +136,7 @@ export function StartProjectDialog({ children, defaultType = "Custom web app" }:
     setOpen(next);
     if (!next) {
       if (status === "sent") {
+        setConsent(false);
         setName("");
         setEmail("");
         setDetails("");
@@ -149,6 +152,7 @@ export function StartProjectDialog({ children, defaultType = "Custom web app" }:
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (honey) return; // filled only by bots
+    if (!consent) return;
     setStatus("sending");
     const fields: Record<string, string> = {
       name,
@@ -159,6 +163,7 @@ export function StartProjectDialog({ children, defaultType = "Custom web app" }:
       _subject: subject,
       _replyto: email,
       _template: "table",
+      Consent: consentRecord(),
     };
     try {
       if (file) {
@@ -372,6 +377,8 @@ export function StartProjectDialog({ children, defaultType = "Custom web app" }:
               onChange={(e) => setHoney(e.target.value)}
               className="absolute -left-[9999px] h-px w-px opacity-0"
             />
+
+            <FormConsent id={`${uid}-consent`} checked={consent} onChange={setConsent} attachments />
 
             <div className="flex flex-col gap-3 border-t border-line-2 pt-5">
               <button

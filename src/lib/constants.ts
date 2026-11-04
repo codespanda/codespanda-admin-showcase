@@ -3,6 +3,8 @@ export const SITE = {
   name: "CodesPanda",
   tagline: "Premium React Templates for Modern Developers",
   email: "contact@codespanda.com",
+  /** FormSubmit alias for the email above, so the address isn't exposed in form requests. */
+  formsubmitId: "43d355b5191fdcb0e575aac07e816e2b",
   /** "Chat with Us" opens a WhatsApp chat with this number, with a greeting filled in. */
   whatsappUrl: `https://wa.me/916280347210?text=${encodeURIComponent("Hi CodesPanda, I'd like to chat about a project.")}`,
   githubOrg: "https://github.com/codespanda",
@@ -55,6 +57,8 @@ export const FOOTER_NAV: { title: string; links: NavLink[] }[] = [
     title: "Legal",
     links: [
       { label: "Privacy", href: "/legal/privacy" },
+      { label: "Your data rights", href: "/legal/data-rights" },
+      { label: "Cookies", href: "/legal/cookies" },
       { label: "Terms", href: "/legal/terms" },
       { label: "Security", href: "/legal/security" },
     ],
