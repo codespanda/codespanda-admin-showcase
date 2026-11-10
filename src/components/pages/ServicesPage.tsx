@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { AppWindow, Check, Code2, Layers, LayoutDashboard, PenTool, Smartphone } from "lucide-react";
+import { AppWindow, Check, Code2, Layers, LayoutDashboard, Megaphone, PenTool, Search, Smartphone } from "lucide-react";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { TechLogo } from "@/components/site/TechLogo";
@@ -50,6 +50,28 @@ const SERVICES = [
     points: ["React, Vite and TypeScript", "REST or GraphQL integration", "Clean, documented source code"],
     link: { label: "See live projects", to: "/projects" },
   },
+  {
+    icon: Search,
+    title: "SEO, AEO & GEO",
+    body: "Get found on Google and Bing, and cited by AI answer engines like ChatGPT, Gemini and Perplexity.",
+    points: [
+      "Technical SEO, Core Web Vitals and schema markup",
+      "Answer-ready content for AI Overviews and assistants",
+      "Keyword research, audits and monthly reports",
+    ],
+    link: { label: "Read our SEO and AI guides", to: "/blog" },
+  },
+  {
+    icon: Megaphone,
+    title: "Social media marketing",
+    body: "On-brand posts and campaigns that keep your business visible on the platforms your customers use.",
+    points: [
+      "Post, carousel and story designs",
+      "Content calendars for Instagram, LinkedIn and Facebook",
+      "Paid campaigns and performance reports",
+    ],
+    link: { label: "See our social media designs", to: "/portfolio" },
+  },
 ];
 
 const STEPS = [
@@ -68,16 +90,16 @@ export function ServicesPage() {
         <title>Services — UI/UX Design &amp; React Development | CodesPanda</title>
         <meta
           name="description"
-          content="CodesPanda designs and builds web pages, admin panels and custom web applications — UI/UX design in Figma and development in React, Vite and Tailwind CSS."
+          content="CodesPanda designs and builds web pages, admin panels and custom web apps, and grows them with SEO, AEO, GEO and social media marketing."
         />
         <link rel="canonical" href="https://codespanda.com/services" />
         <meta property="og:title" content="Services — UI/UX Design & React Development | CodesPanda" />
-        <meta property="og:description" content="UI/UX design, web pages, admin panels and custom web applications, built with React, Vite and Tailwind CSS." />
+        <meta property="og:description" content="UI/UX design, web pages, admin panels, custom web apps, SEO/AEO/GEO and social media marketing." />
         <meta property="og:url" content="https://codespanda.com/services" />
         <meta property="og:image" content="https://codespanda.com/og-share.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Services — UI/UX Design & React Development | CodesPanda" />
-        <meta name="twitter:description" content="UI/UX design, web pages, admin panels and custom web applications, built with React, Vite and Tailwind CSS." />
+        <meta name="twitter:description" content="UI/UX design, web pages, admin panels, custom web apps, SEO/AEO/GEO and social media marketing." />
         <meta name="twitter:image" content="https://codespanda.com/og-share.jpg" />
       </Helmet>
 
@@ -121,7 +143,7 @@ export function ServicesPage() {
             <div className="flex flex-col gap-2.5 lg:max-w-[720px] lg:gap-3">
               <span className="text-[13px] font-bold uppercase tracking-[0.08em] text-link lg:text-sm">What we do</span>
               <h2 className="text-[30px] font-bold leading-[1.12] tracking-[-0.025em] lg:text-[44px] lg:leading-[1.1] lg:tracking-[-0.03em]">
-                Six ways we can help.
+                Eight ways we can help.
               </h2>
             </div>
             <div className="grid gap-4 md:grid-cols-2 lg:gap-6 xl:grid-cols-3">

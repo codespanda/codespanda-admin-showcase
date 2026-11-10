@@ -182,7 +182,7 @@ const PAGE_META = {
   },
   "/services": {
     title: "Services — UI/UX Design & React Development | CodesPanda",
-    description: "CodesPanda designs and builds web pages, admin panels and custom web applications — UI/UX design in Figma and development in React, Vite and Tailwind CSS.",
+    description: "CodesPanda designs and builds web pages, admin panels and custom web apps, and grows them with SEO, AEO, GEO and social media marketing.",
     ogImage: `${BASE}/og-share.jpg`,
   },
   "/portfolio": {
