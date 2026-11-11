@@ -405,7 +405,7 @@
     "badgeColor": "from-indigo-500 to-purple-600",
     "liveUrl": "https://codespanda.github.io/Alpine-Admin-React/dashboard",
     "docsUrl": "/templates/alpine-admin-react/docs",
-    "detailsUrl": "/templates/Alpine-Admin-React",
+    "detailsUrl": "/templates/alpine-admin-react",
     "screenshotUrl": "/images/alpine/dashboard.webp",
     "techStack": [
       "React",
@@ -433,7 +433,7 @@
     "badgeColor": "from-emerald-500 to-teal-600",
     "liveUrl": "https://brisk.codespanda.com/dashboard",
     "docsUrl": "/templates/brisk-admin/docs",
-    "detailsUrl": "/templates/Brisk-Admin",
+    "detailsUrl": "/templates/brisk-admin",
     "screenshotUrl": "/images/brisk/dashboard.webp",
     "techStack": [
       "React",

@@ -30,6 +30,12 @@
     },
     "hireai": {
       "title": "HireAI – AI Recruitment Platform Landing Page UI"
+    },
+    "fincore-accounting-modern-accounting": {
+      "title": "FinCore Accounting — Financial Services Website Design"
+    },
+    "crypto-app": {
+      "title": "Crypto App UI Design — Portfolio & Price Charts"
     }
   },
   "posts": {
@@ -88,6 +94,10 @@
     },
     "signs-your-business-needs-custom-web-application": {
       "description": "Off-the-shelf software is a great starting point, but as operations get more complex, generic tools start creating limitations instead of solving problems."
+    },
+    "ai-ui-generation": {
+      "title": "AI UI Generation: Turn Text Prompts Into Web App Designs",
+      "description": "How AI UI generation turns text prompts into professional web app designs: how it works, prompt examples, tools, best practices and limitations."
     }
   }
 }

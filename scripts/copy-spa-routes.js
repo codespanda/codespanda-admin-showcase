@@ -212,7 +212,7 @@ const PAGE_META = {
     description: "The terms that govern your access to and use of CodesPanda, including our free React admin dashboard and website templates.",
   },
   "/legal/security": {
-    title: "Security — CodesPanda",
+    title: "Security & Vulnerability Reporting — CodesPanda",
     description: "How codespanda.com protects visitors: HTTPS, a Content Security Policy, consent-only analytics, and how to report a vulnerability.",
   },
 };
@@ -506,7 +506,7 @@ function withPageMeta(html, route) {
       back ? `<a href="${back.href}">${escapeHtml(back.label)}</a>` : "",
       back && back.href === BASE ? "" : `<a href="${BASE}">CodesPanda — React Admin Templates</a>`,
     ].filter(Boolean).join(" | ");
-    const noscript = `\n    <noscript>\n      <article style="font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px">\n        <h1>${escapeHtml(meta.title)}</h1>\n        <p>${escapeHtml(meta.description)}</p>\n        <p>${links}</p>\n      </article>\n    </noscript>`;
+    const noscript = `\n    <noscript>\n      <article style="font-family:sans-serif;max-width:800px;margin:40px auto;padding:0 20px">\n        <p><strong>${escapeHtml(meta.title)}</strong></p>\n        <p>${escapeHtml(meta.description)}</p>\n        <p>${links}</p>\n      </article>\n    </noscript>`;
     html = html.replace('<div id="root"></div>', `<div id="root"></div>${noscript}`);
   }
 
